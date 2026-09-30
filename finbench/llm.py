@@ -1,0 +1,176 @@
+"""Every LLM call in this project goes through this module.
+
+Calls are routed to LLM Foundry's OpenRouter-compatible endpoint. Each call's
+token usage is priced from config/models.yaml and added to the active `Meter`,
+so the cost of any step is whatever was spent inside `with Meter() as m:`.
+
+Two kinds of callers:
+- Our own methods call `complete()`.
+- PageIndex calls LiteLLM internally. `pageindex_client()` returns a client
+  routed through LLM Foundry, and `_meter_litellm()` wraps LiteLLM so those
+  calls are metered too.
+"""
+
+import contextvars
+import os
+import time
+from dataclasses import asdict, dataclass
+from functools import cache
+from pathlib import Path
+
+import yaml
+from dotenv import load_dotenv
+from openai import APIError, OpenAI, RateLimitError
+
+ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(ROOT / ".env")
+CONFIG = yaml.safe_load((ROOT / "config" / "models.yaml").read_text())
+MODELS = CONFIG["models"]
+
+
+def resolve(config: str) -> tuple[str, str]:
+    """`gpt-6-luna@high` -> ("openai/gpt-6-luna", "high"). No `@` means `default`."""
+    model, _, effort = config.partition("@")
+    return MODELS[model]["id"], effort or "default"
+
+
+def grid() -> list[str]:
+    """Every `model@effort` config listed in config/models.yaml."""
+    return [f"{model}@{effort}" for model, efforts in CONFIG["grid"].items() for effort in efforts]
+
+
+def base_url() -> str:
+    return os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openrouter/v1"
+
+
+def api_key() -> str:
+    return os.environ["LLMFOUNDRY_API_KEY"]
+
+
+# ---------------------------------------------------------------- metering
+
+
+@dataclass
+class Usage:
+    calls: int = 0
+    input_tokens: int = 0  # includes cached_tokens
+    cached_tokens: int = 0
+    output_tokens: int = 0  # includes reasoning tokens
+    cost: float = 0.0  # USD
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+_active_meter: contextvars.ContextVar[Usage | None] = contextvars.ContextVar("meter", default=None)
+
+
+class Meter:
+    """Collects the usage of every LLM call made inside the `with` block."""
+
+    def __enter__(self) -> Usage:
+        self.usage = Usage()
+        self._token = _active_meter.set(self.usage)
+        return self.usage
+
+    def __exit__(self, *exc):
+        _active_meter.reset(self._token)
+
+
+def price(model_id: str, input_tokens: int, cached_tokens: int, output_tokens: int) -> float:
+    """USD cost of one call. `model_id` is an OpenRouter id, e.g. openai/gpt-6-luna."""
+    p = _prices_by_id()[model_id]
+    uncached = input_tokens - cached_tokens
+    return (uncached * p["input"] + cached_tokens * p["cache_read"] + output_tokens * p["output"]) / 1e6
+
+
+@cache
+def _prices_by_id() -> dict:
+    return {m["id"]: m for m in MODELS.values()}
+
+
+def _record(model_id: str, usage) -> None:
+    meter = _active_meter.get()
+    if meter is None or usage is None:
+        return
+    details = getattr(usage, "prompt_tokens_details", None)
+    cached = (getattr(details, "cached_tokens", 0) or 0) if details else 0
+    meter.calls += 1
+    meter.input_tokens += usage.prompt_tokens
+    meter.cached_tokens += cached
+    meter.output_tokens += usage.completion_tokens
+    meter.cost += price(model_id, usage.prompt_tokens, cached, usage.completion_tokens)
+
+
+# ---------------------------------------------------------------- our calls
+
+
+@cache
+def _client() -> OpenAI:
+    return OpenAI(base_url=base_url(), api_key=api_key(), timeout=600)
+
+
+def complete(config: str, messages: list[dict], retries: int = 6, **kwargs) -> str:
+    """Chat completion with a `model@effort` config. Returns the text."""
+    model_id, effort = resolve(config)
+    if effort != "default":
+        kwargs["extra_body"] = {"reasoning": {"effort": effort}}
+    for attempt in range(retries):
+        try:
+            response = _client().chat.completions.create(model=model_id, messages=messages, **kwargs)
+            break
+        except (RateLimitError, APIError) as e:
+            if attempt == retries - 1 or getattr(e, "status_code", 500) in (400, 401, 403, 404):
+                raise
+            time.sleep(2**attempt)
+    _record(model_id, response.usage)
+    return response.choices[0].message.content or ""
+
+
+# ---------------------------------------------------------------- PageIndex
+
+
+def pageindex_client(storage_path: Path):
+    """A local-mode PageIndexClient whose index and chat calls go through LLM Foundry."""
+    from pageindex import PageIndexClient
+
+    _meter_litellm()
+    backend = {"api_key": api_key(), "api_base": base_url()}
+    index = pageindex_chat_args(CONFIG["index_model"])
+    index_backend = backend | ({"reasoning_effort": index["reasoning_effort"]} if index["reasoning_effort"] else {})
+    return PageIndexClient(
+        index_model=index["model"],
+        chat_model=index["model"],  # every chat() call passes its own model
+        index_backend=index_backend,
+        chat_backend=backend,
+        storage_path=str(storage_path),
+    )
+
+
+def pageindex_chat_args(config: str) -> dict:
+    """`model` and `reasoning_effort` arguments for PageIndexClient.chat()."""
+    model_id, effort = resolve(config)
+    return {"model": "openrouter/" + model_id, "reasoning_effort": None if effort == "default" else effort}
+
+
+@cache
+def _meter_litellm() -> None:
+    """Wrap litellm.(a)completion so PageIndex's internal calls are metered."""
+    import litellm
+
+    completion, acompletion = litellm.completion, litellm.acompletion
+
+    def model_id(kwargs) -> str:
+        return kwargs["model"].removeprefix("openrouter/")
+
+    def metered_completion(*args, **kwargs):
+        response = completion(*args, **kwargs)
+        _record(model_id(kwargs), getattr(response, "usage", None))
+        return response
+
+    async def metered_acompletion(*args, **kwargs):
+        response = await acompletion(*args, **kwargs)
+        _record(model_id(kwargs), getattr(response, "usage", None))
+        return response
+
+    litellm.completion, litellm.acompletion = metered_completion, metered_acompletion

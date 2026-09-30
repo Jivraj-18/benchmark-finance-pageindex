@@ -1,0 +1,28 @@
+{
+ "pageindex": {
+  "ADOBE_2015_10K": {
+   "doc_id": "pi-1a1ff208709942cbb09a4cae901cdf15",
+   "calls": 136,
+   "input_tokens": 270428,
+   "cached_tokens": 1028,
+   "output_tokens": 36290,
+   "cost": 0.04509528
+  },
+  "JPMORGAN_2023Q2_10Q": {
+   "doc_id": "pi-928b638307634da7942de45ae2809d37",
+   "calls": 221,
+   "input_tokens": 472502,
+   "cached_tokens": 0,
+   "output_tokens": 65208,
+   "cost": 0.07985420000000001
+  },
+  "MGMRESORTS_2022Q4_EARNINGS": {
+   "doc_id": "pi-1fe0e280d320471b809a68aecb78f2cf",
+   "calls": 9,
+   "input_tokens": 16822,
+   "cached_tokens": 0,
+   "output_tokens": 2660,
+   "cost": 0.0030122
+  }
+ }
+}

@@ -1,0 +1,14 @@
+# Secrets
+.env
+
+# Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded data (re-create with `uv run python -m finbench.data download`)
+data/pdfs/
+data/*.jsonl
+
+# Caches: extracted page text, PageIndex trees
+cache/
