@@ -35,23 +35,14 @@ models:
   gemini-3.8-flash:      {id: google/gemini-3.8-flash,      family: google, input: 0.75, output: 3.75,  cache_read: 0.075}
   gemini-3.1-pro:        {id: google/gemini-3.1-pro-preview, family: google, input: 2.00, output: 12.00, cache_read: 0.20}
 
-# Which efforts to run per model. Cheap models get the full ladder (cheap + more
-# thinking); flagships get the ends of the ladder (expensive + less / more thinking).
+# Settings run by `--configs all`: cheap GPT and Gemini models, each with little vs.
+# a lot of thinking. Claude models are defined above but not run for now. Move to
+# pricier models (gpt-6.1-sol, gemini-3.1-pro, Claude, then gpt-6-astra) only if the
+# results call for it: add them here.
 grid:
-  gpt-6-luna:            [none, low, medium, high, xhigh]
-  gpt-6-luna-pro:        [high]
-  gpt-6.1-sol:           [none, low, medium, high, xhigh]
-  gpt-6-astra:           [low, high]
-
-  claude-haiku-4.5:      [default]
-  claude-sonnet-5.5:     [minimal, low, medium, high, xhigh]
-  claude-opus-5.5:       [low, medium, high]
-  claude-fable-5.1:      [low, high]
-
-  gemini-3.1-flash-lite: [minimal, high]
-  gemini-3.5-flash-lite: [minimal, low, medium, high]
-  gemini-3.8-flash:      [minimal, low, medium, high, xhigh]
-  gemini-3.1-pro:        [low, high]
+  gpt-6-luna:            [none, high]
+  gemini-3.5-flash-lite: [low]
+  gemini-3.8-flash:      [low, high]
 
 # Builds PageIndex trees (once per document). PageIndex recommends a cheap model here.
 index_model: gpt-6-luna@low

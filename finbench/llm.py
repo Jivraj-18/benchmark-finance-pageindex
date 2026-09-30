@@ -180,6 +180,8 @@ def pageindex_client(storage_path: Path):
         index_backend=index_backend,
         chat_backend=backend,
         storage_path=str(storage_path),
+        # PageIndex's default (64 parallel calls per document) makes LLM Foundry time out.
+        summary_concurrency=8,
     )
 
 

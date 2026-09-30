@@ -23,6 +23,158 @@
    "cached_tokens": 0,
    "output_tokens": 2660,
    "cost": 0.0030122
+  },
+  "ADOBE_2017_10K": {
+   "doc_id": "pi-ce0691478d624fe1bc51ed75be6f4a28",
+   "calls": 97,
+   "input_tokens": 216596,
+   "cached_tokens": 0,
+   "output_tokens": 24196,
+   "cost": 0.03375760000000001
+  },
+  "AMAZON_2017_10K": {
+   "doc_id": "pi-be3ca6d719554ac3af3437a31edce7ec",
+   "calls": 168,
+   "input_tokens": 411788,
+   "cached_tokens": 0,
+   "output_tokens": 45220,
+   "cost": 0.06378880000000006
+  },
+  "AMCOR_2023_10K": {
+   "doc_id": "pi-2e7b1bf2ee0f409f93171694c934aa67",
+   "calls": 568,
+   "input_tokens": 961296,
+   "cached_tokens": 0,
+   "output_tokens": 156660,
+   "cost": 0.1744596000000005
+  },
+  "AMD_2022_10K": {
+   "doc_id": "pi-f9caedc821924123946cf67479fa357e",
+   "calls": 596,
+   "input_tokens": 1471704,
+   "cached_tokens": 0,
+   "output_tokens": 169040,
+   "cost": 0.23169039999999996
+  },
+  "AMERICANEXPRESS_2022_10K": {
+   "doc_id": "pi-a6e95ee41851458ca0307b9c74b1c867",
+   "calls": 352,
+   "input_tokens": 735060,
+   "cached_tokens": 0,
+   "output_tokens": 94716,
+   "cost": 0.12086399999999993
+  },
+  "AMERICANWATERWORKS_2020_10K": {
+   "doc_id": "pi-d799dc536d8d44bfa33d22557ea72537",
+   "calls": 516,
+   "input_tokens": 1974404,
+   "cached_tokens": 0,
+   "output_tokens": 171900,
+   "cost": 0.28339039999999965
+  },
+  "BESTBUY_2024Q2_10Q": {
+   "doc_id": "pi-71f8e511d6764eeeb02e60e1ba7d2b35",
+   "calls": 136,
+   "input_tokens": 284800,
+   "cached_tokens": 0,
+   "output_tokens": 34680,
+   "cost": 0.04582000000000001
+  },
+  "BOEING_2022_10K": {
+   "doc_id": "pi-3e1bf713f30042fda7a9555a00f48180",
+   "calls": 324,
+   "input_tokens": 574176,
+   "cached_tokens": 0,
+   "output_tokens": 87560,
+   "cost": 0.10119759999999996
+  },
+  "CORNING_2021_10K": {
+   "doc_id": "pi-8a160749282241499fcc6adba0373616",
+   "calls": 552,
+   "input_tokens": 1447212,
+   "cached_tokens": 0,
+   "output_tokens": 160196,
+   "cost": 0.22481920000000039
+  },
+  "CVSHEALTH_2022_10K": {
+   "doc_id": "pi-5ce5f339befa4efa92803f6a0411691f",
+   "calls": 936,
+   "input_tokens": 1967252,
+   "cached_tokens": 0,
+   "output_tokens": 264708,
+   "cost": 0.32907920000000074
+  },
+  "FOOTLOCKER_2022_8K_dated_2022-08-19": {
+   "doc_id": "pi-1680757f609b4fc3b42805d075f22884",
+   "calls": 100,
+   "input_tokens": 210604,
+   "cached_tokens": 0,
+   "output_tokens": 27256,
+   "cost": 0.034688400000000015
+  },
+  "GENERALMILLS_2022_10K": {
+   "doc_id": "pi-05b732f9ef73426e938b24edc39ca509",
+   "calls": 548,
+   "input_tokens": 981312,
+   "cached_tokens": 0,
+   "output_tokens": 144028,
+   "cost": 0.17014519999999994
+  },
+  "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30": {
+   "doc_id": "pi-65c5d3c397164f1e921124fb00363fda",
+   "calls": 116,
+   "input_tokens": 221124,
+   "cached_tokens": 0,
+   "output_tokens": 34144,
+   "cost": 0.03918439999999998
+  },
+  "MGMRESORTS_2018_10K": {
+   "doc_id": "pi-5694095dd69344dca599f1e7f35f9b04",
+   "calls": 552,
+   "input_tokens": 1183708,
+   "cached_tokens": 0,
+   "output_tokens": 139656,
+   "cost": 0.18819879999999967
+  },
+  "PEPSICO_2022_10K": {
+   "doc_id": "pi-af6107de50d9410aafa16a5e7dd0e1d2",
+   "calls": 1128,
+   "input_tokens": 2923348,
+   "cached_tokens": 0,
+   "output_tokens": 291292,
+   "cost": 0.43798080000000006
+  },
+  "PEPSICO_2023Q1_EARNINGS": {
+   "doc_id": "pi-07201639ed5f443db5476b20fda43cd8",
+   "calls": 60,
+   "input_tokens": 82668,
+   "cached_tokens": 0,
+   "output_tokens": 13292,
+   "cost": 0.014912800000000002
+  },
+  "PFIZER_2021_10K": {
+   "doc_id": "pi-5d4d103722604e218863c27d3e6b5186",
+   "calls": 512,
+   "input_tokens": 1408964,
+   "cached_tokens": 0,
+   "output_tokens": 132272,
+   "cost": 0.2070324
+  },
+  "ULTABEAUTY_2023Q4_EARNINGS": {
+   "doc_id": "pi-b7fa7a3958d742a48f99321249f993d9",
+   "calls": 44,
+   "input_tokens": 59080,
+   "cached_tokens": 0,
+   "output_tokens": 12204,
+   "cost": 0.012010000000000005
+  },
+  "ULTABEAUTY_2023_10K": {
+   "doc_id": "pi-d92f2caa918b45e7ba3adb12845d7dc7",
+   "calls": 516,
+   "input_tokens": 1075260,
+   "cached_tokens": 0,
+   "output_tokens": 152132,
+   "cost": 0.1835920000000003
   }
  }
 }

@@ -118,6 +118,31 @@ and register it in `finbench/methods/__init__.py`.
 
 ## Results
 
-Not run yet at scale. A 3-question smoke test showed PageIndex indexing at **$0.00037 per page** with
-gpt-6-luna@low, and agentic search answering for about **$0.0005 per question** with gpt-6-luna, roughly
-7× cheaper than PageIndex and 20× cheaper than the whole filing. Three questions are too few to rank anything.
+### Pilot (2026-09-30): 30 questions × 3 methods × 5 cheap settings
+
+`uv run python -m finbench.run --methods pageindex agentic-search full-context --configs all --limit 30`
+
+Accuracy and cost per question on the **28 questions every method could attempt** (PageIndex could not
+index 2 of the 24 filings; see below):
+
+| Setting | PageIndex | Whole filing | Agentic search |
+|---|---|---|---|
+| gpt-6-luna@none | 64% · $0.0056 | 68% · $0.0114 | 68% · $0.0006 |
+| gpt-6-luna@high | 82% · $0.0091 | 79% · $0.0115 | **82% · $0.0007** |
+| gemini-3.5-flash-lite@low | 64% · $0.0304 | 71% · $0.0335 | 64% · $0.0035 |
+| gemini-3.8-flash@low | 75% · $0.0872 | 75% · $0.0956 | 71% · $0.0084 |
+| gemini-3.8-flash@high | 68% · $0.1039 | 79% · $0.0980 | 82% · $0.0411 |
+
+- **PageIndex never beat the simpler methods here.** Agentic search (regex + read pages, no index) matched
+  or beat it for every setting except gemini-3.8-flash@low, at roughly a tenth of the cost.
+- **PageIndex is not cheap per question.** With Gemini it cost about as much as sending the whole filing,
+  because the tree search reads many nodes (tens of thousands of tokens per question).
+- **More thinking helped cheap GPT a lot** (gpt-6-luna: 64–68% → 79–82%) for little extra cost.
+- **PageIndex failures:** Corning 2022 10-K and General Mills 2019 10-K could not be indexed (index calls
+  time out through LLM Foundry, every attempt), and the tree search hit its turn limit on one CVS Health
+  question. `results/summary.csv` counts these as wrong; the table above excludes the 2 filings.
+- **Caveats:** 28 questions, so one question moves accuracy by ~3.6 points and most gaps above are within
+  noise. One judge model (claude-sonnet-5.5@medium). Single-document setting only. Costs of failed
+  PageIndex indexing attempts were not metered.
+
+Full per-setting numbers: `uv run python -m finbench.report`.

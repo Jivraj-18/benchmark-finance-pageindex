@@ -33,6 +33,8 @@ def summarise(records: list[dict]) -> list[dict]:
         groups.setdefault((r["method"], r["config"]), []).append(r)
     rows = []
     for (method, config), group in sorted(groups.items()):
+        # Errors that survive a re-run (e.g. filing larger than the context window) count
+        # against accuracy: the method failed to answer.
         graded = [r for r in group if "verdict" in r]
         verdicts = [r["verdict"] for r in graded]
         model = config.partition("@")[0]
@@ -40,12 +42,12 @@ def summarise(records: list[dict]) -> list[dict]:
             "method": method,
             "config": config,
             "family": MODELS[model]["family"],
-            "questions": len(graded),
+            "questions": len(group),
             "errors": len(group) - len(graded),
-            "accuracy_pct": round(100 * verdicts.count("correct") / len(graded), 1) if graded else None,
-            "refusal_pct": round(100 * verdicts.count("refusal") / len(graded), 1) if graded else None,
+            "accuracy_pct": round(100 * verdicts.count("correct") / len(group), 1),
+            "refusal_pct": round(100 * verdicts.count("refusal") / len(group), 1),
             "cost_per_q_usd": round(mean(r["usage"]["cost"] for r in graded), 5) if graded else None,
-            "median_seconds": median(r["seconds"] for r in graded) if graded else None,
+            "median_seconds": round(median(r["seconds"] for r in graded), 1) if graded else None,
         })
     return rows
 
@@ -71,10 +73,10 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
-    print(f"{'method':<16}{'config':<30}{'n':>4}{'acc%':>7}{'refuse%':>9}{'$/question':>12}{'med s':>7}")
+    print(f"{'method':<16}{'config':<30}{'n':>4}{'err':>4}{'acc%':>7}{'refuse%':>9}{'$/question':>12}{'med s':>7}")
     for r in rows:
-        print(f"{r['method']:<16}{r['config']:<30}{r['questions']:>4}{r['accuracy_pct']:>7}"
-              f"{r['refusal_pct']:>9}{r['cost_per_q_usd']:>12.5f}{r['median_seconds']:>7}")
+        print(f"{r['method']:<16}{r['config']:<30}{r['questions']:>4}{r['errors']:>4}{r['accuracy_pct']:>7}"
+              f"{r['refusal_pct']:>9}{r['cost_per_q_usd'] or 0:>12.5f}{r['median_seconds'] or 0:>7}")
     for method, cost in index_cost_per_page().items():
         print(f"\n{method} indexing: ${cost:.5f} per page (one-time)")
     print(f"\nWrote {SUMMARY.relative_to(ROOT)}")

@@ -12,3 +12,6 @@ data/*.jsonl
 
 # Caches: extracted page text, PageIndex trees
 cache/
+
+# Run logs
+logs/
