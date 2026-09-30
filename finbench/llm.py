@@ -5,15 +5,17 @@ token usage is priced from config/models.yaml and added to the active `Meter`,
 so the cost of any step is whatever was spent inside `with Meter() as m:`.
 
 Two kinds of callers:
-- Our own methods call `complete()`.
+- Our own methods call `complete()` and `run_agent()` (tool calling).
 - PageIndex calls LiteLLM internally. `pageindex_client()` returns a client
   routed through LLM Foundry, and `_meter_litellm()` wraps LiteLLM so those
   calls are metered too.
 """
 
 import contextvars
+import json
 import os
 import time
+from collections.abc import Callable
 from dataclasses import asdict, dataclass
 from functools import cache
 from pathlib import Path
@@ -110,21 +112,55 @@ def _client() -> OpenAI:
     return OpenAI(base_url=base_url(), api_key=api_key(), timeout=600)
 
 
-def complete(config: str, messages: list[dict], retries: int = 6, **kwargs) -> str:
-    """Chat completion with a `model@effort` config. Returns the text."""
-    model_id, effort = resolve(config)
-    if effort != "default":
-        kwargs["extra_body"] = {"reasoning": {"effort": effort}}
+def _retry(call, retries: int = 6):
     for attempt in range(retries):
         try:
-            response = _client().chat.completions.create(model=model_id, messages=messages, **kwargs)
-            break
+            return call()
         except (RateLimitError, APIError) as e:
             if attempt == retries - 1 or getattr(e, "status_code", 500) in (400, 401, 403, 404):
                 raise
             time.sleep(2**attempt)
+
+
+def _chat(config: str, messages: list[dict], **kwargs):
+    """One metered chat completion. Returns the assistant message object."""
+    model_id, effort = resolve(config)
+    if effort != "default":
+        kwargs["extra_body"] = {"reasoning": {"effort": effort}}
+    response = _retry(lambda: _client().chat.completions.create(model=model_id, messages=messages, **kwargs))
     _record(model_id, response.usage)
-    return response.choices[0].message.content or ""
+    return response.choices[0].message
+
+
+def complete(config: str, messages: list[dict], **kwargs) -> str:
+    """Chat completion with a `model@effort` config. Returns the text."""
+    return _chat(config, messages, **kwargs).content or ""
+
+
+def run_agent(config: str, messages: list[dict], tools: dict[str, Callable[..., str]], schemas: list[dict],
+              max_turns: int = 15) -> tuple[str, list[dict]]:
+    """Tool-calling loop. `tools` maps a tool name to the Python function that runs it.
+
+    Returns (final answer, list of tool calls made). If the model is still calling
+    tools after `max_turns`, it is asked to answer with what it has.
+    """
+    messages, trace = list(messages), []
+    for _ in range(max_turns):
+        message = _chat(config, messages, tools=schemas)
+        # model_dump keeps provider extras (e.g. reasoning details) needed on the next turn
+        messages.append(message.model_dump(exclude_none=True))
+        if not message.tool_calls:
+            return message.content or "", trace
+        for call in message.tool_calls:
+            args = json.loads(call.function.arguments or "{}")
+            trace.append({"tool": call.function.name, "args": args})
+            try:
+                result = tools[call.function.name](**args)
+            except Exception as e:  # tell the model, let it recover
+                result = f"Error: {e}"
+            messages.append({"role": "tool", "tool_call_id": call.id, "content": result})
+    messages.append({"role": "user", "content": "Stop searching. Answer now with what you have found."})
+    return complete(config, messages), trace
 
 
 # ---------------------------------------------------------------- PageIndex
@@ -156,7 +192,13 @@ def pageindex_chat_args(config: str) -> dict:
 @cache
 def _meter_litellm() -> None:
     """Wrap litellm.(a)completion so PageIndex's internal calls are metered."""
+    import logging
+
     import litellm
+
+    # LiteLLM's background logging tasks are cancelled at every asyncio.run() exit; asyncio
+    # reports each one as "Task was destroyed but it is pending". Harmless, so silence it.
+    logging.getLogger("asyncio").setLevel(logging.CRITICAL)
 
     completion, acompletion = litellm.completion, litellm.acompletion
 

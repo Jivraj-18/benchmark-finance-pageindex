@@ -1,0 +1,8 @@
+method,config,family,questions,errors,accuracy_pct,refusal_pct,cost_per_q_usd,median_seconds
+agentic-search,claude-sonnet-5.5@low,anthropic,3,0,66.7,33.3,0.01072,8.5
+agentic-search,gemini-3.8-flash@low,google,3,0,66.7,33.3,0.00985,23.8
+agentic-search,gpt-6-luna@low,openai,3,0,66.7,33.3,0.00047,10.0
+full-context,gemini-3.8-flash@low,google,3,0,66.7,33.3,0.09055,17.9
+full-context,gpt-6-luna@low,openai,3,0,66.7,33.3,0.00991,19.3
+pageindex,gemini-3.8-flash@low,google,3,0,66.7,33.3,0.02876,22.7
+pageindex,gpt-6-luna@low,openai,3,0,66.7,0.0,0.00319,15.4
