@@ -107,9 +107,21 @@ def _record(model_id: str, usage) -> None:
 # ---------------------------------------------------------------- our calls
 
 
+TIMEOUT = 3600  # seconds per call: give slow, long-thinking calls every chance to finish
+
+
+def reasoning_body(config: str) -> dict:
+    """Request body that sets the reasoning effort, in OpenRouter's `reasoning` form.
+
+    Used for our own calls and PageIndex's, so every call sets effort the same way.
+    """
+    _, effort = resolve(config)
+    return {} if effort == "default" else {"reasoning": {"effort": effort}}
+
+
 @cache
 def _client() -> OpenAI:
-    return OpenAI(base_url=base_url(), api_key=api_key(), timeout=600)
+    return OpenAI(base_url=base_url(), api_key=api_key(), timeout=TIMEOUT)
 
 
 def _retry(call, retries: int = 6):
@@ -124,9 +136,9 @@ def _retry(call, retries: int = 6):
 
 def _chat(config: str, messages: list[dict], **kwargs):
     """One metered chat completion. Returns the assistant message object."""
-    model_id, effort = resolve(config)
-    if effort != "default":
-        kwargs["extra_body"] = {"reasoning": {"effort": effort}}
+    model_id, _ = resolve(config)
+    if body := reasoning_body(config):
+        kwargs["extra_body"] = body
     response = _retry(lambda: _client().chat.completions.create(model=model_id, messages=messages, **kwargs))
     _record(model_id, response.usage)
     return response.choices[0].message
@@ -173,22 +185,21 @@ def pageindex_client(storage_path: Path):
     _meter_litellm()
     backend = {"api_key": api_key(), "api_base": base_url()}
     index = pageindex_chat_args(CONFIG["index_model"])
-    index_backend = backend | ({"reasoning_effort": index["reasoning_effort"]} if index["reasoning_effort"] else {})
     return PageIndexClient(
         index_model=index["model"],
         chat_model=index["model"],  # every chat() call passes its own model
-        index_backend=index_backend,
+        # index_backend is passed verbatim to every indexing litellm call
+        index_backend=backend | {"timeout": TIMEOUT, "extra_body": index["extra_body"]},
         chat_backend=backend,
         storage_path=str(storage_path),
-        # PageIndex's default (64 parallel calls per document) makes LLM Foundry time out.
-        summary_concurrency=8,
+        summary_concurrency=16,  # PageIndex default is 64 parallel calls per document; be gentler on LLM Foundry
     )
 
 
 def pageindex_chat_args(config: str) -> dict:
-    """`model` and `reasoning_effort` arguments for PageIndexClient.chat()."""
-    model_id, effort = resolve(config)
-    return {"model": "openrouter/" + model_id, "reasoning_effort": None if effort == "default" else effort}
+    """`model` and `extra_body` (reasoning effort) arguments for PageIndexClient.chat()."""
+    model_id, _ = resolve(config)
+    return {"model": "openrouter/" + model_id, "extra_body": reasoning_body(config)}
 
 
 @cache

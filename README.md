@@ -122,6 +122,9 @@ and register it in `finbench/methods/__init__.py`.
 
 `uv run python -m finbench.run --methods pageindex agentic-search full-context --configs all --limit 30`
 
+The 30 questions, their filings and gold answers: [docs/questions-pilot.md](docs/questions-pilot.md)
+(regenerate with `uv run python -m finbench.data list --limit 30 --out docs/questions-pilot.md`).
+
 Accuracy and cost per question on the **28 questions every method could attempt** (PageIndex could not
 index 2 of the 24 filings; see below):
 
