@@ -48,7 +48,7 @@ uv run python -m finbench.run --methods pageindex agentic-search --configs gpt-6
 # Pilot: 30 questions, every model/effort setting
 uv run python -m finbench.run --methods pageindex agentic-search --configs all --limit 30
 
-# Summarise into results/summary.csv
+# Summarise into results/summary.csv (add --answers FILE --limit N for a per-question answers page)
 uv run python -m finbench.report
 ```
 
@@ -122,8 +122,9 @@ and register it in `finbench/methods/__init__.py`.
 
 `uv run python -m finbench.run --methods pageindex agentic-search full-context --configs all --limit 30`
 
-The 30 questions, their filings and gold answers: [docs/questions-pilot.md](docs/questions-pilot.md)
-(regenerate with `uv run python -m finbench.data list --limit 30 --out docs/questions-pilot.md`).
+Every question with its gold answer and all 15 method/setting answers and grades:
+[docs/questions-pilot.md](docs/questions-pilot.md)
+(regenerate with `uv run python -m finbench.report --answers docs/questions-pilot.md --limit 30`).
 
 Accuracy and cost per question on the **28 questions every method could attempt** (PageIndex could not
 index 2 of the 24 filings; see below):

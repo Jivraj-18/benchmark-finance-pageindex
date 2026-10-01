@@ -71,43 +71,10 @@ def _fetch(url: str, dest: Path) -> None:
     dest.write_bytes(response.content)
 
 
-def question_list(questions: list[dict], title: str) -> str:
-    """Markdown table of questions with their filings and gold answers."""
-    def cell(text: str) -> str:
-        return " ".join(str(text).split()).replace("|", "\\|")
-
-    lines = [
-        f"# {title}",
-        "",
-        f"{len(questions)} questions from [FinanceBench](https://github.com/patronus-ai/financebench) "
-        f"(open-source set), over {len({q['doc_name'] for q in questions})} filings.",
-        "",
-        "| # | ID | Company | Filing | Pages | Type | Question | Gold answer |",
-        "|---|---|---|---|---|---|---|---|",
-    ]
-    for n, q in enumerate(questions, start=1):
-        pages = len(page_texts(q["doc_name"])) if pdf_path(q["doc_name"]).exists() else ""
-        lines.append(f"| {n} | `{q['financebench_id']}` | {cell(q['company'])} | {q['doc_name']} | {pages} | "
-                     f"{q['question_type']} | {cell(q['question'])} | {cell(q['answer'])} |")
-    return "\n".join(lines) + "\n"
-
-
 if __name__ == "__main__":
-    import argparse
+    import sys
 
-    parser = argparse.ArgumentParser(prog="python -m finbench.data")
-    commands = parser.add_subparsers(dest="command", required=True)
-    commands.add_parser("download", help="fetch the questions and PDFs")
-    listing = commands.add_parser("list", help="write a Markdown list of the questions a run uses")
-    listing.add_argument("--limit", type=int, help="same seeded sample as finbench.run --limit")
-    listing.add_argument("--seed", type=int, default=0)
-    listing.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args()
-
-    if args.command == "download":
+    if sys.argv[1:] == ["download"]:
         download()
     else:
-        chosen = select(load_questions(), args.limit, seed=args.seed)
-        title = f"Questions: --limit {args.limit} --seed {args.seed}" if args.limit else "Questions: all"
-        args.out.write_text(question_list(chosen, title))
-        print(f"Wrote {len(chosen)} questions to {args.out}")
+        sys.exit("usage: python -m finbench.data download")

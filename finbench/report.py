@@ -1,20 +1,26 @@
 """Summarise results/runs/ into one row per (method, config).
 
     uv run python -m finbench.report
+    uv run python -m finbench.report --answers docs/questions-pilot.md --limit 30
 
-Writes results/summary.csv and prints it. When a question was answered more than
-once (e.g. after a retry), the last record counts.
+Writes results/summary.csv and prints it. With --answers, also writes a Markdown file
+listing each question, its gold answer, and every method/setting's answer and grade.
+When a question was answered more than once (e.g. after a retry), the last record counts.
 """
 
+import argparse
 import csv
 import json
+from pathlib import Path
 from statistics import mean, median
 
-from .data import ROOT
-from .llm import MODELS
+from .data import ROOT, load_questions, page_texts, select
+from .llm import MODELS, grid
+from .methods import METHODS
 from .run import INDEX_COSTS, RUNS
 
 SUMMARY = ROOT / "results" / "summary.csv"
+ANSWER_CHARS = 300  # answers are cut to this length in the answers file; full text is in results/runs/
 
 
 def load_runs() -> list[dict]:
@@ -65,8 +71,77 @@ def index_cost_per_page() -> dict:
     }
 
 
+def answers_markdown(questions: list[dict], records: list[dict], title: str) -> str:
+    """Each question with its gold answer, then every method/setting's answer and grade."""
+    by_key = {(r["id"], r["method"], r["config"]): r for r in records}
+    configs = grid()
+
+    def cell(text: str, limit: int | None = None) -> str:
+        text = " ".join(str(text).split()).replace("|", "\\|")
+        return text[:limit] + "…" if limit and len(text) > limit else text
+
+    def answers_for(q: dict) -> list[dict]:
+        return [by_key[k] for m in METHODS for c in configs if (k := (q["financebench_id"], m, c)) in by_key]
+
+    lines = [
+        f"# {title}",
+        "",
+        f"{len(questions)} questions from [FinanceBench](https://github.com/patronus-ai/financebench) "
+        f"(open-source set), over {len({q['doc_name'] for q in questions})} filings.",
+        "",
+        "The **gold answer** is FinanceBench's reference answer, written by financial analysts from the filing. "
+        "Every answer below is graded against it by the judge model in `config/models.yaml`: "
+        "**correct**, **incorrect**, **refusal** (said it could not find it) or **error** (the method failed to answer).",
+        "",
+        f"Methods: {', '.join(METHODS)}. Settings: {', '.join(configs)}. "
+        f"Answers are cut to {ANSWER_CHARS} characters; full text is in `results/runs/`.",
+        "",
+        "## Summary",
+        "",
+        "| # | Company | Question | Gold answer | Correct |",
+        "|---|---|---|---|---|",
+    ]
+    for n, q in enumerate(questions, start=1):
+        rs = answers_for(q)
+        correct = sum(r.get("verdict") == "correct" for r in rs)
+        lines.append(f"| [{n}](#q{n}) | {cell(q['company'])} | {cell(q['question'])} | {cell(q['answer'])} | {correct}/{len(rs)} |")
+
+    for n, q in enumerate(questions, start=1):
+        lines += [
+            "",
+            f'<a id="q{n}"></a>',
+            f"## {n}. {cell(q['company'])}: {cell(q['question'])}",
+            "",
+            f"`{q['financebench_id']}` · {q['doc_name']} ({len(page_texts(q['doc_name']))} pages) · {q['question_type']}",
+            "",
+            f"**Gold answer:** {cell(q['answer'])}",
+            "",
+            "| Method | Setting | Grade | Answer | Cost |",
+            "|---|---|---|---|---|",
+        ]
+        for r in answers_for(q):
+            grade = r.get("verdict", "error")
+            answer = r.get("answer") or r.get("error", "")
+            cost = f"${r['usage']['cost']:.4f}" if "usage" in r else ""
+            lines.append(f"| {r['method']} | {r['config']} | **{grade}** | {cell(answer, ANSWER_CHARS)} | {cost} |")
+    return "\n".join(lines) + "\n"
+
+
 def main() -> None:
-    rows = summarise(load_runs())
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--answers", type=Path, help="also write the per-question answers file here")
+    parser.add_argument("--limit", type=int, help="questions in the answers file: same seeded sample as finbench.run")
+    parser.add_argument("--seed", type=int, default=0)
+    args = parser.parse_args()
+
+    records = load_runs()
+    if args.answers:
+        questions = select(load_questions(), args.limit, seed=args.seed)
+        title = f"Questions and answers: --limit {args.limit} --seed {args.seed}" if args.limit else "Questions and answers"
+        args.answers.write_text(answers_markdown(questions, records, title))
+        print(f"Wrote {len(questions)} questions with answers to {args.answers}")
+
+    rows = summarise(records)
     if not rows:
         raise SystemExit("No results yet. Run finbench.run first.")
     with SUMMARY.open("w", newline="") as f:
