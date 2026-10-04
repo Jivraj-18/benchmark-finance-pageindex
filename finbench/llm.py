@@ -1,7 +1,8 @@
 """Every LLM call in this project goes through this module.
 
-Calls are routed to LLM Foundry: chat on its OpenRouter-compatible route, embeddings on
-its OpenAI route. Each call's token usage is priced from config/models.yaml and added to
+Calls go to an LLM proxy chosen by LLM_PROVIDER in .env: `llmfoundry` (default) or `aipipe`.
+Both expose the same two routes: chat on an OpenRouter-compatible route, embeddings on an
+OpenAI-compatible route. Each call's token usage is priced from config/models.yaml and added to
 the active `Meter`, so the cost of any step is whatever was spent inside `with Meter():`.
 Inside `with Recorder():`, each chat call's messages and reply are also kept, which is
 how the walkthrough page shows what a method did step by step.
@@ -27,7 +28,7 @@ from dotenv import load_dotenv
 from openai import APIError, OpenAI, RateLimitError
 
 ROOT = Path(__file__).resolve().parents[1]
-load_dotenv(ROOT / ".env")
+load_dotenv(ROOT / ".env", override=True)  # .env wins over stale shell variables (e.g. an expired token)
 CONFIG = yaml.safe_load((ROOT / "config" / "models.yaml").read_text())
 MODELS = CONFIG["models"]
 TIMEOUT = 3600  # seconds per call: give slow, long-thinking calls every chance to finish
@@ -47,12 +48,24 @@ def grid() -> list[str]:
     return [f"{model}@{effort}" for model, efforts in CONFIG["grid"].items() for effort in efforts]
 
 
+# LLM_PROVIDER -> (proxy root URL, API key). Each root serves /openrouter/v1 and /openai/v1.
+PROVIDERS = {
+    "llmfoundry": lambda: (os.environ["LLMFOUNDRY_BASE_URL"], os.environ["LLMFOUNDRY_API_KEY"]),
+    "aipipe": lambda: ("https://aipipe.org", os.environ["AIPIPE_TOKEN"]),
+}
+
+
+def _provider() -> tuple[str, str]:
+    root, key = PROVIDERS[os.environ.get("LLM_PROVIDER", "llmfoundry")]()
+    return root.rstrip("/"), key
+
+
 def base_url() -> str:
-    return os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openrouter/v1"
+    return _provider()[0] + "/openrouter/v1"
 
 
 def api_key() -> str:
-    return os.environ["LLMFOUNDRY_API_KEY"]
+    return _provider()[1]
 
 
 def reasoning_body(config: str) -> dict:
@@ -172,12 +185,22 @@ def _client() -> OpenAI:
 
 @cache
 def _embedding_client() -> OpenAI:
-    """LLM Foundry's OpenAI route: embeddings are not on the OpenRouter route."""
-    return OpenAI(base_url=os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openai/v1", api_key=api_key(), timeout=TIMEOUT,
+    """The proxy's OpenAI route: embeddings are not on the OpenRouter route."""
+    return OpenAI(base_url=_provider()[0] + "/openai/v1", api_key=api_key(), timeout=TIMEOUT,
                   default_headers=NO_CACHE)
 
 
-def _retry(call, retries: int = 6, on_failure: Callable[[Exception], None] | None = None):
+def warm_up() -> None:
+    """Load the OpenAI SDK's lazily imported modules before worker threads start.
+
+    Threads importing the same module for the first time at once can raise
+    `_DeadlockError: deadlock detected by _ModuleLock('openai.resources.chat')`.
+    """
+    _ = _client().chat.completions, _embedding_client().embeddings
+
+
+def _retry(call, retries: int = 8, on_failure: Callable[[Exception], None] | None = None):
+    """Retry rate limits and server errors with exponential backoff (1, 2, 4 … 60 s)."""
     for attempt in range(retries):
         try:
             return call()
@@ -186,7 +209,7 @@ def _retry(call, retries: int = 6, on_failure: Callable[[Exception], None] | Non
                 on_failure(e)
             if attempt == retries - 1 or getattr(e, "status_code", 500) in (400, 401, 403, 404):
                 raise
-            time.sleep(2**attempt)
+            time.sleep(min(2**attempt, 60))
 
 
 def _chat(config: str, messages: list[dict], **kwargs):

@@ -64,5 +64,6 @@
  "verdict": "correct",
  "reason": "The answer's CCC of -3.70 days matches the gold answer of -3.7, and the component calculations check out.",
  "judge_model": "claude-sonnet-5.5@medium",
- "judge_cost": 0.004448
+ "judge_cost": 0.004448,
+ "provider": "llmfoundry"
 }

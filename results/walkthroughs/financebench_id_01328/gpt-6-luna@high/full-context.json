@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01328",
+ "question": "What is the quantity of restructuring costs directly outlined in Pepsico's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+ "gold": "Pepsico's restructuring costs in FY2022 amounted to $411 million .",
+ "doc": "PEPSICO_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 8.3,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 260499,
+  "cached_tokens": 0,
+  "output_tokens": 288,
+  "cost": 0.026193900000000003,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to\r\nCommission file number 1-1183\r\nPepsiCo, Inc.\r\n(Exact Name of Registrant as Specified in its Charter)\r\nNorth Carolina 13-1584302\r\n(State or Other Jurisdiction of Incorporation or Organization) (I.R.S. Employer Identification No.)\r\n700 Anderson Hill Road, Purchase, New York 10577\r\n(Address of principal executive offices and Zip Code)\r\n(914) 253-2000\r\nRegistrant\u2019s telephone number, including area code\r\nSecurities registered pursuant to Section 12(b) of the Securities Exchange Act of 1934:\r\nTitle of each class Trading Symbols Name of each exchange on which registered\r\nCommon Stock, par value 1-2/3 cents per share PEP The Nasdaq Stock Market LLC\r\n0.250% Senior Notes Due 2024 PEP24 The Nasdaq Stock Market LLC\r\n2.625% Senior Notes Due 2026 PEP26 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2027 PEP27 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2028 PEP28 The Nasdaq Stock Market LLC\r\n0.500% Senior Notes Due 2028 PEP28a The Nasdaq Stock Market LLC\r\n3.200% Senior Notes Due 2029 PEP29 The Nasdaq Stock Market LLC\r\n1.125% Senior Notes Due 2031 PEP31 The Nasdaq Stock Market LLC\r\n0.400% Senior Notes Due 2032 PEP32 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2033 PEP33 The Nasdaq Stock Market LLC\r\n3.550% Senior Notes Due 2034 PEP34 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2039 PEP39 The Nasdaq Stock Market LLC\r\n1.050% Senior Notes Due 2050 PEP50 The Nasdaq Stock Market LLC\r\nSecurities registered pursuant to Section 12(g) of the Securities Exchange Act of 1934: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934\r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing\r\nrequirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of\r\nRegulation S-T (\u00a7 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).\r\nYes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an\r\nemerging growth company. See the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth\r\ncompany\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control\r\nover financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or\n\n[Page 2]\nissued its audit report. \u2612\r\nIf securities are registered pursuant to Section 12(b) of the\n\u2026 [1,188,907 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**0.** The FY2022 consolidated income statement does not separately list restructuring costs (document p. 62). Note 3 reports $411 million in restructuring and impairment charges, but not as a separate income-statement line item (p. 78).",
+    "role": "assistant",
+    "reasoning": "**Clarifying restructuring costs**\n\nI need to interpret the quantity of restructuring costs directly outlined in the income statements for FY2022. It looks like there\u2019s no separate line for restructuring costs in the income statement, but there\u2019s a disclosure of $411 million in restructuring charges elsewhere. The user wants a clear answer, so I\u2019ll state that the quantity is 0, citing that there\u2019s no specific line item on the consolidated income statement (page 62). I'll clarify the $411 million is reported but not directly in the income statement.**Justifying restructuring costs**\n\nI need to provide justification for the figure I stated earlier. I\u2019ll cite Page 62 to clarify that there\u2019s no direct line item for restructuring costs. I could also mention Note 3, which discloses the $411 million as restructuring charges, but it\u2019s important to highlight that this isn\u2019t listed directly in the income statement, as the question specifies. This should help ensure my answer aligns with the user's request.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying restructuring costs**\n\nI need to interpret the quantity of restructuring costs directly outlined in the income statements for FY2022. It looks like there\u2019s no separate line for restructuring costs in the income statement, but there\u2019s a disclosure of $411 million in restructuring charges elsewhere. The user wants a clear answer, so I\u2019ll state that the quantity is 0, citing that there\u2019s no specific line item on the consolidated income statement (page 62). I'll clarify the $411 million is reported but not directly in the income statement.**Justifying restructuring costs**\n\nI need to provide justification for the figure I stated earlier. I\u2019ll cite Page 62 to clarify that there\u2019s no direct line item for restructuring costs. I could also mention Note 3, which discloses the $411 million as restructuring charges, but it\u2019s important to highlight that this isn\u2019t listed directly in the income statement, as the question specifies. This should help ensure my answer aligns with the user's request.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWFFgQ7uLoL4P-1k99N-Vl0m9Sf_agO-62INxKijePQTl5eGz7P0Pb-Mm13tj6caYCu8Vdq9BjHRMs6ql4t_GOFbjpqnk26vzuIRGcOEqndGo_fas14CTV_eerE7NYw6LhPlZ7EurZ-N-gg1Emzmsw8-QVjk2fY-yqH1zF8urHHuljazUzpfUXx5gD9Vw9AtljD8o70m2z9Gb9RgNbIl-JJ26lyH5FQIyQSeKzGLpcFa5_AfSN4lkgZWz0vOLzDxrIwGyscW3sBnQ2rI4fKsAGEmC0IOU8xZ0G0gn1Nv6621SMwjXPWBvrwTVLAhGGqZ9pNHwAL7Addl5U6gyG7TA0UqwzSyV0TPGeWwoJGzs3wNQRcqTMFPlIP-aoBZigAGcEJ9KshxPeyA6UkNkhJs2_tTh0DSGbvFoWDCp7W5KGT87yEHAvXJC5qSrezxt3hivab4uGXH0go0A4JgGHa0bEaD-TW0ZnC97EppAnMKvk7SCP5WaeEmmJ26fUX0nBtOijiHlkabqCbsOG20casS56rgY4OcHbuX8uk3g62lmSGbuQjc-kx1i6ho7MaA5LOlA3zhl4qGc6xzx6T_DUIEN9rbE5EIry3iWfDIEECIY1i2XKU10_zfl2DXXf6kMPGbccSC6ESOokm7f7Iih5sAFI6ey45XcPUR4Vd6tAkAEeSU99Hk6ntsX33rpa7I9gpxIYhBUu9DsICax38pXXYAZhF05AHDDZr4N17alflZbb1zLhNBkPiwiBGLFH8sqQiNMXKDk6a_vvoYr_uySwu9qvVHcoQesxmOlEjxb9-n2xEsyR6ATjue61jRt01V_DMCSmeGev7pe5edgRgWqCaeTfRPNE3_N_20ykrBIcA45-TUPrU0r5eE7YiIS8osdbCcU3RL-FfQL8WllD7yWSiyywj7PIaxgrKPPrzoXpIignRf4lF60aD-qg4bLVlaHp4lfsVGwKLoRPUtDs29P9TSBKwdJRoQIvfmFSijJiKIGks0NQFRP6L9OghKF6bdok7gaU-dqBZd8wl8O8RQtev5DSCcXteiMG3chbzaJl735ZwW3h0suU6opyeF-qnU2vqvtCcg_XLIoLfwGnRGF8Ayv4st_cLoINqOIAfvtS0onHahZS_xG3Huz5BYi-9R4q7V-2SAiIxkFn8Gve1K6Fgl32s8GNFLFi5tKBcThKiQhrlzx6cb3L3_wIIYtxMJSPZU2MPsidNvHFBjAoF__c4QCf9Egg00qd3twLrfRJVAv05QetcU6AcwO6O2Ks8T-wrrFc-m3sJFeyxvER6430EV6cAW-29cZVCxP4ZfWLqdQyMomzOXSSCJfVsFrpjs1RsDMW3gAFRfQ2JXo6ZQn3QUaV18LVLqNUxyG1vuzmU7pbTctT4YpoMaM0ooTzQON3q37TbOqDjof8TdMuufjrDeYh4pKvVGu24JfNzDJkksUGJruUO6DQWVsSUbnbKFtr53h8pgIBQ5i30cspb0uwvEUq0YmzPci_9lXbuRqnCVodh6sSg5y_ILfUN3pjL8-rLGhr9AyegLEoO0hI3p3YRHAeNjdV-MSJQQW9FXM3ebyWH3xmlsLhY66m2RBqQ8GXsEOpbDsZR6EqKmpsjNe6Vjo_-Yh0txEC95k7UxYCCG2N_bOskj7b426V4bmZ3_JHignFcmn5y6J5OVs9-JfcDK7LjVbPc4HeeTwNWlx0jP8Bi6Rofh2c7YvdSa0Ui_SqA7Gbzp_pgVCce8dlAbuteM15m3rJYzmXIFKVZR4wBISG5LqRb5Qh1CV8JgaX8Ugz4yZPMpyYRzjfHgiMGKUTrHq6Vly_IhugqVS1scAQ9cSAhZirNrgp2FHp0AnFlnB16ZXY1EJLdzqcDm6F6-pCbimOSz4jb7tOCeFwBvKzk1M_aeQ5BIKnobuiiB8n-LGmBgvQy9RJx_4g4QWq-LKwSKsO6nG37Cr0s_2PZUZZsnuBNOF-B4yAPlU0--YTdTcflmF3tvawjLsc9HxzFQXi41uNTSSz4_CBOYa4RhO_rj_uSr7nlRxi1T05USyAXHd70n2hQe_9KqSfgVWClbJQqVkhSfYKioXarXESbFAL2PTYcyeVol1g6f6NfALvzFm3mjH3K-Vi0rduVKC64fiwj5b6e8hck0IwRjlO3NHSZG3A4TXPLjlyzRRwRJthwU9XKbrrueHWdVc3fM0sMudx0oOY7Np_Sn1_7GK8cZKmPaeWFq3hWV6xUrS7oE_SrjGklPiX066CU2F_Rmcetyo2_cavPAkua4eYxdgT2g9AgyTjiGJ6VFnqOtoQUOMPfqPNwrmyeF4uz5wUX_bNqWQb4H40obgMe0tm4gyzSdlcaQcI_99W5cjP2B5f-IroZ83vYADz0Ce45Iasx3YeboXlRw0b_5Xue5O1G_BmgVUjuor0FcqxDZ1ILfBUW5Fb_NTnL7ZMSc2xZHny6F7yAkMFt79k0s2trMBP3CNQR9KYe4hx51D51Y1EEIguBaeaPCT1ohf10LP2Kd6IjmnKWyf5eBacDQsajcJQKBOsDvRcFdORv1-LUzmU88CkbOA7M7grVbFHsOL9MrscYEjWh_nTqFwIUc9RK6gc3pkM_F1YQHu9Vhq47WT0f8YiRpS9NK7MJ4VQH_RQ8v60DMfqjRVQOLfrjkRFJIr18DBykwgrk3TY9tpP_n3smu42RiQRqMPgqm0MLyQnbIew7FfQmJwcoZTqzqp2RxPI4hycO9WmeJMg8wJx4Svc36N7TQhb6GnYVVyXGGjhCj1uSAzgYw1I7JOUSrgXPpWq-BvMANs2ytYCDADS8b3un47o9lsekxw1XE_V95JZyalAsVXNQb5xj4hyZzGE4HiU4zW92-TyIBeeil-9-lcXjbzrKen7lVD9A2xiH.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_05fba7f93fde46bc016ac21581c8fc87d199b9124121d1371a",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 260499,
+   "output_tokens": 288,
+   "reasoning_tokens": 229,
+   "seconds": 8.34
+  }
+ ],
+ "answer": "**0.** The FY2022 consolidated income statement does not separately list restructuring costs (document p. 62). Note 3 reports $411 million in restructuring and impairment charges, but not as a separate income-statement line item (p. 78).",
+ "verdict": "incorrect",
+ "reason": "The answer commits to 0, but the gold answer is $411 million; mentioning $411M in Note 3 does not change the final stated answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001502,
+ "provider": "llmfoundry"
+}

@@ -28,12 +28,24 @@
   .tip b { font-weight: 600; }
   .tip .row { display: flex; justify-content: space-between; gap: 16px; }
   .tip .row span:first-child { color: var(--ink-2); }
+  table.questions th { cursor: default; }
+  table.questions td { vertical-align: top; }
+  table.questions td.center, table.questions th.center { text-align: center; }
+  table.questions tbody tr { cursor: pointer; }
+  table.questions tbody tr:hover, table.questions tbody tr:focus-within { background: var(--code-bg); }
+  table.questions td.q a { color: var(--ink); text-decoration: none; }
+  table.questions td.q a:hover { text-decoration: underline; }
+  table.questions td.gold { color: var(--ink-2); min-width: 22ch; max-width: 34ch; }
+  .v { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+       border: 1px solid currentColor; font-weight: 700; font-size: 0.8rem; }
+  .v.correct { color: var(--good-text); } .v.incorrect, .v.error { color: var(--critical); } .v.refusal { color: var(--ink-2); }
 </style>
 </head>
 <body>
 <main>
   <nav class="site">
     <a href="index.html" aria-current="page">Cost vs accuracy</a>
+    <a href="#questions">All questions</a>
     <a href="walkthrough.html">Walkthrough: one question, four methods</a>
     <a id="repo-link" href="#">Code and data on GitHub</a>
   </nav>
@@ -41,6 +53,10 @@
   <header class="page">
     <h1>Does PageIndex earn its cost on financial filings?</h1>
     <p id="subtitle"></p>
+    <p class="cta">
+      <a class="button" href="#questions">Browse all questions</a>
+      <a class="button" href="walkthrough.html">Step-by-step walkthroughs</a>
+    </p>
   </header>
 
   <section class="card chart-card" aria-labelledby="chart-title">
@@ -66,6 +82,18 @@
       ~10 points are within noise. One judge model, strict grading against FinanceBench's gold answers, and each
       question asked against its own filing (finding the right filing among many is not tested).</li>
   </ul>
+
+  <h2 id="questions">All <span id="q-count"></span> questions: how each method did</h2>
+  <p class="small muted" id="q-note" style="margin-top:-4px"></p>
+  <div class="card table-wrap">
+    <table class="data questions" id="qtable">
+      <thead><tr>
+        <th>#</th><th>Company</th><th>Question</th><th>Gold answer</th>
+        <th class="center">PageIndex</th><th class="center">Vector RAG</th><th class="center">Whole filing</th><th class="center">Agentic search</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <h2>Methods</h2>
   <ul class="findings" style="list-style:none;padding-left:0">
@@ -94,7 +122,7 @@
 
 <script id="data" type="application/json">/*DATA*/null</script>
 <script>
-const { meta, cells } = JSON.parse(document.getElementById("data").textContent);
+const { meta, cells, questions } = JSON.parse(document.getElementById("data").textContent);
 const LABELS = { "pageindex": "PageIndex", "vector-rag": "Vector RAG", "full-context": "Whole filing", "agentic-search": "Agentic search" };
 const SHAPES = { "pageindex": "circle", "vector-rag": "square", "full-context": "diamond", "agentic-search": "triangle" };
 const fmtCost = c => c >= 0.01 ? "$" + c.toFixed(3) : "$" + c.toFixed(4);
@@ -193,6 +221,28 @@ function table() {
     `<td class="num">${c.accuracy_pct}%</td><td class="num">${c.refusal_pct}%</td><td class="num">${c.errors}</td>` +
     `<td class="num">${c.cost_per_q_usd == null ? "–" : fmtCost(c.cost_per_q_usd)}</td><td class="num">${c.median_seconds ?? "–"}</td></tr>`).join("");
 }
+// ---- all questions: one row per question, each method's verdict; a row opens its walkthrough
+const ICONS = { correct: "✓", incorrect: "✗", refusal: "–", error: "!" };
+const escq = s => String(s ?? "").replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+const short = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+document.getElementById("q-count").textContent = questions.length;
+document.getElementById("q-note").textContent =
+  `Graded results from the recorded walkthroughs (${meta.config}; ✓ correct, ✗ incorrect, – refused). ` +
+  `Click a question to see each method's steps. A walkthrough is a separate run, so a mark can differ from the chart's pilot data.`;
+document.querySelector("#qtable tbody").innerHTML = questions.map(q => {
+  const href = `walkthrough.html#${q.id}`;
+  const marks = meta.methods.map(m => {
+    const r = q.results[m];
+    return r ? `<td class="center"><span class="v ${r.verdict}" title="${LABELS[m]}: ${r.verdict}" aria-label="${LABELS[m]}: ${r.verdict}">${ICONS[r.verdict] || "?"}</span></td>`
+             : `<td class="center muted">·</td>`;
+  }).join("");
+  return `<tr data-href="${href}"><td class="muted">${q.n}</td><td>${escq(q.company)}</td>` +
+    `<td class="q"><a href="${href}">${escq(short(q.question, 110))}</a></td><td class="gold">${escq(short(q.gold, 80))}</td>${marks}</tr>`;
+}).join("");
+document.querySelectorAll("#qtable tbody tr").forEach(tr => tr.addEventListener("click", e => {
+  if (!e.target.closest("a")) location.href = tr.dataset.href;
+}));
+
 document.querySelectorAll("#table th").forEach(th => th.addEventListener("click", () => {
   sortDir = sortKey === th.dataset.key ? -sortDir : -1; sortKey = th.dataset.key; table();
 }));

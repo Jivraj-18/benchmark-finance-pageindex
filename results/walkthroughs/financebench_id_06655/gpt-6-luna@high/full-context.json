@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_06655",
+ "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+ "gold": "93.86",
+ "doc": "AMAZON_2017_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.2,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 64135,
+  "cached_tokens": 0,
+  "output_tokens": 428,
+  "cost": 0.0066275,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\n ____________________________________ FORM 10-K\r\n____________________________________ (Mark One)\r\nx ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2017 or \u00a8 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to .\r\nCommission File No. 000-22513\r\n____________________________________ AMAZON.COM, INC.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 91-1646860\r\n(State or other jurisdiction of\r\nincorporation or organization)\r\n(I.R.S. Employer\r\nIdentification No.)\r\n410 Terry Avenue North\r\nSeattle, Washington 98109-5210\r\n(206) 266-1000\r\n(Address and telephone number, including area code, of registrant\u2019s principal executive offices)\r\nSecurities registered pursuant to Section 12(b) of the Act: Title of Each Class Name of Each Exchange on Which Registered\r\nCommon Stock, par value $.01 per share Nasdaq Global Select Market\r\nSecurities registered pursuant to Section 12(g) of the Act:\r\nNone\r\n ____________________________________\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes x\n No \u00a8\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Exchange Act. Yes \u00a8\n No x\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or\r\nfor such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes x\n No \u00a8\r\nIndicate by check mark whether the registrant has submitted electronically and posted on its corporate Web site, if any, every Interactive Data File required to be submitted and posted\r\npursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit and post such files). Yes x\n No \u00a8\r\nIndicate by check mark if disclosure of delinquent filers pursuant to Item 405 of Regulation S-K is not contained herein, and will not be contained, to the best of registrant\u2019s knowledge, in\r\ndefinitive proxy or information statements incorporated by reference in Part III of this Form 10-K or any amendment to this Form 10-K. x\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See\r\ndefinitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer x Accelerated filer \u00a8\r\nNon-accelerated filer \u00a8\n (Do not check if a smaller reporting company) Smaller reporting company \u00a8\r\nEmerging growth company \u00a8\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting\r\nstandards provided pursuant to Section 13(a) of the Exchange Act. \u00a8\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes \u00a8\n No x\r\nAggregate market value of voting stock held by non-affiliates of the registrant as of June 30, 2017 $ 387,327,844,190\r\nNumber of shares of common stock outstanding as of January 24, 2018 484,107,183\r\n____________________________________ DOCUMENTS INCORPORATED BY REFERENCE\r\nThe information required by Part III of this Report, to the extent not set forth herein, is incorporated herein by reference from the registrant\u2019s definitive proxy statement relating to the\r\nAnnual Meeting of Shareholders to be held in 2018 , which definitive proxy statement shall be filed with the Secur\n\u2026 [292,955 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Amazon\u2019s FY2017 DPO was **93.86 days**.\n\nCalculation (in millions):  \nAverage accounts payable = (25,309 + 34,616) / 2 = 29,962.5  \nChange in inventory = 16,047 \u2212 11,461 = 4,586  \nDPO = 365 \u00d7 29,962.5 / (111,934 + 4,586) = **93.86 days**\n\nAccounts payable and inventory are from the balance sheet (p. 40); cost of sales is from the statement of operations (p. 38).",
+    "role": "assistant",
+    "reasoning": "**Calculating financial figures**\n\nI need to focus on calculating some values using the provided formula. I have accounts payable for two years, and I\u2019ll find the average. Then, for COGS and inventory changes, I need to establish the denominator and calculate the respective figures carefully. My key result seems to be around 93.86 days for the ratio. I'll also need to reference specific pages for clarity about balance sheets and P&L statements to support these calculations.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial figures**\n\nI need to focus on calculating some values using the provided formula. I have accounts payable for two years, and I\u2019ll find the average. Then, for COGS and inventory changes, I need to establish the denominator and calculate the respective figures carefully. My key result seems to be around 93.86 days for the ratio. I'll also need to reference specific pages for clarity about balance sheets and P&L statements to support these calculations.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxOKZVTiumHMl1chU6bcXcMairk9nDc2ZHnpa_4ZacOoOxS5U0-eInh5_z5APH5nDRNxDEF4pa_gZsiBCbGLdi_M2oMgxUEXz8QXhEThsc1A8uwlZHWSdPLeN0D_TnG1ZfW5x1lKhGR-IeX7LKxcgv2cHZMVPbAwZp3zQtiUwOqsm8lqicetzp6k4aoAE2puamR2bUhM_bNjvXnbP2ZoifPwexw-rQDPypUA9z0H9lBjefyx8Xa308LSzgGDTCowDJjlKaRsN6HLVEe_eMFDc0o86q24CSCCDouK-h0vVY8Zz26gQgZvvecL5p6SWYAdttOObiqRtezc--HfRCCUiWQBe1rBBm-SdBSfKKEvRJvG4ENN4cTYy8yRylaLrMB3edsd6apg0kjP-9kQ-a9qUuykHyZPTmk4HLXYDcTcG1SV2vPCCQ3Llt_5KADRZlTygaTp3U6efG9nAZ6MpM_9Gvt0Y8RBWjjlK_VU1iAhS7TAu5Y67Jv3kl248VpaZz8rN8yV8Qqrb4lxm6lG-33bIqnIfkidKZyW1TLExKiDBt1LskwEV6AYbDh_RMJm9VooDS4pnx6Q_enQqoWRlFNcvZG3RNGL3y23kf4As2LfDYtJdgGRnSE5qpX_kLvImMkg1yo6NcM4oUNbY0Sz9BGXSu-VsMbugZdmMV1yeKI6CNjr8eIFdA7o_O3FIxpd_SqlH7edPG0fStoT21NMGGAe7-BJp0is_7yJjnvDvEQ083r9aWmRezXxdfTDKme9BjLnhQCFTdwEotOPXXcGh0wgBAK-xpyqhP41BdyvXc75N8hhD54D9pRK5WCirz3kLRZ5PZ_mm2iycc4OLsG7Pu7NMiYmUD7CMKuxEqUGp42uOL59sWD4WbVYXgfVv8Z9nN7QzsEN1ml7hEWYPNyzkVpUWGgkRfxvrHitSjVx6HYdGp1JcyvP_cFR6im6B9O6_AyqCx8wXMqaxD_zfi69BnJiZkF1GDmB-QqiuTssTDgdtq3u7hgTa_Dh7SecCArKJfy1AhZ9lHrp05obyQWG70B7RfNdsapzUMIji8NBnYpZTHarxmt9ckjZgR57TZC4w2DmQnjcueus_9EF1AYZgHJQ2UqHymGk67uehXFKyrOan2ABCKlY4fbXRLGFyXPmgJkKKrGW5us8wMr2ihLob8Fy7GK6bSOgNAo4qvNLp1vcHYS5EXk90ygKIP1EKbPLBQnc8EQJEssL7COnPWwF7qJUkd1hAJlxPVSMsTknNgDObl-JiIf8yYB4APqvOXcDVjnS_02AU_nA9bLPf39sI4uEvxWBALwE3s3oTm7B4MDb23kAEOzyp5Sylcr_EsT5WULxlSRtGZKTq_NPoFW3cPfkgZQUjz6M-n14QKexVaNDVzhnjnpjkeiUiOYISvUmJVGjTz8A3Q6Zqj3HgyN4tqEEbGWzGEwMl2E68U7GSvM483xTTcMPszayrgAy9aVdDDSCoBrNIJmmW_O52-1vsZoVD65I1bg1no9-NWhU24B1YLn9G4xe2jFcArW92F2Zt62lOIxeiKtOQ2gov1MDB7GWQ6SJBWKKpmcPhiV6DMNQb5x_MCQm29qitpPZ62IbbuG0pK46hhiPcx7Lc5uHvFnjd0PyRJklERZ21_1oVc20iH2AGSYYRvfzS7Kxg3hie7__oydNlcauxyxNXE1k3RCyABjfY6oA3bS7sRCkLrhATBs3wVLSR709TZs1eEjEM5c3VzbyCc2eY_L8fRsMsD11YIEasuOkFIlMQ9zA8AaqQAEsGprpepXjlv-csEAdq9Bspi8OMH1gZHa0yUaufuE03WVvykpFPcoIrJiE4A2NR0eLU_RD4Z1pepFh2SUBrKP6H1WRw_ArBpRRckFksqKu65zdJIpyJkPIJ6T-dC4sMkDJsRbIEEnit_wo72ArpOcXi4tdJitFHF6BT0E21Q4ID4Eab8xcQ9jss5RCtd0M1-T-6QQlERdMjsbBJmK_F557BFkRJLxo3ayOt1sWSn3j1D50X1khYHyVlM5yl5Tv-riXLw7_EgXT4txNlS5sfHaLefQO33zuv8yL1AcdU5RpQr0FbmTKXTql1uAJuwb2yNneTqjr3W7ctfDcOwipCxEhNv1cAfCNfHyC_iOJNfoGaj10MDP4vyW-Sfn6rBxSgwCJXxAnnoWZmwhS82soJMyKTJ8ozD0MqmA96pm5ND2HpOL6QKM2eElJQfyf55dH-KPEcHnF9SrHZQvMsjyQhLN5XimVs_7qZpX_FNupq-vSGGu-M2wbjdflvEfODOb8JIxDJ_dMD3VFBQiqYjBRwK5BCYOvUvdinf3U92tB6qmyZILwcMI6RrJF0dHr3gL1wYstTtiCzF_Nq5Ibi59KN525Y_thMB44gveudFeUnBAZBJ_-y1Ldwo0UahgrGueEMU6qKU_bA5tMRmdcC89cvMJOYwv.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03bd07fdd9417300016ac21c4b137c87d19bd603bfc5821771",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 64135,
+   "output_tokens": 428,
+   "reasoning_tokens": 297,
+   "seconds": 5.19
+  }
+ ],
+ "answer": "Amazon\u2019s FY2017 DPO was **93.86 days**.\n\nCalculation (in millions):  \nAverage accounts payable = (25,309 + 34,616) / 2 = 29,962.5  \nChange in inventory = 16,047 \u2212 11,461 = 4,586  \nDPO = 365 \u00d7 29,962.5 / (111,934 + 4,586) = **93.86 days**\n\nAccounts payable and inventory are from the balance sheet (p. 40); cost of sales is from the statement of operations (p. 38).",
+ "verdict": "correct",
+ "reason": "The answer's final figure of 93.86 matches the gold answer, and its calculation checks out.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002364,
+ "provider": "aipipe"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01328",
+ "question": "What is the quantity of restructuring costs directly outlined in Pepsico's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+ "gold": "Pepsico's restructuring costs in FY2022 amounted to $411 million .",
+ "doc": "PEPSICO_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 10.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3913,
+  "cached_tokens": 0,
+  "output_tokens": 328,
+  "cost": 0.00055629,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 78]\nn the initiatives described above. As a result, we expect to incur pre-tax charges of approximately $3.65 billion, including cash expenditures of approximately $2.9 billion. These pre-tax charges are expected to consist of approximately 55% of severance and other employee-related costs, 10% for asset impairments (all non-cash) resulting from plant closures and related actions and 35% for other costs associated with the implementation of our initiatives. The total plan pre-tax charges are expected to be incurred by division approximately as follows: FLNA QFNA PBNA LatAm Europe AMESA APAC Corporate Expected pre-tax charges 15 % 1 % 25 % 10 % 25 % 5 % 4 % 15 % A summary of our 2019 Productivity Plan charges is as follows: 2022 2021 2020 Cost of sales $ 33 $ 29 $ 30 Selling, general and administrative expenses 347 208 239 Other pension and retiree medical benefits expense 31 10 20 Total restructuring and impairment charges $ 411 $ 247 $ 289 After-tax amount $ 334 $ 206 $ 231 Impact on net income attributable to PepsiCo per common share $ (0.24) $ (0.15) $ (0.17) 76\n\n[Page 49]\nTable of Contents 2021 Cost of sales Gross profit Selling, general and administrative expenses Operating profit Other pension and retiree medical benefits income Net interest expense and other Provision for income taxes Net income attributable to noncontrolling interests Net income attributable to PepsiCo Reported, GAAP Measure $ 37,075 $ 42,399 $ 31,237 $ 11,162 $ 522 $ (1,863) $ 2,142 $ 61 $ 7,618 Items Affecting Comparability Mark-to-market net impact (39) 39 20 19 \u2014 \u2014 5 \u2014 14 Restructuring and impairment charges (29) 29 (208) 237 10 \u2014 41 1 205 Acquisition and divestiture-related charges (1) 1 5 (4) \u2014 \u2014 23 \u2014 (27) Pension and retiree medical-related impact \u2014 \u2014 \u2014 \u2014 12 \u2014 1 \u2014 11 Charge related to cash tender offers \u2014 \u2014 \u2014 \u2014 \u2014 842 165 \u2014 677 Tax expense related to the TCJ Act \u2014 \u2014 \u2014 \u2014 \u2014 \u2014 (190) \u2014 190 Core, Non-GAAP Measure $ 37,006 $ 42,468 $ 31,054 $ 11,414 $ 544 $ (1,021) $ 2,187 $ 62 $ 8,688 (a) Provision for income taxes is the expected tax charge/benefit on the underlying item based on the tax laws and income tax rates applicable to the underlying item in its corresponding tax jurisdiction. 2022 2021 Change Net income attributable to PepsiCo per common share \u2013 diluted, GAAP measure $ 6.42 $ 5.49 17 % Mark-to-market net impact 0.03 0.01 Restructuring and impairment charges 0.24 0.15 Acquisition and divestiture-related charges 0.05 (0.02) Gain associated with the Juice Transaction (2.08) \u2014 Impairment and other charges 2.12 \u2014 Pension and retiree medical-related impact 0.17 0.01 Charge related to cash tender offers \u2014 0.49 Tax benefit related to the IRS audit (0.23) \u2014 Tax expense related to the TCJ Act 0.06 0.14 Core net income attributable to PepsiCo per common share \u2013 diluted, non-GAAP measure $ 6.79 $ 6.26 9 % Impact of foreign exchange translation 2 Growth in core net income attributable to PepsiCo per common share \u2013 diluted, on a constant currency basis, non-GAAP measure 11 % (a) Does not sum due to rounding. Mark-to-Market Net Impact We centrally manage commodity de\n\n[Page 62]\nTable of Contents Consolidated Statement of Income PepsiCo, Inc. and Subsidiaries Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020 (in millions except per share amounts) 2022 2021 2020 Net Revenue $ 86,392 $ 79,474 $ 70,372 Cost of sales 40,576 37,075 31,797 Gross profit 45,816 42,399 38,575 Selling, general and administrative expenses 34,459 31,237 28,453 Gain associated with the Juice Transaction (see Note 13) (3,321) \u2014 \u2014 Impairment of intangible assets (see Notes 1 and 4) 3,166 \u2014 42 Operating Profit 11,512 11,162 10,080 Other pension and retiree medical benefits income 132 522 117 Net interest expense and other (939) (1,863) (1,128) Income before income taxes 10,705 9,821 9,069 Provision for income taxes 1,727 2,142 1,894 Net income 8,978 7,679 7,175 Less: Net income attributable to noncontrollin\n\u2026 [11,064 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "0. The FY2022 consolidated income statement does not list restructuring costs as a separate line item (p. 62). The $411 million figure is disclosed separately in the restructuring note (p. 78).",
+    "role": "assistant",
+    "reasoning": "**Interpreting restructuring costs**\n\nI need to provide an answer focused on the quantity of restructuring costs as outlined in the income statements for FY2022. If they're not explicitly mentioned, I should state it as 0. The income statement seems to consolidate line items like cost of sales and SG&A, and while there's a restructuring charges table showing $411 million, it isn't detailed separately on the income statement. I\u2019ll clearly state that the answer is \"0,\" citing page 62 to clarify that restructuring costs aren't listed separately.**Clarifying restructuring costs**\n\nIt seems like the user wants to know the quantity of restructuring costs explicitly listed in PepsiCo's income statements for FY2022. If those costs aren't clearly outlined, I should state it as 0. So, my answer will be \u201c0\u201d with a brief justification referencing the relevant pages. I'll clarify that on page 62, the FY2022 consolidated income statement doesn't list restructuring costs as a separate line item, while the $411 million is disclosed in a note on page 78.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Interpreting restructuring costs**\n\nI need to provide an answer focused on the quantity of restructuring costs as outlined in the income statements for FY2022. If they're not explicitly mentioned, I should state it as 0. The income statement seems to consolidate line items like cost of sales and SG&A, and while there's a restructuring charges table showing $411 million, it isn't detailed separately on the income statement. I\u2019ll clearly state that the answer is \"0,\" citing page 62 to clarify that restructuring costs aren't listed separately.**Clarifying restructuring costs**\n\nIt seems like the user wants to know the quantity of restructuring costs explicitly listed in PepsiCo's income statements for FY2022. If those costs aren't clearly outlined, I should state it as 0. So, my answer will be \u201c0\u201d with a brief justification referencing the relevant pages. I'll clarify that on page 62, the FY2022 consolidated income statement doesn't list restructuring costs as a separate line item, while the $411 million is disclosed in a note on page 78.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhV7VGeA3ixdlJnvD0Qf-aCz7zdM9j8ZkN3-hb0QysdPUc2yICf5GcibQop-MDrNwMwa99L6nAgeWcH9OPYnmDYnBC0CZbn2uY3MuMSoP9TBn-gDOQ3U8wbUD11SsebgvOMsyT8VKUCcVth1K9Z47-evx7oFg11Xih47_MvM_kXCcrLQXMDKAjdvhwZVGgnEcYGqgWGJhq6yzxjzujKeVHF_sSqJq8ONNMi0mY-11E2NvBfNhRh8ZnoDslz6p_5XMJeJOX-Z4saLDxw7hp66tJCS8dnugjFJYBdVEVjIhCis-heyE543f9JMKKf5fCxh3NAuJ6zqpiJV4qYzhvvVdK7lPKPLFSwLDfGMnnoh99npOp7-QZIt93NHlvHPj6HCR9PoWguWS2M-uzce3m5y33CqKtr1FJUSzBiDCFQzO9TWlMK_crN6ZiWZvAzNL-kz93GqtbT_LVEEwEVQWBj7TqkpsQr8_grEzrw8dLc0TPFlZNBJMjmFqbBa42h57qRtdPgZoXhYGRu5hmGn-zbqFN2MFrIcZPAGZcNfcNLVBJ3ZVEhVYnCpCT8Edub3dwwWvDHBPpIDEl7N7e9bXz12usEeZErPqO7Lcm7Fgc_Nt7ceVdLUT1x3wAsJjzfGa97wSrLcEz_vyimC-7QHmJuRYlUnDkzzsu4DIEdZtXqLGGLCFBEoH5LJs9D0tA7-VwVhJKmkNUIWteUIa9yB0cZRqUCmbGzUmKRq_db9nUk1MpGlc4DabTw-Rt4JEVK9oHoH60DIO7xhAtIROvzoc0oMwmh-OGCR4eSPcmPiGrPiaeVaptN9CVM4yi6V0hf4yD4Nf3Fjnod0rLwGSOYl-j8QBKTxffADgD2ityNjYwsFm0sLTtt3gD4AXx1Lwlo1UHmGW2bWAUNsT08MfZLaXUgiNJAEocPyG1jAF8-Z3TgO-R9rdVLtUmrkZ4rm2-uM9zV2qBjpvjvNhtufP4J3lwXwLa2GDSn2guQxFQA43hglp1UQqh45IBQG7vlfa1p1F400ssfehq2KoQ30cDeL8jhqhxx2PP_mNXEPiKlYDtCWKMwtAnZ1vw4jGYPMV0NTZPxBFyWtbJ76JwIAix-BXZrzn_eGSk6FdurRKVhGg-6rQfIuMEJWbJkSDZDg449B2gyV1nHgosFnHfztvHAO7DqobtPeW4PSVAxidgEPoyiVqGaUMAULBFYF8Y7CKlCt3oERhbrWNx_RgxvtpzaivTp1KhR0OQt2tx5BWbStKH2MO1ipAx1vnNklUayGvc-FinNNUscRiXwXEK3jt4uyBETFTTY90NduPKIUiPOtboNqyEH_ZMBt-j-iVcSfqWvlqwomsKL_Fjl9Mev3K55jBHNiE0qvbaCHzTjZ6KBXGbJkWAw4bwmCd2Kq4ybT6iuvG3woc5mJk1XzaAH5oxQKTi4EBOW1-mMkK4oPI2YqUfL8O9Z4h8-5PqAQxPoRHb0A4gIfrGoqbdSvNrzSPeudztTDZt6-ayQMzHt0E1vyMcPjQ6Nr6-Oy7-F-boBQlfoiCSr0fpPsUVlY2RAearhR0A4vVqTQ6JrJywyT5Oa-0ruSuvkSPtWSOvGRM_AgwPxdgzqKbiYo9QUAt7VcjtTqKYblHPXAj_v31vBd6D7jtYM6jRc6Md54shRRvMKU3t12qM5k8DFHvHRoDkUi6ekUZwWsSnupPOOTPJ6X66vZAirLU3zulz071Y1VcHu5QOXUlWiEf2hnfs6mQQdBdBqdwE28m_eBnqJTJ8SFkUdKgaqu5o8J57fUykR5qjtEnDJ9jq5VaSatBKBJapbeb6JYTmfsJ4cmOKeGuPdGGjxJ-GnbD7VeuiWkLWjrsp98s-8tZ0isv2C-2RoXRhjbv2XfJxT5-Ng27TWnG6h8AuLTkzfL1eamhZX2tDNG8FlhzdzkJTj9t76_owHqNXY7Ork3KoZ8S03jdi9JL2MgdNau7iI4uBsgi5YAWRPnFmBEUY4rLeHWlUSr9aV4SeD9gFZAAOm6zn-Axb5Jl5uMg40CGDcthGDeBMNgSqIuhZG93Sb0Fqr1rHsP9QaKGHdy8DSHHW1haUP5m6Y8UsI_E6AGb6VvTTrmTqXI4jPz62MefWmEQ4Qvhrcd-OMVhd8ju4O5iT-ZWubT3J2BxPTRjzkRKA4lIKGWGXKGbwCdnossoyBS6JU5MKtrX53VKSXcnThVpJsH2ih-Tn1tA6FCDuj522AfHCXiwmtvw5zPJ-DrRlGHAdi3vhtT_53iLlrgHv5AudyvUmQNmtBp28Ur60yP4QeabFAEBgxcKwn7Pjy3PUgxr9fHDAN580uCenM8TqDNowYAsjkTpgW5kGh7I0kvNM1owV7ingYZ4_Wi7B1wfzzwVp-GLyR2YIIDFNdtsaMGH8jLlplv8dMO1HtGt0eTRj_5th38w-G2x1zSKt7au1B47stEY7W7pyUo-mvIZVUGGqtAWg5cZ8aTw13IPgU5Gpc9QMnVjWNLoBpkH1Ayj2Rc27ACXqkLvtnsMi8K8SBFrqgXLZFkLTIA3aJ3XNivOFy4dpos_FlekoxQPNUrf7tlb1YbC9UF3X_dpGugZiIMLmSoBxWd8RyiFECf1b90PZ2hkqbu6tiOMDlId9yv5fPjMZEHW0ZYJiHBtDHSHiNy-o3xz6zhIDz-vQC9rRSYQm1_1dMl623ACi78usMdhJxzaaAnYBVSE57vnS-E5la7vgLdi6EH0FTW3mnDsEJkLVBeGknnjsoxcfxZylFtKo26vqjIBAy6JS761nu1NjKmYGAFIQvsZKZwz8Yh2xSyqLuImZi4EfSa8G0zIcW2q8qjbJ23IESKQENFchQ4fPnU54sie7brSLUIMe4NKvrlKuZfVactzqZ0LufzBW8kiNEalVulYrDHuSDxQCgKXB76_NakkIq-I5GGe-OKBJOZvAaRAQVkmp1Qnwj8HP9vQEZtkQL1cQI2mAAQ8KmBb-xpoRAap-oK6TvR9nD9UTK6wF503gTG6DjxSdgmBpG12rjGnNLHuQVSbQkaQ4Qo1dQ_tZcB-tjnnp9aOC4g3oBRaS_PTXgCFPUe3gudEn4-ccCSE4cqQwQjMGvg8QltW6tFmK_o0S_Llopv08AzA6u0_jM4-PH6BNzEOXo9pednIVZt0dbMJDEb2fwG7N4Wxww_69tXN0Inlmp84mj1N-8Z1uFa8FnMtPxmyY3BQzkavurxQqWFLK16TpZokR6CIwe3ZHRUAJ_l0llQ2ncTrj4muDBcYA7rsc_i5A_zf3YuVXNFhpjw9Tlv.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0d48b863ef440750016ac21577100887d1a6bc23b69807d526",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3880,
+   "output_tokens": 328,
+   "reasoning_tokens": 279,
+   "seconds": 8.91
+  }
+ ],
+ "answer": "0. The FY2022 consolidated income statement does not list restructuring costs as a separate line item (p. 62). The $411 million figure is disclosed separately in the restructuring note (p. 78).",
+ "retrieved": [
+  {
+   "page": 78,
+   "score": 0.6487
+  },
+  {
+   "page": 49,
+   "score": 0.6072
+  },
+  {
+   "page": 62,
+   "score": 0.606
+  },
+  {
+   "page": 109,
+   "score": 0.5864
+  },
+  {
+   "page": 63,
+   "score": 0.5789
+  },
+  {
+   "page": 46,
+   "score": 0.5773
+  },
+  {
+   "page": 79,
+   "score": 0.574
+  },
+  {
+   "page": 72,
+   "score": 0.5719
+  },
+  {
+   "page": 49,
+   "score": 0.5713
+  },
+  {
+   "page": 107,
+   "score": 0.5704
+  }
+ ],
+ "verdict": "incorrect",
+ "reason": "The answer commits to 0, but the gold answer is $411 million; it mentions $411M only as a note disclosure, not as its final answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001468,
+ "provider": "llmfoundry"
+}

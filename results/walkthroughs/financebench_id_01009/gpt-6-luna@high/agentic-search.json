@@ -1,0 +1,290 @@
+{
+ "id": "financebench_id_01009",
+ "question": "What are the geographies that Pepsico primarily operates in as of FY2022?",
+ "gold": "As of FY2022, Pepsico primarily operates in the following geographies: North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific, Australia, New Zealand and China.",
+ "doc": "PEPSICO_2022_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 9.2,
+ "usage": {
+  "calls": 4,
+  "input_tokens": 7165,
+  "cached_tokens": 3111,
+  "output_tokens": 258,
+  "cost": 0.0005655100000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are the geographies that Pepsico primarily operates in as of FY2022?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_t0VubV9seOsHr52EbaRFMG97",
+      "function": {
+       "arguments": "{\"pattern\":\"geograph|primarily operates|operations in|United States|international markets|North America|FY2022\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 216,
+   "output_tokens": 38,
+   "reasoning_tokens": 0,
+   "seconds": 1.8
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are the geographies that Pepsico primarily operates in as of FY2022?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_t0VubV9seOsHr52EbaRFMG97",
+       "function": {
+        "arguments": "{\"pattern\":\"geograph|primarily operates|operations in|United States|international markets|North America|FY2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_t0VubV9seOsHr52EbaRFMG97",
+     "content": "p1: UNITED STATES SECURITIES AND EXCHANGE COMMISSION\np4: 1) Frito-Lay North America (FLNA), which includes our branded convenient food businesses in the United States and\np4: 2) Quaker Foods North America (QFNA), which includes our branded convenient food businesses, such as cereal, rice, pasta\np4: and other branded food, in the United States and Canada;\np4: 3) PepsiCo Beverages North America (PBNA), which includes our beverage businesses in the United States and Canada;\np5: Frito-Lay North America\np5: Quaker Foods North America\np5: PepsiCo Beverages North America\np5: noncontrolling interest in a newly formed joint venture, Tropicana Brands Group (TBG), operating across North America and\np5: Europe (Juice Transaction). In the United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for\np6: noncontrolling interest in TBG, operating across North America and Europe. See Note 13 to our consolidated financial\np7: purchases from multiple geographies and suppliers. When prices increase, we may or may not pass on such increases to our\np8: United States), Domik v Derevne, Doritos, Driftwell, Duyvis, Elma Chips, Emperador, Evolve, Frito-Lay, Fritos, Fruktovy Sad,\np8: Carlos, Sandora, Santitas, Sasko, 7UP (outside the United States), 7UP Free (outside the United States), Sierra Mist, Sierra Mist\np8: brands to PAI Partners, while retaining a 39% noncontrolling interest in TBG, operating across North America and Europe. In the\np8: United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for small-format and foodservice customers\np9: certain beverage products bearing our trademarks within a specific geographic area. These arrangements provide us with the right\np9: our trademarks for specified geographic areas.\np9: international beverage and convenient food companies that, like us, operate in multiple geographies, as well as regional, local and\np9: many countries in which our products are sold, including the United States, The Coca-Cola Company is our primary beverage\np9: Many of our convenient food products hold significant leadership positions in the convenient food industry in the United States\np9: United States.\np10: United Kingdom and the United States, and leverage consumer insights, food science and engineering to meet our strategy to\np10: administered by federal, state and local governmental agencies in the United States, as well as to laws and regulations\np11: We are subject to numerous similar and other laws and regulations outside the United States, including but not limited to laws\np12: We are also subject to national and local environmental laws in the United States and in foreign countries in which we do\np12: facilities. Our operations outside the United States are subject to similar laws and regulations. In addition, continuing concern\np12: increased legal and regulatory requirements (in or outside of the United States) to reduce emissions to mitigate the potential\np12: within the United States. We are party to numerous collective bargaining agreements and believe that relations with our\np14: our operations in Ukraine remain suspended. The conflict has resulted and could continue to result in volatile commodity\np15: geographies, as well as regional, local and private label and economy brand manufacturers and other competitors, including\np15: focused on locally sourced products. In many countries in which our products are sold, including the United States, The Coca\ufffeCola Company is our primary beverage competitor. Our products compete prima\np16: industry is also impacted by increased consolidation of ownership and purchasing power, particularly in North America, Europe\np18: effectively manage our operations in certain of these markets and can result in the deconsolidation of such businesses; the lack of\np22: the United States, where the functional currency is other than the U.S. dollar, are translated into U.S. dollars. Given our global\np23: country or, within the Unite\n\u2026 [558 more characters]"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_fi41xfHQ0RHLhlGwRV4gh2jH",
+      "function": {
+       "arguments": "{\"pattern\":\"operates primarily|primarily operate|countries around the world|more than \\\\d+ countries|segments are|Latin America|Europe, Middle East and Africa|Asia Pacific\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 1271,
+   "output_tokens": 51,
+   "reasoning_tokens": 0,
+   "seconds": 1.86
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are the geographies that Pepsico primarily operates in as of FY2022?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_t0VubV9seOsHr52EbaRFMG97",
+       "function": {
+        "arguments": "{\"pattern\":\"geograph|primarily operates|operations in|United States|international markets|North America|FY2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_t0VubV9seOsHr52EbaRFMG97",
+     "content": "p1: UNITED STATES SECURITIES AND EXCHANGE COMMISSION\np4: 1) Frito-Lay North America (FLNA), which includes our branded convenient food businesses in the United States and\np4: 2) Quaker Foods North America (QFNA), which includes our branded convenient food businesses, such as cereal, rice, pasta\np4: and other branded food, in the United States and Canada;\np4: 3) PepsiCo Beverages North America (PBNA), which includes our beverage businesses in the United States and Canada;\np5: Frito-Lay North America\np5: Quaker Foods North America\np5: PepsiCo Beverages North America\np5: noncontrolling interest in a newly formed joint venture, Tropicana Brands Group (TBG), operating across North America and\np5: Europe (Juice Transaction). In the United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for\np6: noncontrolling interest in TBG, operating across North America and Europe. See Note 13 to our consolidated financial\np7: purchases from multiple geographies and suppliers. When prices increase, we may or may not pass on such increases to our\np8: United States), Domik v Derevne, Doritos, Driftwell, Duyvis, Elma Chips, Emperador, Evolve, Frito-Lay, Fritos, Fruktovy Sad,\np8: Carlos, Sandora, Santitas, Sasko, 7UP (outside the United States), 7UP Free (outside the United States), Sierra Mist, Sierra Mist\np8: brands to PAI Partners, while retaining a 39% noncontrolling interest in TBG, operating across North America and Europe. In the\np8: United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for small-format and foodservice customers\np9: certain beverage products bearing our trademarks within a specific geographic area. These arrangements provide us with the right\np9: our trademarks for specified geographic areas.\np9: international beverage and convenient food companies that, like us, operate in multiple geographies, as well as regional, local and\np9: many countries in which our products are sold, including the United States, The Coca-Cola Company is our primary beverage\np9: Many of our convenient food products hold significant leadership positions in the convenient food industry in the United States\np9: United States.\np10: United Kingdom and the United States, and leverage consumer insights, food science and engineering to meet our strategy to\np10: administered by federal, state and local governmental agencies in the United States, as well as to laws and regulations\np11: We are subject to numerous similar and other laws and regulations outside the United States, including but not limited to laws\np12: We are also subject to national and local environmental laws in the United States and in foreign countries in which we do\np12: facilities. Our operations outside the United States are subject to similar laws and regulations. In addition, continuing concern\np12: increased legal and regulatory requirements (in or outside of the United States) to reduce emissions to mitigate the potential\np12: within the United States. We are party to numerous collective bargaining agreements and believe that relations with our\np14: our operations in Ukraine remain suspended. The conflict has resulted and could continue to result in volatile commodity\np15: geographies, as well as regional, local and private label and economy brand manufacturers and other competitors, including\np15: focused on locally sourced products. In many countries in which our products are sold, including the United States, The Coca\ufffeCola Company is our primary beverage competitor. Our products compete prima\np16: industry is also impacted by increased consolidation of ownership and purchasing power, particularly in North America, Europe\np18: effectively manage our operations in certain of these markets and can result in the deconsolidation of such businesses; the lack of\np22: the United States, where the functional currency is other than the U.S. dollar, are translated into U.S. dollars. Given our global\np23: country or, within the Unite\n\u2026 [558 more characters]"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fi41xfHQ0RHLhlGwRV4gh2jH",
+       "function": {
+        "arguments": "{\"pattern\":\"operates primarily|primarily operate|countries around the world|more than \\\\d+ countries|segments are|Latin America|Europe, Middle East and Africa|Asia Pacific\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fi41xfHQ0RHLhlGwRV4gh2jH",
+     "content": "p4: in more than 200 countries and territories.\np4: 4) Latin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America;\np5: 7) Asia Pacific, Australia and New Zealand and China Region (APAC), which includes all of our beverage and convenient\np5: food businesses in Asia Pacific, Australia and New Zealand, and China region.\np5: Latin America\np6: Asia Pacific, Australia and New Zealand and China Region\np16: and Latin America, resulting in large retailers or buying groups with increased purchasing power, impacting our ability to\np27: Paula Santilli 58 Chief Executive Officer, Latin America\np27: Global Groups from 2017 to 2018, as Senior Vice President, Deputy General Counsel & General Counsel, Latin America and\np27: Frito-Lay North America from 2016 to 2017, as Senior Vice President, General Counsel, Latin America and Frito-Lay North\np27: Before joining PepsiCo in 2011, Mr. Flavell was general counsel for Danone S.A.\u2019s Asia Pacific and Middle East business. Prior\np28: from 2019 to 2021, as President and Chief Executive Officer of PepsiCo\u2019s Asia Pacific, Australia and New Zealand and China\np28: Paula Santilli was appointed Chief Executive Officer, Latin America, effective 2019. Previously, she served in various\np28: roles, including leadership positions in Beverages in Mexico, as well as in Foods and Snacks in the Latin America Southern Cone\np32: foods, serving customers and consumers in more than 200 countries and territories.\np33: single-use packaging, including the iconic SodaStream, already sold in more than 45 countries, and the new SodaStream\np35: We sell a wide variety of beverages and convenient foods in more than 200 countries and territories and the profile of the\np69: 4) Latin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America;\np69: 7) Asia Pacific, Australia, and New Zealand and China region (APAC), which includes all of our beverage and convenient\np69: food businesses in Asia Pacific, Australia and New Zealand, and China region.\np69: wide variety of beverages and convenient foods, serving customers and consumers in more than 200 countries and territories with\np486: Latin American Holdings Ltd. Cayman Islands"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_NGXQucJclO2Z10oRM6nXPElw",
+      "function": {
+       "arguments": "{\"first\":3,\"last\":5}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 1846,
+   "output_tokens": 22,
+   "reasoning_tokens": 0,
+   "seconds": 1.69
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are the geographies that Pepsico primarily operates in as of FY2022?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_t0VubV9seOsHr52EbaRFMG97",
+       "function": {
+        "arguments": "{\"pattern\":\"geograph|primarily operates|operations in|United States|international markets|North America|FY2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_t0VubV9seOsHr52EbaRFMG97",
+     "content": "p1: UNITED STATES SECURITIES AND EXCHANGE COMMISSION\np4: 1) Frito-Lay North America (FLNA), which includes our branded convenient food businesses in the United States and\np4: 2) Quaker Foods North America (QFNA), which includes our branded convenient food businesses, such as cereal, rice, pasta\np4: and other branded food, in the United States and Canada;\np4: 3) PepsiCo Beverages North America (PBNA), which includes our beverage businesses in the United States and Canada;\np5: Frito-Lay North America\np5: Quaker Foods North America\np5: PepsiCo Beverages North America\np5: noncontrolling interest in a newly formed joint venture, Tropicana Brands Group (TBG), operating across North America and\np5: Europe (Juice Transaction). In the United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for\np6: noncontrolling interest in TBG, operating across North America and Europe. See Note 13 to our consolidated financial\np7: purchases from multiple geographies and suppliers. When prices increase, we may or may not pass on such increases to our\np8: United States), Domik v Derevne, Doritos, Driftwell, Duyvis, Elma Chips, Emperador, Evolve, Frito-Lay, Fritos, Fruktovy Sad,\np8: Carlos, Sandora, Santitas, Sasko, 7UP (outside the United States), 7UP Free (outside the United States), Sierra Mist, Sierra Mist\np8: brands to PAI Partners, while retaining a 39% noncontrolling interest in TBG, operating across North America and Europe. In the\np8: United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for small-format and foodservice customers\np9: certain beverage products bearing our trademarks within a specific geographic area. These arrangements provide us with the right\np9: our trademarks for specified geographic areas.\np9: international beverage and convenient food companies that, like us, operate in multiple geographies, as well as regional, local and\np9: many countries in which our products are sold, including the United States, The Coca-Cola Company is our primary beverage\np9: Many of our convenient food products hold significant leadership positions in the convenient food industry in the United States\np9: United States.\np10: United Kingdom and the United States, and leverage consumer insights, food science and engineering to meet our strategy to\np10: administered by federal, state and local governmental agencies in the United States, as well as to laws and regulations\np11: We are subject to numerous similar and other laws and regulations outside the United States, including but not limited to laws\np12: We are also subject to national and local environmental laws in the United States and in foreign countries in which we do\np12: facilities. Our operations outside the United States are subject to similar laws and regulations. In addition, continuing concern\np12: increased legal and regulatory requirements (in or outside of the United States) to reduce emissions to mitigate the potential\np12: within the United States. We are party to numerous collective bargaining agreements and believe that relations with our\np14: our operations in Ukraine remain suspended. The conflict has resulted and could continue to result in volatile commodity\np15: geographies, as well as regional, local and private label and economy brand manufacturers and other competitors, including\np15: focused on locally sourced products. In many countries in which our products are sold, including the United States, The Coca\ufffeCola Company is our primary beverage competitor. Our products compete prima\np16: industry is also impacted by increased consolidation of ownership and purchasing power, particularly in North America, Europe\np18: effectively manage our operations in certain of these markets and can result in the deconsolidation of such businesses; the lack of\np22: the United States, where the functional currency is other than the U.S. dollar, are translated into U.S. dollars. Given our global\np23: country or, within the Unite\n\u2026 [558 more characters]"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fi41xfHQ0RHLhlGwRV4gh2jH",
+       "function": {
+        "arguments": "{\"pattern\":\"operates primarily|primarily operate|countries around the world|more than \\\\d+ countries|segments are|Latin America|Europe, Middle East and Africa|Asia Pacific\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fi41xfHQ0RHLhlGwRV4gh2jH",
+     "content": "p4: in more than 200 countries and territories.\np4: 4) Latin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America;\np5: 7) Asia Pacific, Australia and New Zealand and China Region (APAC), which includes all of our beverage and convenient\np5: food businesses in Asia Pacific, Australia and New Zealand, and China region.\np5: Latin America\np6: Asia Pacific, Australia and New Zealand and China Region\np16: and Latin America, resulting in large retailers or buying groups with increased purchasing power, impacting our ability to\np27: Paula Santilli 58 Chief Executive Officer, Latin America\np27: Global Groups from 2017 to 2018, as Senior Vice President, Deputy General Counsel & General Counsel, Latin America and\np27: Frito-Lay North America from 2016 to 2017, as Senior Vice President, General Counsel, Latin America and Frito-Lay North\np27: Before joining PepsiCo in 2011, Mr. Flavell was general counsel for Danone S.A.\u2019s Asia Pacific and Middle East business. Prior\np28: from 2019 to 2021, as President and Chief Executive Officer of PepsiCo\u2019s Asia Pacific, Australia and New Zealand and China\np28: Paula Santilli was appointed Chief Executive Officer, Latin America, effective 2019. Previously, she served in various\np28: roles, including leadership positions in Beverages in Mexico, as well as in Foods and Snacks in the Latin America Southern Cone\np32: foods, serving customers and consumers in more than 200 countries and territories.\np33: single-use packaging, including the iconic SodaStream, already sold in more than 45 countries, and the new SodaStream\np35: We sell a wide variety of beverages and convenient foods in more than 200 countries and territories and the profile of the\np69: 4) Latin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America;\np69: 7) Asia Pacific, Australia, and New Zealand and China region (APAC), which includes all of our beverage and convenient\np69: food businesses in Asia Pacific, Australia and New Zealand, and China region.\np69: wide variety of beverages and convenient foods, serving customers and consumers in more than 200 countries and territories with\np486: Latin American Holdings Ltd. Cayman Islands"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_NGXQucJclO2Z10oRM6nXPElw",
+       "function": {
+        "arguments": "{\"first\":3,\"last\":5}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_NGXQucJclO2Z10oRM6nXPElw",
+     "content": "[Page 3]\nTable of Contents\r\nPepsiCo, Inc.\r\nForm 10-K Annual Report\r\nFor the Fiscal Year Ended December 31, 2022\r\nTable of Contents\r\nPART I\r\nItem 1. Business 2\r\nItem 1A. Risk Factors 11\r\nItem 1B. Unresolved Staff Comments 23\r\nItem 2. Properties 24\r\nItem 3. Legal Proceedings 24\r\nItem 4. Mine Safety Disclosures 24\r\nPART II\r\nItem 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity\r\nSecurities 28\r\nItem 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations 29\r\nItem 7A. Quantitative and Qualitative Disclosures About Market Risk 116\r\nItem 8. Financial Statements and Supplementary Data 116\r\nItem 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 116\r\nItem 9A. Controls and Procedures 116\r\nItem 9B. Other Information 117\r\nItem 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 117\r\nPART III\r\nItem 10. Directors, Executive Officers and Corporate Governance 117\r\nItem 11. Executive Compensation 117\r\nItem 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 118\r\nItem 13. Certain Relationships and Related Transactions, and Director Independence 118\r\nItem 14. Principal Accounting Fees and Services 118\r\nPART IV\r\nItem 15. Exhibits and Financial Statement Schedules 119\r\nItem 16. Form 10-K Summary 119\r\n1\n\n[Page 4]\nTable of Contents\r\nForward-Looking Statements\r\nThis Annual Report on Form 10-K contains statements reflecting our views about our future performance that constitute\r\n\u201cforward-looking statements\u201d within the meaning of the Private Securities Litigation Reform Act of 1995 (Reform Act).\r\nStatements that constitute forward-looking statements within the meaning of the Reform Act are generally identified through the\r\ninclusion of words such as \u201caim,\u201d \u201canticipate,\u201d \u201cbelieve,\u201d \u201cdrive,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cexpressed confidence,\u201d \u201cforecast,\u201d\r\n\u201cfuture,\u201d \u201cgoal,\u201d \u201cguidance,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cobjective,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cposition,\u201d \u201cpotential,\u201d \u201cproject,\u201d \u201cseek,\u201d\r\n\u201cshould,\u201d \u201cstrategy,\u201d \u201ctarget,\u201d \u201cwill\u201d or similar statements or variations of such words and other similar expressions. All\r\nstatements addressing our future operating performance, and statements addressing events and developments that we expect or\r\nanticipate will occur in the future, are forward-looking statements within the meaning of the Reform Act. These forward-looking\r\nstatements are based on currently available information, operating plans and projections about future events and trends. They\r\ninherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any such\r\nforward-looking statement. These risks and uncertainties include, but are not limited to, those described in \u201cItem 1A. Risk\r\nFactors\u201d and \u201cItem 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations \u2013 Our Business\r\n\u2013 Our Business Risks.\u201d Investors are cautioned not to place undue reliance on any such forward-looking statements, which speak\r\nonly as of the date they are made. We undertake no obligation to update any forward-looking statement, whether as a result of\r\nnew information, future events or otherwise. The discussion of risks in this report is by no means all-inclusive but is designed to\r\nhighlight what we believe are important factors to consider when evaluating our future performance.\r\nPART I\r\nItem 1. Business.\r\nWhen used in this report, the terms \u201cwe,\u201d \u201cus,\u201d \u201cour,\u201d \u201cPepsiCo\u201d and the \u201cCompany\u201d mean PepsiCo, Inc. and its consolidated\r\nsubsidiaries, collectively. Certain terms used in this Annual Report on Form 10-K are defined in the Glossary included in Item 7.\r\nof this report.\r\nCompany Overview\r\nWe were incorporated in Delaware in 1919 and reincorporated in North Carolina in 1986. We are a leading global beverage and\r\nconvenient food company with a complementary portfolio of brands, including Lay\u2019s, Doritos, Cheetos, Gatorade, Pepsi-Col\n\u2026 [5,045 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "As of FY2022, PepsiCo\u2019s operations were organized across **North America (United States and Canada), Latin America, Europe, Africa, the Middle East, South Asia, and Asia Pacific, Australia, New Zealand, and China**. The company said its products reached more than 200 countries and territories. (pp. 4\u20135)",
+    "role": "assistant",
+    "reasoning": "**Clarifying PepsiCo's geographies**\n\nI'm looking into the geographies where PepsiCo primarily operates as of FY2022. I need to segment this into a clear list, while considering that they have seven reportable segments, which I'll find detailed on pages 4-5 of their report. It's important to note that they serve over 200 countries globally, but I need to focus on the specific areas they operate in. I\u2019ll work on making the answer concise.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying PepsiCo's geographies**\n\nI'm looking into the geographies where PepsiCo primarily operates as of FY2022. I need to segment this into a clear list, while considering that they have seven reportable segments, which I'll find detailed on pages 4-5 of their report. It's important to note that they serve over 200 countries globally, but I need to focus on the specific areas they operate in. I\u2019ll work on making the answer concise.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhV3CmxZOO2UNlAtlklZMF8RSCR9Ry6CDbOfppphyxUnbQWWBty9xwTIruImWwlIR_gykHs8aCA4Ul5XDCwbAqrb2WZH705_eeOOudocHT0eG66_iCPa_1ThX-_gxUkII-BtZWMWicvlC9_EmGeimwQE76l0vf6HK1qo9Ta6WRw8XgjPsZW75wSeGseqTe9U2MYVmHrqN9TfGrpLQ-qZA_ZFXqM0oY-0LGNCMnSyeGTeDTSGgQap9FaKBdP7LTsuqC_xkTvSCHDKgCP4ElrLAnQY9aqtzlIHUqF7FZBxJOaYp8Synvgxfpmd_f_OfV8H-_JWRhPAoPvcDKvGFuqDTiAOI39LDLYyzfUPPryOiZGPyHge7C2D3ZJCPTIL3HTjzfGBt2Xc7hu84dOHjqqe6wgdUBtwup-HlQpyuoynnUKZPQZIZF3YGBUbP7V7vMoRQ1QaiQU-GKeEjOPbvRJ_ea0EtsBc8HtXLx2ZD-ZidUopyCEuWWnZQFjTGqZxpUWJlxOJsjU8yVEudpW4u5_UllBTRn3IxvLn-W6yUEEbqrXHQRlPdi59bI3XVpZ7GFqlZ9odekAbCMQCYQIPZgiIHaCeSMUKDmXQOeJltWbsQpZaH_xmOgNQx9I1BoQpCouJmUxfKHbvy5OngVjQlVHnX_9LnjT_yqlNr5oi8Rvbk_ANSGt3BT8YyPrlP0b2Z-TSHPTQrTRz4tqtsO5QQqTJt0ElWj2fxKMCFGB34XVo71TGn24HXksvEWobjAhxJXc5QbuOvhK94ReIqQfi-2ljp6bKTgqVy9vnnqV8xbbzGc84yiFOnDMcdrPuxq8WB35u97Bw0qAdaDMs2K_0q07PjNuusIpBw3-Oy0BbzSOc_dbqvg3xuHRqMSpVqclJRpX4NHwifdCH3-LYNn5gyJA_xLeBjf8O37KxerUsPHMOfkM9taCje3MUfntimiNPoWjBjTJ6XlCgFa05Jx6e-0WZFJpafFi4nmPuUYqgt0sD1hG04kjBGl5gMp-0vKbeuj2evc39wfALimJxN-p7CoQiaTeF-h0atX8PKQGYro0JKXneGnXupLNyWoUP4_97nsc4I2pGyBhgUV1vOzTttgMxrG6Kcm5XsLSRT_fPsEGGpOIcm1H3ouOsq_BUxCTwBD_DSNahHwrtrUFRP4T8ulZVS4etRxC8vFEDHuvukhntLVhzLWhgHgsqwRnLmQwrRfdnkRpphF7Ic7udWDISFuXsWSWmznrqxqY1XWpr_8B9nQRPmhTuFD_rAObhar_tbTzewLTeAoE8SvEp7N5SMkFj4Kc1SR1yB1Scz6UDeglpb3AL7arsohgK7-bntedsKCXMYZObokCLe6sdTog0U2TeiIVFZ-nQYnoYVV_JM57UzStUnG1vgHKUIyEEM4iZhBbkEOE8KdZnk0oP55Tix4OvPHmZ4i6fyiK-3-j_2uQPh9v4vz7NBV7Rfv0ISee7V-egaDLmImRMb_wzj9bZcCEDYwynIZ6TkY35-gUc5iA6125_Vf7JuFEEEEJkDgPp1w6J6cQW3AZAVBiEsAen6LzME-ibBgySnk9reXQAOMRp5w4HQL_2gHs4kMnn20YxelSc2aCo31rqx-JTHNZLltGS1ltUIrm5P1gSPOwJUQ-sWSFUW-QUw64tQbypdO70NC-ZubaOTs5NA2hZZIy3NIl86PuusMhrEDpofbl_hkfXLV_49x29amdxKmeVSCPZx9CLWEkv-m6IfRXmUX41M8H9uMl8iw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0c460941c7657448016ac215753eb087d19c160faac7ef2e42",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3832,
+   "output_tokens": 147,
+   "reasoning_tokens": 70,
+   "seconds": 3.72
+  }
+ ],
+ "answer": "As of FY2022, PepsiCo\u2019s operations were organized across **North America (United States and Canada), Latin America, Europe, Africa, the Middle East, South Asia, and Asia Pacific, Australia, New Zealand, and China**. The company said its products reached more than 200 countries and territories. (pp. 4\u20135)",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "geograph|primarily operates|operations in|United States|international markets|North America|FY2022"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "operates primarily|primarily operate|countries around the world|more than \\d+ countries|segments are|Latin America|Europe, Middle East and Africa|Asia Pacific"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 3,
+    "last": 5
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer lists the same geographies as the gold answer (North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific/Australia/New Zealand/China); the extra detail on US/Canada and 200+ countries is supporting information.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001988,
+ "provider": "llmfoundry"
+}

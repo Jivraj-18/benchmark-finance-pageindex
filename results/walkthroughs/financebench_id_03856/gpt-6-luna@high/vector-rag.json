@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_03856",
+ "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+ "gold": "0.83",
+ "doc": "ADOBE_2017_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.2,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4703,
+  "cached_tokens": 0,
+  "output_tokens": 180,
+  "cost": 0.00056186,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 49]\n provision increase. For fiscal 2016, net cash provided by operating activities of $2.20 billion was primarily comprised of net income plus the net effect of non-cash items. The primary working capital sources of cash were net income coupled with increases in deferred revenue and accrued expenses. The increase in deferred revenue was primarily due to increased subscriptions for our Creative Cloud offerings and increases in Digital Marketing hosted services. The increase in accrued expenses is primarily due to the increase in accruals for compensation costs and employee benefits driven by the increase in headcount. The primary working capital uses of cash were increases in trade receivables, prepaid expenses and other current assets, and a decrease in income taxes payable. Trade receivables increased primarily due to higher revenue levels. Prepaid expenses and other current assets increased\n\n[Page 49]\nalents 8.5 (14.2) (21.2) Net increase (decrease) in cash and cash equivalents $ 1,294.8 $ 134.8 $ (240.8) Our primary source of cash is receipts from revenue. The primary uses of cash are payroll related expenses, general operating expenses including marketing, travel and office rent, and cost of revenue. Other sources of cash are proceeds from participation in the employee stock purchase plan. Other uses of cash include our stock repurchase program, which is described below, business acquisitions and purchases of property and equipment. Cash Flows from Operating Activities For fiscal 2017, net cash provided by operating activities of $2.91 billion was primarily comprised of net income plus the net effect of non-cash items. The primary working capital sources of cash were net income coupled with increases in deferred revenue and accrued expenses. The increase in deferred revenue was primarily due to increased subscriptions for our Creative Cloud offerings and increases in Digital Marketing hosted services. The increase in accrued expenses is primarily due to the increase in accruals for compensation costs and employee benefits driven by headcount growth, and increased accrued media costs associated with our Advertising Cloud offerings, including TubeMogul. The primary working capital uses of cash were increases in trade receivables, payments of trade payables assumed as part of the TubeMogul acquisition, and a decrease in income taxes payable. Trade receivables increased primarily due to revenue linearity, higher revenue levels, and increased media rebill receivables attributable to TubeMogul. Income taxes payable decreased primarily due to taxes paid in excess of the tax provision increase. For fiscal 2016, net cash provided by operating activities of $2.20 billion was primarily comprised of net income plus the net effect of non-cash items. The primary working capital sources of cash were net income coupled with increases in deferred revenue and accrued expenses. T\n\n[Page 50]\nTable of Contents 50 primarily due to advanced tax payments made in the fourth quarter of fiscal 2016. Income taxes payable decreased primarily due to the completion of certain income tax audits in fiscal 2016, offset in part by increases to the tax provision in excess of taxes paid. For fiscal 2015, net cash provided by operating activities of $1.47 billion was primarily comprised of net income plus the net effect of non-cash items. The primary working capital sources of cash were net income coupled with increases in deferred revenue, income taxes payable and trade payables. The increase in deferred revenue was primarily due to increased subscriptions for our team, individual and enterprise Creative Cloud offerings and increases in Digital Marketing hosted services. The increase in income taxes payable was primarily due to higher taxable income levels during fiscal 2015. Trade payables increased primarily due to the timing of payments to web services vendors as certain invoices were received in the\n\u2026 [15,280 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**Adobe\u2019s FY2017 operating cash flow ratio was 0.83.**\n\nCalculation: $2,912,853 thousand cash from operating activities \u00f7 $3,527,457 thousand total current liabilities = **0.83** (pages 61 and 57).",
+    "role": "assistant",
+    "reasoning": "**Calculating financial ratios**\n\nI need to calculate the ratio of CFO to total current liabilities. For that, I have CFO at 2,912,853 thousands and total current liabilities at 3,527,457. The resulting ratio is 0.8255, which I can round to 0.83. I want to ensure I present a short justification for this, including citations for page 61 and 57 for added clarity. I'll show the calculation clearly: 2,912,853 / 3,527,457 equals approximately 0.8255.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial ratios**\n\nI need to calculate the ratio of CFO to total current liabilities. For that, I have CFO at 2,912,853 thousands and total current liabilities at 3,527,457. The resulting ratio is 0.8255, which I can round to 0.83. I want to ensure I present a short justification for this, including citations for page 61 and 57 for added clarity. I'll show the calculation clearly: 2,912,853 / 3,527,457 equals approximately 0.8255.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWoJ04CJAHBqTLWEBpGw4YBAiigh-bexhTRuIfIa1rkksuBoPldjCiotZ8NyoVZRTbSZXpCMPkQOnuzOc_b8KBs-FtZJjPKi5PQl0fft3SfZBV8tr5L8J4IdpT1VUBygPGMTUzRHTzdiJEQKUQrpal_W5-ctIM1w_G2VvGRi3M1VkMdGF82Berx28d1WGb6gUaN9hcV8zwtUJtvDYZalaHsv2aDALWMSv5sc1NaUPbJFyx6BCU64b2-ZMotxCZCi8ltaEKzUkwmIT8NhwXNJufJiRlW-m8JnwouTOROiU86FaZJXwNEUtmrnAnnUb8A5iSOE8QohZzttu0QNtRaqJp_v5ZnfQU07SZK3G23SfN3Nkqu_B1CYiuXZhhjBdyq7kTnoB4aP0sRsOmqH98Z0kMTnnxSrSymQ9M7vwTjLSb_vIbClx1NX31cYKh12lYjWmYvAzbhYTtZSk9WhrZYksiRtv6cD-8EaHBFYwvu3mdMkREx2VAH6sa5GhenJXQ_GhOf9tzkw6E2dCu5S53nfOQnTlyi9MbELNatZMRatZ1QhI03ZJfB_rGfyTP0Ko6OlJn4pN9KiwNKZ9YGCnsOi0sM-YaWUdwYl-uEDCzNBeSeDJumowdXTTftSAI1FsmFxAEWs9zCxwt-gNpFMwc_HIZtvRqMK-7H0uveKPbJg54QZaa7h60jshA-fT2SxkNGGYA2SSe37SwvolmWm6dbqpMkNoObcixKD_0-2SaxVOd3yo1kxR6iEIRk7iwmdQwwUx16SvTOTeaiGEBlE_Tx4kSMVy4PlNU8Pw62-Ra3v3dInRmah7Hg5fuoVnSUy-SIiYr-eUTP2rkZMwgbxPLO9z3SdQrR52hfNVPOOq-u4flpkatpijr_LnUYatUU6ukaGV_mq4nyncEuEfFG4dVe1vdNE0UmFZn-D9y08SPDx3oedcTnr06JIq5BXguFxu6Iwkz0kvnDx4OXdCp8rVcjCZMDX_vmCv63YAe1tR4TdXLsVCWtWndeCh0wxk9g3q2vF9qpuodkeHdcXghSHai-EOC9ydfI08lIWM5oi5jiEIG_ez6cTpltvt4GC0kc4j_DAgmYS7kTyPVy8nPr8U1QFT8DmXsP3gbU26sXLWZPmBu5Nc6xaS786VmLd7QTBxbNHCtPSjsV5jys5PRS0h4TCdqoxpQ1-up4gwW6ERWbE16HPdHsq9y4tkbXh3q4oxfVFbGiyHYiSzxGja828r5aIs2heHqQlQ3Pd1nbZAAn5KITTJYAEGXtrHfd_QDLXJIGkNgDnhp3UeV2pxuZAg0Zoelyf_zKnKtImH8bZBvLP0lKLoMADNxOxHjDe6VNNUkSQksT0euFatpYFToiDErzWrEI6DEqRoiZJhRL7jHg2KBO86qCdtw3mZgBUgnxbmYaXF0x-oQUg_OEHfkcJj37r-BU58VLvjdQKxnWgoNuukwBXwkUUvfv38wuWaYeg9ueOF89eQg_yHyGfkhYhaJImKIFv2cB9HoTu9ZerwDWdoWGZJc4LKpXuZ1ylvub1IWLjlZ0IMqt3JQ4tDzv41gYKGByjk19PFIm9aJyq9VQKtngrbiM0EESNr_0S63RrgSeKo3oUxX4mdYsbabo2jfTXRCqhIATWORr2VcgF6nGZft40vhzbIV-E3X0ZJ-p2GKQNcIZKPmCebIsxWB2Wn3GEPabXtJD8vy8mFwotVM-jN_6puTZqvXBSS9xfxbzMXq9XnZKVEy72Q0KYDZ1lw7smnYkMa7ws8Gx7x1aL3Uof_rFioySqDRAZUUsxwkPtzlLu_Vga9zjBFB-Wvl7I6SGDHhEtAOrOxKzgOe_s0cUwSfg0cJKN5Ut1LGL2b_juxDdh_N4S5EZ3MVik7e1ovqUyoM7Y41gIjuCqb-IcuF7XWDjV24=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_002bc2839fb55e27016ac215a67c7887d1bad1a0bff6124922",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4651,
+   "output_tokens": 180,
+   "reasoning_tokens": 118,
+   "seconds": 4.34
+  }
+ ],
+ "answer": "**Adobe\u2019s FY2017 operating cash flow ratio was 0.83.**\n\nCalculation: $2,912,853 thousand cash from operating activities \u00f7 $3,527,457 thousand total current liabilities = **0.83** (pages 61 and 57).",
+ "retrieved": [
+  {
+   "page": 49,
+   "score": 0.6115
+  },
+  {
+   "page": 49,
+   "score": 0.5797
+  },
+  {
+   "page": 50,
+   "score": 0.5362
+  },
+  {
+   "page": 40,
+   "score": 0.5155
+  },
+  {
+   "page": 61,
+   "score": 0.498
+  },
+  {
+   "page": 57,
+   "score": 0.4827
+  },
+  {
+   "page": 51,
+   "score": 0.4818
+  },
+  {
+   "page": 50,
+   "score": 0.4778
+  },
+  {
+   "page": 40,
+   "score": 0.4722
+  },
+  {
+   "page": 44,
+   "score": 0.4664
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives 0.83, which matches the gold answer, and the supporting figures (2,912,853 / 3,527,457) compute to about 0.826.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001588,
+ "provider": "llmfoundry"
+}

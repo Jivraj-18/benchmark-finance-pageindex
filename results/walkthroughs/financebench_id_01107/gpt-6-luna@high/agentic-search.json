@@ -2101,5 +2101,6 @@
  "verdict": "incorrect",
  "reason": "The answer says yes and covers opioid litigation, but it omits the usual and customary pricing litigation and the PBM litigation, which are key parts of the gold answer, and it never gives the $4.3 billion remediation or $625 million attorneys' fees figures.",
  "judge_model": "claude-sonnet-5.5@medium",
- "judge_cost": 0.002998
+ "judge_cost": 0.002998,
+ "provider": "llmfoundry"
 }

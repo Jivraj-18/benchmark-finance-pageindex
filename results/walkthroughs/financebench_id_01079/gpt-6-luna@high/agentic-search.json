@@ -1,0 +1,1027 @@
+{
+ "id": "financebench_id_01079",
+ "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+ "gold": "Amcor completed these acquisitions during FY2023:\n-100% equity interest of a flexibles manufacturing company in the Czech Republic\n- 100% equity interest in a medical device packaging manufacturing site in\nShanghai, China.\n-acquisition of a New Zealand-based leading manufacturer of state-of-the-art, automated protein\npackaging machines.",
+ "doc": "AMCOR_2023_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 25.2,
+ "usage": {
+  "calls": 6,
+  "input_tokens": 19152,
+  "cached_tokens": 12079,
+  "output_tokens": 1237,
+  "cost": 0.0014465900000000002,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+      "function": {
+       "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+      "function": {
+       "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 220,
+   "output_tokens": 83,
+   "reasoning_tokens": 14,
+   "seconds": 2.56
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+       "function": {
+        "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+       "function": {
+        "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+     "content": "p4: acquisitions;\np6: of dividends, organic growth in the base business, and using free cash flow to pursue targeted acquisitions and/or returning cash to shareholders\np14: Furthermore, in recent years, some of our customers have acquired companies with similar or complementary product lines. This consolidation\np14: customer and the acquired company. While we have generally been successful in managing customer consolidations, increased pricing pressures\np15: product innovation, investments, or acquisitions.\np15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: Additionally, over the past decade, we have pursued growth through acquisitions, and there can be no assurance that we will be able to identify\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: acceptable terms, our potential for growth by way of acquisition may be restricted, which could have a material adverse effect on the\np15: We also may face challenges in integrating acquisitions with our existing operations. These challenges could include difficulties in integrating\np15: acquisitions not being fully realized or taking longer to realize than expected or incurring additional costs to do so. Further, in pursuing growth\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np18: water that is, or was, contaminated by us or a third-party at various facilities we own, used, or operate (including facilities that may be acquired\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: rates, acquisitions, and restructuring, including employee related costs, equipment relocation costs, accelerated depreciation, and the write-down\np35: equity method investments, and certain acquisition-related expenses, including transaction and integration expenses, due diligence expenses,\np35: deferred acquisition payments and economic hedging instruments on commercial paper, and impacts related to the Russia-Ukraine conflict. Note\np35: that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired\np35: entities and all other expenses unless otherwise stated, are reflected in Adjusted EBIT and adjusted net income and the acquired assets contribute\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: past acquisitions.\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np36: (8) Other in fiscal year 2023 includes other restructuring, acquisition, litigation, and integration expenses of $13 million and fair value gains of $16 million\np39: potential funding requirements for debt refinancing, capital expenditures and acquisitions, the cost of capital, sensitivity analyses reflecting\np39: driven by the disposal proceeds collected from the sale of the Russian business in the current period, partially offset by business acquisitions and\np42: outlined above and to finance our capital expenditure and payments for acquisitions that may be completed. We expect to continue to fund our\np42: We decide on discretionary growth capital expenditures and ac\n\u2026 [1,389 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+     "content": "No matches."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_fTIsraY08eI6CI4NycjkDWCD",
+      "function": {
+       "arguments": "{\"pattern\":\"Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+      "function": {
+       "arguments": "{\"pattern\":\"acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVtw0t2-lCCD88S19evfY1TtlqaKxuok0CvP_ILo0_hLe-KlAeScMytk6kmnGXwebVcHigEy-zboa7CR9QiOWdOmgxVX003Snx_i7b7OTgyhyvGcoejRriD5XNQ5qJzUzJOJ6m0aGRsRejhuDljQROYZiflmU3j3p6mOML6NhyzcOBSx7MNcmV01n-AJ-q8DruI0jMwYirbkolAgLjDfLfYmIYDvHHqlF9HGx2DJedaBh3X6Ehy23fWc_0y8VwI3Ki6_BwFp7thzBDQW-pmWswHrRU-tuvWszV_I4GwGs45far5YLGibLA5wpNKRzIm22_dhTqODz1LWAjtGOPpQenMOG5ZFEVPjbvgRoRP6HTeDbPlu2k6PCkNlOC9-nxqtpt04qNQ50zgvu2FSqRy5Vig0sm9lJAOliWm30eE-m7OJwx5zJCSZVVksbz3z6u8CIy1AB0f4iu3Uhcf5JJGu3vdr6sJlJAwpvcXMWb_v7ZYUNsKbasxQAS2YwEUk51oFOGjArtc_NSq4jILOQil9z3ZcDcntIYn1ukKb4_Pvi8gSEGL20kkOyjCsER2NU7E_Pw8dgXWbIyZs2bNoW7y9zpgY7MO5Wva7GjJ-bS0iXSBwspbOvpoKq0La-A4TTjdYZVKCYw1bKViuCt_DfdG-vXn4mOAUNGLhXuoQhqpk5O8v_ez8wEDQg3Sd24qtZR82f7bgwPaRQPgdrkMpC6a0UCSIXD07ifASe75YimhRSO8fmfc6t9HIFWBpwJA4y_BxagHnv4hjM-yJYn28n9mP-dgcaSziaaVb_mE96jKs3AconSCwys7_b_rd1xUJXhHWGWlijqm5ABqh9NGqzQQjlRXA8_II6agFztDUeYFE2aXYAClu3yS9EvJD4ziCCzuWlB3WX2MidUOtibe-ou6mT_yo2t1muHGKdBDa2ZY9zlA5Ohw50rku4ruucRrVRnfnZALrAF7arQoqSp9VN85MNuAbcBuaj9zfv0ZZaTwv3LilGOe1nPmxfBKMUKRkK2XqdekMHqqVc6djT3mLEf6Zg-8OrVhK4U_ysisa3duTP-8BpILcXmraffuQoIOjkn146POtpfa7ATQ3-P3cCi25bCNPsVc8z9c5xy_RabDLAEJW4jSt47k2XH0-rJ32zDtjry1iQK-woN1Z-f6OgO_kQHQu2uGMM4eA1kDIBekHzqCHvFoFH0jWvtG6neQwDSzG8aiBMusQJrx-ObWRL8bPgH7A6JLT1lIjoIB7t-W9YlrJm5APxleRtvHUfRuHhCFWzW0JZ5NNYpx0TJ4kOypeWSeAvBsjpZDvpSWZPBOXljveb6DYJ88TpDJ6CRd1IT9HaPuRW78Ejb09OdziJmsJRSOHSSGBxGcXGRqrwPVAhaxfcT413ZzaRD2We0OBpx6n6l2KoyM75akga3Ii1f_l9OY__S7VULtlFyninhZWcYxOd0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac2156bbb4487d18501ec20486b2c96",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 1382,
+   "output_tokens": 124,
+   "reasoning_tokens": 21,
+   "seconds": 2.7
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+       "function": {
+        "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+       "function": {
+        "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+     "content": "p4: acquisitions;\np6: of dividends, organic growth in the base business, and using free cash flow to pursue targeted acquisitions and/or returning cash to shareholders\np14: Furthermore, in recent years, some of our customers have acquired companies with similar or complementary product lines. This consolidation\np14: customer and the acquired company. While we have generally been successful in managing customer consolidations, increased pricing pressures\np15: product innovation, investments, or acquisitions.\np15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: Additionally, over the past decade, we have pursued growth through acquisitions, and there can be no assurance that we will be able to identify\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: acceptable terms, our potential for growth by way of acquisition may be restricted, which could have a material adverse effect on the\np15: We also may face challenges in integrating acquisitions with our existing operations. These challenges could include difficulties in integrating\np15: acquisitions not being fully realized or taking longer to realize than expected or incurring additional costs to do so. Further, in pursuing growth\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np18: water that is, or was, contaminated by us or a third-party at various facilities we own, used, or operate (including facilities that may be acquired\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: rates, acquisitions, and restructuring, including employee related costs, equipment relocation costs, accelerated depreciation, and the write-down\np35: equity method investments, and certain acquisition-related expenses, including transaction and integration expenses, due diligence expenses,\np35: deferred acquisition payments and economic hedging instruments on commercial paper, and impacts related to the Russia-Ukraine conflict. Note\np35: that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired\np35: entities and all other expenses unless otherwise stated, are reflected in Adjusted EBIT and adjusted net income and the acquired assets contribute\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: past acquisitions.\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np36: (8) Other in fiscal year 2023 includes other restructuring, acquisition, litigation, and integration expenses of $13 million and fair value gains of $16 million\np39: potential funding requirements for debt refinancing, capital expenditures and acquisitions, the cost of capital, sensitivity analyses reflecting\np39: driven by the disposal proceeds collected from the sale of the Russian business in the current period, partially offset by business acquisitions and\np42: outlined above and to finance our capital expenditure and payments for acquisitions that may be completed. We expect to continue to fund our\np42: We decide on discretionary growth capital expenditures and ac\n\u2026 [1,389 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+     "content": "No matches."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fTIsraY08eI6CI4NycjkDWCD",
+       "function": {
+        "arguments": "{\"pattern\":\"Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+       "function": {
+        "arguments": "{\"pattern\":\"acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVtw0t2-lCCD88S19evfY1TtlqaKxuok0CvP_ILo0_hLe-KlAeScMytk6kmnGXwebVcHigEy-zboa7CR9QiOWdOmgxVX003Snx_i7b7OTgyhyvGcoejRriD5XNQ5qJzUzJOJ6m0aGRsRejhuDljQROYZiflmU3j3p6mOML6NhyzcOBSx7MNcmV01n-AJ-q8DruI0jMwYirbkolAgLjDfLfYmIYDvHHqlF9HGx2DJedaBh3X6Ehy23fWc_0y8VwI3Ki6_BwFp7thzBDQW-pmWswHrRU-tuvWszV_I4GwGs45far5YLGibLA5wpNKRzIm22_dhTqODz1LWAjtGOPpQenMOG5ZFEVPjbvgRoRP6HTeDbPlu2k6PCkNlOC9-nxqtpt04qNQ50zgvu2FSqRy5Vig0sm9lJAOliWm30eE-m7OJwx5zJCSZVVksbz3z6u8CIy1AB0f4iu3Uhcf5JJGu3vdr6sJlJAwpvcXMWb_v7ZYUNsKbasxQAS2YwEUk51oFOGjArtc_NSq4jILOQil9z3ZcDcntIYn1ukKb4_Pvi8gSEGL20kkOyjCsER2NU7E_Pw8dgXWbIyZs2bNoW7y9zpgY7MO5Wva7GjJ-bS0iXSBwspbOvpoKq0La-A4TTjdYZVKCYw1bKViuCt_DfdG-vXn4mOAUNGLhXuoQhqpk5O8v_ez8wEDQg3Sd24qtZR82f7bgwPaRQPgdrkMpC6a0UCSIXD07ifASe75YimhRSO8fmfc6t9HIFWBpwJA4y_BxagHnv4hjM-yJYn28n9mP-dgcaSziaaVb_mE96jKs3AconSCwys7_b_rd1xUJXhHWGWlijqm5ABqh9NGqzQQjlRXA8_II6agFztDUeYFE2aXYAClu3yS9EvJD4ziCCzuWlB3WX2MidUOtibe-ou6mT_yo2t1muHGKdBDa2ZY9zlA5Ohw50rku4ruucRrVRnfnZALrAF7arQoqSp9VN85MNuAbcBuaj9zfv0ZZaTwv3LilGOe1nPmxfBKMUKRkK2XqdekMHqqVc6djT3mLEf6Zg-8OrVhK4U_ysisa3duTP-8BpILcXmraffuQoIOjkn146POtpfa7ATQ3-P3cCi25bCNPsVc8z9c5xy_RabDLAEJW4jSt47k2XH0-rJ32zDtjry1iQK-woN1Z-f6OgO_kQHQu2uGMM4eA1kDIBekHzqCHvFoFH0jWvtG6neQwDSzG8aiBMusQJrx-ObWRL8bPgH7A6JLT1lIjoIB7t-W9YlrJm5APxleRtvHUfRuHhCFWzW0JZ5NNYpx0TJ4kOypeWSeAvBsjpZDvpSWZPBOXljveb6DYJ88TpDJ6CRd1IT9HaPuRW78Ejb09OdziJmsJRSOHSSGBxGcXGRqrwPVAhaxfcT413ZzaRD2We0OBpx6n6l2KoyM75akga3Ii1f_l9OY__S7VULtlFyninhZWcYxOd0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156bbb4487d18501ec20486b2c96",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fTIsraY08eI6CI4NycjkDWCD",
+     "content": "p36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np45: conflict regions. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np64: Note 5 - Acquisitions and Divestitures\np66: \"Acquisitions and Divestitures.\"\np72: \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: period acquisitions (refer to Note 5, \"Acquisitions and Divestitures\") and a $10 million liability that is contingent on future royalty income\np92: transferred from accumulated other comprehensive loss to earnings. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 8, \"Equity Method and\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+     "content": "p56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np56: assets acquired and liabilities assumed. During the measurement period, which may be up to one year from the acquisition date, the Company has\np64: net assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+      "function": {
+       "arguments": "{\"first\":64,\"last\":66}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVvw04XHcIP3xWavF1Nfn-WLRFQ78qc9KQuYrKwm4lWkssYdnOkHQ2ELdUkntf0j0vz0elg8zKmjlOri_TwqruG8cgXbD50xKUdsPQeYS-TyfGFhLbc8j4VF4fRj8nYvwLF_O44tMRvjOBtQsqo-BILIUtX7Wh5iMmoNzTRLPCWiGwj48hDfXa8Ai2esy1zRNetPlsOcP7O5v5RT2NGCdsTw5bmLM3hHW2GcNl3t9z__OK1sEbU0kkVKcnwr91hQdiLMKuyRQx9UP1RxJbbFOLNVH2EEi5lmKtzwjaYeSetw807Ae9jsoMwv4bJVpo5quVfPM95TTjFyORnN68V9j09r5BWUFEowBBtyZtLP1M4c28xVSOeT9wWgPXRUENDS-mm8X-MrO4WVAAUnkRP7KfGfD9Yhzre4qhdtEMlA4DAXG_yNQPQWvOx-zePAlpkOZO2GNKXFEgyGhn4EnplVUvsdZDHfBAy_5dTsF2KuER1mBWkdKnLYoFTFlWtYdVVGQXdLeRlgSQLSiATca9D9-SnyDdC-RE_BD28Al-6fC8Lkvc2YC2ozPAxNHFLDdv7_tIrpsEmBVlra3IT6CBYnPBbMT8wQQQ4n_Xf8pg_56zHiGVowElgBf0RCUtYexdUd4qwui3T_Epoj002c2Piot-Z1Kz7JkVku9jI8WKCTvB_mbvquJ0bg1ahgv9KFlJr7GzugDCxgp24TnlJVDw0d7i9aSjCnBavns3hdoHf0DTd_qxtRRWZzQciyCu5pkIMUhsWJgncXh62cTsLq2YAXyXLybi4R9mCseVFZEP2KgneDjFs7O-SqdDL4BbYmoZd3Jjkfr1IdZyKebSQsgk96P14sw21Oc_2-um-ZXqVgAyYWveE9TZN4xHHS-e4fXBN0AkEp9Pp_yLtseSAweNr8wkpvKV8U-I77g8U8zqHAIm3iyAJy4oUIcflsQYRRMYoGfbj_Zj8ZsXMx4aPAD28xVMPyA2fS7nSnfGgrZxjRAiQ5n2rm14t6ZwXilX5pP2AkvHjIJHexm3EhDTy7f62RPnKXBSwYsLzUGiJ0p-LLVwgd0BC2-8CCs0dTkK-yby1cLWcy48Z6oXXwl6Yu3qDviIMWNE3Ww68GRPlFJ0kajg0Zl60cnmkFvjE7_mu7OG1Us6_IQOXtksxeRualmEmUnvUzdceWmjWF_prHedUSmsblCPmZ348Lc1iYvR0DSZmbilfic0Lvk9IpcmZwsBhQHWZPiW3_cZolfr_mLW4XSSlfcUpYixnrZFA3Yq7uuyNgK0gefmm2UNs5omnONmT8NWtscgUdrGEjZN5DGYJRa_WY4NCRoC-szw8LfJ8osdUglY1BNwvfKYMMIiU-DbY_NT2JQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac2156f494887d1b17f214c23200c70",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 2016,
+   "output_tokens": 34,
+   "reasoning_tokens": 10,
+   "seconds": 2.16
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+       "function": {
+        "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+       "function": {
+        "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+     "content": "p4: acquisitions;\np6: of dividends, organic growth in the base business, and using free cash flow to pursue targeted acquisitions and/or returning cash to shareholders\np14: Furthermore, in recent years, some of our customers have acquired companies with similar or complementary product lines. This consolidation\np14: customer and the acquired company. While we have generally been successful in managing customer consolidations, increased pricing pressures\np15: product innovation, investments, or acquisitions.\np15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: Additionally, over the past decade, we have pursued growth through acquisitions, and there can be no assurance that we will be able to identify\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: acceptable terms, our potential for growth by way of acquisition may be restricted, which could have a material adverse effect on the\np15: We also may face challenges in integrating acquisitions with our existing operations. These challenges could include difficulties in integrating\np15: acquisitions not being fully realized or taking longer to realize than expected or incurring additional costs to do so. Further, in pursuing growth\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np18: water that is, or was, contaminated by us or a third-party at various facilities we own, used, or operate (including facilities that may be acquired\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: rates, acquisitions, and restructuring, including employee related costs, equipment relocation costs, accelerated depreciation, and the write-down\np35: equity method investments, and certain acquisition-related expenses, including transaction and integration expenses, due diligence expenses,\np35: deferred acquisition payments and economic hedging instruments on commercial paper, and impacts related to the Russia-Ukraine conflict. Note\np35: that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired\np35: entities and all other expenses unless otherwise stated, are reflected in Adjusted EBIT and adjusted net income and the acquired assets contribute\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: past acquisitions.\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np36: (8) Other in fiscal year 2023 includes other restructuring, acquisition, litigation, and integration expenses of $13 million and fair value gains of $16 million\np39: potential funding requirements for debt refinancing, capital expenditures and acquisitions, the cost of capital, sensitivity analyses reflecting\np39: driven by the disposal proceeds collected from the sale of the Russian business in the current period, partially offset by business acquisitions and\np42: outlined above and to finance our capital expenditure and payments for acquisitions that may be completed. We expect to continue to fund our\np42: We decide on discretionary growth capital expenditures and ac\n\u2026 [1,389 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+     "content": "No matches."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fTIsraY08eI6CI4NycjkDWCD",
+       "function": {
+        "arguments": "{\"pattern\":\"Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+       "function": {
+        "arguments": "{\"pattern\":\"acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVtw0t2-lCCD88S19evfY1TtlqaKxuok0CvP_ILo0_hLe-KlAeScMytk6kmnGXwebVcHigEy-zboa7CR9QiOWdOmgxVX003Snx_i7b7OTgyhyvGcoejRriD5XNQ5qJzUzJOJ6m0aGRsRejhuDljQROYZiflmU3j3p6mOML6NhyzcOBSx7MNcmV01n-AJ-q8DruI0jMwYirbkolAgLjDfLfYmIYDvHHqlF9HGx2DJedaBh3X6Ehy23fWc_0y8VwI3Ki6_BwFp7thzBDQW-pmWswHrRU-tuvWszV_I4GwGs45far5YLGibLA5wpNKRzIm22_dhTqODz1LWAjtGOPpQenMOG5ZFEVPjbvgRoRP6HTeDbPlu2k6PCkNlOC9-nxqtpt04qNQ50zgvu2FSqRy5Vig0sm9lJAOliWm30eE-m7OJwx5zJCSZVVksbz3z6u8CIy1AB0f4iu3Uhcf5JJGu3vdr6sJlJAwpvcXMWb_v7ZYUNsKbasxQAS2YwEUk51oFOGjArtc_NSq4jILOQil9z3ZcDcntIYn1ukKb4_Pvi8gSEGL20kkOyjCsER2NU7E_Pw8dgXWbIyZs2bNoW7y9zpgY7MO5Wva7GjJ-bS0iXSBwspbOvpoKq0La-A4TTjdYZVKCYw1bKViuCt_DfdG-vXn4mOAUNGLhXuoQhqpk5O8v_ez8wEDQg3Sd24qtZR82f7bgwPaRQPgdrkMpC6a0UCSIXD07ifASe75YimhRSO8fmfc6t9HIFWBpwJA4y_BxagHnv4hjM-yJYn28n9mP-dgcaSziaaVb_mE96jKs3AconSCwys7_b_rd1xUJXhHWGWlijqm5ABqh9NGqzQQjlRXA8_II6agFztDUeYFE2aXYAClu3yS9EvJD4ziCCzuWlB3WX2MidUOtibe-ou6mT_yo2t1muHGKdBDa2ZY9zlA5Ohw50rku4ruucRrVRnfnZALrAF7arQoqSp9VN85MNuAbcBuaj9zfv0ZZaTwv3LilGOe1nPmxfBKMUKRkK2XqdekMHqqVc6djT3mLEf6Zg-8OrVhK4U_ysisa3duTP-8BpILcXmraffuQoIOjkn146POtpfa7ATQ3-P3cCi25bCNPsVc8z9c5xy_RabDLAEJW4jSt47k2XH0-rJ32zDtjry1iQK-woN1Z-f6OgO_kQHQu2uGMM4eA1kDIBekHzqCHvFoFH0jWvtG6neQwDSzG8aiBMusQJrx-ObWRL8bPgH7A6JLT1lIjoIB7t-W9YlrJm5APxleRtvHUfRuHhCFWzW0JZ5NNYpx0TJ4kOypeWSeAvBsjpZDvpSWZPBOXljveb6DYJ88TpDJ6CRd1IT9HaPuRW78Ejb09OdziJmsJRSOHSSGBxGcXGRqrwPVAhaxfcT413ZzaRD2We0OBpx6n6l2KoyM75akga3Ii1f_l9OY__S7VULtlFyninhZWcYxOd0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156bbb4487d18501ec20486b2c96",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fTIsraY08eI6CI4NycjkDWCD",
+     "content": "p36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np45: conflict regions. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np64: Note 5 - Acquisitions and Divestitures\np66: \"Acquisitions and Divestitures.\"\np72: \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: period acquisitions (refer to Note 5, \"Acquisitions and Divestitures\") and a $10 million liability that is contingent on future royalty income\np92: transferred from accumulated other comprehensive loss to earnings. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 8, \"Equity Method and\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+     "content": "p56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np56: assets acquired and liabilities assumed. During the measurement period, which may be up to one year from the acquisition date, the Company has\np64: net assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+       "function": {
+        "arguments": "{\"first\":64,\"last\":66}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVvw04XHcIP3xWavF1Nfn-WLRFQ78qc9KQuYrKwm4lWkssYdnOkHQ2ELdUkntf0j0vz0elg8zKmjlOri_TwqruG8cgXbD50xKUdsPQeYS-TyfGFhLbc8j4VF4fRj8nYvwLF_O44tMRvjOBtQsqo-BILIUtX7Wh5iMmoNzTRLPCWiGwj48hDfXa8Ai2esy1zRNetPlsOcP7O5v5RT2NGCdsTw5bmLM3hHW2GcNl3t9z__OK1sEbU0kkVKcnwr91hQdiLMKuyRQx9UP1RxJbbFOLNVH2EEi5lmKtzwjaYeSetw807Ae9jsoMwv4bJVpo5quVfPM95TTjFyORnN68V9j09r5BWUFEowBBtyZtLP1M4c28xVSOeT9wWgPXRUENDS-mm8X-MrO4WVAAUnkRP7KfGfD9Yhzre4qhdtEMlA4DAXG_yNQPQWvOx-zePAlpkOZO2GNKXFEgyGhn4EnplVUvsdZDHfBAy_5dTsF2KuER1mBWkdKnLYoFTFlWtYdVVGQXdLeRlgSQLSiATca9D9-SnyDdC-RE_BD28Al-6fC8Lkvc2YC2ozPAxNHFLDdv7_tIrpsEmBVlra3IT6CBYnPBbMT8wQQQ4n_Xf8pg_56zHiGVowElgBf0RCUtYexdUd4qwui3T_Epoj002c2Piot-Z1Kz7JkVku9jI8WKCTvB_mbvquJ0bg1ahgv9KFlJr7GzugDCxgp24TnlJVDw0d7i9aSjCnBavns3hdoHf0DTd_qxtRRWZzQciyCu5pkIMUhsWJgncXh62cTsLq2YAXyXLybi4R9mCseVFZEP2KgneDjFs7O-SqdDL4BbYmoZd3Jjkfr1IdZyKebSQsgk96P14sw21Oc_2-um-ZXqVgAyYWveE9TZN4xHHS-e4fXBN0AkEp9Pp_yLtseSAweNr8wkpvKV8U-I77g8U8zqHAIm3iyAJy4oUIcflsQYRRMYoGfbj_Zj8ZsXMx4aPAD28xVMPyA2fS7nSnfGgrZxjRAiQ5n2rm14t6ZwXilX5pP2AkvHjIJHexm3EhDTy7f62RPnKXBSwYsLzUGiJ0p-LLVwgd0BC2-8CCs0dTkK-yby1cLWcy48Z6oXXwl6Yu3qDviIMWNE3Ww68GRPlFJ0kajg0Zl60cnmkFvjE7_mu7OG1Us6_IQOXtksxeRualmEmUnvUzdceWmjWF_prHedUSmsblCPmZ348Lc1iYvR0DSZmbilfic0Lvk9IpcmZwsBhQHWZPiW3_cZolfr_mLW4XSSlfcUpYixnrZFA3Yq7uuyNgK0gefmm2UNs5omnONmT8NWtscgUdrGEjZN5DGYJRa_WY4NCRoC-szw8LfJ8osdUglY1BNwvfKYMMIiU-DbY_NT2JQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156f494887d1b17f214c23200c70",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+     "content": "[Page 64]\nNote 5 - Acquisitions and Divestitures\r\nYear ended June 30, 2023\r\nAcquisitions\r\nOn August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\r\nflexible packaging manufacturing plant. The purchase consideration of $59 million included a deferred portion of $5 million that was paid in the\r\nfirst quarter of fiscal year 2024. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $36 million and goodwill of $23 million. Goodwill is not deductible for tax purposes. The fair values of the identifiable\r\nnet assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\r\nOn March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\r\nShanghai, China. The purchase consideration of $60 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $21 million and goodwill of $39 million. Goodwill is not deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nOn May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\r\npackaging machines. The purchase consideration of $45 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $9 million and goodwill of $36 million. Goodwill is deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nThe fair value estimates for all three acquisitions were based on income, market, and cost valuation methods. Pro forma information related to\r\nthese acquisitions has not been presented, as the effect of the acquisitions on the Company's consolidated financial statements was not material.\r\nDisposal of Russian business\r\nOn December 23, 2022, the Company completed the sale of its Russian business after receiving all necessary regulatory approvals and cash\r\nproceeds, including receipt of closing cash balances. The sale follows the Company\u2019s previously announced plan to pursue the orderly sale of its\r\nRussian business. The total net cash consideration received, excluding disposed cash and items settled net, was $365 million and resulted in a\r\npre-tax net gain of $215 million. The carrying value of the Russian business had previously been impaired by $90 million in the quarter ended\r\nJune 30, 2022. The impairment charge was based on the Company's best estimate of the fair value of its Russian business, which considered the\r\nwide range of indicative bids received and uncertain regulatory environment. The net pre-tax gain on disposal of the Russian business has been\r\nrecorded as restructuring, impai\n\u2026 [3,323 more characters]"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_CztUa6hT1KB0GXsr4zqoqWTc",
+      "function": {
+       "arguments": "{\"pattern\":\"On .*acquisition|completed the acquisition|acquired .* business|acquisition of 100%\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_pIWQUmTVXHkDnEX9eJLAEiXy",
+      "function": {
+       "arguments": "{\"pattern\":\"fiscal year 2022.*acqui|fiscal year 2021.*acqui|Year ended June 30, 2022\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhV0xkIoTcoyH-NtRpwWHXA0R2F3MTOWskTxaYZDK9npCTRwxmPi-nOEn4QX3M5KFOfhBUXTQ_tnWDpsv7_qKKSqF_vo4-vF-VHgTbgtHYYnCVnPjdyjRB3SeQ4EegkiytvvWIu5E_w4GI2Tna8qAGPWa6lG7c2s1PWjGfl90pHskbqt04cPvIRzD8rtOxYbi0n0HmvGFVttR5JhChNi09AKO2O35-1R84wx8fHEHzigw2iTBEax52QRTvM011PE2wRUylGdGc099lI1KphpuqGC5vYStjIzj6UHDpVmQQCcKVv5oN9sLacLjACF9unppQ-LSwO9qn3PBN2BV1DD9lRkGN38PiM0AGyyigFOSlqAKAAPid8RBdyUVV6AS4kGdQ8kJB0g6gAQdIf6jb0ZvIM-hMfQRefWYo8i5au098cOfnST9OFmwOAKXebtDS557W98mA37n0rdG0_20WdYzWRTWwJQ0yyiV6NYQozLKaTDd1M3oR_aQsB8OInSC-KR2hNjwErZInwsL67Ir6r5BIfXsZMdjHc_IkIA0hZd_SYpchaVa-zcBCdNVMGg_0KJ50R4jDvzbrQs0xWPnm0bqi3HeNJY7TKTJBHRmfLLAjpbwtgYgw8ifubSNRwzSrw8XybMIYJ1wG-SnItuHq6yMrRIPAZ8MpiEK4nkChsEpds-ZrVf0jrNN0Ut_hkfy9zwb24rpf08DuBKF2bISFnGP173a2plruhq5hz-zC30A_xZSz51uARoFGWTvzOYBemNDXhcI8rGdaAF8jYM0-wRAlS0JMJXYlwE_imZbGoJ6w8HHQqeMJGeogd4xSmBhCXTuL6g-RdYi9_yPWU70aAnh24J5a0Mztn2J378VBTr7dwfFUkx4qwjWGQWPF_91_0WAAFHfgJpcIoIE1SOLhfVLvILcFoXZAhsgzV1g7oUoz33CLFMInWdhMNny74kkLvGmoVWn0dBK915gyKeL179DaC9Us8_uj6ERq4U27ekXnESGi1SUSfmzGlBOtJ_btQuDrd7gnAnE3Nj5Uehfc3vupq_99YvUQ6igwMqFW-O0oLycreyJGNQnbsQtCfELFIHXqs-XfKxLJgqYxkGo-uuodG_NCQG7Djxyp0mzfigBYiwxVrImLfZHRTEwVdaH3br_gtVYt1kkhSk3y6DYLlPMrlL07LFrcmEieiM4_nVEhwo1O5WS6u12cm3JP23F4T5KOiVh6_4IhluTyxpzohNKbPbhvK0RffYDaTOrTbUmJxwEn51MgNu-yZlHiY1Mi8oaLzA5VVd9z7l-bBlyZ6TCKQjvLHIp0WBrpQostUBcVC16_rt4crUhyJLDtdh4YnT9WJOn4Fx1HBBnyO5k_CxM_20X5f-AEAgqcui48VTdxi1DNjAA79PecSKwSEQ1NEPDoCjBZ07AUEmKFvSmwCt8vblYT1Ry_nkuDI6d4gYTK2iRggsE2fszsnkfXApDwsrxzjdDW3JMGjvdTypHkFoHBXpMtIn1iMNTyEVsPFe7P976pPkmQrAGI06_6KsI_1XscOwGZTk2FgUtn0gZgVF3N_P-yD1ETn7DbquVAH-VVnhV_h_27YGStXT24ZyMvQbOCKG59BlQtP1oKAu09BhAVD4ujc6KJu7GTXira9lJHlct5qEHiVX5RfOj1JykmyJ7Z7hS-7dvlTNyJObyV3QZHbwyThxM6fpvQHYmUs02nc7Fev9bzFJbJA-sLUrux5HKh2TAMHglpu3sJWVT6nxQ_c7VuNGN_SPG4Zz9N2-FxuhYOP-IIWhi_un9E_vw8dDbe9hLyspK4UqIjxENgQLKVgZ97L-wrfusIt_SNTYPUVAqvrE2_Xznij6GWsIFpwR0glIFU-D9ikouwbUWRDXYzAkGoW-p8wqfKVAR2GCafdf5twuO2dfWOGOrMBBOanNpvwo8QkobH9dVYHjBhUgG-uAxPKMY-J1YYihtkzJo5ugVnlCLWt0rrfG5iDHkak-ebSfdhgFBCu946zsznT4fcmJipR3DNI_8ct7KluT2uR8Ayb6ujSERF-ZWfMcttS5GfyzXDY77FkwGhBvlj4l1tHtD8alnl-CgVfs_mhE9UE2GpywDK4Z_nZdVqvPadS9UPnYa-EKAWZ63Jnt-5hug6Sf-u7H6NEd0DOYBWfnTbkdWZ2yphf4Byh65l0eMRGnH9n32e_tEGWWpGOT66cywge934UgRw9NT2d1ExAeOr9vWzw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac2157172f087d19f60942bceb57dd8",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3575,
+   "output_tokens": 243,
+   "reasoning_tokens": 148,
+   "seconds": 5.01
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+       "function": {
+        "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+       "function": {
+        "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+     "content": "p4: acquisitions;\np6: of dividends, organic growth in the base business, and using free cash flow to pursue targeted acquisitions and/or returning cash to shareholders\np14: Furthermore, in recent years, some of our customers have acquired companies with similar or complementary product lines. This consolidation\np14: customer and the acquired company. While we have generally been successful in managing customer consolidations, increased pricing pressures\np15: product innovation, investments, or acquisitions.\np15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: Additionally, over the past decade, we have pursued growth through acquisitions, and there can be no assurance that we will be able to identify\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: acceptable terms, our potential for growth by way of acquisition may be restricted, which could have a material adverse effect on the\np15: We also may face challenges in integrating acquisitions with our existing operations. These challenges could include difficulties in integrating\np15: acquisitions not being fully realized or taking longer to realize than expected or incurring additional costs to do so. Further, in pursuing growth\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np18: water that is, or was, contaminated by us or a third-party at various facilities we own, used, or operate (including facilities that may be acquired\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: rates, acquisitions, and restructuring, including employee related costs, equipment relocation costs, accelerated depreciation, and the write-down\np35: equity method investments, and certain acquisition-related expenses, including transaction and integration expenses, due diligence expenses,\np35: deferred acquisition payments and economic hedging instruments on commercial paper, and impacts related to the Russia-Ukraine conflict. Note\np35: that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired\np35: entities and all other expenses unless otherwise stated, are reflected in Adjusted EBIT and adjusted net income and the acquired assets contribute\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: past acquisitions.\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np36: (8) Other in fiscal year 2023 includes other restructuring, acquisition, litigation, and integration expenses of $13 million and fair value gains of $16 million\np39: potential funding requirements for debt refinancing, capital expenditures and acquisitions, the cost of capital, sensitivity analyses reflecting\np39: driven by the disposal proceeds collected from the sale of the Russian business in the current period, partially offset by business acquisitions and\np42: outlined above and to finance our capital expenditure and payments for acquisitions that may be completed. We expect to continue to fund our\np42: We decide on discretionary growth capital expenditures and ac\n\u2026 [1,389 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+     "content": "No matches."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fTIsraY08eI6CI4NycjkDWCD",
+       "function": {
+        "arguments": "{\"pattern\":\"Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+       "function": {
+        "arguments": "{\"pattern\":\"acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVtw0t2-lCCD88S19evfY1TtlqaKxuok0CvP_ILo0_hLe-KlAeScMytk6kmnGXwebVcHigEy-zboa7CR9QiOWdOmgxVX003Snx_i7b7OTgyhyvGcoejRriD5XNQ5qJzUzJOJ6m0aGRsRejhuDljQROYZiflmU3j3p6mOML6NhyzcOBSx7MNcmV01n-AJ-q8DruI0jMwYirbkolAgLjDfLfYmIYDvHHqlF9HGx2DJedaBh3X6Ehy23fWc_0y8VwI3Ki6_BwFp7thzBDQW-pmWswHrRU-tuvWszV_I4GwGs45far5YLGibLA5wpNKRzIm22_dhTqODz1LWAjtGOPpQenMOG5ZFEVPjbvgRoRP6HTeDbPlu2k6PCkNlOC9-nxqtpt04qNQ50zgvu2FSqRy5Vig0sm9lJAOliWm30eE-m7OJwx5zJCSZVVksbz3z6u8CIy1AB0f4iu3Uhcf5JJGu3vdr6sJlJAwpvcXMWb_v7ZYUNsKbasxQAS2YwEUk51oFOGjArtc_NSq4jILOQil9z3ZcDcntIYn1ukKb4_Pvi8gSEGL20kkOyjCsER2NU7E_Pw8dgXWbIyZs2bNoW7y9zpgY7MO5Wva7GjJ-bS0iXSBwspbOvpoKq0La-A4TTjdYZVKCYw1bKViuCt_DfdG-vXn4mOAUNGLhXuoQhqpk5O8v_ez8wEDQg3Sd24qtZR82f7bgwPaRQPgdrkMpC6a0UCSIXD07ifASe75YimhRSO8fmfc6t9HIFWBpwJA4y_BxagHnv4hjM-yJYn28n9mP-dgcaSziaaVb_mE96jKs3AconSCwys7_b_rd1xUJXhHWGWlijqm5ABqh9NGqzQQjlRXA8_II6agFztDUeYFE2aXYAClu3yS9EvJD4ziCCzuWlB3WX2MidUOtibe-ou6mT_yo2t1muHGKdBDa2ZY9zlA5Ohw50rku4ruucRrVRnfnZALrAF7arQoqSp9VN85MNuAbcBuaj9zfv0ZZaTwv3LilGOe1nPmxfBKMUKRkK2XqdekMHqqVc6djT3mLEf6Zg-8OrVhK4U_ysisa3duTP-8BpILcXmraffuQoIOjkn146POtpfa7ATQ3-P3cCi25bCNPsVc8z9c5xy_RabDLAEJW4jSt47k2XH0-rJ32zDtjry1iQK-woN1Z-f6OgO_kQHQu2uGMM4eA1kDIBekHzqCHvFoFH0jWvtG6neQwDSzG8aiBMusQJrx-ObWRL8bPgH7A6JLT1lIjoIB7t-W9YlrJm5APxleRtvHUfRuHhCFWzW0JZ5NNYpx0TJ4kOypeWSeAvBsjpZDvpSWZPBOXljveb6DYJ88TpDJ6CRd1IT9HaPuRW78Ejb09OdziJmsJRSOHSSGBxGcXGRqrwPVAhaxfcT413ZzaRD2We0OBpx6n6l2KoyM75akga3Ii1f_l9OY__S7VULtlFyninhZWcYxOd0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156bbb4487d18501ec20486b2c96",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fTIsraY08eI6CI4NycjkDWCD",
+     "content": "p36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np45: conflict regions. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np64: Note 5 - Acquisitions and Divestitures\np66: \"Acquisitions and Divestitures.\"\np72: \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: period acquisitions (refer to Note 5, \"Acquisitions and Divestitures\") and a $10 million liability that is contingent on future royalty income\np92: transferred from accumulated other comprehensive loss to earnings. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 8, \"Equity Method and\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+     "content": "p56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np56: assets acquired and liabilities assumed. During the measurement period, which may be up to one year from the acquisition date, the Company has\np64: net assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+       "function": {
+        "arguments": "{\"first\":64,\"last\":66}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVvw04XHcIP3xWavF1Nfn-WLRFQ78qc9KQuYrKwm4lWkssYdnOkHQ2ELdUkntf0j0vz0elg8zKmjlOri_TwqruG8cgXbD50xKUdsPQeYS-TyfGFhLbc8j4VF4fRj8nYvwLF_O44tMRvjOBtQsqo-BILIUtX7Wh5iMmoNzTRLPCWiGwj48hDfXa8Ai2esy1zRNetPlsOcP7O5v5RT2NGCdsTw5bmLM3hHW2GcNl3t9z__OK1sEbU0kkVKcnwr91hQdiLMKuyRQx9UP1RxJbbFOLNVH2EEi5lmKtzwjaYeSetw807Ae9jsoMwv4bJVpo5quVfPM95TTjFyORnN68V9j09r5BWUFEowBBtyZtLP1M4c28xVSOeT9wWgPXRUENDS-mm8X-MrO4WVAAUnkRP7KfGfD9Yhzre4qhdtEMlA4DAXG_yNQPQWvOx-zePAlpkOZO2GNKXFEgyGhn4EnplVUvsdZDHfBAy_5dTsF2KuER1mBWkdKnLYoFTFlWtYdVVGQXdLeRlgSQLSiATca9D9-SnyDdC-RE_BD28Al-6fC8Lkvc2YC2ozPAxNHFLDdv7_tIrpsEmBVlra3IT6CBYnPBbMT8wQQQ4n_Xf8pg_56zHiGVowElgBf0RCUtYexdUd4qwui3T_Epoj002c2Piot-Z1Kz7JkVku9jI8WKCTvB_mbvquJ0bg1ahgv9KFlJr7GzugDCxgp24TnlJVDw0d7i9aSjCnBavns3hdoHf0DTd_qxtRRWZzQciyCu5pkIMUhsWJgncXh62cTsLq2YAXyXLybi4R9mCseVFZEP2KgneDjFs7O-SqdDL4BbYmoZd3Jjkfr1IdZyKebSQsgk96P14sw21Oc_2-um-ZXqVgAyYWveE9TZN4xHHS-e4fXBN0AkEp9Pp_yLtseSAweNr8wkpvKV8U-I77g8U8zqHAIm3iyAJy4oUIcflsQYRRMYoGfbj_Zj8ZsXMx4aPAD28xVMPyA2fS7nSnfGgrZxjRAiQ5n2rm14t6ZwXilX5pP2AkvHjIJHexm3EhDTy7f62RPnKXBSwYsLzUGiJ0p-LLVwgd0BC2-8CCs0dTkK-yby1cLWcy48Z6oXXwl6Yu3qDviIMWNE3Ww68GRPlFJ0kajg0Zl60cnmkFvjE7_mu7OG1Us6_IQOXtksxeRualmEmUnvUzdceWmjWF_prHedUSmsblCPmZ348Lc1iYvR0DSZmbilfic0Lvk9IpcmZwsBhQHWZPiW3_cZolfr_mLW4XSSlfcUpYixnrZFA3Yq7uuyNgK0gefmm2UNs5omnONmT8NWtscgUdrGEjZN5DGYJRa_WY4NCRoC-szw8LfJ8osdUglY1BNwvfKYMMIiU-DbY_NT2JQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156f494887d1b17f214c23200c70",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+     "content": "[Page 64]\nNote 5 - Acquisitions and Divestitures\r\nYear ended June 30, 2023\r\nAcquisitions\r\nOn August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\r\nflexible packaging manufacturing plant. The purchase consideration of $59 million included a deferred portion of $5 million that was paid in the\r\nfirst quarter of fiscal year 2024. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $36 million and goodwill of $23 million. Goodwill is not deductible for tax purposes. The fair values of the identifiable\r\nnet assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\r\nOn March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\r\nShanghai, China. The purchase consideration of $60 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $21 million and goodwill of $39 million. Goodwill is not deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nOn May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\r\npackaging machines. The purchase consideration of $45 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $9 million and goodwill of $36 million. Goodwill is deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nThe fair value estimates for all three acquisitions were based on income, market, and cost valuation methods. Pro forma information related to\r\nthese acquisitions has not been presented, as the effect of the acquisitions on the Company's consolidated financial statements was not material.\r\nDisposal of Russian business\r\nOn December 23, 2022, the Company completed the sale of its Russian business after receiving all necessary regulatory approvals and cash\r\nproceeds, including receipt of closing cash balances. The sale follows the Company\u2019s previously announced plan to pursue the orderly sale of its\r\nRussian business. The total net cash consideration received, excluding disposed cash and items settled net, was $365 million and resulted in a\r\npre-tax net gain of $215 million. The carrying value of the Russian business had previously been impaired by $90 million in the quarter ended\r\nJune 30, 2022. The impairment charge was based on the Company's best estimate of the fair value of its Russian business, which considered the\r\nwide range of indicative bids received and uncertain regulatory environment. The net pre-tax gain on disposal of the Russian business has been\r\nrecorded as restructuring, impai\n\u2026 [3,323 more characters]"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_CztUa6hT1KB0GXsr4zqoqWTc",
+       "function": {
+        "arguments": "{\"pattern\":\"On .*acquisition|completed the acquisition|acquired .* business|acquisition of 100%\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_pIWQUmTVXHkDnEX9eJLAEiXy",
+       "function": {
+        "arguments": "{\"pattern\":\"fiscal year 2022.*acqui|fiscal year 2021.*acqui|Year ended June 30, 2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhV0xkIoTcoyH-NtRpwWHXA0R2F3MTOWskTxaYZDK9npCTRwxmPi-nOEn4QX3M5KFOfhBUXTQ_tnWDpsv7_qKKSqF_vo4-vF-VHgTbgtHYYnCVnPjdyjRB3SeQ4EegkiytvvWIu5E_w4GI2Tna8qAGPWa6lG7c2s1PWjGfl90pHskbqt04cPvIRzD8rtOxYbi0n0HmvGFVttR5JhChNi09AKO2O35-1R84wx8fHEHzigw2iTBEax52QRTvM011PE2wRUylGdGc099lI1KphpuqGC5vYStjIzj6UHDpVmQQCcKVv5oN9sLacLjACF9unppQ-LSwO9qn3PBN2BV1DD9lRkGN38PiM0AGyyigFOSlqAKAAPid8RBdyUVV6AS4kGdQ8kJB0g6gAQdIf6jb0ZvIM-hMfQRefWYo8i5au098cOfnST9OFmwOAKXebtDS557W98mA37n0rdG0_20WdYzWRTWwJQ0yyiV6NYQozLKaTDd1M3oR_aQsB8OInSC-KR2hNjwErZInwsL67Ir6r5BIfXsZMdjHc_IkIA0hZd_SYpchaVa-zcBCdNVMGg_0KJ50R4jDvzbrQs0xWPnm0bqi3HeNJY7TKTJBHRmfLLAjpbwtgYgw8ifubSNRwzSrw8XybMIYJ1wG-SnItuHq6yMrRIPAZ8MpiEK4nkChsEpds-ZrVf0jrNN0Ut_hkfy9zwb24rpf08DuBKF2bISFnGP173a2plruhq5hz-zC30A_xZSz51uARoFGWTvzOYBemNDXhcI8rGdaAF8jYM0-wRAlS0JMJXYlwE_imZbGoJ6w8HHQqeMJGeogd4xSmBhCXTuL6g-RdYi9_yPWU70aAnh24J5a0Mztn2J378VBTr7dwfFUkx4qwjWGQWPF_91_0WAAFHfgJpcIoIE1SOLhfVLvILcFoXZAhsgzV1g7oUoz33CLFMInWdhMNny74kkLvGmoVWn0dBK915gyKeL179DaC9Us8_uj6ERq4U27ekXnESGi1SUSfmzGlBOtJ_btQuDrd7gnAnE3Nj5Uehfc3vupq_99YvUQ6igwMqFW-O0oLycreyJGNQnbsQtCfELFIHXqs-XfKxLJgqYxkGo-uuodG_NCQG7Djxyp0mzfigBYiwxVrImLfZHRTEwVdaH3br_gtVYt1kkhSk3y6DYLlPMrlL07LFrcmEieiM4_nVEhwo1O5WS6u12cm3JP23F4T5KOiVh6_4IhluTyxpzohNKbPbhvK0RffYDaTOrTbUmJxwEn51MgNu-yZlHiY1Mi8oaLzA5VVd9z7l-bBlyZ6TCKQjvLHIp0WBrpQostUBcVC16_rt4crUhyJLDtdh4YnT9WJOn4Fx1HBBnyO5k_CxM_20X5f-AEAgqcui48VTdxi1DNjAA79PecSKwSEQ1NEPDoCjBZ07AUEmKFvSmwCt8vblYT1Ry_nkuDI6d4gYTK2iRggsE2fszsnkfXApDwsrxzjdDW3JMGjvdTypHkFoHBXpMtIn1iMNTyEVsPFe7P976pPkmQrAGI06_6KsI_1XscOwGZTk2FgUtn0gZgVF3N_P-yD1ETn7DbquVAH-VVnhV_h_27YGStXT24ZyMvQbOCKG59BlQtP1oKAu09BhAVD4ujc6KJu7GTXira9lJHlct5qEHiVX5RfOj1JykmyJ7Z7hS-7dvlTNyJObyV3QZHbwyThxM6fpvQHYmUs02nc7Fev9bzFJbJA-sLUrux5HKh2TAMHglpu3sJWVT6nxQ_c7VuNGN_SPG4Zz9N2-FxuhYOP-IIWhi_un9E_vw8dDbe9hLyspK4UqIjxENgQLKVgZ97L-wrfusIt_SNTYPUVAqvrE2_Xznij6GWsIFpwR0glIFU-D9ikouwbUWRDXYzAkGoW-p8wqfKVAR2GCafdf5twuO2dfWOGOrMBBOanNpvwo8QkobH9dVYHjBhUgG-uAxPKMY-J1YYihtkzJo5ugVnlCLWt0rrfG5iDHkak-ebSfdhgFBCu946zsznT4fcmJipR3DNI_8ct7KluT2uR8Ayb6ujSERF-ZWfMcttS5GfyzXDY77FkwGhBvlj4l1tHtD8alnl-CgVfs_mhE9UE2GpywDK4Z_nZdVqvPadS9UPnYa-EKAWZ63Jnt-5hug6Sf-u7H6NEd0DOYBWfnTbkdWZ2yphf4Byh65l0eMRGnH9n32e_tEGWWpGOT66cywge934UgRw9NT2d1ExAeOr9vWzw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2157172f087d19f60942bceb57dd8",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_CztUa6hT1KB0GXsr4zqoqWTc",
+     "content": "p15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np42: We decide on discretionary growth capital expenditures and acquisitions individually based on, among other factors, the return on investment\np48: directors of the company; and (iii) provide reasonable assurance regarding prevention or timely detection of unauthorized acquisition, use, or\np56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np59: Goodwill: Goodwill represents the excess of cost over the fair value of net assets acquired in a business combination. Goodwill is not amortized\np64: On August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\np64: On March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: On May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np67: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), the Company initiated restructuring activities in the fourth quarter of\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: Contingent purchase consideration liabilities arise from business acquisitions and other investments. As of June 30, 2023, the Company has\np101: Less: Amortization of acquired intangible assets from business combinations (2) (160) (163) (165)\np101: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information\np139: (c) Liens existing on any asset prior to the acquisition of such asset by Amcor or any Subsidiary after the original issue date of the Notes,\np139: property that is affixed or incorporated into, the assets covered by such Lien on the date of such acquisition of such assets, (iii) such Lien shall\np139: secure only the Indebtedness secured by such Lien on the date of such acquisition of such asset and (iv) such Lien shall be \n\u2026 [310 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_pIWQUmTVXHkDnEX9eJLAEiXy",
+     "content": "p29: Form 10-K can be found in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended June 30, 2022, filed with the SEC on\np56: for the fiscal year ended June 30, 2022. See Note 6, \"Held for Sale,\" for more information on assets held for sale.\np64: Year ended June 30, 2022\np64: Company recorded an expense of $10 million during the fiscal year ended June 30, 2022, to adjust the long-lived assets to their fair value less\np67: for the fiscal year ended June 30, 2022, included expenses triggered by the Russia-Ukraine conflict to help mitigate the impact of the Russian\np76: In addition, resulting from the effective disposal of non-core businesses during the fiscal year ended June 30, 2022, the Company recorded a\np76: income, net in the consolidated statements of income. During the fiscal year ended June 30, 2022, further long-lived assets with a carrying value\np76: the result of general civil unrest. In addition, during the fiscal year ended June 30, 2022, other long-lived assets in South Africa, with a carrying\np81: fiscal year ended June 30, 2022, is attributed to group annuity contracts, primarily a $186 million contract with Pacific Life Insurance Company,\np92: year ended June 30, 2022, the Company effectively disposed of a non-core business and transferred $19 million of accumulated foreign currency\np97: Year Ended June 30, 2022 3 8 7\np103: Year Ended June 30, 2022"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_48DZoNBskWzqOESxqbRH9qJn",
+      "function": {
+       "arguments": "{\"first\":52,\"last\":53}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Searching for acquisition data**\n\nI'm exploring whether there are immaterial acquisitions in the cash flow business. I see FY2023 has some references, but other years seem blank. Maybe this supports the findings on page 53. I should check to confirm if there were no acquisitions in FY22 or FY21. It could help to cite page 53 for clarity. Let\u2019s see what interesting data is there!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for acquisition data**\n\nI'm exploring whether there are immaterial acquisitions in the cash flow business. I see FY2023 has some references, but other years seem blank. Maybe this supports the findings on page 53. I should check to confirm if there were no acquisitions in FY22 or FY21. It could help to cite page 53 for clarity. Let\u2019s see what interesting data is there!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhV5D421RFkiZg_6LlwLgnyd5lFeDCEiA6OlzpXVs981HHJng_lNubQLikf0Qj2QXmV79Thfc3vyr1hKn3THdjGboqeU8wUz7DMEyGSL697bg2a-0_FxMr_NTeLaOuqWSxfacfkp2t2nudfh7TirPiJqFS8_sXHkr_MmkwJN764YuGhZnWy4ZtZYIsYQKVjivZNi7jI0_pSjSMOeSL6MDOJ913PyjcaRxjowZ-OxdXyjlPdkodoaIIDCi60IRkIsbSE-DLRFOdswxQjTkfpihOJq_HOYt1FlHtpP7hAGZ2F8NNNqQsEzXMBfC0_CmHVzH_mVh89xYj2QigiDL6H-_EYYDhUVkNE4VjXb085qhMC_DPfvNFfJYdUR5Bg7qKEGHFPPLUj3qW6UwFnRY40F7xKO1r8QGuXgH277QJCAcA5Xg3AWdWK7GhpJxUcVwVBDCOoMDG1GAVpgWbyWVaC8aGL9RtFVtsgkuNTdGQzSYmILN6uCaRAZzgSV-aCBolm1nkp_aRzNLinjNLovor33HkTyO8-rjmBTNuBLuc1esPPhtc-nA9j0bAbQDh6G-j9r3ih-dLIwAsyU2d57WH-lQmIFlPHCknp049kJr-JQ2TNPKa3GzEP84VIEx2lqgIhTbTdN7qGZX3Ew7AgNuVxBBprDtdZlCzU5m8rwZPSrbWwmwkEilFTbQ56vjlqhN4cMVOC9mcAC_87E8xFLDn8Q6Bf63BhTEikeoZcb_ibJONZ2agKVXL1jn0xr44pDie3zLDn5fd1d3XufzzXaLc7YlPGdIesORQRDccKmOWk6NAO0TFUaP5on30tv_xi7ajJEUhqnIIZWsI9O-ieMvpoU3VX1YaRj4uZVbaeM0depfNFptL8I2dcnUMAiq0HR-Kd6hBn9uHm7G3vxeF6Pc7Bl19X5_nbwak6Blw5rdJDYUk62Mzgjj58aK3AGeLTSSaOTTDtq55APvfJQFx5_qP07eEtOD4TmES99gwtof2KwJb9ILrU7kt4AE3jfMk6X-cjNEwyTp59NNLssmDQNeMSXLt1cr9kTORGW8dH17YLKmdZj6aRUlNehf2GFjQeSnoAnEs9XeJ6ShOeHtXK0pAbLZobHTJ6PfvTFoAeCmkxS4xbtm8SO1p6guLsHbdXUz-Sb0cL14TWZSf0MLrtCRhcoo82OXE15PzHJ-b6jrIM_MsX5G_0y2IXHyFVmKuBN99_Ra7F9z_IL8uB0bGQOnpwXW6RKXJZSMksXSwJBIMBimvJ3ydGGsdOwn2erpsiANtikpl88mV-hnH7YTh96tMhVyIz2kYqbGbMyGc-hqdTPuLAhtA7XHLsIUrztf9p9BWlPF2gia6kg4izcjwZz7aU8hVjAyxQ8VHRZ4KAoL-JcGKJU33KtzGZAJu4LvnSYL9TxLz2HJ2MAJGwJZNJYigq21samgle8u19pDFOZ1DgiHWMyNbCAyzEaOQec6LMlayra-Ho60gCKeX8Uzw-1uN6vWmPGQzYszkAo9obceiu5KiPDJgd9tg4QScA4b1yx6OMSDWzdk5KBywES7j0tqlj3va-WWX1JYdAGGq2kYrtaTT-lNu9V2HxRE5s6z1RUsvMOR_OEQlQ-feT-ubmrBgIaIYQPhgz92wzEZ-qXwwaz_DkDO1foVp_AHEl2EmgGQlFZLAfhr_qbl1djKT2ChrWgTNKkRBwaLv-4MpiPHO7MzVtNR0uTGjWgN-C7yUIkCud383mR6pRw3xi3udxybt7BJgXuAKwLJ1xieUkSwmHpmXlEWRGI8f5sfvNCUyZT_DV2uemlt4x0QuRGPiYfT78PbPG2o5XO7OV7u2nE7jkm4WKM_Unigfod2RQiyn38CvkKPjj4D7YvakHr68JggUS1RQtG-A4g1mKz-u4RC3Ofrx-2JJ2urOQnT1WXei2nySwKRtLQ8vVjNOAVEcHwLQS8OR_mv6cYENRGLbgyY5_V5k4avTH7jw9wKRKO10ulFOrRO3Q0hcAARyuGxvDNeJogzZ48OWiZ-tooV0w5tw4sLTOdMq1SJdm3AiNwQ2jo21DqZznuCnob_JPhlpAIQSql7HHCauEa9g_rxo2G10pKbWTus0uarlIVgLIQdB596_2BfL00pqr8KGkP6sMayHsSKwJu7DDeVd79UVse47Z4CoQP8tRnYvodWpOqQXcIFYBCTTimn_Q9rPHrEW_kyAbckgqK-tQhCmUY2EZCzoIdF1-1HEhLpqVnr5UFc9wXjyamCUSCQrVYDcb_4GUmQmQzOgTSV3trK_pRBH7W1WdhE5-ZyeHey_6wjL_JJzmuphPT-QmHkaFqFMNpKZDya59Ca4tjYDZW14wYVVsElUWrhP8QIcBJ7g_T2kTzl2FEsSrBIBLdx7DuaqxQ7-5aU5lxyi52YsQdgz5nhsr9Od_1wdMCNvZ89NnzqvudcCNiIMdENtbpXfCDZ8UkhLzCoixxV3FYROP_C0rKgT0_riCsfdnFft9G6RxIKo7CGYzBGpPjf1iwyegp1_8DkhR1u7UGtK_t5mv1f0yZNVKmGS0iERnErAM0bgCAqMYRtQNkcMWe7mwgZzCVquO9uSVCuaNaWFwtMG0ne0rT3_ud3mFu2Mg8d1nReBDy9Vide3op40WJj_kp2FkReKj4oDI1uU5N2N-w8OkQNmHE3n5Bf5166mAl2TlKrE_D6yJcTljODrDxXncBEo2a0X7GtgBWIjtocU-cCgVtMUcWhiqR2FDVfaX96_fQX2dIEfr-AE9WFvSbTA4xsGsq-MhgOCVdEJEttluJBG1aLJQodf_gAhOIhrwAsSzG7DI3gmA0OTGqIybnSN1aOxmUaf_FJA4vQyZ4PKElBe5b5NPr1WD29SRie0InRMtcRb6_KpMXXer8AooCccW9dM0n4phF-zjbmkynp5QW3lBrYN5ft8fyPZa_AWLnk2u_xYjhB3efVeQHYNY3WR8HzR6OGa_JeJ7toUdvb0WOFwIcHYynpZqN1tO28BD1mYBg0049BdtFCST4zuFYmot9.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac21576702c87d191e8409847d61814",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 5118,
+   "output_tokens": 292,
+   "reasoning_tokens": 268,
+   "seconds": 5.26
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 156 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+       "function": {
+        "arguments": "{\"pattern\":\"acquisition|acquired|business combination\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+       "function": {
+        "arguments": "{\"pattern\":\"FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for fiscal years**\n\nI need to look for documents that detail acquisition fiscal years. It\u2019s important to find the right information, so I\u2019ll ensure I\u2019m thorough in my search. I wonder what specific data I\u2019m looking for regarding these years \u2014 is it just the chronological data or any specific details tied to them? I\u2019ll take a closer look and make sure I gather everything efficiently. Let\u2019s get started on this search!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVqP8bUcuPUhLxBl19UrL1SNO51tFX2KargmYuoFBhZceZgVDDBT_t4o9gShNHTJypTM8LClp4hPrb-6lJW_HDyiN-_GDqvT6soqgkmD5DrV1EnOP5rV6S1pe_JyLgjeeMb-6aSKaI-X_0c-upQtj4kK0Zkn-GKTcziBv1fj_oU_a-L2b6xKpyKKFyAnmeY6SxkY69mtnx1ZCjXmaTnj02RyL3x-7ly1US02YBn8C43MJeh867Wl0RXuNe-9zfhvOKcuzI9BqRBY5mmUk6a8HHdotcQQJHtri0ZTr5EZEx7EYLesFxcrWSSD5lm3UOAKSfF6-3vX4_X2300qavOyHkkSSnXZwF13s-bho9wv5bS-HIvx1UAkXEtTpocDPPhSqwWx1m3xq0qwi2Fi4WAZYJ9O7gnexj89IjTX11SGyh079XZbPtKSUl96vRlJCFcUp2jLtyNmlu7uXEsU_4C_Yh39ag_77efSoilAGTLTxAukz9YIVMOu0bYkUt4KoundjMZPwUpz_lLZ3LDGs4CfD6oBEHqRBYMy7YAaw-NSG3kcPxwSLuk076grJbkLnDCmg-Ih5ycFsy3QrpOfkcefSTcJQsgwoyVghQuMjtqntE7J6kejhjKthu6RhVGCvCHEsb_gmrd3h8jNMAfbFP2aI5s2AUnyeXtkk75DrvmftSi15X0Mum4hv4vIpFVNUxJRkXCdfRG-Qo-6p5bzVUm7y76PakXCr5ldVhiveoI1vsIpVOvk_kvWl91S0iOz6F-Ih0oRrvYxeTmK-buZj_m7A0-zoeQXDWP3bObtX2S3CotH9CHpMn2Fq9AFRQULPvDkMt_3uI8aQEY6Whs_BPBraFbV9plFwmemBxHvf5bdSliy3qJUNpzH4IhXyrv9SOD9CdyES-TAF4fNgSZFlA3_rk-QrTInfNpqY1JfLT3dcd1ThhzO61pxAurOI3YPgZXX8g5r6P0VmKOFIHcn6pZR2REaz-9KWThFZBSsGOdnghaxgLRbuK2w2w0kjUHDKBDmJdNx-5pQ1MLGubYbAz77RpzHW0aPSmK5iJaS2_iTA_4FOG31x56B9nnArUbHLgvfuTujBQZNlKT-dleaLSJY0Nq9wGoCHZK_0HXC0FOgHYtPEIUE7IZ-YTXtLpGv7Up50lwfbTMFjKfHZ1c2qT-CJNTplCXiinH6y0jBusOjdCFW3du8bjuKPXmqEbp-bkoKAyYk62gHj04451A9gDgXgJQ1uYmep5LWLdCr4hEeUoUacSZJtw84Ypsi0WWACugnqwUes5frWUndhBWZWOFG5VRdTnhDgf0niKGa1d8McdG4WTpuD8D0vfgIR_gqvMHXp3rDDhovjTk7FvQLB0p_HNnU28ySAUbkWirSrGhmMulk600Niq371EZsprTlTpZkbPC_fVPf8ZYPDRTngWrFm0Etg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac215698da887d1a31f24c0fb5110c9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_zXhOi6c5LPmqQngloP0Y6MF1",
+     "content": "p4: acquisitions;\np6: of dividends, organic growth in the base business, and using free cash flow to pursue targeted acquisitions and/or returning cash to shareholders\np14: Furthermore, in recent years, some of our customers have acquired companies with similar or complementary product lines. This consolidation\np14: customer and the acquired company. While we have generally been successful in managing customer consolidations, increased pricing pressures\np15: product innovation, investments, or acquisitions.\np15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: Additionally, over the past decade, we have pursued growth through acquisitions, and there can be no assurance that we will be able to identify\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: acceptable terms, our potential for growth by way of acquisition may be restricted, which could have a material adverse effect on the\np15: We also may face challenges in integrating acquisitions with our existing operations. These challenges could include difficulties in integrating\np15: acquisitions not being fully realized or taking longer to realize than expected or incurring additional costs to do so. Further, in pursuing growth\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np18: water that is, or was, contaminated by us or a third-party at various facilities we own, used, or operate (including facilities that may be acquired\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: rates, acquisitions, and restructuring, including employee related costs, equipment relocation costs, accelerated depreciation, and the write-down\np35: equity method investments, and certain acquisition-related expenses, including transaction and integration expenses, due diligence expenses,\np35: deferred acquisition payments and economic hedging instruments on commercial paper, and impacts related to the Russia-Ukraine conflict. Note\np35: that while amortization of acquired intangible assets is excluded from non-GAAP adjusted financial measures, the revenue of the acquired\np35: entities and all other expenses unless otherwise stated, are reflected in Adjusted EBIT and adjusted net income and the acquired assets contribute\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: past acquisitions.\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np36: (8) Other in fiscal year 2023 includes other restructuring, acquisition, litigation, and integration expenses of $13 million and fair value gains of $16 million\np39: potential funding requirements for debt refinancing, capital expenditures and acquisitions, the cost of capital, sensitivity analyses reflecting\np39: driven by the disposal proceeds collected from the sale of the Russian business in the current period, partially offset by business acquisitions and\np42: outlined above and to finance our capital expenditure and payments for acquisitions that may be completed. We expect to continue to fund our\np42: We decide on discretionary growth capital expenditures and ac\n\u2026 [1,389 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_hExmR1FlQF7lljMFRfzFGvnw",
+     "content": "No matches."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_fTIsraY08eI6CI4NycjkDWCD",
+       "function": {
+        "arguments": "{\"pattern\":\"Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+       "function": {
+        "arguments": "{\"pattern\":\"acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for acquisitions and divestitures**\n\nI need to find information on about 5 acquisitions and divestitures, which might be located around page 62 of a specific note. I should search for the right note that contains this information. It\u2019ll be important to confirm that I\u2019m looking in the right place to avoid getting sidetracked. Let\u2019s see what I can uncover about these acquisitions and divestitures. I\u2019ll focus on gathering the essential details.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVtw0t2-lCCD88S19evfY1TtlqaKxuok0CvP_ILo0_hLe-KlAeScMytk6kmnGXwebVcHigEy-zboa7CR9QiOWdOmgxVX003Snx_i7b7OTgyhyvGcoejRriD5XNQ5qJzUzJOJ6m0aGRsRejhuDljQROYZiflmU3j3p6mOML6NhyzcOBSx7MNcmV01n-AJ-q8DruI0jMwYirbkolAgLjDfLfYmIYDvHHqlF9HGx2DJedaBh3X6Ehy23fWc_0y8VwI3Ki6_BwFp7thzBDQW-pmWswHrRU-tuvWszV_I4GwGs45far5YLGibLA5wpNKRzIm22_dhTqODz1LWAjtGOPpQenMOG5ZFEVPjbvgRoRP6HTeDbPlu2k6PCkNlOC9-nxqtpt04qNQ50zgvu2FSqRy5Vig0sm9lJAOliWm30eE-m7OJwx5zJCSZVVksbz3z6u8CIy1AB0f4iu3Uhcf5JJGu3vdr6sJlJAwpvcXMWb_v7ZYUNsKbasxQAS2YwEUk51oFOGjArtc_NSq4jILOQil9z3ZcDcntIYn1ukKb4_Pvi8gSEGL20kkOyjCsER2NU7E_Pw8dgXWbIyZs2bNoW7y9zpgY7MO5Wva7GjJ-bS0iXSBwspbOvpoKq0La-A4TTjdYZVKCYw1bKViuCt_DfdG-vXn4mOAUNGLhXuoQhqpk5O8v_ez8wEDQg3Sd24qtZR82f7bgwPaRQPgdrkMpC6a0UCSIXD07ifASe75YimhRSO8fmfc6t9HIFWBpwJA4y_BxagHnv4hjM-yJYn28n9mP-dgcaSziaaVb_mE96jKs3AconSCwys7_b_rd1xUJXhHWGWlijqm5ABqh9NGqzQQjlRXA8_II6agFztDUeYFE2aXYAClu3yS9EvJD4ziCCzuWlB3WX2MidUOtibe-ou6mT_yo2t1muHGKdBDa2ZY9zlA5Ohw50rku4ruucRrVRnfnZALrAF7arQoqSp9VN85MNuAbcBuaj9zfv0ZZaTwv3LilGOe1nPmxfBKMUKRkK2XqdekMHqqVc6djT3mLEf6Zg-8OrVhK4U_ysisa3duTP-8BpILcXmraffuQoIOjkn146POtpfa7ATQ3-P3cCi25bCNPsVc8z9c5xy_RabDLAEJW4jSt47k2XH0-rJ32zDtjry1iQK-woN1Z-f6OgO_kQHQu2uGMM4eA1kDIBekHzqCHvFoFH0jWvtG6neQwDSzG8aiBMusQJrx-ObWRL8bPgH7A6JLT1lIjoIB7t-W9YlrJm5APxleRtvHUfRuHhCFWzW0JZ5NNYpx0TJ4kOypeWSeAvBsjpZDvpSWZPBOXljveb6DYJ88TpDJ6CRd1IT9HaPuRW78Ejb09OdziJmsJRSOHSSGBxGcXGRqrwPVAhaxfcT413ZzaRD2We0OBpx6n6l2KoyM75akga3Ii1f_l9OY__S7VULtlFyninhZWcYxOd0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156bbb4487d18501ec20486b2c96",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fTIsraY08eI6CI4NycjkDWCD",
+     "content": "p36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np45: conflict regions. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np64: Note 5 - Acquisitions and Divestitures\np66: \"Acquisitions and Divestitures.\"\np72: \"Acquisitions and Divestitures,\" and Note 6, \"Held for Sale.\"\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: period acquisitions (refer to Note 5, \"Acquisitions and Divestitures\") and a $10 million liability that is contingent on future royalty income\np92: transferred from accumulated other comprehensive loss to earnings. Refer to Note 5, \"Acquisitions and Divestitures,\" and Note 8, \"Equity Method and\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_fkHcQvKNE9f5VxfW8ZXgqPQZ",
+     "content": "p56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np56: assets acquired and liabilities assumed. During the measurement period, which may be up to one year from the acquisition date, the Company has\np64: net assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np64: consideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+       "function": {
+        "arguments": "{\"first\":64,\"last\":66}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhVvw04XHcIP3xWavF1Nfn-WLRFQ78qc9KQuYrKwm4lWkssYdnOkHQ2ELdUkntf0j0vz0elg8zKmjlOri_TwqruG8cgXbD50xKUdsPQeYS-TyfGFhLbc8j4VF4fRj8nYvwLF_O44tMRvjOBtQsqo-BILIUtX7Wh5iMmoNzTRLPCWiGwj48hDfXa8Ai2esy1zRNetPlsOcP7O5v5RT2NGCdsTw5bmLM3hHW2GcNl3t9z__OK1sEbU0kkVKcnwr91hQdiLMKuyRQx9UP1RxJbbFOLNVH2EEi5lmKtzwjaYeSetw807Ae9jsoMwv4bJVpo5quVfPM95TTjFyORnN68V9j09r5BWUFEowBBtyZtLP1M4c28xVSOeT9wWgPXRUENDS-mm8X-MrO4WVAAUnkRP7KfGfD9Yhzre4qhdtEMlA4DAXG_yNQPQWvOx-zePAlpkOZO2GNKXFEgyGhn4EnplVUvsdZDHfBAy_5dTsF2KuER1mBWkdKnLYoFTFlWtYdVVGQXdLeRlgSQLSiATca9D9-SnyDdC-RE_BD28Al-6fC8Lkvc2YC2ozPAxNHFLDdv7_tIrpsEmBVlra3IT6CBYnPBbMT8wQQQ4n_Xf8pg_56zHiGVowElgBf0RCUtYexdUd4qwui3T_Epoj002c2Piot-Z1Kz7JkVku9jI8WKCTvB_mbvquJ0bg1ahgv9KFlJr7GzugDCxgp24TnlJVDw0d7i9aSjCnBavns3hdoHf0DTd_qxtRRWZzQciyCu5pkIMUhsWJgncXh62cTsLq2YAXyXLybi4R9mCseVFZEP2KgneDjFs7O-SqdDL4BbYmoZd3Jjkfr1IdZyKebSQsgk96P14sw21Oc_2-um-ZXqVgAyYWveE9TZN4xHHS-e4fXBN0AkEp9Pp_yLtseSAweNr8wkpvKV8U-I77g8U8zqHAIm3iyAJy4oUIcflsQYRRMYoGfbj_Zj8ZsXMx4aPAD28xVMPyA2fS7nSnfGgrZxjRAiQ5n2rm14t6ZwXilX5pP2AkvHjIJHexm3EhDTy7f62RPnKXBSwYsLzUGiJ0p-LLVwgd0BC2-8CCs0dTkK-yby1cLWcy48Z6oXXwl6Yu3qDviIMWNE3Ww68GRPlFJ0kajg0Zl60cnmkFvjE7_mu7OG1Us6_IQOXtksxeRualmEmUnvUzdceWmjWF_prHedUSmsblCPmZ348Lc1iYvR0DSZmbilfic0Lvk9IpcmZwsBhQHWZPiW3_cZolfr_mLW4XSSlfcUpYixnrZFA3Yq7uuyNgK0gefmm2UNs5omnONmT8NWtscgUdrGEjZN5DGYJRa_WY4NCRoC-szw8LfJ8osdUglY1BNwvfKYMMIiU-DbY_NT2JQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2156f494887d1b17f214c23200c70",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Q21dxHa2D4X8MjTbnMOg4ips",
+     "content": "[Page 64]\nNote 5 - Acquisitions and Divestitures\r\nYear ended June 30, 2023\r\nAcquisitions\r\nOn August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\r\nflexible packaging manufacturing plant. The purchase consideration of $59 million included a deferred portion of $5 million that was paid in the\r\nfirst quarter of fiscal year 2024. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $36 million and goodwill of $23 million. Goodwill is not deductible for tax purposes. The fair values of the identifiable\r\nnet assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\r\nOn March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\r\nShanghai, China. The purchase consideration of $60 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $21 million and goodwill of $39 million. Goodwill is not deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nOn May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\r\npackaging machines. The purchase consideration of $45 million is subject to customary post-closing adjustments. The consideration includes\r\ncontingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\r\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\r\nidentifiable net assets of $9 million and goodwill of $36 million. Goodwill is deductible for tax purposes. The fair values of the contingent\r\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\r\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\r\nacquisition.\r\nThe fair value estimates for all three acquisitions were based on income, market, and cost valuation methods. Pro forma information related to\r\nthese acquisitions has not been presented, as the effect of the acquisitions on the Company's consolidated financial statements was not material.\r\nDisposal of Russian business\r\nOn December 23, 2022, the Company completed the sale of its Russian business after receiving all necessary regulatory approvals and cash\r\nproceeds, including receipt of closing cash balances. The sale follows the Company\u2019s previously announced plan to pursue the orderly sale of its\r\nRussian business. The total net cash consideration received, excluding disposed cash and items settled net, was $365 million and resulted in a\r\npre-tax net gain of $215 million. The carrying value of the Russian business had previously been impaired by $90 million in the quarter ended\r\nJune 30, 2022. The impairment charge was based on the Company's best estimate of the fair value of its Russian business, which considered the\r\nwide range of indicative bids received and uncertain regulatory environment. The net pre-tax gain on disposal of the Russian business has been\r\nrecorded as restructuring, impai\n\u2026 [3,323 more characters]"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_CztUa6hT1KB0GXsr4zqoqWTc",
+       "function": {
+        "arguments": "{\"pattern\":\"On .*acquisition|completed the acquisition|acquired .* business|acquisition of 100%\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_pIWQUmTVXHkDnEX9eJLAEiXy",
+       "function": {
+        "arguments": "{\"pattern\":\"fiscal year 2022.*acqui|fiscal year 2021.*acqui|Year ended June 30, 2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Examining acquisitions data**\n\nI need to look into major acquisitions for fiscal years 2023, 2022, and 2021. I see that Note 5 mentions mostly disposals for 2022 and 2021, but it seems potential acquisitions weren't disclosed. I should focus on pages related to 2023, especially since there could be mention of three acquisitions there, whereas 2022 and 2021 might show none. I need to distinguish any \"major acquisitions\" noted in management discussions from the fiscal years mentioned.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhV0xkIoTcoyH-NtRpwWHXA0R2F3MTOWskTxaYZDK9npCTRwxmPi-nOEn4QX3M5KFOfhBUXTQ_tnWDpsv7_qKKSqF_vo4-vF-VHgTbgtHYYnCVnPjdyjRB3SeQ4EegkiytvvWIu5E_w4GI2Tna8qAGPWa6lG7c2s1PWjGfl90pHskbqt04cPvIRzD8rtOxYbi0n0HmvGFVttR5JhChNi09AKO2O35-1R84wx8fHEHzigw2iTBEax52QRTvM011PE2wRUylGdGc099lI1KphpuqGC5vYStjIzj6UHDpVmQQCcKVv5oN9sLacLjACF9unppQ-LSwO9qn3PBN2BV1DD9lRkGN38PiM0AGyyigFOSlqAKAAPid8RBdyUVV6AS4kGdQ8kJB0g6gAQdIf6jb0ZvIM-hMfQRefWYo8i5au098cOfnST9OFmwOAKXebtDS557W98mA37n0rdG0_20WdYzWRTWwJQ0yyiV6NYQozLKaTDd1M3oR_aQsB8OInSC-KR2hNjwErZInwsL67Ir6r5BIfXsZMdjHc_IkIA0hZd_SYpchaVa-zcBCdNVMGg_0KJ50R4jDvzbrQs0xWPnm0bqi3HeNJY7TKTJBHRmfLLAjpbwtgYgw8ifubSNRwzSrw8XybMIYJ1wG-SnItuHq6yMrRIPAZ8MpiEK4nkChsEpds-ZrVf0jrNN0Ut_hkfy9zwb24rpf08DuBKF2bISFnGP173a2plruhq5hz-zC30A_xZSz51uARoFGWTvzOYBemNDXhcI8rGdaAF8jYM0-wRAlS0JMJXYlwE_imZbGoJ6w8HHQqeMJGeogd4xSmBhCXTuL6g-RdYi9_yPWU70aAnh24J5a0Mztn2J378VBTr7dwfFUkx4qwjWGQWPF_91_0WAAFHfgJpcIoIE1SOLhfVLvILcFoXZAhsgzV1g7oUoz33CLFMInWdhMNny74kkLvGmoVWn0dBK915gyKeL179DaC9Us8_uj6ERq4U27ekXnESGi1SUSfmzGlBOtJ_btQuDrd7gnAnE3Nj5Uehfc3vupq_99YvUQ6igwMqFW-O0oLycreyJGNQnbsQtCfELFIHXqs-XfKxLJgqYxkGo-uuodG_NCQG7Djxyp0mzfigBYiwxVrImLfZHRTEwVdaH3br_gtVYt1kkhSk3y6DYLlPMrlL07LFrcmEieiM4_nVEhwo1O5WS6u12cm3JP23F4T5KOiVh6_4IhluTyxpzohNKbPbhvK0RffYDaTOrTbUmJxwEn51MgNu-yZlHiY1Mi8oaLzA5VVd9z7l-bBlyZ6TCKQjvLHIp0WBrpQostUBcVC16_rt4crUhyJLDtdh4YnT9WJOn4Fx1HBBnyO5k_CxM_20X5f-AEAgqcui48VTdxi1DNjAA79PecSKwSEQ1NEPDoCjBZ07AUEmKFvSmwCt8vblYT1Ry_nkuDI6d4gYTK2iRggsE2fszsnkfXApDwsrxzjdDW3JMGjvdTypHkFoHBXpMtIn1iMNTyEVsPFe7P976pPkmQrAGI06_6KsI_1XscOwGZTk2FgUtn0gZgVF3N_P-yD1ETn7DbquVAH-VVnhV_h_27YGStXT24ZyMvQbOCKG59BlQtP1oKAu09BhAVD4ujc6KJu7GTXira9lJHlct5qEHiVX5RfOj1JykmyJ7Z7hS-7dvlTNyJObyV3QZHbwyThxM6fpvQHYmUs02nc7Fev9bzFJbJA-sLUrux5HKh2TAMHglpu3sJWVT6nxQ_c7VuNGN_SPG4Zz9N2-FxuhYOP-IIWhi_un9E_vw8dDbe9hLyspK4UqIjxENgQLKVgZ97L-wrfusIt_SNTYPUVAqvrE2_Xznij6GWsIFpwR0glIFU-D9ikouwbUWRDXYzAkGoW-p8wqfKVAR2GCafdf5twuO2dfWOGOrMBBOanNpvwo8QkobH9dVYHjBhUgG-uAxPKMY-J1YYihtkzJo5ugVnlCLWt0rrfG5iDHkak-ebSfdhgFBCu946zsznT4fcmJipR3DNI_8ct7KluT2uR8Ayb6ujSERF-ZWfMcttS5GfyzXDY77FkwGhBvlj4l1tHtD8alnl-CgVfs_mhE9UE2GpywDK4Z_nZdVqvPadS9UPnYa-EKAWZ63Jnt-5hug6Sf-u7H6NEd0DOYBWfnTbkdWZ2yphf4Byh65l0eMRGnH9n32e_tEGWWpGOT66cywge934UgRw9NT2d1ExAeOr9vWzw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac2157172f087d19f60942bceb57dd8",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_CztUa6hT1KB0GXsr4zqoqWTc",
+     "content": "p15: and expansion through investments and acquisitions. However, we may not be able to execute our strategy effectively for reasons within and\np15: suitable acquisition targets in the right geographic regions and with the right participation strategy in the future, or to complete such acquisitions\np15: on acceptable terms or at all. If we are unable to identify acquisition targets that meet our investment criteria and close such transactions on\np15: through acquisitions, we face additional risks common with an acquisition strategy, including failure to identify significant contingencies or legal\np18: management team and our operations. We focus on our talent acquisition processes, as well as our onboarding and talent and leadership\np31: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), we initiated restructuring activities in the fourth quarter of 2019 aimed\np35: Add: Amortization of acquired intangible assets from business combinations (2) 160 163 165\np36: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np36: Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information regarding the\np42: We decide on discretionary growth capital expenditures and acquisitions individually based on, among other factors, the return on investment\np48: directors of the company; and (iii) provide reasonable assurance regarding prevention or timely detection of unauthorized acquisition, use, or\np56: liabilities assumed from goodwill, at the acquisition date fair values. Goodwill as of the acquisition date is measured as the excess of\np56: consideration transferred and the fair value of any non-controlling interests in the acquiree over the net of the acquisition date fair values of the\np59: Goodwill: Goodwill represents the excess of cost over the fair value of net assets acquired in a business combination. Goodwill is not amortized\np64: On August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\np64: On March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\np64: contingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\np64: On May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\np64: contingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\np67: In connection with the acquisition of Bemis Company, Inc. (\"Bemis\"), the Company initiated restructuring activities in the fourth quarter of\np72: (2) Acquisitions and acquisition adjustments are detailed in Note 5, \"Acquisitions and Divestitures.\"\np75: Contingent purchase consideration liabilities arise from business acquisitions and other investments. As of June 30, 2023, the Company has\np101: Less: Amortization of acquired intangible assets from business combinations (2) (160) (163) (165)\np101: (2) Amortization of acquired intangible assets from business combinations includes amortization expenses related to all acquired intangible assets from\np101: Method and Other Investments,\" for further information on the disposal of AMVIG and Note 5, \"Acquisitions and Divestitures,\" for more information\np139: (c) Liens existing on any asset prior to the acquisition of such asset by Amcor or any Subsidiary after the original issue date of the Notes,\np139: property that is affixed or incorporated into, the assets covered by such Lien on the date of such acquisition of such assets, (iii) such Lien shall\np139: secure only the Indebtedness secured by such Lien on the date of such acquisition of such asset and (iv) such Lien shall be \n\u2026 [310 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_pIWQUmTVXHkDnEX9eJLAEiXy",
+     "content": "p29: Form 10-K can be found in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended June 30, 2022, filed with the SEC on\np56: for the fiscal year ended June 30, 2022. See Note 6, \"Held for Sale,\" for more information on assets held for sale.\np64: Year ended June 30, 2022\np64: Company recorded an expense of $10 million during the fiscal year ended June 30, 2022, to adjust the long-lived assets to their fair value less\np67: for the fiscal year ended June 30, 2022, included expenses triggered by the Russia-Ukraine conflict to help mitigate the impact of the Russian\np76: In addition, resulting from the effective disposal of non-core businesses during the fiscal year ended June 30, 2022, the Company recorded a\np76: income, net in the consolidated statements of income. During the fiscal year ended June 30, 2022, further long-lived assets with a carrying value\np76: the result of general civil unrest. In addition, during the fiscal year ended June 30, 2022, other long-lived assets in South Africa, with a carrying\np81: fiscal year ended June 30, 2022, is attributed to group annuity contracts, primarily a $186 million contract with Pacific Life Insurance Company,\np92: year ended June 30, 2022, the Company effectively disposed of a non-core business and transferred $19 million of accumulated foreign currency\np97: Year Ended June 30, 2022 3 8 7\np103: Year Ended June 30, 2022"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_48DZoNBskWzqOESxqbRH9qJn",
+       "function": {
+        "arguments": "{\"first\":52,\"last\":53}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for acquisition data**\n\nI'm exploring whether there are immaterial acquisitions in the cash flow business. I see FY2023 has some references, but other years seem blank. Maybe this supports the findings on page 53. I should check to confirm if there were no acquisitions in FY22 or FY21. It could help to cite page 53 for clarity. Let\u2019s see what interesting data is there!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for acquisition data**\n\nI'm exploring whether there are immaterial acquisitions in the cash flow business. I see FY2023 has some references, but other years seem blank. Maybe this supports the findings on page 53. I should check to confirm if there were no acquisitions in FY22 or FY21. It could help to cite page 53 for clarity. Let\u2019s see what interesting data is there!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhV5D421RFkiZg_6LlwLgnyd5lFeDCEiA6OlzpXVs981HHJng_lNubQLikf0Qj2QXmV79Thfc3vyr1hKn3THdjGboqeU8wUz7DMEyGSL697bg2a-0_FxMr_NTeLaOuqWSxfacfkp2t2nudfh7TirPiJqFS8_sXHkr_MmkwJN764YuGhZnWy4ZtZYIsYQKVjivZNi7jI0_pSjSMOeSL6MDOJ913PyjcaRxjowZ-OxdXyjlPdkodoaIIDCi60IRkIsbSE-DLRFOdswxQjTkfpihOJq_HOYt1FlHtpP7hAGZ2F8NNNqQsEzXMBfC0_CmHVzH_mVh89xYj2QigiDL6H-_EYYDhUVkNE4VjXb085qhMC_DPfvNFfJYdUR5Bg7qKEGHFPPLUj3qW6UwFnRY40F7xKO1r8QGuXgH277QJCAcA5Xg3AWdWK7GhpJxUcVwVBDCOoMDG1GAVpgWbyWVaC8aGL9RtFVtsgkuNTdGQzSYmILN6uCaRAZzgSV-aCBolm1nkp_aRzNLinjNLovor33HkTyO8-rjmBTNuBLuc1esPPhtc-nA9j0bAbQDh6G-j9r3ih-dLIwAsyU2d57WH-lQmIFlPHCknp049kJr-JQ2TNPKa3GzEP84VIEx2lqgIhTbTdN7qGZX3Ew7AgNuVxBBprDtdZlCzU5m8rwZPSrbWwmwkEilFTbQ56vjlqhN4cMVOC9mcAC_87E8xFLDn8Q6Bf63BhTEikeoZcb_ibJONZ2agKVXL1jn0xr44pDie3zLDn5fd1d3XufzzXaLc7YlPGdIesORQRDccKmOWk6NAO0TFUaP5on30tv_xi7ajJEUhqnIIZWsI9O-ieMvpoU3VX1YaRj4uZVbaeM0depfNFptL8I2dcnUMAiq0HR-Kd6hBn9uHm7G3vxeF6Pc7Bl19X5_nbwak6Blw5rdJDYUk62Mzgjj58aK3AGeLTSSaOTTDtq55APvfJQFx5_qP07eEtOD4TmES99gwtof2KwJb9ILrU7kt4AE3jfMk6X-cjNEwyTp59NNLssmDQNeMSXLt1cr9kTORGW8dH17YLKmdZj6aRUlNehf2GFjQeSnoAnEs9XeJ6ShOeHtXK0pAbLZobHTJ6PfvTFoAeCmkxS4xbtm8SO1p6guLsHbdXUz-Sb0cL14TWZSf0MLrtCRhcoo82OXE15PzHJ-b6jrIM_MsX5G_0y2IXHyFVmKuBN99_Ra7F9z_IL8uB0bGQOnpwXW6RKXJZSMksXSwJBIMBimvJ3ydGGsdOwn2erpsiANtikpl88mV-hnH7YTh96tMhVyIz2kYqbGbMyGc-hqdTPuLAhtA7XHLsIUrztf9p9BWlPF2gia6kg4izcjwZz7aU8hVjAyxQ8VHRZ4KAoL-JcGKJU33KtzGZAJu4LvnSYL9TxLz2HJ2MAJGwJZNJYigq21samgle8u19pDFOZ1DgiHWMyNbCAyzEaOQec6LMlayra-Ho60gCKeX8Uzw-1uN6vWmPGQzYszkAo9obceiu5KiPDJgd9tg4QScA4b1yx6OMSDWzdk5KBywES7j0tqlj3va-WWX1JYdAGGq2kYrtaTT-lNu9V2HxRE5s6z1RUsvMOR_OEQlQ-feT-ubmrBgIaIYQPhgz92wzEZ-qXwwaz_DkDO1foVp_AHEl2EmgGQlFZLAfhr_qbl1djKT2ChrWgTNKkRBwaLv-4MpiPHO7MzVtNR0uTGjWgN-C7yUIkCud383mR6pRw3xi3udxybt7BJgXuAKwLJ1xieUkSwmHpmXlEWRGI8f5sfvNCUyZT_DV2uemlt4x0QuRGPiYfT78PbPG2o5XO7OV7u2nE7jkm4WKM_Unigfod2RQiyn38CvkKPjj4D7YvakHr68JggUS1RQtG-A4g1mKz-u4RC3Ofrx-2JJ2urOQnT1WXei2nySwKRtLQ8vVjNOAVEcHwLQS8OR_mv6cYENRGLbgyY5_V5k4avTH7jw9wKRKO10ulFOrRO3Q0hcAARyuGxvDNeJogzZ48OWiZ-tooV0w5tw4sLTOdMq1SJdm3AiNwQ2jo21DqZznuCnob_JPhlpAIQSql7HHCauEa9g_rxo2G10pKbWTus0uarlIVgLIQdB596_2BfL00pqr8KGkP6sMayHsSKwJu7DDeVd79UVse47Z4CoQP8tRnYvodWpOqQXcIFYBCTTimn_Q9rPHrEW_kyAbckgqK-tQhCmUY2EZCzoIdF1-1HEhLpqVnr5UFc9wXjyamCUSCQrVYDcb_4GUmQmQzOgTSV3trK_pRBH7W1WdhE5-ZyeHey_6wjL_JJzmuphPT-QmHkaFqFMNpKZDya59Ca4tjYDZW14wYVVsElUWrhP8QIcBJ7g_T2kTzl2FEsSrBIBLdx7DuaqxQ7-5aU5lxyi52YsQdgz5nhsr9Od_1wdMCNvZ89NnzqvudcCNiIMdENtbpXfCDZ8UkhLzCoixxV3FYROP_C0rKgT0_riCsfdnFft9G6RxIKo7CGYzBGpPjf1iwyegp1_8DkhR1u7UGtK_t5mv1f0yZNVKmGS0iERnErAM0bgCAqMYRtQNkcMWe7mwgZzCVquO9uSVCuaNaWFwtMG0ne0rT3_ud3mFu2Mg8d1nReBDy9Vide3op40WJj_kp2FkReKj4oDI1uU5N2N-w8OkQNmHE3n5Bf5166mAl2TlKrE_D6yJcTljODrDxXncBEo2a0X7GtgBWIjtocU-cCgVtMUcWhiqR2FDVfaX96_fQX2dIEfr-AE9WFvSbTA4xsGsq-MhgOCVdEJEttluJBG1aLJQodf_gAhOIhrwAsSzG7DI3gmA0OTGqIybnSN1aOxmUaf_FJA4vQyZ4PKElBe5b5NPr1WD29SRie0InRMtcRb6_KpMXXer8AooCccW9dM0n4phF-zjbmkynp5QW3lBrYN5ft8fyPZa_AWLnk2u_xYjhB3efVeQHYNY3WR8HzR6OGa_JeJ7toUdvb0WOFwIcHYynpZqN1tO28BD1mYBg0049BdtFCST4zuFYmot9.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03604658ccd35cb0016ac21576702c87d191e8409847d61814",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_48DZoNBskWzqOESxqbRH9qJn",
+     "content": "[Page 52]\nAmcor plc and Subsidiaries\r\nConsolidated Balance Sheets\r\n($ in millions, except share and per share data)\r\nAs of June 30, 2023 2022\r\nAssets\r\nCurrent assets:\r\nCash and cash equivalents $ 689 $ 775\r\nTrade receivables, net of allowance for credit losses of $21 and $25, respectively 1,875 1,935\r\nInventories, net\r\nRaw materials and supplies 992 1,114\r\nWork in process and finished goods 1,221 1,325\r\nPrepaid expenses and other current assets 531 512\r\nAssets held for sale, net \u2014 192\r\nTotal current assets 5,308 5,853\r\nNon-current assets:\r\nProperty, plant, and equipment, net 3,762 3,646\r\nOperating lease assets 533 560\r\nDeferred tax assets 134 130\r\nOther intangible assets, net 1,524 1,657\r\nGoodwill 5,366 5,285\r\nEmployee benefit assets 67 89\r\nOther non-current assets 309 206\r\nTotal non-current assets 11,695 11,573\r\nTotal assets $ 17,003 $ 17,426\r\nLiabilities\r\nCurrent liabilities:\r\nCurrent portion of long-term debt $ 13 $ 14\r\nShort-term debt 80 136\r\nTrade payables 2,690 3,073\r\nAccrued employee costs 396 471\r\nOther current liabilities 1,297 1,344\r\nLiabilities held for sale \u2014 65\r\nTotal current liabilities 4,476 5,103\r\nNon-current liabilities:\r\nLong-term debt, less current portion 6,653 6,340\r\nOperating lease liabilities 463 493\r\nDeferred tax liabilities 616 677\r\nEmployee benefit obligations 224 201\r\nOther non-current liabilities 481 471\r\nTotal non-current liabilities 8,437 8,182\r\nTotal liabilities $ 12,913 $ 13,285\r\nCommitments and contingencies (See Note 20)\r\nShareholders' Equity\r\nAmcor plc shareholders\u2019 equity:\r\nOrdinary shares ($0.01 par value):\r\nAuthorized (9,000 million shares)\r\nIssued (1,448 and 1,489 million shares, respectively) $ 14 $ 15\r\nAdditional paid-in capital 4,021 4,431\r\nRetained earnings 865 534\r\nAccumulated other comprehensive loss (862) (880)\r\nTreasury shares (1 and 2 million shares, respectively) (12) (18)\r\nTotal Amcor plc shareholders' equity 4,026 4,082\r\nNon-controlling interests 64 59\r\nTotal shareholders' equity 4,090 4,141\r\nTotal liabilities and shareholders' equity $ 17,003 $ 17,426\r\nSee accompanying notes to consolidated financial statements.\r\n52\n\n[Page 53]\nAmcor plc and Subsidiaries\r\nConsolidated Statements of Cash Flows\r\n($ in millions)\r\nFor the years ended June 30, 2023 2022 2021\r\nCash flows from operating activities:\r\nNet income $ 1,058 $ 815 $ 951\r\nAdjustments to reconcile net income to net cash provided by operating activities:\r\nDepreciation, amortization, and impairment 586 625 574\r\nRussia and Ukraine impairment \u2014 138 \u2014\r\nNet periodic benefit cost 11 12 15\r\nAmortization of debt discount and deferred financing costs 4 2 10\r\nNet gain on disposal of property, plant, and equipment (5) (3) (10)\r\nNet gain on disposal of businesses (220) \u2014 (44)\r\nEquity in income of affiliated companies \u2014 \u2014 (19)\r\nNet foreign exchange (gain)/loss 28 (14) 21\r\nShare-based compensation 54 63 58\r\nOther, net 5 106 (83)\r\nLoss from hyperinflationary accounting for Argentine subsidiaries 62 22 27\r\nDeferred income taxes, net (57) (33) 4\r\nDividends received from affiliated companies \u2014 \u2014 4\r\nChanges in operating assets and liabilities, excluding effect of acquisitions, divestitures, and\r\ncurrency:\r\nTrade receivables 93 (272) (189)\r\nInventories 248 (626) (112)\r\nPrepaid expenses and other current assets (54) (67) (90)\r\nTrade payables (429) 711 342\r\nOther current liabilities 21 123 11\r\nAccrued employee costs (84) (20) 29\r\nEmployee benefit obligations (25) (35) (40)\r\nOther, net (35) (21) 2\r\nNet cash provided by operating activities 1,261 1,526 1,461\r\nCash flows from investing activities:\r\nIssuance of loans to affiliated companies (1) (5) \u2014\r\nInvestments in affiliated companies and other (56) (12) (5)\r\nBusiness acquisitions (121) \u2014 \u2014\r\nPurchase of property, plant, and equipment, and other intangible assets (526) (527) (468)\r\n(Payments)/proceeds from divestitures 365 (1) 214\r\nProceeds from sales of property, plant, and equipment, and other intangible assets 30 18 26\r\nNet cash used in investing activities (309) (527) (233)\r\nCash flows from financ\n\u2026 [1,165 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**FY2023:** Amcor acquired three businesses/assets, none named in the filing: a flexible-packaging plant in the Czech Republic ($59 million consideration), a medical-device packaging site in Shanghai ($60 million), and a New Zealand manufacturer of automated protein-packaging machines ($45 million).\n\n**FY2022 and FY2021:** The filing reports no business acquisitions in either year. It reports **$0** for business acquisitions in both years in the cash-flow statement.\n\n**Justification:** The acquisition descriptions and consideration amounts are in Note 5 on page 64. The cash-flow statement reports business acquisitions of $121 million in FY2023 and dashes for FY2022 and FY2021 on page 53.",
+    "role": "assistant",
+    "reasoning": "**Analyzing acquisition details**\n\nI\u2019m looking at cash acquisitions, which totaled $121 million for FY23. Let\u2019s detail the total purchases of $164 million, but cash flow outflows show $121 million due to deferred or contingent payments, which may not always be necessary. It's important to mention major acquisitions, even if there were none in FY22 and FY21. Notably, in FY23, there were unnamed acquisitions, like a Czech Republic flexible packaging plant and a Shanghai medical device packaging site.**Reviewing acquisition evidence**\n\nI'm examining evidence from page 64, note 5, and page 53 of the cash flow statements. They show acquisitions totaling $121 million, while there were none reported in other years. The year ends on June 30, indicating fiscal years. It seems necessary to highlight three major acquisitions, but the pro forma figures aren't material according to page 64. I\u2019ll provide a final answer along with a brief justification, only referencing the document without specific transaction names.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Analyzing acquisition details**\n\nI\u2019m looking at cash acquisitions, which totaled $121 million for FY23. Let\u2019s detail the total purchases of $164 million, but cash flow outflows show $121 million due to deferred or contingent payments, which may not always be necessary. It's important to mention major acquisitions, even if there were none in FY22 and FY21. Notably, in FY23, there were unnamed acquisitions, like a Czech Republic flexible packaging plant and a Shanghai medical device packaging site.**Reviewing acquisition evidence**\n\nI'm examining evidence from page 64, note 5, and page 53 of the cash flow statements. They show acquisitions totaling $121 million, while there were none reported in other years. The year ends on June 30, indicating fiscal years. It seems necessary to highlight three major acquisitions, but the pro forma figures aren't material according to page 64. I\u2019ll provide a final answer along with a brief justification, only referencing the document without specific transaction names.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWB9bJxe9j6JKBYSdnF1l1G66gkc_XDUdOP0JLsUgmnQxbx1CXBDIvjFKs4lizkL3YIt3iFS-yDevQqxv6jS-hbD5fswAG9GzJiBtc5Crjyo_LQ7vdp1mxoisi0d1j4MLuIZ9_F-2MIdvjEoEHBYa6oJ_nzwESZUx3mOBH0dGLhwTtqBPCuvCRaJWtAmKlxASkr8lsPkiQlvgFaF4zs8YnI15mUKb7cx0vI8xDvOveHKh_-Xeqnlgu7kAH-8DUJhhAWQVurBy-rNueQMMOlsWwK59b0OTDUdFz0-qarDq1a8ePvSwS2c49VCtqgzkGTJZqu45FJKMU7oKGN_hlb1-eDALCWGWNk8iYjiDffML_Hqm5SWe3lmqQy6SYIel69RGzzrJU-lsNDa2zarcufyOAV2dZon0GSPAS_VdfvnkGJ_k-PJ_KF46Uhm_K2NYFq3b-6mxVkzJbKH6Gi9m-nynfSmJNxqswk7rzRdYjUvBsTNh1I5ApIj3s7f8MCaoXBqx7l2ld5QgtLj-sEaTTJdihff-4kRr1fkYGcAMfcp-wR-REKBoTKrdROLGaY4l-n5lZ2penWfatPBbwcWkBAJXdj0ar2dKWZYdMETWD8xIWkZ7JLnz6tJmEyMRhkDiDkWTAuOHKoKgz978z9RKws0cjzvbREKRQIwSt1y-x_6DwV6KyIB1OkFh7dlo8g_w2QMTPP6cum26pn-2omc9Kk1PVo48TrvrLPqK17LkqVN8nRFY92h2PuCvOmBSA_2YbMVfj27_0LaBc8Z4jwjeGndgLJeC2JZ_G1mIIVdxqC7RPw_qQl6M4JjNdrJ2bsqvZw-rzeDv9V20XYF0wtLvoLKCt7BqcO-z5KVVoxXFRglEH7IflWR4lRWNOA76mscpi2rdEKaxlsDKSdiUV5VHy0t9NiARPAy5xJorA5wFcnCaexebnp88IoH8BMZ5VJe6WVMJ8TLhzDgZJxUR7J5iYYEf4Qs18hRyM2ejqga2cDD5-hGjROi16_YVnFzuNeaXobjKdzkmiK75IUW2QPh3IISj9uu64szy-wPnh-1ucoa53r_4hd_whFWXPWUo4KH0jnfFnfVqZpo-qFmQX79vXdfp48Gedxsc31oQZSFbZX43B9Fv9UuZttLxMxdLEqOSwt_OZrHQR31tHOuE1WWOJBHARN6YPH1n1m-gr5aq0l-KjG6pEaiwv9dsNGzGe5rTS5XXn9etR8C7AKtQG6VF0ww8veNE-unm5Ll-SQWvwIqP4GPtbqYIj09-9rE4D9BsIPp6Ho13Tw_SHuU3kIUI4CF681PuiYqk3RfZdxMlHO5MpVrisNI6L9-u_Sf6D-cwAQBXUt7iIL6esEhimJSOtyBICERWaXLH5o5cF3OMmS0E4pdJ3ponBQPhjWml1ENRCCYoM7ppYuGfJ90WZSt8LcGINmzUHK6Iec0lA1S__ehDQhACZpCnA4DOZnF1gSxgaYuj6e0Ygv-jZG1aMZatBZahL25bru2S419YSO_Jw_dx9gupysgRwZrLNDrCakCM_s4N9qIM06xqp6fMHeKIlL5W7MtPlrsukKKOk8E-zPn2Rf78f4aF1f6FRFEoLjhT6aQru092VZEg8_zkoKqkPpuO3SRQMbTRq0anrrmmD7iJGIkAPLqjJ-62aVjhAoguxTI4r6vgPyb1bYRWP8bHep3olkKW4qc6pihdNGCVmdUPlTUk1RygJ7hT_tbt-ds_8Y66SYaIL084X769rCEf86l57GNpBqRVZGxwx2D13M2QcL5_LXEu-Ek-MRDPhlP54diVLDhuEc--mLkmiPf5GwUtNZA2xKdlpiSC-AJ_aZKFozt34-vXZqt9rHJABUFCntB8sGu3Xg_6Pboyn2-XmFFnVWG6jHAEFlGkiXCLFarxtAZaPWvBKcN0WOSsDqKsSSc1zJDpX9NnyEAPy_wY_xUQNkpNq7w6bNMsJqfwKPi_5bqquwFY33uuFX-ummb141wGGfw5_tCKAlBIADqeNJTK-E29Qo7s9RNilZOOEecGxs3kn8vvGaK5MtcvoLoxHrn9zzD2gDo7I5WoeC7xcUQ02CpyxhRTM930uRPBfkz83OmFxdCjr8UiLe-a3UY7lWUxB79hqKHMVbzXkdfGWuy3rsa_gFzl206sE-Fj0rrgkLMZ4WjkyBd3e8sRmSgjfmBqZxHtz7ZRlenjYcwzh02DW8PptaEwA_vhhnIL3A4wqyZldt-Ws1XLXMeTYoCFrcKhSOXgKcjCCiedca3V4Nqh1fwYrkLvcPAoKhsgQLBzIbBTsa_-uLDv0YQxZ6ZLhJHFQgrS40GPFOv20_af3qV08PpxsfnzBz_uhTMCsO_Dq2-4WBbB9BuVHkJGDiD1k3FGD-vE415eIdA0Bvx3iRigeH8m4THLEcRIjwwkeBTWvDIgf81MRZaf4_jIAARlOKKrVLOWwWJcCENaOTB_sS2qlVjuV-FgjpXiIKRDzA3Rj1ihnbbZAQDKwzzDgk1s9st00AbYDt5CQmQedzJtV8Db8RHKsPlrBt1y-tguQSDfMlhkDjl5VDaSeczmeSJ4XEWsSENTy1ZpP9zFJXWoR-1ze0NGIbdPRwW7hsdJDFUwSCPtgRDJ1pF2Vd3TU7pw1WUlwYuLSbkWT0VjODfwBvyKujSJt4IPMGtvidwmOdKH26zOjRyPwrKSgeCfLiBtgvqh31bvObQmsHcyscH1wClf_Y-I69DkIds5eXvM3oC0G7OqymIOr1HRW81VPriRdEn5vNtWnZeMMd1TXcLIzjZrCwFqa3H4OiPNj0shTYgRDY3vkdUtMesb6lu_Y0tv2KyRnmXqt6QuitgZz3i0QJXkeJVl7Qt7oJjOyC79EuAOO5G4fiR4W9Tzp9z88vhtRw6UYsMHg3O2f-ZxP3JcB1zyAUWQ1e4HIixQSV5VLxsaY6aJ1YfNLoDBqNAFekxkwq8QOdTP5nxjgkDWzKJZ6Jqsy-CfRhTcNcWgB_igKyO3WfK_Lr2mIUmDQOdSva5E6edg-t-tQzdV2c6jVG0NC5M49oqVUqODprUj5ORWvhsfjaqTFMb14jiYR8-j76OZcLW60v356bvccmYbixymlArD6K4e_v5yYbnfqIJ2uTI3v9hm5n2urZcW5ZZlR_1al-xF88.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03604658ccd35cb0016ac2157c3f2487d1b43162fc3f589f7f",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 6841,
+   "output_tokens": 461,
+   "reasoning_tokens": 309,
+   "seconds": 7.42
+  }
+ ],
+ "answer": "**FY2023:** Amcor acquired three businesses/assets, none named in the filing: a flexible-packaging plant in the Czech Republic ($59 million consideration), a medical-device packaging site in Shanghai ($60 million), and a New Zealand manufacturer of automated protein-packaging machines ($45 million).\n\n**FY2022 and FY2021:** The filing reports no business acquisitions in either year. It reports **$0** for business acquisitions in both years in the cash-flow statement.\n\n**Justification:** The acquisition descriptions and consideration amounts are in Note 5 on page 64. The cash-flow statement reports business acquisitions of $121 million in FY2023 and dashes for FY2022 and FY2021 on page 53.",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "acquisition|acquired|business combination"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "FY2023|2023 acquisitions|2022 acquisitions|2021 acquisitions"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Note 5. Acquisitions and Divestitures|Note 5 \u2014 Acquisitions|Acquisitions and Divestitures"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "acquired.*(2023|2022|2021)|acquisition of .* (2023|2022|2021)|acquisition date"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 64,
+    "last": 66
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "On .*acquisition|completed the acquisition|acquired .* business|acquisition of 100%"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "fiscal year 2022.*acqui|fiscal year 2021.*acqui|Year ended June 30, 2022"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 52,
+    "last": 53
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer matches the gold's three FY2023 acquisitions (Czech flexibles plant, Shanghai medical packaging site, NZ protein packaging machine maker) and adds consistent detail; the gold lists no FY2022/FY2021 acquisitions, and the answer's claim of none does not conflict.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002536,
+ "provider": "llmfoundry"
+}

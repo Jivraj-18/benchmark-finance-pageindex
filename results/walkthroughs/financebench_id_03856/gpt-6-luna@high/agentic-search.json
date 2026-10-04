@@ -1,0 +1,378 @@
+{
+ "id": "financebench_id_03856",
+ "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+ "gold": "0.83",
+ "doc": "ADOBE_2017_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 8.4,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 4344,
+  "cached_tokens": 1203,
+  "output_tokens": 344,
+  "cost": 0.0004981300000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 107 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_e70ayjiQvb4VRDQVNcfiRKdK",
+      "function": {
+       "arguments": "{\"pattern\":\"Net cash provided by operating activities|Cash provided by operating activities\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_BMHVOZYAgQRSvIkDQeCsAC5o",
+      "function": {
+       "arguments": "{\"pattern\":\"Total current liabilities|Current liabilities\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     },
+     {
+      "id": "call_uorCrKdTYt2nuYYOlecZGHUc",
+      "function": {
+       "arguments": "{\"pattern\":\"Consolidated Balance Sheets|Consolidated Statements of Cash Flows\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 2
+     }
+    ],
+    "reasoning": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwZBMKwMQyMyZz6LHkv0ukRYnUG2MKo8H74DGLziIwddqLZniID4_8ADkGqMtcJ1UIEFXGlnoVjkpApH3FFay468jCMSwUaj7pPAwQvBr5t0NrNFyfAWAHnSc40hQVPOjd12wtOzgYyOtsSHv_POR8zdoWsUp4D87b4TykEmiUG8HR1rBbAdqwrzA53LLRd96WqffkfHJz5Ouv8go3IRxYuIdbYJGHZ5NQKuwojeH_Kak9xkFyhmjYBDUzbc6179TAejSFuZBdxgTl-suE6eqlI3VgghUqM0_q3h772_x50QM8X0WrgrZQe39ZF5VjAo3rAmga1HxeI8zrnIlfki5_osEvMsN-ZLn_-Afvcgcwne11-2B6O9G5V7NwInUVEBdlU3teUnn-eJMKkqICViWwZZSTTXjdvvrXN90ICyG8XfURkiBAztt8bKEbPtXHY3tdIHUztJRpc-REfvWf13-g70WS8BXKyjAgJM2-pjUNDPOWoDwRKYq504iB3dwvUuyxGI1ANJuS92WzndCjuDvJt_LVo6GTlBbJ9B44mFDG4XeM_1IDgbzYhaq69p2zauPEI6PGsYrzG1H6DJgkN1eN8jq-GwBgQNLoyeoZhGcxRzufEFsRHny3A8m2uX2yfzWhEfUeLvaWmhrDLVLpCLFd3YYynS8tBuqOAL_zXMU75A3Kz_0cTUGed5jtsFudgczuCsA-6h_-ud3qAxNQetty-FQ2sYKrDXa-J727rqYVBTgaFyDPppMQEPn89bJmhLE4zniEbHQBwGBn7OkpmOxLjcyTVRK5jpdaUztyg7dVLKWbdRubbTLvGAoEHuXNw8cxffB993ggAsZUOXMTdLilHGtbhdUx6zFiT4KAhrMdYi0RXGMzSbdZMwvaweiTYkuZpuj8PIcgFoL13gBzUp2M6WmgwlhPy7e0UCwbgU7ZrESwwECacmHyCtC9eJjjRoSQguDVNblZeBwhRn2JJFPO4l20RzM2yC8MUY6FZqKDp6rozGFEuwueVCA0WSc3bc4YWZg3zFBp-DZF8yk3XwmQ4HlCS0IBy1l-D9Ld5SXo8A4-5LgZg9owIezDnPyxatsBqFwSJis-bHH_9UXGKLDXH5SgPndpJByo23EZadqGzMSmBcFEkhsJLlnwWp4NrNNp22ta7UlXq9kbcMLX2AyFeseSlknwaI29bJbqTC7zyhCmyVRtvIrP_ouDnCxb3kuV_jO_mqQ47y-STVfWeACsYsZLWglysvoJmyt6UtW6CtCE67GA75UzqmQR5G5CEESAzILr6tL7C1qtQgOO1_FOGMJfTQAuzXIi44tWlNQFp_9bTDcSgN2HiPpOlwvJICBsOTfQp3n2vY1DRx7sMENITUpPK55g1nt0aIOhyNzvD_GR3U9zaI5ovT348RXR_O6n0h_UdxbbpUf31nmTLfPsWShQJoGs74fN4LUhBKuHnL8kDS3f-QCsqqZQwXNyHemsRZD0VS0j514dvywCZPIyWPA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_036ea0c2fbc3bb00016ac21c18185087d18428769598036d0a",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 250,
+   "output_tokens": 121,
+   "reasoning_tokens": 31,
+   "seconds": 2.83
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 107 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_e70ayjiQvb4VRDQVNcfiRKdK",
+       "function": {
+        "arguments": "{\"pattern\":\"Net cash provided by operating activities|Cash provided by operating activities\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_BMHVOZYAgQRSvIkDQeCsAC5o",
+       "function": {
+        "arguments": "{\"pattern\":\"Total current liabilities|Current liabilities\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      },
+      {
+       "id": "call_uorCrKdTYt2nuYYOlecZGHUc",
+       "function": {
+        "arguments": "{\"pattern\":\"Consolidated Balance Sheets|Consolidated Statements of Cash Flows\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 2
+      }
+     ],
+     "reasoning": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwZBMKwMQyMyZz6LHkv0ukRYnUG2MKo8H74DGLziIwddqLZniID4_8ADkGqMtcJ1UIEFXGlnoVjkpApH3FFay468jCMSwUaj7pPAwQvBr5t0NrNFyfAWAHnSc40hQVPOjd12wtOzgYyOtsSHv_POR8zdoWsUp4D87b4TykEmiUG8HR1rBbAdqwrzA53LLRd96WqffkfHJz5Ouv8go3IRxYuIdbYJGHZ5NQKuwojeH_Kak9xkFyhmjYBDUzbc6179TAejSFuZBdxgTl-suE6eqlI3VgghUqM0_q3h772_x50QM8X0WrgrZQe39ZF5VjAo3rAmga1HxeI8zrnIlfki5_osEvMsN-ZLn_-Afvcgcwne11-2B6O9G5V7NwInUVEBdlU3teUnn-eJMKkqICViWwZZSTTXjdvvrXN90ICyG8XfURkiBAztt8bKEbPtXHY3tdIHUztJRpc-REfvWf13-g70WS8BXKyjAgJM2-pjUNDPOWoDwRKYq504iB3dwvUuyxGI1ANJuS92WzndCjuDvJt_LVo6GTlBbJ9B44mFDG4XeM_1IDgbzYhaq69p2zauPEI6PGsYrzG1H6DJgkN1eN8jq-GwBgQNLoyeoZhGcxRzufEFsRHny3A8m2uX2yfzWhEfUeLvaWmhrDLVLpCLFd3YYynS8tBuqOAL_zXMU75A3Kz_0cTUGed5jtsFudgczuCsA-6h_-ud3qAxNQetty-FQ2sYKrDXa-J727rqYVBTgaFyDPppMQEPn89bJmhLE4zniEbHQBwGBn7OkpmOxLjcyTVRK5jpdaUztyg7dVLKWbdRubbTLvGAoEHuXNw8cxffB993ggAsZUOXMTdLilHGtbhdUx6zFiT4KAhrMdYi0RXGMzSbdZMwvaweiTYkuZpuj8PIcgFoL13gBzUp2M6WmgwlhPy7e0UCwbgU7ZrESwwECacmHyCtC9eJjjRoSQguDVNblZeBwhRn2JJFPO4l20RzM2yC8MUY6FZqKDp6rozGFEuwueVCA0WSc3bc4YWZg3zFBp-DZF8yk3XwmQ4HlCS0IBy1l-D9Ld5SXo8A4-5LgZg9owIezDnPyxatsBqFwSJis-bHH_9UXGKLDXH5SgPndpJByo23EZadqGzMSmBcFEkhsJLlnwWp4NrNNp22ta7UlXq9kbcMLX2AyFeseSlknwaI29bJbqTC7zyhCmyVRtvIrP_ouDnCxb3kuV_jO_mqQ47y-STVfWeACsYsZLWglysvoJmyt6UtW6CtCE67GA75UzqmQR5G5CEESAzILr6tL7C1qtQgOO1_FOGMJfTQAuzXIi44tWlNQFp_9bTDcSgN2HiPpOlwvJICBsOTfQp3n2vY1DRx7sMENITUpPK55g1nt0aIOhyNzvD_GR3U9zaI5ovT348RXR_O6n0h_UdxbbpUf31nmTLfPsWShQJoGs74fN4LUhBKuHnL8kDS3f-QCsqqZQwXNyHemsRZD0VS0j514dvywCZPIyWPA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_036ea0c2fbc3bb00016ac21c18185087d18428769598036d0a",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_e70ayjiQvb4VRDQVNcfiRKdK",
+     "content": "p49: Net cash provided by operating activities $ 2,912.9 $ 2,199.7 $ 1,469.5\np49: For fiscal 2017, net cash provided by operating activities of $2.91 billion was primarily comprised of net income plus the\np49: For fiscal 2016, net cash provided by operating activities of $2.20 billion was primarily comprised of net income plus the\np50: For fiscal 2015, net cash provided by operating activities of $1.47 billion was primarily comprised of net income plus the\np61: Adjustments to reconcile net income to net cash provided by operating activities:\np61: Net cash provided by operating activities 2,912,853 2,199,728 1,469,502"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_BMHVOZYAgQRSvIkDQeCsAC5o",
+     "content": "p57: Current liabilities:\np57: Total current liabilities 3,527,457 2,811,635"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_uorCrKdTYt2nuYYOlecZGHUc",
+     "content": "p34: be classified as non-current on our Consolidated Balance Sheets. The new standard was adopted prospectively starting fiscal\np49: This data should be read in conjunction with our Consolidated Statements of Cash Flows.\np52: For fiscal 2017, 2016 and 2015, the prepayments were classified as treasury stock on our Consolidated Balance Sheets at\np52: be classified as treasury stock on our Consolidated Balance Sheets. Upon completion of the $300 million stock repurchase\np56: Consolidated Balance Sheets\np56: Consolidated Statements of Cash Flows\np57: CONSOLIDATED BALANCE SHEETS\np61: CONSOLIDATED STATEMENTS OF CASH FLOWS\np62: Balance Sheets, Consolidated Statements of Income and Consolidated Statements of Cash Flows.\np67: difference is recorded as a component of additional paid-in-capital in our Consolidated Balance Sheets. When treasury stock is\np67: upon re-issuance of treasury stock are recorded as a reduction of retained earnings in our Consolidated Balance Sheets.\np67: We recognize all derivative instruments as either assets or liabilities in our Consolidated Balance Sheets and measure them\np68: Consolidated Balance Sheets.\np70: a separate component of stockholders\u2019 equity in our Consolidated Balance Sheets. Gains and losses are recognized when realized\np73: Consolidated Balance Sheets. For equity securities, the write-down would be recorded to investment gains (losses), net in our\np75: We recognize derivative instruments and hedging activities as either assets or liabilities in our Consolidated Balance Sheets\np76: The fair value of derivative instruments on our Consolidated Balance Sheets as of December 1, 2017 and December 2, 2016\np77: respectively, on our Consolidated Balance Sheets.\np77: (3) Included in other liabilities and other assets in fiscal 2017 and 2016, respectively, on our Consolidated Balance Sheets.\np78: capitalized the Almaden Tower as property and equipment on our Consolidated Balance Sheets at $104.2 million, the lesser of\np79: rights to use technology became fully amortized and were removed from the Consolidated Balance Sheets. In fiscal 2016, purchased\np79: and were removed from the Consolidated Balance Sheets.\np83: million and $42.2 million, respectively and were recorded as other assets on our Consolidated Balance Sheets. As of December 1,\np89: For fiscal 2017, 2016 and 2015, the prepayments were classified as treasury stock on our Consolidated Balance Sheets at\np89: be classified as treasury stock on our Consolidated Balance Sheets. Upon completion of the $300 million stock repurchase\np90: Almaden Tower as property and equipment on our Consolidated Balance Sheets at $104.2 million, the lesser of cost or fair value,\np97: We have audited the accompanying consolidated balance sheets of Adobe Systems Incorporated and subsidiaries as of"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_D5ZBdAMRx3lXY9bGFdc6j270",
+      "function": {
+       "arguments": "{\"first\":57,\"last\":57}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_2eP9L0SkkyD0EDy0cmfna9Oz",
+      "function": {
+       "arguments": "{\"first\":61,\"last\":61}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwbQrQEr8HCe6OPv75SiDNH7auDzZll69mjL9xta0Nd1wWrI6eHlnSO-w92jw4rRko97hlRwJxjcI2p8IIpIeQa0JPJyPJirdu4OQM3ktwAqy_IN5u_7LA8lXWlDBbLXR3PSSfzEf2XMlFurtlBEcHDenlNaiXlOdJ6ep8iOfwcPTXUNMWbcDObtFJlaveSs0JD_4X5FfXp5ERvImxvjS7YF8wtx4-vUpH81OSCSJvoIlTQDXWWry4-YN6QGcR9zGhEg0glvXcCV4XiMOCrRdj912M2oe_F-R5wa6wzSIpPFtDiIWqNpqX_-VownnV7UUub8GcNLaNixojuoPGls5Sck_F7phX5yf3fpfawR6hU8hcCzMH4K5EcpnAoxP0-ODtZ0a-XSJfl2j39liZQ767eLs_dklba7JI8JDX8ZwF5j2QksVAmtPGLSZgXyVPqrYxJBqNdUcZkokcGgfC_6xnv4s1Lzs8eG6ru5LHUNKqg4MU4Jj9y79FSFFsCPyiApUHErEaFW92yV2UoKMW_imACKY8nfsqaTm2bL_Yi2Q09JfoTthS1OjVskyOz4AtrsvcTPcp7DUp1wBEx4_ufrL4fChJBiLEVlimR38AYt9uhsh9I4fnFLGN6HwheF4-PSrlYXsrntJdnaxJJyyzmY1LBojeKnW3oPMuOBVTbWhyQJayFSwXpbeXFI8ccH94F8iN-8SRhP0BR4EfArHu9uxN0rU8gyMoKNy8Yui_tlDbeU6qvervSJ0pRsgX1xqCXniK4hmcggfZaWQ2gmAJtSZxnhj2u9blQ9sXdCAmdpwHhYKeeKe7PFpud4_XWORJ0cTPXU_Eb5NLJ1gg-gOWTG_pS0dM9P7uSOrV9vnGKyfSI_3W5uY1lxHUckr12ZbjhBzRMBnQqNsw1U0-B54X9fgYFnDpsHsaXpsPmwAQ8KCxpCG5E31pmiYf0sO-dqs1XJJQVGmQ6PStQflEX5jmmmrnRauzgBk83axdVaplwez-EHx5tLxE9DMrOb3v13FOo1DhOBv2knekHB0dk7m_Q-oyUlmOwz9GN0pdj7dbhZr969LS38V75duAhk-Qv4iv3JJ4lcKR7hBMrqg78-eXbN3UommzWnsHx2poJsNj7Wth09SU0UaMosUNfTBmtV1H8Ghjg7RBMHtf8Syo7-AerhCmedectO6kWJ7PYRm1vsYs1dXt3btBQuHaRlB4dJ3JPyo0kQILlWcmJDzTbk-R4jDw4Uf6o-gMR7JPx-rVubCuWAdBUx78OdGa7yn3J0u55k7Zuf-l1nWzNNnkRbt1GhUBUsY1lMtFdUlDtun2l39WexPEqO5EH3lPdI_-v5TiKSk-ZHE8GXskIaR41SqIrZwfVZ6Dzaf6ZIsd4wuL00aIQaik=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_036ea0c2fbc3bb00016ac21c1b1ab887d18c4f450775ef7cfc",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 1206,
+   "output_tokens": 74,
+   "reasoning_tokens": 16,
+   "seconds": 2.18
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 107 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_e70ayjiQvb4VRDQVNcfiRKdK",
+       "function": {
+        "arguments": "{\"pattern\":\"Net cash provided by operating activities|Cash provided by operating activities\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_BMHVOZYAgQRSvIkDQeCsAC5o",
+       "function": {
+        "arguments": "{\"pattern\":\"Total current liabilities|Current liabilities\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      },
+      {
+       "id": "call_uorCrKdTYt2nuYYOlecZGHUc",
+       "function": {
+        "arguments": "{\"pattern\":\"Consolidated Balance Sheets|Consolidated Statements of Cash Flows\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 2
+      }
+     ],
+     "reasoning": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for financial details**\n\nI need to inspect the document to find the FY17 cash from operations and total current liabilities, likely in the FY 2017 10-K report. It sounds like a straightforward task, but I want to be thorough and make sure I get all the relevant figures. So I'll search for the document and try to locate those key numbers efficiently to ensure accuracy in the findings!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwZBMKwMQyMyZz6LHkv0ukRYnUG2MKo8H74DGLziIwddqLZniID4_8ADkGqMtcJ1UIEFXGlnoVjkpApH3FFay468jCMSwUaj7pPAwQvBr5t0NrNFyfAWAHnSc40hQVPOjd12wtOzgYyOtsSHv_POR8zdoWsUp4D87b4TykEmiUG8HR1rBbAdqwrzA53LLRd96WqffkfHJz5Ouv8go3IRxYuIdbYJGHZ5NQKuwojeH_Kak9xkFyhmjYBDUzbc6179TAejSFuZBdxgTl-suE6eqlI3VgghUqM0_q3h772_x50QM8X0WrgrZQe39ZF5VjAo3rAmga1HxeI8zrnIlfki5_osEvMsN-ZLn_-Afvcgcwne11-2B6O9G5V7NwInUVEBdlU3teUnn-eJMKkqICViWwZZSTTXjdvvrXN90ICyG8XfURkiBAztt8bKEbPtXHY3tdIHUztJRpc-REfvWf13-g70WS8BXKyjAgJM2-pjUNDPOWoDwRKYq504iB3dwvUuyxGI1ANJuS92WzndCjuDvJt_LVo6GTlBbJ9B44mFDG4XeM_1IDgbzYhaq69p2zauPEI6PGsYrzG1H6DJgkN1eN8jq-GwBgQNLoyeoZhGcxRzufEFsRHny3A8m2uX2yfzWhEfUeLvaWmhrDLVLpCLFd3YYynS8tBuqOAL_zXMU75A3Kz_0cTUGed5jtsFudgczuCsA-6h_-ud3qAxNQetty-FQ2sYKrDXa-J727rqYVBTgaFyDPppMQEPn89bJmhLE4zniEbHQBwGBn7OkpmOxLjcyTVRK5jpdaUztyg7dVLKWbdRubbTLvGAoEHuXNw8cxffB993ggAsZUOXMTdLilHGtbhdUx6zFiT4KAhrMdYi0RXGMzSbdZMwvaweiTYkuZpuj8PIcgFoL13gBzUp2M6WmgwlhPy7e0UCwbgU7ZrESwwECacmHyCtC9eJjjRoSQguDVNblZeBwhRn2JJFPO4l20RzM2yC8MUY6FZqKDp6rozGFEuwueVCA0WSc3bc4YWZg3zFBp-DZF8yk3XwmQ4HlCS0IBy1l-D9Ld5SXo8A4-5LgZg9owIezDnPyxatsBqFwSJis-bHH_9UXGKLDXH5SgPndpJByo23EZadqGzMSmBcFEkhsJLlnwWp4NrNNp22ta7UlXq9kbcMLX2AyFeseSlknwaI29bJbqTC7zyhCmyVRtvIrP_ouDnCxb3kuV_jO_mqQ47y-STVfWeACsYsZLWglysvoJmyt6UtW6CtCE67GA75UzqmQR5G5CEESAzILr6tL7C1qtQgOO1_FOGMJfTQAuzXIi44tWlNQFp_9bTDcSgN2HiPpOlwvJICBsOTfQp3n2vY1DRx7sMENITUpPK55g1nt0aIOhyNzvD_GR3U9zaI5ovT348RXR_O6n0h_UdxbbpUf31nmTLfPsWShQJoGs74fN4LUhBKuHnL8kDS3f-QCsqqZQwXNyHemsRZD0VS0j514dvywCZPIyWPA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_036ea0c2fbc3bb00016ac21c18185087d18428769598036d0a",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_e70ayjiQvb4VRDQVNcfiRKdK",
+     "content": "p49: Net cash provided by operating activities $ 2,912.9 $ 2,199.7 $ 1,469.5\np49: For fiscal 2017, net cash provided by operating activities of $2.91 billion was primarily comprised of net income plus the\np49: For fiscal 2016, net cash provided by operating activities of $2.20 billion was primarily comprised of net income plus the\np50: For fiscal 2015, net cash provided by operating activities of $1.47 billion was primarily comprised of net income plus the\np61: Adjustments to reconcile net income to net cash provided by operating activities:\np61: Net cash provided by operating activities 2,912,853 2,199,728 1,469,502"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_BMHVOZYAgQRSvIkDQeCsAC5o",
+     "content": "p57: Current liabilities:\np57: Total current liabilities 3,527,457 2,811,635"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_uorCrKdTYt2nuYYOlecZGHUc",
+     "content": "p34: be classified as non-current on our Consolidated Balance Sheets. The new standard was adopted prospectively starting fiscal\np49: This data should be read in conjunction with our Consolidated Statements of Cash Flows.\np52: For fiscal 2017, 2016 and 2015, the prepayments were classified as treasury stock on our Consolidated Balance Sheets at\np52: be classified as treasury stock on our Consolidated Balance Sheets. Upon completion of the $300 million stock repurchase\np56: Consolidated Balance Sheets\np56: Consolidated Statements of Cash Flows\np57: CONSOLIDATED BALANCE SHEETS\np61: CONSOLIDATED STATEMENTS OF CASH FLOWS\np62: Balance Sheets, Consolidated Statements of Income and Consolidated Statements of Cash Flows.\np67: difference is recorded as a component of additional paid-in-capital in our Consolidated Balance Sheets. When treasury stock is\np67: upon re-issuance of treasury stock are recorded as a reduction of retained earnings in our Consolidated Balance Sheets.\np67: We recognize all derivative instruments as either assets or liabilities in our Consolidated Balance Sheets and measure them\np68: Consolidated Balance Sheets.\np70: a separate component of stockholders\u2019 equity in our Consolidated Balance Sheets. Gains and losses are recognized when realized\np73: Consolidated Balance Sheets. For equity securities, the write-down would be recorded to investment gains (losses), net in our\np75: We recognize derivative instruments and hedging activities as either assets or liabilities in our Consolidated Balance Sheets\np76: The fair value of derivative instruments on our Consolidated Balance Sheets as of December 1, 2017 and December 2, 2016\np77: respectively, on our Consolidated Balance Sheets.\np77: (3) Included in other liabilities and other assets in fiscal 2017 and 2016, respectively, on our Consolidated Balance Sheets.\np78: capitalized the Almaden Tower as property and equipment on our Consolidated Balance Sheets at $104.2 million, the lesser of\np79: rights to use technology became fully amortized and were removed from the Consolidated Balance Sheets. In fiscal 2016, purchased\np79: and were removed from the Consolidated Balance Sheets.\np83: million and $42.2 million, respectively and were recorded as other assets on our Consolidated Balance Sheets. As of December 1,\np89: For fiscal 2017, 2016 and 2015, the prepayments were classified as treasury stock on our Consolidated Balance Sheets at\np89: be classified as treasury stock on our Consolidated Balance Sheets. Upon completion of the $300 million stock repurchase\np90: Almaden Tower as property and equipment on our Consolidated Balance Sheets at $104.2 million, the lesser of cost or fair value,\np97: We have audited the accompanying consolidated balance sheets of Adobe Systems Incorporated and subsidiaries as of"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_D5ZBdAMRx3lXY9bGFdc6j270",
+       "function": {
+        "arguments": "{\"first\":57,\"last\":57}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_2eP9L0SkkyD0EDy0cmfna9Oz",
+       "function": {
+        "arguments": "{\"first\":61,\"last\":61}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwbQrQEr8HCe6OPv75SiDNH7auDzZll69mjL9xta0Nd1wWrI6eHlnSO-w92jw4rRko97hlRwJxjcI2p8IIpIeQa0JPJyPJirdu4OQM3ktwAqy_IN5u_7LA8lXWlDBbLXR3PSSfzEf2XMlFurtlBEcHDenlNaiXlOdJ6ep8iOfwcPTXUNMWbcDObtFJlaveSs0JD_4X5FfXp5ERvImxvjS7YF8wtx4-vUpH81OSCSJvoIlTQDXWWry4-YN6QGcR9zGhEg0glvXcCV4XiMOCrRdj912M2oe_F-R5wa6wzSIpPFtDiIWqNpqX_-VownnV7UUub8GcNLaNixojuoPGls5Sck_F7phX5yf3fpfawR6hU8hcCzMH4K5EcpnAoxP0-ODtZ0a-XSJfl2j39liZQ767eLs_dklba7JI8JDX8ZwF5j2QksVAmtPGLSZgXyVPqrYxJBqNdUcZkokcGgfC_6xnv4s1Lzs8eG6ru5LHUNKqg4MU4Jj9y79FSFFsCPyiApUHErEaFW92yV2UoKMW_imACKY8nfsqaTm2bL_Yi2Q09JfoTthS1OjVskyOz4AtrsvcTPcp7DUp1wBEx4_ufrL4fChJBiLEVlimR38AYt9uhsh9I4fnFLGN6HwheF4-PSrlYXsrntJdnaxJJyyzmY1LBojeKnW3oPMuOBVTbWhyQJayFSwXpbeXFI8ccH94F8iN-8SRhP0BR4EfArHu9uxN0rU8gyMoKNy8Yui_tlDbeU6qvervSJ0pRsgX1xqCXniK4hmcggfZaWQ2gmAJtSZxnhj2u9blQ9sXdCAmdpwHhYKeeKe7PFpud4_XWORJ0cTPXU_Eb5NLJ1gg-gOWTG_pS0dM9P7uSOrV9vnGKyfSI_3W5uY1lxHUckr12ZbjhBzRMBnQqNsw1U0-B54X9fgYFnDpsHsaXpsPmwAQ8KCxpCG5E31pmiYf0sO-dqs1XJJQVGmQ6PStQflEX5jmmmrnRauzgBk83axdVaplwez-EHx5tLxE9DMrOb3v13FOo1DhOBv2knekHB0dk7m_Q-oyUlmOwz9GN0pdj7dbhZr969LS38V75duAhk-Qv4iv3JJ4lcKR7hBMrqg78-eXbN3UommzWnsHx2poJsNj7Wth09SU0UaMosUNfTBmtV1H8Ghjg7RBMHtf8Syo7-AerhCmedectO6kWJ7PYRm1vsYs1dXt3btBQuHaRlB4dJ3JPyo0kQILlWcmJDzTbk-R4jDw4Uf6o-gMR7JPx-rVubCuWAdBUx78OdGa7yn3J0u55k7Zuf-l1nWzNNnkRbt1GhUBUsY1lMtFdUlDtun2l39WexPEqO5EH3lPdI_-v5TiKSk-ZHE8GXskIaR41SqIrZwfVZ6Dzaf6ZIsd4wuL00aIQaik=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_036ea0c2fbc3bb00016ac21c1b1ab887d18c4f450775ef7cfc",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_D5ZBdAMRx3lXY9bGFdc6j270",
+     "content": "[Page 57]\nTable of Contents\r\n57\r\nADOBE SYSTEMS INCORPORATED\r\n CONSOLIDATED BALANCE SHEETS\r\n(In thousands, except par value)\r\nDecember 1,\r\n2017\r\nDecember 2,\r\n2016\r\nASSETS\r\nCurrent assets:\r\nCash and cash equivalents $ 2,306,072 $ 1,011,315\r\nShort-term investments 3,513,702 3,749,985\r\nTrade receivables, net of allowances for doubtful accounts of $9,151 and $6,214, respectively 1,217,968 833,033\r\nPrepaid expenses and other current assets 210,071 245,441\r\nTotal current assets 7,247,813 5,839,774\r\nProperty and equipment, net 936,976 816,264\r\nGoodwill 5,821,561 5,406,474\r\nPurchased and other intangibles, net 385,658 414,405\r\nInvestment in lease receivable \u2014 80,439\r\nOther assets 143,548 139,890\r\nTotal assets $ 14,535,556 $ 12,697,246\r\nLIABILITIES AND STOCKHOLDERS\u2019 EQUITY\r\nCurrent liabilities:\r\nTrade payables $ 113,538 $ 88,024\r\nAccrued expenses 993,773 739,630\r\nIncome taxes payable 14,196 38,362\r\nDeferred revenue 2,405,950 1,945,619\r\nTotal current liabilities 3,527,457 2,811,635\r\nLong-term liabilities:\r\nDebt and capital lease obligations 1,881,421 1,892,200\r\nDeferred revenue 88,592 69,131\r\nIncome taxes payable 173,088 184,381\r\nDeferred income taxes 279,941 217,660\r\nOther liabilities 125,188 97,404\r\nTotal liabilities 6,075,687 5,272,411\r\nCommitments and contingencies\r\nStockholders\u2019 equity:\r\nPreferred stock, $0.0001 par value; 2,000 shares authorized; none issued \u2014 \u2014\r\nCommon stock, $0.0001 par value; 900,000 shares authorized; 600,834 shares issued; \r\n 491,262 and 494,254 shares outstanding, respectively 61 61\r\nAdditional paid-in-capital 5,082,195 4,616,331\r\nRetained earnings 9,573,870 8,114,517\r\nAccumulated other comprehensive income (loss) (111,821) (173,602)\r\nTreasury stock, at cost (109,572 and 106,580 shares, respectively), net of reissuances (6,084,436) (5,132,472)\r\nTotal stockholders\u2019 equity 8,459,869 7,424,835\r\nTotal liabilities and stockholders\u2019 equity $ 14,535,556 $ 12,697,246\r\nSee accompanying Notes to Consolidated Financial Statements."
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_2eP9L0SkkyD0EDy0cmfna9Oz",
+     "content": "[Page 61]\nTable of Contents\r\n61\r\nADOBE SYSTEMS INCORPORATED\r\n CONSOLIDATED STATEMENTS OF CASH FLOWS\r\n(In thousands)\r\nYears Ended\r\nDecember 1,\r\n2017\r\nDecember 2,\r\n2016\r\nNovember 27,\r\n2015\r\nCash flows from operating activities:\r\nNet income $ 1,693,954 $ 1,168,782 $ 629,551\r\nAdjustments to reconcile net income to net cash provided by operating activities:\r\nDepreciation, amortization and accretion 325,997 331,535 339,473\r\nStock-based compensation 451,451 349,912 335,859\r\nDeferred income taxes 51,605 24,222 (69,657)\r\nGain on the sale of property \u2014 \u2014 (21,415)\r\nUnrealized (gains) losses on investments (5,494) 3,145 (9,210)\r\nExcess tax benefits from stock-based compensation \u2014 (75,105) (68,153)\r\nOther non-cash items 4,625 2,022 1,216\r\nChanges in operating assets and liabilities, net of acquired assets and\r\n assumed liabilities:\r\nTrade receivables, net (187,173) (160,416) (79,502)\r\nPrepaid expenses and other current assets 28,040 (71,021) (7,701)\r\nTrade payables (45,186) (6,281) 22,870\r\nAccrued expenses 154,125 64,978 (22,564)\r\nIncome taxes payable (34,493) 43,115 97,934\r\nDeferred revenue 475,402 524,840 320,801\r\nNet cash provided by operating activities 2,912,853 2,199,728 1,469,502\r\nCash flows from investing activities:\r\nPurchases of short-term investments (1,931,011) (2,285,222) (2,064,833)\r\nMaturities of short-term investments 759,737 769,228 371,790\r\nProceeds from sales of short-term investments 1,393,929 860,849 1,176,476\r\nAcquisitions, net of cash acquired (459,626) (48,427) (826,004)\r\nPurchases of property and equipment (178,122) (203,805) (184,936)\r\nProceeds from sale of property \u2014 \u2014 57,779\r\nPurchases of long-term investments, intangibles and other assets (29,918) (58,433) (22,779)\r\nProceeds from sale of long-term investments 2,134 5,777 4,149\r\nNet cash used for investing activities (442,877) (960,033) (1,488,358)\r\nCash flows from financing activities:\r\nPurchases of treasury stock (1,100,000) (1,075,000) (625,000)\r\nProceeds from issuance of treasury stock 158,351 145,697 164,270\r\nTaxes paid related to net share settlement of equity awards (240,126) (236,400) (186,373)\r\nExcess tax benefits from stock-based compensation \u2014 75,105 68,153\r\nProceeds from debt issuance \u2014 \u2014 989,280\r\nRepayment of debt and capital lease obligations (1,960) (108) (602,189)\r\nDebt issuance costs \u2014 \u2014 (8,828)\r\nNet cash used for financing activities (1,183,735) (1,090,706) (200,687)\r\nEffect of foreign currency exchange rates on cash and cash equivalents 8,516 (14,234) (21,297)\r\nNet increase (decrease) in cash and cash equivalents 1,294,757 134,755 (240,840)\r\nCash and cash equivalents at beginning of year 1,011,315 876,560 1,117,400\r\nCash and cash equivalents at end of year $ 2,306,072 $ 1,011,315 $ 876,560\r\nSupplemental disclosures:\r\nCash paid for income taxes, net of refunds $ 396,668 $ 249,884 $ 203,010\r\nCash paid for interest $ 69,430 $ 66,193 $ 56,014\r\nNon-cash investing activities:\r\nInvestment in lease receivable applied to building purchase $ 80,439 $ \u2014 $ \u2014\r\nIssuance of common stock and stock awards assumed in business acquisitions $ 10,348 $ \u2014 $ 677\r\nSee accompanying Notes to Consolidated Financial Statements."
+    }
+   ],
+   "reply": {
+    "content": "**FY2017 operating cash flow ratio: 0.83**\n\nCalculation: $2,912,853 thousand \u00f7 $3,527,457 thousand = **0.83**. Cash from operations is from the cash flow statement (p. 61); total current liabilities are from the balance sheet (p. 57).",
+    "role": "assistant",
+    "reasoning": "**Calculating cash flow ratio**\n\nI need to compute 2912.853 divided by 3527.457, which gives me about 0.8255, or rounded to 0.83. I want to ensure I present this answer concisely while also citing the necessary pages for reference. It looks like it\u2019s important to maintain consistency in units, especially using thousands. So, I'll format it as 2,912,853 divided by 3,527,457 equals 0.826, though I'll go with 0.83 for simplicity. Don't forget to cite pages 61 and 57!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating cash flow ratio**\n\nI need to compute 2912.853 divided by 3527.457, which gives me about 0.8255, or rounded to 0.83. I want to ensure I present this answer concisely while also citing the necessary pages for reference. It looks like it\u2019s important to maintain consistency in units, especially using thousands. So, I'll format it as 2,912,853 divided by 3,527,457 equals 0.826, though I'll go with 0.83 for simplicity. Don't forget to cite pages 61 and 57!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwfzcp1P7t_yYhPph3Wk508totkbD995UIEVmjnUYBARjsRu3gFWtA6DcdQvM7vqGWw_tOWTt1t125j6TaHgFGNn2boOMxMOSkpyg3PinQEyjE715uukX9V0-3fCMf4TVwtG7cUuMLg6lAU-sjV1n3CSC7C84b-iPG1KO3uqRGFX-6XuUwKg06hLsWL_jSfHHzNO9UMZBoH40a0VuFJFIWI8Pm3EijGXDjEjzLnYF_D2d_uqUv4UlR5EZWpYtgpcZ9XlBbCc9MP9N3GFhUOZW_eJdpez09XF5iDsGUDAHaHPYxFmpDF38GrWRXiBxI5haa1ugCVZlycb0vMqdSVbEmKpWKm6JeQIryCDt0WC0Zz5OsiXjuDaIHBWXu-T7nW2G14jyn9roCVXppGVtBkJIUZyHMs9xx4AI7UsJxu0tB5E7HFURuWfOWTLVjW79UpMp90q9FZNcdBI7ptKBQ0k7rqcJF9wF88X0dhR-sqTY6dqHz1yZY2B6hNCh3x4ihM77R_BVUM_KQ5J04m3XxlIDvEKJGQumnlKPyxRc53hiQCMVsJuYqT1kNUrFhW33nuYoreMLRm7PpAoRamPT9ButSE3cIz3PJNTbFbvGMmg_XSfPXdEiAfQG924V-hM8RuXE7RkcDBd7dOdmB9_D3ibnpfLjymhhZGM45ik-R4t0dfUY7p8MVAb7EK-cat-FLsJHZuLJxqRadVBJUvDml1472U0WHXEbSXyq-5UDSbKB5rGr-4tvDGiv2LdvGgIx4wKycbkXxhw6eF_buTeHWKkZRLTfBpVLSFT80jf5hJxiVmcd6t4UbNt5CFhHvelRNeOUQgc5H5AIcr58PJiXsTGPGQFSaiwyKzhlQhCQ9RgIMZ8-xuc59NYOzZ0o0EYZBjVQby6QEIkf27YixsJ3NHLn4380RcX8nQqcKHGfN4pGSgoj-Fo4vVclh6stxGSNGrxQ_WulOoDMeGwQGb21i_KHNZXiPPhMw_ne9CIMnWE5tFdR2b45qifuYZQFTDM3WIfigxWHxV5jUmJUbmCtHtzATA-FDI2d6qSG6Cz3Vxaq5FTRpRt6pJQqYDJDdfRtDVL6_YrqKwMfeulWK19rGuFhNb6y39YRKM4X36nQT6joHe0twVYYOVxnZU3w3sk20BjnSGcAwX5gBNk9EZlIOzWo-blBz7tspyd8ANi0vGpIMOxrtwfDi-Yxnvv33O-ht5aOmDBsKU01pYGSHsHujmRI51tsZAL28hvDjkI7h8eR41_9g-WH-d-1aDxdS4PoqDgauexqcqPsu3i73kC_Bu3JbHT8EP4gjatXiP9T_-ndgKTBR6aRGaXKpHXqfaxSRmMY-DKWj5wdZWXKAox6bSR_Xqc5sN6FibU1bASYcnuNE9aZ0Kq8JjQ4OoeZu5W61GecHecuP2p6ntkWpAvl4Nf1Rf71tY0voy0LN5jm44h6MsNsZdX54_--ge_eMAhH0EdElBOVxKfytDaWnbYVLaMk71zTXOAycw2Y-xmn_Rfm7nM4U_I8bMducGli6ly0T9XI-cu2_ujqWHUuum_Oj7W5kBkhc8MkDSCObRJulHskYjamtlDsEsDYQ9T6j7xc9_gop6brwclyXEdBndNAV04cObWw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_036ea0c2fbc3bb00016ac21c1d35f087d18be944fc360d5577",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 2888,
+   "output_tokens": 149,
+   "reasoning_tokens": 75,
+   "seconds": 3.38
+  }
+ ],
+ "answer": "**FY2017 operating cash flow ratio: 0.83**\n\nCalculation: $2,912,853 thousand \u00f7 $3,527,457 thousand = **0.83**. Cash from operations is from the cash flow statement (p. 61); total current liabilities are from the balance sheet (p. 57).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Net cash provided by operating activities|Cash provided by operating activities"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Total current liabilities|Current liabilities"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Consolidated Balance Sheets|Consolidated Statements of Cash Flows"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 57,
+    "last": 57
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 61,
+    "last": 61
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives an operating cash flow ratio of 0.83, matching the gold answer, and the supporting calculation (2,912,853 / 3,527,457) is consistent with that figure.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001722,
+ "provider": "aipipe"
+}

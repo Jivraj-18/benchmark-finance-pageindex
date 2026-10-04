@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_04171",
+ "question": "Basing your judgments off of the balance sheet, what is the year end FY2018 amount of accounts payable for MGM Resorts? Answer in USD millions.",
+ "gold": "$303.00",
+ "doc": "MGMRESORTS_2018_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.8,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 151776,
+  "cached_tokens": 0,
+  "output_tokens": 106,
+  "cost": 0.0152306,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED\nSTATES\r\nSECURITIES\nAND\nEXCHANGE\nCOMMISSION\r\nWashington,\nD.C.\n\n20549\r\nFORM\n10-K\r\n(Mark One)\r\n[X] ANNUAL\nREPORT\nPURSUANT\nTO\nSECTION\n13\nOR\n15(d)\nOF\nTHE\nSECURITIES\nEXCHANGE\nACT\nOF\n1934\r\nFor\nthe\nfiscal\nyear\nended\nDecember\n31,\n2018\r\nOR\r\n[\n\n] TRANSITION\nREPORT\nPURSUANT\nTO\nSECTION\n13\nOR\n15(d)\nOF\nTHE\nSECURITIES\nEXCHANGE\nACT\nOF\n1934\r\nFor\nthe\ntransition\nperiod\nfrom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Commission\nFile\nNo.\n001-10362\r\nMGM\nR\nESORTS I\nNTERNATIONAL\r\n(Exact name of Registrant as specified in its charter)\r\nDELAWARE 88-0215232\r\n(State\nor\nother\njurisdiction\nof\n\r\nincorporation\nor\norganization)\r\n(I.R.S.\nEmployer\n\r\nIdentification\nNumber)\r\n3600\nLas\nVegas\nBoulevard\nSouth\n-\nLas\nVegas,\nNevada\n\n89109\r\n(Address\nof\nprincipal\nexecutive\noffice)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(Zip\nCode)\r\n(702)\n693-7120\r\n(Registrant\u2019s\ntelephone\nnumber,\nincluding\narea\ncode)\r\nSecurities\nregistered\npursuant\nto\nSection\n12(b)\nof\nthe\nAct: Title\nof\neach\nclass Name\nof\neach\nexchange\n\r\non\nwhich\nregistered\r\nCommon\nStock,\n$0.01\nPar\nValue New\nYork\nStock\nExchange\r\nSecurities\nregistered\npursuant\nto\nSection\n12(g)\nof\nthe\nAct:\r\nNone\r\nIndicate by check mark if the Registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes X No Indicate by check mark if the Registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes No X \r\nIndicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months\r\n(or for such shorter period that the Registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days: Yes X No Indicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7232.405 of this\r\nchapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes X No Indicate by check mark if disclosure of delinquent filers pursuant to Item 405 of Regulation S-K (\u00a7 229.405) is not contained herein, and will not be contained, to the best of the\r\nRegistrant\u2019s knowledge, in definitive proxy or information statements incorporated by reference in Part III of this Form 10-K or any amendment to this Form 10-K: Indicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See\r\nthe definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\n Large accelerated filer X Accelerated filer Non-accelerated filer Smaller reporting company Emerging Growth Company___\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting\r\nstandards provided pursuant to Section 13(a) of the Exchange Act. ___\r\nIndicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Act): Yes No X \r\nThe aggregate market value of the Registrant\u2019s Common Stock held by non-affiliates of the Registrant as of June 30, 2018 (based on the closing price on the New York Stock Exchange\r\nComposite Tape on June 30, 2018) was $15.6 billion. As of February 22, 2019, 536,916,609 shares of Registrant\u2019s Common Stock, $0.01 par value, were outstanding.\r\nDOCUMENTS\nINCORPORATED\nBY\nREFERENCE\r\nPortions of the Registrant\u2019s definitive Proxy Statement for its 2018 Annual Meeting of Stockholders are incorporated by reference into Part III of this Form 10-K.\n\n[Page 2]\nTABLE\nOF\nCONTENTS\r\nPage\r\nPART\nI\r\nItem 1. Business 1\r\nItem 1A. Risk Factors 11\r\nItem 1B. Unresolved Staff Comments 24\r\nItem 2. Properties 25\r\nItem 3. Legal Proceedings 26\r\nItem\n\u2026 [674,051 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "$302.578 million (approximately **$302.6 million**).\n\nThe FY2018 consolidated balance sheet reports accounts payable of $302,578 thousand at December 31, 2018 (page 57).",
+    "role": "assistant",
+    "reasoning": "**Analyzing balance sheet data**\n\nI need to provide information about the accounts payable for FY2018. According to page 57, the accounts payable amount is $302,578 thousand, which translates to approximately $302.6 million. I should include a brief justification in my answer, citing the specific page to back it up. Additionally, I need to make sure to differentiate between this figure and any construction payables. I'll work on getting that finalized!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Analyzing balance sheet data**\n\nI need to provide information about the accounts payable for FY2018. According to page 57, the accounts payable amount is $302,578 thousand, which translates to approximately $302.6 million. I should include a brief justification in my answer, citing the specific page to back it up. Additionally, I need to make sure to differentiate between this figure and any construction payables. I'll work on getting that finalized!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwdwzSWg5ultyXgC8Hr2_kxFP4KR472xRJP-iUiJXbfLsV_QW1nXrN2-adpKV1t2bvA3xgQqJ_AQWpbEYhrg8iE7lO5K-Nb3DTAGKOUKnvpE0Q4PjbG3dCeAKHnye5JtJTKWEw_hdsLoqM-IchfS2x_EjzzWveKZgOz4kCvW9ChEdd6XeZt5ZcUyckotyW0ViJlBHwDnYPBC9U6UYf2WbkM1rGT-AX1GMFsAHFGyOcDMhyrf-GrkoDtHDVOiEMdGvo5YjBmFmLWcbaTTbL13rl13819VUfz66E6D32LI4NbzWlnY2B1pVCM9LBnbLnArGdZQXct_nwGCUrEioxvNIr3tkCzD9lS_vs8TcnGJ7CTN-CS5_x48ZPx_hgqnTmGftwLIL6eeJtO_FPM_-fSTAogSE4BdwBMBmpl1Qk3NdDAa6chxztcWkKh4nFOZxviX8rM8UsRy-7cfSgXfk1BbN05CxX54SPzW8h6Q-P_iUk3w0OopoZcWN0hWIi97wzmzlTyIBXplE4dyUgAwTj9jzXTPRfj6PrqzXE_XMUk80QG4rdNVP4wlmvTD7X_ad0XhxqQujJOlUxcNjD1HBDVK43KJvmkyuIPIXGEy8vz_ZNFhII4UcuZ9isdxoBH-59o_UVTW5W5wusny2vSNuyCOyZaclQJ7tMcEdM6tQMR5qdIxvYA5ZZbemoQHV3HtFX4XVqqBpWXzV4RWt850q3y_y_za9BF_rvq8EOOR8eIEf_92z-LEIX8-bEhUkpJjgvIhjos-9wObOanbrUYcf7Pn0Nov5A4vilRL6NechbkDj7mKWfTcJJM0QnBG94YNQ9wpicZYYteInzyM55fgFWUML7p1uRUZEyYSfLRaoWNd9da8ZPI4lV7fDE-MR0e0XoDXWejlDKnmRqy6-TghINXne-_zf92kgm0405zCZvhLzF0gYVIN9DNbjc7HJeoLkUb7T9-KOSuH2vLWqQqfSlx-U4RbAJA0wMfJ4WgMYKRfgzQZQqOPHJDPx5bNRwBM9XWDIbKbmGkU6Dyw9_3YYbZcKn49oWZix2JfQo7EG41I-9Go8gb5tAOCUumNIJlyR2vfpYtgBzJLyYFTtQzdoM3r6WYJFhMpXrJaZBZmNa_tWgJekD5ZnqjeRrL5g0od0llCDLK-WZokb40irMFONwRHk-_ZrUwNV554GJ55RbfQRf7S3FvZXSqo6vDnZNKGdO9dkxL2z5zg73r3cRyH5h7iRXerSn6CiXoN56bVZnjUw3uBsSwXe1_WJJAK3rkHyTL1FgTSONU2x84FxvDarG4pfmky2m-mjRSsVCNYSvUH-0h8pwW45uS5DoC4bzELYR-gVs2_eUw2S5fbxAi2E7BxqMS29kAcqRY0igh_ky00fNv1xwZ7KsS1xF8fZz7h46LLEv8esyOQRA9ShOryZhXpA8nzjcBmvrH0LwE8llXXE74K-GY4l1CXiJRW0ZHfUBHAHjZ24QZMEwC36mLnKW7Yh6hi-lw9SsLimmmo3BCkYlnnM_7l7komNAgaWmg2ASekekpP8hgwn8x4CT1HxtG_--XVr4bjEs5rdOTyWTfadcrbPTgES0IAWBNSRZLX-WHQ-SBGOvUu9lrokIc7YFMI2EKnlSZh_IsspSnszfJEF6uvYyptXjqcVnBrqHL8ZJ7FwbvzhLc304JD1dy5rVEzW0zWw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0d37bbdffb5f6c52016ac21c1c105087d19b66efba17fa05c3",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 151776,
+   "output_tokens": 106,
+   "reasoning_tokens": 56,
+   "seconds": 4.81
+  }
+ ],
+ "answer": "$302.578 million (approximately **$302.6 million**).\n\nThe FY2018 consolidated balance sheet reports accounts payable of $302,578 thousand at December 31, 2018 (page 57).",
+ "verdict": "correct",
+ "reason": "The answer's $302.578 million (about $302.6M) rounds to the gold answer's $303 million, so the difference is only rounding.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001388,
+ "provider": "aipipe"
+}

@@ -1,0 +1,349 @@
+{
+ "id": "financebench_id_01346",
+ "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+ "gold": "The effective tax rate of Corning has changed from 20% in FY2021 to 23% in FY 2022.",
+ "doc": "CORNING_2022_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 8.8,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 3236,
+  "cached_tokens": 0,
+  "output_tokens": 344,
+  "cost": 0.0004956,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 159 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_GJwwYLciDmvrZPEJZSoKjg4e",
+      "function": {
+       "arguments": "{\"pattern\":\"effective tax rate\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_sm1C9NBAyeue6f2Ieus8oqlO",
+      "function": {
+       "arguments": "{\"pattern\":\"income tax expense|provision for income taxes|income before taxes\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWNKQqV3OT74oZlfwwUdzbzV2QRarZsZm5pTyFeR-VKymnQ6fGg9RlHzRdHWmaH7fG7Fou4QRH5W5oOdbn4SoM-IQMC3tK-wr1RLmi1FiTxqpMqUoiskHJjSo9task11hvMzZS_QVkBHOSTi-nyG0ld7k2HP_S-JrdcBRriZnQd4e99TooamJ5vR_3Wz9OnaZ9MTmIty2CzRDECNc1VrnmPY8cYsy6F-baUWqP4CgDc6hZwpQA_GUf0v_DX7FIDlb7JjP21gXfrUvgM4gy7Et52UHhiXK0LA_J94HPF5P9-mTvbwyy1Xk-_uWrojffeF-_Mo9nCXG4m8ENX_2wTCebCUcooNhWO5wwECkWN9_WBtybvK6vpexiX5DuEL5vcnCoUbYxgjcaSbnf0xZQBc0BoM0O1v3AHpq4duWYRPR6u94Xbjew_4Pv51oMjz4OJYex13zH1ScTGdZlxOkofsm3NCfVlPlp4hRiYRBZPrmym-qx6jJNjBMEvw9nQ0XMAVkBQWqJ2gD5a6-DCmpu1KeAqDSHIm1we-lElqWAYfCJJaIhPxqJmj16m4BC15l3LxTo7oFNLg_EDrbuNESpkRr2j8R2hYEdR7XaStpE6vYdUZO8AeTjoL9NjxMuD_9zY1DkWEsQooBD-9C4nnT6-yb2XMDztR17lQCE1mjvcZJUPAD0mJdN-jbJ561ofS35O0AnokPieIR_7KDbudOCRBnDI-PsK35hb9IzWfH6vZKKo2Vh_pS8BZUhCSquZwS_ZePfWGy148qIB0kty_wEnoC92h-l8JrariGNWO5Dveckwn3eExvs_h9uuRYzrFDIAKTinlchBWVnac2xo8Z2VnbsDAFJWUGXz9ya_QiXwsHsMMFlskkIK_achPYF1fkMgti0i-CTGVr87idYgGmvczwYzmmK0aRgqgk50NWNViw_H4Lz0UnwFD7JwmwjX1SSF07eIRpdChgVKDlx2M6qFRehxzw0J_D1XxIgsMtcOAw4OTzyQb1Nk89qpCB2A9Y4L3KLNWhzhERjS0hmAHFXZ79f8ENH5zhBVBJpzrALkSCZTj8fkmFsUvCYw4XNzcqv8zpjH1EHx32XKHDTJY22ragq-lF4t8T51g6Heqr3nnE1zxqxwj6_8oPUr5X3UMY5xZKpfSdAV71fPOLXY28qJ1QLBddHralswFj3klqkfrzcFX_R0kx-xrJF7QQlzCzmrqp-nVqIUPKc9GTCYNMN9gEoBDicRZahn24WsDGmTOdmxOQrCu-BfuVbYksFwQeWXu-eXSB479Ghcep5wOw8AtqSgKXEaFCO-jg9RntODnmQYQZP9oj36bb4zjPgHrcD1hqcxXZkOQuAY1YwmpRybn0mJJkpxa0MX2jQit5tsHu9wARewjW_en_e3EA0vyOtHlZ1c.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_04a2917fbc86cf83016ac2158bc6f487d18b0c76e64fee6bc7",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 218,
+   "output_tokens": 76,
+   "reasoning_tokens": 14,
+   "seconds": 2.19
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 159 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_GJwwYLciDmvrZPEJZSoKjg4e",
+       "function": {
+        "arguments": "{\"pattern\":\"effective tax rate\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_sm1C9NBAyeue6f2Ieus8oqlO",
+       "function": {
+        "arguments": "{\"pattern\":\"income tax expense|provision for income taxes|income before taxes\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWNKQqV3OT74oZlfwwUdzbzV2QRarZsZm5pTyFeR-VKymnQ6fGg9RlHzRdHWmaH7fG7Fou4QRH5W5oOdbn4SoM-IQMC3tK-wr1RLmi1FiTxqpMqUoiskHJjSo9task11hvMzZS_QVkBHOSTi-nyG0ld7k2HP_S-JrdcBRriZnQd4e99TooamJ5vR_3Wz9OnaZ9MTmIty2CzRDECNc1VrnmPY8cYsy6F-baUWqP4CgDc6hZwpQA_GUf0v_DX7FIDlb7JjP21gXfrUvgM4gy7Et52UHhiXK0LA_J94HPF5P9-mTvbwyy1Xk-_uWrojffeF-_Mo9nCXG4m8ENX_2wTCebCUcooNhWO5wwECkWN9_WBtybvK6vpexiX5DuEL5vcnCoUbYxgjcaSbnf0xZQBc0BoM0O1v3AHpq4duWYRPR6u94Xbjew_4Pv51oMjz4OJYex13zH1ScTGdZlxOkofsm3NCfVlPlp4hRiYRBZPrmym-qx6jJNjBMEvw9nQ0XMAVkBQWqJ2gD5a6-DCmpu1KeAqDSHIm1we-lElqWAYfCJJaIhPxqJmj16m4BC15l3LxTo7oFNLg_EDrbuNESpkRr2j8R2hYEdR7XaStpE6vYdUZO8AeTjoL9NjxMuD_9zY1DkWEsQooBD-9C4nnT6-yb2XMDztR17lQCE1mjvcZJUPAD0mJdN-jbJ561ofS35O0AnokPieIR_7KDbudOCRBnDI-PsK35hb9IzWfH6vZKKo2Vh_pS8BZUhCSquZwS_ZePfWGy148qIB0kty_wEnoC92h-l8JrariGNWO5Dveckwn3eExvs_h9uuRYzrFDIAKTinlchBWVnac2xo8Z2VnbsDAFJWUGXz9ya_QiXwsHsMMFlskkIK_achPYF1fkMgti0i-CTGVr87idYgGmvczwYzmmK0aRgqgk50NWNViw_H4Lz0UnwFD7JwmwjX1SSF07eIRpdChgVKDlx2M6qFRehxzw0J_D1XxIgsMtcOAw4OTzyQb1Nk89qpCB2A9Y4L3KLNWhzhERjS0hmAHFXZ79f8ENH5zhBVBJpzrALkSCZTj8fkmFsUvCYw4XNzcqv8zpjH1EHx32XKHDTJY22ragq-lF4t8T51g6Heqr3nnE1zxqxwj6_8oPUr5X3UMY5xZKpfSdAV71fPOLXY28qJ1QLBddHralswFj3klqkfrzcFX_R0kx-xrJF7QQlzCzmrqp-nVqIUPKc9GTCYNMN9gEoBDicRZahn24WsDGmTOdmxOQrCu-BfuVbYksFwQeWXu-eXSB479Ghcep5wOw8AtqSgKXEaFCO-jg9RntODnmQYQZP9oj36bb4zjPgHrcD1hqcxXZkOQuAY1YwmpRybn0mJJkpxa0MX2jQit5tsHu9wARewjW_en_e3EA0vyOtHlZ1c.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_04a2917fbc86cf83016ac2158bc6f487d18b0c76e64fee6bc7",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_GJwwYLciDmvrZPEJZSoKjg4e",
+     "content": "p24: Effective tax rate 23% 20%\np26: For the year ended December 31, 2022, the effective tax rate differed from the U.S. statutory rate of 21% primarily due to the following:\np26: For the year ended December 31, 2021, the effective tax rate differed from the U.S. statutory rate of 21% primarily due to the following:\np26: not expect the IRA to have a material impact on our effective tax rate. In addition, we are currently evaluating the various credits available under IRA and its impact to\np26: Corning\u2019s financial position and results of operations, including the effective tax rate.\np32: (b) The calculation of the effective tax rate excludes net income attributable to non-controlling interest of $70 million.\np32: (b) The calculation of the effective tax rate excludes net income attributable to non-controlling interest of $29 million.\np69: The effective tax rate reflects the assessment of the ultimate outcome of tax audits. In evaluating the tax benefits associated with the Company\u2019s various tax filing\np77: The following table presents the reconciliation of the statutory U.S. federal income tax rate to the effective tax rate:\np77: Effective tax rate 22.9% 20.2% 17.5%\np79: the overall tax expense and effective tax rate could be materially impacted in the period of adjustment.\np79: impact the Company\u2019s effective tax rate if recognized.\np79: Company\u2019s overall tax expense and effective tax rate could be materially impacted in the period of adjustment. As of December 31, 2022, the Company is not expecting"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_sm1C9NBAyeue6f2Ieus8oqlO",
+     "content": "p17: calculations where the ultimate tax treatment is uncertain. Judgment is required in determining our worldwide provision for income taxes. Although we believe our tax\np24: Provision for income taxes $ (411) $ (491) 16%\np26: Provision for Income Taxes\np58: Provision for income taxes (Note 7) (411) (491) (111)\np65: recognized in income tax expense/benefit during the current period.\np69: balance sheets and within income tax expense in the consolidated statements of income.\np76: The following table presents the current and deferred amounts of the provision for income taxes (in millions):\np76: Provision for income taxes $ (411) $ (491) $ (111)"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_5ClO1Roe5WHqb9LOp85wB87s",
+      "function": {
+       "arguments": "{\"first\":24,\"last\":24}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_V3eZcFkjGvdtnTM9FtTSDwDu",
+      "function": {
+       "arguments": "{\"first\":77,\"last\":77}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Updating financial figures**\n\nI need to change FY2021 to FY2022. The table on page 24 indicates percentages around 23% and 20%. I should have precise values, maybe rounded. On page 77, I see figures of 22.9%, 20.2%, and 17.5% for the years 2022, 2021, and 2020. I definitely need to read through pages 24 and 77 to make sure I get this right!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Updating financial figures**\n\nI need to change FY2021 to FY2022. The table on page 24 indicates percentages around 23% and 20%. I should have precise values, maybe rounded. On page 77, I see figures of 22.9%, 20.2%, and 17.5% for the years 2022, 2021, and 2020. I definitely need to read through pages 24 and 77 to make sure I get this right!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWQBwTR8PqN5Vvonv-Kzoi48fuykUK2iZHN_SF6ifs8cxVc9XuhPYaGajItXQUpDy3M9XRLe76Y4lZX5zg2y8hpHEy3EHnQcCV3tvGLn0MMGBABNJDtVpK0TXq1RbsMIMJKCP03zKtamNH2mBAXdPYQcLSpM3UDx93wO3JYlI85CSkuugMEHMuMVXGoU-96CdmKY5vH_POPYtDXjfy_9LI9eUQS99hjR1Y-dT0xeK8TUDdDbWRofwrFECTkIARBe47mlltEPip3wHz4baImGu9D80QHQT0O9Z7UZsgko3HXV2GXuyQ02L7i1eXO2Iq344uqTir7Y8tqnGexgH6A-EOouTA3o_xJ8WhPyR97AsN0eyeP1CuVwwTEBVaW43Nxtuo-tABHp3NzcnX_nJ1DylONi3FDVEhstVVpXb00uu2HV_nt7K6sB5X_w0ebngWEvqyeM9IuPHqR1w4n61SuCdBlbI5SI7-FbUTZexEucr9TvvvGQdey5J54C8A7mRXtGLYqmj4BhpKkUWugVmthryKSWQztLcuBVJlGz5kRGfWJlfflFRWyhxddzFHJxKu9uaGIpqzUsC8Mwto-IhC2_qFqKjl8DLBAyQUdLhGFTSJgplzVyMl9JqVbN0fmmXmxnPz4LUwcW15Mbv406-3cA2DrQIflwMKRx2k7gjoAuN7Cl_8bOxlMSnGRyLUkYwEMjqDPEZ--iOx5MCDcrnrLcfU_6jpgtOYnA6ZFA3_BYBqTZJ92qYOskGLQAbJWuR2pjB8GvGKvIzFrizUYQLV2nxMlAKEm1lJb-DZWIzDnprWt3WijMuQaz9RWRDC_Pu9rjy7OVfL1497uSGI10nV1UENASYSJtYB2KKSzpkGj-xjR0uUY7Yx7WJK4WwRd2ymPzHHj5s8zyxn8HcI4mF8tjIOQpNtld_LmBrzwBHlDuIUVcLgbip6L3ZCiCsjjhHBzp7nogr3OjiR2Km-95Es8DwxxqpY1fcMpAJoD9yasyo69tcHWHRFMr4rVEyIqpHj8SfwY9yF4zTzLGTzCC3r9wJRwuzrJGnZQBxFDttvxFfF7REMFu_5OffcPoH5REAamJTsGYbdd1kYS4w-JWb_LtwWRX89B_4MTr2DbN49nXFR_TsAzyfNmtQgXqU0da6-VOr1qW9gTu2yeWBZtbR-_U1SLu1Bi7DyfY3GN-Mn8TLfaZ94g5QOLJjA4hdgySpG49Av5GrwgadWTlV1FZBLBO10Q5BF8T1SI_kcfFSf7_yStNwTEQ76J_zQFWv--4nECa0Bw8gKzAHr1svUyDwLxUdpPjAdq2IrKWhoUtTWJRjt6WFmPdE1FyG6REBpIA2M2mgl4_NHjSvkPXUESlJihalWIl5xDDgxFCnpla-RL8CMYKSKzt_Ur-eQE2cK7Hs5N4I4b5kzDO1PaWNSQgdrpAzsMT7neb_oNhQnNyk1ej8w9VY99rVEiBZg_TjoWGqgeKOF_F7qKCxas45tqjBTZr9eOQ5yPeoTIUNuUDswxg4j60C1dp35_9ut9XtAKqkL8Ta5k7rbSzxn9UgMla3g3LIXNp4NZVnIs5PaTeQatJWGjFvel01u3r76CvCiL9QRitcTP.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_04a2917fbc86cf83016ac2158dfb2c87d1b285d138e7485ea5",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 807,
+   "output_tokens": 128,
+   "reasoning_tokens": 70,
+   "seconds": 3.08
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 159 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_GJwwYLciDmvrZPEJZSoKjg4e",
+       "function": {
+        "arguments": "{\"pattern\":\"effective tax rate\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_sm1C9NBAyeue6f2Ieus8oqlO",
+       "function": {
+        "arguments": "{\"pattern\":\"income tax expense|provision for income taxes|income before taxes\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for tax effective rates**\n\nI need to find documents that outline tax effective rates. It seems like a straightforward task that could help clarify some things. I wonder if there are specific categories or examples I need to focus on within the documents. Okay, I\u2019ll take a moment to explore available resources and gather useful information on this topic. Let's make sure I find the most relevant and up-to-date data!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWNKQqV3OT74oZlfwwUdzbzV2QRarZsZm5pTyFeR-VKymnQ6fGg9RlHzRdHWmaH7fG7Fou4QRH5W5oOdbn4SoM-IQMC3tK-wr1RLmi1FiTxqpMqUoiskHJjSo9task11hvMzZS_QVkBHOSTi-nyG0ld7k2HP_S-JrdcBRriZnQd4e99TooamJ5vR_3Wz9OnaZ9MTmIty2CzRDECNc1VrnmPY8cYsy6F-baUWqP4CgDc6hZwpQA_GUf0v_DX7FIDlb7JjP21gXfrUvgM4gy7Et52UHhiXK0LA_J94HPF5P9-mTvbwyy1Xk-_uWrojffeF-_Mo9nCXG4m8ENX_2wTCebCUcooNhWO5wwECkWN9_WBtybvK6vpexiX5DuEL5vcnCoUbYxgjcaSbnf0xZQBc0BoM0O1v3AHpq4duWYRPR6u94Xbjew_4Pv51oMjz4OJYex13zH1ScTGdZlxOkofsm3NCfVlPlp4hRiYRBZPrmym-qx6jJNjBMEvw9nQ0XMAVkBQWqJ2gD5a6-DCmpu1KeAqDSHIm1we-lElqWAYfCJJaIhPxqJmj16m4BC15l3LxTo7oFNLg_EDrbuNESpkRr2j8R2hYEdR7XaStpE6vYdUZO8AeTjoL9NjxMuD_9zY1DkWEsQooBD-9C4nnT6-yb2XMDztR17lQCE1mjvcZJUPAD0mJdN-jbJ561ofS35O0AnokPieIR_7KDbudOCRBnDI-PsK35hb9IzWfH6vZKKo2Vh_pS8BZUhCSquZwS_ZePfWGy148qIB0kty_wEnoC92h-l8JrariGNWO5Dveckwn3eExvs_h9uuRYzrFDIAKTinlchBWVnac2xo8Z2VnbsDAFJWUGXz9ya_QiXwsHsMMFlskkIK_achPYF1fkMgti0i-CTGVr87idYgGmvczwYzmmK0aRgqgk50NWNViw_H4Lz0UnwFD7JwmwjX1SSF07eIRpdChgVKDlx2M6qFRehxzw0J_D1XxIgsMtcOAw4OTzyQb1Nk89qpCB2A9Y4L3KLNWhzhERjS0hmAHFXZ79f8ENH5zhBVBJpzrALkSCZTj8fkmFsUvCYw4XNzcqv8zpjH1EHx32XKHDTJY22ragq-lF4t8T51g6Heqr3nnE1zxqxwj6_8oPUr5X3UMY5xZKpfSdAV71fPOLXY28qJ1QLBddHralswFj3klqkfrzcFX_R0kx-xrJF7QQlzCzmrqp-nVqIUPKc9GTCYNMN9gEoBDicRZahn24WsDGmTOdmxOQrCu-BfuVbYksFwQeWXu-eXSB479Ghcep5wOw8AtqSgKXEaFCO-jg9RntODnmQYQZP9oj36bb4zjPgHrcD1hqcxXZkOQuAY1YwmpRybn0mJJkpxa0MX2jQit5tsHu9wARewjW_en_e3EA0vyOtHlZ1c.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_04a2917fbc86cf83016ac2158bc6f487d18b0c76e64fee6bc7",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_GJwwYLciDmvrZPEJZSoKjg4e",
+     "content": "p24: Effective tax rate 23% 20%\np26: For the year ended December 31, 2022, the effective tax rate differed from the U.S. statutory rate of 21% primarily due to the following:\np26: For the year ended December 31, 2021, the effective tax rate differed from the U.S. statutory rate of 21% primarily due to the following:\np26: not expect the IRA to have a material impact on our effective tax rate. In addition, we are currently evaluating the various credits available under IRA and its impact to\np26: Corning\u2019s financial position and results of operations, including the effective tax rate.\np32: (b) The calculation of the effective tax rate excludes net income attributable to non-controlling interest of $70 million.\np32: (b) The calculation of the effective tax rate excludes net income attributable to non-controlling interest of $29 million.\np69: The effective tax rate reflects the assessment of the ultimate outcome of tax audits. In evaluating the tax benefits associated with the Company\u2019s various tax filing\np77: The following table presents the reconciliation of the statutory U.S. federal income tax rate to the effective tax rate:\np77: Effective tax rate 22.9% 20.2% 17.5%\np79: the overall tax expense and effective tax rate could be materially impacted in the period of adjustment.\np79: impact the Company\u2019s effective tax rate if recognized.\np79: Company\u2019s overall tax expense and effective tax rate could be materially impacted in the period of adjustment. As of December 31, 2022, the Company is not expecting"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_sm1C9NBAyeue6f2Ieus8oqlO",
+     "content": "p17: calculations where the ultimate tax treatment is uncertain. Judgment is required in determining our worldwide provision for income taxes. Although we believe our tax\np24: Provision for income taxes $ (411) $ (491) 16%\np26: Provision for Income Taxes\np58: Provision for income taxes (Note 7) (411) (491) (111)\np65: recognized in income tax expense/benefit during the current period.\np69: balance sheets and within income tax expense in the consolidated statements of income.\np76: The following table presents the current and deferred amounts of the provision for income taxes (in millions):\np76: Provision for income taxes $ (411) $ (491) $ (111)"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_5ClO1Roe5WHqb9LOp85wB87s",
+       "function": {
+        "arguments": "{\"first\":24,\"last\":24}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_V3eZcFkjGvdtnTM9FtTSDwDu",
+       "function": {
+        "arguments": "{\"first\":77,\"last\":77}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Updating financial figures**\n\nI need to change FY2021 to FY2022. The table on page 24 indicates percentages around 23% and 20%. I should have precise values, maybe rounded. On page 77, I see figures of 22.9%, 20.2%, and 17.5% for the years 2022, 2021, and 2020. I definitely need to read through pages 24 and 77 to make sure I get this right!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Updating financial figures**\n\nI need to change FY2021 to FY2022. The table on page 24 indicates percentages around 23% and 20%. I should have precise values, maybe rounded. On page 77, I see figures of 22.9%, 20.2%, and 17.5% for the years 2022, 2021, and 2020. I definitely need to read through pages 24 and 77 to make sure I get this right!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWQBwTR8PqN5Vvonv-Kzoi48fuykUK2iZHN_SF6ifs8cxVc9XuhPYaGajItXQUpDy3M9XRLe76Y4lZX5zg2y8hpHEy3EHnQcCV3tvGLn0MMGBABNJDtVpK0TXq1RbsMIMJKCP03zKtamNH2mBAXdPYQcLSpM3UDx93wO3JYlI85CSkuugMEHMuMVXGoU-96CdmKY5vH_POPYtDXjfy_9LI9eUQS99hjR1Y-dT0xeK8TUDdDbWRofwrFECTkIARBe47mlltEPip3wHz4baImGu9D80QHQT0O9Z7UZsgko3HXV2GXuyQ02L7i1eXO2Iq344uqTir7Y8tqnGexgH6A-EOouTA3o_xJ8WhPyR97AsN0eyeP1CuVwwTEBVaW43Nxtuo-tABHp3NzcnX_nJ1DylONi3FDVEhstVVpXb00uu2HV_nt7K6sB5X_w0ebngWEvqyeM9IuPHqR1w4n61SuCdBlbI5SI7-FbUTZexEucr9TvvvGQdey5J54C8A7mRXtGLYqmj4BhpKkUWugVmthryKSWQztLcuBVJlGz5kRGfWJlfflFRWyhxddzFHJxKu9uaGIpqzUsC8Mwto-IhC2_qFqKjl8DLBAyQUdLhGFTSJgplzVyMl9JqVbN0fmmXmxnPz4LUwcW15Mbv406-3cA2DrQIflwMKRx2k7gjoAuN7Cl_8bOxlMSnGRyLUkYwEMjqDPEZ--iOx5MCDcrnrLcfU_6jpgtOYnA6ZFA3_BYBqTZJ92qYOskGLQAbJWuR2pjB8GvGKvIzFrizUYQLV2nxMlAKEm1lJb-DZWIzDnprWt3WijMuQaz9RWRDC_Pu9rjy7OVfL1497uSGI10nV1UENASYSJtYB2KKSzpkGj-xjR0uUY7Yx7WJK4WwRd2ymPzHHj5s8zyxn8HcI4mF8tjIOQpNtld_LmBrzwBHlDuIUVcLgbip6L3ZCiCsjjhHBzp7nogr3OjiR2Km-95Es8DwxxqpY1fcMpAJoD9yasyo69tcHWHRFMr4rVEyIqpHj8SfwY9yF4zTzLGTzCC3r9wJRwuzrJGnZQBxFDttvxFfF7REMFu_5OffcPoH5REAamJTsGYbdd1kYS4w-JWb_LtwWRX89B_4MTr2DbN49nXFR_TsAzyfNmtQgXqU0da6-VOr1qW9gTu2yeWBZtbR-_U1SLu1Bi7DyfY3GN-Mn8TLfaZ94g5QOLJjA4hdgySpG49Av5GrwgadWTlV1FZBLBO10Q5BF8T1SI_kcfFSf7_yStNwTEQ76J_zQFWv--4nECa0Bw8gKzAHr1svUyDwLxUdpPjAdq2IrKWhoUtTWJRjt6WFmPdE1FyG6REBpIA2M2mgl4_NHjSvkPXUESlJihalWIl5xDDgxFCnpla-RL8CMYKSKzt_Ur-eQE2cK7Hs5N4I4b5kzDO1PaWNSQgdrpAzsMT7neb_oNhQnNyk1ej8w9VY99rVEiBZg_TjoWGqgeKOF_F7qKCxas45tqjBTZr9eOQ5yPeoTIUNuUDswxg4j60C1dp35_9ut9XtAKqkL8Ta5k7rbSzxn9UgMla3g3LIXNp4NZVnIs5PaTeQatJWGjFvel01u3r76CvCiL9QRitcTP.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_04a2917fbc86cf83016ac2158dfb2c87d1b285d138e7485ea5",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_5ClO1Roe5WHqb9LOp85wB87s",
+     "content": "[Page 24]\nTable of Contents\r\n2022 Results\r\nNet sales for the year ended December 31, 2022 were $14.2 billion, a net increase of $107 million, or 1%, when compared to the year ended December 31, 2021. This is\r\ndriven by 15% growth in segment net sales in Optical Communications of $674 million and 34% growth in Hemlock and Emerging Growth Businesses of $419 million,\r\nwhich helped offset a $394 million decrease in Display Technologies. In addition, movements in foreign exchange rates adversely impacted Corning\u2019s consolidated net\r\nsales by $616 million for the year ended December 31, 2022, when compared to the same period in 2021.\r\nFor the year ended December 31, 2022, we generated net income attributable to Corning Incorporated of $1,316 million, or $1.54 per diluted share, compared to net\r\nincome attributable to Corning Incorporated of $1,906 million, or $1.28 per diluted share, for the year ended December 31, 2021. When compared to 2021, the $590\r\nmillion decrease was primarily driven by a $238 million increase in severance, accelerated depreciation, asset write-offs and other related charges, a $50 million increase\r\nin litigation, regulatory and other legal matters and a $120 million adverse impact from foreign currency translation.\r\nDiluted earnings per share for the year ended December 31, 2022 increased by $0.26 per diluted share, or 20%, when compared to the year ended December 31, 2021,\r\nprimarily driven by the immediate repurchase and retirement of 35 million common shares which resulted in an $803 million one-time reduction to net income available\r\nto common shareholders in 2021, partially offset by the decrease in net income attributable to Corning Incorporated as described above. Refer to Note 16 (Shareholders\u2019\r\nEquity) and Note 17 (Earnings per Common Share) in the accompanying notes to the consolidated financial statements for additional information.\r\n2023 Corporate Outlook\r\nFor the first quarter 2023, we anticipate core sales in the range of $3.2 billion to $3.4 billion.\r\nRESULTS OF OPERATIONS\r\nThe following table presents selected highlights from our operations (in millions):\r\nYear ended December 31, % change\r\n2022 2021 22 vs. 21\r\nNet sales $ 14,189 $ 14,082 1%\r\nGross margin $ 4,506 $ 5,063 (11%)\r\n(gross margin %) 32% 36%\r\nSelling, general and administrative expenses $ 1,898 $ 1,827 4%\r\n(as a % of net sales) 13% 13%\r\nResearch, development and engineering expenses $ 1,047 $ 995 5%\r\n(as a % of net sales) 7% 7%\r\nTranslated earnings contract gain, net $ 351 $ 354 (1%)\r\n(as a % of net sales) 2% 3%\r\nIncome before income taxes $ 1,797 $ 2,426 (26%)\r\n(as a % of net sales) 13% 17%\r\nProvision for income taxes $ (411) $ (491) 16%\r\nEffective tax rate 23% 20%\r\nNet income attributable to Corning Incorporated $ 1,316 $ 1,906 (31%)\r\n(as a % of net sales) 9% 14%\r\nComprehensive income attributable to Corning Incorporated $ 661 $ 1,471 (55%)\r\n24"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_V3eZcFkjGvdtnTM9FtTSDwDu",
+     "content": "[Page 77]\nTable of Contents\r\n7. Income Taxes (Continued)\r\nThe following table presents the reconciliation of the statutory U.S. federal income tax rate to the effective tax rate:\r\nYear ended December 31,\r\n2022 2021 2020\r\nStatutory U.S. federal income tax rate 21.0% 21.0% 21.0%\r\nState income tax, net of federal effect 0.7 1.0 1.4\r\nAudit settlements & change in reserve 3.7 1.6 12.1\r\nDifferential arising from foreign earnings (1) 2.2 2.0 14.9\r\nValuation allowance 2.1 (0.5) 2.5\r\nIntercompany loan adjustment 0.6 6.1\r\nTax credits (3.3) (2.6) (29.2)\r\nForeign derived intangible income (2.7) (1.3)\r\nStock compensation (0.8) (1.5) (1.7)\r\nRemeasurement of deferred tax assets and liabilities (0.1) (13.2)\r\nLegal entity rationalization (2.2)\r\nNon-deductible expenses 1.4 6.9\r\nGlobal intangible low-taxed income 0.2 (0.5)\r\nOther items, net (0.5) (1.1) (0.6)\r\nEffective tax rate 22.9% 20.2% 17.5%\r\n(1) Includes impact of intercompany asset sales.\r\nOn September 9, 2020, Corning obtained a 100% controlling interest in HS LLC and an 80.5% controlling interest in HSO LLC. As a result, the deferred tax liability on\r\nthe outside basis difference between book and tax basis for Corning\u2019s investment in HS LLC and HSO LLC was adjusted by approximately $116 million.\r\nRefer to Note 3 (HSG Transactions and Acquisitions) in the notes to the consolidated financial statements for additional information.\r\nDuring the year ended December 31, 2022, the Company distributed approximately $534 million from foreign subsidiaries to their respective U.S. parent companies. As\r\nof December 31, 2022, Corning has approximately $1.3 billion of indefinitely reinvested foreign earnings. It remains impracticable to calculate the tax cost of\r\nrepatriating unremitted earnings which are considered indefinitely reinvested.\r\n77"
+    }
+   ],
+   "reply": {
+    "content": "Corning\u2019s effective tax rate **increased by 2.7 percentage points** from FY2021 to FY2022 (about 3 points).\n\nCalculation: **22.9% \u2212 20.2% = 2.7 percentage points** (p. 77).",
+    "role": "assistant",
+    "reasoning": "**Determining percentage change**\n\nI need to figure out an increase of 2.7 percentage points based on the precise numbers of 22.9 and 20.2. I\u2019m considering rounding to a simpler table of 23% vs. 20%, which results in a 3 percentage point increase. I should ask, \"How much has this changed?\" and present my calculations precisely. It\u2019s also important to cite page 77. I might want to describe the increase as approximately 2.7 percentage points, or around 3. I need to finalize this first and then provide short justifications with citations.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Determining percentage change**\n\nI need to figure out an increase of 2.7 percentage points based on the precise numbers of 22.9 and 20.2. I\u2019m considering rounding to a simpler table of 23% vs. 20%, which results in a 3 percentage point increase. I should ask, \"How much has this changed?\" and present my calculations precisely. It\u2019s also important to cite page 77. I might want to describe the increase as approximately 2.7 percentage points, or around 3. I need to finalize this first and then provide short justifications with citations.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWThj85CpRxcy-uleN1a8lACQbGLO5Z5m1NM3kF5bBp4QujrK0kW6Zb5W-CNLI0AQisr8lQ2sahAkb9joO7Kr6f75nZN6ILKwVR-c6YN4WLMQN7mQy1rmm9XXcYEES50rOh2djXHzNi_CWjw-7SRZGnz_XhFp1ekoXmb96_6hPXX0AqHn45OALKoQG1ilpCK7agtMMKEI4bQXVV_9y0KcIQ1hx6hsXTelOUslX4F0Bsu3XhMXkTV_zlDmSL4Bn1cc62RexxFA24Ey-i2AaOyu73S_xoyFbdO24jwLk3g5UpLzVUAJCOPsLaohT9-5ZoDELM7-Px4g6A4LssG6MLUZXifg0Vols4hbSe51PnaISmNfC9xlt0fqA5yz3WzXJCLgveFrsY9Gd2nIq_YEVWUL_DewF0iX5X7nc5my9hLE1B7qYBeSh1VOZEvSwhhaeLbUkxV9o-7hp3GHb8pSKuhK47PfqB1unCwsAwDxudiPtM2Lzbksdxf9obmoflDUaziO7fcEADSqEl-xkLxLpn5qm69HMRm4U89IsCtF9oQsx1XU-urOQXFEK7ouJW85E0hT5uZqT9N55JDP1DZDuayJzZka_FQa8fPMOLWoefEKhAQXuzhTzfEtj1jxcSz5MJQSIeSuwnApK173qhfInfDhMxzjWUqpAVJQ8NLG5j7dRDYSq-xlqAfY4KkdWLqB1wiUnV-x_lmD0M3KxCWkIqkWmVH9SFbQVkDR4NbDaYf6wD_Xzv6gQfnArJABdaIGcKsbj5ZUnSaQgBOI3r0NLNBy73SgjQiJw4Zd6BN-W7RA-mTxvs3nBfA1yLymSmyVBSVU-KxByfcdf_htHdlyK0PFd1IIKv5MF-_0eC64Iltg34oo3r6VirVo6A78hr17J3O71Nw8f3_dcAVOjbOnRpFtuxWVR87DrHIO1p_X85aHV570mv5kK34IBcM2-WlDoVQH1iUqU8785LJOboqcWc-szHwNxiyS6ST37wfpMIfxetLlg8RUi7ZsyBGHYkdpcPPE1RE4DpxEqup0g0eW4n3b598YigduUdy_ep0HQZw7peHFBpEzYOGMhy_qCpmEeQtae1vHzxCSTj0ZNzttVWqV8ULEBz1cjmqWMhkqiesjMWChtDmYjhVMNUQV3n-ayPVr_p5-H95muaBb83XubRLjXPhSw9UkQ2lXx_wC_XLwhdOlGPPvSKmUAR1zNkNEFBERuWCsCn7uBXXAOl2PpH7cNWVsgpIRROcd6vpB9ilwV0pGuDlLg01DvmNvDhaFuqK5XuYl-Lc0WbPVpkIGxXj9Tie_e46ci8kFKzO9254gKGao3x_de_vR7PxPv4IGZjtmlmtEyL7W6myqJTFLI31bq9fUdpzH6D1kMg1meDvUoxUbgnyhO3F8OKidZN7NseGiU-FpA8VneIlL1bmCnJje9Gq0BR77S1AvCzXe9BGzFRDg5fKqzKOzdQ9c8IVwkfhbnlCzBsXw4cAploTpUMFEaE4N2jXGtVt24rnq_A9jzcufqC9sgwhE2chJl12SW60YoD8wqwMi3d6bfMa3ztO7t2_BpohoH6CU1XJu86Ygsr8WorQ-ytAqeG_pDC1dRhEFtMCJ-F_L_Jo8--qhIDBHZKziw9FZtcuo2iOJrn40w4L37KVGlU6TRO7V9ToSG9T9FFZ85BlwPxsT5al5Fj44Yn2Xy86Nq501KuSSmPV-EDxT78ilyEuGTzaUBvh3cpiqA5.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_04a2917fbc86cf83016ac21591ae2087d1a72b214acc544a2f",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 2211,
+   "output_tokens": 140,
+   "reasoning_tokens": 76,
+   "seconds": 3.56
+  }
+ ],
+ "answer": "Corning\u2019s effective tax rate **increased by 2.7 percentage points** from FY2021 to FY2022 (about 3 points).\n\nCalculation: **22.9% \u2212 20.2% = 2.7 percentage points** (p. 77).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "effective tax rate"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "income tax expense|provision for income taxes|income before taxes"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 24,
+    "last": 24
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 77,
+    "last": 77
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer's 20.2% to 22.9% rates round to the gold's 20% to 23%, and its roughly 3-point increase matches the gold's change.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001508,
+ "provider": "llmfoundry"
+}

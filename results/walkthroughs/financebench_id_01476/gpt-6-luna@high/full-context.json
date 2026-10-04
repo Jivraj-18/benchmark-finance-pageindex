@@ -1,0 +1,55 @@
+{
+ "id": "financebench_id_01476",
+ "question": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?",
+ "gold": "Pepsico raised full year guidance in respect of core constant currency EPS growth by 1 percentage point.",
+ "doc": "PEPSICO_2023Q1_EARNINGS",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 2.2,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 9236,
+  "cached_tokens": 0,
+  "output_tokens": 78,
+  "cost": 0.0009626,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nPepsiCo Reports First-Quarter 2023 Results; Raises Full-Year \r\nGuidance\r\nReported (GAAP) First-Quarter 2023 Results\r\nFirst-Quarter\r\nNet revenue growth 10.2%\r\nForeign exchange impact on net revenue (2.5)%\r\nEarnings per share (EPS) $1.40\r\nEPS change (54)%\r\nForeign exchange impact on EPS (2)%\r\nOrganic/Core (non-GAAP)1\r\n First-Quarter 2023 Results\r\nFirst-Quarter\r\nOrganic revenue growth 14.3%\r\nCore EPS $1.50\r\nCore constant currency EPS change 18%\r\nPURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today reported results for \r\nthe first quarter 2023. \r\n\u201cWe are very pleased with our performance and business momentum as our categories and \r\ngeographies remained resilient during the first quarter. Given our strong start to the year, we \r\nnow expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and \r\ncore constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and \r\nCEO Ramon Laguarta.\r\nLaguarta continued, \u201cOur results demonstrate that the investments we have made to become an \r\neven Faster, even Stronger, and even Better organization by Winning with pep+ are laying the \r\nfoundation for durable and sustainable growth. We remain committed to our strategic agenda \r\nand will continue to invest in our people, brands, supply chain, go-to-market systems, and \r\ndigitization initiatives to build competitive advantages and win in the marketplace.\u201d\r\n1 Please refer to the Glossary for the definitions of non-GAAP financial measures, including \u201cOrganic revenue growth,\u201d \u201cCore\u201d and \u201cConstant currency,\u201d \r\nand to \u201cGuidance and Outlook\u201d for additional information regarding PepsiCo\u2019s full-year 2023 financial guidance. PepsiCo provides guidance on a non\ufffeGAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange and \r\ncommodity mark-to-market net impacts. Please refer to PepsiCo\u2019s Quarterly Report on Form 10-Q for the 12 weeks ended March 25, 2023 (Q1 2023 \r\nForm 10-Q) filed with the Securities and Exchange Commission (SEC) for additional information regarding PepsiCo\u2019s financial results.\r\n1\n\n[Page 2]\nSummary First-Quarter 2023 Performance\r\nRevenue Volume(a)\r\nGAAP \r\nReported\r\n% Change\r\nPercentage Point Impact\r\nOrganic \r\n% Change\r\n% Change\r\nForeign \r\nExchange \r\nTranslation\r\nAcquisitions \r\nand \r\nDivestitures\r\nConvenient \r\nFoods Beverages\r\nFrito-Lay North America 15 \u2014 \u2014 16 \u2014\r\nQuaker Foods North America 9 1 \u2014 10 (5)\r\nPepsiCo Beverages North \r\nAmerica 8 \u2014 3 12 (2)\r\nLatin America 21 (6) 1 16 1 5\r\nEurope 5 5 4 14 (5) (11)\r\nAfrica, Middle East and South \r\nAsia 2 28 \u2014 29 (8) 15\r\nAsia Pacific, Australia and New \r\nZealand and China Region (1) 6 \u2014 4 4 2\r\nTotal 10 2.5 2 14 (3) 1\r\nOperating Profit and EPS\r\nGAAP Reported \r\n% Change\r\nPercentage Point Impact\r\nCore Constant \r\nCurrency \r\n% Change\r\nItems Affecting \r\nComparability\r\nForeign \r\nExchange \r\nTranslation\r\nFrito-Lay North America 23 \u2014 \u2014 24\r\nQuaker Foods North America 18 \u2014 \u2014 19\r\nPepsiCo Beverages North America (86) 95 1 10\r\nLatin America 13 (1) (6) 6\r\nEurope n/m n/m 11 159\r\nAfrica, Middle East and South Asia (6) (6) 23 11\r\nAsia Pacific, Australia and New Zealand and \r\nChina Region 5.5 \u2014 6 11\r\nCorporate unallocated expenses 132 (102) \u2014 30\r\nTotal (50) 67 2 19\r\nEPS (54) 70 2 18\r\n(a) Excludes the impact of acquisitions and divestitures. In certain instances, the volume change shown here differs from the \r\nimpact of organic volume on net revenue growth disclosed in the Organic Revenue Growth Rates table on page A-8, due to \r\nthe impacts of product mix, nonconsolidated joint venture volume, and, for our franchise-owned beverage businesses, \r\ntemporary timing differences between bottler case sales (BCS) and concentrate shipments and equivalents (CSE). We \r\nreport net revenue from our franchise-owned beverage businesses based on CSE. The volume sold by our nonconsolidated \r\njoint ventures has no direct impact on our net revenue.\r\nn/m - Not meaningful due to the i\n\u2026 [32,561 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9%. (Pages 1 and 3)",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWFdeyg9l4O-nyfNR54tS6S6XJdhby66AAK5LC92e9zsKL2-KHqgoACx2taw31F9CDHsvTzKn78bCTeSK-maklN1S0Xkm4H0yI2_rTwwTqFByuGWfSMUKV1B6k1nlj86fjAYw_FQttMq7JWXKed6QVH8x3jngG3kW0aQtbWzOrGpzNHwCQ2nmMDT6k01fqq6lDQWE-Gs474QCjVa1zKgdICsm2K0hhh0O3xrLuGYrEW3lh9y2WGzjwux_v5HokvtfPpY_zteP-W94ofBJ7vdASZElksHMhazZn_nypSeyRUyTBNbtBcJBUfcat5qF5ISW_xtWM65AeTlCRD92kBY9X_hUPcZlM-UHEl6DzOeuGoaTfFiNy2pdajWmgN_HjsD3kEpb4bhSeiJbQmBjXHEAwHfbcYaRwjOZ4Ocxui0Ldw-eAEWqR5JHOnZS48-4elW1sqUEhOgh366hKqBem4jAta2GBC2bzDx-20O9YfLB62Z73S3m86SJ2zaASirx1LrRY4tVbdZQ6yk-uIBECfAaWb5jPusbVhVzWX5IiZS4ccS2xctsVsT3-SQzINMIftPW29umjNwTojfBPh_Z-byXPYOR48QUKyWk9j-GL2WyNLBIJBdnWXgeConse2hO9OJybk1hNRvaW91A1MxB9pMz53ks-3cbKZIEVEQkVclvo_F5CL-I119Is3EZiWkRs98WxIL8bWF7Gcvq9zIyW6OWKAtteEhiA4EhC4A--JJ9L0zvpl3SVbpxazbJ5qzNBoiZzFxO2swozRexU6Re-kZ1UCSQTz11oQ9wqaGugYJTY1nYvXjsYt3LhozNMwe6jSh1VbClS6uwYhe5rSurNOLesPz8s6EF7UHZCFtKaYMMwvaWdRloIWkI7EHevdE4bVUtwATQCJRLmj4Si61QHneWrDmv4ge9sQJUN_k7IdTVOLkI_WJ87yl3lOtnGGZRXdtMGcSQ-P0fIPD4hQJmj-eM8Qz2M6JQWzFV42qLsgFK9jINjhyso6MYgs_VChpjVQReHDjLhwMJV9Wagk1qtwAgdzHlR6wPG11BM8C2uqx-mHyQZ7vYYVhbmR5gVlOnjKtbIF0GMQpydyzDfR90wpEhDpfEU05D6g1csACseOwyu_Mtd3n2BIhPNqjK-eG5stnsz4DujsyxB8KHjFzKu-R89AnDnCpydi-d6UNUtY8RSx5N5Mkp-HsEfO9mC-teTh1MiordLVXVfiSzQcX1ED8aOuswscKGQyQ14xOmUVj2PmDcNEkwYljuA6DT4B6cXiPzF86bq5a8D-kluWbWQjkfGygRCpHr1CZjP-sbTh47vwogqYY-RqQmEMjBnf-7T1NMY3xQzw69KTkeErWbGPAw4mhwgiFz0kaZuAqA3uhp3rHl4XUc1j-t8y04GffJ_LAOCEEUCLS8a0i06a91i68RoQPqboDOZu4xb7SfY0I6yDW0rcqYw9igRF70vtr-kI5s32mAQRWzk5t21whJGgn7WjrnD8B0lYP8QO-thvMYzVa8w=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_06ee117337956954016ac215851e9087d1b65c9952db7ed2a7",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 9236,
+   "output_tokens": 78,
+   "reasoning_tokens": 37,
+   "seconds": 2.22
+  }
+ ],
+ "answer": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9%. (Pages 1 and 3)",
+ "verdict": "correct",
+ "reason": "The answer states a 1 percentage point raise, matching the gold answer, and the extra detail (8% to 9%) is consistent with it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001436,
+ "provider": "llmfoundry"
+}

@@ -30,11 +30,13 @@ All methods share one answer prompt (`finbench/prompts.py`).
 
 ## Setup
 
-Requires [uv](https://docs.astral.sh/uv/) and an [LLM Foundry](https://llmfoundry.straive.com) key.
+Requires [uv](https://docs.astral.sh/uv/) and a key for an LLM proxy: [LLM Foundry](https://llmfoundry.straive.com)
+or [AI Pipe](https://aipipe.org/login). Set `LLM_PROVIDER` in `.env` to `llmfoundry` or `aipipe`; both serve the
+same OpenRouter- and OpenAI-compatible routes, so nothing else changes.
 
 ```bash
 git clone https://github.com/Jivraj-18/benchmark-finance-pageindex && cd benchmark-finance-pageindex
-cp .env.example .env            # add LLMFOUNDRY_API_KEY
+cp .env.example .env            # set LLM_PROVIDER and that provider's key
 uv sync
 uv run python -m finbench.data download   # 150 questions + 84 PDFs (~160 MB) from patronus-ai/financebench
 ```
@@ -52,8 +54,8 @@ uv run python -m finbench.run --methods pageindex agentic-search --configs all -
 uv run python -m finbench.report
 
 # Record each method's steps on a few questions, then build the site in docs/
-uv run python -m finbench.walkthrough --ids financebench_id_04103 --config gpt-6-luna@high
-uv run python -m finbench.site --limit 30 --walkthrough-config gpt-6-luna@high
+uv run python -m finbench.walkthrough --limit 30 --config gpt-6-luna@high
+uv run python -m finbench.site --limit 30 --walkthrough-config gpt-6-luna@high --walkthrough-start financebench_id_04103
 ```
 
 - `--configs` takes `model@effort` settings (`gpt-6-luna@xhigh`, `claude-opus-5.5@low`) or `all` for the grid.
@@ -141,8 +143,10 @@ and register it in `finbench/methods/__init__.py`.
 **https://jivraj-18.github.io/benchmark-finance-pageindex/** (GitHub Pages, served from `docs/`)
 
 - [Cost vs accuracy](https://jivraj-18.github.io/benchmark-finance-pageindex/): one dot per method × setting.
-- [Walkthrough](https://jivraj-18.github.io/benchmark-finance-pageindex/walkthrough.html): four questions,
-  each answered by all four methods with gpt-6-luna@high. Step by step: the model's thinking (the summary
+- [All questions](https://jivraj-18.github.io/benchmark-finance-pageindex/#questions): the 30 pilot questions with
+  each method's grade; click one to open its walkthrough.
+- [Walkthrough](https://jivraj-18.github.io/benchmark-finance-pageindex/walkthrough.html): every pilot question,
+  answered by all four methods with gpt-6-luna@high. Step by step: the model's thinking (the summary
   its provider returns), each tool call and what came back, failed calls, tokens and time per step.
   Raw logs, every message of every call: `results/walkthroughs/<question>/<setting>/<method>.json`.
 

@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01911",
+ "question": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?",
+ "gold": "As adjusted EBIT is negative, coverage ratio is zero",
+ "doc": "MGMRESORTS_2022Q4_EARNINGS",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "provider": "aipipe",
+ "seconds": 9.0,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 11852,
+  "cached_tokens": 0,
+  "output_tokens": 408,
+  "cost": 0.0013892,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nPage 1 of 15\r\n Exhibit 99.1\r\nMGM RESORTS INTERNATIONAL REPORTS FOURTH QUARTER AND \r\nFULL YEAR 2022 FINANCIAL AND OPERATING RESULTS\r\n\u2022 Record Adjusted Property EBITDAR in 4Q and full year 2022 for Las Vegas Strip Resorts and \r\nRegional Operations\r\n\u2022 Share buybacks of $2.8 billion in 2022 and $352 million in 4Q22\r\n\u2022 New $2 billion share repurchase program authorized by the Board of Directors\r\n\u2022 Closed on the sale of the operations of The Mirage for $1.1 billion in cash\r\n\u2022 Awarded new 10-year gaming concession in Macau\r\nLas Vegas, Nevada, February 8, 2023 \u2013 MGM Resorts International (NYSE: MGM) (\u201cMGM Resorts\u201d \r\nor the \u201cCompany\u201d) today reported financial results for the quarter and year ended December 31, 2022.\r\n\u201cWe achieved our fifth consecutive quarter of record-breaking Las Vegas Strip Resorts Adjusted \r\nProperty EBITDAR in the fourth quarter,\u201d said Bill Hornbuckle, Chief Executive Officer and President \r\nof MGM Resorts. \u201cWhat we accomplished in 2022 is nothing short of remarkable, and is a testament to \r\nour strategic plan, scale, brand strength, talented team, loyalty program, and the diverse geographies and \r\nchannels in which we operate. We believe that there is strong momentum in our business and our 2023 \r\noutlook remains bright, driven by a robust events calendar domestically, MGM China\u2019s rapid year-to\ufffedate return to profitability and BetMGM's ongoing improvement in 2023.\u201d\r\n\u201cWe achieved exceptional results in the fourth quarter and remain optimistic in our outlook for this year. \r\nWe are also focused on free cash flow and believe our company presents a compelling yield, especially \r\nwhen taking into account the value in our share price for excess cash, our ownership value of MGM \r\nChina and BetMGM,\u201d said Jonathan Halkyard, Chief Financial Officer and Treasurer of MGM Resorts. \r\n\u201cOur share buyback program continues to return capital to shareholders as we have already repurchased \r\n4 million shares for $164 million year-to-date, adding to the 76 million shares we repurchased in 2022 \r\nand totaling approximately $4.7 billion since 2021. Beyond this, our Board of Directors authorized an \r\nadditional $2 billion for share buybacks.\u201d\r\nFourth Quarter 2022 Financial Highlights:\r\nConsolidated Results\r\n\u2022 Consolidated net revenues of $3.6 billion, an increase of 18% compared to the prior year quarter. \r\nThe current quarter benefited from the inclusion of the operating results of The Cosmopolitan of \r\nLas Vegas (\"The Cosmopolitan\"), which was acquired in May 2022, partially offset by the \r\ndisposition of The Mirage in December 2022. Additionally, results improved over the prior year \r\nquarter due to an increase in business volume and travel activity primarily at the Las Vegas Strip \r\nResorts and Regional Operations;\r\n\u2022 Operating loss was $2 million compared to operating income of $369 million in the prior year \r\nquarter due primarily to a $1.2 billion increase in noncash amortization expense relating to the \r\nMGM Grand Paradise gaming subconcession and an increase of $338 million of rent expense \r\nrecorded within general & administrative expense related to the VICI and The Cosmopolitan \n\n[Page 2]\nPage 2 of 15\r\nleases, which commenced in April 2022 and May 2022, respectively, partially offset by a $1.1 \r\nbillion gain on the disposition of The Mirage in the current quarter;\r\n\u2022 Net income attributable to MGM Resorts of $284 million, which was impacted by the items \r\naffecting operating loss discussed above, compared to $131 million in the prior year quarter;\r\n\u2022 Diluted earnings per share of $0.69 in the current quarter compared to $0.23 in the prior year \r\nquarter;\r\n\u2022 Adjusted diluted earnings per share (\u201cAdjusted EPS\u201d)(1) was a loss of $1.53 in the current quarter \r\ncompared to Adjusted EPS of $0.12 in the prior year quarter; and\r\n\u2022 Consolidated Adjusted EBITDAR(2) of $957 million in the current quarter. \r\nLas Vegas Strip Resorts\r\n\u2022 Net revenues of $2.3 billion in the current quarter compared to $1.8 billion in the \n\u2026 [43,551 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning": "**Analyzing adjusted EBIT**\n\nI'm working on understanding the financial figures, specifically operating income, which is 1.439 billion. I'm wondering about the relevance of adjusted EBIT and adjusted EBITDAR. Adjusted EBIT might involve subtracting depreciation, amortization, and rent from EBITDAR. However, if I'm looking for adjusted EBIT, it seems tricky since my calculations don't line up, especially when property transactions and REIT gains complicate things. It's a bit confusing without a clear definition, so I need to clarify these figures.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Analyzing adjusted EBIT**\n\nI'm working on understanding the financial figures, specifically operating income, which is 1.439 billion. I'm wondering about the relevance of adjusted EBIT and adjusted EBITDAR. Adjusted EBIT might involve subtracting depreciation, amortization, and rent from EBITDAR. However, if I'm looking for adjusted EBIT, it seems tricky since my calculations don't line up, especially when property transactions and REIT gains complicate things. It's a bit confusing without a clear definition, so I need to clarify these figures.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwh0CcKG8-s60Nec11PfppDDHizSiHaecjVlkq_LUu_oID0A4z47yYh-2QFUWHQTZX7ypRVDlRHIXX6JcaRWpRw5WgU7uPKdrgHVAIAk4cYUbqO6sIg_HDUzTUa-0MIPSgTe2-k08priJtPIVRj2211ZZedPa3WNWugIF77c-ZkEmkW1u8Hwk94CmuDlzDSMwmNAg-SU4NEGeCUvg4nL3IVb0RdVSZRcSmVHWS7KXqYjQwxNR3dGeF8-xzGfaTfNskA2poy-9vZ7r_GqGvzt-wLyMKoafvxslE7AdfKhw-jf3sTA_gvIDHZLQxaim1Rw-1xqL22eWyo-gaiehJrwk5hvvzMfiFbINDpOZmm0URcBC2vYgPEB9YnEhno67qdm2l6q8AY4xDYZ_-I9jJ55kRGgmMvcWO9kB9S5vjys_lC6eYKKYT4dONxuY99kLW-IfIZa9rOE7bKHxLQznV83yCdRpa6JiWAZbKZ3QGfx9MHo7t_KZGXnyimCZxAjWWY1qf_Gn8nDIXqPmNVbAojMtJJw7JQ0FWhehLem5p04UK7EOhoaUHuJq7UxXAJApDIe5Rq_kEBbW9ETh51EwUyinIo-evsHWKVY9sITR00x-xSZuI4qQRmMTc29Ur2FmKSj5akfyh6gSrvqcrHLFfvPoE47kbdczbm3I8VRuXCTmi-Y278l3d-VAonvc6XA-5gvgbFdat9BB1VRfxhFPwhY3IkQoMIU50hJ-zgK0Ze7L-hegwTFbJj43BAaGNRr60QTmvsJFVG7J14ToLvhadiNlXw4O0r_-2AF--p_tRRs_2KXZ_mr2jnX4bITri8WexyB5A2oX5E5NSaMXJHNvBg5KTMNGNhrD2Fw6Jnr7NsX5bUNBVqKsDP8CFnU3jx5JlSmjw5VQAMh58mfUpv4KVqjHfzPs6SeDQmtbWpZhOvdiADZ_-HLuVtaOMyNWr9LF_aamMNL9-kmnY2proXbkfB6o92w_eB0k20xZk9ssu3jZbnWWOPdQN0n7ae7E4Q3gQY01DQp3h7beyaLYR5NfLA5FTm3Ozp1OxYDvKU0BjtvCvd6gnjRKa5p0eepyAT3Q5dh2e5_eng6Rk3d_7EoVNbhDdeozy4Ll5YOYvBMp29EdE-J0Nf2vR0ggr3LkS5zOYnwS4ZNY6moL922ggXDac2iMagiI1F_w0AJoAPt1F6mByLhxVN_W1PEazU5cHNGtZemZJKQLB4-PGP8H_NYmFSBbjqx9zdcxiWlqah6zy50Vel6_HGHGkbHyLzccndnSvYTeCwmcAQ3xTDd4nwmn5n0mzA9C9vBBgaXKWcpWEdh7ogeuTmii-Nf3BS6oyItlCDo1I4qiI3SG_EzrdxBDPbFwjJnEXSCWIqSgsWK3aKYIhnAmou2-O4sKV45TabRus-62mUx7jzUc0Wlp7q6A-F2hVluut3uz1OQ8D0vnIX9w4UwdHAoX-QwJl9d1X4Io6RMxhTuNmRcJGGmfql3JdDrUw9HDiMR9YOdyMXekS8wPurHY2weA7CT8UemfoNgL3U6TjibnrC35kkI4YikHralAsYedexC_aDSACcKqoH_xdvhs3XZPX1pvy9UHDbJ3zyb65PxL4pQrneq2dwJL4FBidh1aM1kGLwC9pQZMUXK5JIsIMOSyyUZjV1VgGJcpj4ppO-k-cmBQiIar0oQo9mnFfN2SQY4-clsm8UhMqyR100Rtxoi8KDNzvZaFApFG1udpoyAcDpGKQSI6kR31UCY_6EF5q890TkLWL7IsjT5o1Av6y3sZTB0-zlKyKYOTo53DWT3Abxc_9nbP_YziopWKR1IOzzuBUOjX8FTPj8som4Z47RKZlF_mrx39VsIsQ3upJDNDk9EvXN3LHhDHxBnIncfLzBrGnJVkSqMy7-8iFbvreeiEgwHbIapx_EFe_4cewnCD9JpPrtn-isNujwj9-gVqhExDP2T4MqMwZ-o1qVQ01moi67U_s4HSbvZ63S3qvzv1xV0MWZGC761ITW9t1KxdPjxD8xl9H14dIdvI5aw3xwsmC7FyAyXbQYEcmRMfzScUj7MnjHS95PHo7kW2ZQCiNzYnchuR7Bg_UsABQaLT8Iw6L31T3Y_R8SgEKbpdM7mrrztMTGzUnxyXYTRLXXIfwVwfCCD-LknbdvSBCQXROAcx1nyomxPaN-8dw6hQ2oO1_SgWahcfaTdnJSogFY6PQo7lxWgjfdgMiFlwcByDbQuuDzLM9HkE_Wv8LHQjSOy3FgHCZ6OLAIH-DdAHhtD2OcLP4yq2MdnE3GeaGBRWJYK_dAax7DhnyoNYnn3vkIBiwaHjMrHy3RxYGIAvt-Cs_jxIvWLzvqavo3zFHlr5vp_yDoLIJPwGmOX28TVYdVk1u7ZIC2zc5xStv08M5Ty0JiBJ6yPNub8550La3hbtypP4uKN_hWuG_oY9uNXSehDHVRoL3ABRj99UgMyWiZ0fLQwxr6SKFgJmKf_XsiY4sx34kro9KuGqzIjaJ_UDHpzg0B2DDxR33qOaqf56L7bsOlGodjRcM_hQcan4zCLiHKI0bU-GZzbzExZ56IbCheBWzED_LS0yPVdjnOsMB3XLihZ3p1yPaJUlRLUkoFyMK9I_DZ1R8TWsy9Qgsa101FS8zgpofHXiqLcrZnhmxMuLDPlHinP_K8jPxWSsuWeQuZ3TENg34BjE6Ed0lWD2SEMwYDvnceMYNTn19kUYwc10NXEquexQXpCZ9eo29gen1dOzzOUmb4bu8pd9YcxpLthhsehJwqEnRGq0tH8CQPBBmK-QLZGBlobJDC68pqsVRTfiFis7K6g4zubWacY-bCRyD-Y9ar99d-HyP3Mi0tYZnIs55C8oaFUInXmNG1kyseVYmVUfTpZubeboINLMwJyH_zu8998Twy6Wb5cZdY3jEz4c2ZsgJ6eQiEgV27YlmvWfcKEOnwMYAXfUdrNmyTUnKHl8cteOziMYSfJXHvUu1xXt-YbI7X6KRae_WSwIY7Qxw58hZSSdxNzBKMKZTG0b1d0g_RSGiH0Zto_Hq_jSK8K9UkeEOHNnVuHtFwaoQQ4lTtGayySpMRwr0yqc2LQZs8WYwn0ZNFxnd-md_p8otdPxetTnRj0yb7a75x9AqEuJ2UhKYqR88CyRgDPVXTEGbkqxLSN6zq1mFSazJND-ai5GeGSexhH4NHeBC8tnsQSdePbtUUx85rUoJx1dJxwv0ds0tjinaysVDKtrwdLM4gm_MtkG0JYnXZpOWVmMHJpJQANsPX41XQmL53mhSzXa_U_P4Yqj-8Od7qzAfqxywnIeB7FkBiV8zcdy6zIbE3YqVH-nV-9A0LXkVqx1cxzWiajpZJUHzQWODNDZO9Jbn_s8Da9qROHQtGxfyPzv9K7RWjdqbImGhrGaF-d2D9PuC5DGRpjfzht9uiiLslQsx4jhhxd44PgKrsPIPUIua1EpVNBxwFXLbTM7x8IB9PvPqTvmqGBH-ocUqDtsZTe8TDraMpKfzv3I7JFTHr1X1E6ISM3Wl-4g7E-9HVSSru-SRcD7QaVHLcNemTVw5kd5R4THovE8XWugr6g02ojBHvXbQaVfocVZT37PtoJCr5GarPX1GX-cttg4YwYTOI_-H8B2Q2YWSEopRT0Dq6TEgKKsVb8vD1-QIt4foqWsdKiIlPCiY_DjEQ-QR06KEkRBTPv3v9yUePrcz8p_gRIiPZR1NDGP_MsjxCZnzmdqTSuXD-nic8DW-Px-e4n6TKZHEhp4P17OldkMR6EbA1mJr0DQF1UsYa4tN4dKqo70djrh_cRIZ-OmffLjK4i8AdN_w-ZGHgQEvP_SrAOX6Pu0DLs00UXj1jfg7_UZgPLl3Pc6.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_05ab9c2be598f97f016ac21cfdfe2087d18438ea2f47b81801",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 11852,
+   "output_tokens": 408,
+   "reasoning_tokens": 394,
+   "seconds": 9.01
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "verdict": "refusal",
+ "reason": "The answer states it cannot find the information and gives no ratio or conclusion.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001138
+}

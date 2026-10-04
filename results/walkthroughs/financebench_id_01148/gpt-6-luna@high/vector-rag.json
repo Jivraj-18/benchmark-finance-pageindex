@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01148",
+ "question": "What industry does AMCOR primarily operate in?",
+ "gold": "Amcor is a global leader in packaging production for various use cases.",
+ "doc": "AMCOR_2023_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.2,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3181,
+  "cached_tokens": 0,
+  "output_tokens": 77,
+  "cost": 0.00035687,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 55]\nAmcor plc and Subsidiaries Notes to Consolidated Financial Statements Note 1 - Business Description Amcor plc (\"Amcor\" or the \"Company\") is a public limited company incorporated under the Laws of the Bailiwick of Jersey. The Company's history dates back more than 150 years, with origins in both Australia and the United States of America. Today, Amcor is a global leader in developing and producing responsible packaging for food, beverage, pharmaceutical, medical, home and personal-care, and other consumer goods end markets. The Company's innovation excellence and global packaging expertise enables the Company to solve packaging challenges around the world every day, producing packaging that is more functional, appealing, and cost effective for its customers and their consumers and importantly, more sustainable for the environment. The Company's business activities are organized around two reportable segments, Flexibles and Rigid Packaging. The Company has a globally diverse operating footprint, selling to customers in Europe, North America, Latin America, and the Asia Pacific regions. The Company develops and produces a broad range of packaging products including flexible packaging, rigid packaging containers, specialty cartons, and closures. The Company's sales are widely diversified, with the majority of sales made to the food, beverage, pharmaceutical, medical device, home and personal care, and other consumer goods end markets. All markets are considered to be highly competitive as to price, innovation, quality, and service. 55\n\n[Page 30]\nOverview Amcor is a global leader in developing and producing responsible packaging for food, beverage, pharmaceutical, medical, home and personal\ufffecare, and other products. We work with leading companies around the world to protect their products and the people who rely on them, differentiate brands, and improve supply chains through a range of flexible and rigid packaging, specialty cartons, closures, and services. We are focused on making packaging that is increasingly light-weighted, recyclable and reusable, and made using an increasing amount of recycled content. During fiscal year 2023, Amcor generated $14.7 billion in sales from operations that spanned 218 locations in over 40 countries. Significant Developments Affecting the Periods Presented Economic and Market Conditions During fiscal year 2023, we have continued to experience intermittent supply shortages and price volatility of certain resins and raw materials as a result of market dynamics, especially in the first half of fiscal year 2023, and higher rates of inflation impacting energy, fuel, and labor costs. In addition, higher inflation, especially in Europe and the United States, has led central banks to rapidly raise interest rates to dampen inflation which results in higher interest expense on our variable rate debt particularly U.S. dollar and Euro denominated debt. The underlying causes for the continued volatility can be attributed to a variety of factors, such as the Russia-Ukraine conflict and higher inflation in many economies, which has resulted in increased volatility in energy and food markets and impacted global economies. This has led to reduced consumer demand for certain of our products and customer destocking in fiscal year 2023. We will continue to work closely with our suppliers and customers, leveraging our global capabilities and expertise to work through supply chain disruptions and other resulting issues. In addition, we are focused on driving costs out of our business in this ch\n\n[Page 5]\nPART I Item 1. - Business The Company Amcor plc (ARBN 630 385 278) is a public limited company incorporated under the Laws of the Bailiwick of Jersey. Our history dates back more than 150 years, with origins in both Australia and the USA. Today, we are a global leader in developing and producing responsible packaging for food, beverage, pharmaceutical, medica\n\u2026 [11,760 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "AMCOR primarily operates in the packaging industry.\n\nThe company describes itself as a global leader in developing and producing flexible and rigid packaging, specialty cartons, and closures (pages 5\u20136).",
+    "role": "assistant",
+    "reasoning": "**Preparing document citations**\n\nI need to focus on creating an answer document that only includes page citations. It\u2019s about the packaging industry and specifically concerning packaging products for a global packaging company. I think I should finalize the first page with a brief justification for the page numbers to make sure everything is clear and well-organized. This will help ensure that the user understands where the information is coming from.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Preparing document citations**\n\nI need to focus on creating an answer document that only includes page citations. It\u2019s about the packaging industry and specifically concerning packaging products for a global packaging company. I think I should finalize the first page with a brief justification for the page numbers to make sure everything is clear and well-organized. This will help ensure that the user understands where the information is coming from.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVaFEH1LLmnjRVvNxp86GFWxw9YgWwunz4EuXbT8QbJeEkWOrI-M5KgxbDCwpkqMIGm4U8Vcd9wKQFY9zNqYWhFTtpENcM5WA7fmSPGlcicfRAinLVF5KH-9MaquLRt9M_-G67HLODjv5FSV7ZEwx-tEmF1tiQ0PIJB18ypX2No9AJSQENrYz5FIl-VvaOxGlDPZgkghEcqbBVPXPg-3gb3oIE8E5b7rwyhVEgGt3hFqYp3fMSpC5FI0O_c24ZgfzQqjiZvoEdJkTUvZhm_CBtfkeB7a_dMPRi01Q5K5D0BlDWHRcH4llBdGI7UreCeGuR7R4FGcpuMHAC33djhsbCdCzoDsMf0aT6MoaX_RbsFtvVc-dbZGTv0ASn7S-ke5VmCjRmOP2Lz95uhVTU-zGMo7GxqwUPshXtCcxKtkGCuQO-q5v6c4VS5wdjSkQ2zZM-TWTQrGVbfkZAE2WEhnbV5crDgkFadNpDss38mD3PDIA35PyZNRmMPALUr9MfXAUmPiB2KQRK8zVqKqOJT_WVK9mLEWcO70of3HVYM3jOQ4-WClaeVLWei2NMSKP9NVNAC8-TjC7ObgeAhD1XkTmFe0DV5SFOZgF_u0p8aYJPVsrmiaxH2Y3R_knm5vLvt034UopjsTsN9FT49CV3KWNk4bGSMKVydqvIM5O5N2IjzzEp-KU-xkGIvSLcr6Zpj799en4SkkFdyAV4w4foz0d9zUE5zuwXVPGexegoXvracQC-TdJqSMEJJl6jvTE7lsUThgfAzAc6Ieb7Ex6ZoWzzmAeGKeACxuPHA6aOkgguTpfIwY7LomaXhi4NQLeZ5321CzjUWmrl6YmcD-wZGJUp943gy69ihoo4lVbMM-v-zTYGaAQOo7biMuvzV_EIqWMVHzehXleaO0qcPJNtZm4z2O0jL9oQh_Y8H-QN5ngenxgN169rQtluSusON82Bbp5O3LVv8FD7ZomzMfBBJ036UrFoPzn0sQBK6EzyHfZe-5_4hi2HCQlSpjSVg2eNA_6Dc4AiVr9Jp-m6EfmeUZPxLbkH7qbX41otjOsBM20WlJQG_i-jOqxzyd2RxLCVmaqRmeMbm2yoTC2KDVxO6mGrSkIrEyxqrqaOG7OHM1NBzoR7PlDhhbYimmUhA9Y3tCr9I2YsSb7GSYiMjWzHPieRXxFTFFqPbPIejciKmzsu1_DRqd_jLYbpysBSRCN9j-ZAXpQWE_3MYkAEFUSiiuzBijZey8sd10pZ4-vup2G1lHm6bwtqmdRHkKEhLYgWMchEVfqqM_ojQRsb5Pz1nfLzcRDTDEINkSg6pJbu3vZbTJoXvxuuRNceCyVAi36HplEWMpMxybRWBrMl4auQNi8ULmzjcF0yALR0lE-iLtjHm7RV7PTiumToBwRJN6WwdZ9grOVlpR39-Oe8uhopkQAzhWvzbCe43XczERiUzwbsRuzpO-d4ClF6XYkbsy4Zdzq1WUxIRwbrAndvxnXebwp3rJRkULS75Nbg5CP0ABZTIXxheFHUpcTJzekh-5neF9wEveAlRATeSyxiNW3CVjzlAyg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_050facf23ab1d2bc016ac21558d03c87d1b54611642d89ec1c",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3172,
+   "output_tokens": 77,
+   "reasoning_tokens": 33,
+   "seconds": 3.46
+  }
+ ],
+ "answer": "AMCOR primarily operates in the packaging industry.\n\nThe company describes itself as a global leader in developing and producing flexible and rigid packaging, specialty cartons, and closures (pages 5\u20136).",
+ "retrieved": [
+  {
+   "page": 55,
+   "score": 0.6822
+  },
+  {
+   "page": 30,
+   "score": 0.6651
+  },
+  {
+   "page": 5,
+   "score": 0.5953
+  },
+  {
+   "page": 6,
+   "score": 0.5821
+  },
+  {
+   "page": 151,
+   "score": 0.5469
+  },
+  {
+   "page": 9,
+   "score": 0.5396
+  },
+  {
+   "page": 3,
+   "score": 0.5312
+  },
+  {
+   "page": 32,
+   "score": 0.5182
+  },
+  {
+   "page": 9,
+   "score": 0.5087
+  },
+  {
+   "page": 23,
+   "score": 0.5079
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer identifies the packaging industry, matching the gold answer, and the added detail on flexible and rigid packaging is consistent with it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001368,
+ "provider": "llmfoundry"
+}

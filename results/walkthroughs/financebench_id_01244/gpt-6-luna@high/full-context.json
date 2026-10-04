@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01244",
+ "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+ "gold": "Yes, CVS paid a $ 0.55 dividend per share every quarter in FY2022",
+ "doc": "CVSHEALTH_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.0,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 176102,
+  "cached_tokens": 0,
+  "output_tokens": 248,
+  "cost": 0.017734200000000002,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nor\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from _________ to_________\r\nCommission file number: 001-01011\r\nCVS HEALTH CORPORATION\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 05-0494040\r\n(State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.)\r\nOne CVS Drive, Woonsocket, Rhode Island 02895\r\n(Address of principal executive offices) (Zip Code)\r\nRegistrant\u2019s telephone number, including area code: (401) 765-1500\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, par value $0.01 per share CVS New York Stock Exchange\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. \u2612 Yes \u2610 No\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. \u2610 Yes \u2612 No\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934\r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing\r\nrequirements for the past 90 days. \u2612 Yes \u2610 No\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of\r\nRegulation S-T (\u00a7232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such\r\nfiles). \u2612 Yes \u2610 No\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an\r\nemerging growth company. See the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth\r\ncompany\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised\r\nfinancial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial\r\nreporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2612\r\nIf securities are registered pursuant to Section 12(b) of the Act, indicate by check mark whether the financial statements of the registrant included in the\r\nfiling reflect the correction of an error to previously issued financial statements \u2610 Yes \u2612 No\r\nIndicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-based compensation\r\nreceived by any of the registrant's executive officers during the relevant recovery period pursuant to \u00a7\u2009240.10D-1(b). \u2610 Yes \u2612 No\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act). \u2610 Yes \u2612 No\r\nThe aggregate market value of the registrant\u2019s common stock held by non-affiliates was approximately $121,258,020,752 as of June 30, 2022, based on the closing price of the\r\ncommon stock on the New York Stock Exchange. For purposes of this calculat\n\u2026 [859,877 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. CVS Health reported a quarterly cash dividend of $0.55 per share in 2022 and stated it has paid cash dividends every quarter (p. 66).",
+    "role": "assistant",
+    "reasoning": "**Evaluating dividend payments**\n\nI need to provide a yes or no answer regarding whether dividends were paid to common shareholders in Q2 FY2022, along with page references for justification. The document mentions a quarterly cash dividend of $0.55 for 2022 on p66 and notes annual cash dividends paid at $2.907 billion. While specific Q2 payment dates are unclear, it suggests dividends are likely paid each quarter since it states that cash dividends were paid every quarter. Thus, it seems reasonable to answer \"yes.\"",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Evaluating dividend payments**\n\nI need to provide a yes or no answer regarding whether dividends were paid to common shareholders in Q2 FY2022, along with page references for justification. The document mentions a quarterly cash dividend of $0.55 for 2022 on p66 and notes annual cash dividends paid at $2.907 billion. While specific Q2 payment dates are unclear, it suggests dividends are likely paid each quarter since it states that cash dividends were paid every quarter. Thus, it seems reasonable to answer \"yes.\"",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVmUDZMGZue3emGTa7Imcgd9i4-QyNVq40yM7Nu1uTuI1OUipgHLwMXIXVRyVr6_ph0msSlPp1mCYJdOHCtWmB29GuBLM1Do5zI9o0cM0NccaRS_875mJSM_NKWzXrB1iJym6huTOcWc2ZUHehWGGLzhHrDPJxRYEaBY3HSxiCbM7ceuk6xVz4un7xZr9Yv2Nlb1OdMjlb99J-VfMqTrwyBdfT9kTd1yQync0X_wlXkdMI9RjLGQXMIJ7Czl4sIka-6ugTt3DD85_dIHW1xJoat8uJ-Gob-abGxARfgQmlpFADffPcqf1JQxxDHwqN2gm7vLIsvpR0KeBPERnHI1JUgWYnTCJAuhEQV0xbBNzz-ywcRIgweDPhxW9hO8hw72Z6vbyjkBGkIDZxekfotK99DjLzZ8HPsjC4xdo_QRLNdwtkRSJFQGeK1Z6jOf1MoWWBtQX1m2M6Bi-02xHT3lzqjCC24bOSRwqPX-UtlTKvp1V0tlzLeZcms6mDU1IcsjIJs7yfukiUacXpGwfwDE_F0VlRb0adovN8qc5nQkjTFKv-XzN9Rtv3NsbpiWCjCQzH3cTy51xuXMa3ektHfBKxjm6KY0rWQHwJo34KSYisLHSIRE9ZN3RMTE4eTE5O3rTsCIKn9HpmoBaGTJACixb1_kIUfYa_b0RlaEaIS_lVdVwm92FYBJl-Cbj2ChYaf7JhYz8BW2ZTScL433qYA0HkuHKTPQ64eLYqLAB6odD8YsYdrE741pjrrAlDxD2HBkKj8bZTCdqYrCA4LQE31aiT5cVvQnpn3XV0r0gZ3k3NePisOBmCWmGTY0-y3XdKNtggL-e5UHuZOFDUdVO5lXAgMMXRFAbl2vhgOJGHO6np800BNSojQgxRA1ZpLsdPQ46P6nV1x5tjXMLd_RexNkfK42TvIV6ef3oxQQPOovulVMLLmmIW7s-5jcQy-LXW9gqOX3fWY9ZKtOJ1TVsB0hgkj-x_hRhAsq2gklEhU_DOhB69AtajMot_FmsvM9bMpUmvkUoelL4fzwN_yh6VU4L4LMGKcm8yiVLNt9BDD9HnqPUGnFIeSqsFndTQ0ddunyr_vXSpq3_AQcu2HV58VdSLm-Q328RdKvlcIUsc26V7_ydw2DSdohOmjdpHgvKWmbfuJW7Jts6EYzY8jhDjvNSqKEA-IN8RwpuqhXFTYjVk4IE97h58otqWtqg0R64tENSyMj72NY0PB2I54hLcJ4s3R1BrJtz1P5C_vlYkVpvLKHFXtUJC9os82K7zdO1rcVYRZm-shMX6yLn2Ao0xxxxI0jeHix_eBJvPC-B3osJJEof8VCdhKJ-nD56Vmr31An2GwDRYCUKVyLSCJ85wzEDsvl00gd8ddZNtvjSBZBR_iJEQtcVZpqHXdI63Tq7ZQS1GIdLXIOmQp49jPCl738VYsDKT7hXb3TSEW0ca1fy45Wq0KdpBAhVKrdjbKcaWjQxoSheVDXaAP3-szV8EI-MWCHtFh-cKeLbIYa2LMoF51uLezhmrKiLUKBOSrSNpaZAyWYxvq9StdKe17cvNZ9jJOKfthcYSJ67mzAMv2WlKeE7lb2tfJe_-c-yAAQkL34sdN5yiKCrkUihBR-PE15ufWiQDiMnplZXJHxoR5wCAR3d5N1q8NsTGXBEHh6j3YAF_AG1yYoudG9lZDcOy_g-h48C-_5HVLyZ8qFIwNsFJujCMjGGQTRJHA4v2V3wg7PjBafoF1uNRiIv08M3BCGxVQMY0fTqjavJjGmIhqMn9zA0bN1q6XK1BFHHqNCbS3tVSKwYwvFIE0hx_e8hPtbJPpgCUjRMTH1h5M9VBFTlFpGH_PvhHkIddnR_Vdc-8EroXjS9hO_t6u13dQusnsKhm8MDHv1ow5_zxTTgactSENDgwqAWkaCR47MPFKk4JML8Qgb-vs_aElf7Io39gHiMW6xpjwnR5KUg-Bbi3e8Tlw1QP37Ihzpwx1feREZftyYJApiXVUuY8unyLWpbpBdXn16I_3xRJZJZOsjlaAjpD59PylVuVg4H8_i6OXwgdazRcXWtXPFW3RS8oQJ2E-IqKRRnhsM4DC-xck6cDQRiex4YxtgeWTEuK3OXCHjUCwSGkCX9dVl9YB5YVm-z-HrdlEoRPUM6KowNqlvBs6XjQM7LIWCcjw2AEnOqv4HdjR3UhRwrlHqomT_w1K-CA0TSFyuoOAxNeP7g89rP5AXPOP5OLCS7V-y15blvtw76iMhJq0ZFsbASPY0rEUmA01eAamFW-9p2XWBRs0DVwBkqcKFIlqoL8W0ud3_0bk99LZv-9TlcCBhjLESTi6GF7I7C4mRvGGmoDgKATx09ykklXEu0nZDvTnWPdrD-cVdejn96l9SXOA3525QsFKoUcDVZ8q8rYMUxgrUrmsX1RuGjjoZR6v468XV4Lx41vw9M1ZpzDUzsZW28YD6VdJXCLl10Q2QXagvK9o9MohnxN20ABjay3YFxuOnKVw3MCht2iPFheFbKcHJqRO92KTo5HU_A3_nXJCgZ4jUmzjxdsd9L_XnEdJY_SjyGdZuTrGocAhQMUytAD-L_tIT-A7ykbVh2qwb-QDJJUwtPHYl2o2-on-UE0=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0205b377ad0cbc24016ac21563f2c487d1a84377170f61865b",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 176102,
+   "output_tokens": 248,
+   "reasoning_tokens": 207,
+   "seconds": 6.02
+  }
+ ],
+ "answer": "Yes. CVS Health reported a quarterly cash dividend of $0.55 per share in 2022 and stated it has paid cash dividends every quarter (p. 66).",
+ "verdict": "correct",
+ "reason": "The answer says yes and gives the same $0.55 quarterly dividend per share in 2022, matching the gold answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001338,
+ "provider": "llmfoundry"
+}

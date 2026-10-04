@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_04171",
+ "question": "Basing your judgments off of the balance sheet, what is the year end FY2018 amount of accounts payable for MGM Resorts? Answer in USD millions.",
+ "gold": "$303.00",
+ "doc": "MGMRESORTS_2018_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.7,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4893,
+  "cached_tokens": 0,
+  "output_tokens": 236,
+  "cost": 0.0006082300000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 57]\nMGM RESORTS INTERNATIONAL AND SUBSIDIARIES CONSOLIDATED BALANCE SHEETS (In thousands, except share data) December 31, 2018 2017 ASSETS Current assets Cash and cash equivalents $ 1,526,762 $ 1,499,995 Accounts receivable, net 657,206 542,273 Inventories 110,831 102,292 Income tax receivable 28,431 42,551 Prepaid expenses and other 203,548 189,244 Total current assets 2,526,778 2,376,355 Property and equipment, net 20,729,888 19,635,459 Other assets Investments in and advances to unconsolidated affiliates 732,867 1,033,297 Goodwill 1,821,392 1,806,531 Other intangible assets, net 3,944,463 3,877,960 Other long-term assets, net 455,318 430,440 Total other assets 6,954,040 7,148,228 $ 30,210,706 $ 29,160,042 LIABILITIES AND STOCKHOLDERS' EQUITY Current liabilities Accounts payable $ 302,578 $ 255,028 Construction payable 311,793 474,807 Current portion of long-term debt 43,411 158,042 Accrued interest on long-term debt 140,046 135,785 Other accrued liabilities 2,151,054 2,114,635 Total current liabilities 2,948,882 3,138,297 Deferred income taxes, net 1,342,538 1,295,375 Long-term debt, net 15,088,005 12,751,052 Other long-term obligations 259,240 284,416 Commitments and contingencies (Note 11) Redeemable noncontrolling interests 102,250 79,778 Stockholders' equity Common stock, $.01 par value: authorized 1,000,000,000 shares, issued and outstanding 527,479,528 and 566,275,789 shares 5,275 5,663 Capital in excess of par value 4,092,085 5,357,709 Retained earnings 2,423,479 2,217,299 Accumulated other comprehensive loss (8,556) (3,610) Total MGM Resorts International stockholders' equity 6,512,283 7,577,061 Noncontrolling interests 3,957,508 4,034,063 Total stockholders' equity 10,469,791 11,611,124 $ 30,210,706 $ 29,160,042 The accompanying notes are an integral part of these consolidated financial statements. 55\n\n[Page 60]\n46,581 1,670,312 Balance, end of period $ 1,526,762 $ 1,499,995 $ 1,446,581 Supplemental cash flow disclosures Interest paid, net of amounts capitalized $ 723,609 $ 658,637 $ 661,166 Federal, state and foreign income taxes paid (refunds received), net (10,100) 181,651 68,236 Non-cash investing and financing activities Common stock issued for acquisition of MGM China shares $ \u2014 $ \u2014 $ 174,041 Deferred cash payment for acquisition of MGM China shares \u2014 \u2014 43,265 Increase in construction accounts payable \u2014 204,466 20,241 The accompanying notes are an integral part of these consolidated financial statements. 58\n\n[Page 95]\nrantor Subsidiaries MGP Other Elimination Consolidated (In thousands) Current assets $ 78,909 $ 1,015,802 $ 266,627 $ 1,022,340 $ (7,323) $ 2,376,355 Property and equipment, net \u2014 13,521,221 10,021,938 6,125,722 (10,033,422) 19,635,459 Investments in subsidiaries 21,040,147 3,304,768 \u2014 \u2014 (24,344,915) \u2014 Investments in the MGP Operating Partnership \u2014 3,549,063 \u2014 862,037 (4,411,100) \u2014 Investments in and advances to unconsolidated affiliates \u2014 1,002,903 \u2014 5,394 25,000 1,033,297 Intercompany accounts \u2014 5,998,499 \u2014 \u2014 (5,998,499) \u2014 Other non-current assets 49,142 913,602 62,555 5,134,220 (44,588) 6,114,931 $ 21,168,198 $ 29,305,858 $ 10,351,120 $ 13,149,713 $ (44,814,847) $ 29,160,042 Current liabilities $ 153,159 $ 1,445,031 $ 144,537 $ 1,609,110 $ (213,540) $ 3,138,297 Intercompany accounts 5,783,578 \u2014 962 213,959 (5,998,499) \u2014 Deferred income taxes, net 934,966 \u2014 28,544 360,409 (28,544) 1,295,375 Long-term debt, net 6,682,574 2,835 3,934,628 2,131,015 \u2014 12,751,052 Other long-term obligations 36,860 7,268,664 174,710 2,305,353 (9,501,171) 284,416 Total liabilities 13,591,137 8,716,530 4,283,381 6,619,846 (15,741,754) 17,469,140 Redeemable noncontrolling interests \u2014 \u2014 \u2014 79,778 \u2014 79,778 MGM Resorts International stockholders' equity 7,577,061 20,589,328 4,443,089 4,040,676 (29,073,093) 7,577,061 Noncontrolling interests \u2014 \u2014 1,624,650 2,409,413 \u2014 4,034,063 Total stockholders' equity 7,577,061 20,589,328 6,067,739 6,450,089 (29,073,093) 11,611,124 $\n\u2026 [12,293 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "$302.578 million (approximately $302.6 million).\n\nThe FY2018 balance sheet reports accounts payable of $302,578 thousand at December 31, 2018 (p. 57).",
+    "role": "assistant",
+    "reasoning": "**Citing financial details**\n\nI need to focus on providing information based on the balance sheet, which shows accounts payable as $302,578 thousand, translating to about $302.578 million. There\u2019s some confusion about page numbers for citations, as the developer mentioned the document cites [Page 57] but the footer lists 55. It seems I should reference page 57 as it\u2019s linked to the user\u2019s annotated snippets. So, I\u2019ll state: $302.578 million from the balance sheet dated Dec 31, 2018 (p. 57).",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Citing financial details**\n\nI need to focus on providing information based on the balance sheet, which shows accounts payable as $302,578 thousand, translating to about $302.578 million. There\u2019s some confusion about page numbers for citations, as the developer mentioned the document cites [Page 57] but the footer lists 55. It seems I should reference page 57 as it\u2019s linked to the user\u2019s annotated snippets. So, I\u2019ll state: $302.578 million from the balance sheet dated Dec 31, 2018 (p. 57).",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwXS30r1vzxryIPiwKaLPJhtqpssGl93bFNIQyzU8QoSpJ_JNas7wAt-rxC41Kh-l1mXygDh6KZz-nTBebIsER8q30s8a96m8zfp6PJXyEzDiJDX-p_Hs8kzVwL7TX2h3EFmmRUXkEtrxSxPXmSuYljd2Yd9Pv47gzgT7IxRpsHwJ0FNLVWoZYl6_L9yKmmn01T3eHes1BR-U5rWO7kJ7S17PuS3mkumq_EDYf1jXTGnH8rz2caDF37BD0IFOI3QwbmNGqlETbDk-ZdJ0kf1DaTbcv8qjQPHtw7DXtOfrvfRE-haU2WgdGA6IYv4d9je-DTjA4zqKLzgPvikKfCp0rMhvAqL_VyiQt94-iy1ahEYm8tGUX2zmNEQBTKQmf3RhcgWq3TDT0681CqBz3K73jMm8VX1XKJ8EAIl8gxyJV01GgnRTculedt9yzSadW8rn-fnCDLi_dmLo7AS44QLhXKOu9rjxEiaGLHH2SJC2B7Sro9SpQB74uwkoio37fkKqjx21IUCZoOg-UBQl85LDUrHaRoqXRIsBWts53mTGB1tcWxhETUl2ZOXGSkNOcLp25cuEpcEdzWYmHMkEWsF-5bp6DPWmk1lB5P74AqS7Ibfp2We9_KuEwbPwJyF8wG6tgcMTsjyaxf80VcVaRVWw1uy6uk38QHuRZJWbvg29WCYirAsdNZlk3tVYZlyK3Vci83y_TU1NqweNIGppv8pSSyWqX6DMijjMnzZdkQ5WDtZX_iMhdBxH_UJJijAvO6gpzy1ijBTBx7GLbjEUXnQogmdB5mf1oHrij8F62fP_pFrJIx-bb3Ez1fqBe2Assm0ZeTzkkGfumlO5Ijbvg-T8UdkT9GDbSf4DXIfa_TrNtJRlPdnOR02AbJsknMPIZS6ScHOaQoGQxuCBIGRt1zMtT6Ovr25ZQQhuhrwsSDEbUZdXnugx04-_EMmTr0T75vS_MIK1VQmqkIwZVIobFnKhJ6lxK8VwK8ELukFy0RmEsD3r7uMuqRlaXt-yo-2sVOxdesiUHu0VkWUd7qS2rXeZyj5y-kgoIN2pvLWFzp7WMD-vje1nnqvICYPEbTdBsHzq83VtqjAYevZlLEvt9dKNH2liRF4fyugNdBQFO6VN8S8r3YwsnABAThWI5pBwUM0BnhfzpnifYaIMYQE6bxRO6nd0hfY3YtpXCpsG6OvsMxwnEBPj9S89YaursPvv25AJYypK-0gKQXRQXJvZrDIt67H9XFKeGevGO5nShKmvrC2CtVdNNurrEd1G7U8K711ppe9FFapWVJGHoLfNsbI9KkmtFlG4thXMViVDy-uAwhGum_x-aoxaB97gU4TGHfVX2xX4-_dmN-9fU8Qq5-AN5EzO5mgtZJXYPmKn-S1ifpfGxPvfHiSXGEKNfuq06-M8oHMQsYCeqCkygv-xz8OcLknxfRHZX2Odj3DzE02LVcIrZIFVIO8DrPwBsTkjDcsw2Hd765lrUD_P239FPeTPylwzv6Kb1qHMg7_KjzfJHt_7zve-Bp5ZK9pD5FdU_oU9X62BOxNskv8QTv5rBcgt3oQmGz7e_WkrbzkHp1l4yn3-Lkujos0q65ZVeNKt1pj081_2WwoolOeQjtI01apnLdvlAmFmlDfAe7wYnEQuEpcq9AsL_-e4_7zt7NyrgmZrUA_jm7PKfuR2hoQHc-AB-tIF_A-lBou-Joxe1v_fORfQFsZOexFmt_gcQv4-_hx7xsh1VBG73d0wYXT3upSioDGKHd433reyLVW40hctsEc1oxLxbSeAwUyS9cta-jhWH0fsUWAsn23CmX5UIYE-k2BMdEMfk01FrYlv8AUZn_Xi9bE5qrZm47C9gWLAS_NU4GA_j5Y82BYR1C-PTI7UbqfQ2QRJ2P0LNiGvdxJEk2fkAHJvSq1oQTIWfBWXnDrbjuW7tBZIqRT_cBau_ocLFzl272TXOUZ_LdYOYpCtBdTUMpt8aseE30qZwH9gdHQp5qrYqzHJxSZJuvdPrWeM9prqL02uqesUyB01hgJw3chLJyW6SqAgsUA-lOojwrLqdf78ZDHIUDtB7GfOPLG4zTBe6W3f6IQys6C0S1cmrDAwmYQYzio5sOz7o-RLsnKMCH5E9dBPkrFxaphHnhRZcWjW-ASbQvfutBK0_UrNLvlbqelHWLeT0SmychbzHSrLrOtO1RhP79Slty3MNkUkM3d0r09J80trcVbhimP96K50I-U6CXmXEAyupWjfI-qfzdx0mwtrVggLvDVmEcViAlAv7ItsoNaDscXDuSu6HOssWQdsKuGoh6ryo10wJj7KSSObyA2HVfdi4GDfles6sEswutVKZHPgkXkvsLa2C3Ufc=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0b207da4d1cba542016ac21c1455d087d1a7ce7aa5f4c8e1d3",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4862,
+   "output_tokens": 236,
+   "reasoning_tokens": 188,
+   "seconds": 4.42
+  }
+ ],
+ "answer": "$302.578 million (approximately $302.6 million).\n\nThe FY2018 balance sheet reports accounts payable of $302,578 thousand at December 31, 2018 (p. 57).",
+ "retrieved": [
+  {
+   "page": 57,
+   "score": 0.6205
+  },
+  {
+   "page": 60,
+   "score": 0.5853
+  },
+  {
+   "page": 95,
+   "score": 0.5739
+  },
+  {
+   "page": 47,
+   "score": 0.5701
+  },
+  {
+   "page": 92,
+   "score": 0.5639
+  },
+  {
+   "page": 184,
+   "score": 0.5604
+  },
+  {
+   "page": 186,
+   "score": 0.5572
+  },
+  {
+   "page": 60,
+   "score": 0.5549
+  },
+  {
+   "page": 70,
+   "score": 0.5541
+  },
+  {
+   "page": 48,
+   "score": 0.554
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer's $302.578M rounds to the gold answer's $303M, so the difference is only rounding.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001278,
+ "provider": "aipipe"
+}

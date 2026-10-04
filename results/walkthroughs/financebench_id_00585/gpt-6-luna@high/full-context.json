@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_00585",
+ "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+ "gold": "Effective tax rate in FY2022 was 0.62%, compared to  -14.76% in FY2021.",
+ "doc": "BOEING_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 7.1,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 111389,
+  "cached_tokens": 0,
+  "output_tokens": 183,
+  "cost": 0.011230400000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nor\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to \r\nCommission file number 1-442\r\nTHE BOEING COMPANY\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 91-0425694\r\n(State or other jurisdiction of\r\nincorporation or organization)\r\n(I.R.S. Employer Identification No.)\r\n929 Long Bridge Drive Arlington, VA 22202\r\n(Address of principal executive offices) (Zip Code)\r\nRegistrant\u2019s telephone number, including area code (703)-414-6338\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nCommon Stock, $5.00 Par Value BA New York Stock Exchange\r\n(Title of each class) (Trading Symbol) (Name of each exchange on which registered)\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2610 No \u2612\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12\r\nmonths (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of\r\nthis chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company.\r\nSee the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge Accelerated Filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial\r\naccounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting\r\nunder Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2612\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes \u2610 No \u2612\r\nAs of June 30, 2022, there were 593,451,225 common shares outstanding held by nonaffiliates of the registrant, and the aggregate market value of the common shares (based upon\r\nthe closing price of these shares on the New York Stock Exchange) was approximately $81.1 billion.\r\nThe number of shares of the registrant\u2019s common stock outstanding as of January 20, 2023 was 598,239,585.\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nPart III incorporates information by reference to the registrant\u2019s definitive proxy statement, to be filed with the Securities and Exchange Commission within 120 days after the close of\r\nthe fiscal year ended December 31, 2022.\n\n[Page 2]\nTable of Contents\r\nTHE BOEING COMPANY\r\nIndex to the Form 10-K\r\nFor the Fiscal Year Ended December 31, 2022\r\nPART I Page\r\nItem 1. Business 1\r\nItem 1A. Ris\n\u2026 [512,004 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Boeing\u2019s effective tax rate fell from **14.8% in FY2021 to (0.6)% in FY2022**, a decrease of **15.4 percentage points**. Calculation: **\u22120.6% \u2212 14.8% = \u221215.4 percentage points**.\n\nThe rates are reported in the consolidated results table on page 24.",
+    "role": "assistant",
+    "reasoning": "**Calculating tax changes**\n\nI need to calculate the difference between tax rates from 2021 to 2022. The tax rates are 14.8% for 2021 and -0.6% for 2022, as noted on page 24. There\u2019s a 15.4 percentage point decrease here, and the user wants a comparison. I should explain the reasoning behind a negative rate versus a positive one, citing the relevant page for clarification. It's important to present this clearly!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating tax changes**\n\nI need to calculate the difference between tax rates from 2021 to 2022. The tax rates are 14.8% for 2021 and -0.6% for 2022, as noted on page 24. There\u2019s a 15.4 percentage point decrease here, and the user wants a comparison. I should explain the reasoning behind a negative rate versus a positive one, citing the relevant page for clarification. It's important to present this clearly!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhU_mFRo7ljLmRobx-zuNPOGmAsWYW5hGSDqDWYBKNHl7xt_6kylPjRzc0jU9yXxPu_E2oEocqAK5-JA76JnSRlMRSGS6L7T_ugV5aTV7_IAFGfWyePUlW6zaBN6FRm6BYNKlW_u5RzOgZoY86In96Fk6ovjySIxziC7sckagcw_sfM3yuvhciPkOO70Crq9j8PxINEacI45IT95aJPavRCMh-CyrlxmLPGWrm3YhXSi7R8f_2xT_tt54rozn7cQlCXTk44_QgPxW2BakoQBq9vyButx16lILOuCKrXn_n-0d6N44gF9J6hoSXrzW3N2elt0JjjhyWYSt7hqLZQpM93QJpo7Pa4QtmFveW2AG7POIBw6OGD0fOvJLgrtOc38086RN5U3krRePwORHQZ6Hk1b-fmm_eTDFMxIDlOxWcHXC1ColurySBvGgKJu7l00ycPTZbgop_-2SdxKsRj6hWyzwISHo8ChDsKZpu__OjuY0Uv6nns-RFchfvy5S54N9BLMTqkazi0e1g3MqGq-LrfW8iCqey1t24rsvIuwBQQ_F1N_U0UCDSGrHWUJXXhpNRKVXQ72GJ3Ddg66MFEg7__WDyvHIX-P-BzDNEze_hNAqGRONzkS20AiGLhBBtjQaKPmOMlZkXSGEno-8pwZpgQrM6HaUiiZYI2riPnGdJA9pREdSRC5xkI_6GtwLXn73GS1BM1cCJRe173fxsacfzEte987vKNuRBzXt-VaqRYA-V6NNqc2QEp1rWbBMhjb9WoxDHy98eOsfZRtME0FBH0wo2nPzneeC58V2pyG4aG-lYGILZGaHHl2Lz7BBgTioh7AQLazzXxJAqggrXzgAeZ-Lje4uMsSLjNMUmJIhzaO0kDLsSp1HIsSLWu3NGt_FhnmpgDxmXnrkZ6J3KNXcnEKs-kH5hslcv_HJyWGmD0PtG94lyHpdgn77V9ZmuCBKA7bqcjZTJXpwzhYUMpRc_gu6na_N3UV-qxpXDaqZ1m__13KAX0P76zn0F0VsigRQEGss7GQx6X1V1Hcvk-P68aohEHWwT9sVHbMdGHUhdpGIYf-7JAUzKYKJvNR7I5X9nDU5dgThL0CT5buzsvVg8PYslmCl4iuzX_Tka2YC-0i1m-fTeiF6x8nmO4ITaAiQ5oSvpIlX778uk-m3ERPDWbOZhCu4IQWRJdeT_lZmQyaAwoo2s5KdvjjVtUA6dmtP4_8IRoP6gywm3HNnEd-Vfuv1ZOMZvWDwkW4_mxU4_CWFUG9aiD1-8O1FF3g5V37EBnC8nGA8Jy6dK40WPG288brNkjz2CJuRtdO7umgKuDDH4TIFfTce9AGfGAUMJXSnP-j-Ig6FfO5cusQsjanFGhjAhmoFjBl21eblghq5sQpd9834Vd1V-8vmBYoU7msqbsBmt5GZF-LBBWSROeoV3uGbm5WDlju2lW6dy1Syi7r5Lmno9ZZilKKWVEyy0vItBio_eAXVl4aIR0eltDYUE9vqn9fcfmDtp2j5cxcp-t8FXA0JFRk1XloJYDsDTIgM9gevmZ-kyVuFtaIw7kHdsnOLDCOtg99mMYYzd-xHSpzEGurgEU1FxTI65C1dJda1uGk_Jf2MxvDdX7ezJT2iuL3RbfCsEIwIKgQUVMwmtgfPMr35hJQD2WhZBe7C6nA0S12BXVkRCIeUJiC1ddf95QROMPqjVURdm1T8y8gZQwG7qNf4TSzVz1ewNIq1aVvSafNUpEZZcf9jWXY4SaC1SkSDrjzFOcHLNAdHqvWDhvE5ZdJjiNiybdNm_G2bFo6_BEt.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0545decdc7846ea7016ac2153dc1d087d1b2f72443313b76eb",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 111389,
+   "output_tokens": 183,
+   "reasoning_tokens": 100,
+   "seconds": 7.12
+  }
+ ],
+ "answer": "Boeing\u2019s effective tax rate fell from **14.8% in FY2021 to (0.6)% in FY2022**, a decrease of **15.4 percentage points**. Calculation: **\u22120.6% \u2212 14.8% = \u221215.4 percentage points**.\n\nThe rates are reported in the consolidated results table on page 24.",
+ "verdict": "incorrect",
+ "reason": "The answer gives FY2022 as -0.6% and FY2021 as +14.8%, but the gold answer has FY2022 at 0.62% and FY2021 at -14.76%, so both signs are reversed and the direction of change (a fall vs. a rise) is wrong.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00198,
+ "provider": "llmfoundry"
+}

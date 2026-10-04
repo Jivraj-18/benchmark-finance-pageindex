@@ -19,7 +19,7 @@ from tqdm import tqdm
 
 from .data import ROOT, load_questions, select
 from .judge import grade
-from .llm import Meter, grid
+from .llm import Meter, grid, warm_up
 from .methods import METHODS
 
 RUNS = ROOT / "results" / "runs"
@@ -95,6 +95,7 @@ def main() -> None:
             finished = done_ids(path)
             jobs += [(method, config, q, path) for q in questions if q["financebench_id"] not in finished]
 
+    warm_up()
     with ThreadPoolExecutor(args.workers) as pool:
         futures = {pool.submit(run_one, m, c, q): path for m, c, q, path in jobs}
         for future in tqdm(as_completed(futures), total=len(futures), desc="answers"):

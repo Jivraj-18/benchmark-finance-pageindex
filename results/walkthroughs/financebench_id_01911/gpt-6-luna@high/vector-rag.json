@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01911",
+ "question": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?",
+ "gold": "As adjusted EBIT is negative, coverage ratio is zero",
+ "doc": "MGMRESORTS_2022Q4_EARNINGS",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "provider": "aipipe",
+ "seconds": 8.7,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4225,
+  "cached_tokens": 0,
+  "output_tokens": 343,
+  "cost": 0.00059478,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 4]\nPage 4 of 15 \u2022 Same-Store Adjusted Property EBITDAR of $2.1 billion in the current year compared to $1.5 billion in the prior year, an increase of 42%; and \u2022 Adjusted Property EBITDAR margin of 37.4% in the current year compared to 36.7% in the prior year, an increase of 72 basis points. Regional Operations \u2022 Net revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an increase of 12%; \u2022 Adjusted Property EBITDAR of $1.3 billion in the current year compared to $1.2 billion in the prior year, an increase of 6%; and \u2022 Adjusted Property EBITDAR margin of 33.9% in the current year compared to 35.9% in the prior year, a decrease of 197 basis points due primarily to an increase in contribution from lower\ufffemargin non-gaming outlets and venues. MGM China \u2022 Net revenues of $674 million in the current year compared to $1.2 billion in the prior year, a decrease of 44%; and \u2022 MGM China Adjusted Property EBITDAR loss of $203 million in the current year compared to Adjusted Property EBITDAR of $25 million in the prior year. Adjusted EPS The following table reconciles EPS to Adjusted EPS (approximate EPS impact shown, per share; positive adjustments represent charges to income): Twelve Months Ended December 31, 2022 2021 Diluted earnings per share $ 3.49 $ 2.41 Property transactions, net (2.53) (0.15) Preopening and start-up expenses \u2014 0.01 Gain on REIT transactions, net (5.52) \u2014 Gain on consolidation of CityCenter, net \u2014 (3.21) Non-operating items: Foreign currency loss on MGM China senior notes \u2014 0.02 Investments and other (0.03) (0.06) Change in fair value of foreign currency contracts 0.09 \u2014 Change in fair value of unhedged MGP swaps (0.03) (0.04) Unconsolidated affiliate items: Change in fair value of CityCenter swaps \u2014 (0.02) Gain related to sale of Harmon land \u2014 (0.10) Income tax impact on net income adjustments (1) 1.79 0.47 Adjusted EPS $ (2.74) $ (0.67) (1) The income tax impact includes current and deferred income tax expense based upon\n\n[Page 3]\nPage 3 of 15 Adjusted EPS The following table reconciles diluted earnings per share (\u201cEPS\u201d) to Adjusted EPS (approximate EPS impact shown, per share; positive adjustments represent charges to income): Three Months Ended December 31, 2022 2021 Diluted earnings per share $ 0.69 $ 0.23 Property transactions, net (2.74) (0.15) Non-operating items: Investments and other (0.10) 0.02 Foreign currency gain on MGM China senior notes (0.02) \u2014 Change in fair value of unhedged MGP swaps \u2014 (0.01) Income tax impact on net income adjustments (1) 0.64 0.03 Adjusted EPS $ (1.53) $ 0.12 (1) The income tax impact includes current and deferred income tax expense based upon the nature of the adjustment and the jurisdiction in which it occurs. Full Year 2022 Financial Highlights: Consolidated Results \u2022 Consolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the prior year, an increase of 36%. The current year includes the operating results of The Cosmopolitan upon its acquisition in May 2022, a full year of Aria and Vdara (collectively \"Aria\") due to its acquisition in September 2021, and the results of The Mirage until its disposition in December 2022; \u2022 Operating income was $1.4 billion compared to $2.3 billion in the prior year, due to a $2.5 billion increase in noncash amortization expense of the MGM Grand Paradise gaming subconcession and an increase of $1.1 billion of rent expense related to triple-net operating leases and ground leases due primarily to The Cosmopolitan lease, the Aria lease, and VICI lease, partially offset by the $2.3 billion gain on REIT transactions, net and the $1.1 billion gain on the disposition of The Mirage in the current year, and also due to the prior year results including the $1.6 billion gain on consolidation of CityCenter, net; \u2022 Net income attributable to MGM Resorts of $1.5 billion in 2022, which was impacted by the items affecting operating inc\n\u2026 [12,519 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning": "**Searching for financial data**\n\nI need to locate the FY2022 adjusted EBIT and annual interest expense in the document. It seems like the excerpts I have don\u2019t include this information, only adjusted EBITDAR is shown. I suspect the full pages, especially page 11 of the income statement, might have the interest expense. Also, I need to use adjusted EBIT for my calculations, but it looks like adjusted EBIT is missing, so I\u2019ll need a fallback plan if it doesn't contain what I need.**Clarifying financial metrics**\n\nI see that the document might not have exactly what I need. The provided excerpts don't show adjusted EBIT or annual interest expense as separate items. Page 11 probably contains these figures but may have omitted some rows. There might be an interest expense line there, but adjusted EBIT is likely not available since the table shows adjusted EBITDAR instead. I think I could calculate adjusted EBIT as adjusted EBITDAR minus rent and D&A, but those specific metrics aren\u2019t directly provided. I'll need a fallback response since I shouldn't assume anything.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for financial data**\n\nI need to locate the FY2022 adjusted EBIT and annual interest expense in the document. It seems like the excerpts I have don\u2019t include this information, only adjusted EBITDAR is shown. I suspect the full pages, especially page 11 of the income statement, might have the interest expense. Also, I need to use adjusted EBIT for my calculations, but it looks like adjusted EBIT is missing, so I\u2019ll need a fallback plan if it doesn't contain what I need.**Clarifying financial metrics**\n\nI see that the document might not have exactly what I need. The provided excerpts don't show adjusted EBIT or annual interest expense as separate items. Page 11 probably contains these figures but may have omitted some rows. There might be an interest expense line there, but adjusted EBIT is likely not available since the table shows adjusted EBITDAR instead. I think I could calculate adjusted EBIT as adjusted EBITDAR minus rent and D&A, but those specific metrics aren\u2019t directly provided. I'll need a fallback response since I shouldn't assume anything.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhz3XSHtjHjGbNeIuFLdRh2Qfgr3owWGdm8TCnLVFT9Dn08p0lS41uDoznkQKiiD1M7gixq481KT5neAJzriwqsDGVapekKp50XyIMA1LozvRrw2cVpnjgoZsgOcVJYdloUWdz8sOo8Ti1IbVPQLZ1YapzhfXwFR9bUlXfLD4gHJsPNh6E-aN1WZ8RZpS8ktUqLqdxLr-fO9u3Su0wpY_0NmS1lL-RpvsbGpZ9pG4H-U6y0dM5pYdhk82TOK-pEZSMiLWuJliFCNen0o5vblSvLz-900CqVUfziLpfpeH5sOLPu86SSp7aiSQlY-XaBUaMxea5y8GWiX00mA8AjWaXUYnJYoRGEaZFqmMCZp0tiNRcVGqO_mV_Tl9ePoheNGGiEBCTbKRWRCYVp1za3v3yF1oxooRx-vzu-7IKp7zW3_2OfIyp5k77793VgknDLWbjhXiLiFkhKOvwwa5D1J69xAAg7j8-ZQ_4ObmSjD9dD2B-nTDBwc3e7LTDombzyAbMAr34-3Cp4f_ELTAymnrezSAY_YScGrCiFl49DER1kCZ6Yf5OSKUXRy1GWpEFQPwCElc7aiV2xfEgTnsoGOM9Namn36y5iOdKoiq9JD-vJOMA6pmplM83uiNcc2JLcs831LzMezA6bzeOXZCVIWiJ8dGuAXDuzDPVGAfznoRyT11VG299vJPT346PJWzahVU-ARZ_7iPaEhnM9dI5UOt0lbE01kMPUpeQKBWtTgmd-3kqGuH7cEXygZ0WoFx9IGF7YABXHG1HR_mN_NbhEUD0Fghi_ch9a2m-MpGZq-M9e1lerWOfzWm2zO-H0ppKVzv9fHL7z5qVIEvL9IOcGBblLShj9Attd7fqP1SAYNOFnqbWKJXuOEbBv-T38Jgd1QChC5ERMqIvzHW1nQCxrGA_MV2f-silDlHNFjmdi2N3VGRVKv0kKrKEegzOECXAXLx7YYFgrZcUymAnj8ExGHEC-gnJSMZRzEYe5rvBHuX2PWGPzOn64cmVqzUn0CLa6bVYVAmdIGoLGBcW9ErA8Ub_8HQuDT8yeUKatwINYLR-6o5_qBoWiRAw076uPs65GKT4SP1WLbcdzBas2GaNrLapoH2IufH69TPL5jP4msqhFAF1p84C6BYrqHuKAhsUVeiF_gnG_fK9da8YYMIN-87vKB5_XFXN2Oec6i5AfAFLm7kS3EIiiqQ7TmKW5-2k5fJTDw0-EmIC3uGydNAPBDknid_HUY1D6vbSjcCiwR2-na_wiBiauL_cjgmYYZu9-hvXD9Ow72jAWBjd9drS-QFJK4EqIiFP5px1CH51HWWnD9HXAT8U6wcvSDqVeeO_DN8EphmVCNX5UNstRUO8_43ngSjLpUyzGy-Y0pgzsIh7Sl_KpZ6t-V_ir3VFW_H2hP7p7yd034gjMUJZzWKOUwNzMoSFxg9-8R3VmuXEEcdlCGvIuWSg1N_GCXFul-AmfLVyPvJJzelO2QQZ9wOrqQVcTPWt_cqspbmzMsks4QHwmEj55ibvb-8gW4dp_hmdA1tW4ytDCM3SVjN7YwyTrXHQqimaQ2vJ20xPxy8Fr-XH1PVherFf2mvsMGG3_Vw2piNI0E1j9hY42cDLfJObhEsl_mMBLp84Wuyq1Ogo_HnAoTcutOYp9eQMVpXA9RfE_yZTDDEomJKTrccJoLJBgNOENkxxI4HkjRk1mGceS79m77L-g2viFYwVvpMx6vTUHi2y-p20YZ4QtWe7OqL5J_OXPDUOZ-dSaFZ016Qqmr2l57kP2nMCemlgdmLUykLqrQM3xt25YYmNsyytaO1OEusTa_NnApsxBrzVB9T9p3lP2QdPvO5Z5sLMDHjHPA9mwAaFy7KGL4sDykwUL0d1MV0Mg_ZJP_gvgr4plm7_VbqHWVwtnLPI_2l-zrdhPiJ6Z3DZLubSi-rfTvFxNHm-RojWE_wcXfAsgF5Wssl8BvXfhHsw1Ml354YTNT9yt_l4Ddo39-C-Ha0ZfAwQGovwxwad7YkikUKPMTkJv6mFESp6n908jQPy1eotSatZ-S8hcHF7VCWY4_qoCgRxhI1WRtpFVIysSj5HbD-klPWMiNaRwKC5Us-KBPYG1DSVpOF-5n63Nni-LloJxbgOW_aVRH8njQWzzO7Kc_VgtlnjEKgDpiTJLkwILYoHOhJNHcBV3o-D8cXkFO7d1KsstJ7NQhj7kq-czjZ9lWyvStZMV6kZevLEG4c4btOs9tNuOUFleZkefaP7y66aSAxgi7BfamRs2Sv4ZdvXtIiCBiWv9yueLuhKM8Rqb1bGhg9nJAvg0kuFjdPBLGSOpQTeIgD3sFfmxya3folKS_m-Xm3Qm31tnzZoQTRxd4yfLyYCDjYCBHCUZCGTbD-0YxVzBp1NPMnOv2Yq0zFwK55gfffd9Uf6I4Y1oa4_6u1KhUPeIInasGqBSOrcxE2U7w3RCq1n-r0lbES4ZcWpVtMFrQrSG3QQJKylbKvelTBi7ecgxbSeG5Eo7lSLZE3ZBGWBeraCuux1hJApwYKwfll1-wwT2oagsPoCz0qV6yojqKXgWW8Vghlc6pVURUHTs05A3nqbtO3Hg-lZkU61UPl4qbqSOfSzOTwfJplrBbdJxskW6zayzyL4Rqv64bqI7_ju89Ji9SA703fsMo30uEjQelKsJ2sAtPtydySwWXFk5UzW7vCPXbZLCNiZvqed8tuPxNBomRa1Pg7n56WpbZtawghFxRJCO1e0YvIJRq0dyxjzUmVqilcLOkdBn3oQELJgQ9SDJtQMiwUxzTk1qBnFM7S2b3fYSferSeZrxEYRzyVFe-kb6IbA0v7L2YJELw4ZiER5nl0s8cIovRdNsVIsn8MaWj7phXvKk7COYGUcpS_AtOZ6UCkPD-CeSSrK8lEWctGIJdkLhpr1eSiG6iD8JiddbQyooZMJeL5GLwiOw4cDVDroRkF_Zg6uQN4FhATsPMU9xUHd0FJETv979ZPWftNSGajrx258lYj19txAnxQFPAJ_tiC4mH8WbppQbX8q7yi_1BTPhWXdLwsNgaTd0s2TvDWI5qwLs4TibGfdoDWCCHnCCWQBWz4L6BDb4o4lTSQOlTL4CIkciX2EFbhObKs0WfmkED6f4FctkpCuEzTZmD-354Mcj7ELBabQBC4CKiMrHXc0p_veoRtOc8iIMnqBpnMqUEx8qEZsT7gE-_4j-Ay0qFdMFyuGVYfCYdUxHogaPj7PFZd_5-JuGQdBVO8nRnuNo6arbJKhHDkS6eFcUXQoQg01aNMZSB3605BbA4suQcM_0bcWD0c7-qUnmd-wxhbV9qf3h2dRsHcpYMBaoCsFvkRCYi5gDmK8HqUPqUzjJBeHcRL6DhrEnuYZ7rzUQKHS-2L-ac8-vAVHNKTQ_dHf_id5hj3n-rhChtb65wtq8cke3jAd9eosetPBGDY2hI7CwT6FleLv_rH0YNpQm3M8eKS3HkwJMhDt_nw-G2y0L5OdUnKrf87pMkCJZ0z_M8ITNNI1eylaki0V-LxYld0QnAZJuSViFeW8SL6I-tHJYcvfx8SDeoj4Z9jmXEXkHpAW3W9e4=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0ad2fb6337149999016ac21cf3178487d192bde275bc8d3748",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4199,
+   "output_tokens": 343,
+   "reasoning_tokens": 329,
+   "seconds": 7.79
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "retrieved": [
+  {
+   "page": 4,
+   "score": 0.6464
+  },
+  {
+   "page": 3,
+   "score": 0.6216
+  },
+  {
+   "page": 3,
+   "score": 0.5841
+  },
+  {
+   "page": 2,
+   "score": 0.5765
+  },
+  {
+   "page": 1,
+   "score": 0.565
+  },
+  {
+   "page": 7,
+   "score": 0.5538
+  },
+  {
+   "page": 6,
+   "score": 0.5508
+  },
+  {
+   "page": 11,
+   "score": 0.5502
+  },
+  {
+   "page": 2,
+   "score": 0.5433
+  },
+  {
+   "page": 13,
+   "score": 0.543
+  }
+ ],
+ "verdict": "refusal",
+ "reason": "The answer states it cannot find the information and gives no figure or conclusion.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001128
+}

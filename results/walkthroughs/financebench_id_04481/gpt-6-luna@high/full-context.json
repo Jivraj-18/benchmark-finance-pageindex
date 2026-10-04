@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_04481",
+ "question": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement.",
+ "gold": "16.5%",
+ "doc": "PEPSICO_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.6,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 260527,
+  "cached_tokens": 0,
+  "output_tokens": 290,
+  "cost": 0.0261977,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to\r\nCommission file number 1-1183\r\nPepsiCo, Inc.\r\n(Exact Name of Registrant as Specified in its Charter)\r\nNorth Carolina 13-1584302\r\n(State or Other Jurisdiction of Incorporation or Organization) (I.R.S. Employer Identification No.)\r\n700 Anderson Hill Road, Purchase, New York 10577\r\n(Address of principal executive offices and Zip Code)\r\n(914) 253-2000\r\nRegistrant\u2019s telephone number, including area code\r\nSecurities registered pursuant to Section 12(b) of the Securities Exchange Act of 1934:\r\nTitle of each class Trading Symbols Name of each exchange on which registered\r\nCommon Stock, par value 1-2/3 cents per share PEP The Nasdaq Stock Market LLC\r\n0.250% Senior Notes Due 2024 PEP24 The Nasdaq Stock Market LLC\r\n2.625% Senior Notes Due 2026 PEP26 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2027 PEP27 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2028 PEP28 The Nasdaq Stock Market LLC\r\n0.500% Senior Notes Due 2028 PEP28a The Nasdaq Stock Market LLC\r\n3.200% Senior Notes Due 2029 PEP29 The Nasdaq Stock Market LLC\r\n1.125% Senior Notes Due 2031 PEP31 The Nasdaq Stock Market LLC\r\n0.400% Senior Notes Due 2032 PEP32 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2033 PEP33 The Nasdaq Stock Market LLC\r\n3.550% Senior Notes Due 2034 PEP34 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2039 PEP39 The Nasdaq Stock Market LLC\r\n1.050% Senior Notes Due 2050 PEP50 The Nasdaq Stock Market LLC\r\nSecurities registered pursuant to Section 12(g) of the Securities Exchange Act of 1934: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934\r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing\r\nrequirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of\r\nRegulation S-T (\u00a7 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).\r\nYes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an\r\nemerging growth company. See the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth\r\ncompany\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control\r\nover financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or\n\n[Page 2]\nissued its audit report. \u2612\r\nIf securities are registered pursuant to Section 12(b) of the\n\u2026 [1,189,012 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**PepsiCo\u2019s FY2022 unadjusted EBITDA margin was 16.5%.**\n\nUnadjusted EBITDA = operating profit $11,512 million + depreciation and amortization $2,763 million = **$14,275 million**.  \nMargin = $14,275 million \u00f7 net revenue $86,392 million = **16.5%**.\n\nThe operating profit and net revenue are from the income statement, and depreciation and amortization is from the cash flow statement (pp. 62, 64).",
+    "role": "assistant",
+    "reasoning": "**Calculating EBITDA Margin**\n\nI need to calculate the EBITDA margin, which is the operating income plus depreciation and amortization (D&A) divided by revenue. I've got the operating profit at 11,512, cash flow D&A at 2,763, and net revenue at 86,392, so EBITDA comes out to 14,275, leading to an EBITDA margin of approximately 16.5%. I\u2019ll reference pages 62 and 64 of the document, where page 62 shows the income statement and page 64 details cash flow. I\u2019ll explain that this is unadjusted EBITDA with no additions or adjustments.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating EBITDA Margin**\n\nI need to calculate the EBITDA margin, which is the operating income plus depreciation and amortization (D&A) divided by revenue. I've got the operating profit at 11,512, cash flow D&A at 2,763, and net revenue at 86,392, so EBITDA comes out to 14,275, leading to an EBITDA margin of approximately 16.5%. I\u2019ll reference pages 62 and 64 of the document, where page 62 shows the income statement and page 64 details cash flow. I\u2019ll explain that this is unadjusted EBITDA with no additions or adjustments.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwn-qn__FUUT6KEGuu60h8p5yDA1bzdxkqH4jZ7blOGKOrbY5wrJzX2VeVC_SEPhuofGRWHBCYXFr9klHqrX9cLNodHq2bLSS181yYsyf2Gb9RpF0Qd5xmXwA5Byf-qPa4Yfi9UQxt8ztxQ2PFI5orVQ7BELrdV2c83_WySsgfiH24Cxk9xWJ6Wd5V2qZKTIRmwJEuiWA2ET-8n17aGxaNnNKtpEUTh4SiyKpC83IRXnfU9vCM8_ZvwxuTChffUennCfmuGr05LXkoQGsZuDPwWfBjUd8KLFH-w2h16g2elJx_tLhH2hgeOtn_7scFEb8D7nvpyxHMl-5K2anfV7tQk-VynQKUlol0EnUVu5DASWtbnhujkcGL-wss6w8tBB40STSDLIJhyC50c5ETSuMcBwRlHvjFEDQPkKk54a2wVpxfHWd7LOxsmTsnyLuzA7Nd14sar0QOfVWp0Ej-geKB6FIaBLx1886WyCVNjbD9XPP9JZqw1VGO-ARTiuYOtII005J3O3O5JgIgIk7j7x1NdgebroZ-Mv-m5sURHWpmA4dnYd2tRilFKAJGwftR0a_l_w5IWCOr3DetbfFf1Ns_W54UiIObv7gGK9CWHr53zlTsdLIi7CPMtJFyh6AGVzmyxAYThFLCkSxo9VT_5ridQTXlXxFDe_Nx8MUME4af4HRYXZonUttoVDnn5XANjWdPDEQ6KVQxkMPgGmGb63he_72MKCTBUl9wXyb878E0Yzd3cM2gV0ty2PgQF8thkTrUohMJrIBqGlJQ9m1hGjKyV0IcLwq0wQxqM_32eLRuFfRSPatYq1_FaVNZ_Mw0hugVkcgpmu9ZQp1b_tcsI74p_TCUZBu9t5_-GWjOhE-sJqHqdxRMcYa7UXJwu9Wt59W2NftCUN5wjqAnr2B7Cr0BkB6SnLsfKuJk4q66ARto-oROIe8sq5DuNLhdIo0hNWj5cBTsSI_yoLTkTTNcOTm0JLRTNE8uWSWRDSvesO-b772vdIkEfDYshRjN9yE6Corn6R6D5o9xgzwqACckSeqsOrfKnFx3sngB7fm79sXYYVbk49ldumWfY75oyEq24o5UBf_YLmKl9xntdcu5qp82JJmp4wiWlkg9ksqdJa5DYYQBoBs0HewazZZ80kElMjKUHLoH6n80vkk6H9VbBkGj_e5qgSZWsc6cKBC_7odFx9WfN1A8bwW1itRvNVjtalJU8KUxvKHw0JYTlnYurNuvpdjoO2WhPUs5eZqSuAyYHjiowOWVJkmHA-Q_dgDu00iW3ohCP_Ucx_vjukKzZQG5FoJtE9NRvw9u2T2qjRtixcwUJrtODXGvjT3WLa-IfAOmsMsw_70uunWoVYFIzAGknP4-pZO4VxEWZiMogQRiY7SLBsquFzQCjfHYxa3GNxksob9O-DMB6r2wRugk5_sPAV4IYPkjlkhnoZ00Hdwo6RZJ6gYC0RQWGtVegNstBkH_8D8p1zPea0fPc5n5qTlH0kf4HRwV9GPYbusuVRZWFlZFyKOsiANZzWZt7P3b0hsulCZoOYy107aeRezdE4SO1P-nA6sC7Kt02NQ08p2tJ-M37iCQwQtKpyIS5gkQpzKPu1onBwVCKhD1BVT4wYu3_cfgLUc01nxEeyhDfslUQz02Fozz8dPCaSbqw29djBx78VytuX5UOAf5OlW0AewOzOSxhA8ltcNt3YnbJfGrvtbnuldXD-1HSPg02D2vlsjNOpDSRSCnGUNgULIocL4Dx-MbKPkYj2y-lp49fxJmmYe9dOyUKJajQ40CzguCq_toRORDntxPzl493VmBmP3_CHYftNIdxnH0g_n4Sr72SNnVnU8vqO68CEdByM1MjWZVqrkGnzT7AE4BRlMj2owv55wlvcT4dZCdofq-8OnuGkZrXFy_Wec_GltjUN243Q_7OQsadWcwhhtq0lLkNH-m_5Dvs-CBFVi1EnAft0B7EgdPXVfBtfcbwf-UPfPTYZu7VfBJzwGUm3P9hP0ytn7_RWx8rzczm03DD7UQOLNq_gBLOvLSq-5gH4chv_TEOi9ARZwd3nZVFo1G76tNFiBZFd65SK2vsNFri2Ps7d6Dr5nebTGiCWn6mwiu_TpQ8MHmezud4H4XOh0kyRPj3-5GXPsWQNQxsfR3kK7VMcmw38a4=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0d9cb91f170e301b016ac21c23e08487d1b0309af542e997cd",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 260527,
+   "output_tokens": 290,
+   "reasoning_tokens": 176,
+   "seconds": 6.6
+  }
+ ],
+ "answer": "**PepsiCo\u2019s FY2022 unadjusted EBITDA margin was 16.5%.**\n\nUnadjusted EBITDA = operating profit $11,512 million + depreciation and amortization $2,763 million = **$14,275 million**.  \nMargin = $14,275 million \u00f7 net revenue $86,392 million = **16.5%**.\n\nThe operating profit and net revenue are from the income statement, and depreciation and amortization is from the cash flow statement (pp. 62, 64).",
+ "verdict": "correct",
+ "reason": "The answer gives a 16.5% margin, matching the gold answer, and the supporting calculation ($14,275M / $86,392M) is consistent.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002794,
+ "provider": "aipipe"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_00757",
+ "question": "Did AMD report customer concentration in FY22?",
+ "gold": "Yes, one customer accounted for 16% of consolidated net revenue",
+ "doc": "AMD_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.5,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4402,
+  "cached_tokens": 0,
+  "output_tokens": 75,
+  "cost": 0.00047797,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 12]\nTable of Contents We also work with our customers to create differentiated products that leverage our CPU, GPU and APU technology. Certain customers pay us non-recurring engineering fees for design and development services and a purchase price for the resulting products. One customer accounted for 16% of our consolidated net revenue for the year ended December 31, 2022. Sales to this customer consisted of sales of products from our Gaming segment. A loss of this customer would have a material adverse effect on our business. Original Equipment Manufacturers We focus on three types of OEM partners: multi-nationals, selected regional accounts and selected global and local system integrators, who target commercial and consumer end customers of all sizes. Large multi-nationals and regional accounts are the core of our OEM partners\u2019 business; however, we are increasingly focused on the VAR channel which resells OEM systems to the mid-market and the small and medium business (SMB) segments. Additionally, we have increased our focus on global system integrators, which resell OEM systems, coupled with their software and services solutions into Enterprise, high performance computing (HPC) and Cloud Service Provider Customers. Our OEM customers include numerous foreign and domestic manufacturers of servers and workstations, desktops, notebooks, PC motherboards and game consoles. Third-Party Distributors Our authorized channel distributors resell to sub-distributors and OEMs, ODMs, and other customers. Typically, distributors handle a wide variety of products, and may include products from other manufacturers that compete with our products. Distributors typically maintain an inventory of our products. In most instances, our agreements with distributors protect their inventory of our products against price reductions and provide certain return rights with respect to any product that we have removed from our price book or otherwise subject to discontinuation. In addition, some ag\n\n[Page 44]\nTable of Contents We also entered into a revolving credit agreement in June 2022. The agreement provides for a five-year unsecured revolving credit facility in the aggregate principal amount of $3.0 billion. There were no funds drawn from this facility during the year ended December 31, 2022. In November 2022, we established a new commercial paper program, under which we may issue unsecured commercial paper notes up to a maximum principal amount outstanding at any time of $3.0 billion with a maturity of up to 397 days from the date of issue. The commercial paper will be sold at a discount from par or, alternatively, will be sold at par and bear interest at rates that will vary based on market conditions at the time of issuance. As of December 31, 2022, we had no commercial paper outstanding. During the twelve months ended December 31, 2022, we returned a total of $3.7 billion to shareholders through the repurchase of 36.3 million shares of common stock under our stock repurchase program. As of December 31, 2022, $6.5 billion remained available for future stock repurchases under this program. The repurchase program does not obligate us to acquire any common stock, has no termination date and may be suspended or discontinued at any time. We continued executing our product technology roadmap by delivering a number of new leadership products and technologies during 2022. For Data Center, we launched our 4th Gen AMD EPYC\u2122 processors with next-generation architecture, technology and features, and designed to deliver optimizations across market segments and applications, while helping businesses free data center resources to create additional workload processing and accelerate output. We also unveiled our 3rd Gen AMD EPYC processors with AMD 3D V-Cache technology for leadership performance in technical computing workloads. We introduced the 7 nm Versal\u2122 ACAP VCK5000 development card designed to offer l\n\u2026 [16,223 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. One customer accounted for 16% of AMD\u2019s consolidated net revenue in FY22, all from Gaming segment product sales (page 12).",
+    "role": "assistant",
+    "reasoning": "**Providing concise revenue details**\n\nI need to confirm that the customer's consolidated net revenue from the Gaming segment is 16%. My final answer will address this directly, followed by a brief justification citing page 12 for clarity. It's important to be clear and concise to ensure the user gets a straightforward response. I want to make sure I don\u2019t overcomplicate things, so I'll focus on precision and relevance in my response.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Providing concise revenue details**\n\nI need to confirm that the customer's consolidated net revenue from the Gaming segment is 16%. My final answer will address this directly, followed by a brief justification citing page 12 for clarity. It's important to be clear and concise to ensure the user gets a straightforward response. I want to make sure I don\u2019t overcomplicate things, so I'll focus on precision and relevance in my response.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhUtcYRDqgHnqcGPRlOmyuLSm3afdYY8vibtBx6xVW7yJwcjzWzzPPBvqEbJHDs8zBiVdWDmu40H3lXdiqAksqYV4hFl6xElqo2K_oDOWGQaIMHJZH7dMb2MXKzuM491amgqGT1ynQRqlBMMwTq6U83mS6pBUxc5cw71MDHvEN9yf2XYDky2NvGadaoRZ-AGjit-NAH9EwIBspye7pqCp9g7_68-C7O2hVQVO7M2z422WDdQMTL-xaZCWNKrDyvy8GO5pr7CtcJ2r-KIFRsA675e9p6UP3LrPICtsnNdBGHELusn2UBTkPBcBzBCK12XRoBzS4SJk1yj2DT_v49Fafv5FutL6tvvcN_8kD__OMnUfBYFrTht-NijPpooduQNx9dwAf1lWUm72X1ZEGiBkdE2V1KGQnpKFwXsOW-4EcYobH8GCs1wvIiTyviHD7UG7CYy1e-XIyTjTpjMIKVpx-0D4EU4uCAiKW9peLFzkjFPjNTrQnWG97lZHexQtINbOg4CmziGqdXhKDN82yCMrgjon5mfluRFpOVN-hg871dQ1Ksv75uef3QrwhlXib1x6SAQCa65Bw0cQYkQ5lB5E7O9ucwFDdsjz1tNplJvgRqayaj7Hub29TexDqC34mqFqIOlFpaXk53ejUlF4frNcuJXHT4ujLcOtUODL1w8NI8tls28H3gfhS-pFL4SmAhq6xTgwSJeOTasaVXx6y7LfLCH435ltWlp5Pjgy27zXi3iKgn6rAGBBXMcdpdffNbTz_g0DCfELqUd2nGrLvVF84qBMrmZPpYfMONq00kx1rXaKIRYUPd3UJ_TLr32XKhdVcfshkHXUzx_EfdFv28Y6DEgdLtl4t72mTamBZPTGvzhLFb26mpTcfr4Unc1FRkqwzGdN5NxG4AvC94Fwr5Zg1AvdH_lwIPai2W9uMUlefnZR8arKwFqyOWMpAmbd2gLKthcmHGXNhECQEKCVJzyqiCcaSekiQMCjfmnY7rm9wDn05FxzGU0Hl6-62AobEScPrpggcrsD8NI3uCTbi-uvTaxA9jq2v_3jboHbSrLJid1JrLCNPKquhmlIPisY9KVNTTjLSMLVuEpcA8pvUYPilmVzfgkq1WoqamK1G0S87N4jV0oAQFpdZaCowi-npTh24Jd4b3PXd2u1JCjgGufP0Zy-Jk4Dew2wv-TRk7Ni1WblHYVim-0u5DcqSk_7p2AXNuTG9jBylN84yes2fpmnC1j00kTl8Uf5CB-jV2zfwIxJOpq6ZXaazVOsRRtT4IPh9lnpCfvWFM77EC2jskqUsxym-KDkWaxmjpmxFlXN3Bnz8iLnQLOF3nQ7NjI3VXVaoQHvO82NI4n4APFc5d-qB15-ZkZkARFbaCE5-ls3PtfrGZsXW7m4q3Q0nFGEsHNIq18gbpabI0ZBb24GEqR3aUhdK6XfxG0qHP7PdMQ7RNRrYgiu2fMk49CvRTtJTW5F8DmY15Vi-2cQfBy_AbcpwgajWN2XeMwsVPrWB60bscMt-8Ph8KNuNqKQjHecQLs0F-7EzT69wi5IyzVzRe7TgdQ1lKfGppt9fNpytKLa8L3pVs=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_07c663ad4a335394016ac2152bf29c87d1be484b4fe99cedfc",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4393,
+   "output_tokens": 75,
+   "reasoning_tokens": 39,
+   "seconds": 3.45
+  }
+ ],
+ "answer": "Yes. One customer accounted for 16% of AMD\u2019s consolidated net revenue in FY22, all from Gaming segment product sales (page 12).",
+ "retrieved": [
+  {
+   "page": 12,
+   "score": 0.6297
+  },
+  {
+   "page": 44,
+   "score": 0.6223
+  },
+  {
+   "page": 43,
+   "score": 0.6178
+  },
+  {
+   "page": 4,
+   "score": 0.6138
+  },
+  {
+   "page": 24,
+   "score": 0.5971
+  },
+  {
+   "page": 48,
+   "score": 0.5903
+  },
+  {
+   "page": 60,
+   "score": 0.5833
+  },
+  {
+   "page": 5,
+   "score": 0.5702
+  },
+  {
+   "page": 41,
+   "score": 0.5658
+  },
+  {
+   "page": 6,
+   "score": 0.5622
+  }
+ ],
+ "verdict": "correct",
+ "reason": "Answer confirms yes and the 16% figure for one customer, matching the gold answer; the extra Gaming segment detail does not conflict.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002752,
+ "provider": "llmfoundry"
+}

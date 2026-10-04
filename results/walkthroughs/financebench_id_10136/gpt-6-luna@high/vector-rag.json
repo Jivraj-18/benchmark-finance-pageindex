@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_10136",
+ "question": "We want to calculate a financial metric. Please help us compute it by basing your answers off of the cash flow statement and the income statement. Here's the question: what is the FY2022 retention ratio (using total cash dividends paid and net income attributable to shareholders) for General Mills? Round answer to two decimal places.",
+ "gold": "0.54",
+ "doc": "GENERALMILLS_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.7,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 5356,
+  "cached_tokens": 0,
+  "output_tokens": 348,
+  "cost": 0.00071158,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 49]\n49 Consolidated Statements of Cash Flows GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions) Fiscal Year 2022 2021 2020 Cash Flows - Operating Activities Net earnings, including earnings attributable to redeemable and noncontrolling interests $ 2,735.0 $ 2,346.0 $ 2,210.8 Adjustments to reconcile net earnings to net cash provided by operating activities: Depreciation and amortization 570.3 601.3 594.7 After-tax earnings from joint ventures (111.7) (117.7) (91.1) Distributions of earnings from joint ventures 107.5 95.2 76.5 Stock-based compensation 98.7 89.9 94.9 Deferred income taxes 62.2 118.8 (29.6) Pension and other postretirement benefit plan contributions (31.3) (33.4) (31.1) Pension and other postretirement benefit plan costs (30.1) (33.6) (32.3) Divestitures (gain) loss (194.1) 53.5 - Restructuring, impairment, and other exit (recoveries) costs (117.1) 150.9 43.6 Changes in current assets and liabilities, excluding the effects of acquisition and divestitures 277.4 (155.9) 793.9 Other, net (50.7) (131.8) 45.9 Net cash provided by operating activities 3,316.1 2,983.2 3,676.2 Cash Flows - Investing Activities Purchases of land, buildings, and equipment (568.7) (530.8) (460.8) Acquisition (1,201.3) - - Investments in affiliates, net 15.4 15.5 (48.0) Proceeds from disposal of land, buildings, and equipment 3.3 2.7 1.7 Proceeds from divestitures, net of cash divested 74.1 2.9 - Other, net (13.5) (3.1) 20.9 Net cash used by investing activities (1,690.7) (512.8) (486.2) Cash Flows - Financing Activities Change in notes payable 551.4 71.7 (1,158.6) Issuance of long-term debt 2,203.7 1,576.5 1,638.1 Payment of long-term debt (3,140.9) (2,609.0) (1,396.7) Debt exchange participation incentive cash payment - (201.4) - Proceeds from common stock issued on exercised options 161.7 74.3 263.4 Purchases of common stock for treasury (876.8) (301.4) (3.4) Dividends paid (1,244.5) (1,246.4) (1,195.8) Distributions to noncontrolling and redeemable interest holders (129.8) (48.9) \n\n[Page 45]\n45 Consolidated Statements of Earnings GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions, Except per Share Data) Fiscal Year 2022 2021 2020 Net sales $ 18,992.8 $ 18,127.0 $ 17,626.6 Cost of sales 12,590.6 11,678.7 11,496.7 Selling, general, and administrative expenses 3,147.0 3,079.6 3,151.6 Divestitures (gain) loss (194.1) 53.5 - Restructuring, impairment, and other exit (recoveries) costs (26.5) 170.4 24.4 Operating profit 3,475.8 3,144.8 2,953.9 Benefit plan non-service income (113.4) (132.9) (112.8) Interest, net 379.6 420.3 466.5 Earnings before income taxes and after-tax earnings from joint ventures 3,209.6 2,857.4 2,600.2 Income taxes 586.3 629.1 480.5 After-tax earnings from joint ventures 111.7 117.7 91.1 Net earnings, including earnings attributable to redeemable and noncontrolling interests 2,735.0 2,346.0 2,210.8 Net earnings attributable to redeemable and noncontrolling interests 27.7 6.2 29.6 Net earnings attributable to General Mills $ 2,707.3 $ 2,339.8 $ 2,181.2 Earnings per share \u2014 basic $ 4.46 $ 3.81 $ 3.59 Earnings per share \u2014 diluted $ 4.42 $ 3.78 $ 3.56 Dividends per share $ 2.04 $ 2.02 $ 1.96 See accompanying notes to consolidated financial statements.\n\n[Page 19]\n19 A summary of our consolidated financial results for fiscal 2022 follows: Fiscal 2022 In millions, except per share Fiscal 2022 vs. Fiscal 2021 Percent of Net Sales Constant- Currency Growth (a) Net sales $ 18,992.8 5 % Operating profit 3,475.8 11 % 18.3 % Net earnings attributable to General Mills 2,707.3 16 % Diluted earnings per share $ 4.42 17 % Organic net sales growth rate (a) 6 % Adjusted operating profit (a) 3,213.3 2 % 16.9 % 2 % Adjusted diluted earnings per share (a) $ 3.94 4 % 4 % (a) See the \"Non-GAAP Measures\" section below for our use of measures not defined by GAAP. Consolidated net sales were as follows: Fiscal 2022 Fiscal 2022 vs. Fiscal 2021 Fiscal 2021 Net sales (in millions) $ 18,992.8 5 % $\n\u2026 [13,695 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "General Mills\u2019 FY2022 retention ratio was **54.03%**.\n\nCalculation: \\((\\$2,707.3\\text{ million net earnings attributable to General Mills} - \\$1,244.5\\text{ million cash dividends paid}) \\div \\$2,707.3\\text{ million} = 54.03\\%\\). Net earnings are reported on page 45; dividends paid are reported on page 49.",
+    "role": "assistant",
+    "reasoning": "**Calculating retention ratio**\n\nI need to calculate the retention ratio, which is derived from the formula: (net income attributable to shareholders - total cash dividends paid) / net income attributable to shareholders. Here, I'd be using cash dividends paid of 1244.5 and net earnings of 2707.3 to get a retention ratio of approximately 54.03%. It's important to clarify this financial metric, as it can also be expressed as: (net income - dividends) / net income. I'll ensure to provide citations for the user as needed when I present my calculations.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating retention ratio**\n\nI need to calculate the retention ratio, which is derived from the formula: (net income attributable to shareholders - total cash dividends paid) / net income attributable to shareholders. Here, I'd be using cash dividends paid of 1244.5 and net earnings of 2707.3 to get a retention ratio of approximately 54.03%. It's important to clarify this financial metric, as it can also be expressed as: (net income - dividends) / net income. I'll ensure to provide citations for the user as needed when I present my calculations.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxAdqIoAuX3rWRtm8yGNGxPJ7Ar-2vo5uTYMO10eM_mp-gbxsk2lPYi8UsBRSqEXCzRIkJla5xF5hMtC_8QKNozB-lImoMsjSVI52XXAO9LDVzBh8ykaAZ4TGAo1h5egAo9EOK2E4IqAqg1qTBlN4ScvMeEEMxQIXRL_v2dCuRpEOb17GqNUbpHwj2mC21a_lkuB4oGBWPyW4Pa8Ez8Qo2WZFKyX_cT2roqm8K9zmgyhpS6PT-xGWXeNnT9b9vfYhA0SqP7WRo5ESTLF2WSy5jdTj7zbsdSAX76tvVoyVKAA5CjPydzVV-XX5ig2D1ylFeMAJiTYHAZjH7gal0uQ0ySLrObzvix5ycup47e8jGiAuTDL2QyUYYGu_BA1aU5s_JxmqD-BtXNZd-kKCJWlgvmWLDPLfz22UFYqkHV6QdgCLCs6JH1Ae58K9ZdHoplldx2a3bTsPvPxcNt56_DaBSzi1Fr_7loAiov985GHQtDcZcMxSKZpdUBAOOzumBVqoC9i5eOcGNGdjxsWMV0El8NVihwuv3nAF2zz8lGE_luO3SXHiTpasG58gm8PoSW2CAmEJpmcpvAvUp_0dzAZimhI2F46FqtRZNZXTVi8ch7fGfp04vYdZ15YBs44cHqw3-i3QQ1OdKgk8BDf28g1QARXlw5QJPOKLRRztKks0b-skCMxq4BcVehZ7MZVijs4s7jMVXkcU7Afzw76pfdZ6JqUKxYDIn7UPGfn4RWsz5axrB_q8AXwJql00MeEACvzMx2TMy1FRHnrf4SpcXfYkYVtF32Pd1iHXNPc11R08iQzWYnUJJuuyi3J3cmuqrX74P93ADoJKT7ISHi6mnyNwrjV6QFeB0jZ1gaZ03tDWGBGo-QluIsKzETvOpahZzib3v_1y2h-onPnZaGHbMTQCE0pKbMkUP9GvUMPq7j08gvj8pzl_Dw09ot8YTLVUfMmdS-wZuYSifZ5HUDGoV8ooMo0rFGelmOp9waYLOc1nVXguoisoLebQNAbdgNasNr5pjO8nSHGobcg_IvDTFeJMUDx7DCcupxXENLI0sz1ndaTrE3TuKwieaDr4EgTmrwVxZrToDc2YbaG_e20iNniMqqRTTDSPhXgsRuyF9kNtizYR6UNJqgC3D_clrIjqYlIYiH9JgMwSmm0T5wgl6FFBIPxQO-dic8TDbflA9yRWlgNAV09WRU3MqwcWaGLJ72EGLLVrAiJ3jVDCdotXHPV2PFYnA1O80N8pO1aPoIQiVi5LZSpc62OuayFhsJu4gAZF8U0mm8PEOP7z6TqX28yr21HMoLvongEr98I_gXXLNpScrxyhHQjeD1Lsc00IyYl0FxfCVMmsTU8yIf9QW5lada63yXubf8Q4Gt2AD7ugKPc_V41tQZt3iyHu5lx_9Y6F5g4K7OcJUWelrg1Bep8usnLIvtKs6EwmsRctcGcNlncT7M0GVJw5WretpmippIQFt8KJHC0ta8uiU75seoJV85xaZNbqpKh2nsR0mVKc0MJXVk6g2kER6NOi-UChkfVd31Xohrxn-_71iPj3w3tApXHkZmiRKHympuZczcB49wElAaM6EAmHDYg4KaPMOqMisXu_6LlwnWP-4LPEG1EBINbYPPDDmrAdgiogLmaARLeKfK2ZcJN_rHZVpJgBqT0hMo2NUY6HMnAQiOYKpptixguFf31qWac9oD1QHwLsO2o_cQN8gtLGLviNjU7q5445aPRuFPO9i_Uwem7Sa9_9axghsKiuJW0N-K5TLzEWQd5yJVzzauvWvbBapStStOojfzcU_eDLN_oPu12aW4s_TJ5r4TcnbvkA6F4LivVDzfX4xAlsRudtOv2kb0eSeA-P8vidYwGbkHoS2eDNrqTj-bpMy0Q_5wmea7QlsUhx1qekMB4viRFQEbGCUuZNBq10OZ1ImeJDLBPzfmcI4BZjn2vmdAiCoBIMDBOzYYLlpYJoajpQofhpWlruUAcFS3KnwzAx5srJBYweG0Bfl8cm8ehm-IkWr7X3J4YED4x3m14f0ivJRpgSQEMCIVbaGjCAA-HB5ZaOjvXp18W4ScnQ8vuB6B-Bu_WgZoYP-4KWRmPe9-ZC0IfbNsTEEeoVaFiRaGRQBP-qZ214ABYxc-SAfzpyUDXlOgGI_Sz1jB-G2gPmbDFtOhU1KQFSDq7kjB8i6a51Zd3v63eATlhu-GLfmUCAcoSswZRffjSsk3YSQ60wXoF7vuGOgpVsZ-7MTAee2cp5Q9JLJi3DpDg5BJmoYq3X9YYOU95SinVWX5zR8A32zeVq2CtNArjJue73u5elsGDfLsbgzWiR-KCTllGfoSGl-DbxZ47SiEiwFX_rHDx6kDDCbza1l0mB6_NpAbU5t671O4utOEFALV9KNxTtFbI4mYNHMrjvVPm7IMfR5M0NEEKZinkpbgDEzu5rOp_GXO34ta6IHfBajK1oJoTBiRSX6xH0lqmdSlPDU98YAQUOdesxB1sWfthbDP4XgdFk94KHdOhmaGnsgwG5GUqsky4rXCJ20sjrpdB8gkrvYd9Sw11WFFgEmirj2_HLTZPHmgaFp4OBNWPwCnSdU_3CiYHA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_059efc5b69acc6a8016ac21c3c525c87d189147a6f660db672",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 5290,
+   "output_tokens": 348,
+   "reasoning_tokens": 251,
+   "seconds": 5.73
+  }
+ ],
+ "answer": "General Mills\u2019 FY2022 retention ratio was **54.03%**.\n\nCalculation: \\((\\$2,707.3\\text{ million net earnings attributable to General Mills} - \\$1,244.5\\text{ million cash dividends paid}) \\div \\$2,707.3\\text{ million} = 54.03\\%\\). Net earnings are reported on page 45; dividends paid are reported on page 49.",
+ "retrieved": [
+  {
+   "page": 49,
+   "score": 0.6089
+  },
+  {
+   "page": 45,
+   "score": 0.5848
+  },
+  {
+   "page": 19,
+   "score": 0.5647
+  },
+  {
+   "page": 88,
+   "score": 0.5612
+  },
+  {
+   "page": 46,
+   "score": 0.5604
+  },
+  {
+   "page": 48,
+   "score": 0.5525
+  },
+  {
+   "page": 47,
+   "score": 0.5448
+  },
+  {
+   "page": 70,
+   "score": 0.5235
+  },
+  {
+   "page": 35,
+   "score": 0.5202
+  },
+  {
+   "page": 50,
+   "score": 0.5169
+  }
+ ],
+ "verdict": "correct",
+ "reason": "54.03% equals 0.5403, which rounds to the gold answer of 0.54; the calculation is consistent.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002848,
+ "provider": "aipipe"
+}

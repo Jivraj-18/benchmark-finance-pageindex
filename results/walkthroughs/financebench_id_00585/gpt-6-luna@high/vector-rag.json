@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_00585",
+ "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+ "gold": "Effective tax rate in FY2022 was 0.62%, compared to  -14.76% in FY2021.",
+ "doc": "BOEING_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.6,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4816,
+  "cached_tokens": 0,
+  "output_tokens": 337,
+  "cost": 0.00065061,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 27]\nTable of Contents Other Earnings Items (Dollars in millions) Years ended December 31, 2022 2021 2020 Loss from operations ($3,547) ($2,902) ($12,767) Other income, net 1,058 551 447 Interest and debt expense (2,533) (2,682) (2,156) Loss before income taxes (5,022) (5,033) (14,476) Income tax (expense)/benefit (31) 743 2,535 Net loss from continuing operations (5,053) (4,290) (11,941) Less: net loss attributable to noncontrolling interest (118) (88) ($68) Net loss attributable to Boeing Shareholders ($4,935) ($4,202) ($11,873) Non-operating pension income included in Other income, net was $881 million in 2022, $528 million in 2021, and $340 million in 2020. The increased income in 2022 compared to 2021 was primarily due to lower amortization of net actuarial losses in 2022 and a settlement loss recorded in 2021. The increased income in 2021 compared to 2020 was primarily due to lower interest cost and higher expected return on plan assets, partially offset by higher amortization of net actuarial losses and higher settlement charges. Non-operating postretirement income included in Other income, net was $58 million in 2022, compared with income of $1 million in 2021 and expense of $16 million in 2020. The increased income in 2022 and 2021 was due to lower amortization of net actuarial losses. Interest and debt expense decreased by $149 million in 2022 primarily due to lower average debt balances and increased by $526 million in 2021 as a result of higher average debt balances. In August 2022, the President signed into law the Inflation Reduction Act of 2022, which contained provisions effective January 1, 2023, including a 15% corporate minimum tax and a 1% excise tax on stock buybacks, both of which we do not expect to have a material impact on our results of operations, financial condition or cash flows. For additional discussion related to Income Taxes, see Note 4 to our Consolidated Financial Statements. Total Costs and Expenses (\u201cCost of Sales\u201d) Cost of sales, for\n\n[Page 77]\nTable of Contents The following is a reconciliation of the U.S. federal statutory tax to actual income tax (benefit)/expense: Years ended December 31, 2022 2021 2020 Amount Rate Amount Rate Amount Rate U.S. federal statutory tax ($1,054) 21.0 % ($1,057) 21.0 % ($3,039) 21.0 % Valuation allowance 1,199 (23.9) 512 (10.2) 2,603 (18.0) Research and development credits (204) 4.1 (189) 3.8 (284) 2.0 State income tax provision, net of effects on U.S. federal tax (90) 1.8 (94) 1.9 (168) 1.2 Tax on non-U.S. activities 64 (1.3) 47 (0.9) 7 (0.1) Impact of CARES Act (5) 0.1 3 (0.1) (1,175) 8.1 Other provision adjustments 121 (2.4) 35 (0.8) 108 (0.8) Audit settlements (587) 4.1 Income tax expense/(benefit) $31 (0.6)% ($743) 14.7 % ($2,535) 17.5 % On March 27, 2020, the CARES Act was enacted, which includes a five year net operating loss (NOL) carryback provision which enabled us to benefit from the 2020 U.S. federal tax NOL at the former federal tax rate of 35%. In 2022, 2021, and 2020, we recorded tax benefits of $5, tax expense of $3, and tax benefits of $1,175 related to the NOL carryback provision. In the fourth quarter of 2020, we recorded a tax benefit of $587 related to the settlement of the 2015-2017 federal tax audit. Significant components of our deferred tax assets/(liabilities) at December 31 were as follows: 2022 2021 Inventory and long-term contract methods of income recognition ($4,369) ($3,827) Federal net operating loss, credit, interest and other carryovers 2,082 1,522 Fixed assets, intangibles and goodwill (1,641) (1,657) Research expenditures 1,464 Pension benefits 1,146 1,739 Other employee benefits 1,095 991 State net operating loss, credit, interest and other carryovers 1,021 929 Accrued expenses and reserves 933 763 Other postretirement benefit obligations 660 913 737 MAX customer concessions and other considerations 425 682 Other 179 227 Gross deferred tax assets/(liabilities) before\n\u2026 [15,236 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Boeing\u2019s effective tax rate fell from **14.8% in FY2021 to (0.6)% in FY2022**, a decrease of **15.4 percentage points**.\n\nCalculation: **(0.6)% \u2212 14.8% = (15.4) percentage points**. (Page 24)",
+    "role": "assistant",
+    "reasoning": "**Clarifying tax rates**\n\nI need to create an answer based on a document. The effective income tax rates are listed as (0.6)% for 2022 and 14.8% for 2021 on page 24. The actual tax reconciliation shows 14.7% on page 77. The question asks for a comparison, suggesting a decrease of 15.4 percentage points. I\u2019ll calculate the changes and cite page numbers. I also need to clarify the definition of the effective rate and explain that it can be negative due to the relationship between tax expense and pretax loss.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying tax rates**\n\nI need to create an answer based on a document. The effective income tax rates are listed as (0.6)% for 2022 and 14.8% for 2021 on page 24. The actual tax reconciliation shows 14.7% on page 77. The question asks for a comparison, suggesting a decrease of 15.4 percentage points. I\u2019ll calculate the changes and cite page numbers. I also need to clarify the definition of the effective rate and explain that it can be negative due to the relationship between tax expense and pretax loss.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhU2Ycju61GtqJQRp71HF7-TRjyu0mspiliqT50nt_DnKa7Co55ursUK5wNszGvCfP87cG_Yd3uZHa5xFrcFbiAuMmr9qoIjkBgOYvTY-mTrWoboxoDu6xl1n5SSakdxfPsM9AOuIlt0ylRoLYbLV1PL-XZ-r7QOmiFHX0UrdCY9jn8e6JmGMYkSdTMBHJwv5Lna8QiXawg_W4WJWGo0A66LWyJaf9oRkVFRzPwrOrK59-tCXqZWnLY3e44YsO6OU5-Y8BdLLs-mIyGB4xIuOJ-FvBUQ57rpABrtW6MwDfHv_nPl01z-10dLuJNEP5vhjhmSaMZnAQ5DMOj0DfFeTsyieLu132PuP_ZE7Q7_JGYAwUQF9BUwEu8xiGLLFGJ65x4uvk3SRqiuSeivuedzYpF1hzOM45IznZsLS2I9zF9AUc8r2KTqTA8ESoiUdXQNPDEgENxTg4hwQyuNiMGUr6UmBiHl9hYij_7zAwwvhf31D_wQTAdTlNmozFRjsMMYwSk5RP9wQseIXP-ItNpuvDnbtAm6tEmpiv4DU_2X-UMKU_6yhiEC5Hinnq5xxsADLrjEVu8HkgQlfvcNwPG55MOz-UCreGQr6kyIrCzvTCHgJ0RLMnYmpvSQ8cPoOqn0L5-EKl4s47x_hZS85-he0UzuITXJQETNITJB26FlZEbRghW7NH__nDBb-AWHyKL57X4PjMXSwiS6iRBBbChToKtt4qIswpw3fN8jDpdveJs4u5LAYlATTk4BJWRt4mWDXU7LKU63xPJoYsFB3oARnANdkDUQfK3nEnRHVSBB7NCALqd1Nx4DM2OmmLSwoiXfW5uyrAnvNA973ebsIPhxx-GSqVE4yHezkBBCyrou0w7RD3ejJa3PX-vu50Fr0gXjhFExGNDeTbIbxUpODJ4jk4YLX6HThguTyRVUxfVbCW-skzGqtbs746x7ynwHkx4xpoFqFMaaKKl4eKQ8HUoLLLUJDNd1iYYldoMlfKUT0wSGYppENsB3gDcIv9Ldf-73VuTnljHBylpvOx8RijTRwg3Hs0Q5-4rm5YwMHaDveWlA25tQSGbM8saWXlXKgYkgWEIkjR6y400Iu-OAvOTZTJuBSEgIXrYefimVsV59nHZKDVbJ-uv-bAef0u12isXtElw7rX1H5Ml1_SpMw5iqAkwt53ELEJQeufn1w9Soc5oOR6DpTsWnZR3cscK8Hu71NttsCbaJ590ZMFBB04CH8A4-0NzzaJ4LYw5q6Kr-LHetA9AQxf_GQTBGF4vFm3KEls8cpgYTLzYdQBlogxkVPdOt-P2Kxvs3k_G928770m2reGuGdV6bbfDUp-zfmjRcgX2T9dbppgsNyPb38ffCEgzKQesm3E1Byio5hkEOOMQeZQz7MBC73dCld6W4ahNQwZYTZMxTOunXzzyzATfaCE8O5W4R3oUhjy-E6Yf7vecKOWby744N_BdlEehTA_pV6MpjjTvg1iJ7AGxougEbvJ56tBv9pWqC6j0FIlRfP0TKipg0DiQ6te3-mKgKB2_2yTTqAuNYPO7e9mbvztqQRTDC_NOhOznA9EGpytTMru8vbl3rZpKxLZ3lR5YHaoowyDDGADVpHP1y-Zrbb8fp8WKUYSpj072tq-EqM43tjAMDH_ICrA2EA65jXw2cDForMHk9C2WFfXGEGJs9LyvalFzxDfkjrKdy_PxWj8O7QY1dGEE9n5PMSEoHw7Er3fkOrPzD848CgrDnbu1pBksNjFQQaUC_YV_rJ_cJHDRMvRFZpPL4tqaQB-ncKVQrc-fm9JZkfxyF0MB5rguUa1jwJL_Kv1W9KT9-Cpy_GItWLIDsawAUI505dlavAcb0M7R48-czfXZ1whtjjtIXHa6CbFJ_RCozA1LraTzMb1Y2YRMz5Tv2CG6BpzktL34VMqgyBi1LqHXuxLTxEnHfIZ0WkXR07eHYMQwdPpvGZjc7MBM7OMPk3cNPnP4HyhUL3qOSJkQ2fFonq6mSc9BdfIkltz8SU-HeWEwSpdfQlftb0QxHoghya3eaPCVL7gggNn1mEHn15kfTrwPCJU0xcgcazgm6YoAlAIv1prI9058vpaba70aAN_Uh_shErOj8lmgZfiNn9Lzgy0_K1h66Tn1zITOTfa-kIoSJ88FdjzLrySiYnu41X8t5IGZibu_VsaOebirNxBEMK85wrAFU3pEC9kFgb1yyFTk22vabTvRVLAVaN3FTQAKSybaKq6-0bYPOK7tZ90M5eDlFXjmbwSv7QylHHr9Y9N5Icgtu7lDL3AqqiiWbhwUXxUJBqh9cGWJ0Exc3BXUieeKogJA8z3FG5nq99Yf0vYt8l9wp381a6sZacl7e3N4KYFJxPN54oi0_Ghj_vm1RcKI1JS0IXeY2f_SdSJ38KZdA5o_dOB6M113505qxQ9KTjc3ErB87NGXEkLIWJfsC38_1KjCw8r9toaqtC7niVkb3YFnKyWuZJSxsC4tzU_sJmANmKwfWn6rZxoBIbocKFgF0Zx2V9WrJiIGlBrNr-03OHkwhEPuGjUE9YqbSLByCuWun9wIKWWvq7ir0E57BhI2Y9lHZnQb3Tj3AAi4pRBjiR95jKntHuVj_1pGauucBKjNCcYwGCt2AKxl0.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0a52af899b6d74a2016ac21533180087d186bbc61508c884c8",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4799,
+   "output_tokens": 337,
+   "reasoning_tokens": 262,
+   "seconds": 5.76
+  }
+ ],
+ "answer": "Boeing\u2019s effective tax rate fell from **14.8% in FY2021 to (0.6)% in FY2022**, a decrease of **15.4 percentage points**.\n\nCalculation: **(0.6)% \u2212 14.8% = (15.4) percentage points**. (Page 24)",
+ "retrieved": [
+  {
+   "page": 27,
+   "score": 0.5932
+  },
+  {
+   "page": 77,
+   "score": 0.5907
+  },
+  {
+   "page": 78,
+   "score": 0.5822
+  },
+  {
+   "page": 78,
+   "score": 0.5676
+  },
+  {
+   "page": 25,
+   "score": 0.5496
+  },
+  {
+   "page": 24,
+   "score": 0.5427
+  },
+  {
+   "page": 43,
+   "score": 0.5425
+  },
+  {
+   "page": 25,
+   "score": 0.5346
+  },
+  {
+   "page": 28,
+   "score": 0.53
+  },
+  {
+   "page": 43,
+   "score": 0.5193
+  }
+ ],
+ "verdict": "incorrect",
+ "reason": "The answer gives FY2021 as +14.8% and FY2022 as (0.6)%, but the gold answer has FY2022 at +0.62% and FY2021 at -14.76%, so the signs are reversed and the conclusion (a fall instead of a rise) is wrong.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001966,
+ "provider": "llmfoundry"
+}

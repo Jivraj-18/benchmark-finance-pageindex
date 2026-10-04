@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01279",
+ "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+ "gold": "In 2022, AMD brought in the most cashflow from Operations",
+ "doc": "AMD_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.0,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4265,
+  "cached_tokens": 0,
+  "output_tokens": 206,
+  "cost": 0.00053034,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 58]\nTable of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs \u2014 5 14 Amortization of operating lease right-of-use assets 88 56 42 Amortization of inventory fair value adjustment 189 \u2014 \u2014 Loss on debt redemption, repurchase and conversion \u2014 7 54 Loss on sale or disposal of property and equipment 16 34 33 Deferred income taxes (1,505) 308 (1,223) (Gains) losses on equity investments, net 62 (56) (2) Other (14) (7) 8 Changes in operating assets and liabilities: Accounts receivable, net (1,091) (640) (219) Inventories (1,401) (556) (417) Receivables from related parties (13) 8 10 Prepaid expenses and other assets (1,197) (920) (231) Payables to related parties 379 7 (135) Accounts payable 931 801 (513) Accrued liabilities and other 546 526 574 Net cash provided by operating activities 3,565 3,521 1,071 Cash flows from investing activities: Purchases of property and equipment (450) (301) (294) Purchases of short-term investments (2,667) (2,056) (850) Proceeds from maturity of short-term investments 4,310 1,678 192 Cash received from acquisition of Xilinx 2,366 \u2014 \u2014 Acquisition of Pensando, net of cash acquired (1,544) \u2014 \u2014 Other (16) (7) \u2014 Net cash provided by (used in) investing activities 1,999 (686) (952) Cash flows from financing activities: Proceeds from debt, net of issuance costs 991 \u2014 200 Repayment of debt (312) \u2014 (200) Proceeds from sales of common stock through employee equity plans 167 104 85 Repurchases of common stock (3,702) (1,762) \u2014 Common stock repurchases for tax withholding on employee equity plans (406) (237) (78) Other (2) \u2014 (1) Net cash (used in) provided by financing ac\n\n[Page 52]\nassets due primarily to prepayments under long-term supply agreements in 2021, offset by an $801 million increase in accounts payable primarily due to timing of payments to our suppliers, and a $526 million increase in accrued liabilities and other, both of which were driven mainly by higher marketing accruals, and higher accrued annual employee incentives due to improved financial performance. Investing Activities Net cash provided by investing activities was $2 billion in 2022, which primarily consisted of higher cash provided by maturities of short-term investments of $4.3 billion and cash acquired as part of the acquisition of Xilinx of $2.4 billion, partially offset by higher cash used for purchases of short-term investments of $2.7 billion, cash used in the acquisition of Pensando of $1.5 billion and $450 million for purchases of property and equipment. Net cash used in investing activities was $686 million in 2021, which primarily consisted of higher cash used for purchases of short-term investments of $2.1 billion and $301 million for purchases of property and equipment, partially offset by higher cash provided by maturities of short-term investments of $1.7 billion. Financing Activities Net cash used in financing activities was $3.3 billion in 2022, which primarily consisted of common stock repurchases of $3.7 billion under the Repurchase Program, higher repurchases to cover tax withholding on employee equity plans of $406 million and repayment of debt of $312 million, partially offset by proceeds from the issuance of debt of $991 million and higher proceeds from the issuance of common stock under our employee equity plans of $167 million. Net cash used in financing activities was $1.9 billion in 2021, which primarily consisted of common stock repurchases of $1.8 billion under the Repurchase Program and higher repurchases to cover tax withholding on employee equity plans of $237 million\n\u2026 [14,720 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**Operating activities** brought in the most cash: $3.565 billion, compared with $1.999 billion from investing activities; financing activities used about $3.3 billion.\n\n*Justification:* The cash flow statement reports operating and investing cash flows on page 58; the financing cash outflow is summarized on page 52.",
+    "role": "assistant",
+    "reasoning": "**Calculating financial figures**\n\nI need to focus on the operating, investing, and financing activities. I've noted that operating brought in $3.565 billion, while investing contributed $1.999 billion, and financing resulted in a net usage of about $3.3 billion. I should cite pages 58 and 52 as references. Plus, I need to double-check my financing calculations, as I came up with a total of -$3.264 billion. The final answer should be concise and clear.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial figures**\n\nI need to focus on the operating, investing, and financing activities. I've noted that operating brought in $3.565 billion, while investing contributed $1.999 billion, and financing resulted in a net usage of about $3.3 billion. I should cite pages 58 and 52 as references. Plus, I need to double-check my financing calculations, as I came up with a total of -$3.264 billion. The final answer should be concise and clear.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVchLsQDpkYrhX79T877kNpc74AKdh701XArQBX9u4AFdlFaryaqnCp-PCF544yFFmGkqXCKRfZt-AswuXia-EdtM9znnm-rWmUgyWQNfAYjm4bHMutRsUGzjxPMMeET840xreTh0Tb52e21ItKYV0FWiv-kkQQNWNxk1HmO6GhzyTe89ZgcDM9Pp2saBjqXuvLqLVrC5BWpPFLkqjTf2uqi01nkUjkMabqVBIaRxJD_JUzVB2XF9DRf_X0ZLIak5zf4G4yBb97BEG-CnMS8c18kBY4a39Az5Z-O9uaLgBgBQOOuf_Ypz5vHHC3BYNzyhoA_GQTcSHCJTEYLUFFKxdesfxLJaRsuH6amEBjesFhLI9B2IvHb5UDJApAzaVH5c_3UP3VR6ioxpGfnrlYRORWU9_vZippbrpf05lu370zUkonCw249xWBBWSuBQRChztvEioJf1iAxHVYTxNIROYFK27jbWKkv7kJNbB-SOFCwBkdWTyqRWgiMSKS7rVb6mW1o91vfBoLwp5suHeRLJFisH0A9yv62ruArE9-Xm3L6P2S6jzuu1B_iCHfQULbmZPe4YQbdAHBRuild4eGr6yEErSoERIzzvbJS1K_If14h0Ddqr5mDSzYK2s8fwoSsutOH4PSaa4wYxilOIH3bB_Vnm6tHojnBN4HWJjmjRFr09zg1eU3pftXzAkbsls2FcAKor3_DSY4SU-DbZtSwASm0qbjhh8va_Xx-4E3yaFRcnjK7sZUjrqgSu1kx6OGC7-sgf_1DccASeFUI-XcxZoOs80xJgdZ4QtTRRHyE1RF4NJTi8cJxpsOvrrCgiRSb-o3MCRuMfFkt7RWBi5VDIDMIVt4hD8byHFHyu_wThEg1gaqkyRPdh46haRg3VplKr5mP8m_cFI38dPM_QmpvXoBO-o4YbRdLHDO3R3m35E17bx0LF43AWqxcGfCrsSCIjBR_A1YspvVTqx7OGmmanCHM12X_Eqxl8xn3SRzI1fTfWAXOmtL_RLQb-9-Xl3h-5MZp54N2__vKJjA0JaiXv8IaroEjhl7ecZZsCSmt--R85x2mBwh1gNS2N29dZ9Eh6YdcwNzam5qk7-3ZbiX9R0QxLcf_eli3NfeA-O9m00_xgy2z4XgUViJyuD1zsGotiMgwHNHIL2eP7uZgM2Z3Mel8nYHUK9UF31RM2Bblhmc3vlmoJJytf_mMJrw-qG8eKVYV1xdJ24dHyPszNsefgJU_nm4SPm4P7x0APQS5INn0Sx4nQ8c01LgEwGovzv8Y2NvYamIPrVj1Jr3K_0kymlfQ2x_OsZIaCZzxFfGGvlpKNA6AenErhOKXkIIAUo8lqNgYhUqXB9n5-flc3gi5UUqJ5PBzCKY5SNUNjWB-5Ug_k7177t-Qg8-YgKC__RbHNaQtLjpamZgikUZ7Wm9ojsf4Dvsfsl8BcTugtpfs9ei1YSruWI8mtr9lgbe9_PeR9_1n3MdZq5mWpdn9E4ejD4mFe0ABAcKIm2mxUqQUGabMho801DALP9i0UvCAIW0qKjkMbrjCqkzAi0SIKVDY8dwlVmJwP08mGv1kuqdyP8yarksm1wNcy4pFeOrgNH-OANFgrxsDQ-WmkALMnd6YWOUNwQzzYBYfAn6lKbce6GQ6dPGV42QHTxVEPzl2BN7c--G-tKh49t9UH-5Y2ZbbRotjNDbs_xibq3tICPPP19_Peyt3-LU1Y5Mpys39aCFrIO_UPOQFiom4b0oe33N4r9tZZFwyU3Zh_iejgy8EfqgfSK6KO2xNsfLkX4uIYPvWhGaUG4yizzqwNBmGcFG1PuQCz1BLAjHGP_Ku2aOlZfJubWfsLJY5fGCBdJj7YaG3GRYdVp4CdHUG118LBs7dJIoyJ2hhHhiYYVi4bgZuZtIOEIsZK6RlwboCvO7SjXpvNXOFQSeV61_4ZjUpCzoq0vdxmFCbRPA8rh4JoN7_T8LYUAxP7TI3f3eJu4CVcQBDpZNqvda__xrsAwQ7kdaXIfXuMAf22RkKdHzs4qRvX_ySzs=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_085fd7d2a8bf90aa016ac2155a75a487d18aeb1a4158cfb743",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4237,
+   "output_tokens": 206,
+   "reasoning_tokens": 132,
+   "seconds": 3.98
+  }
+ ],
+ "answer": "**Operating activities** brought in the most cash: $3.565 billion, compared with $1.999 billion from investing activities; financing activities used about $3.3 billion.\n\n*Justification:* The cash flow statement reports operating and investing cash flows on page 58; the financing cash outflow is summarized on page 52.",
+ "retrieved": [
+  {
+   "page": 58,
+   "score": 0.6701
+  },
+  {
+   "page": 52,
+   "score": 0.6451
+  },
+  {
+   "page": 59,
+   "score": 0.6247
+  },
+  {
+   "page": 52,
+   "score": 0.6213
+  },
+  {
+   "page": 4,
+   "score": 0.6202
+  },
+  {
+   "page": 43,
+   "score": 0.5996
+  },
+  {
+   "page": 49,
+   "score": 0.5898
+  },
+  {
+   "page": 48,
+   "score": 0.588
+  },
+  {
+   "page": 44,
+   "score": 0.584
+  },
+  {
+   "page": 43,
+   "score": 0.5699
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer identifies operating activities as the largest cash contributor, matching the gold answer, and its supporting figures are consistent.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002908,
+ "provider": "llmfoundry"
+}

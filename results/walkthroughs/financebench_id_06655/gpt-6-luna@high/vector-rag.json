@@ -1,0 +1,97 @@
+{
+ "id": "financebench_id_06655",
+ "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+ "gold": "93.86",
+ "doc": "AMAZON_2017_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4166,
+  "cached_tokens": 0,
+  "output_tokens": 419,
+  "cost": 0.00062868,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 20]\nTable of Contents Because of our model we are able to turn our inventory quickly and have a cash-generating operating cycle 3 . On average, our high inventory velocity means we generally collect from consumers before our payments to suppliers come due. We expect variability in inventory turnover over time since it is affected by numerous factors, including our product mix, the mix of sales by us and by third-party sellers, our continuing focus on in-stock inventory availability and selection of product offerings, our investment in new geographies and product lines, and the extent to which we choose to utilize third-party fulfillment providers. We also expect some variability in accounts payable days over time since they are affected by several factors, including the mix of product sales, the mix of sales by third-party sellers, the mix of suppliers, seasonality, and changes in payment terms over time, including the effect of balancing pricing and timing of payment terms with suppliers. We expect spending in technology and content will increase over time as we add computer scientists, designers, software and hardware engineers, and merchandising employees. Our technology and content investment and capital spending projects often support a variety of product and service offerings due to geographic expansion and the cross-functionality of our systems and operations. We seek to invest efficiently in several areas of technology and content, including AWS, and expansion of new and existing product categories and service offerings, as well as in technology infrastructure to enhance the customer experience and improve our process efficiencies. We believe that advances in technology, specifically the speed and reduced cost of processing power and the advances of wireless connectivity, will continue to improve the consumer experience on the Internet and increase its ubiquity in people\u2019s lives. To best take advantage of these continued advances in technology, we are investing \n\n[Page 46]\nrable values of each disposition category. We provide Fulfillment by Amazon services in connection with certain of our sellers\u2019 programs. Third-party sellers maintain ownership of their inventory, regardless of whether fulfillment is provided by us or the third-party sellers, and therefore these products are not included in our inventories. We also purchase electronic device components from a variety of suppliers and use several contract manufacturers to provide manufacturing services for our products. During the normal course of business, in order to manage manufacturing lead times and help ensure adequate supply, we enter into agreements with contract manufacturers and suppliers for certain electronic device components. A portion of our reported purchase commitments arising from these agreements consists of firm, non-cancellable commitments. These commitments are based on forecasted customer demand. If we reduce these commitments, we may incur additional costs. We also have firm, non-cancellable commitments for certain products offered in our Whole Foods Market stores. Accounts Receivable, Net and Other Included in \u201cAccounts receivable, net and other\u201d on our consolidated balance sheets are amounts primarily related to customers, sellers, and vendors. As of December 31, 2016 and 2017 , customer receivables, net, were $3.9 billion and $6.4 billion , seller receivables, net, were $661 million and $692 million , and vendor receivables, net, were $2.0 billion and $2.6 billion . Seller receivables are amounts due from sellers related to our seller lending program, which provides funding to sellers primarily to procure inventory. We estimate losses on receivables based on known troubled accounts and historical experience of losses incurred. Receivables are considered impaired and written-off when it is probable that all contractual payments due will not be collected in accordance with the terms of th\n\u2026 [14,665 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**Amazon\u2019s FY2017 DPO was 93.86 days.**\n\nCalculation: Average accounts payable = ( $25,309 million + $34,616 million ) \u00f7 2 = $29,962.5 million. Inventory change = $16,047 million \u2212 $11,461 million = $4,586 million.  \nDPO = 365 \u00d7 $29,962.5 million \u00f7 ( $111,934 million + $4,586 million ) = **93.86 days**.\n\nThe accounts payable and inventory balances are from the balance sheet (p. 40); FY2017 cost of sales is from the statement of operations (p. 38).",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxG6HGTcmVbVnA8M-v3fe9kwwnlKDS1vjj8OBT9Xd_km8JoQ7p8owgewUUXSIdWf3ebYg6AuxCWYo45SIvr3fIWc_8zwEBJ9WoM-happFAOIO-EH8QrKvK8rIF7zhpZZefUMsFRdtq7nE2wh6_eIk5bsGb9NMymO7WU2wGvpzTx127ddmZr44zlzTWFZJl7V6jXTODNYNblqmY5Vxw3PPmswnoO7D003Pv620LQ4TSTF7rOMjo0lC1i9lx-0DObzMVXm4-0uUrDsofNm2G14FBxo9SJIPrD5-FLJ_4OgupOm7oHSD2IwTbAxcnXIo_LhwaA7e-8s6TIYxovf9KukA6R0XnGXKIjMl5wrFnfBevInnRigB88M7KT29p5NdjCWcJpPRkzOshKaeFRbjbpJ6njoyJQfsdK2udpZmKPhfu5vzOnzREcjpWH5PTdHfnnP8ivHtZwHoEDk-KFZxukh3hkmfA_dIaebIysmSZCrTpEd8mhQKX8_7PBMCOGxG3I5FExQLfKQNdFzFPQg4_J894otB31uc3AieOSCgOK0YpjM-yuvy-NPPoKzqzp7wk3aHZrZjjf8hIBKFAcjrBKKGdhZ--BDIoSaOS_oSDPmv0jwc0h9IYNdlZGDNLOOGsbZ__xRmzCVJ_lKXpx-H1d6BMF-6x_kKZ9vO5inw8rYRLnlgmhXsBWmTRqY83KNaJJQ8sE2Yt42bsz82RSBJR_Mo84NsWLbF-BULOVUjFFx6Dqz6R4-fW3RPWvBD-DEgtJngCqQ7R9aJV03F9yzdMpBPOWZf7cT38ClK20LFOMI33NS18F4GLwdI15m_Jshn3JFXCp2TGFDml5xMQB_D1nqOHWAHwX4zk62usYlfY7aVygmtch6yFLnjH8RkF8sUGNwvx5svA0fSyslgI_wY0T7vtr8Tc8Yvl8wfrSIO0ulmsMLKcrVcz1XNYbutNizPWFyyAQWqKUa5irIgMOSylR4DZ-06LWbnk4ger1pR5QeBEtBuelkC2P8BOI8WkTd0HXLFJw-LtK4A5vSBubQLwCXN-P756Et-xtD5G9t2MGVoUrNeKBfFdhVukBGcRX7mFvIZSRWxqmr2sc666Uo0mIgjtq_AmVoWZnXxkG9EDeQISnflA1mF5VlO1ctcYS3c4QmRfazEjKUF5ejueFpXdwNtkbfX1qJpVJT-hMe4_h0es4SJMNfQyADcTi3TJTTN910miKQbS8i6fWemJ4oW78m-6zSvEmpFLGOZED7fkyisfQiJEZE1w2X4J-P14JmZ1iXxuyItau4uec_QNSmZGx6Jtyyz7BBDhLg_3_c5iHCrmplJ1NWt_LrMbdkC1PQaJ3Olc9LafiTuKtAe3malyKeBd6KIye5hDrhlfV84hGw_QeY_B0lRMIB7dxOHRJz0yQ-iLr-EzalCjQHw_y_AyOtrnd-Jk7aKNy6wqYK9SXlgcL-eWz21kS-KLrap2UJF9rUPfNAe6JxdsNC6mat9YX2Ji3YRGRjSYOHTyvuVOhYa_WQ6OFkn8Ijcc9255isE7jvTJEfqouEmMoaod6ziM9kpDvmKThQyzitlXvm89914NzDR6OoIzMN9R43Z_p9DY6QyybMwM-1u1K5RVbNydoD8Km3QQ02kzGAC69g4qd5DQ734bkXXtbc1LGbHPClj1aPdqR08lWp7EMG48u4WmmV2FaZkqXr8gtXmY35aUh-eMmKX1CPHts-olh5fa3jmXJLNnRAcD3O32HqyTldt963eotCdMy5rJ1dLjDez2x9rwdSCRbFQZoc-tYTP47zFCkWxtIMKLFFuNjB4gk2Hi0JdWQXTGOMVXss8IhIpLvtXVQUc9K5981xMPV1zi0noz23QQ--vNqI-5bUoQgT35w2GMljz-MaJj4UfvVvRRCYkK2JVdn-VIpECz0IoMMc8-rcZd9wDLl_omoQs_udDF2I0JjNDw4a05AfU9H-WMipz1yfE25X6fqdeobimGJOFZoHdb4Q6Q1DM6irMMRS9tUAiypI6UA2vLR1L3iVt1h-ZrYOFCd_HkEMdtIDSjf5oLuY0O4DhESP8Sz-839Vj08Rn0Y3dHUnJsv8-V9LPE8bZeDam51v_7pCUGDXn9qmRvMVJw3ODU0fpmy8jSyG_CkrmRc9Wp4YUU2EiRcoYCCQX0cRyasMyXfD1mOl-3g5iHNLFkMy0D6RzW36Y_TRuky6dEIcuu3l7Vh6MJlMHQwh6MSxfQCSTzlJSfadB0A_VCk-gImGCTY8DEhW54VjHdX1q_eCB3y3zkA1CvmWcV7C6oP0Ch-x6ar8gq186TA7a6JT8MHck0QA8ifZhwuvMTrj5V2JAFBAeXWgXEEPU6vbToulls=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0932eb889be499e2016ac21c43fc5c87d193221c9c2a875e00",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 4080,
+   "output_tokens": 419,
+   "reasoning_tokens": 272,
+   "seconds": 5.41
+  }
+ ],
+ "answer": "**Amazon\u2019s FY2017 DPO was 93.86 days.**\n\nCalculation: Average accounts payable = ( $25,309 million + $34,616 million ) \u00f7 2 = $29,962.5 million. Inventory change = $16,047 million \u2212 $11,461 million = $4,586 million.  \nDPO = 365 \u00d7 $29,962.5 million \u00f7 ( $111,934 million + $4,586 million ) = **93.86 days**.\n\nThe accounts payable and inventory balances are from the balance sheet (p. 40); FY2017 cost of sales is from the statement of operations (p. 38).",
+ "retrieved": [
+  {
+   "page": 20,
+   "score": 0.491
+  },
+  {
+   "page": 46,
+   "score": 0.4668
+  },
+  {
+   "page": 37,
+   "score": 0.4629
+  },
+  {
+   "page": 40,
+   "score": 0.4562
+  },
+  {
+   "page": 43,
+   "score": 0.4519
+  },
+  {
+   "page": 22,
+   "score": 0.4378
+  },
+  {
+   "page": 59,
+   "score": 0.4223
+  },
+  {
+   "page": 49,
+   "score": 0.4206
+  },
+  {
+   "page": 42,
+   "score": 0.4174
+  },
+  {
+   "page": 38,
+   "score": 0.4153
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The final DPO of 93.86 matches the gold answer, and the supporting calculation checks out.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002408,
+ "provider": "aipipe"
+}

@@ -1,0 +1,55 @@
+{
+ "id": "financebench_id_00603",
+ "question": "What drove the increase in Ulta Beauty's merchandise inventories balance at end of FY2023?",
+ "gold": "Increase in Merchandise inventories balance was driven by the opening of 47 new stores. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+ "doc": "ULTABEAUTY_2023Q4_EARNINGS",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.5,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 5479,
+  "cached_tokens": 0,
+  "output_tokens": 222,
+  "cost": 0.0006589,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nMarch 9, 2023\r\nUlta Beauty Announces Fourth Quarter\r\nFiscal 2022 Results\r\nNet Sales of $3.2 Billion Compared to $2.7 Billion in the Year-Ago Quarter\r\nComparable Sales Increased 15.6%\r\nNet Income of $340.8 Million or $6.68 Per Diluted Share\r\nBOLINGBROOK, Ill.--(BUSINESS WIRE)-- Ulta Beauty, Inc. (NASDAQ: ULTA) today\r\nannounced financial results for the thirteen-week period (\u201cfourth quarter\u201d) and fifty-two-week\r\nperiod (\u201cfiscal year\u201d) ended January 28, 2023 compared to the same periods ended January\r\n29, 2022.\r\n13 Weeks Ended 52 Weeks Ended\r\nJanuary\r\n28,\r\nJanuary\r\n29,\r\nJanuary\r\n30,\r\nJanuary\r\n28,\r\nJanuary\r\n29,\r\nJanuary\r\n30,\r\n(Dollars in millions, except per share data) 2023 2022 2021 2023 2022 2021\r\nNet sales $ 3,226.8 $ 2,729.4 $ 2,198.7 $ 10,208.6 $ 8,630.9 $ 6,152.0\r\nComparable sales 15.6% 21.4% (4.8%) 15.6% 37.9% (17.9%)\r\nGross profit (as a percentage of net sales) 37.6% 37.6% 35.1% 39.6% 39.0% 31.7%\r\nSelling, general and administrative expenses $ 762.7 $ 650.0 $ 514.1 $ 2,395.3 $ 2,061.5 $ 1,583.0\r\nOperating income (as a percentage of net sales) 13.9% 13.8% 10.2% 16.1% 15.0% 3.9%\r\nDiluted earnings per share $ 6.68 $ 5.41 $ 3.03 $ 24.01 $ 17.98 $ 3.11\r\nNew store openings, net 12 6 2 47 44 10\r\n\u201cUlta Beauty\u2019s strong fourth quarter results punctuate an exceptional year with record sales,\r\nprofitability, and member growth, reflecting robust demand and best-in-class execution,\u201d said\r\nDave Kimbell, chief executive officer. \u201cFor the first time in our 33-year history, Ulta Beauty\u2019s\r\nannual revenue surpassed ten billion dollars, our annual net income exceeded one billion\r\ndollars, and we exceeded 40 million Ultamate Rewards members. These milestone\r\nachievements demonstrate the power of Ulta Beauty\u2019s highly differentiated model, the health\r\nof the growing beauty category, and our winning culture and outstanding teams.\u201d\r\nKimbell continued, \u201cAs we move into fiscal 2023, we remain optimistic about the strength and\r\nresiliency of the beauty category, and I am excited about the opportunities ahead to continue\r\nto expand our leadership position, capture market share gains, and drive long term value for\r\nall our stakeholders.\u201d\r\nFor the Fourth Quarter of Fiscal 2022\r\nNet sales increased 18.2% to $3.2 billion compared to $2.7 billion in the fourth quarter\r\nof fiscal 2021 primarily due to the favorable impact from the continued resilience of the\r\nbeauty category, retail price increases, and the impact of new brands and product\r\ninnovation compared to the fourth quarter of fiscal 2021.\n\n[Page 2]\nComparable sales (sales for stores open at least 14 months and e-commerce sales)\r\nincreased 15.6% compared to an increase of 21.4% in the fourth quarter of fiscal 2021,\r\ndriven by a 13.6% increase in transactions and a 1.8% increase in average ticket.\r\nGross profit increased 18.0% to $1.2 billion compared to $1.0 billion in the fourth\r\nquarter of fiscal 2021. As a percentage of net sales, gross profit of 37.6% was flat\r\ncompared to the fourth quarter of fiscal 2021, primarily due to leverage of fixed costs,\r\nfavorable channel mix shifts, and strong growth in other revenue, offset by higher\r\ninventory shrink.\r\nSelling, general and administrative (SG&A) expenses increased 17.3% to $762.7\r\nmillion compared to $650.0 million in the fourth quarter of fiscal 2021. As a percentage\r\nof net sales, SG&A expenses decreased to 23.6% compared to 23.8% in the fourth\r\nquarter of fiscal 2021, primarily due to leverage of marketing expenses and incentive\r\ncompensation due to higher sales, partially offset by deleverage of store payroll and\r\nbenefits due to wage investments and deleverage in corporate overhead due to\r\nstrategic investments.\r\nOperating income increased 19.2% to $447.6 million, or 13.9% of net sales, compared\r\nto $375.6 million, or 13.8% of net sales, in the fourth quarter of fiscal 2021.\r\nThe tax rate increased to 24.6% compared to 22.9% in the fourth quarter of fiscal\r\n2021.\r\nNet income increased 17.8% to $340.8 million compared to $28\n\u2026 [15,753 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhUylF32Rfgnmo6MQgrZOw-3LUfeZnHHckvrT68-PKaS2Qyc_Rc3k4mtIb4PL16PdVcXjXp5QqNd6ndYZGE2ALSrOBBFxQ1w8xxFjYhMD2TELnmFAB3r9g8RQRU3v3CH4ks4E-y-l56VqGXxSSUfZzocmuWPv7zlIVxuRkiBE1RtePS6WAO19_rdb3lElOlSnC6SijViyoc16v0RFZjd9zj-yUFgjaVCffrCy1VwgSePDIx88weQPvnLs6ApAPH2khahiiysDBNwcgVrvDaT4G7Dge0KYuElyU1LSixRtBqOxy2LZT2-sN77D2HmTRdugTar-Fcah9XlLdutGvGAXiKC5-vneRl4z7Px0h334hJW1lUqdq0aF5--3H9XXtuS-PVpPswEsJSEt1JY0EPniZVis_5MiykOyi6sfPFqeu9VlpbpEzBU5UotyntxWRzlMG82RM_cx7OmMi9eQEZMqmt-6NYLSEt5bxpEOyBW5PfPm0aFNJzVfoKhSkHV9SrdiLQdxY48oESprTZUGY6Ria152mq1Y_2j182ZJ_KxmMULwn2HWfRpCnNoKEbSEtTHJzUKZhUsKZDo61_GbaF3gztL7ZRZ_f0gL8tKrGNVAqTsUlfgYA67byzkmENvJQXv8CB_kTiWi8pVzG7IAboiIEqf1q3ZIChO0SpaoDZRVprbt_P1KkDNo3RGY9q3LsrK41v6gkmTGBsTE2CgryTfdhqtWe7JPYRD9j-rcNqoDdzsPdT8bGkvc-y8QLLrhidGZVRPRrK75ZKvc3U0xOXT8cT2pxE8itkLZ3jvrenW8uvDHfYabVWVri6PnvQL3ox9LRb_d1grVP90Te6je2PRKxEwgP6qfYDtX4PUmxKA-icScwmeD9l6hLHwrZ1VUhT6apQ4hejREM2gtca521DZ8tCnCAEJNDKX78t8uBs8tzQgzJ_3qfbh4FaYvO0kyc62yAGBEnp3boh_-2mGU_HA19iUA-E-s46GNXF_t_09rpODZh7QZnu4UpVSthvhHvBM9oXhLmgruQyyd7SfcJCTunHMB8hM3Jc7gwoJjbUl4q5hi9DdD03pRjEeAbNTIpjTUvstWpvMZOzVNDCv-kUUQXpvnmeoQP3_DPhV5rtY1qNLTmxROngFer9EUkh38DUkdFx9Sjbowraduxy-LLy4P1ZqEGCUVBXiKN5dKzuNjM8oOgUY0dutKIySd4bsWXYt2ERcezqXbZ2YULdaXrukFsmpRKxaC7u6-OKrQ-1cmgDWbAYfC9FJIHjKN465_TOUF-tefiEJG0ixihEN2SXIDvO5hs6jpdmdjOFXrCj4B9dPAC25GrgiZneRt77jXiS07gH0semcYHGlgtt3WOKG_Exw-UB2Q8O4TpdR7u24DFd-TV7CRMwd6HMojc014yAxO-lx4vV2KlsGiHVM6ntszp0KPOJLMkAc7v46xMAb-hWtoJ5P9sDbnJtL51Zo13t6nSTcuNS4jTU0JtDdrBAvDZD111jvahndGoHmX_-35go9HREV57JiIEf_MYbQl68vkx0rOSUrvVkWdrvVprwuriWqpR0Wm0UouYycJaTugqj5oAsXGTWrFTsrTfbZWjBC7ilv7TREicv-gI3-mO4BpI--z7FPIra5jtqLckrNeEeoUr3yrcWIbIVQq0393JklOuXpPu1e5yxJKKqYHnDtIQCJClGGWFdBtYuO9piI47gl0mQKlKmDqLEOUmHFUpelbU181kC2eJCHf-V5F2ia0aSv5UES67fU6Fetx01jWoEUqLT6pfA-dyVhjURPdFC5pIhR0BOHMXYUFFfJjscQ24D0RV8_z1cuTfiKhu3Wn8KuC7ITvhMBVz14YvcaYmxuctfit1E6kk_amZObH2-LXeW6EkMJm55GUoegIOLoGUAmkMqK3hGtPlVNhbXipFPW4vAIShsSwq5NmpPWXDvDsXbUj5fXkPD9VFsdYwzL5bQxSEqFa8VzjykH0b89k9khAE4S2qU-HgGnAUxlCwKSU4Cx2_FGEqgZiXuwVWPB0tciSkwiZULhlKPY6Hpxk5BLX5I4gXPhJtgfaJ1LYuPqehfwLk9WSe6q0ZpnuygSIKmVol1dOme1yg8y-qTHrNDoiudZoWr4Zuk82nTEpDOjOb_yjqcGI59oq4DAWiurclwR-u6nut0luHzkXvup2kUrHbeQ7bSWQ4U7p26Zwb2ZYFXMSZUAqIuHYwmWEh-kKOT7NVTN-14IeFNnVg2YKZdiLWX-WlU1xEq7uUGTj_ao82kL-6qINknwZNX24PSvb0IQ8BoexWIad47Er3w-MKxbvJmOb3YZKolKpLS-Xf13ubEbgOxSPfH90raSZEbroA1W9FX847VrSySdQ7_ag9guIRJlQCWsXD28VjZUrsWlzSWsK8D8VGRPjQeyVH4Zin2E2e-2Xk32WRwdj3lACHmKuUDPLaEI5IHd22mbLo2VWWKEP2zfZ6eOxAV_YM_A_BBtrWx6wlCa_gRzoiWYMmJpxhrP6M-LIDrxvfsRFvoi0ok28ykQaZ2Q3eUlRtWavWDzmcx42FXxnjkF22I_b-f3P3WoPxibIV-v3rxWUULm5N_2VviOQ_4xW_X1qyTPullW2BM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_07f130dfad62bbca016ac2153160ec87d1b934cb0e14cf1924",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 5479,
+   "output_tokens": 222,
+   "reasoning_tokens": 208,
+   "seconds": 3.46
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "verdict": "refusal",
+ "reason": "The answer says it cannot find the information and does not give the gold answer's conclusion (47 new stores).",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00131,
+ "provider": "llmfoundry"
+}

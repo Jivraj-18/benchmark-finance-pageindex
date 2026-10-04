@@ -1,0 +1,643 @@
+{
+ "id": "financebench_id_01490",
+ "question": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+ "gold": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+ "doc": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 13.4,
+ "usage": {
+  "calls": 5,
+  "input_tokens": 11023,
+  "cached_tokens": 6107,
+  "output_tokens": 481,
+  "cost": 0.00079317,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 27 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+      "function": {
+       "arguments": "{\"pattern\":\"gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWTdDqAyMAtw3pyKSIKB1pSbeloga4GRaVX2NDWW6SBM6F8bNe0qV_Sjvw29QwdsUuAk7lajdWNKmIYiOCUZEe37GN1vjnKxJVYkERvd0N8pvYVbxlh0bqp9sJEHt7nXsEOfVJXFUgYZW91TI7AOPnjhSqxCgGU8WAgyKKBTm4WyZwgkpUMjQ-Q9XX1ulPAB8Al_HZjRnqZTp0_-nfQwbpZ_KYNMwpFVzonltdvFW7QLd5GS_TTi0CX-g6mhXWntu9igwxqKRZ-h1FYFJbFK17t1QmDLZ7awGDAWZbGC6oqpTqzE2pDnYeXwVwxBXP8tfDc8x0cdHsjM4wuWyKvrTQPDlU59kgDAZxFHuFtldpHl4IGysF7hx_ze3XSrTLgtR8WsfgCRhyw0AnUUXkYneXLTY8Qg0YyxMrWLTAp6tEYmBy4NySC3rc7DcWQyViiL5oQu79otUhKBS6Gl39Go_DPOuoKc4DdCTPA4yAjs0fiOJeSgJEYGIX7V5n9y9qDxwt6uKyOj66WKUnZaNr-8mCCMulCZxgqze0E-_RXASbkYMssKnVhSDrTh9j8TXH_B6s6RB084aKs-ny2q7y1L_kGxN4Fdx_CsuAxapAOI22zSiFJbf4KZQ4_NOf-KLfHdMhYifXYegnzYLxFNH3CHgQo59TfIDrjUY-nZ4gPZrYYUW8G8thucImVjv2kjzxWgANUc5xLDRHD5JhMsK5dm6-1xW_gBavLDBdHRKxeNu0jhrccj0b_getXkljv__AUshlur5pnF115zQYRkpjDlTJaZsScx7fAaxsv_Aor1WDH1c_8cBQe5EkLZB6cYdCDEgj8EsPizpABk2VsJNBlo3ec1-8S_dGPqBGJG8G3CSC2ZStMD9M_8A52q3NUCZnUq2pT5IurqABK2wJxn6gFBx-EUn3rBo1ZgD4o2yjbjc1Bd3xM_KwrR7c9UPDXtxlK9Q8a3kCqvZUIDAEk40Cp2G7QMVO8OZRgXoB9-WsFF3jybtfToE5FhAnZXyND36xqSXYVrCDrVb2M3zWXssj8ZFWfBN6fbUOeg8IFYTmECi7K__k1wX73nqtrlqKBrEvxjpZqoVv8v8txdUGfiGa_s3aHM6LeyliipQkQLXWo4b0pcDrUri6KFW-lK92InFuPu5ybRbTknY-k-b2crexX23tHGpGH3O_cfwAp2kVx8L9x3dD2pkgTFKtO1DbRtOczaOG-EBJs4l9BRzL0bPAESOg5jPh-hJLFobXjXn85N4o9Q1bfnxpGIfSrPQlHKCghCDc59I5sw0vussMmXM_wO46ityiSVBFCgrmDYtCuiaTmIsSR10qC679wp_9GLAFX7ZCWujLo_DjSbJqoz1dMmwJqw1kg2yifPACLkfSOfAWAt7h9fMGZl79W4ri57uQZ4ji_miRlO8BWqisci1W89hIjede4Ovyfm_RX0yB8tVxXirSqe2qGKznkfhsdG9pCf8ObT-DoG62bq_nncZdvFsjJC8prpWfuG_K880chSwXkqiL11d6A9gW1NRd7vdEPV6Rg.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0fc68c3155360648016ac21591fc3887d18e64fd428927eb15",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 234,
+   "output_tokens": 83,
+   "reasoning_tokens": 43,
+   "seconds": 2.78
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 27 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+       "function": {
+        "arguments": "{\"pattern\":\"gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWTdDqAyMAtw3pyKSIKB1pSbeloga4GRaVX2NDWW6SBM6F8bNe0qV_Sjvw29QwdsUuAk7lajdWNKmIYiOCUZEe37GN1vjnKxJVYkERvd0N8pvYVbxlh0bqp9sJEHt7nXsEOfVJXFUgYZW91TI7AOPnjhSqxCgGU8WAgyKKBTm4WyZwgkpUMjQ-Q9XX1ulPAB8Al_HZjRnqZTp0_-nfQwbpZ_KYNMwpFVzonltdvFW7QLd5GS_TTi0CX-g6mhXWntu9igwxqKRZ-h1FYFJbFK17t1QmDLZ7awGDAWZbGC6oqpTqzE2pDnYeXwVwxBXP8tfDc8x0cdHsjM4wuWyKvrTQPDlU59kgDAZxFHuFtldpHl4IGysF7hx_ze3XSrTLgtR8WsfgCRhyw0AnUUXkYneXLTY8Qg0YyxMrWLTAp6tEYmBy4NySC3rc7DcWQyViiL5oQu79otUhKBS6Gl39Go_DPOuoKc4DdCTPA4yAjs0fiOJeSgJEYGIX7V5n9y9qDxwt6uKyOj66WKUnZaNr-8mCCMulCZxgqze0E-_RXASbkYMssKnVhSDrTh9j8TXH_B6s6RB084aKs-ny2q7y1L_kGxN4Fdx_CsuAxapAOI22zSiFJbf4KZQ4_NOf-KLfHdMhYifXYegnzYLxFNH3CHgQo59TfIDrjUY-nZ4gPZrYYUW8G8thucImVjv2kjzxWgANUc5xLDRHD5JhMsK5dm6-1xW_gBavLDBdHRKxeNu0jhrccj0b_getXkljv__AUshlur5pnF115zQYRkpjDlTJaZsScx7fAaxsv_Aor1WDH1c_8cBQe5EkLZB6cYdCDEgj8EsPizpABk2VsJNBlo3ec1-8S_dGPqBGJG8G3CSC2ZStMD9M_8A52q3NUCZnUq2pT5IurqABK2wJxn6gFBx-EUn3rBo1ZgD4o2yjbjc1Bd3xM_KwrR7c9UPDXtxlK9Q8a3kCqvZUIDAEk40Cp2G7QMVO8OZRgXoB9-WsFF3jybtfToE5FhAnZXyND36xqSXYVrCDrVb2M3zWXssj8ZFWfBN6fbUOeg8IFYTmECi7K__k1wX73nqtrlqKBrEvxjpZqoVv8v8txdUGfiGa_s3aHM6LeyliipQkQLXWo4b0pcDrUri6KFW-lK92InFuPu5ybRbTknY-k-b2crexX23tHGpGH3O_cfwAp2kVx8L9x3dD2pkgTFKtO1DbRtOczaOG-EBJs4l9BRzL0bPAESOg5jPh-hJLFobXjXn85N4o9Q1bfnxpGIfSrPQlHKCghCDc59I5sw0vussMmXM_wO46ityiSVBFCgrmDYtCuiaTmIsSR10qC679wp_9GLAFX7ZCWujLo_DjSbJqoz1dMmwJqw1kg2yifPACLkfSOfAWAt7h9fMGZl79W4ri57uQZ4ji_miRlO8BWqisci1W89hIjede4Ovyfm_RX0yB8tVxXirSqe2qGKznkfhsdG9pCf8ObT-DoG62bq_nncZdvFsjJC8prpWfuG_K880chSwXkqiL11d6A9gW1NRd7vdEPV6Rg.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21591fc3887d18e64fd428927eb15",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+     "content": "p1: August 30, 2023\np1: Johnson & Johnson\np1: One Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\np1: Common Stock, Par Value $1.00 JNJ New York Stock Exchange\np1: 0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\np1: 5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\np1: 1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\np1: 1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\np2: Johnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\np2: 99.1 Press Release dated August 30, 2023\np3: Johnson & Johnson\np3: Date: August 30, 2023 By: /s/ Robert J. Decker, Jr.\np4: Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\np4: New Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and\np4: \u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering\np4: Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its\np5: Johnson & Johnson.\np6: Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with\np6: to Johnson & Johnson's results computed in accordance with GAAP.\np6: reduction of approximately 73.5 million shares of Johnson & Johnson outstanding common stock as a result of the Kenvue exchange offer.\np6: Because this net reduction occurred on August 23, 2023, Johnson & Johnson will recognize only a partial-year benefit of $0.28 to its full-year\np7: current 90-day lockup agreement. Johnson & Johnson is under no obligation to do so if market conditions are not supportive.\np7: Johnson & Johnson has published a recorded webinar for investors to provide additional context behind the updated financials and 2023\np7: ABOUT JOHNSON & JOHNSON:\np7: At Johnson & Johnson, we believe good health is the foundation of vibrant lives, thriving communities and forward progress. That\u2019s why for\np8: expectations and projections of Johnson & Johnson. Risks and uncertainties include, but are not limited to: economic factors, such as\np8: in Johnson & Johnson\u2019s Annual Report on Form 10-K for the fiscal year ended January 1, 2023, including in the sections captioned\np8: \u201cCautionary Note Regarding Forward-Looking Statements\u201d and \u201cItem 1A. Risk Factors,\u201d and in Johnson & Johnson\u2019s subsequent Quarterly\np8: www.sec.gov, www.jnj.com or on request from Johnson & Johnson. Any forward-looking statement made in this release speaks only as of the\np8: date of this release. Johnson & Johnson does not undertake to update any forward-looking statement as a result of new information or future\np8: media-relations@its.jnj.com investor-relations@its.jnj.com\np9: Johnson & Johnson and Subsidiaries\np10: Johnson & Johnson and Subsidiaries\np11: Johnson & Johnson and Subsidiaries\np12: Johnson & Johnson and Subsidiaries\np13: Johnson & Johnson and Subsidiaries\np14: Johnson & Johnson and Subsidiaries\np15: Johnson & Johnson and Subsidiaries\np16: Johnson & Johnson and Subsidiaries\np17: Johnson & Johnson and Subsidiaries\n... 10 more matches; narrow the pattern."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+      "function": {
+       "arguments": "{\"first\":1,\"last\":3}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWV5RdKKcxEmVsOLtEKBcC-LIx0f0lVDYMK22tqOLG1YMfGMDZ-keO0uGwsy17-vpSgjBRc5oR3ZoUnSgD9dbo4w2B2sGyMGM1ePecUY4bJEv2yYmVceOJ8Jz8JaU0iPT1-dVhXb48KkAMdQdPfBXS9ATk2aLiddUvCYfbfNJTQyk13VrRjj4DcxHon6btkvCYvze4eA1cNk_9MZWrCN0sABpn1GoGsU304H9r1wgWivimkR9aM7yx0LXR0TDgBPdps6nGe6KWEBZW9iYuJGUWNsu7jEso0gnj3mA5xtEwu_uFtQ_gzqLDrmV4quORdLP4VRG7iT_vppazIuQh5J1RVtssZ-hqTXuSWi7RUDtnxf9zFPs83JT8l8BgpI9_AobO5VHw6RW8TphslJNHJY33oKM27KkC48rNZgX7qNbjFVp12i4xwYvFrC2yeSX9M5ApBwqCj1zkHJf7oahJj8HlC70HuJnE-K2W824vYQk_QzpIVIEPNE3xNEbIXofY9ThxyMzqeB0t1SK1S3q0TjU30OqV6oZKJkbMw1XkvEWVoeP8_9762Ek0otEQzZL_WnNtMCkf_vVJmNXrPZK_UeiZaF_SM83wT1Ec5tEXJmGL2A4xIX3zP8BiEiHL-E9t7ssT1HKB_s1y0t7Wkj6YdxLOXLl3wg7LJiQwtOG-n2yE2iL61ubRGKCMCoFHGzlkk2qJDbplH58mm2gLrGh-lJLU5Zo-mNfkFixs8s75VNzp0DZLoL7Xdmp1HiMDRn_98DmW5l-7m9qfEG2FSPfdj2r9BDlZVGaDjnp6NaeEvXwuaSauNmGuJcXjRKpbQgRfuzu-eYjm6yKXLUVnHgq2iEfoQcZ78bm4tIlXGJvFdbPcWyrYBr-gcgVWvaZ6-MYH6VQjnBVQM7-iKly1YmXoNdWowWPLLc6mAHMjXPiiGd6vsMhTjX4R81JptabhCaxwXTUm8IAYbZB0OsCuKH9JemFEzHAkJhptpdiKBdfx1toxT3fMXkb6tK9WfolfjDQ46q-TYTRWxh8TFKACxcyhEFV07lk3R_6ZZIhDCfxdRzWDO1VscxJzTHniPJcEOdlRYC3Cm2G3ADhh568BvyN6fhu60Pj4YmpNec2_tYItsix3-ZWgsFVsbpS-3n7QR-_c6ljVlsAOSfkkhtJHZuvHXx9e0ijrZzHsKvbF7F7XSgpg-xyrGjl6aS7tyFqpjz17PaMdTTLAwCtynTOVZJ3MbQogx0ZaXXJFN6ezsRhs-rlXHzmEAsnaTOgKwWJDsTC4zUkeLGPmw6MunFvOjz9zzn8T_eW65vTZYPws2vjhFXzrsZhL8WoZZsinRAPmNFelnOEgzBkhZm1CkhtchmEC-WSVYqE44yaEmsJ7WdIVihCV7RkHrnfhaz-QJJD0AwaSmpoytk7pAHCE7uv_-i5GOQMbW9DIiZrMlG7CC87YDnjNTfFLivFlR2ndIdnREAbEgRHqXKfLqfYFByPjZkz8vHTRZo7YuiXuZqJ979gReCsJTlZQ=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0fc68c3155360648016ac21594855c87d1b52319b0a4915b33",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 1177,
+   "output_tokens": 63,
+   "reasoning_tokens": 39,
+   "seconds": 1.5
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 27 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+       "function": {
+        "arguments": "{\"pattern\":\"gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWTdDqAyMAtw3pyKSIKB1pSbeloga4GRaVX2NDWW6SBM6F8bNe0qV_Sjvw29QwdsUuAk7lajdWNKmIYiOCUZEe37GN1vjnKxJVYkERvd0N8pvYVbxlh0bqp9sJEHt7nXsEOfVJXFUgYZW91TI7AOPnjhSqxCgGU8WAgyKKBTm4WyZwgkpUMjQ-Q9XX1ulPAB8Al_HZjRnqZTp0_-nfQwbpZ_KYNMwpFVzonltdvFW7QLd5GS_TTi0CX-g6mhXWntu9igwxqKRZ-h1FYFJbFK17t1QmDLZ7awGDAWZbGC6oqpTqzE2pDnYeXwVwxBXP8tfDc8x0cdHsjM4wuWyKvrTQPDlU59kgDAZxFHuFtldpHl4IGysF7hx_ze3XSrTLgtR8WsfgCRhyw0AnUUXkYneXLTY8Qg0YyxMrWLTAp6tEYmBy4NySC3rc7DcWQyViiL5oQu79otUhKBS6Gl39Go_DPOuoKc4DdCTPA4yAjs0fiOJeSgJEYGIX7V5n9y9qDxwt6uKyOj66WKUnZaNr-8mCCMulCZxgqze0E-_RXASbkYMssKnVhSDrTh9j8TXH_B6s6RB084aKs-ny2q7y1L_kGxN4Fdx_CsuAxapAOI22zSiFJbf4KZQ4_NOf-KLfHdMhYifXYegnzYLxFNH3CHgQo59TfIDrjUY-nZ4gPZrYYUW8G8thucImVjv2kjzxWgANUc5xLDRHD5JhMsK5dm6-1xW_gBavLDBdHRKxeNu0jhrccj0b_getXkljv__AUshlur5pnF115zQYRkpjDlTJaZsScx7fAaxsv_Aor1WDH1c_8cBQe5EkLZB6cYdCDEgj8EsPizpABk2VsJNBlo3ec1-8S_dGPqBGJG8G3CSC2ZStMD9M_8A52q3NUCZnUq2pT5IurqABK2wJxn6gFBx-EUn3rBo1ZgD4o2yjbjc1Bd3xM_KwrR7c9UPDXtxlK9Q8a3kCqvZUIDAEk40Cp2G7QMVO8OZRgXoB9-WsFF3jybtfToE5FhAnZXyND36xqSXYVrCDrVb2M3zWXssj8ZFWfBN6fbUOeg8IFYTmECi7K__k1wX73nqtrlqKBrEvxjpZqoVv8v8txdUGfiGa_s3aHM6LeyliipQkQLXWo4b0pcDrUri6KFW-lK92InFuPu5ybRbTknY-k-b2crexX23tHGpGH3O_cfwAp2kVx8L9x3dD2pkgTFKtO1DbRtOczaOG-EBJs4l9BRzL0bPAESOg5jPh-hJLFobXjXn85N4o9Q1bfnxpGIfSrPQlHKCghCDc59I5sw0vussMmXM_wO46ityiSVBFCgrmDYtCuiaTmIsSR10qC679wp_9GLAFX7ZCWujLo_DjSbJqoz1dMmwJqw1kg2yifPACLkfSOfAWAt7h9fMGZl79W4ri57uQZ4ji_miRlO8BWqisci1W89hIjede4Ovyfm_RX0yB8tVxXirSqe2qGKznkfhsdG9pCf8ObT-DoG62bq_nncZdvFsjJC8prpWfuG_K880chSwXkqiL11d6A9gW1NRd7vdEPV6Rg.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21591fc3887d18e64fd428927eb15",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+     "content": "p1: August 30, 2023\np1: Johnson & Johnson\np1: One Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\np1: Common Stock, Par Value $1.00 JNJ New York Stock Exchange\np1: 0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\np1: 5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\np1: 1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\np1: 1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\np2: Johnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\np2: 99.1 Press Release dated August 30, 2023\np3: Johnson & Johnson\np3: Date: August 30, 2023 By: /s/ Robert J. Decker, Jr.\np4: Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\np4: New Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and\np4: \u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering\np4: Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its\np5: Johnson & Johnson.\np6: Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with\np6: to Johnson & Johnson's results computed in accordance with GAAP.\np6: reduction of approximately 73.5 million shares of Johnson & Johnson outstanding common stock as a result of the Kenvue exchange offer.\np6: Because this net reduction occurred on August 23, 2023, Johnson & Johnson will recognize only a partial-year benefit of $0.28 to its full-year\np7: current 90-day lockup agreement. Johnson & Johnson is under no obligation to do so if market conditions are not supportive.\np7: Johnson & Johnson has published a recorded webinar for investors to provide additional context behind the updated financials and 2023\np7: ABOUT JOHNSON & JOHNSON:\np7: At Johnson & Johnson, we believe good health is the foundation of vibrant lives, thriving communities and forward progress. That\u2019s why for\np8: expectations and projections of Johnson & Johnson. Risks and uncertainties include, but are not limited to: economic factors, such as\np8: in Johnson & Johnson\u2019s Annual Report on Form 10-K for the fiscal year ended January 1, 2023, including in the sections captioned\np8: \u201cCautionary Note Regarding Forward-Looking Statements\u201d and \u201cItem 1A. Risk Factors,\u201d and in Johnson & Johnson\u2019s subsequent Quarterly\np8: www.sec.gov, www.jnj.com or on request from Johnson & Johnson. Any forward-looking statement made in this release speaks only as of the\np8: date of this release. Johnson & Johnson does not undertake to update any forward-looking statement as a result of new information or future\np8: media-relations@its.jnj.com investor-relations@its.jnj.com\np9: Johnson & Johnson and Subsidiaries\np10: Johnson & Johnson and Subsidiaries\np11: Johnson & Johnson and Subsidiaries\np12: Johnson & Johnson and Subsidiaries\np13: Johnson & Johnson and Subsidiaries\np14: Johnson & Johnson and Subsidiaries\np15: Johnson & Johnson and Subsidiaries\np16: Johnson & Johnson and Subsidiaries\np17: Johnson & Johnson and Subsidiaries\n... 10 more matches; narrow the pattern."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+       "function": {
+        "arguments": "{\"first\":1,\"last\":3}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWV5RdKKcxEmVsOLtEKBcC-LIx0f0lVDYMK22tqOLG1YMfGMDZ-keO0uGwsy17-vpSgjBRc5oR3ZoUnSgD9dbo4w2B2sGyMGM1ePecUY4bJEv2yYmVceOJ8Jz8JaU0iPT1-dVhXb48KkAMdQdPfBXS9ATk2aLiddUvCYfbfNJTQyk13VrRjj4DcxHon6btkvCYvze4eA1cNk_9MZWrCN0sABpn1GoGsU304H9r1wgWivimkR9aM7yx0LXR0TDgBPdps6nGe6KWEBZW9iYuJGUWNsu7jEso0gnj3mA5xtEwu_uFtQ_gzqLDrmV4quORdLP4VRG7iT_vppazIuQh5J1RVtssZ-hqTXuSWi7RUDtnxf9zFPs83JT8l8BgpI9_AobO5VHw6RW8TphslJNHJY33oKM27KkC48rNZgX7qNbjFVp12i4xwYvFrC2yeSX9M5ApBwqCj1zkHJf7oahJj8HlC70HuJnE-K2W824vYQk_QzpIVIEPNE3xNEbIXofY9ThxyMzqeB0t1SK1S3q0TjU30OqV6oZKJkbMw1XkvEWVoeP8_9762Ek0otEQzZL_WnNtMCkf_vVJmNXrPZK_UeiZaF_SM83wT1Ec5tEXJmGL2A4xIX3zP8BiEiHL-E9t7ssT1HKB_s1y0t7Wkj6YdxLOXLl3wg7LJiQwtOG-n2yE2iL61ubRGKCMCoFHGzlkk2qJDbplH58mm2gLrGh-lJLU5Zo-mNfkFixs8s75VNzp0DZLoL7Xdmp1HiMDRn_98DmW5l-7m9qfEG2FSPfdj2r9BDlZVGaDjnp6NaeEvXwuaSauNmGuJcXjRKpbQgRfuzu-eYjm6yKXLUVnHgq2iEfoQcZ78bm4tIlXGJvFdbPcWyrYBr-gcgVWvaZ6-MYH6VQjnBVQM7-iKly1YmXoNdWowWPLLc6mAHMjXPiiGd6vsMhTjX4R81JptabhCaxwXTUm8IAYbZB0OsCuKH9JemFEzHAkJhptpdiKBdfx1toxT3fMXkb6tK9WfolfjDQ46q-TYTRWxh8TFKACxcyhEFV07lk3R_6ZZIhDCfxdRzWDO1VscxJzTHniPJcEOdlRYC3Cm2G3ADhh568BvyN6fhu60Pj4YmpNec2_tYItsix3-ZWgsFVsbpS-3n7QR-_c6ljVlsAOSfkkhtJHZuvHXx9e0ijrZzHsKvbF7F7XSgpg-xyrGjl6aS7tyFqpjz17PaMdTTLAwCtynTOVZJ3MbQogx0ZaXXJFN6ezsRhs-rlXHzmEAsnaTOgKwWJDsTC4zUkeLGPmw6MunFvOjz9zzn8T_eW65vTZYPws2vjhFXzrsZhL8WoZZsinRAPmNFelnOEgzBkhZm1CkhtchmEC-WSVYqE44yaEmsJ7WdIVihCV7RkHrnfhaz-QJJD0AwaSmpoytk7pAHCE7uv_-i5GOQMbW9DIiZrMlG7CC87YDnjNTfFLivFlR2ndIdnREAbEgRHqXKfLqfYFByPjZkz8vHTRZo7YuiXuZqJ979gReCsJTlZQ=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21594855c87d1b52319b0a4915b33",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+     "content": "[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, DC 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of The\r\nSecurities Exchange Act of 1934\r\nDate of report (Date of earliest event reported):\r\nAugust 30, 2023\r\nJohnson & Johnson\r\n(Exact name of registrant as specified in its charter)\r\nNew Jersey 1-3215 22-1024240\r\n(State or Other Jurisdiction of\r\nIncorporation) (Commission File Number) (IRS Employer Identification No.)\r\nOne Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\r\n(Address of Principal Executive Offices)\r\n(Zip Code)\r\nRegistrant's telephone number, including area code:\r\n732-524-0400\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the\r\nfollowing provisions:\r\n\u2610 Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n\u2610 Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n\u2610 Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17\r\nCFR 240.14d-2(b))\r\n\u2610 Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17\r\nCFR 240.13e-4(c))\r\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this\r\nchapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter).\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, Par Value $1.00 JNJ New York Stock Exchange\r\n0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\r\n5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\r\n1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\r\n1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\n\n[Page 2]\nItem 2.02 Results of Operations and Financial Condition\r\nJohnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\r\nJohnson issued the attached press release (Exhibit 99.1) providing updated financials and 2023 guidance following completion of the Kenvue Separation.\r\nItem 9.01 Financial Statements and Exhibits\r\n(d) Exhibits.\r\nExhibit No. Description of Exhibit\r\n99.1 Press Release dated August 30, 2023\r\n99.2 Updated Financial Data\r\n104 The cover page from this Current Report on Form 8-K, formatted in Inline XBRL.\n\n[Page 3]\nSIGNATURES\r\nPursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned\r\nhereunto duly authorized.\r\nJohnson & Johnson\r\n(Registrant)\r\nDate: August 30, 2023 By: /s/ Robert J. Decker, Jr.\r\nRobert J. Decker, Jr.\r\nController\r\n(Principal Accounting Officer)"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_MkmriRzkSSY5RKZkbzQTmgvQ",
+      "function": {
+       "arguments": "{\"pattern\":\"gain|proceeds|separation.*million|separation.*billion\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_Az12QSZK8osZs30ulMtv5ciy",
+      "function": {
+       "arguments": "{\"pattern\":\"accru|gain on|transaction gain|tax.*gain|Kenvue.*gain\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWY1HsymjpVLP6gGQrOgnNucHlJW-7r6ZzfTfelTORstYBwSIGvxZfZgxqy-qrrYk0ztAvWKFFXEboTr2SUFRA98v7eVVCiszx_ejzQBwPXCoWcHbaw2TnWYy5zxc-HnG7arKNNZUDD3MFPpr1OosSrRVJCUovCvVjqoH0U3yVZ6nfDYjTCb60nzTIF6oufzCKrq0CruLlAghg1qM769uBCZ7b7QK88rT2MhST0RQkPTVtpy9f5b0IvCgBKcl1TrOlmDfZy2rXlWyCICHIhxw0y9Gg_Ia8_Xin2VXQFPy3gXBef2KbssEs8vuAtiDtfJRkNRwS9haL1XhOqHGSEAvJIcJbNhOgHj-3Ut5M5PifFOO5VTHQ1mzlyCS1kMc2pm9uPJFO3Ux-L1M9OupD1_avX6OpmbS77AViv8qzdNqLirp6VixORTJ0B_L1pae255jLFF1uMOpOrjvUdobtXZMeRZO18Q5TYBAmLfJLowqofyrksmCrjGZf6eYyw_7rIQ72XjzJkpAlpCYvvy07zCEH3vSJpPcp_uAb4FvGcyFB5lns7gZ8XvWKnfaU487qj9IXT6C0CFfyhJgz-KLl894vRKCR-D4oc5ET-Hk_uQ21SmkzvhIiX3acj2eZwyNQVb0rJ7qLh1C_faUonR-BGTPQ85WI2bcZCfEU3lX1jC0nl-9vw4Ovr1oqbx3DwU1d9LB3AnF_DAAvM4MU0rcZndOYWCiEVqxRZDwFaSHi8ccr-NT7LOMn_6PbvmKFVfXzbI5em-couGbMkk63pnaV6lkvLwwXwYEtBQS9oRxfkZCVGqIRKua1PcKo8oEq352c7E31IXSZl8twxgoEKX-UTidaWku_x-T4De6nNQqp1RHj-LwpORt67e26x9Gt8r7hQm9Mxlx0bcjd19illYGPIYSFE-ILJ9wFeq1J6SiKEuUrr5F6ffiHZ3T0V7RPeaVYaMQW5856-0e6u35xmutXWmUyrb0jTuPp1tUb9N1eU_MOz2q2tiAYF-x6cRsLnRdqrtmOXSznwoJUV0XeHsLUU_uFprYklrE4u8NqLe4e_GJqM2pZkqzW9pAnwnjJcKWydWIAVp6ni4E3w0fk_1OqKHnegc9sWDS-uAXe_mQunIv7IGt1OHuieiua-_rHm5Wg00co3liuxDLttNfTEfnmj5K-0Y06Xd_Z7L4QztJwWRjcv2wW4SEojbKJn99uSEgpGugRzvtMxHMC4Yv9v10kTiT0hkugvYtQ18ru7zDtNb4WKKxY6W9iO3_a5UV4qoX4KrJyGitvEKTWUfxS3d4tUgLf7v0QujuL9KGfbqur4zBghZ0R_dRGuLqSeCDSXpPw7LZ0ho1bD_aCh_ggbVPD_pP2t3cr3JYOjRtRFXFwVzHmlgAk52PEInh_NySNb7nMhD53c7CV9EpM2jKKNJ78M0qZurFeWv59G-9UL81GiaoSVESZFG74phmV66P537n2FllorJeUO1sGfFfUCclHyPNM2veKUJyTuKjTFJzDlze_WJMt58AePsFFSC2bcMSPQQGfistOzkK-u17roFgZXA6Z5lbsAhatrTkR_-8CXmgg4_E-ovMwA32sa94cCxORpQmAQ3ZhLb4kZR2VSvA3CaEqUP6kkxNJ0vvO4JgFU2jdLQvcYW_wP7xpkLfTzkKt4RMBW.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0fc68c3155360648016ac215965dc887d1bc022ecafe494416",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 2057,
+   "output_tokens": 138,
+   "reasoning_tokens": 58,
+   "seconds": 3.18
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 27 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+       "function": {
+        "arguments": "{\"pattern\":\"gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWTdDqAyMAtw3pyKSIKB1pSbeloga4GRaVX2NDWW6SBM6F8bNe0qV_Sjvw29QwdsUuAk7lajdWNKmIYiOCUZEe37GN1vjnKxJVYkERvd0N8pvYVbxlh0bqp9sJEHt7nXsEOfVJXFUgYZW91TI7AOPnjhSqxCgGU8WAgyKKBTm4WyZwgkpUMjQ-Q9XX1ulPAB8Al_HZjRnqZTp0_-nfQwbpZ_KYNMwpFVzonltdvFW7QLd5GS_TTi0CX-g6mhXWntu9igwxqKRZ-h1FYFJbFK17t1QmDLZ7awGDAWZbGC6oqpTqzE2pDnYeXwVwxBXP8tfDc8x0cdHsjM4wuWyKvrTQPDlU59kgDAZxFHuFtldpHl4IGysF7hx_ze3XSrTLgtR8WsfgCRhyw0AnUUXkYneXLTY8Qg0YyxMrWLTAp6tEYmBy4NySC3rc7DcWQyViiL5oQu79otUhKBS6Gl39Go_DPOuoKc4DdCTPA4yAjs0fiOJeSgJEYGIX7V5n9y9qDxwt6uKyOj66WKUnZaNr-8mCCMulCZxgqze0E-_RXASbkYMssKnVhSDrTh9j8TXH_B6s6RB084aKs-ny2q7y1L_kGxN4Fdx_CsuAxapAOI22zSiFJbf4KZQ4_NOf-KLfHdMhYifXYegnzYLxFNH3CHgQo59TfIDrjUY-nZ4gPZrYYUW8G8thucImVjv2kjzxWgANUc5xLDRHD5JhMsK5dm6-1xW_gBavLDBdHRKxeNu0jhrccj0b_getXkljv__AUshlur5pnF115zQYRkpjDlTJaZsScx7fAaxsv_Aor1WDH1c_8cBQe5EkLZB6cYdCDEgj8EsPizpABk2VsJNBlo3ec1-8S_dGPqBGJG8G3CSC2ZStMD9M_8A52q3NUCZnUq2pT5IurqABK2wJxn6gFBx-EUn3rBo1ZgD4o2yjbjc1Bd3xM_KwrR7c9UPDXtxlK9Q8a3kCqvZUIDAEk40Cp2G7QMVO8OZRgXoB9-WsFF3jybtfToE5FhAnZXyND36xqSXYVrCDrVb2M3zWXssj8ZFWfBN6fbUOeg8IFYTmECi7K__k1wX73nqtrlqKBrEvxjpZqoVv8v8txdUGfiGa_s3aHM6LeyliipQkQLXWo4b0pcDrUri6KFW-lK92InFuPu5ybRbTknY-k-b2crexX23tHGpGH3O_cfwAp2kVx8L9x3dD2pkgTFKtO1DbRtOczaOG-EBJs4l9BRzL0bPAESOg5jPh-hJLFobXjXn85N4o9Q1bfnxpGIfSrPQlHKCghCDc59I5sw0vussMmXM_wO46ityiSVBFCgrmDYtCuiaTmIsSR10qC679wp_9GLAFX7ZCWujLo_DjSbJqoz1dMmwJqw1kg2yifPACLkfSOfAWAt7h9fMGZl79W4ri57uQZ4ji_miRlO8BWqisci1W89hIjede4Ovyfm_RX0yB8tVxXirSqe2qGKznkfhsdG9pCf8ObT-DoG62bq_nncZdvFsjJC8prpWfuG_K880chSwXkqiL11d6A9gW1NRd7vdEPV6Rg.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21591fc3887d18e64fd428927eb15",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+     "content": "p1: August 30, 2023\np1: Johnson & Johnson\np1: One Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\np1: Common Stock, Par Value $1.00 JNJ New York Stock Exchange\np1: 0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\np1: 5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\np1: 1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\np1: 1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\np2: Johnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\np2: 99.1 Press Release dated August 30, 2023\np3: Johnson & Johnson\np3: Date: August 30, 2023 By: /s/ Robert J. Decker, Jr.\np4: Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\np4: New Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and\np4: \u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering\np4: Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its\np5: Johnson & Johnson.\np6: Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with\np6: to Johnson & Johnson's results computed in accordance with GAAP.\np6: reduction of approximately 73.5 million shares of Johnson & Johnson outstanding common stock as a result of the Kenvue exchange offer.\np6: Because this net reduction occurred on August 23, 2023, Johnson & Johnson will recognize only a partial-year benefit of $0.28 to its full-year\np7: current 90-day lockup agreement. Johnson & Johnson is under no obligation to do so if market conditions are not supportive.\np7: Johnson & Johnson has published a recorded webinar for investors to provide additional context behind the updated financials and 2023\np7: ABOUT JOHNSON & JOHNSON:\np7: At Johnson & Johnson, we believe good health is the foundation of vibrant lives, thriving communities and forward progress. That\u2019s why for\np8: expectations and projections of Johnson & Johnson. Risks and uncertainties include, but are not limited to: economic factors, such as\np8: in Johnson & Johnson\u2019s Annual Report on Form 10-K for the fiscal year ended January 1, 2023, including in the sections captioned\np8: \u201cCautionary Note Regarding Forward-Looking Statements\u201d and \u201cItem 1A. Risk Factors,\u201d and in Johnson & Johnson\u2019s subsequent Quarterly\np8: www.sec.gov, www.jnj.com or on request from Johnson & Johnson. Any forward-looking statement made in this release speaks only as of the\np8: date of this release. Johnson & Johnson does not undertake to update any forward-looking statement as a result of new information or future\np8: media-relations@its.jnj.com investor-relations@its.jnj.com\np9: Johnson & Johnson and Subsidiaries\np10: Johnson & Johnson and Subsidiaries\np11: Johnson & Johnson and Subsidiaries\np12: Johnson & Johnson and Subsidiaries\np13: Johnson & Johnson and Subsidiaries\np14: Johnson & Johnson and Subsidiaries\np15: Johnson & Johnson and Subsidiaries\np16: Johnson & Johnson and Subsidiaries\np17: Johnson & Johnson and Subsidiaries\n... 10 more matches; narrow the pattern."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+       "function": {
+        "arguments": "{\"first\":1,\"last\":3}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWV5RdKKcxEmVsOLtEKBcC-LIx0f0lVDYMK22tqOLG1YMfGMDZ-keO0uGwsy17-vpSgjBRc5oR3ZoUnSgD9dbo4w2B2sGyMGM1ePecUY4bJEv2yYmVceOJ8Jz8JaU0iPT1-dVhXb48KkAMdQdPfBXS9ATk2aLiddUvCYfbfNJTQyk13VrRjj4DcxHon6btkvCYvze4eA1cNk_9MZWrCN0sABpn1GoGsU304H9r1wgWivimkR9aM7yx0LXR0TDgBPdps6nGe6KWEBZW9iYuJGUWNsu7jEso0gnj3mA5xtEwu_uFtQ_gzqLDrmV4quORdLP4VRG7iT_vppazIuQh5J1RVtssZ-hqTXuSWi7RUDtnxf9zFPs83JT8l8BgpI9_AobO5VHw6RW8TphslJNHJY33oKM27KkC48rNZgX7qNbjFVp12i4xwYvFrC2yeSX9M5ApBwqCj1zkHJf7oahJj8HlC70HuJnE-K2W824vYQk_QzpIVIEPNE3xNEbIXofY9ThxyMzqeB0t1SK1S3q0TjU30OqV6oZKJkbMw1XkvEWVoeP8_9762Ek0otEQzZL_WnNtMCkf_vVJmNXrPZK_UeiZaF_SM83wT1Ec5tEXJmGL2A4xIX3zP8BiEiHL-E9t7ssT1HKB_s1y0t7Wkj6YdxLOXLl3wg7LJiQwtOG-n2yE2iL61ubRGKCMCoFHGzlkk2qJDbplH58mm2gLrGh-lJLU5Zo-mNfkFixs8s75VNzp0DZLoL7Xdmp1HiMDRn_98DmW5l-7m9qfEG2FSPfdj2r9BDlZVGaDjnp6NaeEvXwuaSauNmGuJcXjRKpbQgRfuzu-eYjm6yKXLUVnHgq2iEfoQcZ78bm4tIlXGJvFdbPcWyrYBr-gcgVWvaZ6-MYH6VQjnBVQM7-iKly1YmXoNdWowWPLLc6mAHMjXPiiGd6vsMhTjX4R81JptabhCaxwXTUm8IAYbZB0OsCuKH9JemFEzHAkJhptpdiKBdfx1toxT3fMXkb6tK9WfolfjDQ46q-TYTRWxh8TFKACxcyhEFV07lk3R_6ZZIhDCfxdRzWDO1VscxJzTHniPJcEOdlRYC3Cm2G3ADhh568BvyN6fhu60Pj4YmpNec2_tYItsix3-ZWgsFVsbpS-3n7QR-_c6ljVlsAOSfkkhtJHZuvHXx9e0ijrZzHsKvbF7F7XSgpg-xyrGjl6aS7tyFqpjz17PaMdTTLAwCtynTOVZJ3MbQogx0ZaXXJFN6ezsRhs-rlXHzmEAsnaTOgKwWJDsTC4zUkeLGPmw6MunFvOjz9zzn8T_eW65vTZYPws2vjhFXzrsZhL8WoZZsinRAPmNFelnOEgzBkhZm1CkhtchmEC-WSVYqE44yaEmsJ7WdIVihCV7RkHrnfhaz-QJJD0AwaSmpoytk7pAHCE7uv_-i5GOQMbW9DIiZrMlG7CC87YDnjNTfFLivFlR2ndIdnREAbEgRHqXKfLqfYFByPjZkz8vHTRZo7YuiXuZqJ979gReCsJTlZQ=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21594855c87d1b52319b0a4915b33",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+     "content": "[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, DC 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of The\r\nSecurities Exchange Act of 1934\r\nDate of report (Date of earliest event reported):\r\nAugust 30, 2023\r\nJohnson & Johnson\r\n(Exact name of registrant as specified in its charter)\r\nNew Jersey 1-3215 22-1024240\r\n(State or Other Jurisdiction of\r\nIncorporation) (Commission File Number) (IRS Employer Identification No.)\r\nOne Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\r\n(Address of Principal Executive Offices)\r\n(Zip Code)\r\nRegistrant's telephone number, including area code:\r\n732-524-0400\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the\r\nfollowing provisions:\r\n\u2610 Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n\u2610 Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n\u2610 Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17\r\nCFR 240.14d-2(b))\r\n\u2610 Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17\r\nCFR 240.13e-4(c))\r\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this\r\nchapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter).\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, Par Value $1.00 JNJ New York Stock Exchange\r\n0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\r\n5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\r\n1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\r\n1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\n\n[Page 2]\nItem 2.02 Results of Operations and Financial Condition\r\nJohnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\r\nJohnson issued the attached press release (Exhibit 99.1) providing updated financials and 2023 guidance following completion of the Kenvue Separation.\r\nItem 9.01 Financial Statements and Exhibits\r\n(d) Exhibits.\r\nExhibit No. Description of Exhibit\r\n99.1 Press Release dated August 30, 2023\r\n99.2 Updated Financial Data\r\n104 The cover page from this Current Report on Form 8-K, formatted in Inline XBRL.\n\n[Page 3]\nSIGNATURES\r\nPursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned\r\nhereunto duly authorized.\r\nJohnson & Johnson\r\n(Registrant)\r\nDate: August 30, 2023 By: /s/ Robert J. Decker, Jr.\r\nRobert J. Decker, Jr.\r\nController\r\n(Principal Accounting Officer)"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_MkmriRzkSSY5RKZkbzQTmgvQ",
+       "function": {
+        "arguments": "{\"pattern\":\"gain|proceeds|separation.*million|separation.*billion\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_Az12QSZK8osZs30ulMtv5ciy",
+       "function": {
+        "arguments": "{\"pattern\":\"accru|gain on|transaction gain|tax.*gain|Kenvue.*gain\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWY1HsymjpVLP6gGQrOgnNucHlJW-7r6ZzfTfelTORstYBwSIGvxZfZgxqy-qrrYk0ztAvWKFFXEboTr2SUFRA98v7eVVCiszx_ejzQBwPXCoWcHbaw2TnWYy5zxc-HnG7arKNNZUDD3MFPpr1OosSrRVJCUovCvVjqoH0U3yVZ6nfDYjTCb60nzTIF6oufzCKrq0CruLlAghg1qM769uBCZ7b7QK88rT2MhST0RQkPTVtpy9f5b0IvCgBKcl1TrOlmDfZy2rXlWyCICHIhxw0y9Gg_Ia8_Xin2VXQFPy3gXBef2KbssEs8vuAtiDtfJRkNRwS9haL1XhOqHGSEAvJIcJbNhOgHj-3Ut5M5PifFOO5VTHQ1mzlyCS1kMc2pm9uPJFO3Ux-L1M9OupD1_avX6OpmbS77AViv8qzdNqLirp6VixORTJ0B_L1pae255jLFF1uMOpOrjvUdobtXZMeRZO18Q5TYBAmLfJLowqofyrksmCrjGZf6eYyw_7rIQ72XjzJkpAlpCYvvy07zCEH3vSJpPcp_uAb4FvGcyFB5lns7gZ8XvWKnfaU487qj9IXT6C0CFfyhJgz-KLl894vRKCR-D4oc5ET-Hk_uQ21SmkzvhIiX3acj2eZwyNQVb0rJ7qLh1C_faUonR-BGTPQ85WI2bcZCfEU3lX1jC0nl-9vw4Ovr1oqbx3DwU1d9LB3AnF_DAAvM4MU0rcZndOYWCiEVqxRZDwFaSHi8ccr-NT7LOMn_6PbvmKFVfXzbI5em-couGbMkk63pnaV6lkvLwwXwYEtBQS9oRxfkZCVGqIRKua1PcKo8oEq352c7E31IXSZl8twxgoEKX-UTidaWku_x-T4De6nNQqp1RHj-LwpORt67e26x9Gt8r7hQm9Mxlx0bcjd19illYGPIYSFE-ILJ9wFeq1J6SiKEuUrr5F6ffiHZ3T0V7RPeaVYaMQW5856-0e6u35xmutXWmUyrb0jTuPp1tUb9N1eU_MOz2q2tiAYF-x6cRsLnRdqrtmOXSznwoJUV0XeHsLUU_uFprYklrE4u8NqLe4e_GJqM2pZkqzW9pAnwnjJcKWydWIAVp6ni4E3w0fk_1OqKHnegc9sWDS-uAXe_mQunIv7IGt1OHuieiua-_rHm5Wg00co3liuxDLttNfTEfnmj5K-0Y06Xd_Z7L4QztJwWRjcv2wW4SEojbKJn99uSEgpGugRzvtMxHMC4Yv9v10kTiT0hkugvYtQ18ru7zDtNb4WKKxY6W9iO3_a5UV4qoX4KrJyGitvEKTWUfxS3d4tUgLf7v0QujuL9KGfbqur4zBghZ0R_dRGuLqSeCDSXpPw7LZ0ho1bD_aCh_ggbVPD_pP2t3cr3JYOjRtRFXFwVzHmlgAk52PEInh_NySNb7nMhD53c7CV9EpM2jKKNJ78M0qZurFeWv59G-9UL81GiaoSVESZFG74phmV66P537n2FllorJeUO1sGfFfUCclHyPNM2veKUJyTuKjTFJzDlze_WJMt58AePsFFSC2bcMSPQQGfistOzkK-u17roFgZXA6Z5lbsAhatrTkR_-8CXmgg4_E-ovMwA32sa94cCxORpQmAQ3ZhLb4kZR2VSvA3CaEqUP6kkxNJ0vvO4JgFU2jdLQvcYW_wP7xpkLfTzkKt4RMBW.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac215965dc887d1bc022ecafe494416",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_MkmriRzkSSY5RKZkbzQTmgvQ",
+     "content": "p4: \u2022 Company secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%\np4: Consumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of\np6: reasonable certainty the ultimate outcome of legal proceedings, unusual gains and losses, acquisition-related expenses and purchase\np6: The Company generated $13.2 billion in cash proceeds as result of the Kenvue debt offering and initial public offering. Additionally, Johnson\np12: periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions, restructuring,\np12: Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects of an\np13: various periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions,\np13: a view of the Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects\np14: periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions,\np14: view of the Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects of\np15: (Gains)/losses on securities 72 (1) 71\np16: (Gains)/losses on securities 411 109 164 6 690\np19: Loss/(gain) on securities\np20: Loss/(gain) on securities 38 (39) \u2014 (1)\np20: Loss/(gain) on securities 76 (5) \u2014 71\np21: Loss/(gain) on securities 394 17 \u2014 411\np22: Loss/(gain) on securities 102 7 \u2014 109\np22: Loss/(gain) on securities 496 24 \u2014 520\np23: Loss/(gain) on securities 177 (13) \u2014 164\np23: Loss/(gain) on securities 673 11 \u2014 684\np24: Loss/(gain) on securities 23 (17) \u2014 6\np24: Loss/(gain) on securities 696 (6) \u2014 690\np25: (Loss)/gain on\np25: (Loss)/gain on\np25: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np27: (Loss)/gain on\np27: (Loss)/gain on"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Az12QSZK8osZs30ulMtv5ciy",
+     "content": "p25: (Loss)/gain on\np25: (Loss)/gain on\np25: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np27: (Loss)/gain on\np27: (Loss)/gain on"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_nfrcW7pY1kuieW6zyGWDeM6H",
+      "function": {
+       "arguments": "{\"first\":4,\"last\":6}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Evaluating financial gain**\n\nI'm looking at the approximate gain of about $20 billion and considering the specific phrasing of the question: \"amount of the gain accruing to JnJ as a result of the separation ... as of August 30, 2023.\" It makes me think about potential accounting impacts and whether I should confirm that figure of $20 billion. I might need to inspect specific sections, like p4 and p6, for more details.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Evaluating financial gain**\n\nI'm looking at the approximate gain of about $20 billion and considering the specific phrasing of the question: \"amount of the gain accruing to JnJ as a result of the separation ... as of August 30, 2023.\" It makes me think about potential accounting impacts and whether I should confirm that figure of $20 billion. I might need to inspect specific sections, like p4 and p6, for more details.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWbq0vWHMF0LZ_IJuSjxe_rZ6R0xerlbiIlai2fpqf6hX-rlGc5zvZtOiTK2DsFD-Mge6q_VSXh4lmH9824_AH28l5QXR0Ahr9m2PHd7cGU1MN3ArYQ-vjls7SDrysy3MHZ7cl6AzcnUtFDP3UHG0o0M5MyEqJ_nZdTB6POijJoX4t_YAZM1rQ5_MLPPnLYDcGx8PoJr5yh7yqx5WrdK2tRhR7bAx7w2wJS4XLYGeINQvA7vAgTvdzT-k3TUmnpL3_FeWK-cAdBh1SLlKyfxsnG6QYviINgmwD2cQpbiT842gWV3WKHlFc0ZQzNQq5N8s5fiXNVtQrWeNbcwB_JjWObdiBGrZtClbTGVgmDgDG7rMF86Eybvv9Y1owTWMvmCSH6u-9Eb1E2KXUNC1v0eZgXOh89e5bzP0-FaKvFCjd_N_CvkvHPdLNIiUjutAsJYFtuo2ERfhLkQSuyBrZz_0Ul6R_ylq6r1ZC3oVm_JgNu6cjMKSS9tO1IwnAm9lPV9eHWh464dI_KGcQcgrGthNshgnQaRygQv5dWZUFFGCrlGf-GKlTYnCm4gbKk3E_c5c5JGIXwDyFYCHrZ8ecmHvxRFXhT7aORoLQIqAyA_M5YbzwGqKqcbgQIaD67lC6r_y9uQtnmHrYhSsqGZdzWjYLpZWqauEeKNzGnodbS2hu71Bnb5aAQxJAaNDmmSqZ74ozApn5pzTzhYrlFbAF-fVFv8_pgLx2kyjEc8bI5T3KusM-lS2EyNuIk4NKD6bHRN1foaL6KKLzvN7y1BIe4N2vrAfvU0Ayaptkj_kh5PWUUMPEcZtFmWbrtOhmD-OAlSkjTcVNKp_Sg4CXJKotbm6gRoCzhB2h-KJvpAryMbGJRq-fro83GcNETGXLGsH0eDMlnpf4E45DyPzrjWvi_lqqLrLdPm1bXTnStRzzBnBuJzKl3ItXHzRxt3UIMsXjK8ZatA9XmwOV4qAiZIKEGiSJtHTQZ4B8G5-X1FGf4qzVC4I67M3e4HPpoTPak4lx8zItZjW4SV6VqTm4ILc9oO6ApRlZqh4TqUUIEZIRNk8aOIZiWgH5l1KmeEPJbQyD9Mt09Hkwamu7ckoSx1rdsGIGdHO34kFuaV6QqvMNmw7lF8rz_n96svwWe_lgwW3VOFbzZbWRH6lfM6z_Iz3Tq06XsYRLfboOBoJ47ibs3Vqd3u-sdtU7Ju2uyCisjTgwBUsUA53kPsOsK5PN-TLEEAZWQCcNS9cS10RbvXA5zrLqunerGIpezpe6S9cQg3patV4ul7pxPjoUgGoAH_j2oWfTt6UBhODDlMIs1TbMYsHav5Jn4ypI_kRFK92EUkchQuLAEtCS2smEmPr2Y8d9tWx56rE8heotFy1NSjJ5S3qrlnJTPIAHbH3p3jrT4UMNt_uU1WoIC-h-aobGW7_iA0n7O5R9BOvRzb7pbEyijMyUJlQzATVv1FC-q30HNOvM8cjeuHUyqfhGLDb8yiA01jKdnCcs7yBSxqlzPHudyUvyhhJpgefnjnBpCWN2rNugmrt3B1OKI_paGET1NAq-PEnTst-pWtMrmxjsfPUdKoMSAbJncU_-tcQslEY48tZmhdfoBJOw3j1HmJ_4iGGEKuh3Rxg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0fc68c3155360648016ac2159999ac87d198b9a06215a4a4f9",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 2882,
+   "output_tokens": 83,
+   "reasoning_tokens": 59,
+   "seconds": 2.76
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 27 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+       "function": {
+        "arguments": "{\"pattern\":\"gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for Kenvue separation details**\n\nI need to find information regarding the Kenvue separation from Johnson & Johnson. Specifically, I want to identify the financial impact, particularly the amount of gain that J&J accrued as a result of this separation, as of August 30, 2023. I should search for relevant documents or reports to gather this information effectively. Let's see what I can discover!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWTdDqAyMAtw3pyKSIKB1pSbeloga4GRaVX2NDWW6SBM6F8bNe0qV_Sjvw29QwdsUuAk7lajdWNKmIYiOCUZEe37GN1vjnKxJVYkERvd0N8pvYVbxlh0bqp9sJEHt7nXsEOfVJXFUgYZW91TI7AOPnjhSqxCgGU8WAgyKKBTm4WyZwgkpUMjQ-Q9XX1ulPAB8Al_HZjRnqZTp0_-nfQwbpZ_KYNMwpFVzonltdvFW7QLd5GS_TTi0CX-g6mhXWntu9igwxqKRZ-h1FYFJbFK17t1QmDLZ7awGDAWZbGC6oqpTqzE2pDnYeXwVwxBXP8tfDc8x0cdHsjM4wuWyKvrTQPDlU59kgDAZxFHuFtldpHl4IGysF7hx_ze3XSrTLgtR8WsfgCRhyw0AnUUXkYneXLTY8Qg0YyxMrWLTAp6tEYmBy4NySC3rc7DcWQyViiL5oQu79otUhKBS6Gl39Go_DPOuoKc4DdCTPA4yAjs0fiOJeSgJEYGIX7V5n9y9qDxwt6uKyOj66WKUnZaNr-8mCCMulCZxgqze0E-_RXASbkYMssKnVhSDrTh9j8TXH_B6s6RB084aKs-ny2q7y1L_kGxN4Fdx_CsuAxapAOI22zSiFJbf4KZQ4_NOf-KLfHdMhYifXYegnzYLxFNH3CHgQo59TfIDrjUY-nZ4gPZrYYUW8G8thucImVjv2kjzxWgANUc5xLDRHD5JhMsK5dm6-1xW_gBavLDBdHRKxeNu0jhrccj0b_getXkljv__AUshlur5pnF115zQYRkpjDlTJaZsScx7fAaxsv_Aor1WDH1c_8cBQe5EkLZB6cYdCDEgj8EsPizpABk2VsJNBlo3ec1-8S_dGPqBGJG8G3CSC2ZStMD9M_8A52q3NUCZnUq2pT5IurqABK2wJxn6gFBx-EUn3rBo1ZgD4o2yjbjc1Bd3xM_KwrR7c9UPDXtxlK9Q8a3kCqvZUIDAEk40Cp2G7QMVO8OZRgXoB9-WsFF3jybtfToE5FhAnZXyND36xqSXYVrCDrVb2M3zWXssj8ZFWfBN6fbUOeg8IFYTmECi7K__k1wX73nqtrlqKBrEvxjpZqoVv8v8txdUGfiGa_s3aHM6LeyliipQkQLXWo4b0pcDrUri6KFW-lK92InFuPu5ybRbTknY-k-b2crexX23tHGpGH3O_cfwAp2kVx8L9x3dD2pkgTFKtO1DbRtOczaOG-EBJs4l9BRzL0bPAESOg5jPh-hJLFobXjXn85N4o9Q1bfnxpGIfSrPQlHKCghCDc59I5sw0vussMmXM_wO46ityiSVBFCgrmDYtCuiaTmIsSR10qC679wp_9GLAFX7ZCWujLo_DjSbJqoz1dMmwJqw1kg2yifPACLkfSOfAWAt7h9fMGZl79W4ri57uQZ4ji_miRlO8BWqisci1W89hIjede4Ovyfm_RX0yB8tVxXirSqe2qGKznkfhsdG9pCf8ObT-DoG62bq_nncZdvFsjJC8prpWfuG_K880chSwXkqiL11d6A9gW1NRd7vdEPV6Rg.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21591fc3887d18e64fd428927eb15",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Hj2OacHkw2Xn3O7YRWlW90ip",
+     "content": "p1: August 30, 2023\np1: Johnson & Johnson\np1: One Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\np1: Common Stock, Par Value $1.00 JNJ New York Stock Exchange\np1: 0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\np1: 5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\np1: 1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\np1: 1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\np2: Johnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\np2: 99.1 Press Release dated August 30, 2023\np3: Johnson & Johnson\np3: Date: August 30, 2023 By: /s/ Robert J. Decker, Jr.\np4: Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\np4: New Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and\np4: \u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering\np4: Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its\np5: Johnson & Johnson.\np6: Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with\np6: to Johnson & Johnson's results computed in accordance with GAAP.\np6: reduction of approximately 73.5 million shares of Johnson & Johnson outstanding common stock as a result of the Kenvue exchange offer.\np6: Because this net reduction occurred on August 23, 2023, Johnson & Johnson will recognize only a partial-year benefit of $0.28 to its full-year\np7: current 90-day lockup agreement. Johnson & Johnson is under no obligation to do so if market conditions are not supportive.\np7: Johnson & Johnson has published a recorded webinar for investors to provide additional context behind the updated financials and 2023\np7: ABOUT JOHNSON & JOHNSON:\np7: At Johnson & Johnson, we believe good health is the foundation of vibrant lives, thriving communities and forward progress. That\u2019s why for\np8: expectations and projections of Johnson & Johnson. Risks and uncertainties include, but are not limited to: economic factors, such as\np8: in Johnson & Johnson\u2019s Annual Report on Form 10-K for the fiscal year ended January 1, 2023, including in the sections captioned\np8: \u201cCautionary Note Regarding Forward-Looking Statements\u201d and \u201cItem 1A. Risk Factors,\u201d and in Johnson & Johnson\u2019s subsequent Quarterly\np8: www.sec.gov, www.jnj.com or on request from Johnson & Johnson. Any forward-looking statement made in this release speaks only as of the\np8: date of this release. Johnson & Johnson does not undertake to update any forward-looking statement as a result of new information or future\np8: media-relations@its.jnj.com investor-relations@its.jnj.com\np9: Johnson & Johnson and Subsidiaries\np10: Johnson & Johnson and Subsidiaries\np11: Johnson & Johnson and Subsidiaries\np12: Johnson & Johnson and Subsidiaries\np13: Johnson & Johnson and Subsidiaries\np14: Johnson & Johnson and Subsidiaries\np15: Johnson & Johnson and Subsidiaries\np16: Johnson & Johnson and Subsidiaries\np17: Johnson & Johnson and Subsidiaries\n... 10 more matches; narrow the pattern."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+       "function": {
+        "arguments": "{\"first\":1,\"last\":3}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWV5RdKKcxEmVsOLtEKBcC-LIx0f0lVDYMK22tqOLG1YMfGMDZ-keO0uGwsy17-vpSgjBRc5oR3ZoUnSgD9dbo4w2B2sGyMGM1ePecUY4bJEv2yYmVceOJ8Jz8JaU0iPT1-dVhXb48KkAMdQdPfBXS9ATk2aLiddUvCYfbfNJTQyk13VrRjj4DcxHon6btkvCYvze4eA1cNk_9MZWrCN0sABpn1GoGsU304H9r1wgWivimkR9aM7yx0LXR0TDgBPdps6nGe6KWEBZW9iYuJGUWNsu7jEso0gnj3mA5xtEwu_uFtQ_gzqLDrmV4quORdLP4VRG7iT_vppazIuQh5J1RVtssZ-hqTXuSWi7RUDtnxf9zFPs83JT8l8BgpI9_AobO5VHw6RW8TphslJNHJY33oKM27KkC48rNZgX7qNbjFVp12i4xwYvFrC2yeSX9M5ApBwqCj1zkHJf7oahJj8HlC70HuJnE-K2W824vYQk_QzpIVIEPNE3xNEbIXofY9ThxyMzqeB0t1SK1S3q0TjU30OqV6oZKJkbMw1XkvEWVoeP8_9762Ek0otEQzZL_WnNtMCkf_vVJmNXrPZK_UeiZaF_SM83wT1Ec5tEXJmGL2A4xIX3zP8BiEiHL-E9t7ssT1HKB_s1y0t7Wkj6YdxLOXLl3wg7LJiQwtOG-n2yE2iL61ubRGKCMCoFHGzlkk2qJDbplH58mm2gLrGh-lJLU5Zo-mNfkFixs8s75VNzp0DZLoL7Xdmp1HiMDRn_98DmW5l-7m9qfEG2FSPfdj2r9BDlZVGaDjnp6NaeEvXwuaSauNmGuJcXjRKpbQgRfuzu-eYjm6yKXLUVnHgq2iEfoQcZ78bm4tIlXGJvFdbPcWyrYBr-gcgVWvaZ6-MYH6VQjnBVQM7-iKly1YmXoNdWowWPLLc6mAHMjXPiiGd6vsMhTjX4R81JptabhCaxwXTUm8IAYbZB0OsCuKH9JemFEzHAkJhptpdiKBdfx1toxT3fMXkb6tK9WfolfjDQ46q-TYTRWxh8TFKACxcyhEFV07lk3R_6ZZIhDCfxdRzWDO1VscxJzTHniPJcEOdlRYC3Cm2G3ADhh568BvyN6fhu60Pj4YmpNec2_tYItsix3-ZWgsFVsbpS-3n7QR-_c6ljVlsAOSfkkhtJHZuvHXx9e0ijrZzHsKvbF7F7XSgpg-xyrGjl6aS7tyFqpjz17PaMdTTLAwCtynTOVZJ3MbQogx0ZaXXJFN6ezsRhs-rlXHzmEAsnaTOgKwWJDsTC4zUkeLGPmw6MunFvOjz9zzn8T_eW65vTZYPws2vjhFXzrsZhL8WoZZsinRAPmNFelnOEgzBkhZm1CkhtchmEC-WSVYqE44yaEmsJ7WdIVihCV7RkHrnfhaz-QJJD0AwaSmpoytk7pAHCE7uv_-i5GOQMbW9DIiZrMlG7CC87YDnjNTfFLivFlR2ndIdnREAbEgRHqXKfLqfYFByPjZkz8vHTRZo7YuiXuZqJ979gReCsJTlZQ=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac21594855c87d1b52319b0a4915b33",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_BqFWIMcU4BJ9uU1dxFMlVOFR",
+     "content": "[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, DC 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of The\r\nSecurities Exchange Act of 1934\r\nDate of report (Date of earliest event reported):\r\nAugust 30, 2023\r\nJohnson & Johnson\r\n(Exact name of registrant as specified in its charter)\r\nNew Jersey 1-3215 22-1024240\r\n(State or Other Jurisdiction of\r\nIncorporation) (Commission File Number) (IRS Employer Identification No.)\r\nOne Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\r\n(Address of Principal Executive Offices)\r\n(Zip Code)\r\nRegistrant's telephone number, including area code:\r\n732-524-0400\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the\r\nfollowing provisions:\r\n\u2610 Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n\u2610 Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n\u2610 Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17\r\nCFR 240.14d-2(b))\r\n\u2610 Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17\r\nCFR 240.13e-4(c))\r\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this\r\nchapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter).\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, Par Value $1.00 JNJ New York Stock Exchange\r\n0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\r\n5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\r\n1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\r\n1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\n\n[Page 2]\nItem 2.02 Results of Operations and Financial Condition\r\nJohnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\r\nJohnson issued the attached press release (Exhibit 99.1) providing updated financials and 2023 guidance following completion of the Kenvue Separation.\r\nItem 9.01 Financial Statements and Exhibits\r\n(d) Exhibits.\r\nExhibit No. Description of Exhibit\r\n99.1 Press Release dated August 30, 2023\r\n99.2 Updated Financial Data\r\n104 The cover page from this Current Report on Form 8-K, formatted in Inline XBRL.\n\n[Page 3]\nSIGNATURES\r\nPursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned\r\nhereunto duly authorized.\r\nJohnson & Johnson\r\n(Registrant)\r\nDate: August 30, 2023 By: /s/ Robert J. Decker, Jr.\r\nRobert J. Decker, Jr.\r\nController\r\n(Principal Accounting Officer)"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_MkmriRzkSSY5RKZkbzQTmgvQ",
+       "function": {
+        "arguments": "{\"pattern\":\"gain|proceeds|separation.*million|separation.*billion\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_Az12QSZK8osZs30ulMtv5ciy",
+       "function": {
+        "arguments": "{\"pattern\":\"accru|gain on|transaction gain|tax.*gain|Kenvue.*gain\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Looking for financial gains**\n\nIt seems like the user is asking about the specific amount of gain that JnJ accrued from a separation as of August 30, 2023. I think it's worth looking into the financial release tables, especially around the \u201cgain on separation\u201d that might be mentioned on page 10. I should search for terms related to gain to find the relevant figures and make sure to present them clearly!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWY1HsymjpVLP6gGQrOgnNucHlJW-7r6ZzfTfelTORstYBwSIGvxZfZgxqy-qrrYk0ztAvWKFFXEboTr2SUFRA98v7eVVCiszx_ejzQBwPXCoWcHbaw2TnWYy5zxc-HnG7arKNNZUDD3MFPpr1OosSrRVJCUovCvVjqoH0U3yVZ6nfDYjTCb60nzTIF6oufzCKrq0CruLlAghg1qM769uBCZ7b7QK88rT2MhST0RQkPTVtpy9f5b0IvCgBKcl1TrOlmDfZy2rXlWyCICHIhxw0y9Gg_Ia8_Xin2VXQFPy3gXBef2KbssEs8vuAtiDtfJRkNRwS9haL1XhOqHGSEAvJIcJbNhOgHj-3Ut5M5PifFOO5VTHQ1mzlyCS1kMc2pm9uPJFO3Ux-L1M9OupD1_avX6OpmbS77AViv8qzdNqLirp6VixORTJ0B_L1pae255jLFF1uMOpOrjvUdobtXZMeRZO18Q5TYBAmLfJLowqofyrksmCrjGZf6eYyw_7rIQ72XjzJkpAlpCYvvy07zCEH3vSJpPcp_uAb4FvGcyFB5lns7gZ8XvWKnfaU487qj9IXT6C0CFfyhJgz-KLl894vRKCR-D4oc5ET-Hk_uQ21SmkzvhIiX3acj2eZwyNQVb0rJ7qLh1C_faUonR-BGTPQ85WI2bcZCfEU3lX1jC0nl-9vw4Ovr1oqbx3DwU1d9LB3AnF_DAAvM4MU0rcZndOYWCiEVqxRZDwFaSHi8ccr-NT7LOMn_6PbvmKFVfXzbI5em-couGbMkk63pnaV6lkvLwwXwYEtBQS9oRxfkZCVGqIRKua1PcKo8oEq352c7E31IXSZl8twxgoEKX-UTidaWku_x-T4De6nNQqp1RHj-LwpORt67e26x9Gt8r7hQm9Mxlx0bcjd19illYGPIYSFE-ILJ9wFeq1J6SiKEuUrr5F6ffiHZ3T0V7RPeaVYaMQW5856-0e6u35xmutXWmUyrb0jTuPp1tUb9N1eU_MOz2q2tiAYF-x6cRsLnRdqrtmOXSznwoJUV0XeHsLUU_uFprYklrE4u8NqLe4e_GJqM2pZkqzW9pAnwnjJcKWydWIAVp6ni4E3w0fk_1OqKHnegc9sWDS-uAXe_mQunIv7IGt1OHuieiua-_rHm5Wg00co3liuxDLttNfTEfnmj5K-0Y06Xd_Z7L4QztJwWRjcv2wW4SEojbKJn99uSEgpGugRzvtMxHMC4Yv9v10kTiT0hkugvYtQ18ru7zDtNb4WKKxY6W9iO3_a5UV4qoX4KrJyGitvEKTWUfxS3d4tUgLf7v0QujuL9KGfbqur4zBghZ0R_dRGuLqSeCDSXpPw7LZ0ho1bD_aCh_ggbVPD_pP2t3cr3JYOjRtRFXFwVzHmlgAk52PEInh_NySNb7nMhD53c7CV9EpM2jKKNJ78M0qZurFeWv59G-9UL81GiaoSVESZFG74phmV66P537n2FllorJeUO1sGfFfUCclHyPNM2veKUJyTuKjTFJzDlze_WJMt58AePsFFSC2bcMSPQQGfistOzkK-u17roFgZXA6Z5lbsAhatrTkR_-8CXmgg4_E-ovMwA32sa94cCxORpQmAQ3ZhLb4kZR2VSvA3CaEqUP6kkxNJ0vvO4JgFU2jdLQvcYW_wP7xpkLfTzkKt4RMBW.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac215965dc887d1bc022ecafe494416",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_MkmriRzkSSY5RKZkbzQTmgvQ",
+     "content": "p4: \u2022 Company secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%\np4: Consumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of\np6: reasonable certainty the ultimate outcome of legal proceedings, unusual gains and losses, acquisition-related expenses and purchase\np6: The Company generated $13.2 billion in cash proceeds as result of the Kenvue debt offering and initial public offering. Additionally, Johnson\np12: periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions, restructuring,\np12: Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects of an\np13: various periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions,\np13: a view of the Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects\np14: periods, these measures may exclude such items as intangible asset amortization expense, significant gains from divestitures, significant costs associated with acquisitions,\np14: view of the Company's results of operations without including all events during a period, such as intangible asset amortization expense, significant gains from divestitures, the effects of\np15: (Gains)/losses on securities 72 (1) 71\np16: (Gains)/losses on securities 411 109 164 6 690\np19: Loss/(gain) on securities\np20: Loss/(gain) on securities 38 (39) \u2014 (1)\np20: Loss/(gain) on securities 76 (5) \u2014 71\np21: Loss/(gain) on securities 394 17 \u2014 411\np22: Loss/(gain) on securities 102 7 \u2014 109\np22: Loss/(gain) on securities 496 24 \u2014 520\np23: Loss/(gain) on securities 177 (13) \u2014 164\np23: Loss/(gain) on securities 673 11 \u2014 684\np24: Loss/(gain) on securities 23 (17) \u2014 6\np24: Loss/(gain) on securities 696 (6) \u2014 690\np25: (Loss)/gain on\np25: (Loss)/gain on\np25: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np27: (Loss)/gain on\np27: (Loss)/gain on"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Az12QSZK8osZs30ulMtv5ciy",
+     "content": "p25: (Loss)/gain on\np25: (Loss)/gain on\np25: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np26: (Loss)/gain on\np27: (Loss)/gain on\np27: (Loss)/gain on"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_nfrcW7pY1kuieW6zyGWDeM6H",
+       "function": {
+        "arguments": "{\"first\":4,\"last\":6}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Evaluating financial gain**\n\nI'm looking at the approximate gain of about $20 billion and considering the specific phrasing of the question: \"amount of the gain accruing to JnJ as a result of the separation ... as of August 30, 2023.\" It makes me think about potential accounting impacts and whether I should confirm that figure of $20 billion. I might need to inspect specific sections, like p4 and p6, for more details.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Evaluating financial gain**\n\nI'm looking at the approximate gain of about $20 billion and considering the specific phrasing of the question: \"amount of the gain accruing to JnJ as a result of the separation ... as of August 30, 2023.\" It makes me think about potential accounting impacts and whether I should confirm that figure of $20 billion. I might need to inspect specific sections, like p4 and p6, for more details.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWbq0vWHMF0LZ_IJuSjxe_rZ6R0xerlbiIlai2fpqf6hX-rlGc5zvZtOiTK2DsFD-Mge6q_VSXh4lmH9824_AH28l5QXR0Ahr9m2PHd7cGU1MN3ArYQ-vjls7SDrysy3MHZ7cl6AzcnUtFDP3UHG0o0M5MyEqJ_nZdTB6POijJoX4t_YAZM1rQ5_MLPPnLYDcGx8PoJr5yh7yqx5WrdK2tRhR7bAx7w2wJS4XLYGeINQvA7vAgTvdzT-k3TUmnpL3_FeWK-cAdBh1SLlKyfxsnG6QYviINgmwD2cQpbiT842gWV3WKHlFc0ZQzNQq5N8s5fiXNVtQrWeNbcwB_JjWObdiBGrZtClbTGVgmDgDG7rMF86Eybvv9Y1owTWMvmCSH6u-9Eb1E2KXUNC1v0eZgXOh89e5bzP0-FaKvFCjd_N_CvkvHPdLNIiUjutAsJYFtuo2ERfhLkQSuyBrZz_0Ul6R_ylq6r1ZC3oVm_JgNu6cjMKSS9tO1IwnAm9lPV9eHWh464dI_KGcQcgrGthNshgnQaRygQv5dWZUFFGCrlGf-GKlTYnCm4gbKk3E_c5c5JGIXwDyFYCHrZ8ecmHvxRFXhT7aORoLQIqAyA_M5YbzwGqKqcbgQIaD67lC6r_y9uQtnmHrYhSsqGZdzWjYLpZWqauEeKNzGnodbS2hu71Bnb5aAQxJAaNDmmSqZ74ozApn5pzTzhYrlFbAF-fVFv8_pgLx2kyjEc8bI5T3KusM-lS2EyNuIk4NKD6bHRN1foaL6KKLzvN7y1BIe4N2vrAfvU0Ayaptkj_kh5PWUUMPEcZtFmWbrtOhmD-OAlSkjTcVNKp_Sg4CXJKotbm6gRoCzhB2h-KJvpAryMbGJRq-fro83GcNETGXLGsH0eDMlnpf4E45DyPzrjWvi_lqqLrLdPm1bXTnStRzzBnBuJzKl3ItXHzRxt3UIMsXjK8ZatA9XmwOV4qAiZIKEGiSJtHTQZ4B8G5-X1FGf4qzVC4I67M3e4HPpoTPak4lx8zItZjW4SV6VqTm4ILc9oO6ApRlZqh4TqUUIEZIRNk8aOIZiWgH5l1KmeEPJbQyD9Mt09Hkwamu7ckoSx1rdsGIGdHO34kFuaV6QqvMNmw7lF8rz_n96svwWe_lgwW3VOFbzZbWRH6lfM6z_Iz3Tq06XsYRLfboOBoJ47ibs3Vqd3u-sdtU7Ju2uyCisjTgwBUsUA53kPsOsK5PN-TLEEAZWQCcNS9cS10RbvXA5zrLqunerGIpezpe6S9cQg3patV4ul7pxPjoUgGoAH_j2oWfTt6UBhODDlMIs1TbMYsHav5Jn4ypI_kRFK92EUkchQuLAEtCS2smEmPr2Y8d9tWx56rE8heotFy1NSjJ5S3qrlnJTPIAHbH3p3jrT4UMNt_uU1WoIC-h-aobGW7_iA0n7O5R9BOvRzb7pbEyijMyUJlQzATVv1FC-q30HNOvM8cjeuHUyqfhGLDb8yiA01jKdnCcs7yBSxqlzPHudyUvyhhJpgefnjnBpCWN2rNugmrt3B1OKI_paGET1NAq-PEnTst-pWtMrmxjsfPUdKoMSAbJncU_-tcQslEY48tZmhdfoBJOw3j1HmJ_4iGGEKuh3Rxg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fc68c3155360648016ac2159999ac87d198b9a06215a4a4f9",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_nfrcW7pY1kuieW6zyGWDeM6H",
+     "content": "[Page 4]\nExhibit 99.1\r\nJohnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\r\nSeparation\r\n\u2022 Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and\r\nAdjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine\r\n\u2022 Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of\r\n12.5% at the mid-point and Adjusted Operational EPS of $9.90 - $10.00, reflecting increased growth of 11.5% at the mid\ufffepoint\r\n\u2022 Company reduced outstanding share count by approximately 191 million; 2023 guidance reflects only a partial-year benefit\r\nof approximately 73.5 million shares or $0.28 benefit to EPS\r\n\u2022 Company secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%\r\nof equity stake in Kenvue\r\n\u2022 Company maintains its quarterly dividend of $1.19 per share\r\nNew Brunswick, N.J. (August 30, 2023) \u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and\r\n2023 guidance which reflect its operations as a company focused on transformational innovation in Pharmaceutical and MedTech. The\r\nCompany has published a recorded webinar for investors to provide additional context behind the updated financials and 2023 guidance\r\nfound in this release, which may be accessed by visiting the Investors section of the Company's website at webcasts & presentations.\r\n\u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering\r\ntransformative healthcare solutions to patients,\u201d said Joaquin Duato, Chairman of the Board and Chief Executive Officer. \u201cWe are incredibly\r\nproud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long\ufffeterm value for all of our stakeholders.\u201d\r\nAs previously announced, the Company recently completed an exchange offer to finalize the separation of Kenvue Inc., formerly Johnson &\r\nJohnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its\r\nConsumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of\r\n2023.\n\n[Page 5]\nUnless otherwise noted, the financial results and earnings guidance included below have been recast to reflect the continuing operations of\r\nJohnson & Johnson.\r\nFINANCIAL RESULTS:\r\nNon-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules\r\nExcludes the impact of translational currency\r\nExcludes the net impact of acquisitions and divestitures and translational currency\r\nExcludes intangible amortization expense and special items\r\nNote: values may have been rounded\r\nREGIONAL SALES RESULTS:\r\nNon-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules\r\nExcludes the impact of translational currency\r\nExcludes the net impact of acquisitions and divestitures and translational currency\r\nNote: values may have been rounded\r\nSEGMENT SALES RESULTS:\r\nNon-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules\r\nExcludes the impact of translational currency\r\nExcludes the net impact of acquisitions and divestitures and translational currency\r\nNote: Values may have been rounded\r\n1\r\n2\r\n3\r\n4\r\n1\r\n2\r\n3\r\n1\r\n2\r\n3\n\n[Page 6]\nUPDATED FULL-YEAR 2023 GUIDANCE:\r\nJohnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with\r\nreasonable certainty the ultimate outcome of legal proceedings, unusual gains and losses, acquisition-related expenses and purchase\r\naccounting fair value adjustments without unreasonable effort. These items are uncertain, depend on variou\n\u2026 [2,815 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Approximately **$20 billion**. The August 30, 2023 release says J&J\u2019s discontinued-operations results would include a gain of approximately $20 billion in the third quarter of 2023 (p. 4).",
+    "role": "assistant",
+    "reasoning": "**Calculating financial figures**\n\nI need to provide the exact amount, which is an approximate $20 billion for the third quarter of 2023. It\u2019s important to have a justified answer ready, including citations for my sources. I should phrase it correctly, mentioning that the gain is recognized in the third quarter and ensuring the specifics are clear, perhaps citing page 4 for reference. I'll make sure to emphasize the phrasing correctly in my final answer.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial figures**\n\nI need to provide the exact amount, which is an approximate $20 billion for the third quarter of 2023. It\u2019s important to have a justified answer ready, including citations for my sources. I should phrase it correctly, mentioning that the gain is recognized in the third quarter and ensuring the specifics are clear, perhaps citing page 4 for reference. I'll make sure to emphasize the phrasing correctly in my final answer.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWeG4En2d68_67PamoKAP-tvKXy0wOQAQmf4NSqc6XMNxMGc5laOOdt6iZKdkh0Ggfou6Egq5ICDjlyiptKxy1hsuEOzdsh4ZVO9mGD_hmWwph47h3SpY4pJa732SR3EbM7V7NN2i57tJLpMj1reADrMqE0b-89Ziq9G3Hq0prE1nEtzWEa-VkIWOfc0HPkZBlpIhjtXao4-S_l673tdAKrdPcthgcL7bOyr5cCSmYda-usrlyQHFjOMDE7Ilxz7F6FNp_rUZmcga6Ns3igiemPXEUo2zzrjjuuep7u2W5JfWVlTZPSXOdNgfbSJWu5qdB8t6wwzZ36N2mbJR9hN8ujjU9jSkcS9thbdKXd00WcEPW8asa6teVu-Bo-Cujd43dpvLMkzGBytUPYdxumZb0lMdeM96nC4w4vs_AlJCMpXEi_uA3NDb9rcxt71hyhQJ1_37lhtkchgh3Ud8V9uiqHzmuZ_gtKQ16UalhVWnoOjtQ503jShy4-_6r4-53X5p_DSySPyGaKjldZl5-JLb-DBVC6xoS57dUVqFMLA9E8_ubj1t2Tx9gyAnp0TxNCyr4wAhtShD-Iu2NxN0u00RNPldLKh_GvWeYtdIsiD3fgFiFCYbGP7m4jpw0EolMNKGlD0AzsAAytAkePtN1hGcVyzkDyFNplCy45puN1wtXssXBiMfPUO2LvLOhG8nHfCEZgmWFkVm9o0i2T1NTXgBXhrXbn7JfUCRw9XZCDsrQ_EVuU61eEOogECgXKDNCoLXlqQNpVWjA--clhQgv8_0aeB-K8TY_a6EJwHlj-T7KpnUyE6ir6EWQ30RWlaL-NsxMp2TXYI9TqnekvVSc9dcP9t-f9AjB9KDnCACrZZxZbNyoAaUBVTv-diwxqUu6_bRKvJa6Iye5oeUIRlmCyYtLaknG7l8irXLwtFcoL9DnVvQee_mmQ8bf8fEkg_DK1-gCq97tA9Lh0CjF9czI-wVCD4-N0XarbQCLerE16wfOJvHMQwsyKrZyTZPDQtBm3ZHIleCaGnkp6_8MnoAGUPilj7_9o6BHZx1GhQFY5pmIaz2RTfRrgr_l2YJfRbDxgTWrEZKgVjOTE6DeTytNs5UmOM1uJp4I0If16-zwZTWojypwJJmVlcauRtqTuMp6Q6S1fF_hUcRD__noeIpTC_Cj1J51j8TJ4upL-jamBUf50UH3SNGduR4BH-9hAlPHxy3XtxNyWc6rnISBsgi7Uz1p5Psvx8KMf46qwYR8FIis9LkB35uHqxNJqKBSNL5MFTAGkTc-E9Hqd6u6dnZGm84hFFIewEYIZNJj52cpH7SgC4wtkaq_qlIjWi789LVwc2mVdWpu6hAFfbVZlw3VlLvhpj9ny62T9htzwGQCvmMyP0YFFyFCA9UKPuQFeo4MmAXSBk1tBjpjTB848WImZ6fLImH-rUpw0CmSLw7Xrsuw1rWXKtTc68spsKIuEBJC5wjvnbgE8aiZBcGJdZi17Pet_7m1D3-yUUeVrCsFWPCYuEkr0NWsQHmv5Pd6Sh7T9a9GE0dKbhUacnHF_nIRSCfLUt4dGFg7dzlss5NP_ojUTfeYddK2ikHPGBc-bxEGgfHqWHbVveSA4jIO3ny2sNacaIK86rZTGRQ11s4T21X0fG0JNBbB7V-OGCQm-ogAbIIW8.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0fc68c3155360648016ac2159c7b9087d1a1bae15db6533e17",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4673,
+   "output_tokens": 114,
+   "reasoning_tokens": 60,
+   "seconds": 3.15
+  }
+ ],
+ "answer": "Approximately **$20 billion**. The August 30, 2023 release says J&J\u2019s discontinued-operations results would include a gain of approximately $20 billion in the third quarter of 2023 (p. 4).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "gain accru|gain.*separation|August 30, 2023|JnJ|Johnson & Johnson"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 1,
+    "last": 3
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "gain|proceeds|separation.*million|separation.*billion"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "accru|gain on|transaction gain|tax.*gain|Kenvue.*gain"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 4,
+    "last": 6
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives approximately $20 billion, matching the gold answer, with consistent supporting detail.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00133,
+ "provider": "llmfoundry"
+}

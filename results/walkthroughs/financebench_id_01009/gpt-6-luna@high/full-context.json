@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01009",
+ "question": "What are the geographies that Pepsico primarily operates in as of FY2022?",
+ "gold": "As of FY2022, Pepsico primarily operates in the following geographies: North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific, Australia, New Zealand and China.",
+ "doc": "PEPSICO_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 12.8,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 260484,
+  "cached_tokens": 0,
+  "output_tokens": 380,
+  "cost": 0.026238400000000002,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to\r\nCommission file number 1-1183\r\nPepsiCo, Inc.\r\n(Exact Name of Registrant as Specified in its Charter)\r\nNorth Carolina 13-1584302\r\n(State or Other Jurisdiction of Incorporation or Organization) (I.R.S. Employer Identification No.)\r\n700 Anderson Hill Road, Purchase, New York 10577\r\n(Address of principal executive offices and Zip Code)\r\n(914) 253-2000\r\nRegistrant\u2019s telephone number, including area code\r\nSecurities registered pursuant to Section 12(b) of the Securities Exchange Act of 1934:\r\nTitle of each class Trading Symbols Name of each exchange on which registered\r\nCommon Stock, par value 1-2/3 cents per share PEP The Nasdaq Stock Market LLC\r\n0.250% Senior Notes Due 2024 PEP24 The Nasdaq Stock Market LLC\r\n2.625% Senior Notes Due 2026 PEP26 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2027 PEP27 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2028 PEP28 The Nasdaq Stock Market LLC\r\n0.500% Senior Notes Due 2028 PEP28a The Nasdaq Stock Market LLC\r\n3.200% Senior Notes Due 2029 PEP29 The Nasdaq Stock Market LLC\r\n1.125% Senior Notes Due 2031 PEP31 The Nasdaq Stock Market LLC\r\n0.400% Senior Notes Due 2032 PEP32 The Nasdaq Stock Market LLC\r\n0.750% Senior Notes Due 2033 PEP33 The Nasdaq Stock Market LLC\r\n3.550% Senior Notes Due 2034 PEP34 The Nasdaq Stock Market LLC\r\n0.875% Senior Notes Due 2039 PEP39 The Nasdaq Stock Market LLC\r\n1.050% Senior Notes Due 2050 PEP50 The Nasdaq Stock Market LLC\r\nSecurities registered pursuant to Section 12(g) of the Securities Exchange Act of 1934: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934\r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing\r\nrequirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of\r\nRegulation S-T (\u00a7 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).\r\nYes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an\r\nemerging growth company. See the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth\r\ncompany\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control\r\nover financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or\n\n[Page 2]\nissued its audit report. \u2612\r\nIf securities are registered pursuant to Section 12(b) of the\n\u2026 [1,188,811 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "PepsiCo operates across **North America, Latin America, Europe, Africa, the Middle East, South Asia, and Asia Pacific**. Its largest country operations in FY2022 were in the **United States, Mexico, Russia, Canada, China, the United Kingdom, and South Africa**.\n\nThe company reports seven divisions: FLNA, QFNA, and PBNA (U.S. and Canada), plus Latin America, Europe, AMESA, and APAC. It serves more than 200 countries and territories (pp. 4\u20136, 69).",
+    "role": "assistant",
+    "reasoning": "**Clarifying operations worldwide**\n\nI need to provide clear information about operations in over 200 countries. The largest geographies include the US, Mexico, Russia, Canada, China, the UK, and South Africa. It\u2019s important to include both the segmentation and the main operating markets to avoid any ambiguity. I want to ensure that users understand exactly where operations are taking place and how they\u2019re structured across these regions. Let's break this down effectively for clarity!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying operations worldwide**\n\nI need to provide clear information about operations in over 200 countries. The largest geographies include the US, Mexico, Russia, Canada, China, the UK, and South Africa. It\u2019s important to include both the segmentation and the main operating markets to avoid any ambiguity. I want to ensure that users understand exactly where operations are taking place and how they\u2019re structured across these regions. Let's break this down effectively for clarity!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVogz0uBDbqe-rXLP-G_m4b6y_jvpe4OUnrJq-fbZchB4sygJ5uFBOI4OAM7bBUPkBsT-Ey47wOSUXjCUK_hCQolZ1wnq-XLnEttRf5wWLtciM9gl1PPffEYlKE4zlXFpVPjDh1HSwaDe-T6BZTfGeTUPa3CgFZHm95zymhHPXIow5JJ25Ym4vczzgOaVCYK149ELvjwlaSdhePgnSDHnU2ZqH3FWBK2-82kwNJGeTa4X8IZNe-ncGAXLB2gxosyEz_KR63GVqarXSMU8Dl9t_07A_l70bH5KaX_ymyMb7fjpJfTI4aGxQXXNyxKVvuPds0VhMj88OwMdWggP9lTtfcEn18f-WssyokUoKI2L1_J4VVyGknxwJVdtDRAe-G9oSAQVGLdN3maji9CbF39M1cK8zmXaqFEOL5W7P0x2sEYmt1cbuXZRRT-Vdk9Adb_Kmnf-IaeLgzPkgKU16BMS8h0f2MZHCtS_l7iOjT9G8gtjJM-7OpoH2MtYumFyMOo_BgBmTpopoFB_1LEZJN2va_x6X18ZjRG7AAaT4OmXkoN2bwWb49e6hwP2TSimM9X-TDoAOoXCEtCMWYB0kBXqTnLrhNjfaK2lUG6iWxEvY3XxSMU5is0rQafZXstdRGbbnO2oDS8PGGd9DD3lonqxrFaNpqAU5lTapwn2FRpn1pLXURSySjCwQTHrvwMbGzbGUwx0RX2wWX0UYHXQZqE4m__Ei67elMiktODgeyJ8sVwd50_od7SIkA5QdwYI2m8Gu2nilqoydbJRO68h_E3rcI0AZNJyUG11s9Pon_plzzTDnlHWK0PImO1VvGgk_Iy8JKLwOBdsrX_zPQy0OO9uv6ILFxIKt9X6JrnKDQngiVNBpNhaa76O_r83RCakTloFsqIs7piKTILdLYSW0EgQ9K5KsybdhP40WK4D85Lg4SZY_0Xi-C8WNf8EenNW0jTNpWszN_MLFbEIrkmru26y5-BKcqfxZ0-_ivl9qpiqYWgMPlzY9WXY1VQuaAn6fLPnGL8-XdkBMKYHLy_vy8ckoe36VmpmsM03Cn75Ufhj0r97V54amFHl8w5j2KeybWP2Q5hHm4Woolj6ESCoMvLLhflgI_12i_vdQmzZq1BRkTgngV5Xz8zpRwURKfP-YLGDpGxYt7ssvEWTC2UMrzUi0FrgSd0ejS1cvbtAOEc5XxET_oQcIDeI65xrPjEDx3YTgch728ewQXHUcJVv5lVHwp3TH7Hd2d0e1IhNuetgnb5q9lr0O8EwPCbRWcbcAqgJjRaSAiZAgHYMlF3oXk0ZJzKS1O0W6OvKfZCKP6kC892sBD8YcrdB2pWj_TsBZKLMKlDx8PGypSOVzVDpwHBxxinusIAoF9Oql5_w-CM65HE-0d75U9XWVktqD_JemjKpw4TvXTEoRSSleeankeMrm7zm0UjUH9J7lg4pPHn3lC55yyX_ZlCjoyTahywPwuAwhFDK6HnKVxBKbKQZqUYR16ywsem7s0JqleaEyN8WzMEaijO3qidtia1NDEhfos55ChnGrdyqKJbrDwwgme9pL5hD220aJOI-r3AYAyWVKEdEDAQ5xWt_zrbg7aiIRNssM4_w8fWFz7sPtyNEb6evnHz5UX4RDsC1D_232A9KY-SIX387iUrURo5Xetba5b-Ksn4PJN5hKd4a0cMe8OKO5Yi_kWSKeVsNMRw3UGhetO6Y3UKm2He7N9w9KpO1zM-M5aQvNQdusdoNIG2vJn5_RI_QbzOs3HPVDP3T67yPvvlH4mSBJsZHVuNfpzKf2G_wCl9uxoajiVKKPpkFl3vG4XNyc4C8P-YAu-7yRhb2dF61I61rHVgysSW_vQuJ-IgzBclmlPgf7Kf_IoIVLtvFXeL5TczLaA3TPuGm22SAJRI0WNrBRSBzUt4L9PkacQ6b4aA8EN_M1XTVKewRbFCvlYLeqA4po43DteQ6LHvOA4wEgdaURAPntvCNm6FXlcEJ37VmsVO9rHol0n8nC9uRuB-uZ0wQ-HVd3OxwllT--2VGAxRdErZG7DfDH6RgzByeuYn7zdz5BHFBNnqh5u6PoRFAygQUQ7WjY0ECvJrSOnphQm7tDxroViACBRsn_N2R9RIMrEdFkyk3Re1dNG6o-mN-x7VfLNp3MuWvYhHnoFsgmuzHQ_MJtMh5JRGU1WRSvEX0vVI4WIP17Ygp_PmuRLwk3MLvs1VrVequU-E42mEAOAalNqOZ5fxc0iQ0dsSFYOmLs6iZnRzUDm3Xm16JClZleLI6U1jkPUCEgSlb_rsDS8DjGuD8WlSwL16h0GiwgSSXTdh8CxDfRyQLdsTJHuG7T-RI9jnsrkPOdpE95N3gXlNsEq7UjJaUkZoNFnKl3yXOvrEVo2hnaleUWfeMh3WPiQi_lt35jsSW_zNmjS_YVpLyQItYY1ldYJ37E4EopGUXcN8nMCGFSj83jqHU9qCXV99lU1ZxOGlxQr8ywsPr13zmKx0hPokw3FugudnK83Q9GSZnAdz1ooDtkTONge6trJi6kOE1NaOft0IMzldS6S0ToO_O7TAtHos1AAV8Z4fmyyecq_z2OHx3Hl1PnntGiAko4t2MSIK-HPDo-0vi_qfev2tQL8QFNfxzTBnMDKuAakK4_MWCAApSEjuxLLr8gXAUzIdyMXz4j06YkGwaEJYwth0eAl3lxG0_hWgLh8DpsHlGMeQ40naByGmhfEEI_f_bS8z8MenZ1cOLSFB5_A6hOydMXBtIV5LdhQpijT9qVydamT2K-mSyjtJBrR_LU-yc5RE0C0TkJnlzJFl7byf7rzOqc8tiHLZXrXzDb2yP-5liQOLnHJdvt4IU_W_x3WbX7o99talPOWRMZuErScmZmdbXats-gfBkouX41Ao9BhLgym6UrzyH-zbWwlQ65Oqi8FaXN0Ey2faJsdE056KWqVjXFC7b2xxrrKUzMM.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0d0e795a4a6e2e1d016ac21565d4f887d1ab0f3049c900d048",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 260484,
+   "output_tokens": 380,
+   "reasoning_tokens": 258,
+   "seconds": 12.79
+  }
+ ],
+ "answer": "PepsiCo operates across **North America, Latin America, Europe, Africa, the Middle East, South Asia, and Asia Pacific**. Its largest country operations in FY2022 were in the **United States, Mexico, Russia, Canada, China, the United Kingdom, and South Africa**.\n\nThe company reports seven divisions: FLNA, QFNA, and PBNA (U.S. and Canada), plus Latin America, Europe, AMESA, and APAC. It serves more than 200 countries and territories (pp. 4\u20136, 69).",
+ "verdict": "correct",
+ "reason": "The answer lists all the gold regions (North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific) and mentions China; Australia and New Zealand are implicitly part of Asia Pacific.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.005784,
+ "provider": "llmfoundry"
+}

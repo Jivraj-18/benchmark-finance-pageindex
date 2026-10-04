@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_10136",
+ "question": "We want to calculate a financial metric. Please help us compute it by basing your answers off of the cash flow statement and the income statement. Here's the question: what is the FY2022 retention ratio (using total cash dividends paid and net income attributable to shareholders) for General Mills? Round answer to two decimal places.",
+ "gold": "0.54",
+ "doc": "GENERALMILLS_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.0,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 91631,
+  "cached_tokens": 0,
+  "output_tokens": 335,
+  "cost": 0.0093306,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549\r\nFORM 10-K\r\n\u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR\r\nTHE FISCAL YEAR ENDED MAY 29, 2022\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFOR THE TRANSITION PERIOD FROM __________ TO __________\r\nCommission file number: 001-01185\r\n________________\r\nGENERAL MILLS, INC.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 41-0274440\r\n(State or other jurisdiction of (I.R.S. Employer\r\nincorporation or organization) Identification No.)\r\nNumber One General Mills Boulevard Minneapolis, Minnesota 55426\r\n(Address of principal executive offices) (Zip Code)\r\n(763) 764-7600\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s)\r\nName of each exchange\r\non which registered\r\nCommon Stock, $.10 par value GIS New York Stock Exchange\r\n1.000% Notes due 2023 GIS23A New York Stock Exchange\r\n0.125% Notes due 2025 GIS25A New York Stock Exchange\r\n0.450% Notes due 2026 GIS26 New York Stock Exchange\r\n1.500% Notes due 2027 GIS27 New York Stock Exchange\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2611 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes \u2610 No \u2611\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports),\r\nand (2) has been subject to such filing requirements for the past 90 days. Yes \u2611 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted\r\npursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to\r\nsubmit such files). Yes \u2611 No \u2610\n\n[Page 2]\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller\r\nreporting company, or an emerging growth company. See the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller\r\nreporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act. (Check one):\r\nLarge accelerated filer \u2611 Accelerated filer \u2610 Non-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for\r\ncomplying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness\r\nof its internal control over financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered\r\npublic accounting firm that prepared or issued its audit report. \u2611\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act). Yes \u2610 No \u2611\r\nAggregate market value of Common Stock held by non-affiliates of the registrant, based on the closing price of $62.76 per share as\r\nreported on the New York Stock Exchange on November 28, 2021 (the last business day of the registrant\u2019s most recently completed\r\nsecond fiscal quarter): $37,857.2 million.\r\nNumber of shares of Common Stock outstanding as of June 15, 2022: 597,158,440 (excluding 157,454,888 shares held in the\r\ntreasury).\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nPortions of the registrant\u2019s Proxy Statement for its 2022 Annual Meeting of Shareholder\n\u2026 [403,065 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**FY2022 retention ratio: 54.03%.**\n\nCalculation: \\((\\$2,707.3\\text{ million net earnings attributable to General Mills} - \\$1,244.5\\text{ million cash dividends paid}) \\div \\$2,707.3\\text{ million} = 54.03\\%\\). Net earnings are reported on page 45; dividends paid are reported on page 49.",
+    "role": "assistant",
+    "reasoning": "**Calculating retention ratio**\n\nI need to calculate the retention ratio using the formula: (net income attributable to shareholders - cash dividends paid) / net income attributable to shareholders. For General Mills, the net income is 2707.3, and cash dividends are 1244.5. So, the calculation goes: 2707.3 - 1244.5 = 1462.8, then divide this by 2707.3, which gives approximately 54.03%. I\u2019ll make sure to properly validate my results using the income statement and cash flow data as references.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating retention ratio**\n\nI need to calculate the retention ratio using the formula: (net income attributable to shareholders - cash dividends paid) / net income attributable to shareholders. For General Mills, the net income is 2707.3, and cash dividends are 1244.5. So, the calculation goes: 2707.3 - 1244.5 = 1462.8, then divide this by 2707.3, which gives approximately 54.03%. I\u2019ll make sure to properly validate my results using the income statement and cash flow data as references.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxJ7b8r3-ApFsLQIzqdLaRBWnpZXDrfii_ReugmLs4hPiLiD6wyPNodtw0W6o8kIEdg8LMN_jfTKAw85SCNLkZr7xu1kn7TSyqEeCAXQCLIzGudWRyPc3KNruejBHDM4H1qrLYTj-9nqzXuSPq3BcE5dnxYz04SsrFLRmnCFbVOah9C5ih3MCWhHLGqzwP03WxrTi_aoAEW55USJTa8CMJ_xkLeyMst2dT7Z3MyD3LvYYcRAcQwu-7M8sJWD9nqX2pq0b2yJq_ltHrypYu-1EPh-Xo1TvczXjBDEVj-bWrJmmFx7qf2tEdg4z__wBuA0Rsqu_vyv7unFpBIOzcsSSq3VSbwGmhY2f3ldgmW9K7eiCRFk-e342TvqxpUZkk-4S_gVzYvpOzVZC8LdkwiyXlZxzfgXWOiGmNKd9YpTQjJqTllGpFoGNnUDcseygBGEUF3A8WRJk4sSOmtrltBaUbklAYAEMj4QfOU8sXRxR61oxV2rFrw9wZqSQSFwYs1XTfDQyvN0-yRdnSK7-jDxfYJ2oRcgKUicCEakBnWsLoBLTjndkfujBPEp4Nll6QdXJTiWuRioT7Mlw3uDOZxH6gqN0TXDOD-dEyCiU4WYYiKc9U6DbPG5DWsJ8258Eq4D4-gPY2nRhiI1IIIz28Q7qExDJm52HkerqaIte2mUb7V9-QiGnCsDTTQueBKvJOW17m_wkIe19XAVEDISn4O85WBHTuIlmwdynEP3qCXEGMG3Cb_y25n6oYI-6bB0QFDxXx9SaBTcTuj9iJaQuc6nLjFSa7hLxER9gSQumpnXhswW3XobbQFc0RXsW_ux1UOWKtMA1JqiKjoZ8--DJp4gHuHrO3O0_7QCJfqZbK0UQSW1Xfxs2eBX4taeoIlitAOlzg9jc1PEuFpS0rLX1o0yV5QGozfHmgQWgiOdZTYHt78V4FpbUmXBAMVIG51pZuvB0MhhaEsLdBvjnaR4wgoJqlkALki7rpKeqdHWtmraDs_KQpuXh69o__XUT8KVLr9TOxBqEQgWrTkLkOzp00XXgmoQbdfwv76XCuzcvEf2bfk8xx0i8faXKTCE5E4neVfOu_VNJWVnQp52gZu13Nz3SVJWWgKV_XDneLR7UgsKKPzVKu5PikGd01Eth-aa1TTxeO6T5DE07dibFWhFzG_Y9LR4BQPHtQQVto9KhCCxmFBzD70CigKiSTYNd5m5AyjPvDeF0iqpnsKVrZEDbXAUrySf9NK1PPlrzDnCEIN33pb7CRRLvvSpuovu9uHw89QIx0XRWwy2kTce1WCZcwXEe_StzxIYfHLTxxl-mzbWiCm9GCmtSKAVzISDYMKilJcO5K-IeSNRE3bGx93ZO3T0BlC8LGTNGuXOiOgXixYto5Q6qWQQffkBlxq4TUbV-AFxN1qhUAZVSNlWU3nD61vAri8fYc59NWAXAYdDxliJWBKsiOPBV6cptIS-m0UetUgFoafFJ1BHF-3PnAewjdMCKy9_oLoAOOkDv0al0rfpBPQkfbXdK0uxdYj7OCwddUa2yjQqqUykExevUxWf5Y2az5jHlBbsoMXpwrDfp4xpkzR_z6kkmh5Gz_tsl5J4ZI0cGGANDCBq51pipwjM_5nRkIPChE6wNrLlxYhqdzYlUKxpMvk6Ig_aF5KurADCjroSA_fEnqOfCFEV8mDV1CDVzPywqIPV6Qsi6vOT5YBpQoE8nqFgUU-mBseSc-bqe5ehut8OhwNc6qH8ltiqBoDStiSgH3p9dU16JcYDqot1kasiroCNnhYOMUGVdnBP3EzFKqj0rSH_GaVSALy82O2arTiHYr6ryeWfH_-wpWagVjdOkuXpzbPABRFXbl3Xd-Yj5Tj6v6L0fCXdCMDV7M-93RiIKEJJGKqTndCOFPsj3pAQNnGApWeGrhhStXKF1nV4AXHlbWgmI7qWd6C50GLGx2XEplEEPpYdmWBhmzlVnNRc_8TS_I11yhRwgARr6Wgwcckd3U0TkZiYBhpiekpZtT9rO4JSCNLfOsqntuv2t6MwTZ9kJM3y7eiCeK3zDPd3CRLV73r3F3dlRT0iJauAJwYOIjKa0j9YnBSanxo_dqq0XZfSqwCbVDVfg5o2IMj6r-_HTh_yvhoPCKZZIuD_gzzGJs33stuHwmxElur9LEjMk3qKMo8BedLY8-Nx54yUjn-Iy61fRqKHQXNmmuDdogFP4grRlmzNk4vsFoLc78Gnw422LdABokW79eqlEBXaHfCc2oYxRD968e1AS_3hQMAnxpRJH_QsyYTYMUGmDDNIBUvcB85Os-BYbYur2NNXJUFPfZWchrPIB-fr2lZSUgjdoXwtmqXnN1qiq1nLZ8fHICo5cL0n33X8Pj34b1faJso1A5n0KvrderwtN-ddx2FxQKhjNovVRx5wAUnsICaFs4=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_095679b3ede5cb4a016ac21c46535487d1a9d63983828787c9",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 91631,
+   "output_tokens": 335,
+   "reasoning_tokens": 241,
+   "seconds": 6.03
+  }
+ ],
+ "answer": "**FY2022 retention ratio: 54.03%.**\n\nCalculation: \\((\\$2,707.3\\text{ million net earnings attributable to General Mills} - \\$1,244.5\\text{ million cash dividends paid}) \\div \\$2,707.3\\text{ million} = 54.03\\%\\). Net earnings are reported on page 45; dividends paid are reported on page 49.",
+ "verdict": "correct",
+ "reason": "Retention ratio of 54.03% equals 0.54 when rounded to two decimal places, matching the gold answer, and the arithmetic checks out.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002658,
+ "provider": "aipipe"
+}

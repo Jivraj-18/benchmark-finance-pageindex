@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01346",
+ "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+ "gold": "The effective tax rate of Corning has changed from 20% in FY2021 to 23% in FY 2022.",
+ "doc": "CORNING_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.9,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 103883,
+  "cached_tokens": 0,
+  "output_tokens": 147,
+  "cost": 0.0104618,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nForm 10-K\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from ___ to ___\r\nCommission file number: 1-3247\r\nCORNING INCORPORATED\r\n(Exact name of registrant as specified in its charter)\r\nNew York 16-0393470\r\n(State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.)\r\nOne Riverfront Plaza, Corning, New York 14831\r\n(Address of principal executive offices) (Zip Code)\r\n607-974-9000\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, $0.50 par value per share GLW New York Stock Exchange (NYSE)\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act.\r\nYes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Exchange Act.\r\nYes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the\r\nregistrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.\r\nYes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of this chapter) during the\r\npreceding 12 months (or for such shorter period that the registrant was required to submit such files.)\r\nYes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of \u201clarge\r\naccelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Emerging growth company \u2610\r\nSmaller reporting company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided\r\npursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting under Section 404(b) of the\r\nSarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2612\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).\r\nYes \u2610 No \u2612\r\nThe aggregate market value of the common stock held by non-affiliates of the registrant as of June 30, 2022 was approximately $26 billion based on the New York Stock Exchange closing price on such date.\r\nThere were 846,563,422 shares of common stock outstanding as of January 31, 2023.\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nPortions of Registrant's definitive Proxy Statement for its April 27, 2023 Annual Meeting of Shareholders are incorporated by reference into Part III.\r\n1\n\n[Page 2]\nTable of Contents\r\nPART I\r\nCorning Incorporated and its consolidated subsidiaries are hereinafter sometimes referred to as the \u201cCompany,\u201d the \u201cRegistrant,\u201d \u201cCorning,\u201d \u201cwe,\u201d \u201cour,\u201d or \u201cus.\u201d\r\nThis report contains forward-looking statements that involve a number of risks and uncertainti\n\u2026 [480,586 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Corning\u2019s effective tax rate increased by **2.7 percentage points**, from 20.2% in FY2021 to 22.9% in FY2022.\n\nCalculation: 22.9% \u2212 20.2% = **2.7 percentage points**. (Page 77)",
+    "role": "assistant",
+    "reasoning": "**Calculating effective tax rates**\n\nI need to calculate the effective tax rates for 2022 and 2021. The rates are 22.9% for 2022 and 20.2% for 2021, which means there's a change of +2.7 percentage points. My final answer will reflect this difference. For justification, I\u2019ll cite the information from page 77 or page 24, as it says the rounded rates are 23% and 20%. The calculation is straightforward: 22.9% - 20.2% = 2.7 percentage points.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating effective tax rates**\n\nI need to calculate the effective tax rates for 2022 and 2021. The rates are 22.9% for 2022 and 20.2% for 2021, which means there's a change of +2.7 percentage points. My final answer will reflect this difference. For justification, I\u2019ll cite the information from page 77 or page 24, as it says the rounded rates are 23% and 20%. The calculation is straightforward: 22.9% - 20.2% = 2.7 percentage points.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWIdUyOX6dNIMtDb8f--Fmxxbcd3s36AVcaOIgnLsGwZBrphY4Q2rDz8jM9TI7XIv3r1uBsCjp4siicDi4jmgL6L9dFSN8_TKbO5bhrO8JeaoFAdpHa-8qE1h8STrd2RXndRmFjHCZaIyUmqPXviw6a7B6gtm_HzGXsDgVqVzYaTbFdkRTtgxVa3UBH2zdAUmUlezs3seQ0yLWYUPdBgtTritzHuRfHVZvaQIoAUyDcoNmQRIL9VTQMKZhdyDvmgz-GUa0r0F32AZ-AY5TY6uV5Z2737FQEzqkEHkUVtiEUG6j664-NBD9koLf-RjF5ACkqvQmSRswwoswH9198xoBb1xdO5vCZPwx3G_rP8lK1lgpj-oHVC3e1l403rlFl_zu8QpKLcCszmlJNS_QJv2MNy4kvqD3ScXdXf1EnwMco98Y734W_xZnWLNtqpTBggJmHQfpa_hEVHjk-b5Yle9rjIUVYDw6grI0K_BEZj2RNgWF_QznnZcTHNVQWTQfGxjffWgzNSDPkSpoi8suRBxa4-AfTVfX0MMpnQX1cA6DJbvkG4c8r9-mSJBilTHUDLH4UX1am97h0TzCDTOy0_D4D8SReKes3Jt6N8ar9X4XNoGfEXToSQtf9R8z_xK9qg-a87YuNuMLQ2F1BdXJCrTaKxWcdg85MZIn--8A0LxmfRNtS1UwtFBKje0DvBmC-kDb39GNO_8Y4Su4oyOHzysZI-hCkmlcUfy6j-B7RsQPmdgwfE7n7G_elt7xsCnr7QwqQC-g4UQClsvb1LZTXppsnaXs1DwIB5HqLyhENsJJ8xeXQ1jlAiWdMOZlzdnCrS7hJaLgGelSPWw3YM5xDIQjBb3L7bhCRkISlO4TCpHLYCjRy7gRGEPxr3eJ_SGmugMwHSLKVphbVY4Jz-8nnM4N6oPWC6Wj29rfKImzClnqnVar3dhlCz-9BXUKPUuFQL68fY3ch-SDsLp6YDsStRHq65-cS3N5fjx42pM6QcAWXyZKGc_0t9tjctrVbGpqHg5MRHvp8knB-P7PzAmbKJT_M50skAMgSNW2vjbLKpu3G7qBcMmtlQivntWpeF-QZ_iduwbNyaWeNlJNuctF1_bSkLa9NhZYEKk2FcDfnhzTQUDdFhU9Y9QswySVDJjY9H0kRc6t-5VB44Rj1Ph8f52rsE51HW1EmoWp7RoawRAWpWE85Y50BfbiY_0hkGMJs1LTof5M0a-7mYCiFW6VZXYdDwSOe_0DRnd5j8p0cTXYADcT8ZOFSS-Vk30ppgwQrcF40tq8rZibURovbEMZVMlurDdPc43fxRuU9z2EvXJthJMugs-rAt5HW37As6V6UDt13erutMWDDoFRQ8EQ0P6Ni_-N3PAgoZDa1Kc3bXS-g7R7x5jGHklVUfRlNrxlAG8qZwH1DsbeJ1L1lOtPh8d1j4AHWd9LDSb9OmErl-gTBdnen2t5HYRUh88gWJU5jaPncpgGKYx_2QEpY4RcSudLXNQeRWVCrpKjl2HiiGHDjd9q4qHgz34oMGJqyA59SapuDY_xqU55-G_TxxHNTYJ0C7QiNUAB5nfIYv0zEa-m43yh2eIGp8__LYB8g1hcxjKbDv3at5Qpi6v3PyoScCxo8JsnydI1V-xJtcq39RCo8ry8F1ty9keWaPR82yMgG6826.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0f4110a5ca881c67016ac2158703e887d1819a6a8908140f4b",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 103883,
+   "output_tokens": 147,
+   "reasoning_tokens": 78,
+   "seconds": 5.9
+  }
+ ],
+ "answer": "Corning\u2019s effective tax rate increased by **2.7 percentage points**, from 20.2% in FY2021 to 22.9% in FY2022.\n\nCalculation: 22.9% \u2212 20.2% = **2.7 percentage points**. (Page 77)",
+ "verdict": "correct",
+ "reason": "The answer gives 20.2% in FY2021 and 22.9% in FY2022, which round to the gold answer's 20% and 23%, so the conclusion matches.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00156,
+ "provider": "llmfoundry"
+}

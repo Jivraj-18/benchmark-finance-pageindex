@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_05718",
+ "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+ "gold": "$0.40",
+ "doc": "AMERICANWATERWORKS_2020_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.5,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 130385,
+  "cached_tokens": 0,
+  "output_tokens": 92,
+  "cost": 0.0130845,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2020\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to Commission file number: 001-34028\r\nAMERICAN WATER WORKS COMPANY, INC.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 51-0063696\r\n(State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.)\r\n1 Water Street, Camden, NJ 08102-1658\r\n(Address of principal executive offices) (Zip Code)\r\n(856) 955-4001\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol Name of each exchange on which registered\r\nCommon stock, par value $0.01 per share AWK New York Stock Exchange\r\nSecurities registered pursuant to Section 12(g) of the Act: None.\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for\r\nsuch shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of this\r\nchapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the\r\ndefinitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer\r\n\u2612 Accelerated filer\r\n\u2610\r\nNon-accelerated filer\r\n\u2610\r\nSmaller reporting company\r\n\u2610\r\nEmerging growth company\r\n\u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting\r\nstandards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting under\r\nSection 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2612\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act). Yes \u2610 No \u2612\r\nState the aggregate market value of the voting and non-voting common equity held by non-affiliates computed by reference to the price at which the common equity was last sold, or the average\r\nbid and asked price of such common equity, as of the last business day of the registrant\u2019s most recently completed second fiscal quarter.\r\nCommon Stock, $0.01 par value\u2014$20,390,800,000 as of June 30, 2020 (solely for purposes of calculating this aggregate market value, American Water has defined its affiliates to include (i)\r\nthose persons who were, as of June 30, 2020, its executive officers, directors or known beneficial owners of more than 10% of its common stock, and (ii) such other persons who were deemed,\r\nas of June 30, 2020, to be controlled by, or under common con\n\u2026 [617,049 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "American Water Works paid **$0.389 billion** in cash dividends in FY2020.\n\nThe statement of cash flows reports dividends paid of **$389 million** (page 86).",
+    "role": "assistant",
+    "reasoning": "**Reviewing cash flow statement**\n\nI\u2019m focusing on the cash flow statement, specifically looking at dividends paid, which is listed as 389 million. In USD terms, that translates to 0.389 billion. I should make sure to cite the relevant pages, perhaps page 86 and maybe page 68 as well, but primarily referencing the cash flow section. It\u2019s important to provide some short justification too, making my answer clear and concise.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Reviewing cash flow statement**\n\nI\u2019m focusing on the cash flow statement, specifically looking at dividends paid, which is listed as 389 million. In USD terms, that translates to 0.389 billion. I should make sure to cite the relevant pages, perhaps page 86 and maybe page 68 as well, but primarily referencing the cash flow section. It\u2019s important to provide some short justification too, making my answer clear and concise.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxRuJFx_dNFKpv4eQ6Xu0VOe7iK9_KSZamhlE9fL-maZCZ5I5CDQQSRT7thi68lbdvVK5VAIkWgr4ZBGfadq0DJ4ZYIn4PcsmsSFrb-Cmu11CDuKwZ-TgO24elzhxGGufS2feSbo2XDgLZJOx8i91__0aOa0yALXBNA_uzfJFh3OyWuqeLoWEgyHMxjRjPMop8VA6qcav6GQqxUIOebeefh0VXD5nCfInoLOKppwf6lSHAOgP64w_rWpOva9tmZ-Ev2J1Ysp2M-TNltRpkTz6VGlrz_dW5ldhewFIFD4rNpYmvKmzY4ym1rcvd-M1R22UDMwuztebGDjzjQrCeYcb0cuO6zRLXXJrdvVwQgGkhSaI3hC4_0QLcb_jOsVIN6TAuiYeh3lAqWRaLMzce6p32SBpn3zUGEXoHIetwmNvjIu0QSylFRL0Hcf_JulWgk95gV33-PX7ecC7upIb34HRDzv4ChXkXbR3kAPq5IOxu9zTq3W9wrPXkMQUxf62dFzJ6u8a0ZWTnFes8a2Kg18aBODzMZA2KOZs8x2uLl5kGcQXhnMfheUUuqLl6JA28iPU5z1Xs8aXK8OlNPVs2yI5BCO2XaRX-X_pHWwlLcHt5X4QCKovVLLV3tbdKiVT-F1c11j_ddMGnC4aZayKBWH0_tCThPYjmiVr-eXVOZcGNFP4tZPsG-iB4cgLGU9HN6kysz48J1VcOY52d15c369tSn-5ErDtvt-fHcPV3TPNR_YwEMFb3wn32VLOm3DhzEpvk1OrMb2n-0ygZCb92e1GT6YwE3j8m4j8PNaLfPnDCaEdT_UKhQBOnNWn-REmShsbzmgs8D-Mld7dIs-Chsn3M2uTDywKzFvAvB7sHzglMA24fXpyqtZK09LoF5paQOk_qzP6ThJqMmaFEkmAYk-PCpgkc6mMbfS-CmrMNgJQnHPbJOaPztQ6xxecm6sJq7N_QU_WeDA7cyanSGHlW0MfwcPenGWHVhqo1HyDWohhoZPn8jpxKv1Y72VwgSAYszd8DQU3qRxXnE1t5FndqTZHUG4gaXU8HYiEo2bbIu9zt6g2WWjpy37OvgTfzQYW4pmx93YwJNbCEnPyQiXs254Tb9NmNuKkpaDAke7-mNStGYWFVc-NqM3dbO3KaGteRMWBIuzn7UGB7tVvN2KpdO6w7I1wyu8tZSgP0Kn2TwxlYVXYjJUFKiFwrZETR_BOTnxF1e9BBtpy2vmL4IwbGQzEwgUnuJpQswhNnOn2XwA_Nv-m2Ic0qgVVFNFrdL1bl5PHkJnpsa43W-pP0sAsR-BM1RVDn0XDsBl5zpfoFBUC74jaY4-FFfBEQ8WckltA-WIb4iSA5lFiK_WpkK13ZqRmNBvg-bb-GCbMNyDqWBoSJ8q9JJ5529hPKfX7zkWaqqdiNHr_QfX3dE9yKE2zp0EUflpaHUyN3c0qj9bGAkHJdpilN-penBqp_ZY-eVs3nVkjY7xDsbhMoKTxmvIn9bDQZ3gQYRw6j8nzvSgkFs6XmMgqqeBHvY96OBcupgT00h4D8enDgcI-YUFUP1HgCDSWXiHzR5DPFuXdPLKa5Rq4e5l6Ey3xqQPQHvNxisi6EoPGT6.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e8887cf12cbdc9f016ac21c50746c87d1b400d2eaa119212e",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 130385,
+   "output_tokens": 92,
+   "reasoning_tokens": 48,
+   "seconds": 3.45
+  }
+ ],
+ "answer": "American Water Works paid **$0.389 billion** in cash dividends in FY2020.\n\nThe statement of cash flows reports dividends paid of **$389 million** (page 86).",
+ "verdict": "correct",
+ "reason": "$0.389B rounds to about $0.40B, consistent with the gold answer within rounding.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.003654,
+ "provider": "aipipe"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_00464",
+ "question": "Is Boeing's business subject to cyclicality?",
+ "gold": "Yes, Boeing's business is subject to cyclicality due to its exposure to the airline industry which is a cyclical industry.",
+ "doc": "BOEING_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.0,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3727,
+  "cached_tokens": 0,
+  "output_tokens": 96,
+  "cost": 0.00042097,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 22]\n strategy is to leverage our core businesses to capture key next-generation programs while expanding our presence in adjacent and international markets, underscored by an intense focus on growth and productivity. BGS provides support for commercial and defense through innovative, comprehensive and cost-competitive product and service solutions. BCC facilitates, arranges, structures and provides selective financing solutions for our Boeing customers. Business Environment and Trends Domestic travel continues to recover from the lingering effects of the COVID-19 pandemic before international travel and the narrow-body market continues to follow domestic travel recovery, while the wide-body market continues to be paced by international travel recovery. The pace of the commercial market recovery remains impacted by government restrictions related to COVID-19, especially China. We are seeing a strong recovery in travel demand for our airline customers in North and South America, the Middle East, and Europe, and demand for dedicated freighters continues to be underpinned by a strong recovery in global trade. We and our suppliers are experiencing supply chain disruptions as a result of the lingering impacts of COVID-19, global supply chain constraints, and labor instability. We and our suppliers are also experiencing inflationary pressures. We continue to monitor the health and stability of the supply chain as we ramp up production. These factors have reduced overall productivity and adversely impacted our financial position, results of operations and cash flows. Airline financial performance, which influences demand for new capacity, has been adversely impacted by the COVID-19 pandemic. According to the International Air Transport Association (IATA), net losses for the airline industry were $138 billion in 2020 and $42 billion in 2021. IATA also forecasts $6.9 billion of losses for the industry globally in 2022, with approximately $9.9 billion of profits in North America d\n\n[Page 8]\nrcial aircraft is further influenced by airline profitability, availability of aircraft financing, world trade policies, government-to-government relations, technological advances, price and other competitive factors, fuel prices, terrorism, pandemics, epidemics and environmental regulations. Historically, the airline industry has been cyclical and very competitive and has experienced significant profit swings and constant challenges to be more cost competitive. Significant deterioration in the global economic environment, the airline industry generally or the financial stability of one or more of our major customers could result in fewer new orders for aircraft or services, or could cause customers to seek to postpone or cancel contractual orders and/or payments to us, which could result in lower revenues, profitability and cash flows and a reduction in our contractual backlog. In addition, because our commercial aircraft backlog consists of aircraft scheduled for delivery over a period of several years, any of these macroeconomic, industry or customer impacts could unexpectedly affect deliveries over a long period. We enter into firm fixed-price aircraft sales contracts with indexed price escalation clauses, which could subject us to losses if we have cost overruns or if increases in our costs exceed the applicable escalation rate. Commercial aircraft sales contracts are often entered into years before the aircraft are delivered. In order to help account for economic fluctuations between the contract date and delivery date, aircraft pricing generally consists of a fixed amount as modified by price escalation formulas derived from labor, commodity and other price indices. Our revenue estimates are based on current expectations with respect to these escalation formulas, but the actual escalation amounts are outside of our control. Escalation factors can fluctuate significantly from period to peri\n\u2026 [16,219 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. Boeing\u2019s commercial aircraft business is exposed to cyclicality: the filing says the airline industry has historically been cyclical, with significant swings in profitability (p. 8).",
+    "role": "assistant",
+    "reasoning": "**Justifying airline industry cyclicality**\n\nI need to answer with a definite \"yes,\" as the document states that the airline industry is historically cyclical due to demand factors. I should provide a short justification, citing specific page numbers\u2014specifically, page 8, where it is explicitly mentioned. It's also important to touch on overall exogenous demand. I want to make sure that my response is concise and focused solely on the document.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Justifying airline industry cyclicality**\n\nI need to answer with a definite \"yes,\" as the document states that the airline industry is historically cyclical due to demand factors. I should provide a short justification, citing specific page numbers\u2014specifically, page 8, where it is explicitly mentioned. It's also important to touch on overall exogenous demand. I want to make sure that my response is concise and focused solely on the document.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhU0tfA40bCBDRVlmgC0vb1LLUdRm-ewE95ISh0hL55NDr6mNG_hgzU808fNYifxiBntbamywPmQO65yd_jTlxQTgTCEBElOTjtQEPzjIlyzI9Fnp1arc53zGEiflMyEeLorYfB23MuBqfmK3EWQ8APRpLdUsKUiv84Cqs0gvhIKsR7SUcgKDa-LFwJdRm1UPLCw8lJBVkgPjLotD1-oyJvIWejLxrJqI3fD93jevUocRchcMSg0AGQuRPPH38Cgi5U40k3PtOEurzsyfZ8C_j2ZbNqqkFfd9ww34mtyxlD1bBBrzxxpK1lbwJ5CMaUceFIWdB_wmW_1PiZSWVgCEZ0_xFePSvuhqoGvPl5IUKFjo-yQY13O7J-nc8VMirGbTxzEyDwrPRAG0pHZ71YQAzE2vO79JHuOQcGG5r7TROjPiId8NN_LQz0Q4MdTfNgSbc93K_GNuqB-yL-dtq_8WcmyxvMyNzwT7pSSFlNOGhzR62Pq2MSufdiYJu2zP2NWxmcfFeqN72NqYMDs_SnHinfy4vSL27SOirx1BDZ0wYmRs0uApKqD9ygiZVHxxjE62sv_c85EUsNPqo7CCk7kUml5DT6MaaZcLWlIWhBwp8PlfIbh3y3Bmbek-ju6WwvVsaOA-A7b5vc1LIb8QHX2fD_ZtR-lJiXhJpBWPgluV_dK2ERUNHGhmAqAPKW-XqaYycwOjp6hSh34Y0LAckYOfrgI7fluPXnjAqHUVXrKjuiT2QWOXrnFQ4_awnqpjXeya-rB8YSxzjm7LYDbXzT_M9Wp6dfBN21MZ-OlQ2G2FgxANw-JZ-Ghq2qn4hZTg2RwYUXfpYaRUAPj8VaBWUMLfn3xiOgu6rI4eqQUm0W41tLODlFz6dnV5IlifB6d0CyCg-2xAklH0P-_N4xh3u_TmppBB_-8SykUIFvQSHFIKQe3FUA-fABlK2DrlRGzyLENq3R-0ts9Lqd7fEwJ1BINI_rVau_eol8hS5mPOclvUkdImyC_gTmttqND9R-tuqsvQ0uiKfn4ImuNPkTZGQ3PtnpH53xf52JJUlEZ3ODQ1eVHunpPSwvrLwcVHRhoKKfL4XLyS7L-8-1niWBgzw9CCiKMunMJcqNCn9nJPzsBFeRD-lP6MBH1R-lmt4zbeDOvvTVXAGv5-6aRsTdNPxW10mR0zue3I6LcngPsUedH77tNpQQknRlckwYIQt2q4sdnqWlSrNyBR8NUqwdCFQn3mSlJXY9lH9inPEI1bztXnQtn87N9ki_R_Z0jPJihg8799n01oacog5SgDykOK9Hy7Pfj7b91mriyUxmoBd9IhbZ0wa070NUhhoxqpN1pGKtdCVzSBRU8xcE0obxsQw8gyumlFKtIWqkqMgmzWw0GYppa8LT9hQkpuGltAFesjSwWT-IjW1CpYogLQOtW4QMO4XuInqzdZi3RsP4X49OuNCJd8zQ9eh4A4ZQp2k0ypNMdvlgvVOu6U6UlqEbg_LWrvNUZQ8Pz0bmAQYcMZ0_G0wUiTM_7w33IvbjHxfhtvxzTHzqqR06p8bmELnesZFzLBIZuy9ukQo0HVA0M_8v9MfFed0auUceGOjttRDRuSFndvy9rWac5Q4WeNbgHEF2EzXtGNos-8sEEKYUSVlLztNDVAOJnYRtrMzanjykpLmf64biQ4hmwyUu1hHqixnC8wh0qMpOFbaImi3EyIsjMvihgwTM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0976890506f47eb6016ac21532753087d1a974bf29e53ebc04",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3718,
+   "output_tokens": 96,
+   "reasoning_tokens": 54,
+   "seconds": 4.67
+  }
+ ],
+ "answer": "Yes. Boeing\u2019s commercial aircraft business is exposed to cyclicality: the filing says the airline industry has historically been cyclical, with significant swings in profitability (p. 8).",
+ "retrieved": [
+  {
+   "page": 22,
+   "score": 0.6601
+  },
+  {
+   "page": 8,
+   "score": 0.6392
+  },
+  {
+   "page": 10,
+   "score": 0.602
+  },
+  {
+   "page": 30,
+   "score": 0.5986
+  },
+  {
+   "page": 23,
+   "score": 0.5968
+  },
+  {
+   "page": 9,
+   "score": 0.5771
+  },
+  {
+   "page": 5,
+   "score": 0.5768
+  },
+  {
+   "page": 7,
+   "score": 0.5755
+  },
+  {
+   "page": 22,
+   "score": 0.5742
+  },
+  {
+   "page": 3,
+   "score": 0.5727
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer says yes and attributes Boeing's cyclicality to the historically cyclical airline industry, which matches the gold answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001386,
+ "provider": "llmfoundry"
+}

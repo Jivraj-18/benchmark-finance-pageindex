@@ -1,0 +1,97 @@
+{
+ "id": "financebench_id_00839",
+ "question": "Does Foot Locker's new CEO have previous CEO experience in a similar company to Footlocker?",
+ "gold": "Yes. She was previous CEO of Ulta Beauty which means she had to manage a large retail company that has brick and mortar + online business. So yes she was a CEO in a similar company to Foot Locker before this.",
+ "doc": "FOOTLOCKER_2022_8K_dated_2022-08-19",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.9,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3805,
+  "cached_tokens": 0,
+  "output_tokens": 152,
+  "cost": 0.00045704000000000003,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 30]\non and adherence to governance best practices. We are confident this will be a smooth transition as the Board and leadership team continue to focus on driving value for all Foot Locker stakeholders.\u201d Dillon has over 35 years of experience leading consumer-driven businesses in a diverse range of industries, from consumer-packaged goods to restaurants to telecom to beauty and retail. She brings deep consumer marketing and digital transformation expertise, strong operational experience, a proven track record of shareholder value creation and a demonstrated commitment to leadership development. Most recently, she served as Executive Chair of Ulta Beauty, after having served as CEO for eight years, and was responsible for guiding the company as it became the leading beauty destination in the U.S. and a successful omni-channel retailer with a best-in-class loyalty program. This led to revenue CAGR of 16% and the tripling of the company\u2019s market capitalization over her tenure. Previously, Dillon served as President, CEO and a member of the Board of Directors of U.S. Cellular, the Global Chief Marketing Officer of McDonald\u2019s Corp., and held leadership roles at PepsiCo. Dillon also has extensive public company board experience. She received a Bachelor of Science in Marketing and Asian Studies from the University of Illinois at Chicago. Foot Locker, Inc. leads the celebration of sneaker and youth culture around the globe through a portfolio of brands including Foot Locker, Kids Foot Locker, Champs Sports, Eastbay, atmos, WSS, and Sidestep. With approximately 2,800 retail stores in 28 countries across North America, Europe, Asia, Australia, and New Zealand as well as websites and mobile apps, the Company's purpose is to inspire and empower youth culture around the world, by fueling a shared passion for self-expression and creating unrivaled experiences at the heart of the global sneaker community. Foot Locker, Inc. has its corporate headquarters in New York. For additional inf\n\n[Page 29]\nfficer since 2014 following two years as Chief Operating Officer and holding multiple other divisional leadership roles. During Johnson\u2019s tenure, he has led the development of the Company\u2019s strategic imperatives and long-term plan, overseen sales growth to approximately $9 billion in 2021 from approximately $7 billion in 2014, been responsible for a number of investments and acquisitions, including WSS and atmos in 2021, led Foot Locker\u2019s digital transformation and strategy to expand into new geographies as well as diversify product mix across brands and categories, along with strengthening the Company\u2019s focus on DE&I and ESG initiatives. \u201cIt has been a privilege and an honor to lead Foot Locker and work alongside the best team in retail for nearly 30 years,\u201d said Johnson. \u201cTogether, we have built a broad house of brands and banners fueled by a shared passion for the global sneaker community. We have turned a brick-and-mortar company into an interactive retail community poised for long-term growth in the digital era. The Board and I have worked closely together on a thoughtful succession plan, and with a strong foundation in place and ongoing momentum against our strategic objectives, we believe now is the right time to complete the CEO transition. We are confident that Mary is the ideal person to serve as Foot Locker\u2019s next CEO and lead the Company forward. Mary has established a remarkable track\n\n[Page 30]\nrecord in the retail industry, and she brings an incredible mix of talent, experience and commitment to take Foot Locker to the next level.\u201d Dillon said, \u201cI am thrilled to be joining Foot Locker, an iconic company that possesses a strong set of values and focus on the customer experience as well as tremendous growth opportunities. It is clear how Foot Locker sits at the heart of the global sport and sneaker community, and I am excited to become part of the Company\u2019s team. I look forward to w\n\u2026 [13,558 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. Mary N. Dillon was CEO of Ulta Beauty from 2013 to 2021, a consumer-focused retailer with omni-channel operations, making that experience relevant to Foot Locker\u2019s retail business (pp. 2, 30).",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhUrTsYrZ1iRArHePZfVrDLoZNuSSKfvB2ErukofEWqNwG4KOmG2m1aAlYw7eT_Skjx9dCpAFFE4wS1DG-mQo3Oc1JC8zR4S6neR5q4OduzguiEBGHAm9jyJvW5rPG6CGv4UCt61Ab7ToEt4d3mx01UKV3mVqAOGtuv8ixmy9kJMgZTkZbx8OW-YU-mk54bYlFKuMXobVkT6nEB4hjYlmTq9i6547tme4oWDf5F4gzbu7iaFjlPX-FBYxiJn2DwFcscN6JXevYOb2odNY2_bCf-uTwu4Ssh18sgNali2_d3_MRxkKzs_9xHLrWZlXizvjw0X8qtQBgg7CH3FjcFyaa_ywqg5x1w6CYAGDSIRCQJT-Jvt1uFAGnVNd1W_JKMSr7fvNnCVBwKXgn-6kdT_o3_1UaFjj3hYotV8u5_9WKBD5QHam1sYx4lvTQgZz2M9iwYRjG8t3QXmBkhMG6KO2cQUBkJajCxVDsVEXJFnWk_Ub8c05JdzNqQJP4-vwngj2CQOTN4q_5RMzX7HjS3agiVMn0pnVSc5bNFLF0pogmll7BOACE6cTVSIX8XbAaJ1z9yzLZ5GoY8eT1ZcpwKuKzWYmy_6vayedE1ym4A0TdbGZIvHBO2KhWCAd1zqOpgtNFmkPc2qobHvsYK95PcxdZyYpBYcvep5s7FKGSf1MMa4V9xqEftehiiRHGBLvU_5dyh8DHQl8KwSSilF9YE7DYq09xYP3xL7q9W16oDiwhmRWb5EqYH38LWrmrutMYlioGolQT1EgJ9uTuLlSEeto86Nhr0-CG8fZwq1QF713UYERyNY0oQxanT0SI9J_otOEUqcvrGHnrO39IsUtBvzNiCtxVy0Bg9x9RlEMPULeZfdjYEspININJE9g6dH393mqVEvz9SlEgs9dey6uMM2E24OrdLNvNWYx2SPSA4FexX-eAiQ0MCtF49w4fr2eidFzjHMFSjwRjMtdu_qnncEWAj94Gg9s5WAtaNclWyKdayD02MctWbosEMicMbLOc7VRKp73i4ynKOU1dwgMiJk08JgvhSmcfj5QsSRPJHxck3_npwcV4kbtcxinnGe05Xghep6lvtwl1KC_Lvz3WWzFrpdsdtHVAhLvhhtTHPWd4ZOzRT_h4Y77-VS_ONg2PWDcKS_FSEx2lTjiTANquR1SuPizX4RCV-DSxFR6gYPojde69xh-PbpJwVKk7gtwAIWrml27G13uztmGVjfbYBctbbf3C6JW6OAqkiEiIcn7pcMmVbQKOw2USlVrXuc31qDd9U5Z2mZPkiz3uxYpK1UsxpOw9r0ibEZP00OiuBdkb5_jbalD8YRRVlwosFvrriGN9JHkNeL2_xZWCASCbQNfZJ1nNJ4xVTmzGnI5fmaqVwJTMYhnfGATndkYjbQCa4TZg7OsKnO4Yc_sxFHjaZoGB8Fko3KDuvOZ03-Q3vZcTUiIU9mu4WlXsD8gWLVy6QQf-mrm67ZRFakTT_jicQJNn_g9t2y5DCQXap9CSRxrPxmVQJeLjHW2W4gX_4uMg2id9CUbHBzrkgJU0_yQagEw8otLDrDjTirTPULPy14PRsuk97KCPI3QUCLuySFDwcM4YgF3syOVDVAIseBjVueiWoCViRJgSlVT2JQjJvMPSOAO3VrugzlHGHUUEI3vX1R6nRnPVk005_jxNShvvtgG6HtzjJZhcreFMVqYkV7VZdwBiSqA0cpzl71fFv8RJPh5QSM3-rTPthT6AMJda7YjmrSCe2qqubunknrf0QawABGdXwpw7iQuL3X0gsCKA6YwooY6d3tKycaV3LcTzNP7GJCtscjFt3Bao-kjaIkm0DX8qT5MvdryaOlE7gihf7EtaHayBBPnaa6KUxVvSKLw5SsD-DspqpXY92B3OrOpGwl1G2ds1Cv3rE62mqHlsGxnQ8h.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_05cfe96378686824016ac2152aa97887d184b865fce5ac3f61",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 3787,
+   "output_tokens": 152,
+   "reasoning_tokens": 97,
+   "seconds": 2.42
+  }
+ ],
+ "answer": "Yes. Mary N. Dillon was CEO of Ulta Beauty from 2013 to 2021, a consumer-focused retailer with omni-channel operations, making that experience relevant to Foot Locker\u2019s retail business (pp. 2, 30).",
+ "retrieved": [
+  {
+   "page": 30,
+   "score": 0.6395
+  },
+  {
+   "page": 29,
+   "score": 0.6235
+  },
+  {
+   "page": 30,
+   "score": 0.5937
+  },
+  {
+   "page": 2,
+   "score": 0.5798
+  },
+  {
+   "page": 29,
+   "score": 0.5697
+  },
+  {
+   "page": 12,
+   "score": 0.4998
+  },
+  {
+   "page": 30,
+   "score": 0.4877
+  },
+  {
+   "page": 5,
+   "score": 0.483
+  },
+  {
+   "page": 31,
+   "score": 0.4792
+  },
+  {
+   "page": 1,
+   "score": 0.467
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer says yes and names Ulta Beauty as her previous CEO role, noting its omni-channel retail operations, which matches the gold answer's conclusion and reasoning.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001656,
+ "provider": "llmfoundry"
+}

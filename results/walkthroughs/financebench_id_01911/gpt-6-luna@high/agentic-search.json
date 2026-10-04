@@ -1,0 +1,414 @@
+{
+ "id": "financebench_id_01911",
+ "question": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?",
+ "gold": "As adjusted EBIT is negative, coverage ratio is zero",
+ "doc": "MGMRESORTS_2022Q4_EARNINGS",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 18.2,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 4594,
+  "cached_tokens": 0,
+  "output_tokens": 1324,
+  "cost": 0.0011214,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 15 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_ZpOBHGVXLmrnf5VWBB5Hpkpc",
+      "function": {
+       "arguments": "{\"pattern\":\"Adjusted EBIT|Adjusted EBITDA|interest expense\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_jOtVlh0xLlxA0rchscX6wrmU",
+      "function": {
+       "arguments": "{\"pattern\":\"Interest Expense|interest expense, net|Interest expense\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     },
+     {
+      "id": "call_cj0oSZWULNxLMxXxnRfpoDrf",
+      "function": {
+       "arguments": "{\"pattern\":\"2022.*EBIT|FY 2022\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 2
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwHKanBrQu39VcFJmpDyFC0Z9VUHAjl5BEO3MxiPIGk2vZItkcmP67gH0nURC4EA3V1Y-161xWbyHqsnVfhisbcMTYKu60SSyYzlFp6r-HK1LqUaMZlLm4G_h2GtrqpMC_y-P900WBZpu3u6MI0a0GQwyqvmKh1bIqW0X4B2HkIJ_DfNuKcg77ThyP6Q8jmIVivje7Lu0GZZtLQcrf9W98eS4p7lsDkaOr8URRPoRLC_nNBsM54z-KDBaeS0l0cSd6gq7lckxUD8S1Km35NZyoUj-7F--jz_z9k2Ll2BMdS46MO5pi_Rfqzev8GKs0Gv7S7GiiAAZlXA0PJsBobE8LIFDsI2cLlauqnYmIHPp4S-LDgxKbylO-yGY3eTzn5K3qJYuP4OmxEEJDriUDF5JJlLUMp2Jfv6f_g5JWWWCDCvXxvYTld4fS_UJCRfBRtPyMmzxvNiLTEC8t9YuupturyAViFcgoGoResMarORgkRbdUJqfDoJIysfY69uI-VQa7MZaXHe8NSIs69wwuHi2ggpxgOG4EPcRU93MVp1zHTcWf0yOyUDhSZlLPIgM6n31e1y2eDG-zy1MAgwr5PXTg9jEql5DkzwrY_uv6zu-pTSda2F5a-7vX-5ilOpe3cJ4kPrWJ6RkzFEA5zT6yqAnDXf0tqcqYiM-aT34Gjozs3ptM3L1mfTfh31n_MK8hnUh7z1t8MagveFF4z38aPnrCFNV4tA-t1QIXu8wbshRPBx25uToyhpL3YkV5UGc79kz9RM1_sxr180w76hWCtB3cyk7A4YLb9L1qGDjzEPjg1rG8_Q2Vkj8Nl_O9zySsGuXhpkiby5rcdVdqzHoSYaH6jYISiyJ2EzS15DX7oW3qXX8U1x8978Y8iQz-OFx6cyS9FWu1Kdn-jQ25_wyRzqZJ2vNQUZmDsxSaSV2sbTQEO6AnAVfPbGqFGva_tlh4o57UEem6tGb6VrdtTKtQJNL_ByLaBEdMXLSteXGqxr_uppdNnmXSTrJPqS3GJuuKbftVY0kfBgEGgYqqbAQGvAvVB-XqTvrIJORq5PY3wKYAhEJvWQTrm9Cgh6iXGoa20v07J0WTEGX0I-h3ltmrtjADq6Fns1LKgrHAmdEj5lBhim24aIbUJQmsxgQka5sPGr7J-2yatyHBLd0_dRi8_yHRNBTmo6e8He_iUjpC2CsSlm5dxlAwbThzIzrlO_oxA78Zmw5E6d4DocqfQS1Top7wy3MJyYnk3l0Ka-1H0cCsEzvODLJ7fyB9w8kRXXxQ-Kzel-urV137ca8Gane_GOZIBS9Uk3HGy5HW3gLdvZQUTUMopoBBflw6kt1iopyfI04_ugZSTNVUILTYgHOuPFAy68PTWV2to0Okr7qXo2-633GSMogmR1fgoHtRq8xPioCO6.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_021a751bae1a932d016ac21c06cb3087d1abb31b9fa2ecea3d",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 223,
+   "output_tokens": 98,
+   "reasoning_tokens": 12,
+   "seconds": 2.22
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 15 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_ZpOBHGVXLmrnf5VWBB5Hpkpc",
+       "function": {
+        "arguments": "{\"pattern\":\"Adjusted EBIT|Adjusted EBITDA|interest expense\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_jOtVlh0xLlxA0rchscX6wrmU",
+       "function": {
+        "arguments": "{\"pattern\":\"Interest Expense|interest expense, net|Interest expense\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      },
+      {
+       "id": "call_cj0oSZWULNxLMxXxnRfpoDrf",
+       "function": {
+        "arguments": "{\"pattern\":\"2022.*EBIT|FY 2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 2
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwHKanBrQu39VcFJmpDyFC0Z9VUHAjl5BEO3MxiPIGk2vZItkcmP67gH0nURC4EA3V1Y-161xWbyHqsnVfhisbcMTYKu60SSyYzlFp6r-HK1LqUaMZlLm4G_h2GtrqpMC_y-P900WBZpu3u6MI0a0GQwyqvmKh1bIqW0X4B2HkIJ_DfNuKcg77ThyP6Q8jmIVivje7Lu0GZZtLQcrf9W98eS4p7lsDkaOr8URRPoRLC_nNBsM54z-KDBaeS0l0cSd6gq7lckxUD8S1Km35NZyoUj-7F--jz_z9k2Ll2BMdS46MO5pi_Rfqzev8GKs0Gv7S7GiiAAZlXA0PJsBobE8LIFDsI2cLlauqnYmIHPp4S-LDgxKbylO-yGY3eTzn5K3qJYuP4OmxEEJDriUDF5JJlLUMp2Jfv6f_g5JWWWCDCvXxvYTld4fS_UJCRfBRtPyMmzxvNiLTEC8t9YuupturyAViFcgoGoResMarORgkRbdUJqfDoJIysfY69uI-VQa7MZaXHe8NSIs69wwuHi2ggpxgOG4EPcRU93MVp1zHTcWf0yOyUDhSZlLPIgM6n31e1y2eDG-zy1MAgwr5PXTg9jEql5DkzwrY_uv6zu-pTSda2F5a-7vX-5ilOpe3cJ4kPrWJ6RkzFEA5zT6yqAnDXf0tqcqYiM-aT34Gjozs3ptM3L1mfTfh31n_MK8hnUh7z1t8MagveFF4z38aPnrCFNV4tA-t1QIXu8wbshRPBx25uToyhpL3YkV5UGc79kz9RM1_sxr180w76hWCtB3cyk7A4YLb9L1qGDjzEPjg1rG8_Q2Vkj8Nl_O9zySsGuXhpkiby5rcdVdqzHoSYaH6jYISiyJ2EzS15DX7oW3qXX8U1x8978Y8iQz-OFx6cyS9FWu1Kdn-jQ25_wyRzqZJ2vNQUZmDsxSaSV2sbTQEO6AnAVfPbGqFGva_tlh4o57UEem6tGb6VrdtTKtQJNL_ByLaBEdMXLSteXGqxr_uppdNnmXSTrJPqS3GJuuKbftVY0kfBgEGgYqqbAQGvAvVB-XqTvrIJORq5PY3wKYAhEJvWQTrm9Cgh6iXGoa20v07J0WTEGX0I-h3ltmrtjADq6Fns1LKgrHAmdEj5lBhim24aIbUJQmsxgQka5sPGr7J-2yatyHBLd0_dRi8_yHRNBTmo6e8He_iUjpC2CsSlm5dxlAwbThzIzrlO_oxA78Zmw5E6d4DocqfQS1Top7wy3MJyYnk3l0Ka-1H0cCsEzvODLJ7fyB9w8kRXXxQ-Kzel-urV137ca8Gane_GOZIBS9Uk3HGy5HW3gLdvZQUTUMopoBBflw6kt1iopyfI04_ugZSTNVUILTYgHOuPFAy68PTWV2to0Okr7qXo2-633GSMogmR1fgoHtRq8xPioCO6.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_021a751bae1a932d016ac21c06cb3087d1abb31b9fa2ecea3d",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_ZpOBHGVXLmrnf5VWBB5Hpkpc",
+     "content": "p2: \u2022 Consolidated Adjusted EBITDAR(2) of $957 million in the current quarter.\np3: \u2022 Consolidated Adjusted EBITDAR of $3.5 billion in 2022.\np7: 2.\"Adjusted EBITDAR\" is earnings before interest and other non-operating income (expense), taxes, depreciation and\np8: Adjusted EBITDAR information is a non-GAAP measure that is a valuation metric, should not be used as an operating\np8: gaming companies. Management believes that while items excluded from Adjusted EBITDAR may be recurring in nature\np9: EBITDAR may calculate Adjusted EBITDAR in a different manner and such differences may be material. The Company has\np9: lease payments, and debt principal repayments, which are not reflected in Adjusted EBITDAR.\np9: A reconciliation of GAAP net income (loss) to Adjusted EBITDAR is included in the financial schedules in this release.\np11: Interest expense, net of amounts capitalized (137,132) (201,477) (594,954) (799,593)\np13: SUPPLEMENTAL DATA \u2013 ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR\np14: RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR\np14: Interest expense, net of amounts capitalized 137,132 201,477 594,954 799,593\np14: Adjusted EBITDAR $ 957,307 $ 3,497,254"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_jOtVlh0xLlxA0rchscX6wrmU",
+     "content": "p11: Interest expense, net of amounts capitalized (137,132) (201,477) (594,954) (799,593)\np14: Interest expense, net of amounts capitalized 137,132 201,477 594,954 799,593"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_cj0oSZWULNxLMxXxnRfpoDrf",
+     "content": "No matches."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_Lreg69GfWswcepGBGJT0vAGv",
+      "function": {
+       "arguments": "{\"first\":3,\"last\":3}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_IdJEdAJr6JXMfJTTT8MFqnpS",
+      "function": {
+       "arguments": "{\"first\":11,\"last\":11}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 1
+     },
+     {
+      "id": "call_d5sQbolKQm9f37MxTCMhvvV3",
+      "function": {
+       "arguments": "{\"first\":14,\"last\":14}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 2
+     }
+    ],
+    "reasoning": "**Analyzing Adjusted EBIT**\n\nI'm looking at a question about Adjusted EBIT with a focus on annual interest expense. It seems like the user may want details from the 2022 earnings press release, specifically regarding Adjusted EBITDA. I noticed there might be some confusion with Adjusted EBITDAR instead of EBIT. I need to check the document pages for clarity and see if I can derive Adjusted EBIT by subtracting rent from Adjusted EBITDAR. I'll also need to ensure I'm addressing the interest coverage ratio properly.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Analyzing Adjusted EBIT**\n\nI'm looking at a question about Adjusted EBIT with a focus on annual interest expense. It seems like the user may want details from the 2022 earnings press release, specifically regarding Adjusted EBITDA. I noticed there might be some confusion with Adjusted EBITDAR instead of EBIT. I need to check the document pages for clarity and see if I can derive Adjusted EBIT by subtracting rent from Adjusted EBITDAR. I'll also need to ensure I'm addressing the interest coverage ratio properly.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwMRpqaVTYRhiNLjROLbRugP1N8M7JpTVwLaXFsk8qssCXd_azKehv6OWfsyO7yR-n2-noZced0p0AJqO2iEDo0K4oNvWAYq-0IY8lEc0XxhU0z8yytgkKUTFrtD6U3YWfMEfu2LRV1XlbVi12nFC_nEwg6DIihP6QBiqLFB7kr1Ndertlxa_48IxyJrinJzWYvggknD2UQaG1Rm-yWxJBfz_p8ONYkom--Ya-3yyWIg_ICRb7R_M0WCoFuCztbMY1Dl_N4FmB_nI5iOtPlaQqH_IhZz6DBhTVfOH9RbjKb2NG0ue0Sg2fHttoKaTVGBwgcGMB3HI-V8dA6HIqrW5tSFEuhKJtimH2zbNj3Bv7SGj_fSAlKpe9DJxG8CJIFbLIZToDEzDkJk6TrUnNWHXX891PeQsJVgYmP_xVu4fAjc0SjtfmqMKq2KZAl3OLdUd4kUZJKCrRcAK8bKMd7UsD3wi92_ZlvowR4Qu-NGR2vbqb5jeN-0pZYT-dJUMi8MzNWWVhNHWEa5M7wfYaEbHBnpuZEkUIbrz-kTOLzWJ4r9jgbyZXCKGwTgX4qi-56i1L7vfSyGVXfvAzWw9VZPzJPBRlhoeSJHp8wxefWef-_xwnSf3yPd51d05xU1iiIhPC3hxYgQ82MBvUW3D4e1w3ANVuOThaGQM_NpU40ZU-aYsUunY1-IAOHDEKeoHenbgrZg97dpWK_K5AgbdTxbAGqriKdtCu2ITTZjTkk-2Rmczzj2bchGAI8ydi8jMxXEKhi-aOK6wlltxAjSBQFXTWbXWxoPetEASLt8msqGBHRfM_SE_3Vg41ZSRafJzR5WoWRe99dWSwv7PIEg6nG8hC1wGYDxclB19dgu4d0p1biGoh4P0EOqcyK8LrfWdnll_Bt_Nj755begGA4y1FqKvVAf1-EA1vvybrZqe8kdKzDishfJOfs3rzuMlZyD9pTWFRUPgJTxi-_QxB27CrcLv5R6vGObf-HpkS1rLqou557KwpgdktuyFuy-RniO6IMZPEbizFQz1iK5OxU3Yt7uw5RnCL7wQMzUwx28rAKksWqV8dS18W2K0VSS49MqQYM3B9PSWz7qTSisZGthSanK1lec61CHszkM4qt6Xmb2rcM7R1qaonfk3laXMCN3LzyqKhTGI3GcVKlwnnRc-aw9NrBU5rNX4ynWMhJvnSbw4-birNZ1iUWVzxxkKcxGxObwyjy7lK5TXrrJciZypVf7qF7tWsOs2iFbaA6KGohZHK4F43l726HSonq_4EhDQlWyFak4yD1nEl9Eld5LB3UPRnkZHXnU0e00Cohw9wqoz5UBMCd4kGB1iMCgFTRxdkVXTbkZj1ct0Mo4mxBvj38fLivkgxp6CAyDswdy9nTAg9XuJuqkM6fMGMYZFo_jkLVMFF5udNsDCqcvunz2k63KZ6RwgavyGMVK94zcsMPm1MW89DQT25LF3WyaPCec7AJPl_OClVgJpb9PClUWTzxyjskS2sZN7QKE4T2bU5co9Um4VrZ_ke7znQLsXLsHlKSqUCkxMaoy97YdsZ7H4j2XqDEATGaQHnntYRj-610reHSYFaCPmceQPUn7eczwcB08bE9PWeSxe77m62EiqGIYnVYVVRcz7wC_zt3i4XQGFAXcXcHtJycrzam2EiEM5-f6AULDQdDxrW4Oc6tLK4UN-fx8N5NgBVMLZU2iOtmgurYLhobdf5a6fos1MzVFo0qF590PjgQurapDwaQ486EtVYp5HzY-vyi3OmOdjjwqaqP4IKxN1RHBkdICy1lKRsg85sp1jfYupzT8FJNUaDdUIg9nEvRiA5clv_QMvk8FKdghn2_sMzrDWeCMy6e-TdWBjiWAw83N38F_vGFfi8pNbQX3IlKGKWNIvSaqhe9sM-lKZKBx1M_jLykAeLoLr63clnZk1gMeDbRW15slzT5UdjAjNlZwlqzJdSMS5hHbQbfh6cYF461nZle_J7bOwEw3jhpRn4ssUh-ROSS7xME7LhE5OVWW9zSbW93OeYrNhOa5BW5jfb6geTlWtyLE2JDMw6x1IQG_NTJ5kuDj2D8zS3bt3NbPBKRasKlVhsq7Y5SY54tFaqB3TRgKOBGWvleVvMOiVX0KTCroJGREbvIjCJh6DGhXIT04dIeNKRHAW3a3ZsqTAK4DEcd3XgIT03JVxDS9OdJVOapJ0MJnUXy1rtWHkTfemHASftWu0pZNZvtYGANGBtfobnv1sHEaBZq0hIE1GQ8I7PZIJqPpld1T9cB0PJvhxxBjK9rGBEUk_T4NqhWbS5Hoc5vqoT1ChdxKZNT4DZWWHROTEV8kYCLeEgZySbt-kJRnnuUmvRAdZQUiAMZHmu9OegjMxMyaCE4ARwEKpglrCguLrt1eVXTj2iWp5OePTMni6ZDfXgoDwT0jTGI1ovdgSNAoF-ZrmTR43le.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_021a751bae1a932d016ac21c09322487d1bbd63ab82d901835",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 735,
+   "output_tokens": 243,
+   "reasoning_tokens": 167,
+   "seconds": 4.52
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 15 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_ZpOBHGVXLmrnf5VWBB5Hpkpc",
+       "function": {
+        "arguments": "{\"pattern\":\"Adjusted EBIT|Adjusted EBITDA|interest expense\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_jOtVlh0xLlxA0rchscX6wrmU",
+       "function": {
+        "arguments": "{\"pattern\":\"Interest Expense|interest expense, net|Interest expense\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      },
+      {
+       "id": "call_cj0oSZWULNxLMxXxnRfpoDrf",
+       "function": {
+        "arguments": "{\"pattern\":\"2022.*EBIT|FY 2022\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 2
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwHKanBrQu39VcFJmpDyFC0Z9VUHAjl5BEO3MxiPIGk2vZItkcmP67gH0nURC4EA3V1Y-161xWbyHqsnVfhisbcMTYKu60SSyYzlFp6r-HK1LqUaMZlLm4G_h2GtrqpMC_y-P900WBZpu3u6MI0a0GQwyqvmKh1bIqW0X4B2HkIJ_DfNuKcg77ThyP6Q8jmIVivje7Lu0GZZtLQcrf9W98eS4p7lsDkaOr8URRPoRLC_nNBsM54z-KDBaeS0l0cSd6gq7lckxUD8S1Km35NZyoUj-7F--jz_z9k2Ll2BMdS46MO5pi_Rfqzev8GKs0Gv7S7GiiAAZlXA0PJsBobE8LIFDsI2cLlauqnYmIHPp4S-LDgxKbylO-yGY3eTzn5K3qJYuP4OmxEEJDriUDF5JJlLUMp2Jfv6f_g5JWWWCDCvXxvYTld4fS_UJCRfBRtPyMmzxvNiLTEC8t9YuupturyAViFcgoGoResMarORgkRbdUJqfDoJIysfY69uI-VQa7MZaXHe8NSIs69wwuHi2ggpxgOG4EPcRU93MVp1zHTcWf0yOyUDhSZlLPIgM6n31e1y2eDG-zy1MAgwr5PXTg9jEql5DkzwrY_uv6zu-pTSda2F5a-7vX-5ilOpe3cJ4kPrWJ6RkzFEA5zT6yqAnDXf0tqcqYiM-aT34Gjozs3ptM3L1mfTfh31n_MK8hnUh7z1t8MagveFF4z38aPnrCFNV4tA-t1QIXu8wbshRPBx25uToyhpL3YkV5UGc79kz9RM1_sxr180w76hWCtB3cyk7A4YLb9L1qGDjzEPjg1rG8_Q2Vkj8Nl_O9zySsGuXhpkiby5rcdVdqzHoSYaH6jYISiyJ2EzS15DX7oW3qXX8U1x8978Y8iQz-OFx6cyS9FWu1Kdn-jQ25_wyRzqZJ2vNQUZmDsxSaSV2sbTQEO6AnAVfPbGqFGva_tlh4o57UEem6tGb6VrdtTKtQJNL_ByLaBEdMXLSteXGqxr_uppdNnmXSTrJPqS3GJuuKbftVY0kfBgEGgYqqbAQGvAvVB-XqTvrIJORq5PY3wKYAhEJvWQTrm9Cgh6iXGoa20v07J0WTEGX0I-h3ltmrtjADq6Fns1LKgrHAmdEj5lBhim24aIbUJQmsxgQka5sPGr7J-2yatyHBLd0_dRi8_yHRNBTmo6e8He_iUjpC2CsSlm5dxlAwbThzIzrlO_oxA78Zmw5E6d4DocqfQS1Top7wy3MJyYnk3l0Ka-1H0cCsEzvODLJ7fyB9w8kRXXxQ-Kzel-urV137ca8Gane_GOZIBS9Uk3HGy5HW3gLdvZQUTUMopoBBflw6kt1iopyfI04_ugZSTNVUILTYgHOuPFAy68PTWV2to0Okr7qXo2-633GSMogmR1fgoHtRq8xPioCO6.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_021a751bae1a932d016ac21c06cb3087d1abb31b9fa2ecea3d",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_ZpOBHGVXLmrnf5VWBB5Hpkpc",
+     "content": "p2: \u2022 Consolidated Adjusted EBITDAR(2) of $957 million in the current quarter.\np3: \u2022 Consolidated Adjusted EBITDAR of $3.5 billion in 2022.\np7: 2.\"Adjusted EBITDAR\" is earnings before interest and other non-operating income (expense), taxes, depreciation and\np8: Adjusted EBITDAR information is a non-GAAP measure that is a valuation metric, should not be used as an operating\np8: gaming companies. Management believes that while items excluded from Adjusted EBITDAR may be recurring in nature\np9: EBITDAR may calculate Adjusted EBITDAR in a different manner and such differences may be material. The Company has\np9: lease payments, and debt principal repayments, which are not reflected in Adjusted EBITDAR.\np9: A reconciliation of GAAP net income (loss) to Adjusted EBITDAR is included in the financial schedules in this release.\np11: Interest expense, net of amounts capitalized (137,132) (201,477) (594,954) (799,593)\np13: SUPPLEMENTAL DATA \u2013 ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR\np14: RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR\np14: Interest expense, net of amounts capitalized 137,132 201,477 594,954 799,593\np14: Adjusted EBITDAR $ 957,307 $ 3,497,254"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_jOtVlh0xLlxA0rchscX6wrmU",
+     "content": "p11: Interest expense, net of amounts capitalized (137,132) (201,477) (594,954) (799,593)\np14: Interest expense, net of amounts capitalized 137,132 201,477 594,954 799,593"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_cj0oSZWULNxLMxXxnRfpoDrf",
+     "content": "No matches."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_Lreg69GfWswcepGBGJT0vAGv",
+       "function": {
+        "arguments": "{\"first\":3,\"last\":3}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_IdJEdAJr6JXMfJTTT8MFqnpS",
+       "function": {
+        "arguments": "{\"first\":11,\"last\":11}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 1
+      },
+      {
+       "id": "call_d5sQbolKQm9f37MxTCMhvvV3",
+       "function": {
+        "arguments": "{\"first\":14,\"last\":14}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 2
+      }
+     ],
+     "reasoning": "**Analyzing Adjusted EBIT**\n\nI'm looking at a question about Adjusted EBIT with a focus on annual interest expense. It seems like the user may want details from the 2022 earnings press release, specifically regarding Adjusted EBITDA. I noticed there might be some confusion with Adjusted EBITDAR instead of EBIT. I need to check the document pages for clarity and see if I can derive Adjusted EBIT by subtracting rent from Adjusted EBITDAR. I'll also need to ensure I'm addressing the interest coverage ratio properly.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Analyzing Adjusted EBIT**\n\nI'm looking at a question about Adjusted EBIT with a focus on annual interest expense. It seems like the user may want details from the 2022 earnings press release, specifically regarding Adjusted EBITDA. I noticed there might be some confusion with Adjusted EBITDAR instead of EBIT. I need to check the document pages for clarity and see if I can derive Adjusted EBIT by subtracting rent from Adjusted EBITDAR. I'll also need to ensure I'm addressing the interest coverage ratio properly.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwMRpqaVTYRhiNLjROLbRugP1N8M7JpTVwLaXFsk8qssCXd_azKehv6OWfsyO7yR-n2-noZced0p0AJqO2iEDo0K4oNvWAYq-0IY8lEc0XxhU0z8yytgkKUTFrtD6U3YWfMEfu2LRV1XlbVi12nFC_nEwg6DIihP6QBiqLFB7kr1Ndertlxa_48IxyJrinJzWYvggknD2UQaG1Rm-yWxJBfz_p8ONYkom--Ya-3yyWIg_ICRb7R_M0WCoFuCztbMY1Dl_N4FmB_nI5iOtPlaQqH_IhZz6DBhTVfOH9RbjKb2NG0ue0Sg2fHttoKaTVGBwgcGMB3HI-V8dA6HIqrW5tSFEuhKJtimH2zbNj3Bv7SGj_fSAlKpe9DJxG8CJIFbLIZToDEzDkJk6TrUnNWHXX891PeQsJVgYmP_xVu4fAjc0SjtfmqMKq2KZAl3OLdUd4kUZJKCrRcAK8bKMd7UsD3wi92_ZlvowR4Qu-NGR2vbqb5jeN-0pZYT-dJUMi8MzNWWVhNHWEa5M7wfYaEbHBnpuZEkUIbrz-kTOLzWJ4r9jgbyZXCKGwTgX4qi-56i1L7vfSyGVXfvAzWw9VZPzJPBRlhoeSJHp8wxefWef-_xwnSf3yPd51d05xU1iiIhPC3hxYgQ82MBvUW3D4e1w3ANVuOThaGQM_NpU40ZU-aYsUunY1-IAOHDEKeoHenbgrZg97dpWK_K5AgbdTxbAGqriKdtCu2ITTZjTkk-2Rmczzj2bchGAI8ydi8jMxXEKhi-aOK6wlltxAjSBQFXTWbXWxoPetEASLt8msqGBHRfM_SE_3Vg41ZSRafJzR5WoWRe99dWSwv7PIEg6nG8hC1wGYDxclB19dgu4d0p1biGoh4P0EOqcyK8LrfWdnll_Bt_Nj755begGA4y1FqKvVAf1-EA1vvybrZqe8kdKzDishfJOfs3rzuMlZyD9pTWFRUPgJTxi-_QxB27CrcLv5R6vGObf-HpkS1rLqou557KwpgdktuyFuy-RniO6IMZPEbizFQz1iK5OxU3Yt7uw5RnCL7wQMzUwx28rAKksWqV8dS18W2K0VSS49MqQYM3B9PSWz7qTSisZGthSanK1lec61CHszkM4qt6Xmb2rcM7R1qaonfk3laXMCN3LzyqKhTGI3GcVKlwnnRc-aw9NrBU5rNX4ynWMhJvnSbw4-birNZ1iUWVzxxkKcxGxObwyjy7lK5TXrrJciZypVf7qF7tWsOs2iFbaA6KGohZHK4F43l726HSonq_4EhDQlWyFak4yD1nEl9Eld5LB3UPRnkZHXnU0e00Cohw9wqoz5UBMCd4kGB1iMCgFTRxdkVXTbkZj1ct0Mo4mxBvj38fLivkgxp6CAyDswdy9nTAg9XuJuqkM6fMGMYZFo_jkLVMFF5udNsDCqcvunz2k63KZ6RwgavyGMVK94zcsMPm1MW89DQT25LF3WyaPCec7AJPl_OClVgJpb9PClUWTzxyjskS2sZN7QKE4T2bU5co9Um4VrZ_ke7znQLsXLsHlKSqUCkxMaoy97YdsZ7H4j2XqDEATGaQHnntYRj-610reHSYFaCPmceQPUn7eczwcB08bE9PWeSxe77m62EiqGIYnVYVVRcz7wC_zt3i4XQGFAXcXcHtJycrzam2EiEM5-f6AULDQdDxrW4Oc6tLK4UN-fx8N5NgBVMLZU2iOtmgurYLhobdf5a6fos1MzVFo0qF590PjgQurapDwaQ486EtVYp5HzY-vyi3OmOdjjwqaqP4IKxN1RHBkdICy1lKRsg85sp1jfYupzT8FJNUaDdUIg9nEvRiA5clv_QMvk8FKdghn2_sMzrDWeCMy6e-TdWBjiWAw83N38F_vGFfi8pNbQX3IlKGKWNIvSaqhe9sM-lKZKBx1M_jLykAeLoLr63clnZk1gMeDbRW15slzT5UdjAjNlZwlqzJdSMS5hHbQbfh6cYF461nZle_J7bOwEw3jhpRn4ssUh-ROSS7xME7LhE5OVWW9zSbW93OeYrNhOa5BW5jfb6geTlWtyLE2JDMw6x1IQG_NTJ5kuDj2D8zS3bt3NbPBKRasKlVhsq7Y5SY54tFaqB3TRgKOBGWvleVvMOiVX0KTCroJGREbvIjCJh6DGhXIT04dIeNKRHAW3a3ZsqTAK4DEcd3XgIT03JVxDS9OdJVOapJ0MJnUXy1rtWHkTfemHASftWu0pZNZvtYGANGBtfobnv1sHEaBZq0hIE1GQ8I7PZIJqPpld1T9cB0PJvhxxBjK9rGBEUk_T4NqhWbS5Hoc5vqoT1ChdxKZNT4DZWWHROTEV8kYCLeEgZySbt-kJRnnuUmvRAdZQUiAMZHmu9OegjMxMyaCE4ARwEKpglrCguLrt1eVXTj2iWp5OePTMni6ZDfXgoDwT0jTGI1ovdgSNAoF-ZrmTR43le.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_021a751bae1a932d016ac21c09322487d1bbd63ab82d901835",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_Lreg69GfWswcepGBGJT0vAGv",
+     "content": "[Page 3]\nPage 3 of 15\r\nAdjusted EPS\r\nThe following table reconciles diluted earnings per share (\u201cEPS\u201d) to Adjusted EPS (approximate EPS \r\nimpact shown, per share; positive adjustments represent charges to income):\r\nThree Months Ended December 31, 2022 2021\r\nDiluted earnings per share $ 0.69 $ 0.23\r\nProperty transactions, net (2.74) (0.15)\r\nNon-operating items:\r\nInvestments and other (0.10) 0.02\r\nForeign currency gain on MGM China senior notes (0.02) \u2014\r\nChange in fair value of unhedged MGP swaps \u2014 (0.01)\r\nIncome tax impact on net income adjustments (1) 0.64 0.03\r\nAdjusted EPS $ (1.53) $ 0.12\r\n(1) The income tax impact includes current and deferred income tax expense based upon the nature of the adjustment and the \r\njurisdiction in which it occurs.\r\nFull Year 2022 Financial Highlights:\r\nConsolidated Results\r\n\u2022 Consolidated net revenues of $13.1 billion in the current year compared to $9.7 billion in the \r\nprior year, an increase of 36%. The current year includes the operating results of The \r\nCosmopolitan upon its acquisition in May 2022, a full year of Aria and Vdara (collectively \r\n\"Aria\") due to its acquisition in September 2021, and the results of The Mirage until its \r\ndisposition in December 2022;\r\n\u2022 Operating income was $1.4 billion compared to $2.3 billion in the prior year, due to a $2.5 \r\nbillion increase in noncash amortization expense of the MGM Grand Paradise gaming \r\nsubconcession and an increase of $1.1 billion of rent expense related to triple-net operating \r\nleases and ground leases due primarily to The Cosmopolitan lease, the Aria lease, and VICI \r\nlease, partially offset by the $2.3 billion gain on REIT transactions, net and the $1.1 billion gain \r\non the disposition of The Mirage in the current year, and also due to the prior year results \r\nincluding the $1.6 billion gain on consolidation of CityCenter, net;\r\n\u2022 Net income attributable to MGM Resorts of $1.5 billion in 2022, which was impacted by the \r\nitems affecting operating income discussed above, compared to $1.3 billion in the prior year;\r\n\u2022 Diluted earnings per share of $3.49 in 2022 compared to $2.41 in 2021;\r\n\u2022 Adjusted EPS loss of $2.74 in 2022, compared to Adjusted EPS loss of $0.67 in 2021; and\r\n\u2022 Consolidated Adjusted EBITDAR of $3.5 billion in 2022.\r\nLas Vegas Strip Resorts\r\n\u2022 Net revenues of $8.4 billion in the current year compared to $4.7 billion in the prior year, an \r\nincrease of 77%;\r\n\u2022 Same-store net revenues (adjusted for acquisitions and dispositions) of $5.6 billion in the current \r\nyear compared to $4.0 billion in the prior year, an increase of 42%;\r\n\u2022 Adjusted Property EBITDAR of $3.1 billion in the current year compared to $1.7 billion in the \r\nprior year, an increase of 81%;"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_IdJEdAJr6JXMfJTTT8MFqnpS",
+     "content": "[Page 11]\nPage 11 of 15\r\nMGM RESORTS INTERNATIONAL AND SUBSIDIARIES\r\nCONSOLIDATED STATEMENTS OF OPERATIONS\r\n(In thousands, except per share data)\r\n(Unaudited)\r\nThree Months Ended Twelve Months Ended\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nRevenues\r\nCasino $ 1,548,762 $ 1,527,818 $ 5,734,173 $ 5,362,912\r\nRooms 897,943 636,130 3,057,145 1,690,037\r\nFood and beverage 710,646 515,049 2,604,238 1,391,605\r\nEntertainment, retail and other 421,691 369,577 1,686,236 1,009,503\r\nReimbursed costs 13,174 8,318 45,693 226,083\r\n3,592,216 3,056,892 13,127,485 9,680,140\r\nExpenses\r\nCasino 796,444 742,320 2,746,576 2,551,169\r\nRooms 252,602 198,578 937,272 600,942\r\nFood and beverage 527,876 383,431 1,905,625 1,034,780\r\nEntertainment, retail and other 262,707 232,342 1,017,817 617,635\r\nReimbursed costs 13,174 8,318 45,693 226,083\r\nGeneral and administrative 1,208,541 747,348 4,226,617 2,507,239\r\nCorporate expense 131,003 135,756 479,118 422,777\r\nPreopening and start-up expenses 504 3,452 1,876 5,094\r\nProperty transactions, net (1,060,701) (68,578) (1,036,997) (67,736)\r\nGain on REIT transactions, net \u2014 \u2014 (2,277,747) \u2014\r\nGain on consolidation of CityCenter, net \u2014 \u2014 \u2014 (1,562,329)\r\nDepreciation and amortization 1,421,637 297,031 3,482,050 1,150,610\r\n3,553,787 2,679,998 11,527,900 7,486,264\r\nIncome (loss) from unconsolidated affiliates (40,325) (8,047) (160,213) 84,823\r\nOperating income (loss) (1,896) 368,847 1,439,372 2,278,699\r\nNon-operating income (expense)\r\nInterest expense, net of amounts capitalized (137,132) (201,477) (594,954) (799,593)\r\nNon-operating items from unconsolidated affiliates (1,209) (15,770) (23,457) (83,243)\r\nOther, net 106,160 (4,361) 82,838 65,941\r\n(32,181) (221,608) (535,573) (816,895)\r\nIncome (loss) before income taxes (34,077) 147,239 903,799 1,461,804\r\nProvision for income taxes (285,937) (31,152) (697,068) (253,415)\r\nNet income (loss) (320,014) 116,087 206,731 1,208,389\r\nLess: Net loss attributable to noncontrolling interests 604,016 14,926 1,266,362 45,981\r\nNet income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370\r\nEarnings per share\r\nBasic $ 0.69 $ 0.23 $ 3.52 $ 2.44\r\nDiluted $ 0.69 $ 0.23 $ 3.49 $ 2.41\r\nWeighted average common shares outstanding\r\nBasic 384,018 465,360 409,201 481,930\r\nDiluted 386,932 470,037 412,993 487,356"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_d5sQbolKQm9f37MxTCMhvvV3",
+     "content": "[Page 14]\nPage 14 of 15\r\nMGM RESORTS INTERNATIONAL AND SUBSIDIARIES\r\nRECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR\r\n(In thousands)\r\n(Unaudited)\r\nThree months ended Twelve months ended\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nNet income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370\r\nPlus: Net loss attributable to noncontrolling interests (604,016) (14,926) (1,266,362) (45,981)\r\nNet income (loss) (320,014) 116,087 206,731 1,208,389\r\nProvision for income taxes 285,937 31,152 697,068 253,415\r\nIncome (loss) before income taxes (34,077) 147,239 903,799 1,461,804\r\nNon-operating (income) expense\r\nInterest expense, net of amounts capitalized 137,132 201,477 594,954 799,593\r\nOther, net (104,951) 20,131 (59,381) 17,302\r\n32,181 221,608 535,573 816,895\r\nOperating income (loss) (1,896) 368,847 1,439,372 2,278,699\r\nPreopening and start-up expenses 504 3,452 1,876 5,094\r\nProperty transactions, net (1,060,701) (68,578) (1,036,997) (67,736)\r\nDepreciation and amortization 1,421,637 297,031 3,482,050 1,150,610\r\nGain on REIT transactions, net \u2014 \u2014 (2,277,747) \u2014\r\nGain on consolidation of CityCenter, net \u2014 \u2014 \u2014 (1,562,329)\r\nTriple-net operating lease and ground lease rent expense 600,467 262,307 1,950,566 833,158\r\nGain related to sale of Harmon land - unconsolidated affiliate \u2014 \u2014 \u2014 (49,755)\r\nIncome from unconsolidated affiliates related to real estate \r\nventures (2,704) (41,651) (61,866) (166,658)\r\nAdjusted EBITDAR $ 957,307 $ 3,497,254\r\nMGM RESORTS INTERNATIONAL AND SUBSIDIARIES\r\nRECONCILIATIONS OF LAS VEGAS STRIP RESORTS NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY \r\nEBITDAR TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS NET REVENUES AND TABLE GAMES HOLD ADJUSTED \r\nLAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR\r\n(In thousands)\r\n(Unaudited)\r\nThree months ended Twelve months ended\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nDecember 31, \r\n2022\r\nDecember 31, \r\n2021\r\nLas Vegas Strip Resorts net revenues $ 2,297,282 $ 1,806,686 $ 8,398,372 $ 4,737,185\r\nHold adjustment(1) (2,984) (9,854) (6,122) (27,482)\r\nTable Games Hold Adjusted Las Vegas Strip Resorts Net Revenues $ 2,294,298 $ 1,796,832 $ 8,392,250 $ 4,709,703\r\nLas Vegas Strip Resorts Adjusted Property EBITDAR $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211\r\nHold adjustment(2) (2,638) (8,520) (5,105) (23,574)\r\nTable Games Hold Adjusted Las Vegas Strip Resorts Adjusted \r\nProperty EBITDAR $ 874,414 $ 690,219 $ 3,137,203 $ 1,714,637\r\n(1)Represents the estimated incremental table games win or loss had the win percentage equaled the mid-point of the expected normal range of 25.0% to \r\n35.0% for Baccarat and 19.0% to 23.0% for non-Baccarat. Amounts include estimated discounts and other incentives related to increases or decreases in \r\ntable games win.\r\n(2)Includes estimated incremental expenses (gaming taxes and bad debt expense) that would have been incurred or avoided on the incremental table games \r\nwin or loss calculated in (1) above."
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning": "**Clarifying MGM's financial metrics**\n\nI need to phrase the question about MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual interest expense as the denominator. The document provides Adjusted EBITDAR, but not EBIT itself, leading me to think maybe I should derive Adjusted EBIT from Adjusted EBITDAR by subtracting rent expenses. However, the term \"Adjusted EBIT\" is a bit unclear here, and I can't find an explicit figure in the document. Adjusted EBIT might be calculated from income from operations adjusted for depreciation and amortization.**Determining Adjusted EBIT calculation**\n\nI'm considering the expected question from a document-focused Q&A that likely asks for a financial metric, perhaps aiming for Adjusted EBITDAR divided by interest expense. The user specifically mentions \"Adjusted EBIT,\" which might refer to the $3.497 billion Adjusted EBITDAR mentioned, pointing to some terminology confusion. If we derive EBIT from Adjusted EBITDAR, I would subtract the rent expense. The filing indicates that Adjusted EBIT is calculated from EBITDAR by excluding rent and depreciation/amortization. It's essential to be precise with these definitions!**Exploring Adjusted EBITDAR and operating income**\n\nI\u2019m trying to bridge the Adjusted EBITDAR of $3.497 billion to adjusted operating income. On page 14, the total triple net lease/ground rent is $1.951 billion, and depreciation and amortization (D&A) is $3.482 billion. If I subtract both from the Adjusted EBITDAR, it results in a negative $1.936 billion. However, I need to consider the operating income adjusted for exceptional items and add D&A back in to get a clearer picture.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying MGM's financial metrics**\n\nI need to phrase the question about MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual interest expense as the denominator. The document provides Adjusted EBITDAR, but not EBIT itself, leading me to think maybe I should derive Adjusted EBIT from Adjusted EBITDAR by subtracting rent expenses. However, the term \"Adjusted EBIT\" is a bit unclear here, and I can't find an explicit figure in the document. Adjusted EBIT might be calculated from income from operations adjusted for depreciation and amortization.**Determining Adjusted EBIT calculation**\n\nI'm considering the expected question from a document-focused Q&A that likely asks for a financial metric, perhaps aiming for Adjusted EBITDAR divided by interest expense. The user specifically mentions \"Adjusted EBIT,\" which might refer to the $3.497 billion Adjusted EBITDAR mentioned, pointing to some terminology confusion. If we derive EBIT from Adjusted EBITDAR, I would subtract the rent expense. The filing indicates that Adjusted EBIT is calculated from EBITDAR by excluding rent and depreciation/amortization. It's essential to be precise with these definitions!**Exploring Adjusted EBITDAR and operating income**\n\nI\u2019m trying to bridge the Adjusted EBITDAR of $3.497 billion to adjusted operating income. On page 14, the total triple net lease/ground rent is $1.951 billion, and depreciation and amortization (D&A) is $3.482 billion. If I subtract both from the Adjusted EBITDAR, it results in a negative $1.936 billion. However, I need to consider the operating income adjusted for exceptional items and add D&A back in to get a clearer picture.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwTNmm67WpzvmI8QJi1rKItFTVXcIpEL4YvfTUcL9md-PkCfp4mOtzHt3L5fXs0MJOtocIChTXob0wR40mgGCzodYTvE06qZXMeV3GfDCdy4pBs6YNefh9U3FK9jTIa4Vm2pDMtYoZytl8F5qE7DDf1zGriYVteOhll9AIe6TB915nxk173oMtzWw3mwQmRKLXAa5Od0gHZ5dEyMlIg_Z_fIxOxjAqRGblVWl2aqNUBDxl6WRz9Y5NVqqpV0HzZZQSiLOO8veNOdQKWKxQ67A2yqwgAK44aeM7jtbWo3LE_ptos1ni6GTzlgxssLXEOi2PsBnMGRjkzdmlABmLXLVdPDlc5XnnggICVzRRnWe29qwuHMYnuM_0AudIRS6qIh8zKcfHhnlTvaLvERU4u3ybeLk7VnnbFtEMuBSTL4TGnM_J6pbO3hLIA6_moqYNqfUf_PoCNBVldL7fsGSoMa5ZUShfsVz34E29VFvMZ06YAXgLaRDgcfUt4fP5aS2va1hq5d5cZxSjS9ObzLtNr5O0qV2QjVmGvLQZxBgLzAn-N8Qn0a1ENN3K629ulAROu6ieWs_eaaRfzLObGt9i-nC5Dl4qscmCnuwaCZxVuf0NhuPVxVhz6ESwD0Zk-0T_cl7R6w5zw5up0c2i0dRuRmTvXl1UDmvQUsXat2NqJBMIfK_sN1Zb8KsFtcXUhfZLgVeKcgaU16fnICo8VfOZWOrMLi4olG8TR6A4BC2bBEbytCptUALQYc3i7ryOXyykTej4kR5TWYfJCFZOVyWOQ8WO2c6IWxQe_rt7BF7ZC2A9hvQOiHF3ijNRyDKZuVALpZHK3oifWVBKQy6_a74ILjdJK0K1OVCa45ahA8_g5JvLqwWcuG66VHRlXGrsCGvi5ZBZroUnVv9FvMrVwVqNNu6l1hAqyaEzthgwYcIynqpIc7alh9PRhps6_2JeVi5b7VoFcvi8zqJvUgHpWD1iPqqTo65uEfbomx9vFzxNT5rabvtepKkKDNt32OZbGAVA3i_jf8vwOK1LVfhj84gNaZ7bGc4zRHzQgME1GdWg446fh9SXZphS07Te7Xf1unzwgyFfiGFrOxccxIHgfwb4aghOCe1rIL-PZ7jFx6wjduOyZqkQWqOoU4mxeWPIIfeNkwi3dxtXK2HqAG8gwN1DQi5u-XzGsD_Kb-7U5fc2UGOKNTsqnuewZD61lRpaNEyBrip8w-wfzlXmfBAInj86Wd91tsCtcVWtfLsi42SyCNBHPqzx9ADkYx_7D4FpHmPqNdW69ZFuW3hSsiVWR38oKWM9yOj9s5J4lvpcdt2N6AnTVppQaWbuLz61ObmuJAzKqxedz2_z4jusboavtaxzFIiM6pJqg22KFXUueD4tRyho0vHRBv3nuEkQWOVj-wonLMEEo2mUaUol3pbFE1GMy7IFQJNywFGJknE4PG8_jJP3Q-QsBOGhNiH6UjliSWngrQXdLUOVmzP5j_gIjS20RX4vBcSS7gI9FEJwdQ3XWSuogOvgztgzRXSSW9undHP4S9v0wGifSyylowJ4pwC2mpSkRcYWrC3APxc2BjepUK5mE0zBr728F9UO25Vgco694uroiNxt5vGzj1PF9DSXTXY5z51X2CzvfRzXhbra2a0P2eYidrTs-3CEV8Hf_-LpP9GFDp1Pt5EbB43wZ8sQKa6MN0pc9EGnufp9sutERUXDj-iweKmtsBH3aiadtCvvE1sdaUneD9gt_ug2y-oLUEd0Rtnt5kVJlWIBtbUXf0eV8BJgzKzedV5nQH1ezIf9ZkJGiPwoOs7jXeb7J4XVt-uXLn5O0iESiFRpcYdvdY1t2CqMBzWDnML80V2SQ9J2wRz86q6Royy-ognBPDeiWg3aO4JlKlVE8qXP1VMYTelHUWQY2uYZKsxt96tcqHRjf2dQc73uVXiNX2XyE2HYtLOEynaLocA4mnogXLzmXgfkkDyrrqA69_JqnC7DuEuCUatRp-jyAQ7MIIuE6BdEhhitzsCuByfPaKBlOgIHqjM3ff-omlv5SUOpZd2Pl4uhqLF1kTdWs-viL9eCJuHdgTX4rxcUfg1daUZHklIjmSysJhSSTS3v3mPdkVV4UVWdYDiILScruCoW993ZftAzoTCbBTL7s03JONyN-bXLmp0rzCQOLLXJVnCvCLPMyY46jltkWw0GXurFRLc_r-GP6t2fvgvxwKDKXanTBkvdC8tsKzmuCKtMqIZjPzVk9hDqtvUtx_PqNfl0raPQFPUIAbyUqNV-KtO9W75FXqnTznAvqFOOV9C9iukoIAhSqdtTJBIT_fk-G7K0tifWhPmYV1GbuMSLgvuFXL4yEMnBA26JRdCwLtaj8G5HdengwUQsBvR8IOrGrwrTETmuzGUY2miEaOlq_U356a6220dwTStcQY_QoMWZiDG9u71mlL2ODHs-2CGEAqWiBOV51FNNL_WHlmuxVt4_v2cg2hx1MxKLsg46D6B-aFJXp4EGnHVSk815J-PUrK9ISUwWcjFOo58lrTbZX6YWJRB-LkgpfenG5jucecsCfAh7BG-2oM9Q_Xt-7sT27udr9oJgGRWckr6uDlmC6d_4LDRAi2wCygD1ztQtQTxuZL2u4_wUDOi32JDI483t_OrSPn3mZi0RUuxCdZfAUNycvetnqQwxOECQA2xwGdS5qmlnCdfC4X484qsPMv4c5TuhEOAuNo2ErX88vrEg4f5ugXpO10t34zzAeC0fGKiYn8n7cb7Ew6TeqD2NzyWM76t4baoViqJ8ogJ2xWUcR7ptz1D9-I4WiZyY6OIBJc8rInO3jaIcyPY7WxMCbBPSVC8fmTJJBDhmuDurgDzgba3TzLqfTSxITUs3haAbP4M9KwPOaVQbMncTBfr2-yba2EHHp2cF0t31HUcauS101jmBj9h7eRhA8wXU_IjUBL_L0U2wvttzb0vatIfMgoRz7CIveNaVPPmx28oaNumXpANaBHpW5a-ai0uexKQ8JVAmkL4jZ6G3T0jtL_Tg0qz_SWvQm-_e_MA64AVibx8HB7hD3yKHFAcPr2xkzE6Kb_HgvKwREFcJGIlX7sqrr5su5kpAxzoOR9S_I8EgA2ZLh67RsTLEdNuinCjFA0CxxHAMe3l_ttcZJHCCrPR5r9oriVcg6fQBw5_XekJilYGJSU7QMC0a3cm6yu0Xu0-6jAfj5EG95GgSFv_olZSvrjX2NojOf0T_kzFMLbi4QFDhPC6EMaT3-CWH1NMR_kRI28bGBKJgzqWgNzLuJqXSEcHT4KeaHdRVFDWtpb30HZkfiwBLxJFoCYZqt8rI-CRc2cX58lRrrOQtVjJOnF9kKEGsHcmifOeY8X-8nOBCcyNNBQQq07yYwtNsqxw7nD9DgoR3WMg2y6krirK--KFLlUjTiDrSmm569v6cC7DAdmQpfQXsj5VNSfh4GFzXqhxe8s3xl1sw0cVLOzgCpewAn674wNRIeCY9_us4pSiW1Pp5nRMrVoqXLBzSEIW202Uld4hEruSRfjeJ9z2VAoAhcGQ_Yy8E7It5BAVAS5M32P5-ujh6QjlraNymIQtvNSkbhSoVKKAZffeg1DL1UF-rQg5RInLcgpi12uoM0bWuRMs0i2DPtoYR0oNUXUnaiWPFICNeO6E5JM17U7iuc8duKlCrpAOSq7WE3kQlbg9D26y89Ka2Oha-okzaWQKd-ss9hdyMmxhQ5TxY6aGXg7-7L3N7Es5R4R0x6hbjYAwz0J8bbQvGHY4Lgbu59bLjK9woeiOeIN--2_3mS6jQXhR0krhRDd4PlGDmi_rCNOvgtbKOqCM9PAFV686SMJkCSX8reOpqWBi5ED5I1psVg-t2khGvstXRTLPBi3ilmlawnBy3_bgqhfOxvERCxXMEdRJckshxMx8qsvgiONwihks8Y0H5xIpjfDJGuSWOdT8nvaBArwCx0amdZzcdcsPpv2QL76puW26Tk6VlMG3LG76ybcxF1XnV6Ka1ZLtB_cXkH\n\u2026 [564 more characters]",
+      "format": "openai-responses-v1",
+      "id": "rs_021a751bae1a932d016ac21c0d80e087d1b7bd3da8111a2325",
+      "index": 1
+     },
+     {
+      "type": "reasoning.summary",
+      "summary": "**Assessing financial terms**\n\nI need to clarify something: I can't find explicit definitions in the document. But could the denominator be annual interest expense while the numerator might be \"FY2022 Adjusted EBIT\"? I wonder if they meant to derive it from EBITDA. This document talks about financial ratios, and they might expect \"interest coverage\" using adjusted EBIT. However, I see only Adjusted EBITDAR mentioned, not EBIT, which complicates things. I\u2019ll want to ensure I follow the document precisely.**Determining financial metrics**\n\nI must strictly rely on the document for my calculations. If I treat EBIT as 3,497.254 million, the answer might be 5.88x. However, I realize it's not technically EBIT since the document only references adjusted EBITDAR. I need to be precise in this context, so I should stick closely to what's available rather than making assumptions. If the required metric is missing, it\u2019s better to default to the exact figures provided in the document.",
+      "format": "openai-responses-v1",
+      "index": 2
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwXbqt5ax3chYJe2VoV9vuWvamlgB9wrQmoA0_gmyHM6gTnypAqdihgy7_BmnpT_p_1vscZbAp6acpMUHBKIGhsydWzxXg6Qqk_74jJiDCJOXVsNX1Xy7zSR6JNrhrUV2PN_bPd24_n1P4P_V76gvLRZ6qCKzGxOuK630-GGPB71Bsq45OGEG_hPCRqAeWjKVGLj1aDa5JdPwIBSYMOcyeDaj2r_0emCyVs1E_UJ77fERaPuGugD3F0FXhm_voxfIrBf4re-Byj3dAacxrnb3n1476nCpndTyCOoYk5u7D7OTJkmGiQpQ8xZp76mSz32DfC2ZdVwTCHxdhawwxCCKO4nfvAr_uKB2dqyx47oUOwGPD2fI3eZ0iC-V_CEBQGhWocPVIa1t26gauNFIlp63k22jSH5f4YtjJGir9euB9Cjwu7NtS9A12flt7GkuH3rKNLATFEekn3scmBznIqKcUf9OEPhN2Hvi_DJzk3ATPozNTQBdNzc7n2A192qVRuiD2HHfSfrvsDziwMqYg0MSHRRFRWv8pm9JowYzY623MZtLnyf5QiiZydUjQmuWsk4doOmhnmJetHdUqJvXQIvRlCSK1LRfC1kjxgHqxG0Fsclmt7rp0_WDfuLMyHWxGj18iL6uU_ffxtjYRVS7pXM6rMDunFBIA2fPENiDJ-eggAcsekBzotTb4cM0pk2BV6BJ0sa1ryZvVxNo_CNHH94YHdgEB9Smvii98-_SaE7Bx55CjaTmRWwZBwokKdhsRomJ8smo8G6f8_OBqtrNDUrFkmaGzpj6Sx5KLpc1__JdakYZBLSaqqU6BYTVeEi3J3MgINAVFffiWSyXDec0410Zy61d7Q2KZ0XlUqI0pfgdiNVSv49dVvX_zXnO950Xi5ijepWJDPShIH5uSnqFjSPniqE5ZCPASThLc3asZPQLeVdjg_9b37JL_V4QstmN4IC4EPcKqJ3ZLYfTtSF08kgo6_miORom839XsP61ELJ7D7u6rfP63ma3G-ISwOzfvQloQkObblzVamYOCqnw6FcbLFeR-bnEYW8jS9dLuFe2u7wd2qbkgSGfSTRhxChJD5FI3mOnxOpDJ5ikweQ483hr9l4R0H8O9WfeFN3d6YECM7-F7xoprkV7OMrrHWC5uQCzGSZSFbAYDxezeVUL79dk40NL0jeitYVCyPzwTT8fZeeJtl6Gqxm7pohnOngZCpLPvJ0cKvnQNN77QmYqVU6jio0aBRtM_Dl6joTRGn2AKOfRqSy5aXMfKcuNsrrDY-SzwuxwPQXdJJ5T_lXWEwGgxmFvovUNpbsahpczrZmU1-XDhJPi91o3QqsQee95F09QaCkigbVEKjolvSDRuBcvVT7C2BVzzDuBWaFYTmyS3iTRJbcwWP7AnZyzlrshdld_g4lMRFpXScCdWoE_CdxIyljWnKNXKNuR0IYTUiRDBB3-H56L9DUWTWL56Ed76LWbPzWLbBOLSkZ3LZB3sIX0MFwpOmr8s2AKkP7YmOeGdrLVQGFkd9lmiOfaw-XiJiMrSxj1qfPbp6nIgPvX6ZACmk4m8GYeymCiFzBueI1xZxgBOv1OZdk3QY0bRjBX0n0aSRKxzhpUFdYN9-8WLAMO2Mm3PlQ6gqdpPrk3rNVodZ62cCJgydlkfhmDP2jaRgesRe9Qj1jXbvRltLvzEFCt0GmmAIvyweKFfB3pF0YOX8d2myXysePxm65VtZa1dMkM09xCO-qVCy1WfOwSDIbBo0kjkVh-msi3nN-ZPIGDsjt71F8Tia0koj01e5gKYDwv0FqgD9DTtSaSkqaT7gtSAUoSG5nQOM8-aiu1-JyR7F62gu1g0Ao4x8kNViwtoRuqOL6J7iU2k4nhoRg6aYmZZpE2t7fv6X0E88VSIm5yNsE-lk5et5ABcC2IIPRc2OCUqZTydRZ8tkSH1ujSd2lyYGP7jujfBIzgIcZ-c7As5QjudgMMx6hKfN7SckvW3evSJ26wtEBfxGwHNHW8DHxjTCkhVcVlybkFdefgK1JIGHZfQLxTwM_pKeqFht7CztiD9wqSCiYbUXLqAW2UfDkXjPz5-WcIQzUyB-RM_ewJOcOAdWwbInYl6bWe1PwcIXru3soZzFFdqyHrCGwjmXjZ0qHU26nF_ImCKTqfJU6ziolq7p1HF9B5vZ0FqRyW3FsBAxK7HJjLIQ-7kRiSjGhJoG3UuISfQQu2rlTWxQ9oOUApdZGP_aHn_FE-Z9p6dI0vcr06PZk3q6lWK-nAyoonSfI0GZzxyLEkjmRqxFGuHfmOvqoNvVvLAtkn2BUkfYk8OuVFO4tR0PKSXII539UVkktIsviyrYu8fYZFq9kx0d9SElOTJVSK2B_LjQxzspAxdRfdkGVz8jYoXCJkkNwNmpn-Gl8Cw14W4YfPSpITZ6ZLtgXNMAcEobESXXzT6hpFrSo5Og1e48Kyd8_skCGNQaeSQJYLkOmbSI0OTp5hhDq0QHe5uK8skL3XKDg_YUh4BH0otSjAHDYs590qw1aq1UjbUvDZvmqpnmOqI2VldG64RTRMI1mFpdzjSGyOxDaysN52JfUtxFlRKbJXExeVhq0R2n2vlmvM7Ift4kV5ElVYWT0EoDd80mpgOXZ5SLh1zCfaIm3A4HX9vjq1QAHLKYwa0Sr6LgHgBEgyIBFJ0LXPugeCkTUJgk-PyYORm2leWB3A8uc2vuM3nZ6eclFq71poS8Db4R1taPiUyXR6cZLu-RlK-zaq5fp8fxH5ouA3MOj-lUBE15BR8Fcus4dZ-3l0Ba1p2MyL6ZTUZEF5bYTTjjEx-I5Ho_uZXeBCxlEsuh9upLinG4quHHpOYtFb3Ux4DEieVkqMyHsXEdGc3oWX6oDfhsOlL3LXtVizaTurvFgsEAV_DWz2YAaRyC1R6S1Hu4lCZrlr5QEUac8daj4EWa_H38ce65Ndd0-U_I9YObYrI4EYpKbI_r2s4YEjGiU2_wsBYN-UobOeaJZ3qWES62_rIDvThsaNTP5b6aUTnTOsqfy8iM0BN_f5JWtuRTRuDpiX7OGxyJnGdCofiUQ7YjFMiWytVwSxB00VUsLhhGOCvAS4o9ISpLICrt6vBeBqDt4JwncYDaEGTw99-3nLDXWmC8pXLk2Whu569YhB5hHu6Y8dLJpWNtXu6qkxGIjjnvUJiog688nGpYh3mSpXMXbS69lyBS6PDlTlGcImlFyEB7ObuzGWhS31pxbhR09-fxiZs6ByDR29NI2bVMnBoO6lcc57nV9lEKnR80vnWxtqDIUI9D0T-T6Lro0vgLMUTCsRGzNnXUXTMB9ka1FJFoQ2CEi8KpRI8cd4Tt9pJGlOSQNqzGXtlMf9vwvdDsPTPTYLhHKmw7gbdJZjaRXKfMQnHt7FpJ0Ju_LVM4ZH1OyECnzVkFS9XXZoTyzRi_ae2bDt6Hxs1SaYLAdJ9lJLlo3FKE7rH4wUE8uyBhub-opzQwEMZHMtlQCetw4bvL6dYVYJ6WTbIBKvzU5n_JlwgmGpEAhsVH5u2c1DIv73cYhT12Awl0WyXkzuqhaoSeQLe_UCrJd_wscN-KAdkLr9q5y3uYKZX3lTG7N3boCddiplpZX-z0r_8b2-CBGZ1X7Bi0PY2O-SO-0dCTs49B4402qB29jzriBM-jtGQ-haGr4gz_zH9dw_XJ9gAvn01SLitdHsR6ikuE8HQCHe-H1lF-aOA0fGmIvuBqxN0Oh6HGn13h0Pd6Hycf6UafGA_OeUqwe6YmkRuahBIHdh1bkt1AG_mS2lbM3GaEMucOITckIF-I8tZv8OtCUFx-Pb_RxSyt-O-vnAHsxal3qU9H3Qlh3tlQi4mVdAeSUB0HaoqDHXRaT0e71aJPiOSNQeSFWt-0ZeNjVa5razN7tMakC3cZD7xeV-_JbXtmOlHxHTivH-7PhwE23Nk3QOZfzk-UxvwLgNZlCRcJtzD6S1PnWo2Uqf9iX8xIdIGR7ESzS9coJWE2UhxLwby6Pcc9zKS5\n\u2026 [460 more characters]",
+      "format": "openai-responses-v1",
+      "id": "rs_021a751bae1a932d016ac21c13790487d18ddec0637261e1b4",
+      "index": 3
+     }
+    ]
+   },
+   "input_tokens": 3636,
+   "output_tokens": 983,
+   "reasoning_tokens": 969,
+   "seconds": 11.45
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Adjusted EBIT|Adjusted EBITDA|interest expense"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Interest Expense|interest expense, net|Interest expense"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "2022.*EBIT|FY 2022"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 3,
+    "last": 3
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 11,
+    "last": 11
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 14,
+    "last": 14
+   }
+  }
+ ],
+ "verdict": "refusal",
+ "reason": "The answer says it cannot find the information and does not give the gold answer's conclusion that the ratio is zero.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001238,
+ "provider": "aipipe"
+}

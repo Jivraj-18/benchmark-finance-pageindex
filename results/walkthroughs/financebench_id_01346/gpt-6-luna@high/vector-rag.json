@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01346",
+ "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+ "gold": "The effective tax rate of Corning has changed from 20% in FY2021 to 23% in FY 2022.",
+ "doc": "CORNING_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.5,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4228,
+  "cached_tokens": 0,
+  "output_tokens": 127,
+  "cost": 0.0004869,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 26]\n differed from the U.S. statutory rate of 21% primarily due to the following: \u2022 A net provision of $67 million due to changes in tax reserves; \u2022 A net provision of $40 million due to differences arising from foreign earnings; and \u2022 A net provision of $38 million due to changes in valuation allowance assessments, offset by \u2022 A net benefit of $60 million due to tax credits; and \u2022 A net benefit of $49 million due to foreign derived intangible income. For the year ended December 31, 2021, the effective tax rate differed from the U.S. statutory rate of 21% primarily due to the following: \u2022 A net benefit of $62 million due to tax credits; and \u2022 A net benefit of $37 million related to share-based compensation payments, offset by \u2022 A net provision of $52 million due to differences arising from foreign earnings, including the impact of intercompany asset sales. The U.S. enacted the Inflation Reduction Act of 2022 (\u201cIRA\u201d) in August 2022, which, among other sections, creates a new book minimum tax of at least 15% of consolidated pre-tax income for corporations with average book income in excess of $1 billion. This provision of the IRA will first apply to the Company in 2024. We do not expect the IRA to have a material impact on our effective tax rate. In addition, we are currently evaluating the various credits available under IRA and its impact to Corning\u2019s financial position and results of operations, including the effective tax rate. Refer to Note 7 (Income Taxes) in the accompanying notes to the consolidated financial statements for further details regarding income tax matters. 26\n\n[Page 77]\nTable of Contents 7. Income Taxes (Continued) The following table presents the reconciliation of the statutory U.S. federal income tax rate to the effective tax rate: Year ended December 31, 2022 2021 2020 Statutory U.S. federal income tax rate 21.0% 21.0% 21.0% State income tax, net of federal effect 0.7 1.0 1.4 Audit settlements & change in reserve 3.7 1.6 12.1 Differential arising from foreign earnings (1) 2.2 2.0 14.9 Valuation allowance 2.1 (0.5) 2.5 Intercompany loan adjustment 0.6 6.1 Tax credits (3.3) (2.6) (29.2) Foreign derived intangible income (2.7) (1.3) Stock compensation (0.8) (1.5) (1.7) Remeasurement of deferred tax assets and liabilities (0.1) (13.2) Legal entity rationalization (2.2) Non-deductible expenses 1.4 6.9 Global intangible low-taxed income 0.2 (0.5) Other items, net (0.5) (1.1) (0.6) Effective tax rate 22.9% 20.2% 17.5% (1) Includes impact of intercompany asset sales. On September 9, 2020, Corning obtained a 100% controlling interest in HS LLC and an 80.5% controlling interest in HSO LLC. As a result, the deferred tax liability on the outside basis difference between book and tax basis for Corning\u2019s investment in HS LLC and HSO LLC was adjusted by approximately $116 million. Refer to Note 3 (HSG Transactions and Acquisitions) in the notes to the consolidated financial statements for additional information. During the year ended December 31, 2022, the Company distributed approximately $534 million from foreign subsidiaries to their respective U.S. parent companies. As of December 31, 2022, Corning has approximately $1.3 billion of indefinitely reinvested foreign earnings. It remains impracticable to calculate the tax cost of repatriating unremitted earnings which are considered indefinitely reinvested. 77\n\n[Page 24]\nTable of Contents 2022 Results Net sales for the year ended December 31, 2022 were $14.2 billion, a net increase of $107 million, or 1%, when compared to the year ended December 31, 2021. This is driven by 15% growth in segment net sales in Optical Communications of $674 million and 34% growth in Hemlock and Emerging Growth Businesses of $419 million, which helped offset a $394 million decrease in Display Technologies. In addition, movements in foreign exchange rates adversely impacted Corning\u2019s consolidated net sales by $616 million for the year e\n\u2026 [13,092 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Corning\u2019s effective tax rate increased by **2.7 percentage points**, from 20.2% in FY2021 to 22.9% in FY2022.\n\nCalculation: 22.9% \u2212 20.2% = **2.7 percentage points**. (Pages 24, 77)",
+    "role": "assistant",
+    "reasoning": "**Calculating effective rates change**\n\nI need to analyze the effective rates from the document: 20.2% for 2021 and 22.9% for 2022. The change between these years is +2.7 percentage points. It\u2019s essential to perform the calculation correctly and ensure I cite the specific pages where this information is found in the document. I\u2019ll focus on being clear and concise in my final response while justifying my findings based on the document alone.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating effective rates change**\n\nI need to analyze the effective rates from the document: 20.2% for 2021 and 22.9% for 2022. The change between these years is +2.7 percentage points. It\u2019s essential to perform the calculation correctly and ensure I cite the specific pages where this information is found in the document. I\u2019ll focus on being clear and concise in my final response while justifying my findings based on the document alone.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWA8Pj3IiSCB99pk0VZh8XBgkqSqUwiRZEkNDbam84cIxx17aJJxFyKCOmnrpbbQOHKFeH_IIzQuFlpvbRzKgKHuzNOdZ2LSpszKN9wd99U_Lmudd8UXEFTRxyKUexRQdBKbfAFOP6IGC28uEPoMSwiwgxuds2e27hcdX-fvA5SyGmxtoyb3RlZWLOvMRQ_FKAJvOPwmHgGjdkBPRy490nBAQcOLS_KhkripBnIM0BNVqnOsJJaxIEgNAmnY8p-J8ex19U76JVjFaRBPcTIpRFoUM_fhiX5jl5g3IN79f83FVNiQ7TGJjUP_GFJDZS7eth_U21nFo6vxgh0oKH71Zx5ZAfa5FjsOlSWyMIQJUMrN2_yB_rfuNOc31DSlF6TZAWhKceu5Dg88ekTRREoiHdaDJtvgjcp4IvkWi_4WasHT82K_RJA6kVlUsFHuVQe6i4HnrfjWePBFNNosjijDEOE6w1UJEiKHrW7nw_TjX-Zh58gsln2JEcOTQOG4LGkCdg5rU-lMWlssTm0hT_atnXxMGKzh54WixPAha2amZlYWsJg_AssgPbK1nc-M1DgVztU_b3KtNzuyW5CunWuEvayV4-8p2u8ZV3wrxtTIx5AbWcr4zBstYhIXaJn5o0POKaYF8JcCAnnIhzwQ-M3kwTIHWbMxNs99eoGPqmb7flPd_vctPq8klo-2swHHUveDBhC8OcH7-3Ji_lefvsOl2Jfnt3wBHXlNx_mK9FxUQhgC_sb_f6b7pMfQmHs3qWqJaARxjxqanC43LMBl-hDk4UPfSz98NQuDFemzZCEi9rsmPvEb4TCohMkDGAvlxUQTmgM9b3vY9ukW2lid_OWJphDAD8gGZzUJ-mGFBbclDs24T1GiiCJA421QAu63Yppha9RwAKkntr-CiMKtp_xKt9qAUhH50QftAbDOTA3bKWZqu9D-END_fKW1JdHakheZFLX2GeAJAHozvsGdWRU5a85IoBnYMK2AyB-bekJtalUUI89zkhoKpUw1G76kidfPeLCt9Z_M8SBbQ8cMBWzMhNPb1Yqxc9z6POoNbM7xFNp7d-cJUKX0rp7ZQOKSEc1cZajFy0YnOKRxYuv1jW2FfzbLeY_mMJCf9_f1WuH4nDIehFMdBG8VvTQuG0xBruSj3ws5CBmQ_Szjoq-59YtL2TctX8v8dq-23S6S03Mp_zBTylshujoMwWy_BDkoQOr3dA2mgmYZOmfmqv2Bxp2QKz9rU4GnEMXvTcLpzc49emF8dviM7VzK3fVfVx48aqahfVz_6arIeMkLMxLLVU563-5JJSOQve6K9EGvqkMJ7hno305rRm7Negre3OeWqWitb4wDK6bQ1yIYkn8OWuisTSJBYJry08kXEeAaU6s1EYJIY5bYMerwA-e1ZNE3GSBBPXtUpus7uvYCzPsT4aVTAKWOQyuYW-LKoyPKeYCH_gDChj843oSvAKkeX2kzEOqUj1GkPFtwJFbRnwFwquXCnC--_Ui_ET6H4Lv0Riz188QiEZkNy6_CjacEwfj252E41G0y0X2j2FDiAkNaO5WCNx3gU5RB3anmITuNsHhOO0UjBnnR2l16XaSiCOEPfZs4018mPyF33Mz6FMay_Tildy8gw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_07fc4921c557141b016ac2157f940c87d19f749a7b19e82a73",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4208,
+   "output_tokens": 127,
+   "reasoning_tokens": 55,
+   "seconds": 3.07
+  }
+ ],
+ "answer": "Corning\u2019s effective tax rate increased by **2.7 percentage points**, from 20.2% in FY2021 to 22.9% in FY2022.\n\nCalculation: 22.9% \u2212 20.2% = **2.7 percentage points**. (Pages 24, 77)",
+ "retrieved": [
+  {
+   "page": 26,
+   "score": 0.7379
+  },
+  {
+   "page": 77,
+   "score": 0.7163
+  },
+  {
+   "page": 24,
+   "score": 0.6201
+  },
+  {
+   "page": 24,
+   "score": 0.6166
+  },
+  {
+   "page": 26,
+   "score": 0.6144
+  },
+  {
+   "page": 25,
+   "score": 0.6098
+  },
+  {
+   "page": 76,
+   "score": 0.6066
+  },
+  {
+   "page": 79,
+   "score": 0.5907
+  },
+  {
+   "page": 25,
+   "score": 0.5906
+  },
+  {
+   "page": 32,
+   "score": 0.5871
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives 20.2% in FY2021 and 22.9% in FY2022, which round to the gold answer's 20% and 23%, and the 2.7 point increase matches the gold's roughly 3 point change.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001728,
+ "provider": "llmfoundry"
+}

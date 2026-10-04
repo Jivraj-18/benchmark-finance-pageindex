@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01490",
+ "question": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+ "gold": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+ "doc": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.6,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3824,
+  "cached_tokens": 0,
+  "output_tokens": 137,
+  "cost": 0.00045198000000000005,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 4]\nChairman of the Board and Chief Executive Officer. \u201cWe are incredibly proud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long\ufffeterm value for all of our stakeholders.\u201d As previously announced, the Company recently completed an exchange offer to finalize the separation of Kenvue Inc., formerly Johnson & Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present its Consumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of 2023.\n\n[Page 6]\nUPDATED FULL-YEAR 2023 GUIDANCE: Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with reasonable certainty the ultimate outcome of legal proceedings, unusual gains and losses, acquisition-related expenses and purchase accounting fair value adjustments without unreasonable effort. These items are uncertain, depend on various factors, and could be material to Johnson & Johnson's results computed in accordance with GAAP. ($ in Billions, except EPS; Shares in Millions) August 2023 (excl. Consumer Health) July 2023 (incl. Consumer Health) Adjusted Operational Sales Change vs. Prior Year / Mid-point 6.2% \u2013 7.2% / 6.7% 6.0% \u2013 7.0% / 6.5% Operational Sales / Mid-point Change vs. Prior Year / Mid-point $83.6B \u2013 $84.4B / $84.0B 7.5% \u2013 8.5% / 8.0% $99.3B \u2013 $100.3B / $99.8B 7.0% \u2013 8.0% / 7.5% Reported Sales / Mid-point Change vs. Prior Year / Mid-point $83.2B \u2013 $84.0B / $83.6B 7.0% \u2013 8.0% / 7.5% $98.8B \u2013 $99.8B / $99.3B 6.5% \u2013 7.5% / 7.0% Adjusted Operational EPS (Diluted) / Mid-point Change vs. Prior Year / Mid-point $9.90 \u2013 $10.00 / $9.95 11.0% \u2013 12.0% / 11.5% $10.60 \u2013 $10.70 / $10.65 4.5% \u2013 5.5% / 5.0% Adjusted EPS (Diluted) / Mid-point Change vs. Prior Year / Mid-point $10.00 \u2013 $10.10 / $10.05 12.0% \u2013 13.0% / 12.5% $10.70 \u2013 $10.80 / $10.75 5.5% \u2013 6.5% / 6.0% Average Shares Outstanding (Diluted) ~2,557.2 2,630.7 Non-GAAP financial measure; excludes the net impact of acquisitions and divestitures Non-GAAP financial measure; excludes the impact of translational currency Calculated using Euro Average Rate: July 2023 = $1.09 (Illustrative purposes only) Non-GAAP financial measure; excludes intangible amortization expense and special items Excludes COVID-19 Vaccine The July 2023 financial measures that were previously communicated reflect amounts before the separation of Kenvue and therefore include the Consumer Health results Average shares outstanding (Diluted) as reported on Q2 2023 Form 10-Q Full Y\n\n[Page 6]\nzation expense and special items Excludes COVID-19 Vaccine The July 2023 financial measures that were previously communicated reflect amounts before the separation of Kenvue and therefore include the Consumer Health results Average shares outstanding (Diluted) as reported on Q2 2023 Form 10-Q Full Year 2023 Projected Average Shares Outstanding (Diluted) only reflects impact from the Kenvue exchange offer Note: percentages may have been rounded Following completion of the Kenvue exchange offer, the Company has reduced its outstanding share count by the approximately 191 million shares of common stock accepted in the exchange offer. The weighted average shares outstanding used in the calculation of the August 2023 Guidance for Adjusted Diluted EPS reflects the net reduction of approximately 73.5 million shares of Johnson & Johnson outstanding common stock as a result of the Kenvue exchange offer. Because this net reduction occurred on August 23, 2023, Johnson & Johnson will recognize only a partial-year benefit of $0.28 to its full-year 2023 Adjusted Diluted EPS. The Company generated $13.2 billion in cash proceeds as result of the Kenvue debt offering and initial public offering. Additionally, Johnson & Johnson maintains a 9.5% stake in Kenv\n\u2026 [9,846 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Approximately **$20 billion**. The document says Johnson & Johnson would record a gain of approximately $20 billion in the third quarter of 2023 following completion of the Kenvue exchange offer (page 4).",
+    "role": "assistant",
+    "reasoning": "**Calculating financial figures**\n\nI need to provide the approximate gain of $20 billion in Q3 2023 resulting from the completion of the exchange offer separation. I'll reference page 4 for a short justification. It might also be useful to check the total amount accrued to JnJ due to the separation effective August 30, 2023, as there's an excerpt mentioning this gain. So, I\u2019ll ensure I cite page 4 and keep the final response concise.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial figures**\n\nI need to provide the approximate gain of $20 billion in Q3 2023 resulting from the completion of the exchange offer separation. I'll reference page 4 for a short justification. It might also be useful to check the total amount accrued to JnJ due to the separation effective August 30, 2023, as there's an excerpt mentioning this gain. So, I\u2019ll ensure I cite page 4 and keep the final response concise.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWIrRT-sWQwnVV32UWrXOY2X06FMJMWYIGKS8n8123AQ_oH5RCHVU3j7YmRtzZIcoDdfsxBrnu9cT8OYRfPEhoDCVpYa_8NVzkgo4wmEGc5KUB0kb5tNGEGGOMqSh2STz2E9ojdbgt9ec0OY5s9JrH6sBaxPnDUInN7eU8rtep37wDPmBssQtaLbqn2mKTI2WDahxKKnXkO16jYCHyGgjpy5NcH6D_lYsCdL4UheZD20P9OmLSVX3trEYdRsVzqiRyPEmV_LaNHp-st9tVNcIITq9R0g0i6iKPUHLNY34s0xU1JMX8WnLNpamxH91xUZcqOFTflHJgS9kItNZgn6i6uIATGshbFuDKEVA5aXfvfQzSmbNDBnAzXwegN_kkguoSWDNtJX-Sr6H__dZKRBUiuxM5cONhFqzEOuLYi8fHJ7Czr-0LrkobpF-8coOmYzw8rczrld0AqlZagBpIh2nbRkazrHJBPFMMNeQykGCcj5Mfi5IuApuCfAsd9Ucrr_HPj7x5ZyM56SQn1mRqJiRyNqvAjxNtbcmH7X1FyrHSG4gk_-M0vGyH1-qzV2LKpOjqYtYZ3R49NCuXk1mUHHQgAQ0N9OqCW7MmOrUfvgRiR2r1EpP-yAxLyAp8rQF9v9tvGkuRT_mvDiPYxNAorvz0xyYJDc1_UF0tD2RdBCionG6sr7JqVT38a3mWcfnQnqWd1w0qNchgA1adDQEIU7NyelPxlal46Svnukq8qd4QUCJkTG3NkBu9QMV53HNyXZppMuh-1AkkHxorwfGiakhyFFbBaCXmEcig5jpZfYYcG86aYoGi2KNGsjckXQtvFX8umnR6UB6VQIWc4OuCQhmIS7h1OCMIFA68cxq6UwWPFWOY2qhS5vFDf8m-JIEskXuQlQhXZyVKCzA7hqqCJ9nl3jJNwO3mJWkMPOkbTI2XxNCt_jSIiMHBpqO_BA1YqlhOk_a0QW_nBZciBYFJW8XcKHh7vxk13dZZTAEGnhk5ZVJXrTjvy6AmUwh-hqFL6OGLw3FHbK0JzHyVGS9hKupWIJvcmIL6yLPwWLhh6zsH5DwfyzNoPj-vhsSXQ5SuORFofHwvOHOVhHP35O3qnMuAv6OqFlvXpKmC7D3H_DTxm9OEUZn8jdJzFKcVkK6fii0ouRMHI6AMBnUIfvwKdsQAkllVfZxbAGURQrIx3t2f4QrLr_amhgOOMdMm8D49ObWwC-QQDXmRDbYiq8VDmQPgAbXcyPcKnVhcE0hC48-MPlUi6ABv0hUbMFssAkttzYEsDdwhQeB3rgUG7q0nX7YUqpnBJvupITOKFBStR6JkTHVV-c6mZt8IKadHOQtj1m_J1rp2Sx8vuhtn1WvD_tLiA2o7JYCmg3j26dMH9B6Qa_76_ZB0zMVcY8X-5B40w5bJxaKHbqjapechwYxuZZ3A3LsrhL2f20DbFqcS95JT9byLG8jjCwDCsnpfBs87CojDUcFor4-SSOYLgRJzSqhZqM6n1Xp4J-A1rZra2kY40o4MV_M-nK3Z8GZ9gCqIVbBbLcHriq3BtevUB3PtKkCbsMIK6znlxgW7sK572LhV1MIvAxveCPQyd-fRytigvMJqa_6b5QxQHzKMD8Z0tHnipL_cUTQuq-_RyG8EcDcdJBoki46RvkoLWDhonSdK9e-PGQrJx03W3A-QPjf3yDOnCfZaLskUf8tGu07Nr01VN4MLEuG1_DvqeirVVNCqtb9AH_0vcbfFWUxTqNmUwu4CtBX-SUUvrqmrr68vtAl1FKKAL0FFd8VS0LtlYRUJWY_PV.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_06cf097fbfdca3aa016ac2158657a087d1905ea32d9b0e4d88",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3788,
+   "output_tokens": 137,
+   "reasoning_tokens": 87,
+   "seconds": 5.03
+  }
+ ],
+ "answer": "Approximately **$20 billion**. The document says Johnson & Johnson would record a gain of approximately $20 billion in the third quarter of 2023 following completion of the Kenvue exchange offer (page 4).",
+ "retrieved": [
+  {
+   "page": 4,
+   "score": 0.6645
+  },
+  {
+   "page": 6,
+   "score": 0.653
+  },
+  {
+   "page": 6,
+   "score": 0.6427
+  },
+  {
+   "page": 15,
+   "score": 0.6396
+  },
+  {
+   "page": 19,
+   "score": 0.6357
+  },
+  {
+   "page": 4,
+   "score": 0.6353
+  },
+  {
+   "page": 16,
+   "score": 0.6305
+  },
+  {
+   "page": 20,
+   "score": 0.6266
+  },
+  {
+   "page": 8,
+   "score": 0.6191
+  },
+  {
+   "page": 23,
+   "score": 0.6135
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives approximately $20 billion, which matches the gold answer, and the added detail about the third-quarter 2023 timing and the Kenvue exchange offer is consistent with it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001624,
+ "provider": "llmfoundry"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_01490",
+ "question": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+ "gold": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+ "doc": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.1,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 16575,
+  "cached_tokens": 0,
+  "output_tokens": 110,
+  "cost": 0.0017125,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, DC 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of The\r\nSecurities Exchange Act of 1934\r\nDate of report (Date of earliest event reported):\r\nAugust 30, 2023\r\nJohnson & Johnson\r\n(Exact name of registrant as specified in its charter)\r\nNew Jersey 1-3215 22-1024240\r\n(State or Other Jurisdiction of\r\nIncorporation) (Commission File Number) (IRS Employer Identification No.)\r\nOne Johnson & Johnson Plaza, New Brunswick, New Jersey 08933\r\n(Address of Principal Executive Offices)\r\n(Zip Code)\r\nRegistrant's telephone number, including area code:\r\n732-524-0400\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the\r\nfollowing provisions:\r\n\u2610 Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n\u2610 Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n\u2610 Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17\r\nCFR 240.14d-2(b))\r\n\u2610 Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17\r\nCFR 240.13e-4(c))\r\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this\r\nchapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter).\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, Par Value $1.00 JNJ New York Stock Exchange\r\n0.650% Notes Due May 2024 JNJ24C New York Stock Exchange\r\n5.50% Notes Due November 2024 JNJ24BP New York Stock Exchange\r\n1.150% Notes Due November 2028 JNJ28 New York Stock Exchange\r\n1.650% Notes Due May 2035 JNJ35 New York Stock Exchange\n\n[Page 2]\nItem 2.02 Results of Operations and Financial Condition\r\nJohnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\"). On August 30, 2023, Johnson &\r\nJohnson issued the attached press release (Exhibit 99.1) providing updated financials and 2023 guidance following completion of the Kenvue Separation.\r\nItem 9.01 Financial Statements and Exhibits\r\n(d) Exhibits.\r\nExhibit No. Description of Exhibit\r\n99.1 Press Release dated August 30, 2023\r\n99.2 Updated Financial Data\r\n104 The cover page from this Current Report on Form 8-K, formatted in Inline XBRL.\n\n[Page 3]\nSIGNATURES\r\nPursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned\r\nhereunto duly authorized.\r\nJohnson & Johnson\r\n(Registrant)\r\nDate: August 30, 2023 By: /s/ Robert J. Decker, Jr.\r\nRobert J. Decker, Jr.\r\nController\r\n(Principal Accounting Officer)\n\n[Page 4]\nExhibit 99.1\r\nJohnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue\r\nSeparation\r\n\u2022 Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and\r\nAdjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine\r\n\u2022 Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of\r\n12.5% at the mid-point and Adjusted Operational EPS of $9.90 - $10.00, reflecting increased growth of 11.5% at the mid\ufffepoint\r\n\u2022 Company reduced outstanding share count by approximately 191 million; 2023 guidance reflects only a partial-year benefit\r\nof approximately 73.5 million shares or $0.28 benefit to EPS\r\n\u2022 Company secured $13.2 billion in cash proceeds from the Kenvue de\n\u2026 [53,471 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Approximately **$20 billion**. The filing says the separation would include a gain of approximately $20 billion in the third quarter of 2023 (page 4).",
+    "role": "assistant",
+    "reasoning": "**Clarifying financial figures**\n\nI need to provide precise details about the gain Johnson & Johnson expects from discontinued operations. The document states an approximate gain of $20 billion in the third quarter of 2023, so I should cite page 4 for that. It seems like the cash proceeds are $13.2 billion, which I might want to differentiate. I\u2019ll clarify that the gain is around $20 billion and provide brief justification over a few pages.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying financial figures**\n\nI need to provide precise details about the gain Johnson & Johnson expects from discontinued operations. The document states an approximate gain of $20 billion in the third quarter of 2023, so I should cite page 4 for that. It seems like the cash proceeds are $13.2 billion, which I might want to differentiate. I\u2019ll clarify that the gain is around $20 billion and provide brief justification over a few pages.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWO173Dz_8KMF_DHhx3zNtEe0O9hQ1gLF4OIsEHNGgf5W82gPTPkKkX61rkWXPDwrM5M6cr49h0WrIah7FdaY1nnzDaJxb2LnOnL1ziHUthQCfNn_IpbXnb_pvjDLVtyE5X1jF3CgXa0X7UOmg9j197BxltiK_opDqHR9ca6z0qoyxy3TrvMmmEGiu-O8rIYDozRAA5dZ78dBEnpQmgJ8R11VxYftf8roLXugj1owM96sRFAqwA9CMU1qu_Q1yjM7_hWJ_Smv8CLsQIm7Uw5LcX7zCEgCUNmsOtyts-61OSFwCWacuTWXSXfAE8C7ln6ADRvrWtPh5xnobVzzuh8mzsiYr2tJm1xtAym6G6Fyo91DuRgqRZ_tx6SJP_N4TBaiPmksqDwcl3rmVsfoSIsQc6zTHl11FvWoIh8A2TKGtEXIHfhL936U0gyh5ORcliEzXR_W4B-3qMD2XQkhivDs5VuML7Lt3JZRoaTMO2XPm61lRKY_vXITRkuhM-g1Ew3JbBBDbSRJ4UcnQtmuN0ugGhiF32-uLsr7W9qmybkCmjsyCVJJ_qiPLfCbqCXRnp3j4mZVRKX4ExM3Mqkf7jnOdbm1lTefk8uTeDbMDmDRp9fez9mGfHE8n-8yHVT1zb0qYw3Wm8v_F_2VW3sQBYMGb1jDiDDeeUSYFyPfhnQ1zH15G2a0n0WUajZ0x3CF_rp0zfoeocoXGTO7rdlFe7rFAJ1g4aWb6KizAk7_O89DUtqeCPT8ddPLVhpq03cu0OK3mOmKLdveC9tSZI5IyaIsDEP3MWWVT09-i_bfFzLX_LEti3I_VRQEDiZ0SHxvRTWtp1s6y5QP76aQsup4v77fG4_FpLLf00HLnSTpjIAuaAw-2LR33DLwAJLskvwfAU84bDz9wszyCvYvsvg-c_5-kGkAOWTIdWZxZCnRDNNDg-936-1XioEpzh9KHkdw_04nFy-8FByjODwk7QipdUXdm6BOAfEDqE07yIBUEp4jq2SXSm_wr6lN47F0uoLzwtQRde6kt_SWKeYueiGSb1cJ6xocyurL41w16bHpgK_ZzGVh1jUVXAjFXuSLcm_WHtS3f2KlaQ4gq2jKBw_jSHzwWg_9nfrw5k7LzsidM80z9hiY064aCXBO1_3P49r9RlwF3iaMbRTmR8PCC7wWGvv-E_aCMmI4QC9YbFAtAxZFUA3iT22WOOFL4NigymZz70amfcgE12PCT6ZFkvfpRp3CD_j3DveuV-lO7zbXB8Vnx4pO9gdmWrTTs4OZ0pmcKenvqfAKePMmnLLkaMWgjwDmLdzsfoIRLu1_27VdFeLW71B4k42gD3b7zKuFznv85AX9GdgCWyWCOrtjvB0XGnc8YhXZVOalRcgo0Jc_pFWlpeYdmuH3r2Sox5J54WUskAV3a4s86Ihx_7A0q0NWBbAHmNsw56tsumZBG0DYfx-aKTJmnALwgVxi_GbHP4xU5auKHdzgYJMHNkupiG9jBowPKozz2A0fNWQrVpi2_xfdFOio8vmwQ85ABqq4erHgvfvVDFYsYavAm4IUQPB_ahue653erzoP8RJ46BxjnWMpOT9-xPOZLnbTmaK66j-OtOVOH6u1J414fOc1u1T5OV21DyCMCUbYL6xrXYbRIuQUzrWy5Z2tZgsc1Zd0cX1DkZA4lwO6WimY4KA002wCmCuxjeA2R-oSgeHGZkylKEKRHgJeRgWUF07rVInerpl7X1N7eB4Yz_9mYmkFYpdU_Yt9L3dQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0122ab7239016395016ac2158d540887d1bbaa165b9ce74569",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 16575,
+   "output_tokens": 110,
+   "reasoning_tokens": 70,
+   "seconds": 3.14
+  }
+ ],
+ "answer": "Approximately **$20 billion**. The filing says the separation would include a gain of approximately $20 billion in the third quarter of 2023 (page 4).",
+ "verdict": "correct",
+ "reason": "The answer gives approximately $20 billion, which matches the gold answer, and the added detail about the third quarter of 2023 is consistent with it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001444,
+ "provider": "llmfoundry"
+}

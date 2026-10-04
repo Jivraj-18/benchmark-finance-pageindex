@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_00464",
+ "question": "Is Boeing's business subject to cyclicality?",
+ "gold": "Yes, Boeing's business is subject to cyclicality due to its exposure to the airline industry which is a cyclical industry.",
+ "doc": "BOEING_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 7.9,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 111381,
+  "cached_tokens": 0,
+  "output_tokens": 134,
+  "cost": 0.0112051,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2022\r\nor\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to \r\nCommission file number 1-442\r\nTHE BOEING COMPANY\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 91-0425694\r\n(State or other jurisdiction of\r\nincorporation or organization)\r\n(I.R.S. Employer Identification No.)\r\n929 Long Bridge Drive Arlington, VA 22202\r\n(Address of principal executive offices) (Zip Code)\r\nRegistrant\u2019s telephone number, including area code (703)-414-6338\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nCommon Stock, $5.00 Par Value BA New York Stock Exchange\r\n(Title of each class) (Trading Symbol) (Name of each exchange on which registered)\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2610 No \u2612\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12\r\nmonths (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of\r\nthis chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company.\r\nSee the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge Accelerated Filer \u2612 Accelerated filer \u2610\r\nNon-accelerated filer \u2610 Smaller reporting company \u2610\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial\r\naccounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting\r\nunder Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2612\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes \u2610 No \u2612\r\nAs of June 30, 2022, there were 593,451,225 common shares outstanding held by nonaffiliates of the registrant, and the aggregate market value of the common shares (based upon\r\nthe closing price of these shares on the New York Stock Exchange) was approximately $81.1 billion.\r\nThe number of shares of the registrant\u2019s common stock outstanding as of January 20, 2023 was 598,239,585.\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nPart III incorporates information by reference to the registrant\u2019s definitive proxy statement, to be filed with the Securities and Exchange Commission within 120 days after the close of\r\nthe fiscal year ended December 31, 2022.\n\n[Page 2]\nTable of Contents\r\nTHE BOEING COMPANY\r\nIndex to the Form 10-K\r\nFor the Fiscal Year Ended December 31, 2022\r\nPART I Page\r\nItem 1. Business 1\r\nItem 1A. Ris\n\u2026 [511,983 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. Boeing\u2019s commercial aircraft business is exposed to cyclicality: the filing says the airline industry has historically been cyclical and subject to significant profit swings, and that airline-market conditions affect demand for Boeing aircraft and services (pp. 8, 22).",
+    "role": "assistant",
+    "reasoning": "**Addressing airline industry cyclicality**\n\nI need to focus on creating a document that provides answers based on citations. Airlines have historically shown cyclicality, particularly in commercial aircraft demand. There might not be distinct seasonal patterns, but the cyclicality is notable. Yes, the airline and commercial aircraft market experience significant profit swings influenced by macroeconomic growth and demand. I should reference pages 8 and 22 for justification and ensure the document starts with a brief explanation.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Addressing airline industry cyclicality**\n\nI need to focus on creating a document that provides answers based on citations. Airlines have historically shown cyclicality, particularly in commercial aircraft demand. There might not be distinct seasonal patterns, but the cyclicality is notable. Yes, the airline and commercial aircraft market experience significant profit swings influenced by macroeconomic growth and demand. I should reference pages 8 and 22 for justification and ensure the document starts with a brief explanation.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhU-qjQlZfh-yKmi-sDXfBvBx2d_nhPMPpAHLtfRIOXOpeDP_vyj7lcmytGAECUNyL75iNE6_RgK0DkMcAKaO5Q6VSOkTY8uoFZii7idLGkV_dAURZTU_hJkU1NwbZazOaKBFr3ozf_Z-lx5nUvt6L6h8bVCd9TEc78YDvqUR8xhFWKLMfaIBUECDml2n1JpT3aHlOXo6YTdknkhTAJnl-fTle_FDpygbtJ3D_EVn1lNTbWwAQU8IPwlyigDy0GAgfRvVKlTEhIN_AbUUjZbljim9S8aSC9FFNl0dLtogV9eG4_urUepW-Wc1w94efYPkno4o0wosmpH52hYZcgNlKDXGHox5iJTns1YAjfu3xXt2x7nUz6IJXR5qdN9kPUX-mwbf244Gc5Gwwwt6kAff80_jWvIWrtQl9YEwOsmt03HPffKPzQIMhvz_tiMcb6531Y6ImYOX_rWDcaj-wV7jbMKyZxPhfXwu-uvDyMn7L0JzvhKUwgrr0Khi0j9PmqQlv2l18HjwYhuuyk0M7UW9lQ7xjIJNORPtwKX9kzRclsF9Citof29b5bU-cpRoSd79STNGK82GwTcsAyTddK6iwq6YIUtnvlzzpH7q8zVjZZcpwc81MoHwky5dnQ3TbBCnhS2QQf72hkTMD8SCgOuuXk5X-icrSHp3xceBD1J6m6sPEMBYogOc5U92xfGuUkET5jK6sxYCbat39uSi0o-Aw4i0Oa8C-wpWWPIJfUZohl54-t28JhFgw_ncBxt_4jDgtmpViyaKojPiX3lNNQG3KNY34TCpTtOTqIgKFc7pI67-syu8DcZzRyEPbceFZErtDfOSQM_CzmjrafdeBah3jtyWHWFe5VaV_n_3soLIOptKPXwYes3rXrgF6_h5vND7e1wG9--wyx5s2bBnLn4--VteGTCyP1tBESEeme8SR42zE21bMRRjDYWbMS-b4ZvfN6dT3kXKpSup8xP9-YvCESrnY2rXeG7q3YgBuPY4kjD1i6YgAAAxlA2cCsZMa8x7rpyHtoJA9hruhTTPVXP64CfjnMKfdjK54g2RGiYuZ_Ht82uk2idc96zq_L_pY36SUKSclIQgd3xi4EWsQrlTlun0QJ4HJfVnEOcigETW-fsxra4d_UoOmCi8d42-jzOjmQd7GVHAGi8QAqD4P9h4N3WF9knvvoEQexqJNTHVVrVlAIrOoQClZAB-oFBZPAFCi4_5L5Hp4vwhINBQywMYNuAROUHzUR-PFQDBd9MlFfVeNp8TntuPAqt_oMHZtb5pZvMTGfA0xycpKVKsoUrVehiIM15PbYBtQQkMuY4gu2Mjz-TA9R0aFgVyTDA5g5tJcVaCiAErhzQMRXdBmHI8oSYZ-nJ01EE93TiP2UPzThV1fmV0owmO0wLy95t6evWlqeYAMW2aiZT7UfKX8UagIqslvmFEe54JztaIf9uQuwsWNraJ8vWsWrK-oIWn9r9zSEPO8IAyagc72uyfnu2u_qkNAZuX0_CTunV548TmA2ZpnxVse8RXLVCz5DzUIUT2rwvxBSb4EjsopIkbqpmiO33VcF7TXL_whusCupsjs4yNU1zPcwRUGHxUHby0tK7g_fEXwgQHLQequVN1MrurPYco2e9iDMo_mAaUMMy3MGllb-OEDwNJXrb5Ka0sDBxc27YJ_GToN5uDaM_t-gS5D1I27PnJn1qoB-IerC9lnjpjXoiOs0mbVeO_OZTfR1_SkR-j6OKDan-DukaqUKvWqxyYZhDFMV-EcFOhglDchCcakzKW4Ad5N4OmZkm6CDsESnCEKDTtl3USHpke96TMs8Q6eYW6S4tpj0zipEZw7SO8XCc0mdRLXyTuCKtkJVgDpWo2VaNsqQ-3uecUZwqRGxr-YHxKqvSLd55lHYvopn0cVQ=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0831db07a02bdcd2016ac2153d415087d1b3b16ec5b980fdfc",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 111381,
+   "output_tokens": 134,
+   "reasoning_tokens": 76,
+   "seconds": 7.92
+  }
+ ],
+ "answer": "Yes. Boeing\u2019s commercial aircraft business is exposed to cyclicality: the filing says the airline industry has historically been cyclical and subject to significant profit swings, and that airline-market conditions affect demand for Boeing aircraft and services (pp. 8, 22).",
+ "verdict": "correct",
+ "reason": "The answer says yes and attributes Boeing's cyclicality to the airline industry's cyclical nature, matching the gold answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001434,
+ "provider": "llmfoundry"
+}

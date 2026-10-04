@@ -7,12 +7,17 @@
 <meta name="description" content="Step by step: how PageIndex, vector RAG, whole-filing and agentic search each answer the same FinanceBench question.">
 <link rel="stylesheet" href="style.css">
 <style>
-  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
-  .tabs button {
-    font: inherit; font-size: 0.875rem; padding: 6px 12px; border-radius: 999px; cursor: pointer;
-    background: var(--surface); color: var(--ink-2); border: 1px solid var(--border);
+  .picker { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 16px; }
+  .picker select {
+    font: inherit; font-size: 0.875rem; padding: 7px 10px; border-radius: 8px; flex: 1 1 320px; min-width: 0;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--border);
   }
-  .tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+  .picker button, .picker a.button {
+    font: inherit; font-size: 0.875rem; padding: 7px 12px; border-radius: 8px; cursor: pointer; text-decoration: none;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--border); white-space: nowrap;
+  }
+  .picker button:disabled { opacity: 0.4; cursor: default; }
+  .picker .count { font-size: 0.8rem; color: var(--muted); }
   .question h2 { margin: 0 0 6px; font-size: clamp(1rem, 2.6vw, 1.2rem); }
   .question .gold { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--grid); }
   .methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; align-items: start; }
@@ -51,6 +56,7 @@
 <main>
   <nav class="site">
     <a href="index.html">Cost vs accuracy</a>
+    <a href="index.html#questions">All questions</a>
     <a href="walkthrough.html" aria-current="page">Walkthrough: one question, four methods</a>
     <a id="repo-link" href="#">Code and data on GitHub</a>
   </nav>
@@ -60,7 +66,13 @@
     <p id="subtitle"></p>
   </header>
 
-  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="picker">
+    <a class="button" href="index.html#questions">← All questions</a>
+    <button id="prev" type="button" aria-label="Previous question">‹ Previous</button>
+    <select id="pick" aria-label="Choose a question"></select>
+    <button id="next" type="button" aria-label="Next question">Next ›</button>
+    <span class="count" id="count"></span>
+  </div>
   <section class="card question" id="question"></section>
   <div class="methods" id="methods"></div>
 
@@ -93,7 +105,7 @@ document.getElementById("subtitle").textContent =
   `Every step is recorded from the actual run: the model's thinking (the summary its provider returns), each tool call and what came back, any failed calls, tokens read and time taken.`;
 document.getElementById("footer").innerHTML =
   `Recorded with <code>uv run python -m finbench.walkthrough --ids … --config ${meta.config}</code>; ` +
-  `long prompts and tool results are cut for display. Graded by ${meta.judge}. ` +
+  `long prompts and tool results are cut for display. Graded by ${meta.judge}. Calls went through LLM Foundry or AI Pipe (shown per method as "Via"); both route to the same models at the same prices. ` +
   `<a href="${meta.repo}">Code and data</a>.`;
 
 function step(s) {
@@ -110,13 +122,36 @@ function step(s) {
     `</li>`;
 }
 
-function show(i) {
+const pick = document.getElementById("pick");
+pick.innerHTML = questions.map((q, i) =>
+  `<option value="${i}">#${q.n} ${esc(q.company)}: ${esc(q.question.length > 90 ? q.question.slice(0, 89) + "…" : q.question)}</option>`).join("");
+const cache = {};
+let current = -1;
+
+async function show(i) {
+  if (i < 0 || i >= questions.length) return;
+  current = i;
   const q = questions[i];
-  document.querySelectorAll("#tabs button").forEach((b, j) => b.setAttribute("aria-selected", j === i));
+  pick.value = i;
+  document.getElementById("prev").disabled = i === 0;
+  document.getElementById("next").disabled = i === questions.length - 1;
+  document.getElementById("count").textContent = `${i + 1} of ${questions.length}`;
+  if (location.hash !== "#" + q.id) history.replaceState(null, "", "#" + q.id);
   document.getElementById("question").innerHTML =
-    `<div class="small muted">${esc(q.id)} · ${esc(q.doc)}</div><h2>${esc(q.question)}</h2>` +
+    `<div class="small muted">#${q.n} · ${esc(q.id)}</div><h2>${esc(q.question)}</h2>` +
     `<div class="gold"><b>Gold answer</b> (FinanceBench's reference answer): ${esc(q.gold)}</div>`;
-  document.getElementById("methods").innerHTML = q.methods.map(m => `
+  const methods = document.getElementById("methods");
+  methods.innerHTML = `<p class="muted">Loading steps…</p>`;
+  try {
+    cache[q.id] ??= await fetch(`walkthroughs/${q.id}.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  } catch (e) {
+    methods.innerHTML = `<p class="muted">Could not load this walkthrough (${esc(e.message)}).</p>`;
+    return;
+  }
+  if (current !== i) return;  // another question was picked while this one loaded
+  const w = cache[q.id];
+  document.querySelector("#question .small").textContent = `#${q.n} · ${w.id} · ${w.doc}`;
+  methods.innerHTML = w.methods.map(m => `
     <section class="card method" style="--accent: var(--${m.method})">
       <header>
         <h3>${keySvg(m.method)}${LABELS[m.method]}</h3>
@@ -126,20 +161,22 @@ function show(i) {
           <span>Tokens read</span><b>${fmtN(m.input_tokens)}</b>
           <span>Cost</span><b>${fmtCost(m.cost)}</b>
           <span>Time</span><b>${m.seconds}s</b>
+          <span>Via</span><b>${m.provider === "aipipe" ? "AI Pipe" : "LLM Foundry"}</b>
         </div>
       </header>
       <ol class="steps">${m.steps.map(step).join("")}</ol>
       ${m.reason ? `<div class="verdict-reason"><b>Grader:</b> ${esc(m.reason)}</div>` : ""}
     </section>`).join("");
-  history.replaceState(null, "", "#" + q.id);
 }
 
-const tabs = document.getElementById("tabs");
-tabs.innerHTML = questions.map((q, i) => `<button role="tab" data-i="${i}">${esc(q.question.length > 60 ? q.question.slice(0, 57) + "…" : q.question)}</button>`).join("");
-tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
-if (questions.length < 2) tabs.hidden = true;
-const start = Math.max(0, questions.findIndex(q => "#" + q.id === location.hash));
-if (questions.length) show(start);
+const indexOf = hash => questions.findIndex(q => "#" + q.id === hash);
+pick.addEventListener("change", () => show(+pick.value));
+document.getElementById("prev").addEventListener("click", () => show(current - 1));
+document.getElementById("next").addEventListener("click", () => show(current + 1));
+addEventListener("hashchange", () => { const i = indexOf(location.hash); if (i >= 0 && i !== current) show(i); });
+const fromHash = indexOf(location.hash);
+const fromMeta = questions.findIndex(q => q.id === meta.start);
+if (questions.length) show(fromHash >= 0 ? fromHash : Math.max(0, fromMeta));
 </script>
 </body>
 </html>

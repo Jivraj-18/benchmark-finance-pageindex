@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_04735",
+ "question": "You are an investment banker and your only resource(s) to answer the following question is (are): the statement of financial position and the cash flow statement. Here's the question: what is the FY2015 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places.",
+ "gold": "0.66",
+ "doc": "ADOBE_2015_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.8,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 93781,
+  "cached_tokens": 0,
+  "output_tokens": 141,
+  "cost": 0.0094486,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\n_____________________________\r\nFORM 10-K\r\n(Mark One)\r\nANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended November 27, 2015\r\nor\r\nTRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to \r\nCommission File Number: 0-15175\r\nADOBE SYSTEMS INCORPORATED\r\n(Exact name of registrant as specified in its charter)\r\n_____________________________\r\nDelaware\r\n(State or other jurisdiction of\r\nincorporation or organization)\r\n77-0019522\r\n(I.R.S. Employer\r\nIdentification No.)\r\n345 Park Avenue, San Jose, California 95110-2704\r\n(Address of principal executive offices)\r\n(408) 536-6000\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of Each Class Name of Each Exchange on Which Registered\r\nCommon Stock, $0.0001 par value per share The NASDAQ Stock Market LLC\r\n(NASDAQ Global Select Market)\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\n_____________________________\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes No \r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes No \r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 \r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements \r\nfor the past 90 days. Yes No \r\nIndicate by check mark whether the registrant has submitted electronically and posted on its corporate Web site, if any, every Interactive Data File required \r\nto be submitted and posted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the \r\nregistrant was required to submit and post such files). Yes No \r\nIndicate by check mark if disclosure of delinquent filers pursuant to Item 405 of Regulation S-K (\u00a7 229.405 of this chapter) is not contained herein, and will \r\nnot be contained, to the best of registrant\u2019s knowledge, in definitive proxy or information statements incorporated by reference in Part III of this Form 10-K or any \r\namendment to this Form 10-K. \r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer or a smaller reporting company. See the \r\ndefinitions of \u201clarge accelerated filer, \u201caccelerated filer\u201d and \u201csmaller reporting company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer Accelerated filer Non-accelerated filer (Do not check if a smaller reporting company) Smaller reporting company \r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act). Yes No \r\nThe aggregate market value of the registrant\u2019s common stock, $0.0001 par value per share, held by non-affiliates of the registrant on May 29, 2015, the last \r\nbusiness day of the registrant\u2019s most recently completed second fiscal quarter, was $31,964,797,377 (based on the closing sales price of the registrant\u2019s common \r\nstock on that date). Shares of the registrant\u2019s common stock held by each officer and director and each person who owns 5% or more of the outstanding common \r\nstock of the registrant have been excluded in that such persons may be deemed to be affiliates. This determination of affiliate status is not necessarily a conclusive \r\ndetermination for other purposes. As of January 15, 2016, 498,330,407 shares of the registrant\u2019s common stock, $0.0001 par value per share, were issued and \r\noutstanding.\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nPortions of the Proxy Statement for the registrant\u2019s 2016 \n\u2026 [477,037 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**0.66** (66.39%).\n\nCalculation: FY2015 cash from operations of $1,469,502 thousand \u00f7 total current liabilities of $2,213,556 thousand = **0.66**. (Cash flow statement, p. 63; statement of financial position, p. 59.)",
+    "role": "assistant",
+    "reasoning": "**Calculating financial ratios**\n\nI need to calculate the financial position using the cash flow statement and the financial statement. The CFO (Cash Flow from Operations) is 1,469,502 thousand, and the current liabilities are 2,213,556 thousand as of FY15. This gives a ratio of approximately 0.66. I should make sure to cite the correct pages, 63 and 59, and clearly state the calculation. It\u2019s important that I present this answer first and accurately!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial ratios**\n\nI need to calculate the financial position using the cash flow statement and the financial statement. The CFO (Cash Flow from Operations) is 1,469,502 thousand, and the current liabilities are 2,213,556 thousand as of FY15. This gives a ratio of approximately 0.66. I should make sure to cite the correct pages, 63 and 59, and clearly state the calculation. It\u2019s important that I present this answer first and accurately!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwuzjlvvlRwYGKYO5tp7Khi3F83-dOxhD7FvoqhEI1mob3WVWcK7E8QbIQTC7lEW43gS6CuHjdyXtZYXX5avE4Qkxi-A4AGakd_qmDekR4Aua76nVEhlFCogwK67T7GFsOuEv-cA8gyQ4PL59DmwmKacs9Hya_yQO2_voMfOhR8lbb1JirfNAFFFK_5m1M2exnJfbsW5brX7QPT4sTQSOiQQDF6wdmFG7eq8XwNVVzT9zFWK_QpSR6juan0DiVMRTJp8i9eWOdAZq02ho7UNgpQW0ScTI1RrRLCTxMuBi4YEFsIkJCQEwusXNalZTQo-IO1kkBuv4znbeseL0H09xgyQj3iFG5lT8XU8IRmq1kAFyk5G2swMImVaozZvqltQXk-Rr4sx323VKtS2DK0tnWkltjEeVsP6JQAmvZK5iywfjbik69Se3cbE_b3w95WR9vvMTYaaAEh3duTBnW-YkHGHbnaG6oc2uUuOw1G9sqFfFM_nrwvE0BaEhXltSJBMUpL961vb3baXY-G7HM5WoOI379dJbZbQbVo2aJOqhsv2ZiyxdWh6K4KH2_59CViwcdnyYCVdNX1Cu6X4s_6iiTIsuZLpyl7KyrIqJp1C1IzQ68bvs6wNaEZedLzA1SkX-y4Q-Ru72Ghz0xBbEdVSGQ1BrG2qZzAX-_hwnQO4iacnpp8M8V-1amcKVPBjEtXkE9kJNqXuo-DzhA-rIDmi60WonSA9877L_Nt_bowXNwWTtPMfzoOx6S9uwsk49WLoyGi_MTGqCIjkChQ85e1R6iTrww9ZBxH6D7omPVG3wzqgpmIlt_wyHcWlJMP4gSBVuMjSAZyQDDbNgM9kPxiV5PcVJbYBfflANxLzSjdmhykk6wqbuF1re18jwdbDnsExeLBv7ocZ5WvAuqAgAuRGJANNAhSLOTGGPTXyeiQPZP1p8llfoHyfQsTvWsCkpwVjHKARZGGqn6Z7cX1BbbDI4wq5hHCY1z-_rGJtTFLhmoyALd3bonm1IRzKLoe6LTC-6XauzaM-ktvtq0UueFX8USWhy5_4679mzQ6kKfGwWbh8VTgVuVqDfxCFO5XlB6vV5Bc9k7-kZ6vkME8fWu93JVfdsTNXh-lGzpzzk8O94Hfp8nrz0WzVGi4kSnIrNZDB1ioTrJaB6_U6UJ8FP7b-NeoF_uYZYwyWppY7UVbHogXSku5IdF2k9IEtUdCB0SUakPiRjOYrChP-ddvqdgRJB4OKQKsOkqN_7Vkbu4hTUlsxj8mzjvVFpFpFC4OCSRncrvO7Nfsq6kAQIdIAvqJO9ZcOjNrRh4B4Jmdq_N2ESdzOgjQUE8BIen811FPejosh8cpul81t2D2qpcd2qkREoXeCnEEod_lhdUGJQj6rq5-gISMbopVZblhQSOX4g9yOKIYc2Zq15i2hsLDdi1HudiiFn_HWFe5aZVmZ7ygUdUayO8XOscjr3qRY0g12cVf0ei00zsrKstpKyCgGNq-hassKrfZhxTh6ndy_oSS-S-dDT8bBNRZ--FK9fl5e9YoqV1AdnjTRsJzsoGR2oc6Kd2YhAua4VJ5SN1fNPIDZsPHezakR09rL-fuIq2f47one1f3Mo2Z5bvN26fR3bIsgdEciuhWmSXSFjH90SDWVVjvuql2lVTkzqB8vuqLqW9IhGLm.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0641fc27a34dc8f7016ac21c2c887887d1807d19f6fa8ba34e",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 93781,
+   "output_tokens": 141,
+   "reasoning_tokens": 69,
+   "seconds": 3.82
+  }
+ ],
+ "answer": "**0.66** (66.39%).\n\nCalculation: FY2015 cash from operations of $1,469,502 thousand \u00f7 total current liabilities of $2,213,556 thousand = **0.66**. (Cash flow statement, p. 63; statement of financial position, p. 59.)",
+ "verdict": "correct",
+ "reason": "The answer's 0.66 matches the gold answer, and its inputs (1,469,502 / 2,213,556 \u2248 0.664) are consistent.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.0022,
+ "provider": "aipipe"
+}

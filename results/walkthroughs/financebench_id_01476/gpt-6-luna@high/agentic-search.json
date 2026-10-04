@@ -1,0 +1,239 @@
+{
+ "id": "financebench_id_01476",
+ "question": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?",
+ "gold": "Pepsico raised full year guidance in respect of core constant currency EPS growth by 1 percentage point.",
+ "doc": "PEPSICO_2023Q1_EARNINGS",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 6.5,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 3336,
+  "cached_tokens": 0,
+  "output_tokens": 155,
+  "cost": 0.0004111,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 16 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_lbp4ZvjcyrLukZEorIwpj6Vb",
+      "function": {
+       "arguments": "{\"pattern\":\"core constant currency EPS|core constant currency|guidance|FY2023Q1\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWIZ3DhYB5EVt2hx28T6KmVqCR73fOWHEaHBkYwGP9B1v9ym_C0N8UuNy2pZnIfenoUK7VKeh_LwSvMHKzwpVFKQwLtWfuyZuC8iGl8XgN3ZqWdm74b1aspiA0Uv1zU-o5NlwR0Z_mO39i9Ksr51Nd0BAwAVZDF2-L5U4S4IinjJH_1jhqCmdv_cbI5Gc7ejfWKc0NsNKdI4aHA9i-lvY1FYAuBGtKZAgvGSPlGMIwyEkOfIO4U65DKS8XwXAmXrQJwBl9UtrMpEoD9qtqt_G5kS-_9uVLnBo3Jtzew04QzrnmdXe1TgLYusMZH2PL_iobqSPIYDCftoqNTu7hyYwzvajg5N15JXHGBucQIN3Nrjwqtdx9qWIyugMJMA_27Fr4rvwYaK3DEF20HRtr_w4lixG_tjvpwQXl1svG56WEPXFDvHK58zRZsm0UgDAxJaIqqhAYSFv33dPyGrQB_TLpwW79Iq-VBrBE6ExNV8TxCiOerRaJ1T1itDu8fFK9qfRF-85JOP-0kW8a5iQoW6wnXnD0h-Kd5zSMMQ3vu8TEUnTlhdyS3iL0K-1BcYY0UVHlL7B3JIQgCvmuUIx9R7B9VgpoMrpvqMhiVKfwWPR9-8yx0S-NWTxR-B1-yLy0H94oSaf6UH-vIOjNrPoq_bWwTVymA4ASF8ZlGGGvJp-1Dk42Lmn1kWsbvnpu7QUhC4H9H0_eHqw-Y_RRTsve2d1GVWuHpOFlebgU3NesXrM8faSoN-eQYpTFAR8FXjkwosOqfHyHTDL-y_W5JNnGAiNTjO6uEvy_WoZ_uygD5WNXXYi4Q53uEcN6RsSQqtATIU2HlmbEsDqaujf_BDdm-59EIU6qTIg8P9pQdzk6UpBFVPvzYiV3pQj_H7Hg7Kgdxw7Mxj4fS71gs5A4M7yOxt_T7xRe1l0Uvhf1qxYr1wv_v7253aqoN34SS015yFBFUtQKGHdDsGUfB-z_GaEpZLLkrgB8sEfoRZ22pk09pguK9CWlSTthkun3wo-0XVJkRmj4KD-7IdjHr0Bxz0UY4RiDLvtvm_1hUnUMMWpxAEMWf0I5xMrpvOCbYxA6n79pm-dqh-MNFfVZohdNq8LJylHptLlCkZr-Cnb4bRQsw_bneMFN_cU4zVeiSBHld1Tm71FHdPxPjXccp-_4guGS3s4c-Ae_lIdtyUAQF99ppY46l_Tfk0Vrw3Dd_wdY46Iq4zjjNEkXZEBfRzb6SphebTodQb_gv1kIylOVTPEVCvBLmFk_TFY83xi4-rIIHB-S_fMkT7o__MfQ4j1tNOXamlGx_RrVYQDWjPo0Fx-EMkvMrgvsNQNjtYmnyqPoOL3kTH7X2pCO-AUfCfGaimkfGJQaRcQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0426e2d4e995198c016ac21588a42c87d1a68588afd64a014f",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 228,
+   "output_tokens": 43,
+   "reasoning_tokens": 8,
+   "seconds": 1.4
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 16 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_lbp4ZvjcyrLukZEorIwpj6Vb",
+       "function": {
+        "arguments": "{\"pattern\":\"core constant currency EPS|core constant currency|guidance|FY2023Q1\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWIZ3DhYB5EVt2hx28T6KmVqCR73fOWHEaHBkYwGP9B1v9ym_C0N8UuNy2pZnIfenoUK7VKeh_LwSvMHKzwpVFKQwLtWfuyZuC8iGl8XgN3ZqWdm74b1aspiA0Uv1zU-o5NlwR0Z_mO39i9Ksr51Nd0BAwAVZDF2-L5U4S4IinjJH_1jhqCmdv_cbI5Gc7ejfWKc0NsNKdI4aHA9i-lvY1FYAuBGtKZAgvGSPlGMIwyEkOfIO4U65DKS8XwXAmXrQJwBl9UtrMpEoD9qtqt_G5kS-_9uVLnBo3Jtzew04QzrnmdXe1TgLYusMZH2PL_iobqSPIYDCftoqNTu7hyYwzvajg5N15JXHGBucQIN3Nrjwqtdx9qWIyugMJMA_27Fr4rvwYaK3DEF20HRtr_w4lixG_tjvpwQXl1svG56WEPXFDvHK58zRZsm0UgDAxJaIqqhAYSFv33dPyGrQB_TLpwW79Iq-VBrBE6ExNV8TxCiOerRaJ1T1itDu8fFK9qfRF-85JOP-0kW8a5iQoW6wnXnD0h-Kd5zSMMQ3vu8TEUnTlhdyS3iL0K-1BcYY0UVHlL7B3JIQgCvmuUIx9R7B9VgpoMrpvqMhiVKfwWPR9-8yx0S-NWTxR-B1-yLy0H94oSaf6UH-vIOjNrPoq_bWwTVymA4ASF8ZlGGGvJp-1Dk42Lmn1kWsbvnpu7QUhC4H9H0_eHqw-Y_RRTsve2d1GVWuHpOFlebgU3NesXrM8faSoN-eQYpTFAR8FXjkwosOqfHyHTDL-y_W5JNnGAiNTjO6uEvy_WoZ_uygD5WNXXYi4Q53uEcN6RsSQqtATIU2HlmbEsDqaujf_BDdm-59EIU6qTIg8P9pQdzk6UpBFVPvzYiV3pQj_H7Hg7Kgdxw7Mxj4fS71gs5A4M7yOxt_T7xRe1l0Uvhf1qxYr1wv_v7253aqoN34SS015yFBFUtQKGHdDsGUfB-z_GaEpZLLkrgB8sEfoRZ22pk09pguK9CWlSTthkun3wo-0XVJkRmj4KD-7IdjHr0Bxz0UY4RiDLvtvm_1hUnUMMWpxAEMWf0I5xMrpvOCbYxA6n79pm-dqh-MNFfVZohdNq8LJylHptLlCkZr-Cnb4bRQsw_bneMFN_cU4zVeiSBHld1Tm71FHdPxPjXccp-_4guGS3s4c-Ae_lIdtyUAQF99ppY46l_Tfk0Vrw3Dd_wdY46Iq4zjjNEkXZEBfRzb6SphebTodQb_gv1kIylOVTPEVCvBLmFk_TFY83xi4-rIIHB-S_fMkT7o__MfQ4j1tNOXamlGx_RrVYQDWjPo0Fx-EMkvMrgvsNQNjtYmnyqPoOL3kTH7X2pCO-AUfCfGaimkfGJQaRcQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0426e2d4e995198c016ac21588a42c87d1a68588afd64a014f",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_lbp4ZvjcyrLukZEorIwpj6Vb",
+     "content": "p1: Guidance\np1: Core constant currency EPS change 18%\np1: core constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and\np1: and to \u201cGuidance and Outlook\u201d for additional information regarding PepsiCo\u2019s full-year 2023 financial guidance. PepsiCo provides guidance on a non\ufffeGAAP basis as we cannot predict certain elements whic\np2: Organic revenue and core constant currency results are non-GAAP financial measures. Please refer to the reconciliation of\np3: Guidance and Outlook\np3: The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are\np3: percent), and 9 percent core constant currency EPS growth (previously 8 percent).\np3: Consistent with its previous guidance for 2023, the Company continues to expect:\np3: This assumption and the guidance above imply 2023 core EPS of $7.27 (previously $7.20), a 7 percent\np9: In discussing financial results and guidance, the Company refers to the following measures which are not in accordance with\np9: U.S. Generally Accepted Accounting Principles (GAAP): organic revenue growth, core results and core constant currency\np10: 2023 guidance\np10: Our 2023 organic revenue growth guidance excludes the impact of acquisitions and divestitures, foreign exchange translation\np10: and the impact of a 53rd reporting week in 2022. Our 2023 core effective tax rate guidance and 2023 core constant currency EPS\np10: growth guidance exclude the mark-to-market net impact included in corporate unallocated expenses, restructuring and\np10: impairment charges, and other items noted above. Our 2023 core constant currency EPS growth guidance also excludes the\np10: to our full year projected 2023 reported effective tax rate and our full year projected 2023 core constant currency EPS growth to\np16: Statements in this communication that are \u201cforward-looking statements,\u201d including our 2023 guidance and outlook, are based\np16: \u201canticipate,\u201d \u201cbelieve,\u201d \u201cdrive,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cexpressed confidence,\u201d \u201cforecast,\u201d \u201cfuture,\u201d \u201cgoal,\u201d \u201cguidance,\u201d"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_HZiJtZRc2pa5zFYwQG5i1BQv",
+      "function": {
+       "arguments": "{\"first\":1,\"last\":3}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Calculating percentage change**\n\nI need to find out by how many percentage points the full-year guidance was raised for FY23Q1. The previous guidance was 8%, and now it\u2019s 9%, which is a difference of 1 percentage point. I also need to provide a brief justification, so I\u2019ll refer to pages 1 and 3 for the necessary information. Let\u2019s make sure I\u2019ve got this all clearly laid out!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating percentage change**\n\nI need to find out by how many percentage points the full-year guidance was raised for FY23Q1. The previous guidance was 8%, and now it\u2019s 9%, which is a difference of 1 percentage point. I also need to provide a brief justification, so I\u2019ll refer to pages 1 and 3 for the necessary information. Let\u2019s make sure I\u2019ve got this all clearly laid out!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWLpfAfzfQzGU-pw2e1F9FB9n7SSlxVRcD6Z0i8Eoc-vKyM44VylkAsZVAYPLzyeqZo2X2V6g1LQ4KJSyAJ8TMd7uKQ1AcvGaJzuuiQVDFH2YrI3kCvr7ICt-xjW53ks2h7iR-FvbB_vsOBY5gbDnsBnwLnYFTm6jtSavkBBtfYwevSPy6xK-XEGuwkfMZLSm1LSoenr-KCq_mpRHHNAqYTGRJQCUY0tB7tEJ0ZFp1Dxi4r_LmVcR61mRV01OJMXhkTQIRX7U2ZGN5-p1ihKRvSbCG9fPbCwzy53HkBc8qL2ctWzD9F4dv0IP00XxPvDkCcUkeI2Qac0UtzzPI1r7CFGKM9DZiswCAd988i0eUqJ7VXkUA3Bc1I6BzotyjAoySkbtuPxS2NMjXaHARV_lwUzlT8INd2ZQ9dBaBxMB3Go1XmAfFPtM6mrVH-PdalRuX0rdbzBwg_SkJiziOcYGL8lj8_3lL0r6EEpiaOnnziyeh-oweTOYHZ-BAhBILXRhnxZDghmAMfG7IDZ7JJkckZs0XXhFQSX9wmCf6j1QjBFk14tS74IbwCqEmEF0lWMg-yNvGPiTLp8VY7SaiVxCukeRwhw8Z79HbOXSFjNqhct9SMGKwVt4kihG27LHScSuGyt_k3fN_4cAzQuqzX_qisAD5aQeQ74q8Lo-y9oG_qc6zERUTU0phWh-uW8YIDvWH0g2c1Af9HUqZfUBeAnLk7DVvJEMr49SS0S5n7zGyeR9DPcr3u_envrH0uc9e4P4v4VYnNYfmSN3Y_fUXcwXspHxBl2Nar4et7irzwTr2qKc-oFSEQI2avSeAqFI6JGCvE5Hg6ISGyTPE5LmhAM2HmGPQl44ACjBRFQzDVvJSK9P9P1FTfny8ZKesGTNyNFcqxee1koU6r11Zxih2JM7vZkTtu1C60kHFITFVcCdmE0H2QVlAynd4MnTCk4tObuOddFdG4z6AeiYl_Q4bJ-NoDhcKqx45p1gegHD-eYjHwe-q3UnFMbr8XAqKzfiLukt6A6YLpR4Z-KpRSvapgyfWJ069FeRc987J2CIybNbPim20XmdRO5qWcYT2ttnBv6qR8GsVIRf-g81s2-atgY3H1X0LSdi6Nknhqb7T0dkXes263JRFShRdjj5FQH4zbLyZFl9l9UmVBzj-_3YHjzs9VcfOebrQUeNDSV79QSliiTR_P1xpyUQDF4yEEuGc0uVW7-2fwk6hXZ0Nj12jRTmOzVPZEBzl9EU8pZv1ud_D3FS2yj4ZW3sfln4B1XkFM-g6sBQU_r5Qp6strC7i17qfFqx84AonoFNZRf05Zx3ImErJeVaZvZ7iCm0Pd5F2Etn1sAM1xRqtc5gP59gE0Qwd-q-8-TM7sjIhTg2BK5Gk_YKjU97EL4nkNgQBjqwduw_j1icSzeyx54FJPlSCfPjxSen32dCWJo6KKyQLZRDOos70eRNqwtc9Uimgu7l0NEXAhRNclF6gbKIN2fRHZm2f1n4PIq8-ekNad1qfsB815MXq38l2KN8rVtjDWIaTYc2IZh4XQD11_CD4--axNKshh937AABix2MTgkgJceLbegC8=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0426e2d4e995198c016ac21589fe6c87d1a928c98803a6521b",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 755,
+   "output_tokens": 73,
+   "reasoning_tokens": 49,
+   "seconds": 2.76
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 16 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_lbp4ZvjcyrLukZEorIwpj6Vb",
+       "function": {
+        "arguments": "{\"pattern\":\"core constant currency EPS|core constant currency|guidance|FY2023Q1\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWIZ3DhYB5EVt2hx28T6KmVqCR73fOWHEaHBkYwGP9B1v9ym_C0N8UuNy2pZnIfenoUK7VKeh_LwSvMHKzwpVFKQwLtWfuyZuC8iGl8XgN3ZqWdm74b1aspiA0Uv1zU-o5NlwR0Z_mO39i9Ksr51Nd0BAwAVZDF2-L5U4S4IinjJH_1jhqCmdv_cbI5Gc7ejfWKc0NsNKdI4aHA9i-lvY1FYAuBGtKZAgvGSPlGMIwyEkOfIO4U65DKS8XwXAmXrQJwBl9UtrMpEoD9qtqt_G5kS-_9uVLnBo3Jtzew04QzrnmdXe1TgLYusMZH2PL_iobqSPIYDCftoqNTu7hyYwzvajg5N15JXHGBucQIN3Nrjwqtdx9qWIyugMJMA_27Fr4rvwYaK3DEF20HRtr_w4lixG_tjvpwQXl1svG56WEPXFDvHK58zRZsm0UgDAxJaIqqhAYSFv33dPyGrQB_TLpwW79Iq-VBrBE6ExNV8TxCiOerRaJ1T1itDu8fFK9qfRF-85JOP-0kW8a5iQoW6wnXnD0h-Kd5zSMMQ3vu8TEUnTlhdyS3iL0K-1BcYY0UVHlL7B3JIQgCvmuUIx9R7B9VgpoMrpvqMhiVKfwWPR9-8yx0S-NWTxR-B1-yLy0H94oSaf6UH-vIOjNrPoq_bWwTVymA4ASF8ZlGGGvJp-1Dk42Lmn1kWsbvnpu7QUhC4H9H0_eHqw-Y_RRTsve2d1GVWuHpOFlebgU3NesXrM8faSoN-eQYpTFAR8FXjkwosOqfHyHTDL-y_W5JNnGAiNTjO6uEvy_WoZ_uygD5WNXXYi4Q53uEcN6RsSQqtATIU2HlmbEsDqaujf_BDdm-59EIU6qTIg8P9pQdzk6UpBFVPvzYiV3pQj_H7Hg7Kgdxw7Mxj4fS71gs5A4M7yOxt_T7xRe1l0Uvhf1qxYr1wv_v7253aqoN34SS015yFBFUtQKGHdDsGUfB-z_GaEpZLLkrgB8sEfoRZ22pk09pguK9CWlSTthkun3wo-0XVJkRmj4KD-7IdjHr0Bxz0UY4RiDLvtvm_1hUnUMMWpxAEMWf0I5xMrpvOCbYxA6n79pm-dqh-MNFfVZohdNq8LJylHptLlCkZr-Cnb4bRQsw_bneMFN_cU4zVeiSBHld1Tm71FHdPxPjXccp-_4guGS3s4c-Ae_lIdtyUAQF99ppY46l_Tfk0Vrw3Dd_wdY46Iq4zjjNEkXZEBfRzb6SphebTodQb_gv1kIylOVTPEVCvBLmFk_TFY83xi4-rIIHB-S_fMkT7o__MfQ4j1tNOXamlGx_RrVYQDWjPo0Fx-EMkvMrgvsNQNjtYmnyqPoOL3kTH7X2pCO-AUfCfGaimkfGJQaRcQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0426e2d4e995198c016ac21588a42c87d1a68588afd64a014f",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_lbp4ZvjcyrLukZEorIwpj6Vb",
+     "content": "p1: Guidance\np1: Core constant currency EPS change 18%\np1: core constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and\np1: and to \u201cGuidance and Outlook\u201d for additional information regarding PepsiCo\u2019s full-year 2023 financial guidance. PepsiCo provides guidance on a non\ufffeGAAP basis as we cannot predict certain elements whic\np2: Organic revenue and core constant currency results are non-GAAP financial measures. Please refer to the reconciliation of\np3: Guidance and Outlook\np3: The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are\np3: percent), and 9 percent core constant currency EPS growth (previously 8 percent).\np3: Consistent with its previous guidance for 2023, the Company continues to expect:\np3: This assumption and the guidance above imply 2023 core EPS of $7.27 (previously $7.20), a 7 percent\np9: In discussing financial results and guidance, the Company refers to the following measures which are not in accordance with\np9: U.S. Generally Accepted Accounting Principles (GAAP): organic revenue growth, core results and core constant currency\np10: 2023 guidance\np10: Our 2023 organic revenue growth guidance excludes the impact of acquisitions and divestitures, foreign exchange translation\np10: and the impact of a 53rd reporting week in 2022. Our 2023 core effective tax rate guidance and 2023 core constant currency EPS\np10: growth guidance exclude the mark-to-market net impact included in corporate unallocated expenses, restructuring and\np10: impairment charges, and other items noted above. Our 2023 core constant currency EPS growth guidance also excludes the\np10: to our full year projected 2023 reported effective tax rate and our full year projected 2023 core constant currency EPS growth to\np16: Statements in this communication that are \u201cforward-looking statements,\u201d including our 2023 guidance and outlook, are based\np16: \u201canticipate,\u201d \u201cbelieve,\u201d \u201cdrive,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cexpressed confidence,\u201d \u201cforecast,\u201d \u201cfuture,\u201d \u201cgoal,\u201d \u201cguidance,\u201d"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_HZiJtZRc2pa5zFYwQG5i1BQv",
+       "function": {
+        "arguments": "{\"first\":1,\"last\":3}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Calculating percentage change**\n\nI need to find out by how many percentage points the full-year guidance was raised for FY23Q1. The previous guidance was 8%, and now it\u2019s 9%, which is a difference of 1 percentage point. I also need to provide a brief justification, so I\u2019ll refer to pages 1 and 3 for the necessary information. Let\u2019s make sure I\u2019ve got this all clearly laid out!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Calculating percentage change**\n\nI need to find out by how many percentage points the full-year guidance was raised for FY23Q1. The previous guidance was 8%, and now it\u2019s 9%, which is a difference of 1 percentage point. I also need to provide a brief justification, so I\u2019ll refer to pages 1 and 3 for the necessary information. Let\u2019s make sure I\u2019ve got this all clearly laid out!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhWLpfAfzfQzGU-pw2e1F9FB9n7SSlxVRcD6Z0i8Eoc-vKyM44VylkAsZVAYPLzyeqZo2X2V6g1LQ4KJSyAJ8TMd7uKQ1AcvGaJzuuiQVDFH2YrI3kCvr7ICt-xjW53ks2h7iR-FvbB_vsOBY5gbDnsBnwLnYFTm6jtSavkBBtfYwevSPy6xK-XEGuwkfMZLSm1LSoenr-KCq_mpRHHNAqYTGRJQCUY0tB7tEJ0ZFp1Dxi4r_LmVcR61mRV01OJMXhkTQIRX7U2ZGN5-p1ihKRvSbCG9fPbCwzy53HkBc8qL2ctWzD9F4dv0IP00XxPvDkCcUkeI2Qac0UtzzPI1r7CFGKM9DZiswCAd988i0eUqJ7VXkUA3Bc1I6BzotyjAoySkbtuPxS2NMjXaHARV_lwUzlT8INd2ZQ9dBaBxMB3Go1XmAfFPtM6mrVH-PdalRuX0rdbzBwg_SkJiziOcYGL8lj8_3lL0r6EEpiaOnnziyeh-oweTOYHZ-BAhBILXRhnxZDghmAMfG7IDZ7JJkckZs0XXhFQSX9wmCf6j1QjBFk14tS74IbwCqEmEF0lWMg-yNvGPiTLp8VY7SaiVxCukeRwhw8Z79HbOXSFjNqhct9SMGKwVt4kihG27LHScSuGyt_k3fN_4cAzQuqzX_qisAD5aQeQ74q8Lo-y9oG_qc6zERUTU0phWh-uW8YIDvWH0g2c1Af9HUqZfUBeAnLk7DVvJEMr49SS0S5n7zGyeR9DPcr3u_envrH0uc9e4P4v4VYnNYfmSN3Y_fUXcwXspHxBl2Nar4et7irzwTr2qKc-oFSEQI2avSeAqFI6JGCvE5Hg6ISGyTPE5LmhAM2HmGPQl44ACjBRFQzDVvJSK9P9P1FTfny8ZKesGTNyNFcqxee1koU6r11Zxih2JM7vZkTtu1C60kHFITFVcCdmE0H2QVlAynd4MnTCk4tObuOddFdG4z6AeiYl_Q4bJ-NoDhcKqx45p1gegHD-eYjHwe-q3UnFMbr8XAqKzfiLukt6A6YLpR4Z-KpRSvapgyfWJ069FeRc987J2CIybNbPim20XmdRO5qWcYT2ttnBv6qR8GsVIRf-g81s2-atgY3H1X0LSdi6Nknhqb7T0dkXes263JRFShRdjj5FQH4zbLyZFl9l9UmVBzj-_3YHjzs9VcfOebrQUeNDSV79QSliiTR_P1xpyUQDF4yEEuGc0uVW7-2fwk6hXZ0Nj12jRTmOzVPZEBzl9EU8pZv1ud_D3FS2yj4ZW3sfln4B1XkFM-g6sBQU_r5Qp6strC7i17qfFqx84AonoFNZRf05Zx3ImErJeVaZvZ7iCm0Pd5F2Etn1sAM1xRqtc5gP59gE0Qwd-q-8-TM7sjIhTg2BK5Gk_YKjU97EL4nkNgQBjqwduw_j1icSzeyx54FJPlSCfPjxSen32dCWJo6KKyQLZRDOos70eRNqwtc9Uimgu7l0NEXAhRNclF6gbKIN2fRHZm2f1n4PIq8-ekNad1qfsB815MXq38l2KN8rVtjDWIaTYc2IZh4XQD11_CD4--axNKshh937AABix2MTgkgJceLbegC8=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0426e2d4e995198c016ac21589fe6c87d1a928c98803a6521b",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_HZiJtZRc2pa5zFYwQG5i1BQv",
+     "content": "[Page 1]\nPepsiCo Reports First-Quarter 2023 Results; Raises Full-Year \r\nGuidance\r\nReported (GAAP) First-Quarter 2023 Results\r\nFirst-Quarter\r\nNet revenue growth 10.2%\r\nForeign exchange impact on net revenue (2.5)%\r\nEarnings per share (EPS) $1.40\r\nEPS change (54)%\r\nForeign exchange impact on EPS (2)%\r\nOrganic/Core (non-GAAP)1\r\n First-Quarter 2023 Results\r\nFirst-Quarter\r\nOrganic revenue growth 14.3%\r\nCore EPS $1.50\r\nCore constant currency EPS change 18%\r\nPURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today reported results for \r\nthe first quarter 2023. \r\n\u201cWe are very pleased with our performance and business momentum as our categories and \r\ngeographies remained resilient during the first quarter. Given our strong start to the year, we \r\nnow expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and \r\ncore constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and \r\nCEO Ramon Laguarta.\r\nLaguarta continued, \u201cOur results demonstrate that the investments we have made to become an \r\neven Faster, even Stronger, and even Better organization by Winning with pep+ are laying the \r\nfoundation for durable and sustainable growth. We remain committed to our strategic agenda \r\nand will continue to invest in our people, brands, supply chain, go-to-market systems, and \r\ndigitization initiatives to build competitive advantages and win in the marketplace.\u201d\r\n1 Please refer to the Glossary for the definitions of non-GAAP financial measures, including \u201cOrganic revenue growth,\u201d \u201cCore\u201d and \u201cConstant currency,\u201d \r\nand to \u201cGuidance and Outlook\u201d for additional information regarding PepsiCo\u2019s full-year 2023 financial guidance. PepsiCo provides guidance on a non\ufffeGAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange and \r\ncommodity mark-to-market net impacts. Please refer to PepsiCo\u2019s Quarterly Report on Form 10-Q for the 12 weeks ended March 25, 2023 (Q1 2023 \r\nForm 10-Q) filed with the Securities and Exchange Commission (SEC) for additional information regarding PepsiCo\u2019s financial results.\r\n1\n\n[Page 2]\nSummary First-Quarter 2023 Performance\r\nRevenue Volume(a)\r\nGAAP \r\nReported\r\n% Change\r\nPercentage Point Impact\r\nOrganic \r\n% Change\r\n% Change\r\nForeign \r\nExchange \r\nTranslation\r\nAcquisitions \r\nand \r\nDivestitures\r\nConvenient \r\nFoods Beverages\r\nFrito-Lay North America 15 \u2014 \u2014 16 \u2014\r\nQuaker Foods North America 9 1 \u2014 10 (5)\r\nPepsiCo Beverages North \r\nAmerica 8 \u2014 3 12 (2)\r\nLatin America 21 (6) 1 16 1 5\r\nEurope 5 5 4 14 (5) (11)\r\nAfrica, Middle East and South \r\nAsia 2 28 \u2014 29 (8) 15\r\nAsia Pacific, Australia and New \r\nZealand and China Region (1) 6 \u2014 4 4 2\r\nTotal 10 2.5 2 14 (3) 1\r\nOperating Profit and EPS\r\nGAAP Reported \r\n% Change\r\nPercentage Point Impact\r\nCore Constant \r\nCurrency \r\n% Change\r\nItems Affecting \r\nComparability\r\nForeign \r\nExchange \r\nTranslation\r\nFrito-Lay North America 23 \u2014 \u2014 24\r\nQuaker Foods North America 18 \u2014 \u2014 19\r\nPepsiCo Beverages North America (86) 95 1 10\r\nLatin America 13 (1) (6) 6\r\nEurope n/m n/m 11 159\r\nAfrica, Middle East and South Asia (6) (6) 23 11\r\nAsia Pacific, Australia and New Zealand and \r\nChina Region 5.5 \u2014 6 11\r\nCorporate unallocated expenses 132 (102) \u2014 30\r\nTotal (50) 67 2 19\r\nEPS (54) 70 2 18\r\n(a) Excludes the impact of acquisitions and divestitures. In certain instances, the volume change shown here differs from the \r\nimpact of organic volume on net revenue growth disclosed in the Organic Revenue Growth Rates table on page A-8, due to \r\nthe impacts of product mix, nonconsolidated joint venture volume, and, for our franchise-owned beverage businesses, \r\ntemporary timing differences between bottler case sales (BCS) and concentrate shipments and equivalents (CSE). We \r\nreport net revenue from our franchise-owned beverage businesses based on CSE. The volume sold by our nonconsolidated \r\njoint ventures has no direct impact on our net revenue.\r\nn/m - Not meaningful due to the impact of im\n\u2026 [2,141 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9%. (Pages 1 and 3)",
+    "role": "assistant"
+   },
+   "input_tokens": 2353,
+   "output_tokens": 39,
+   "reasoning_tokens": 0,
+   "seconds": 2.38
+  }
+ ],
+ "answer": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9%. (Pages 1 and 3)",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "core constant currency EPS|core constant currency|guidance|FY2023Q1"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 1,
+    "last": 3
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer states a 1 percentage point raise, matching the gold answer; the added detail (8% to 9%) is consistent with PepsiCo's Q1 2023 guidance update.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001586,
+ "provider": "llmfoundry"
+}

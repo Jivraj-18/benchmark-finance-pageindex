@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_00839",
+ "question": "Does Foot Locker's new CEO have previous CEO experience in a similar company to Footlocker?",
+ "gold": "Yes. She was previous CEO of Ulta Beauty which means she had to manage a large retail company that has brick and mortar + online business. So yes she was a CEO in a similar company to Foot Locker before this.",
+ "doc": "FOOTLOCKER_2022_8K_dated_2022-08-19",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.4,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 17793,
+  "cached_tokens": 0,
+  "output_tokens": 128,
+  "cost": 0.0018433000000000002,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWASHINGTON, D.C. 20549\r\nFORM 8-K\r\nCURRENT REPORT\r\nPursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934\r\nDate of report (Date of earliest event reported): August 19, 2022 (August 16, 2022)\r\nFoot Locker, Inc.\r\n(Exact name of registrant as specified in charter)\r\nNew York 1-10299 13-3513936\r\n(State or other jurisdiction\r\nof incorporation)\r\n(Commission\r\nFile Number)\r\n(IRS Employer\r\nIdentification No.)\r\n330 West 34th Street, New York, New York 10001\r\n(Address of principal executive offices) (Zip Code)\r\nRegistrant's telephone number, including area code: (212) 720-3700\r\nCheck the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the\r\nfollowing provisions:\r\n\u2610 Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)\r\n\u2610 Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)\r\n\u2610 Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))\r\n\u2610 Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240.13e-4(c))\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s)\r\nName of each exchange on\r\nwhich registered\r\nCommon Stock, par value $0.01 per share FL New York Stock Exchange\r\nIndicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (\u00a7230.405 of this\r\nchapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (\u00a7240.12b-2 of this chapter).\r\nEmerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new\r\nor revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\n\n[Page 2]\nItem 5.02. Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory\r\nArrangements of Certain Officers.\r\nOn August 19, 2022, Foot Locker, Inc. (the \u201cCompany\u201d), issued a press release announcing that, as part of a planned succession process, Richard\r\nA. Johnson will step down as President and Chief Executive Officer of the Company, effective September 1, 2022. Mary N. Dillon, 61, former Executive\r\nChair and Chief Executive Officer of Ulta Beauty, Inc., has been appointed President and Chief Executive Officer and a member of the Company\u2019s Board\r\nof Directors (the \u201cBoard\u201d) and the Executive Committee of the Board, each effective September 1, 2022. A copy of the press release is furnished as Exhibit\r\n99.1, which is incorporated herein by reference.\r\nMs. Dillon served as Executive Chair of the Board of Directors of Ulta Beauty, Inc. from June 2021 through June 2022. She previously served as\r\nChief Executive Officer and a member of the Board of Directors of Ulta from July 2013 through June 2021. Prior to Ulta, she served as President and Chief\r\nExecutive Officer and a member of the Board of Directors of United States Cellular Corporation from 2010 through 2013; and Global Chief Marketing\r\nOfficer and Executive Vice President of McDonald\u2019s Corporation from 2005 through 2010. Previously, Ms. Dillon held several positions of increasing\r\nresponsibility at PepsiCo Corporation, including as President of the Quaker Foods division from 2004 through 2005 and as Vice President of Marketing for\r\nGatorade and Quaker Foods from 2002 through 2004. Ms. Dillon also currently serves on the Board of Directors of each of Starbucks Corporation and\r\nKKR & Co. Inc. and previously served on the Board of Directors of Target Corporation. Ms. Dillon has no family relationship with any of the Company\u2019s\r\ndirectors or executive officers. Ms. Dillon has no direct or indirect material interest in any related party transaction required to be disclosed pursuant to\r\nItem 404(a) of R\n\u2026 [81,048 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. Mary N. Dillon was CEO of Ulta Beauty from 2013 to 2021, a consumer-focused retailer and omni-channel business (pages 2 and 30).",
+    "role": "assistant",
+    "reasoning": "**Considering similar companies**\n\nI need to provide a concise answer with citations. The user is looking for a company similar to Foot Locker. I think Ulta Beauty fits this since it's also a retail company, specifically in the consumer sector. I can mention that Dillon was the former CEO of Ulta from 2013-2021, highlighting its omni-channel retail approach as consumer-focused. I\u2019ll ensure to cite pages 2 and 30 for accurate references.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Considering similar companies**\n\nI need to provide a concise answer with citations. The user is looking for a company similar to Foot Locker. I think Ulta Beauty fits this since it's also a retail company, specifically in the consumer sector. I can mention that Dillon was the former CEO of Ulta from 2013-2021, highlighting its omni-channel retail approach as consumer-focused. I\u2019ll ensure to cite pages 2 and 30 for accurate references.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhUx8tZ4FHEx23gS1Ei9xKp2fujaRqZixtVH3_1LJm-3RPk0RVa1v2aygfT7SwIaAkSKogoTG0uQZWU3lX1eeOdTJGwmN2dDNP7xKGzGpM-LJFXd3hufngbyCZ_EVBVmzRfvTZ5ir6LOW0L4NQSZQxoJECcR-lfEWG0hWci07JcyjYgs2ZwqhjHxHc7sBXboRHU_h70AMtZiLHfd9P89GCYqEHroIvgmw2nsbGD-1B35tF1W_srnK0oADQruiOWHUqTeATYz8krTQEB_RsDlPAHm6uHjoOHkBdTaOzyutNbb37jO5F9RY75vBFwN-At-_eS-8-aT-Vnbt4tOQpxLsrc9l8DdyxI3nPFk4ENlThyFW1EB_3J8KZXAgQqV7YabStNzPug5YymtnAu40NpaXDZzNUqWusaqXoY3S5YcghRRMgKgkvutrfFBhFbgQPvcYKWwCHH2yKebtAism43iHurL6W1Oyty_PtO_xs7UOX-Ecdl7inO5YlVeUso7C8YWiY2LWbeEO4EYtvN5E9jquCavHa6EzDLVWVVlfXQyX7RXvpHSoouZ6jiJ2HspIebakZbL5Aaig_UtjZNUDV5OOXenEnSVTkbrMXrMaVj4x3_YbpCE0B1nkIxY3QTkhCYBjV6MOwa4qWvLeRvdaTKJbTy5aXeQvlMUAI9vE0jV-m6YdDP49HQxnfEZCwdRLUHzRLV5J2P-_40o5j4EyaRuClkoYGXWPtTf39mpRDzo8Cu14a2WRN3td4eKK0rDQRXN6zbfVzskKXeWC8o7Bcc_ROeL6D9ihYG0kVVMq1CQ_uktaGMgw5NlG7FN8C88ILEWW3hrwct6bm66gbdFsz-siDdy-mbAtgpxUJZYBVjURixREANuk8d4a-IOZ9bMsA13VPjWBOD2nAdCERJhCL3Zb1eZCmYGGtQL4jvIQnODrMRO95OuUpgso9KrzODzRpd6-hAtJQH65K4WRaWHuMcFTlgijzHR01sxsyJDk_1Q6KMIdOSeAZlA3xNawLds5fgSUhrzx6SfaNTEKLQ1GhJFUt-tAyLO0ccqKwQub2Wu3TB5imEQwwcWn5qjpm8lzerVvT4Qjyle38LmiqZPixoyOlLTaKx7KFhN2eGMbdQT8eRlgSOUby8iS3VmbuMXxBaS3lwN_RCupCyWxa6h1UEwM6rX3PcppjjxhMCmHJ5VxGGxsVvLuKY13S12KT1rTKxzv3aC2w5m3FM22bevc2T60ZFsYRwQ2BRokd_pffXsIBPwQS_1B4D1Wey3qS-5te6195-fATWYCR-JXvj_CpU7qlzruLIApu5wuNy7crUmX_D7qVhV-2C5dx5JMz-v9E85GsOhjP8dhUY9Sbt0MB1MK-F2ltdnbszbNRzNwjJ986GfyXeqGjur_QdlY3Xl9M9BPeFk0HqEPeqprCwqz6Yj06-Jo1SCvrDVh2pYjcoKRBMV61SV1KYYEOlRLMJDboSpbfhe8pWN6UyqLNTt5Jz7UQObwjibeKMJfBE6nBVCehxxsv3inq6hD9CdCHSvImJmHTZBC1879WTZbosIGhVdVxVxhYIq1sG7C3m9oQ9nYHODzkbr5V5dKoOaacamyFOKlsDKsoj6P4UZAuJ4QxrBxlQobHWnU-Y9t48WzDlbFdh3UNdt_5gLwDZxDi69_xUHiRtgfxNkgx61XQfl6nobm1ZO4TBb1nLg_GXe1OcuPjEWTKgE8OHPLVwdKUjj2YP011xN8n8mfapdMHVIS_2nClYI7-dRW-wzPUYPzksI8AB4XZ1n9iuDWsQbDb7Pm5aHAwYjzCN8Fakk3J5Qo8QA6JTjo1ZQGzbFOaWyVAvAEgxkhfo=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_01886d329aa066db016ac2152fd7c087d1aa53ee8a771ffcfe",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 17793,
+   "output_tokens": 128,
+   "reasoning_tokens": 85,
+   "seconds": 4.38
+  }
+ ],
+ "answer": "Yes. Mary N. Dillon was CEO of Ulta Beauty from 2013 to 2021, a consumer-focused retailer and omni-channel business (pages 2 and 30).",
+ "verdict": "correct",
+ "reason": "The answer says yes and identifies the new CEO (Mary Dillon) as the former CEO of Ulta Beauty, a consumer-focused omni-channel retailer, which matches the gold answer's conclusion and reasoning.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001794,
+ "provider": "llmfoundry"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "financebench_id_04481",
+ "question": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement.",
+ "gold": "16.5%",
+ "doc": "PEPSICO_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3917,
+  "cached_tokens": 0,
+  "output_tokens": 253,
+  "cost": 0.0005200599999999999,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 62]\nTable of Contents Consolidated Statement of Income PepsiCo, Inc. and Subsidiaries Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020 (in millions except per share amounts) 2022 2021 2020 Net Revenue $ 86,392 $ 79,474 $ 70,372 Cost of sales 40,576 37,075 31,797 Gross profit 45,816 42,399 38,575 Selling, general and administrative expenses 34,459 31,237 28,453 Gain associated with the Juice Transaction (see Note 13) (3,321) \u2014 \u2014 Impairment of intangible assets (see Notes 1 and 4) 3,166 \u2014 42 Operating Profit 11,512 11,162 10,080 Other pension and retiree medical benefits income 132 522 117 Net interest expense and other (939) (1,863) (1,128) Income before income taxes 10,705 9,821 9,069 Provision for income taxes 1,727 2,142 1,894 Net income 8,978 7,679 7,175 Less: Net income attributable to noncontrolling interests 68 61 55 Net Income Attributable to PepsiCo $ 8,910 $ 7,618 $ 7,120 Net Income Attributable to PepsiCo per Common Share Basic $ 6.45 $ 5.51 $ 5.14 Diluted $ 6.42 $ 5.49 $ 5.12 Weighted-average common shares outstanding Basic 1,380 1,382 1,385 Diluted 1,387 1,389 1,392 See accompanying notes to the consolidated financial statements. 60\n\n[Page 49]\nTable of Contents 2021 Cost of sales Gross profit Selling, general and administrative expenses Operating profit Other pension and retiree medical benefits income Net interest expense and other Provision for income taxes Net income attributable to noncontrolling interests Net income attributable to PepsiCo Reported, GAAP Measure $ 37,075 $ 42,399 $ 31,237 $ 11,162 $ 522 $ (1,863) $ 2,142 $ 61 $ 7,618 Items Affecting Comparability Mark-to-market net impact (39) 39 20 19 \u2014 \u2014 5 \u2014 14 Restructuring and impairment charges (29) 29 (208) 237 10 \u2014 41 1 205 Acquisition and divestiture-related charges (1) 1 5 (4) \u2014 \u2014 23 \u2014 (27) Pension and retiree medical-related impact \u2014 \u2014 \u2014 \u2014 12 \u2014 1 \u2014 11 Charge related to cash tender offers \u2014 \u2014 \u2014 \u2014 \u2014 842 165 \u2014 677 Tax expense related to the TCJ Act \u2014 \u2014 \u2014 \u2014 \u2014 \u2014 (190) \u2014 190 Core, Non-GAAP Measure $ 37,006 $ 42,468 $ 31,054 $ 11,414 $ 544 $ (1,021) $ 2,187 $ 62 $ 8,688 (a) Provision for income taxes is the expected tax charge/benefit on the underlying item based on the tax laws and income tax rates applicable to the underlying item in its corresponding tax jurisdiction. 2022 2021 Change Net income attributable to PepsiCo per common share \u2013 diluted, GAAP measure $ 6.42 $ 5.49 17 % Mark-to-market net impact 0.03 0.01 Restructuring and impairment charges 0.24 0.15 Acquisition and divestiture-related charges 0.05 (0.02) Gain associated with the Juice Transaction (2.08) \u2014 Impairment and other charges 2.12 \u2014 Pension and retiree medical-related impact 0.17 0.01 Charge related to cash tender offers \u2014 0.49 Tax benefit related to the IRS audit (0.23) \u2014 Tax expense related to the TCJ Act 0.06 0.14 Core net income attributable to PepsiCo per common share \u2013 diluted, non-GAAP measure $ 6.79 $ 6.26 9 % Impact of foreign exchange translation 2 Growth in core net income attributable to PepsiCo per common share \u2013 diluted, on a constant currency basis, non-GAAP measure 11 % (a) Does not sum due to rounding. Mark-to-Market Net Impact We centrally manage commodity de\n\n[Page 46]\nrative expenses, gain associated with the Juice Transaction, impairment of intangible assets, other pension and retiree medical benefits income, net interest expense and other, provision for income taxes, net income attributable to noncontrolling interests and net income attributable to PepsiCo, each adjusted for items affecting comparability, operating profit and net income attributable to PepsiCo per common share \u2013 diluted, each adjusted for items affecting comparability, and the corresponding constant currency growth rates These measures exclude the net impact of mark-to-market gains and losses on centrally managed commodity derivatives that do not qualify for hedge accounting, restructuring and impairment charges re\n\u2026 [11,396 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**PepsiCo\u2019s FY2022 unadjusted EBITDA margin was 16.5%.**\n\nCalculation: Unadjusted EBITDA = operating profit $11,512 million + depreciation and amortization $2,763 million = **$14,275 million**.  \nMargin = $14,275 million \u00f7 net revenue $86,392 million = **16.5%**.\n\nOperating profit and net revenue are from the income statement (p. 62); depreciation and amortization is from the cash flow statement (p. 64).",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhweouHBJ1YSIRt2Jr32LFE6CYX8ytoJaEFjMXDc4XuL5cLawxIvdbd43rGDoxDtsj-_yJOGqUwq33dDFLOPS6VJ-vM4y_rJsqQdimi36TfSOGufnRP6_ugMQmPdsrPV0VzrjKvQG9doQA4-GmAwYWl7NBJ5V5J9ScwypJuxwOC0md-nyflatGlcfRqG5XSyjCJt6IQQdbBUQmHhpzJaZWc6xvhIYFENWi-M5gZnIhb8TUooDjgtuUwhnutdZmwTxWGTMS5Bmuh2gX61G-ipXTZIzpTj0k59NOEAGpUQVQkm1vFqY6dim9kXM_Eaf3dludAOeFzCDb0b10KDu8aBBwalz24a6IvogkhNndwm1LM7uDQMvJ8YEpDaqxeayezUQbtvtwB7j4o4zZfhmM89iodJ6rNT9_uD-bk6Wu3ALDcVMayGhjT_yDooeOZuBAs20B_rq07ek8X2RZU6FxrHP6rOq4zbON7VbBEoiGu7c6sMfSy6TBo2CdRen0aP7zjl0ewiBNMiRz_t_WT0DsYOza-KkAtwbJ2CMaZOcReWRFXLb9V9lQWDR_E4CpI3nPCuL0UhvTSIxnwhKe0iQ6oh-UrHlTdtdBYMpBlGAxHzlKjUJ_zwDak69keRlMfcQBJcwYtiXgMU7_jDmlKEBHs5TAuJmi-IV25kiF0PJ5tbpGVZNf5tGxiNG3OMG9gMs2OfPkFRC01Q4u5zE7Wuwc6y7PpiyOpI8JGI_EvlLFpeXqyMd-zizNZr9IiWrLhtQVw3cfy48YISADumL1EzTSEWEEz8bDCZPxoScgWA-44QWZ8v-JTQvwp4DaXlg8QDvU1wehWKrWwAOwqSoqjXceZWiTZVNSuepYJ_hOozjgFzMOdj-Lxy_R6AseesdrXolQfVGCCRVnfmvUcMdooQZXvF5LVf1Ljd6un5BICBz4te1w_W3ET9dPSwR-F6HLH11h47srEecmmpOdxxkCAie5TnOGE_qhAJwo5AdYt-nAN3-8l6g0DlF1-Rhx3U6Z-K4ro6Gz3B2DmeVDN5voZPqo91upyH4Eyalx65CpFA83TJEfj-2xYALpxIq6LcStYMjcfMGB6yMzec0bkNMWS0NVLhotEtbpMOD3Zu0pi0hNDbwMAGwbQ8Ik3Wy3rH9Rt2akZdh4EdbhznInge385S0jhCVhr_uRezMhKD26wDCay06gWH2FdgdpQVIVQLK8YHCikYGM7u5Cfo0-aDojjKU0tCGBj-UY1uY5xoEmtoFOQUqJpw7jtP4gC6-b5uxamS_x7h4h3CYoSNYbIGXjVRjMGPu-FkOjcR71FuVb0efsggbSbv8ICotYZf_rx-IARPJobEt4gTwFDUEbcXLP9cBPp2BNvoobSVcBcPQi-PB939uhyVMycG_EjgEY_hwcw1XKNnZqBx712_bR4MBREjfqJHjOLdMl2zwMOgQVYGvj5104Z9keRsbgtZsCKR4ZR1V5fqhFdYVQTTRf3w0vMmnTSMGdbH84viNVC62KW1H_PTKpe6cPPMEV5DoklrcmZk2vR6kZ1c9ehlILXon9AR6n1TSMXRHVLsntKCLiRee9FIlL56AOHAErz7i0ciD5fXNJM0DWBG-XdJ3OzsU-ls8BoyGQ4hPjpvJXdNPv-Vrv-1bMRXM1--KsdpPzYMW1_CIyMRm9KzWvs208KFegihPzY3g-tE55t38Yn9FfTUhZTg2fIZCX3tUh0eVr6K6bc_jRklzv9lkl_DiRh3t3bnGXhasaKvOIYJAZQfN_dO__ygI8MToCuR9FIbgS2JWTFqsy8WeVRk37qLb4b5T5XgSk5jbSgA6HWcSLT3EevftUrMi2GOQqpEYDG0SUXoxf6THyy9KsyP-yOb4_Z62YwhP2plmLfqwY2NbCwadENtClFqYG9QX_hWcjzG5BPwx-80YU-xL0ru.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0f0bfc891a45dcf3016ac21c1d078487d1b21f67bc28bc0101",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 3855,
+   "output_tokens": 253,
+   "reasoning_tokens": 137,
+   "seconds": 3.43
+  }
+ ],
+ "answer": "**PepsiCo\u2019s FY2022 unadjusted EBITDA margin was 16.5%.**\n\nCalculation: Unadjusted EBITDA = operating profit $11,512 million + depreciation and amortization $2,763 million = **$14,275 million**.  \nMargin = $14,275 million \u00f7 net revenue $86,392 million = **16.5%**.\n\nOperating profit and net revenue are from the income statement (p. 62); depreciation and amortization is from the cash flow statement (p. 64).",
+ "retrieved": [
+  {
+   "page": 62,
+   "score": 0.5697
+  },
+  {
+   "page": 49,
+   "score": 0.5691
+  },
+  {
+   "page": 46,
+   "score": 0.5563
+  },
+  {
+   "page": 64,
+   "score": 0.5532
+  },
+  {
+   "page": 56,
+   "score": 0.5512
+  },
+  {
+   "page": 49,
+   "score": 0.5489
+  },
+  {
+   "page": 40,
+   "score": 0.5316
+  },
+  {
+   "page": 40,
+   "score": 0.5227
+  },
+  {
+   "page": 63,
+   "score": 0.5196
+  },
+  {
+   "page": 103,
+   "score": 0.5161
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives a 16.5% FY2022 unadjusted EBITDA margin, matching the gold answer, and its supporting figures are consistent: (11,512 + 2,763) / 86,392 = 16.5%.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001994,
+ "provider": "aipipe"
+}

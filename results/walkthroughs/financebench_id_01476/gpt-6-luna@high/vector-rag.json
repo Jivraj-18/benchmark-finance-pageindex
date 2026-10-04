@@ -1,0 +1,97 @@
+{
+ "id": "financebench_id_01476",
+ "question": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?",
+ "gold": "Pepsico raised full year guidance in respect of core constant currency EPS growth by 1 percentage point.",
+ "doc": "PEPSICO_2023Q1_EARNINGS",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.4,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4706,
+  "cached_tokens": 0,
+  "output_tokens": 80,
+  "cost": 0.0005115,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 1]\nPepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today reported results for the first quarter 2023. \u201cWe are very pleased with our performance and business momentum as our categories and geographies remained resilient during the first quarter. Given our strong start to the year, we now expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and core constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and CEO Ramon Laguarta. Laguarta continued, \u201cOur results demonstrate that the investments we have made to become an even Faster, even Stronger, and even Better organization by Winning with pep+ are laying the foundation for durable and sustainable growth. We remain committed to our strategic agenda and will continue to invest in our people, brands, supply chain, go-to-market systems, and digitization initiatives to build competitive advantages and win in the marketplace.\u201d 1 Please refer to the Glossary for the definitions of non-GAAP financial measures, including \u201cOrganic revenue growth,\u201d \u201cCore\u201d and \u201cConstant currency,\u201d and to \u201cGuidance and Outlook\u201d for additional information regarding PepsiCo\u2019s full-year 2023 financial guidance. PepsiCo provides guidance on a non\ufffeGAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange and commodity mark-to-market net impacts. Please refer to PepsiCo\u2019s Quarterly Report on Form 10-Q for the 12 weeks ended March 25, 2023 (Q1 2023 Form 10-Q) filed with the Securities \n\n[Page 3]\nGuidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company continues to expect: \u2022 A core annual effective tax rate of 20 percent; and \u2022 Total cash returns to shareholders of approximately $7.7 billion, comprised of dividends of $6.7 billion and share repurchases of $1.0 billion. In addition, the Company continues to expect an approximate 2-percentage-point foreign exchange translation headwind to impact reported net revenue and core EPS growth based on current market consensus rates. This assumption and the guidance above imply 2023 core EPS of $7.27 (previously $7.20), a 7 percent increase (previously 6 percent) compared to 2022 core EPS of $6.79. Prepared Management Remarks and Live Question and Answer Webcast At approximately 6:30 a.m. (Eastern time) on April 25, 2023, the Company will post prepared management remarks (in pdf format) of its first quarter 2023 results and business update, including its outlook for 2023, at www.pepsico.com/investors. At 8:15 a.m. (Eastern time) on April 25, 2023, the Company will host a live question and answer session with investors and financial analysts. Further details will be accessible on the Company\u2019s website at www.pepsico.com/investors. Contacts: Investor Relations Communications investor@pepsico.com pepsicomediarelations@pepsico.com 3\n\n[Page 2]\nSummary First-Quarter 2023 Performance Revenue Volume(a) GAAP Reported % Change Percentage Point Impact Organic % Change % Change Foreign Exchange Translation Acquisitions and Divestit\n\u2026 [14,228 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9% (page 3).",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhWBjlh51Ocuc40StMZ69bDQ8qHCDgg9DxTBbef6y944DTLbruVETFsi84z7Au7MKLjdMmRuyI_9hXQ8d3QyyUSrG5qx1-lTGWGDRSsUo20PeoGbWRlJ8oYvPaESUrPmor4Vyxf90hK4crDKW0r95USwnFUcmiubjVrPoXHY2KbLfHynKiAwJvisT4b53bBf8KgNejW6ZlqhG5I3OfAQizNZINOl47G8Ega1R1PVTMhuuhnkded_yKpJ8dZ8K01ggSWDCbphTgIbYxE2cOcd5QEJn41tdtWHTszkaMFlp8fzfWleJt6aEeIdZS_UeJl2OhUb0FWQrzKAqv78zbN7XWF6hxGVd0c4RJIZzc50xbqwrF4URrEiDcYntslmm9rRQDdmfvIsr_Hxo4wtkLvU2bEW4aelbTp5-8K3MVlqzglESE8qeuyK8afp-27LGPtHDjLVf-6VrNhgNTYnomZFfC9WiTfJXBtSsvyZ_iZk703hYBd73ggJUwlC7QlLPS0Gi0Ui74FueoBoZxpXuNDOkTP5e-Dtq2Gia9pg71RPHfuqQtyzZOuDyqb-Y46ei4Ehg7L268RjHDDKzOteGRRwj7To5zwJlosrSeTyEdLrVxqzZfI8-eMaTtehK9d0pluciWEDoA1sWJvmOxjPwpoEYc89PQdqbRMt2LoHK3vCjvosjvGlfsxSTXd0yhCsh0_yEIFUiOokJn0VUzAhaYMHRa3oCLfqk3kj0fQSFoO-Bkkg0fYvT57kUoCl8ZGnCTDpJfkIeA8_GsI6y5X4HxXVLXheHegm09eIdvuqTqIzsvjdVgz_S7oXMKtgr60VQR54fWaaCioBMudtf9SeWfva2Qy-H-E66A1ulabtLyM_iw0JHV6heHK0Wwfw3WOmLfYK_N5bJJKjSvVXVYbbjeZQ9_M2lDYMV5YEBrWmByHcfnu5aWG4NTpuiMvbjwdd-DYVDIblVeOcSu20vKf07W_BqTyuKm5HIkIF9r_NbFRGRzSU9S45i-4mPdjXCdbYW7-CmmBNGXDS1e90bAfNaGPrj1oLYSVEvEme2BgoxWirhTX97CjGiqrhFN0AgY33KlMLOhrvd4qdrQgikSNJtXQ5dXcFpBm7140CQW6jg4erIPim2JY0aVrV6PtMuL1AD60XYMcEySA_z7zC7Rha_H0CwpcHdwPDp9nUslS6AM8UXD_GiaQbmuR_i9szB3eCGl7l7paenzCGSF6cKWslO9shYcD9LSh7HsJX44VIyf2DiN8CbKlAbW3-VVN9opn6e6Qal-ltLb78ZuFpI4LEJXhulOUXqBfcfLh7L8vQvFNhFE-WPfjXLXFSIBSAmSnTxnT5EDXEtZNu4QOVqrjJGIeSitZfBSUxYhRGN_3MGbENYehWn4jc9Zto3PqGjLTRjcC1Xu1MI7L2HUDrbMiefgGJ6x5jzvuRf4oJ4zdwzKFshx63O2P7tmoHkIv5gLxUtOj9dXEVw2aoehglWlV3JCIwheIAgKia6EFuD4LRGPgljNXbYqQy2XVB09dHKL4hoYIe68tO.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_09189aef2e3243c2016ac21580a3d487d18d32d9581fcccaa2",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 4676,
+   "output_tokens": 80,
+   "reasoning_tokens": 42,
+   "seconds": 2.18
+  }
+ ],
+ "answer": "PepsiCo raised its full-year core constant currency EPS growth guidance by **1 percentage point**, from 8% to 9% (page 3).",
+ "retrieved": [
+  {
+   "page": 1,
+   "score": 0.7121
+  },
+  {
+   "page": 3,
+   "score": 0.7033
+  },
+  {
+   "page": 2,
+   "score": 0.6218
+  },
+  {
+   "page": 12,
+   "score": 0.6204
+  },
+  {
+   "page": 15,
+   "score": 0.594
+  },
+  {
+   "page": 11,
+   "score": 0.5821
+  },
+  {
+   "page": 4,
+   "score": 0.5648
+  },
+  {
+   "page": 16,
+   "score": 0.5641
+  },
+  {
+   "page": 13,
+   "score": 0.5485
+  },
+  {
+   "page": 10,
+   "score": 0.5427
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer states a 1 percentage point raise, matching the gold answer, and the added detail (8% to 9%) does not contradict it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001412,
+ "provider": "llmfoundry"
+}

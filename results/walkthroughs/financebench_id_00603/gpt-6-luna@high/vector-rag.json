@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_00603",
+ "question": "What drove the increase in Ulta Beauty's merchandise inventories balance at end of FY2023?",
+ "gold": "Increase in Merchandise inventories balance was driven by the opening of 47 new stores. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+ "doc": "ULTABEAUTY_2023Q4_EARNINGS",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.2,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4859,
+  "cached_tokens": 0,
+  "output_tokens": 173,
+  "cost": 0.000573,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 7]\nExhibit 3 Ulta Beauty, Inc. Condensed Consolidated Balance Sheets (In thousands) January 28, January 29, 2023 2022 (Unaudited) Assets Current assets: Cash and cash equivalents $ 737,877 $ 431,560 Receivables, net 199,422 233,682 Merchandise inventories, net 1,603,451 1,499,218 Prepaid expenses and other current assets 130,246 110,814 Prepaid income taxes 38,308 5,909 Total current assets 2,709,304 2,281,183 Property and equipment, net 1,009,273 914,476 Operating lease assets 1,561,263 1,482,256 Goodwill 10,870 10,870 Other intangible assets, net 1,312 1,538 Deferred compensation plan assets 35,382 38,409 Other long-term assets 43,007 35,647 Total assets $ 5,370,411 $ 4,764,379 Liabilities and stockholders\u2019 equity Current liabilities: Accounts payable $ 559,527 $ 552,730 Accrued liabilities 444,278 364,797 Deferred revenue 394,677 353,579 Current operating lease liabilities 283,293 274,118 Accrued income taxes \u2014 12,786 Total current liabilities 1,681,775 1,558,010 Non-current operating lease liabilities 1,619,883 1,572,638 Deferred income taxes 55,346 39,693 Other long-term liabilities 53,596 58,665 Total liabilities 3,410,600 3,229,006 Commitments and contingencies Total stockholders\u2019 equity 1,959,811 1,535,373 Total liabilities and stockholders\u2019 equity $ 5,370,411 $ 4,764,379\n\n[Page 8]\nExhibit 4 Ulta Beauty, Inc. Condensed Consolidated Statements of Cash Flows (In thousands) 52 Weeks Ended January 28, January 29, 2023 2022 (Unaudited) Operating activities Net income $ 1,242,408 $ 985,837 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 241,372 268,460 Non-cash lease expense 301,912 276,229 Deferred income taxes 15,653 (25,666) Stock-based compensation expense 43,044 47,259 Loss on disposal of property and equipment 6,688 5,358 Change in operating assets and liabilities: Receivables 34,260 (40,573) Merchandise inventories (104,233) (331,003) Prepaid expenses and other current assets (19,432) (3,412) Income taxes (45,182) (35,652) Accounts payable 8,309 66,156 Accrued liabilities 48,249 58,598 Deferred revenue 41,098 79,196 Operating lease liabilities (324,500) (303,914) Other assets and liabilities (7,731) 12,392 Net cash provided by operating activities 1,481,915 1,059,265 Investing activities Capital expenditures (312,126) (172,187) Other investments (2,458) (4,297) Net cash used in investing activities (314,584) (176,484) Financing activities Repurchase of common shares (900,033) (1,521,925) Stock options exercised 46,011 40,386 Purchase of treasury shares (6,992) (15,677) Net cash used in financing activities (861,014) (1,497,216) Effect of exchange rate changes on cash and cash equivalents \u2014 (56) Net increase (decrease) in cash and cash equivalents 306,317 (614,491) Cash and cash equivalents at beginning of year 431,560 1,046,051 Cash and cash equivalents at end of year $ 737,877 $ 431,560 Exhibit 5 Ulta Beauty, Inc. Store Update Total stores open Number of stores Number of stores Total stores at beginning of the opened during the closed during the open at Fiscal 2022 quarter quarter quarter end of the quarter 1 st Quarter 1,308 10 0 1,318 2 nd Quarter 1,318 7 0 1,325 3 rd Quarter 1,325 18 0 1,343 4 th Quarter 1,343 12 0 1,355\n\n[Page 1]\nMarch 9, 2023 Ulta Beauty Announces Fourth Quarter Fiscal 2022 Results Net Sales of $3.2 Billion Compared to $2.7 Billion in the Year-Ago Quarter Comparable Sales Increased 15.6% Net Income of $340.8 Million or $6.68 Per Diluted Share BOLINGBROOK, Ill.--(BUSINESS WIRE)-- Ulta Beauty, Inc. (NASDAQ: ULTA) today announced financial results for the thirteen-week period (\u201cfourth quarter\u201d) and fifty-two-week period (\u201cfiscal year\u201d) ended January 28, 2023 compared to the same periods ended January 29, 2022. 13 Weeks Ended 52 Weeks Ended January 28, January 29, January 30, January 28, January 29, January 30, (Dollars in millions, except per share data) 2023 2022 2021 2023 2022 2\n\u2026 [12,894 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "The inventory increase was primarily driven by 47 new store openings, inventory for new brand launches and brand expansions, and higher inventory costs. The document reports this for the end of fiscal 2022, not fiscal 2023 (page 3).",
+    "role": "assistant",
+    "reasoning": "**Clarifying inventory increase**\n\nI need to provide an accurate answer based on the document. There's a wording trap regarding the end of FY2023 since FY2022 actually ends on January 28, 2023. The user's question about the increase in merchandise inventories likely refers to the end of fiscal 2022 instead. The document states that the increase of $104.2 million is primarily due to the opening of 47 new stores, inventory for new brand launches, and rising inventory costs. I'll cite page 3 and make sure to clarify this.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying inventory increase**\n\nI need to provide an accurate answer based on the document. There's a wording trap regarding the end of FY2023 since FY2022 actually ends on January 28, 2023. The user's question about the increase in merchandise inventories likely refers to the end of fiscal 2022 instead. The document states that the increase of $104.2 million is primarily due to the opening of 47 new stores, inventory for new brand launches, and rising inventory costs. I'll cite page 3 and make sure to clarify this.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhUtYQaTGjvN1nUmFL1HMSizboMAzX2CTrviBilfMi16LPlQAYLnUkde-nlrIWZ2aDF1k6LFgBJhLOdXn5A0XA4gEOlVkXLXLt8cR0qTz8O2jWS_AoSTn-87x2FZjZkHMFXuFv9aagtYvhEVsy2xboLZfKdNDdlJO-vndV6_qvgZlw2ZSvz7Tn3L7GhALmF1NWQlmMdXDGDO4KhMgdjGMMadYX5p-7tNRoXIjfKGTIYnPTvteJtVcEuQ7JH_bCXExniEWR_SylpowCv37RuOxFkpHdTzpu2oJKbVDfasT-DRjc88ETnROE_NyHb0qzwvuVXCg4YAjraHOSS0RAo_3fo0GvL0pLCovbXcHBdA3qkBUKoBcg9nT1E4HspgqYnx-OA4BT6u9r4C9zW-JyRVH1AcZZ2UgxV4mGdPVtrHl_SwHeML3mvcknxKEpxgMtcdvYti7xrzjS4sZuGaeTtPAzdOYcy_ur5m-QrQzh8tcM7hvpSyRjl-WbvvG2aZ36ttdEkwjjUZO8MGKUSroc1Q74R1llBHoHWDwptnoPotj6WQaWh9GCpjOkVThYr8fHOA3fww06F6TlvPvKpeGMBhNCzTYWKrD7T9iidt6fyLaEagrL64k43azXYqqUOcHfpDyFdb2-UFcAtzGdt-qurNJj43G73A07rGHNzjPmuNI2cdzReIShFD6_QJVQQKNDUwQfhuMg14ccrkHcKmYeCYjL_7fsYPXrA1vNspIzn_z96lt9wSMt0MGsiuTUi79BrIDo6E4zKtDj8OP-L_nWH_vpq_bbIzwvDsyK41I5a4ybweW9eagoACyYaFsdQkCwQKVCHC_mQmG7im9BhnW-gmLgn_9iMFXe-37fQyUFZ814xB3ta6BNq-qoVINAyl7f9RyY6NKNFtY2SChx72z5myGft27EE68RGLZ5GwXcDsexYpiOqoljrOmSAywkzRy-MGmF9ij5n-cYJvDIPTIgpVhCm8OVAlhFmOO5iOlhekK8cBrzsMZKTrQbzcTRVkeBFTXmtARWRTBB5dqUUSVUwS7Ql5w7HfcqUqeDOnaSBcApeVL4F-zi4UB9LTLo6q_7iziFrxBJbbTZiOyzVu9yOR7Hf4Yd2wQznLzmnnVOtW-KHmzBGeSWjAtwOZNR3speEfVPnF46BrsxJ20rUPEw-AnhcM81LGMCPmwmA2FeOS-tEC6YJhKeaXvrkeCKUUb3At9Y_OkWWyj5xVp__L2yGipcsSPL32EZvVDoFu-YFrJC6m19ER3gxkanxEcOd_ZueTvKqxqhXGbyT5bHtyy5fVsaHIdAxoyDEo53y2Xd8-craUZAYK7kAWh1OEdebIjeuwZO-3p2j_CCtWgGq6Ra2e6WrdqmK6433X20kNNBTENHglqkPWnIAGyZMJHHqpFJXZZXht8ml9jIYRcrZtWhZsy-_UsYqDG8iqKS9tFzrFgaUBSXjeyUJ9Ci63Fv8mrSlaUCNHqij4hb9UVyilCLNXhOaKJt--xeWsp05Z8WDBCOdDafw_IGkZnVjI3VNXMgUVnb28FwW2Yy6Uav4GaSbPf8IhJsji2MzwSSw38g6-C-gbhUDflSUgKemUuH76XljRRZoXFrb-KLdNvB4blKG3AY-2-v-OhyqRYX3ixrEuaA6MzQiUl8sDYU_sFCsuAteXnVIPCaLbVtb5vzU5kyGxZediDLFf9G96WndXPirTo65MdsgdYGepyYtYcMeAAAGK4c-NFNkdGP71bZWFtosWOYDwQ9Mq0Y2Bce8RSY4kGXCLK5Hty-dWBzs4Xuce5sZtIDbMTFf4AyGDA85l_95Ikt0B7n6iShkUi3t9YVyo25MecLlrvjLuklnkmUoQ1WwcJ8RRUq7bHSQka61iPb2sUlvbO5Ej0FDVpkVzRBaQ-3dTC0F0R6rj4c_Lgu4h6gI4V6Aq-52GITCIIMuZbfY3kaBt_JiyBxsHgl06OYszCtDZSVIK8qqhxMM2k8nxjbhykamnQBDv9Zed0zy9fThWPBttuw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_029d4cbbd8e6bdec016ac2152ad9fc87d18083b9f527e8b11d",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4839,
+   "output_tokens": 173,
+   "reasoning_tokens": 117,
+   "seconds": 3.7
+  }
+ ],
+ "answer": "The inventory increase was primarily driven by 47 new store openings, inventory for new brand launches and brand expansions, and higher inventory costs. The document reports this for the end of fiscal 2022, not fiscal 2023 (page 3).",
+ "retrieved": [
+  {
+   "page": 7,
+   "score": 0.6618
+  },
+  {
+   "page": 8,
+   "score": 0.6585
+  },
+  {
+   "page": 1,
+   "score": 0.6448
+  },
+  {
+   "page": 9,
+   "score": 0.6434
+  },
+  {
+   "page": 2,
+   "score": 0.6302
+  },
+  {
+   "page": 2,
+   "score": 0.6209
+  },
+  {
+   "page": 1,
+   "score": 0.619
+  },
+  {
+   "page": 6,
+   "score": 0.5975
+  },
+  {
+   "page": 4,
+   "score": 0.5055
+  },
+  {
+   "page": 3,
+   "score": 0.5041
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer names the 47 new store openings as the primary driver, matching the gold answer, and it notes the fiscal-year labeling mismatch, which is consistent with the gold's caveat; the extra drivers are supporting detail.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001824,
+ "provider": "llmfoundry"
+}

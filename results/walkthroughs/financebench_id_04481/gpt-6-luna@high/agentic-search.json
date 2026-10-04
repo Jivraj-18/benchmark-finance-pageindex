@@ -1,0 +1,305 @@
+{
+ "id": "financebench_id_04481",
+ "question": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement.",
+ "gold": "16.5%",
+ "doc": "PEPSICO_2022_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 12.5,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 6286,
+  "cached_tokens": 2360,
+  "output_tokens": 662,
+  "cost": 0.0007472000000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_D7eBEwYtnWfPc8HWfkbRQjXK",
+      "function": {
+       "arguments": "{\"pattern\":\"Depreciation and amortization|depreciation, amortization|Operating profit|Operating income|Net revenue|Net revenues\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_YVRJnTc8vYOPX7sxBdvBVuMe",
+      "function": {
+       "arguments": "{\"pattern\":\"2022 2021 2020|2022.*2021.*2020\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwt9_NlFjcDq3hRrZGm3I62Xc6Lfx7W_uT7X0NRv0cJFwM40QbIlEtVgE_-7snR2fNakK0ESd-mJmzhnkRh4IilE5dahpbaSl74ZirloVqIdsvceJBsf1aieQXdIdFMBM1kjOJHxyyYxV2Z9lVfM8I5GHCpttWETDPfQU-JqyUDL6l4EULWKOiNiSoE7PKlnp0pJf6H2xFXNIOmNPKOS4023k9FTBJIi9MQdynU-tqeAJAb55XsbFQyRfpfBFzdOg18zTvToGYNCiZODYiLRZ_8G_4UiCPLW7KYJg1C2ybxCNGL4KSyV3n64EM1BGuUjFckLDtUOi76RagfIjjteAtUEQ7cLlCHyLmM58kQ6TbcXW6QMRA-w9Ckc-0nnhG2mdkBXkwwo_mvOUiVxGmxFM--BXSQ0NeqT5W_rk4SFV05vb1t3F0_HlYZCU3OlETlovFvjlUm2LD2CDD370_Gwa5IazS3aqhsqoITRAhAm8Kc7NuUCLlvP1AT_JckZf_jxshLIUow4VBTNEAP1vVC9W-XutjL_Lp4KSxAiqui1TZbPV_9RjPGUdMv9Rr9zw3SZHQe3oP4mN0diRpAn9ttYl4qYYMn0clfVQptuHCaK-gka89gfOqOPWiozkzlvZ-iVFUDoxUoI5FYl4OJdSoOaorY73f_6FmqqiwkzQhJCBYMCyzYLj5btDHBfU6W73erD7bm5Q6wu3XlnzVk1TCcNtufu28JesGnKjP7OX4tH3oxJbPZAY-NTDymfSVWBpM9FKKmt8itryzPPVXO64Xaswq1Lc-ONNV1gOPFCXbG2L4JibGbHYOFjOgZNZdEwlg1aN9g8bP5iHtvg3a43xwjDaNdoaD1SsW_APLNvjKiar0V2HXb3_rKPFxNLPnTb-owaUNyMzhK2tPSwOrrQFwWC0FMiCrqaaBuAtYNEsojt_xW0wSFMYckM3hC8PNMoWdy_Sk-VnN6rQoCeYbDWN6LaWvVOefoVIIBdbDvSURo7TzSotKZ9tOTB8lVDjwT8GpYkMbgyJlwIqenaFTsUWCDWLb8Il9CV-61I6dK3I58W0W8k8gY2JhFh1Q7AOn2ZdI4U12JXNvsLFSGe-JzF0AOueGCujsKvj6elRVYDv6xw_wKsCweOQIEJhKOcgAyPwI_6phVYFh7vnrHdOgy4tKPutI_q5L_STR3yde2d1UFqNYg4fUJDV4-W68nBYHv2ghwQvFmjnQm0BDX5Yc5QbrwXCVBFS0A03O4x2lWBMRvVjYe1eLmi5XpK9-LUd94zDiaN9TKHW-KYc4FqtFWHSdxtoj8OwiTouqyoY5__oULTmSLJTpUr-oAShcCIUk_VfDhZnfA9m6Fqkgfrp8VPUlXFCof20KN_sDGkl7jAc9xPbWHUFcDMy8Lo-DBRINWAU3iv6ezddtD6vNRR1sbnk81mrUSloDpYAbwun9L4Rhl3LJYzGnla1pFzqBMed_T7QYM4EjASUG13X7pDRPEg07Wnesg40wnGJyds_wdOWu8U6SUryzo5AMt8zkgZeG1XGCBEhib3OJGbU_C52VfvB7niL1Maz_m-NJf6yihiBoixHQMu_s=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e1a5fc83a32cf4c016ac21c2c713887d18e8cbfe915528ead",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 259,
+   "output_tokens": 128,
+   "reasoning_tokens": 40,
+   "seconds": 2.67
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_D7eBEwYtnWfPc8HWfkbRQjXK",
+       "function": {
+        "arguments": "{\"pattern\":\"Depreciation and amortization|depreciation, amortization|Operating profit|Operating income|Net revenue|Net revenues\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_YVRJnTc8vYOPX7sxBdvBVuMe",
+       "function": {
+        "arguments": "{\"pattern\":\"2022 2021 2020|2022.*2021.*2020\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwt9_NlFjcDq3hRrZGm3I62Xc6Lfx7W_uT7X0NRv0cJFwM40QbIlEtVgE_-7snR2fNakK0ESd-mJmzhnkRh4IilE5dahpbaSl74ZirloVqIdsvceJBsf1aieQXdIdFMBM1kjOJHxyyYxV2Z9lVfM8I5GHCpttWETDPfQU-JqyUDL6l4EULWKOiNiSoE7PKlnp0pJf6H2xFXNIOmNPKOS4023k9FTBJIi9MQdynU-tqeAJAb55XsbFQyRfpfBFzdOg18zTvToGYNCiZODYiLRZ_8G_4UiCPLW7KYJg1C2ybxCNGL4KSyV3n64EM1BGuUjFckLDtUOi76RagfIjjteAtUEQ7cLlCHyLmM58kQ6TbcXW6QMRA-w9Ckc-0nnhG2mdkBXkwwo_mvOUiVxGmxFM--BXSQ0NeqT5W_rk4SFV05vb1t3F0_HlYZCU3OlETlovFvjlUm2LD2CDD370_Gwa5IazS3aqhsqoITRAhAm8Kc7NuUCLlvP1AT_JckZf_jxshLIUow4VBTNEAP1vVC9W-XutjL_Lp4KSxAiqui1TZbPV_9RjPGUdMv9Rr9zw3SZHQe3oP4mN0diRpAn9ttYl4qYYMn0clfVQptuHCaK-gka89gfOqOPWiozkzlvZ-iVFUDoxUoI5FYl4OJdSoOaorY73f_6FmqqiwkzQhJCBYMCyzYLj5btDHBfU6W73erD7bm5Q6wu3XlnzVk1TCcNtufu28JesGnKjP7OX4tH3oxJbPZAY-NTDymfSVWBpM9FKKmt8itryzPPVXO64Xaswq1Lc-ONNV1gOPFCXbG2L4JibGbHYOFjOgZNZdEwlg1aN9g8bP5iHtvg3a43xwjDaNdoaD1SsW_APLNvjKiar0V2HXb3_rKPFxNLPnTb-owaUNyMzhK2tPSwOrrQFwWC0FMiCrqaaBuAtYNEsojt_xW0wSFMYckM3hC8PNMoWdy_Sk-VnN6rQoCeYbDWN6LaWvVOefoVIIBdbDvSURo7TzSotKZ9tOTB8lVDjwT8GpYkMbgyJlwIqenaFTsUWCDWLb8Il9CV-61I6dK3I58W0W8k8gY2JhFh1Q7AOn2ZdI4U12JXNvsLFSGe-JzF0AOueGCujsKvj6elRVYDv6xw_wKsCweOQIEJhKOcgAyPwI_6phVYFh7vnrHdOgy4tKPutI_q5L_STR3yde2d1UFqNYg4fUJDV4-W68nBYHv2ghwQvFmjnQm0BDX5Yc5QbrwXCVBFS0A03O4x2lWBMRvVjYe1eLmi5XpK9-LUd94zDiaN9TKHW-KYc4FqtFWHSdxtoj8OwiTouqyoY5__oULTmSLJTpUr-oAShcCIUk_VfDhZnfA9m6Fqkgfrp8VPUlXFCof20KN_sDGkl7jAc9xPbWHUFcDMy8Lo-DBRINWAU3iv6ezddtD6vNRR1sbnk81mrUSloDpYAbwun9L4Rhl3LJYzGnla1pFzqBMed_T7QYM4EjASUG13X7pDRPEg07Wnesg40wnGJyds_wdOWu8U6SUryzo5AMt8zkgZeG1XGCBEhib3OJGbU_C52VfvB7niL1Maz_m-NJf6yihiBoixHQMu_s=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e1a5fc83a32cf4c016ac21c2c713887d18e8cbfe915528ead",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_D7eBEwYtnWfPc8HWfkbRQjXK",
+     "content": "p34: Russia. Our operations in Russia accounted for 5% and 4% of our consolidated net revenue for the year ended December 31,\np34: consolidated net revenue for the year ended December 31, 2022 and December 25, 2021, respectively. Ukraine accounted for\np38: Our operations outside of the United States generated 43% of our consolidated net revenue in 2022, with Mexico, Russia,\np38: 2022, unfavorable foreign exchange reduced net revenue growth by 3 percentage points, primarily due to declines in the Turkish\np39: of product launches, product mix, bottler inventory practices and other factors. While our net revenue is not entirely based on\np40: Consolidated Net Revenue and Operating Profit\np40: Net revenue $ 86,392 $ 79,474 9 %\np40: Operating profit $ 11,512 $ 11,162 3 %\np40: See \u201cResults of Operations \u2013 Division Review\u201d for a tabular presentation and discussion of key drivers of net revenue.\np40: Operating profit grew 3% while operating margin declined 0.7 percentage points. Operating profit growth was primarily driven\np40: by net revenue growth and productivity savings, partially offset by certain operating cost increases and a 42-percentage-point\np40: impact of higher commodity costs. The loss of net revenue due to the Juice Transaction reduced operating profit growth by 3\np40: Operating profit growth also reflects a 13-percentage-point unfavorable impact of impairment charges related to certain\np40: billion in net revenue in 2021. In the United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for\np41: In the discussions of net revenue and operating profit below, \u201ceffective net pricing\u201d reflects the year-over-year impact of discrete\np41: Net Revenue and Organic Revenue Growth\np41: net revenue growth differs from the unit volume growth disclosed in the following divisional discussions due to the impacts of product mix, nonconsolidated joint\np41: venture volume, and, for our franchise-owned beverage businesses, temporary timing differences between BCS and CSE. We report net revenue from our franchise\ufffeowned beverage businesses based on CSE. The\np42: Operating Profit/(Loss), Operating Profit/(Loss) Adjusted for Items Affecting Comparability and Operating Profit/(Loss)\np42: Operating profit/(loss) adjusted for items affecting comparability and operating profit/(loss) performance adjusted for items\np42: Operating Profit/(Loss) and Operating Profit/(Loss) Adjusted for Items Affecting Comparability\np43: Operating Profit/(Loss) Performance and Operating Profit/(Loss) Performance Adjusted for Items Affecting Comparability on a\np43: Net revenue grew 19%, primarily driven by effective net pricing and a 2-percentage-point contribution from the 53 reporting\np43: Operating profit increased 9%, primarily reflecting the effective net pricing and productivity savings. These impacts were\np43: impairment charges associated with a baked fruit convenient food brand reduced operating profit growth by 1.5 percentage points\np43: (other impairment charges). The 53 reporting week contributed 2 percentage points to operating profit growth.\np43: Net revenue grew 15%, primarily driven by effective net pricing and a 2-percentage-point contribution from the 53 reporting\np43: Operating profit grew 4.5%, primarily reflecting the effective net pricing and productivity savings. These impacts were partially\np43: expenses. The 53 reporting week contributed 2 percentage points to operating profit growth.\np44: Net revenue increased 4%, primarily driven by effective net pricing and an increase in organic volume. The 53 reporting week\np44: contributed 2 percentage points to net revenue growth offset by a 9-percentage-point unfavorable impact of lower net revenue\np44: Operating profit increased 122%, primarily reflecting a 124-percentage-point impact of the gain of $3.0 billion associated with\np44: the Juice Transaction, partially offset by a 2-percentage-point impact of related transaction costs. Operating profit growth was\np44: also driven\n\u2026 [877 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_YVRJnTc8vYOPX7sxBdvBVuMe",
+     "content": "p32: comparisons between 2022 and 2021. For discussion on results of operations and financial condition pertaining to 2020 and\np62: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np62: 2022 2021 2020\np63: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np63: 2022 2021 2020\np64: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np64: 2022 2021 2020\np65: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np65: 2022 2021 2020\np67: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np67: 2022 2021 2020\np67: (a) Cash dividends declared per common share were $4.5250, $4.2475 and $4.0225 for 2022, 2021 and 2020, respectively.\np69: 2022 2021 2020\np70: 2022 2021 2020 2022 2021 2020\np71: 2022 2021 2020\np71: 35% of our consolidated net revenue in 2022 and approximately 40% of our consolidated net revenue in 2021 and 2020. Generally, our finished goods beverage\np73: 2022 2021 2020\np73: 2022 2021 2022 2021 2020\np74: 2022 2021 2020 2022 2021 2020\np74: 2022 2021 2020 2022 2021\np76: and development costs were $771 million, $752 million and $719 million in 2022, 2021 and 2020, respectively, and are reported\np78: 2022 2021 2020\np79: 2022 2021 2020\np79: (a) Excludes cash expenditures of $1 million in 2022 and $2 million in both 2021 and 2020, reported in the cash flow statement in pension and retiree medical plan\np80: 2022 2021 2020\np83: 2022 2021 2020\np83: 2022 2021 2020\np83: 2022 2021 2020\np84: in 2022, $309 million in 2021 and $78 million in 2020. We currently expect to pay approximately $309 million of this liability in\np85: 2022 2021 2020\np87: 2022 2021 2020\np88: 2022 2021 2020\np90: 2022 2021 2020\np93: 2022 2021 2020 2022 2021 2020 2022 2021 2020\np94: 2022 2021 2020 2022 2021 2020 2022 2021 2020\np95: 2022 2021 2020 2022 2021 2020\np95: (a) Includes $150 million contribution in 2022, $500 million contribution in 2021 and $325 million contribution in 2020 to fund our U.S. qualified defined benefit plans.\np97: In 2022, 2021 and 2020, our total Company contributions were $283 million, $246 million and $225 million, respectively.\np103: 2022 2021 2020\np103: immaterial for the years ended December 31, 2022, December 25, 2021 and December 26, 2020.\n... 13 more matches; narrow the pattern."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_MxYxLpBdwLIyChq1Atcn6SCX",
+      "function": {
+       "arguments": "{\"first\":62,\"last\":65}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwwfDrA7sg_d1-37VoWm59bdoiUI1re8-y8D8xCQ3Qv4pJ3A2ZLlpx43XjoQACfbzsL1JKlEzLaDnEd_lctv2UZ9WGA_MVvfeZp9RO6q8Fm88Be7RwJD0UqTEePXUQrZKJqUlxpdDUxSdPM99T2yvJCuqU3unemGbnDtlZOWgKRlpczc-gK6S9Z-hza5xLgmttVRjfw3BpmFBa9txJwX6X2fvf0Xx2vsD5_TCCaZOMs44kVNWESqTDkKlOzlmYJKCbTY561NZO4MC9qWqsq6MzXBmhdUBdPkJjIddMTZLyYPqHoojbP_1Oys24EuXI6HtoCWPy3txqs4jyT6aGPYMMkIqtP1iPTiv4MEDzbGV5j6BVS2cufrLKqWcAJ0c3Eza7pJuLw4rGBv1n9dqOJdrEh7RwbaeqmyQMPHEBZGsZuqKiuAAGLlCrlJCAZHRPe00ud9EPKiGX_RM76yfs-YrnGVKWtyDMjf7Q5B8UIpSSn0SSZdwtH_VA_dIC_wrfYEbu9LCsigdHUtxKMgCV6LkiZJ1qb5hLty4ej089o0MJWdfnILBmQ2w8gP9pEdY8YAP7Q1NWT7ipsmTlJ9LDlArB4tPQA8bZ6uraaoRRaK24fVCcB1D5Qoqzmn9-9eUlkcC_TUDovwpyoSai-3WGTnudNPx1SlMuip4BL3SpkvyqXbiAc_SRbFFbcmEcezEg6jOhpkrMYc-rY8-Dt56ajywYan5gDLqRCuxKLKqJIM-sR6e3L9Cy85UAwFNZlWCpRcLr1hqa9zNWsZ4tJSjIhB1K46wMROyt-qlvMeVao-tw0zDqID9qKB0gaWuYa0k3e-e4nsgGZJaXAlyjIu9BY6UzJnoF2z-_t3lwAhPhdHoEky9pdAtECiz34n0tFJtuY8apW_LLcGcwAKKnhOS7KDOjobt9pWpWOT3M5mGqAW8khAzR9aIhLZqBulHSApyiCI1shVnVFbq814T614PgG6M_aGMIWiYeWvUfd6YOTYtpDS4fcgkW_YsyEYIo0EkfOEOGhvEv6C-aNor4b7BSaWPgcqZCWBd5AxlvLkDr468VHa8TPc_7byCBr9tkVpkkaxUQz_zEdONjCdmrARureajLV4PrzVXVLkNy1XqoVBQAdI5hGuCrFZ4JdVynUuJUBfog8d_PlNArHRqSk_ectZO_zGK_ddPiw4l1E6KS5ph32COtzqY7lsmLeVbuL6UTtbIcTgvSIywEuhG6MGf4rCelj43neVq-DsuLYeKu76Rqztj318-Lm0j-6RaCPIP5T65O4O9IRkfXyHT6tyr8YPO0kHpQi3ux2OFPJMxUu2J5ichnyUr1J8IvyV4Z7XT4Q2DwAQc8R22Z46RUOeHMbqmn9fqJMjB1bMo0OtNW6VsIuZB6w2w_PoOfpgJcEyYyXryZfBJbnX8uBUrofP7rH8SNY5w==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e1a5fc83a32cf4c016ac21c2f55bc87d1a45b023e2281cd44",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 2363,
+   "output_tokens": 47,
+   "reasoning_tokens": 23,
+   "seconds": 3.13
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 503 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_D7eBEwYtnWfPc8HWfkbRQjXK",
+       "function": {
+        "arguments": "{\"pattern\":\"Depreciation and amortization|depreciation, amortization|Operating profit|Operating income|Net revenue|Net revenues\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_YVRJnTc8vYOPX7sxBdvBVuMe",
+       "function": {
+        "arguments": "{\"pattern\":\"2022 2021 2020|2022.*2021.*2020\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for financial info**\n\nI\u2019ll need to find the unadjusted operating income for PepsiCo for FY2022, as well as the depreciation and amortization (D&A) cash flow and revenue sales. This information will help me compute the EBITDA margin relative to net revenue. Alright, I\u2019ll search for those specific financial figures so I can get a clearer picture of PepsiCo\u2019s performance. Let\u2019s figure this out together!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwt9_NlFjcDq3hRrZGm3I62Xc6Lfx7W_uT7X0NRv0cJFwM40QbIlEtVgE_-7snR2fNakK0ESd-mJmzhnkRh4IilE5dahpbaSl74ZirloVqIdsvceJBsf1aieQXdIdFMBM1kjOJHxyyYxV2Z9lVfM8I5GHCpttWETDPfQU-JqyUDL6l4EULWKOiNiSoE7PKlnp0pJf6H2xFXNIOmNPKOS4023k9FTBJIi9MQdynU-tqeAJAb55XsbFQyRfpfBFzdOg18zTvToGYNCiZODYiLRZ_8G_4UiCPLW7KYJg1C2ybxCNGL4KSyV3n64EM1BGuUjFckLDtUOi76RagfIjjteAtUEQ7cLlCHyLmM58kQ6TbcXW6QMRA-w9Ckc-0nnhG2mdkBXkwwo_mvOUiVxGmxFM--BXSQ0NeqT5W_rk4SFV05vb1t3F0_HlYZCU3OlETlovFvjlUm2LD2CDD370_Gwa5IazS3aqhsqoITRAhAm8Kc7NuUCLlvP1AT_JckZf_jxshLIUow4VBTNEAP1vVC9W-XutjL_Lp4KSxAiqui1TZbPV_9RjPGUdMv9Rr9zw3SZHQe3oP4mN0diRpAn9ttYl4qYYMn0clfVQptuHCaK-gka89gfOqOPWiozkzlvZ-iVFUDoxUoI5FYl4OJdSoOaorY73f_6FmqqiwkzQhJCBYMCyzYLj5btDHBfU6W73erD7bm5Q6wu3XlnzVk1TCcNtufu28JesGnKjP7OX4tH3oxJbPZAY-NTDymfSVWBpM9FKKmt8itryzPPVXO64Xaswq1Lc-ONNV1gOPFCXbG2L4JibGbHYOFjOgZNZdEwlg1aN9g8bP5iHtvg3a43xwjDaNdoaD1SsW_APLNvjKiar0V2HXb3_rKPFxNLPnTb-owaUNyMzhK2tPSwOrrQFwWC0FMiCrqaaBuAtYNEsojt_xW0wSFMYckM3hC8PNMoWdy_Sk-VnN6rQoCeYbDWN6LaWvVOefoVIIBdbDvSURo7TzSotKZ9tOTB8lVDjwT8GpYkMbgyJlwIqenaFTsUWCDWLb8Il9CV-61I6dK3I58W0W8k8gY2JhFh1Q7AOn2ZdI4U12JXNvsLFSGe-JzF0AOueGCujsKvj6elRVYDv6xw_wKsCweOQIEJhKOcgAyPwI_6phVYFh7vnrHdOgy4tKPutI_q5L_STR3yde2d1UFqNYg4fUJDV4-W68nBYHv2ghwQvFmjnQm0BDX5Yc5QbrwXCVBFS0A03O4x2lWBMRvVjYe1eLmi5XpK9-LUd94zDiaN9TKHW-KYc4FqtFWHSdxtoj8OwiTouqyoY5__oULTmSLJTpUr-oAShcCIUk_VfDhZnfA9m6Fqkgfrp8VPUlXFCof20KN_sDGkl7jAc9xPbWHUFcDMy8Lo-DBRINWAU3iv6ezddtD6vNRR1sbnk81mrUSloDpYAbwun9L4Rhl3LJYzGnla1pFzqBMed_T7QYM4EjASUG13X7pDRPEg07Wnesg40wnGJyds_wdOWu8U6SUryzo5AMt8zkgZeG1XGCBEhib3OJGbU_C52VfvB7niL1Maz_m-NJf6yihiBoixHQMu_s=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e1a5fc83a32cf4c016ac21c2c713887d18e8cbfe915528ead",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_D7eBEwYtnWfPc8HWfkbRQjXK",
+     "content": "p34: Russia. Our operations in Russia accounted for 5% and 4% of our consolidated net revenue for the year ended December 31,\np34: consolidated net revenue for the year ended December 31, 2022 and December 25, 2021, respectively. Ukraine accounted for\np38: Our operations outside of the United States generated 43% of our consolidated net revenue in 2022, with Mexico, Russia,\np38: 2022, unfavorable foreign exchange reduced net revenue growth by 3 percentage points, primarily due to declines in the Turkish\np39: of product launches, product mix, bottler inventory practices and other factors. While our net revenue is not entirely based on\np40: Consolidated Net Revenue and Operating Profit\np40: Net revenue $ 86,392 $ 79,474 9 %\np40: Operating profit $ 11,512 $ 11,162 3 %\np40: See \u201cResults of Operations \u2013 Division Review\u201d for a tabular presentation and discussion of key drivers of net revenue.\np40: Operating profit grew 3% while operating margin declined 0.7 percentage points. Operating profit growth was primarily driven\np40: by net revenue growth and productivity savings, partially offset by certain operating cost increases and a 42-percentage-point\np40: impact of higher commodity costs. The loss of net revenue due to the Juice Transaction reduced operating profit growth by 3\np40: Operating profit growth also reflects a 13-percentage-point unfavorable impact of impairment charges related to certain\np40: billion in net revenue in 2021. In the United States, PepsiCo acts as the exclusive distributor for TBG\u2019s portfolio of brands for\np41: In the discussions of net revenue and operating profit below, \u201ceffective net pricing\u201d reflects the year-over-year impact of discrete\np41: Net Revenue and Organic Revenue Growth\np41: net revenue growth differs from the unit volume growth disclosed in the following divisional discussions due to the impacts of product mix, nonconsolidated joint\np41: venture volume, and, for our franchise-owned beverage businesses, temporary timing differences between BCS and CSE. We report net revenue from our franchise\ufffeowned beverage businesses based on CSE. The\np42: Operating Profit/(Loss), Operating Profit/(Loss) Adjusted for Items Affecting Comparability and Operating Profit/(Loss)\np42: Operating profit/(loss) adjusted for items affecting comparability and operating profit/(loss) performance adjusted for items\np42: Operating Profit/(Loss) and Operating Profit/(Loss) Adjusted for Items Affecting Comparability\np43: Operating Profit/(Loss) Performance and Operating Profit/(Loss) Performance Adjusted for Items Affecting Comparability on a\np43: Net revenue grew 19%, primarily driven by effective net pricing and a 2-percentage-point contribution from the 53 reporting\np43: Operating profit increased 9%, primarily reflecting the effective net pricing and productivity savings. These impacts were\np43: impairment charges associated with a baked fruit convenient food brand reduced operating profit growth by 1.5 percentage points\np43: (other impairment charges). The 53 reporting week contributed 2 percentage points to operating profit growth.\np43: Net revenue grew 15%, primarily driven by effective net pricing and a 2-percentage-point contribution from the 53 reporting\np43: Operating profit grew 4.5%, primarily reflecting the effective net pricing and productivity savings. These impacts were partially\np43: expenses. The 53 reporting week contributed 2 percentage points to operating profit growth.\np44: Net revenue increased 4%, primarily driven by effective net pricing and an increase in organic volume. The 53 reporting week\np44: contributed 2 percentage points to net revenue growth offset by a 9-percentage-point unfavorable impact of lower net revenue\np44: Operating profit increased 122%, primarily reflecting a 124-percentage-point impact of the gain of $3.0 billion associated with\np44: the Juice Transaction, partially offset by a 2-percentage-point impact of related transaction costs. Operating profit growth was\np44: also driven\n\u2026 [877 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_YVRJnTc8vYOPX7sxBdvBVuMe",
+     "content": "p32: comparisons between 2022 and 2021. For discussion on results of operations and financial condition pertaining to 2020 and\np62: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np62: 2022 2021 2020\np63: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np63: 2022 2021 2020\np64: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np64: 2022 2021 2020\np65: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np65: 2022 2021 2020\np67: Fiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\np67: 2022 2021 2020\np67: (a) Cash dividends declared per common share were $4.5250, $4.2475 and $4.0225 for 2022, 2021 and 2020, respectively.\np69: 2022 2021 2020\np70: 2022 2021 2020 2022 2021 2020\np71: 2022 2021 2020\np71: 35% of our consolidated net revenue in 2022 and approximately 40% of our consolidated net revenue in 2021 and 2020. Generally, our finished goods beverage\np73: 2022 2021 2020\np73: 2022 2021 2022 2021 2020\np74: 2022 2021 2020 2022 2021 2020\np74: 2022 2021 2020 2022 2021\np76: and development costs were $771 million, $752 million and $719 million in 2022, 2021 and 2020, respectively, and are reported\np78: 2022 2021 2020\np79: 2022 2021 2020\np79: (a) Excludes cash expenditures of $1 million in 2022 and $2 million in both 2021 and 2020, reported in the cash flow statement in pension and retiree medical plan\np80: 2022 2021 2020\np83: 2022 2021 2020\np83: 2022 2021 2020\np83: 2022 2021 2020\np84: in 2022, $309 million in 2021 and $78 million in 2020. We currently expect to pay approximately $309 million of this liability in\np85: 2022 2021 2020\np87: 2022 2021 2020\np88: 2022 2021 2020\np90: 2022 2021 2020\np93: 2022 2021 2020 2022 2021 2020 2022 2021 2020\np94: 2022 2021 2020 2022 2021 2020 2022 2021 2020\np95: 2022 2021 2020 2022 2021 2020\np95: (a) Includes $150 million contribution in 2022, $500 million contribution in 2021 and $325 million contribution in 2020 to fund our U.S. qualified defined benefit plans.\np97: In 2022, 2021 and 2020, our total Company contributions were $283 million, $246 million and $225 million, respectively.\np103: 2022 2021 2020\np103: immaterial for the years ended December 31, 2022, December 25, 2021 and December 26, 2020.\n... 13 more matches; narrow the pattern."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_MxYxLpBdwLIyChq1Atcn6SCX",
+       "function": {
+        "arguments": "{\"first\":62,\"last\":65}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwwfDrA7sg_d1-37VoWm59bdoiUI1re8-y8D8xCQ3Qv4pJ3A2ZLlpx43XjoQACfbzsL1JKlEzLaDnEd_lctv2UZ9WGA_MVvfeZp9RO6q8Fm88Be7RwJD0UqTEePXUQrZKJqUlxpdDUxSdPM99T2yvJCuqU3unemGbnDtlZOWgKRlpczc-gK6S9Z-hza5xLgmttVRjfw3BpmFBa9txJwX6X2fvf0Xx2vsD5_TCCaZOMs44kVNWESqTDkKlOzlmYJKCbTY561NZO4MC9qWqsq6MzXBmhdUBdPkJjIddMTZLyYPqHoojbP_1Oys24EuXI6HtoCWPy3txqs4jyT6aGPYMMkIqtP1iPTiv4MEDzbGV5j6BVS2cufrLKqWcAJ0c3Eza7pJuLw4rGBv1n9dqOJdrEh7RwbaeqmyQMPHEBZGsZuqKiuAAGLlCrlJCAZHRPe00ud9EPKiGX_RM76yfs-YrnGVKWtyDMjf7Q5B8UIpSSn0SSZdwtH_VA_dIC_wrfYEbu9LCsigdHUtxKMgCV6LkiZJ1qb5hLty4ej089o0MJWdfnILBmQ2w8gP9pEdY8YAP7Q1NWT7ipsmTlJ9LDlArB4tPQA8bZ6uraaoRRaK24fVCcB1D5Qoqzmn9-9eUlkcC_TUDovwpyoSai-3WGTnudNPx1SlMuip4BL3SpkvyqXbiAc_SRbFFbcmEcezEg6jOhpkrMYc-rY8-Dt56ajywYan5gDLqRCuxKLKqJIM-sR6e3L9Cy85UAwFNZlWCpRcLr1hqa9zNWsZ4tJSjIhB1K46wMROyt-qlvMeVao-tw0zDqID9qKB0gaWuYa0k3e-e4nsgGZJaXAlyjIu9BY6UzJnoF2z-_t3lwAhPhdHoEky9pdAtECiz34n0tFJtuY8apW_LLcGcwAKKnhOS7KDOjobt9pWpWOT3M5mGqAW8khAzR9aIhLZqBulHSApyiCI1shVnVFbq814T614PgG6M_aGMIWiYeWvUfd6YOTYtpDS4fcgkW_YsyEYIo0EkfOEOGhvEv6C-aNor4b7BSaWPgcqZCWBd5AxlvLkDr468VHa8TPc_7byCBr9tkVpkkaxUQz_zEdONjCdmrARureajLV4PrzVXVLkNy1XqoVBQAdI5hGuCrFZ4JdVynUuJUBfog8d_PlNArHRqSk_ectZO_zGK_ddPiw4l1E6KS5ph32COtzqY7lsmLeVbuL6UTtbIcTgvSIywEuhG6MGf4rCelj43neVq-DsuLYeKu76Rqztj318-Lm0j-6RaCPIP5T65O4O9IRkfXyHT6tyr8YPO0kHpQi3ux2OFPJMxUu2J5ichnyUr1J8IvyV4Z7XT4Q2DwAQc8R22Z46RUOeHMbqmn9fqJMjB1bMo0OtNW6VsIuZB6w2w_PoOfpgJcEyYyXryZfBJbnX8uBUrofP7rH8SNY5w==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e1a5fc83a32cf4c016ac21c2f55bc87d1a45b023e2281cd44",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_MxYxLpBdwLIyChq1Atcn6SCX",
+     "content": "[Page 62]\nTable of Contents\r\nConsolidated Statement of Income\r\nPepsiCo, Inc. and Subsidiaries\r\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\r\n(in millions except per share amounts)\r\n2022 2021 2020\r\nNet Revenue $ 86,392 $ 79,474 $ 70,372\r\nCost of sales 40,576 37,075 31,797\r\nGross profit 45,816 42,399 38,575\r\nSelling, general and administrative expenses 34,459 31,237 28,453\r\nGain associated with the Juice Transaction (see Note 13) (3,321) \u2014 \u2014\r\nImpairment of intangible assets (see Notes 1 and 4) 3,166 \u2014 42\r\nOperating Profit 11,512 11,162 10,080\r\nOther pension and retiree medical benefits income 132 522 117\r\nNet interest expense and other (939) (1,863) (1,128)\r\nIncome before income taxes 10,705 9,821 9,069\r\nProvision for income taxes 1,727 2,142 1,894\r\nNet income 8,978 7,679 7,175\r\nLess: Net income attributable to noncontrolling interests 68 61 55\r\nNet Income Attributable to PepsiCo $ 8,910 $ 7,618 $ 7,120\r\nNet Income Attributable to PepsiCo per Common Share\r\nBasic $ 6.45 $ 5.51 $ 5.14\r\nDiluted $ 6.42 $ 5.49 $ 5.12\r\nWeighted-average common shares outstanding\r\nBasic 1,380 1,382 1,385\r\nDiluted 1,387 1,389 1,392\r\nSee accompanying notes to the consolidated financial statements.\r\n60\n\n[Page 63]\nTable of Contents\r\nConsolidated Statement of Comprehensive Income\r\nPepsiCo, Inc. and Subsidiaries\r\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\r\n(in millions)\r\n2022 2021 2020\r\nNet income $ 8,978 $ 7,679 $ 7,175\r\nOther comprehensive (loss)/income, net of taxes:\r\nNet currency translation adjustment (643) (369) (650)\r\nNet change on cash flow hedges (158) 155 7\r\nNet pension and retiree medical adjustments 389 770 (532)\r\nOther 4 22 (1)\r\n(408) 578 (1,176)\r\nComprehensive income 8,570 8,257 5,999\r\nLess: Comprehensive income attributable to noncontrolling interests 64 61 55\r\nComprehensive Income Attributable to PepsiCo $ 8,506 $ 8,196 $ 5,944\r\nSee accompanying notes to the consolidated financial statements.\r\n61\n\n[Page 64]\nTable of Contents\r\nConsolidated Statement of Cash Flows\r\nPepsiCo, Inc. and Subsidiaries\r\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\r\n(in millions)\r\n2022 2021 2020\r\nOperating Activities\r\nNet income $ 8,978 $ 7,679 $ 7,175\r\nDepreciation and amortization 2,763 2,710 2,548\r\nGain associated with the Juice Transaction (3,321) \u2014 \u2014\r\nImpairment and other charges 3,618 \u2014 \u2014\r\nOperating lease right-of-use asset amortization 517 505 478\r\nShare-based compensation expense 343 301 264\r\nRestructuring and impairment charges 411 247 289\r\nCash payments for restructuring charges (224) (256) (255)\r\nAcquisition and divestiture-related charges 80 (4) 255\r\nCash payments for acquisition and divestiture-related charges (46) (176) (131)\r\nPension and retiree medical plan expenses 419 123 408\r\nPension and retiree medical plan contributions (384) (785) (562)\r\nDeferred income taxes and other tax charges and credits (873) 298 361\r\nTax expense related to the TCJ Act 86 190 \u2014\r\nTax payments related to the TCJ Act (309) (309) (78)\r\nChange in assets and liabilities:\r\nAccounts and notes receivable (1,763) (651) (420)\r\nInventories (1,142) (582) (516)\r\nPrepaid expenses and other current assets 118 159 26\r\nAccounts payable and other current liabilities 1,842 1,762 766\r\nIncome taxes payable 57 30 (159)\r\nOther, net (359) 375 164\r\nNet Cash Provided by Operating Activities 10,811 11,616 10,613\r\nInvesting Activities\r\nCapital spending (5,207) (4,625) (4,240)\r\nSales of property, plant and equipment 251 166 55\r\nAcquisitions, net of cash acquired, investments in noncontrolled affiliates and purchases of\r\nintangible and other assets (873) (61) (6,372)\r\nProceeds associated with the Juice Transaction 3,456 \u2014 \u2014\r\nOther divestitures, sales of investments in noncontrolled affiliates and other assets 49 169 6\r\nShort-term investments, by original maturity:\r\nMore than three months - purchases (291) \u2014 (1,135)\r\nMore than three months - maturities 150 1,135 \u2014\r\nThree months or less, net 24 (58) 27\r\nOther\n\u2026 [123 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "PepsiCo\u2019s FY2022 unadjusted EBITDA margin was **16.5%**.\n\nCalculation: Unadjusted EBITDA = operating profit **$11,512 million** + depreciation and amortization **$2,763 million** = **$14,275 million**. Margin = $14,275 million \u00f7 net revenue **$86,392 million** = **16.52%**. The operating profit and net revenue are from the income statement (p. 60); D&A is from the statement of cash flows (p. 62).",
+    "role": "assistant",
+    "reasoning": "**Calculating EBITDA**\n\nI\u2019m considering how to calculate unadjusted EBITDA using unadjusted operating income and depreciation and amortization. The formula is EBITDA equals operating profit plus D&A. Based on my calculations, it looks like EBITDA is approximately 14,275, leading to a margin of around 16.5% on net revenue of 86,392. I need to include arithmetic details and clarify what unadjusted operating income means. I should note the page numbers in the statement for citation purposes, with page 60 being printed and page 62 identified by the tool.**Citing Document Pages**\n\nI need to reference the actual page numbers visible at the bottom of the document. Specifically, the P&L statement is on page 60, and the cash flow statement is on page 62. These are accurate PDF page numbers. For the calculation, EBITDA is 11,512 plus 2,763, resulting in 14,275. This gives a margin of about 16.52% when divided by 86,392. I should provide a final answer and a brief justification, citing pages 60 and 62 for clarity.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating EBITDA**\n\nI\u2019m considering how to calculate unadjusted EBITDA using unadjusted operating income and depreciation and amortization. The formula is EBITDA equals operating profit plus D&A. Based on my calculations, it looks like EBITDA is approximately 14,275, leading to a margin of around 16.5% on net revenue of 86,392. I need to include arithmetic details and clarify what unadjusted operating income means. I should note the page numbers in the statement for citation purposes, with page 60 being printed and page 62 identified by the tool.**Citing Document Pages**\n\nI need to reference the actual page numbers visible at the bottom of the document. Specifically, the P&L statement is on page 60, and the cash flow statement is on page 62. These are accurate PDF page numbers. For the calculation, EBITDA is 11,512 plus 2,763, resulting in 14,275. This gives a margin of about 16.52% when divided by 86,392. I should provide a final answer and a brief justification, citing pages 60 and 62 for clarity.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhw3Ka7DHAYNpZzzJ06iWXq1KvFuvzOVNbxU-ZhfWuGvl5ktRonmsPbUHDXyiB0ITBgBI3JbwKuSzrkVoz6fTbDiLFKZWxkNH6qxJhgOcVx9ZuT00zI2FwACVoDelGBzB1WQ_kR1rVTpsWoiFgTkO0MaSOLfT7Hm-AFiJkED8imu0zTSRK9eAoij8s35AG_Zlj8WjSaUcvo6bNn4Wt89M_zWva1YPFyAQyF1BIyT_obNwNMDBwdQjjuwHP9n5QBa4b3QpiqGDQ4EVL4JWOUPgzcB6-9UbUFhr2iJGNWYgWEYzfGfpL9TNHrDfGPsQmZCkHDyyF8Xi_5bGPKA4mmAN_KyizqLWP8_TZ51RNhngV_KPbxMqGDcx7aBuDlv9jSv4hRHTHvJdjTuCq6oUXHT7iBod2cah1_3qTFWlqwTwD6qdj3I5lXUiwNJ89WUAfvVpQ7o-Vm7swlCdyIM7Q9sNvAH3XfiaHqVOmbD640xrBycATEQQ3tZ5SN_tR54T2dIrb9B8SvL9K8qPPcDu_8CCzHE6cYIqAT38XNU5kYwYjLHWpT0Dac4tifnwgastaiMZUBrGMtPu50YGIuXDszil-i0gc5JVYvNj0REQJk7SR26YOychQBRoizPPfFT4bkkcIymEs3xOcjR8tlLHd4CPkHs4SF97QOYqjBRlQgKj8yCkcyUPa7bM_UR-YcLV8byVrNOcb5nzTl8YYoV1ax4xhFBryifuq1RDSRauUPL_d7rK9izGXoGnKNPtknArAZN8gef_KTTmu8HIM2d4NTU4V02o4pBOB-qLRChU9bIOLGMeqxt_Gb4O_LLWgQnNjjGFTtXQu0NOAhKlyoPwx3n_XgQaeq92Dmu310lV42Z6mp6_6WJjqP82i_YI3xUbfTNz8rmHKKJUs6y2e20D6tv3uiLNvViXEAahcRnGeUPzmuXyKwXQ1vX59XBk0trH-F7kABwbFsu7PojLsG0_z5Katoiq1CJjlnrRBj90LlJYa0bIa2mcOLTpyWy5XrOy44zjqltxzA15SLsP0jHb8wg3VhNbU5LfDxp8sl57qv27bQs6WGh-AGn3cOP86wVUeZ7q3OBBxe3TYI2DtU7Z-wf2SCgaIxEbLuGxaNkc0MfltRwPVt3QjCf1wTpj4RkM0t_4B9-7eVnuryGNB2n2Niz7tT8bQF0gNq5bt0PO0fd9gW86Kw2duh3cKrE539xMXRN7JuTETrmrWEIMqzqf7lF9dhnmlNtqht5Mmx5FO85TfM_JDGUsJ_Cxo4tAJ7XJp0OreaV-xONeYzsCo0v3ifaeF3QceYbsDwvQHGiLwgZcPd_rkfLFG3PgwHFy5AWvNkEvfVqnBOzKkmJSTJfo6L1pDTB8sPCP5eq87SfKmxSMldIAA_TYLmUeQgHK9XOPKKyHDOqRcHlbFIC3Ae0lY4G2ul-M3O9J7FNE5zUIkvr5F4nqGc0hvMW8ooJLiulfioSW-wemSBb70LYvpMI6KhVDh0AYdRMfhugIf3lcOnbXITy1KHdkBamWiQsQRPXNOATkriz8HXcu2O6OOblEJdboO3T1njRG1iolYSPkp8ctpcuaVTB2HlsWSxzufSqljp-YreeXe-xZ00Zgt8jvsgXiu4EvwUwQwK_ElFITuvrf5lFtU66tqGaRLQIbMUmWpzE3l2AExY4gp4tjJv5MDheIU5qu6h0YnFWN_InTOlNQxs60EIQGqureOQ3IjYORi4pWqYK65Tsu-ib0E3r4vq45zUgtWdsjYD3wbsdSymj-DoyWQIqOxOqG1Jm3jWqq3JSSE68McoUQcAtaqyHo_j7MAkMrY3Z9yl8wKOmjwrjbjyqy7EzgMsk5TTneohmA4582bPCQPys74t6I7wRNvcmfg2eRDakK2YpJ_YC4Cw2cy8TL6wEP-DfjkxJPIQ51I7Kkt9TPAkk7m7t9t6QJMoCU4Y76BWqpx2Gb_qbShE_zNhkDm0pnET9jkTxU4CQsontnLVS0eDNIUBZ7Er2czaMpeesCZprpze9Y2qyupoT9nSrfEGwq63x1qd6oXoJL_I2w0yrlJ7x9gsOxlFpuZ4f4oyGQ_TAFs-gPwY5R-puiwWrm_g0O7fRWa-7MxYpbnIXpwywbJ5JiaKEC6FaUG5qJ3U8GpsVcBxzaOipb49k76t0Lf3EgdQb0PzSwEIf-feKY5c05iEcF_nKBWtthx33hHMn6G27Uir6aGUpoZKu-oaNdLpZtu3NZAGXLD5W_cbHB8-4_SSza6n4SRBJlmHh2RXnuMrcF9HSYYtkig1i7FNeOBUhFXXHP1rHAMNMk0FHCK_qIulzGunJcba_6WTCxRIyhukwb8oivDVlL9FsEhvnFT9he_mTPEH_o_vJXHTUiPGgyA0XRtuDz51TPg8mfz9dBGVJgvY1xBK7pPM8P-1nVxIJOsGaqQ-O7MofJHA7o1hYUQls-zA-KwXT3i-_t3dNLj1K1VP-FwA3EYCQC1uc2JKE9w2X3KwGFKbAkd40AkoDJdw4agwShSGjckoFuu0aHA38iiAY4_kdbKpNXh5NXYbSsskWu7c6jB41DGjLGqU5fP1kP3t2cxnJw2VWm166WHYTfov85UUv2LUSfb552t17fJhBksOZA6txGRRYW0nQrc4Meff2u0U73u1LGGVFcE6HwvCQBv5Ic05nMWOtHRpRijU-zrpYa6xD0PMH1q6I9iB4dQ2Xh-BjzJjYnmEauD_CZqP6gmKQrcORMxN4JnMqMM69vgW0MhFlT0u-p7ZhE7vs71sam_q5Vbp22luGpKOAz7OqGWcr5bpumbmO1h4wG1UIk0p4njX6pvUpQ5YE9Ahg3yc12tYbtlcwYCAFQn-5B1PmklrT5wTJWg5-sNqpCRTay1XTq5Ad_pDoKLvaPF5SsYYXcf5bmBstNFzAYwxP3XdYPv_BwDaT5EY2oinvwdoeu9wRzCA7bQm-fqt0GUjIgE466NE2PX__B7byNA_xwVxItX1Pkxgeeujy8XeTZ9KaqrdivphJARDYkGA8mp6HVFplsZaT5jpq63ZpTLB5XMHKEMvnKtsrkAK4ZFemzDa66skqoPAnVitECr0ZzXIVHvSli2bdsAAvbnQ327AhFGLvFF9wFzkrYuVlJ77tLCfwzP59LOTZZEEtktutNtaGqP6hOo4IHlqf56Z4k5XD2YIK3W7HoLtHz-MbvIE=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e1a5fc83a32cf4c016ac21c3254a087d1aa9d801d22b2def4",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3664,
+   "output_tokens": 487,
+   "reasoning_tokens": 366,
+   "seconds": 6.65
+  }
+ ],
+ "answer": "PepsiCo\u2019s FY2022 unadjusted EBITDA margin was **16.5%**.\n\nCalculation: Unadjusted EBITDA = operating profit **$11,512 million** + depreciation and amortization **$2,763 million** = **$14,275 million**. Margin = $14,275 million \u00f7 net revenue **$86,392 million** = **16.52%**. The operating profit and net revenue are from the income statement (p. 60); D&A is from the statement of cash flows (p. 62).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Depreciation and amortization|depreciation, amortization|Operating profit|Operating income|Net revenue|Net revenues"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "2022 2021 2020|2022.*2021.*2020"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 62,
+    "last": 65
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer gives a 16.5% unadjusted EBITDA margin, matching the gold answer, and the supporting figures (operating profit $11,512M, D&A $2,763M, revenue $86,392M) compute to 16.52%.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00203,
+ "provider": "aipipe"
+}

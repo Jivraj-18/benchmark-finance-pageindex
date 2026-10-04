@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_02981",
+ "question": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place.",
+ "gold": "10.3%",
+ "doc": "CORNING_2021_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 7.1,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4320,
+  "cached_tokens": 0,
+  "output_tokens": 305,
+  "cost": 0.0005859400000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 26]\nTable of Contents RESULTS OF OPERATIONS Selected highlights from our operations follow (in millions): Year ended December 31, % change 2021 2020 2019 21 vs. 20 20 vs. 19 Net sales $ 14,082 $ 11,303 $ 11,503 25 (2) Gross margin $ 5,063 $ 3,531 $ 4,035 43 (12) (gross margin %) 36% 31% 35% Selling, general and administrative expenses $ 1,827 $ 1,747 $ 1,585 5 10 (as a % of net sales) 13% 15% 14% Research, development and engineering expenses $ 995 $ 1,154 $ 1,031 (14) 12 (as a % of net sales) 7% 10% 9% Equity in earnings (losses) of affiliated companies $ 35 $ (25) $ 17 * * (as a % of net sales) 0% (0)% 0% Translated earnings contract gain (loss), net $ 354 $ (38) $ 248 * * (as a % of net sales) 3% (0)% 2% Transaction-related gain, net $ 498 * * (as a % of net sales) 4% Income before income taxes $ 2,397 $ 623 $ 1,216 285 (49) (as a % of net sales) 17% 6% 11% Provision for income taxes $ (491) $ (111) $ (256) (342) 57 (as a % of net sales) (3)% (1)% (2)% Net income attributable to Corning Incorporated $ 1,906 $ 512 $ 960 272 (47) (as a % of net sales) 14% 5% 8% * Percent change not meaningful. 26\n\n[Page 28]\nTable of Contents Gross Margin In the year ended December 31, 2021, gross margin increased by $1,532 million, or 43%. Gross margin as a percentage of sales increased by 5 percentage points. The increase in gross margin was primarily driven by higher sales in all segments, as well as lower charges for severance and capacity realignment costs of $89 million and $252 million, respectively, partially offset by increased expenses due to elevated freight, logistics and raw material costs for the year ended December 31, 2021. Movements in foreign exchange rates had a positive impact of $77 million on Corning\u2019s consolidated gross margin in the year ended December 31, 2021, when compared to the same period in 2020. Selling, General and Administrative Expenses When compared to the year ended December 31, 2020, selling, general and administrative expenses increased by $80 million, or 5%, in the year ended December 31, 2021. The increase was primarily driven by higher litigation and share-based compensation costs. Selling, general and administrative expenses decreased by 2 percentage points as a percentage of sales. The types of expenses included in the selling, general and administrative expenses line item are: salaries, wages and benefits; stock-based compensation expense; travel; sales commissions; professional fees; and depreciation and amortization, utilities and rent for administrative facilities. Research, Development and Engineering Expenses For the year ended December 31, 2021, research, development and engineering expenses decreased by $159 million, or 14%, when compared to the same period in the prior year, primarily driven by the absence of a pre-tax asset impairment loss of $211 million related to the reassessment and reprioritization of research and development programs within \u201cAll Other\u201d that was incurred in 2020. As a percentage of sales, these expenses were 3 percentage points lower when compared to the same period last year. Translated earnings contract gain (\n\n[Page 25]\nTable of Contents 2021 Results Net sales in the year ended December 31, 2021 were $14.1 billion, a net increase of $2.8 billion, or 25%, when compared to the year ended December 31, 2020, driven by higher sales for all segments. For the year ended December 31, 2021, we generated net income of $1,906 million, or $1.28 per diluted share, compared to a net income of $512 million, or $0.54 per diluted share, for 2020. When compared to 2020, the $1.4 billion increase in net income was primarily due to the following items (amounts presented after tax): \u2022 Higher net income of $505 million for reportable segments; \u2022 Lower restructuring, impairment and other charges of $543 million; \u2022 The positive impact of mark-to-market translated earnings contract gains of $309 million; \u2022 Higher translation gains on J\n\u2026 [12,475 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**10.3%**\n\nCalculation: average of the FY2019\u2013FY2021 operating income margins  \n= \\[(1,306 \u00f7 11,503) + (509 \u00f7 11,303) + (2,112 \u00f7 14,082)\\] \u00f7 3 \u00d7 100  \n= **10.3%**. The income statement reports net sales and operating income for each year (p. 65).",
+    "role": "assistant",
+    "reasoning": "**Calculating operating income margins**\n\nI need to compute the operating income divided by net sales for each year and then find the average. For 2019: 11.35%, 2020: 4.5%, and 2021: 15%. The average margin I get is 10.3%. I could also look at the total operating income over the three years divided by total sales, which yields 10.6%. I should clarify my calculations and cite page 65 for reference, ensuring my final answer is clearly stated.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating operating income margins**\n\nI need to compute the operating income divided by net sales for each year and then find the average. For 2019: 11.35%, 2020: 4.5%, and 2021: 15%. The average margin I get is 10.3%. I could also look at the total operating income over the three years divided by total sales, which yields 10.6%. I should clarify my calculations and cite page 65 for reference, ensuring my final answer is clearly stated.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwM3eELZapvzxesSBJeN7SGVKG4Y0DknC9ejn2WQZywvhwlL9V_t74RfKsFl5Yt5EG3Hw_cx5u-e0QAxm0OhhZTjjPSjhVqVMCMW5nA_Es-DlnQivhh27Kf_b0aSm9XOa9UiHtU-7w4N1U_amICH4J-IevnW0BI0DpJKAgkw7_Wjl21OJ9Poz6pnnSptuVSCYvLR37EzlyZ-bHy8thDvnCiLc9hF0KGpZroHgIZcl29p4FCZWqMASgbP8jojWFwP1kiZjOtSUBzTaXg-ief5wMk5OqGcbqSc99tr2Or6svMkmONUYvwRq8-s698MpjfRMcp55Pv-x8gKNEmkdO8SYXzQ8cgTyAbY_QJdw6W5LSvKfJEztNXLWGjkCvf8CqMdfNdRHKSBWjCov8Crv1X-c57wHmoV1dOh3-9_PDST1zRDEOhYdRq-caM2tCr8JYikqveV0qW_NszCFcGnesgre8ZGAnosG-DiyB9rv4-r336cCgTdwj4cdeoL_kWrynqNyf06ew_kjEbolyUIn3zyfPZKbm5Ye6y6sTSpIvZKlrQHsqpvMekHi3tdtHsm7mok3h2m3gJVAiXVB97KuhdwKs-Mxph9r9ZvhnK9Z3OZONTzMuLxe5sM4CAaV06rDs3rZek8Rj0A1vxA7DGP6Sd-RxS4spncnc2-nQ4eTVkX7TA3YmgLROs-rD4jalceADs5Q-v4vDtnTrGbZtmQTuqYOWdKdW99kCAEEPyTadezkYdUEWolrW3j6r2aySV3sseOY2ufVKBfjL1gcqh5iCSYN7uhsi-JISLWSa9_YjDCxHJJDO-jZXA1VA6jrZLYcSqC_fhfP26xdPNqomhkJqnoJgYvEw7dDuRCzlJstkQXfJivEpgXa47CRqdOEpY0O2HpjL5VXfNlRiP552CEpM0NMLKYtNmhWJy9Pui-Ws2PCmAhn-nAKpxndsqXgac79QqV_J4qYqTdGUrsZ1dMddrAxu9WX2fGDBXYCRcd9ULbIze02SQiBtxxnYR6wDHDLSpNrInk6bsGQeAH3DDcrpvVnKpjVKISnvyGO_777Xh5R0gFp49DzY42Q6KWFmvAwfO6PM11KKWFyT-MHartnxgOb771_HHymDerTKwpDODDMmoIt2TlE9qpq2nC8HRnZ4fHP4mQvRK2lhcji-N3iTlgfPlEWgU6NbzEdSV81ae6vhSwuvvqGTH4UTB52jbGF6wHWzlS4Te8tbhekdxMEdsOpIkBkqWs7_4Hn_lfHRg-g7tSUBWroVkV220fN_2f5261QKtdAHGgOKXwc7iY_xd7FgxQaf2dP3AJMMKo3YvZpS5GQ-2OuJ7Gpg270AR3vTAPeDO4zgAhwSgZcdQGdTT9eGAb5q9SulzT5ZRUpcuyZB0KHY0G9PtTjnelojU0qLoKRvNfY-tfi3jxHv7q_MyjwF9HnjSPIAuGD6ynO1LkrhDC942QUPqIayIRThqz55JcEWwMzZcSG_52oiGPnmsGYCf8PqfmsvWnByTzE_g14NqQnT4tWc5zMK1DxRzo67HnSS0GhhEUT8rd5D_JZXO0P5feh5KFIRVpagVn-E2SXpQFNb-wswfyzZzIot1o4X3R3Hx_EO2nGjzNWzcf2btQ16scuIQscCWcp2N9uMtRkO-WScgut7wHFHRutpWdGmAJBq0k5CpiK8DT07WFxPORNcpQjEH-PbcYdmLo39lKDJK3gF8wqkMtIULkIh_I5jfL_ZxvTpomOYdSKNTKQxdukEo71S8TbAank1U1TDIE6Bpap3t0GV3JR8BlIapEzf6AmFgEBCIeMKKXe-pQx7t_LmtVh1ni3tRhxQm3j3hhhr-Nst3IpeH8hVu3oed_OPf6tNQuZ06hWObvzlPg0RZq_GeKSsirhD-src-UgMvb-WdSYgB1etqwRHXWC7mskLtfgIJ5LbMYwuAySvDVAZukhKZBg9UqYUbXbcBVROIaxYDT0r1kAiQUv32wFlgaD0Pc9ViHXRRy4pUAEeFxgXCeMLbzXLbqBZOYU0HfHJU357q1bSunT_Is9xz41BIHbe2yyx31aF20dvnZc1LKpRIyS0pl_ma1vdN6e3hTLjV0n_mvH7q_Ur-OLotR-mL-i6Pkoxac1YpqGh2uQoyUlvB4JeMhL1C3WThbzULZQxqDZEn1k0S36OQENSA0nfHH07RRk96mbNTl1pdplEpAOBz-QN39gmMxjUEEtGroeU1gZ244GlfrxrFBLlfA8Ln1BzZTNS74UF5Ws1pKX8cW-P5bIT7cPAF7ZPtaRlK3kCbnSQhm7btWXb5cy6BXON83LaTbyvlndkw0WrTWmPACBuWUWiFRCIHBr3vN0G94i7xPOrv7dmtCRM3SMzpffFUqiPye-7hsiXh2BnKZKTgYnUawCRk4qL5t-cKNWbIo744saxFIXU=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_07eb449f9438809a016ac21c08d1e487d1a25b9a6192281f04",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4272,
+   "output_tokens": 305,
+   "reasoning_tokens": 207,
+   "seconds": 5.93
+  }
+ ],
+ "answer": "**10.3%**\n\nCalculation: average of the FY2019\u2013FY2021 operating income margins  \n= \\[(1,306 \u00f7 11,503) + (509 \u00f7 11,303) + (2,112 \u00f7 14,082)\\] \u00f7 3 \u00d7 100  \n= **10.3%**. The income statement reports net sales and operating income for each year (p. 65).",
+ "retrieved": [
+  {
+   "page": 26,
+   "score": 0.5666
+  },
+  {
+   "page": 28,
+   "score": 0.5656
+  },
+  {
+   "page": 25,
+   "score": 0.5633
+  },
+  {
+   "page": 65,
+   "score": 0.5432
+  },
+  {
+   "page": 25,
+   "score": 0.5304
+  },
+  {
+   "page": 86,
+   "score": 0.5233
+  },
+  {
+   "page": 30,
+   "score": 0.5141
+  },
+  {
+   "page": 41,
+   "score": 0.5134
+  },
+  {
+   "page": 40,
+   "score": 0.5045
+  },
+  {
+   "page": 85,
+   "score": 0.5015
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer's 10.3% matches the gold answer, and recomputing the average from the cited figures also gives about 10.28%, which rounds to 10.3%.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002892,
+ "provider": "aipipe"
+}

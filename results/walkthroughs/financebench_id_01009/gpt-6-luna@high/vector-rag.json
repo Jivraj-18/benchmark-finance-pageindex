@@ -1,0 +1,97 @@
+{
+ "id": "financebench_id_01009",
+ "question": "What are the geographies that Pepsico primarily operates in as of FY2022?",
+ "gold": "As of FY2022, Pepsico primarily operates in the following geographies: North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific, Australia, New Zealand and China.",
+ "doc": "PEPSICO_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4084,
+  "cached_tokens": 0,
+  "output_tokens": 339,
+  "cost": 0.00057844,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 5]\nTable of Contents 6) Africa, Middle East and South Asia (AMESA), which includes all of our beverage and convenient food businesses in Africa, the Middle East and South Asia; and 7) Asia Pacific, Australia and New Zealand and China Region (APAC), which includes all of our beverage and convenient food businesses in Asia Pacific, Australia and New Zealand, and China region. Frito-Lay North America Either independently or in conjunction with third parties, FLNA makes, markets, distributes and sells branded convenient foods. These foods include branded dips, Cheetos cheese-flavored snacks, Doritos tortilla chips, Fritos corn chips, Lay\u2019s potato chips, Ruffles potato chips and Tostitos tortilla chips. FLNA\u2019s branded products are sold to independent distributors and retailers. In addition, FLNA\u2019s joint venture with Strauss Group makes, markets, distributes and sells Sabra refrigerated dips and spreads. Quaker Foods North America Either independently or in conjunction with third parties, QFNA makes, markets, distributes and sells branded convenient foods, which include cereals, rice, pasta and other branded products. QFNA\u2019s products include Cap\u2019n Crunch cereal, Life cereal, Pearl Milling Company syrups and mixes, Quaker Chewy granola bars, Quaker grits, Quaker oatmeal, Quaker rice cakes, Quaker Simply Granola and Rice-A-Roni side dishes. QFNA\u2019s branded products are sold to independent distributors and retailers. PepsiCo Beverages North America Either independently or in conjunction with third parties, PBNA makes, markets and sells beverage concentrates, fountain syrups and finished goods under various beverage brands including Aquafina, Diet Mountain Dew, Diet Pepsi, Gatorade, Gatorade Zero, Mountain Dew, Pepsi and Propel. PBNA operates its own bottling plants and distribution facilities and sells branded finished goods directly to independent distributors and retailers. PBNA also sells concentrate and finished goods for our brands to authorized and independent bottlers, wh\n\n[Page 4]\n undertake no obligation to update any forward-looking statement, whether as a result of new information, future events or otherwise. The discussion of risks in this report is by no means all-inclusive but is designed to highlight what we believe are important factors to consider when evaluating our future performance. PART I Item 1. Business. When used in this report, the terms \u201cwe,\u201d \u201cus,\u201d \u201cour,\u201d \u201cPepsiCo\u201d and the \u201cCompany\u201d mean PepsiCo, Inc. and its consolidated subsidiaries, collectively. Certain terms used in this Annual Report on Form 10-K are defined in the Glossary included in Item 7. of this report. Company Overview We were incorporated in Delaware in 1919 and reincorporated in North Carolina in 1986. We are a leading global beverage and convenient food company with a complementary portfolio of brands, including Lay\u2019s, Doritos, Cheetos, Gatorade, Pepsi-Cola, Mountain Dew, Quaker and SodaStream. Through our operations, authorized bottlers, contract manufacturers and other third parties, we make, market, distribute and sell a wide variety of beverages and convenient foods, serving customers and consumers in more than 200 countries and territories. Our Operations We are organized into seven reportable segments (also referred to as divisions), as follows: 1) Frito-Lay North America (FLNA), which includes our branded convenient food businesses in the United States and Canada; 2) Quaker Foods North America (QFNA), which includes our branded convenient food businesses, such as cereal, rice, pasta and other branded food, in the United States and Canada; 3) PepsiCo Beverages North America (PBNA), which includes our beverage businesses in the United States and Canada; 4) Latin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America; 5) Europe, which includes all of our beverage and convenient food businesses in Europe; 2\n\n[Page 6]\nh America and Europe. See\n\u2026 [16,143 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "As of FY2022, PepsiCo operated across seven reportable divisions: **Frito-Lay North America, Quaker Foods North America, PepsiCo Beverages North America, Latin America, Europe, Africa/Middle East/South Asia (AMESA), and Asia Pacific/Australia/New Zealand/China (APAC)**. Its largest operations were in the **United States, Mexico, Russia, Canada, China, the United Kingdom, and South Africa**.\n\n*Justification: The filing lists the seven divisions and the countries with the largest operations on pages 4\u20135 and 69.*",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVZlBMvELlUNQGk5HfuWSwEayJOtmgcsNyUJSP4gAu6MvTHIxMLr8G5ztbqMQNB3C4tQbzI5uVKsaPU0pJSovl3z8UIiO6u02ppVoixIqdrgjEKzh8zDk_Kp5SCeC5aPYkz7yWiG44jkV1IiR7w9h-CNon1duSZQtI3kWXFNhHgqggfcBdHxEaJ93gif3fo3YB4EEGrLyLa9kHgL1APjnAYORn4dBgHxMtcu-XomERVMF9g6e2yyoimxtW4MdBnUhAVr699SVh1T3bfK15w89VXRZ5U6B6Z7hJk1CZr4kk0J1MM22N2KooqlIMKXY1A_GFsmJIQ90jAUmeziFc87wx-Ykmoqpf4yXNiirBUlDiyHDcyUCNkSENm9DGstg_OBdIeUdweGo7qnC682wvSPAC9Zk2vPjH5XbJRxdfrw9KaI6rCww0FcUph7PX5I1t9hUwpEyzPheV21uNDxALf6TNB78jZQXJA-agg927yJIwEE_N6dvdqt6AmbP-sy9i3JBCrWxka-I10-M_0pr-UG02Ws6gqZ3jVMVQ5bYQeq5uhXp59U5ve4JPvCjj6TZ-MLqRP8x0Zv-2NflvOskwpLVJZFu7r9tXPkAHubYLXQq0cXqJhK_F-46BPKwZlJSRTZeRBHuMTwqjO_gy1Zo75vigQUXM3W3-TNgEh4whOSzBQ6cgNkE2t9-kWOGMMRMrzDxMVXCZw1Y7Zk_jRpkEuEjCG2m4RYIzZmeVDY3XGQHl-9n8FodFnKPhz6ZKSW3C8KsoNETjKdNRKRFllO1pll8uJIZ2XpGFyDA_IRKkEyZ7Z0xI5SuMAARU4Fb96Hr-9FEykWncZ_7685XESG3283IJZLfRD5B0Y_RiKLd1eDVddJWFWv0PEupW-hd4uZYYZU_Qfm03F_edQjAfOupiz4HQay4emX8hcwOkynDjhu2mpIriZ2AyXHIpc5JePHdNevsZRVVTBypX6EI7BX4ySx7QPfiRxIYnNWC4s1jBY29taXe9RQuAvJObFpz_aJKbm7NIrWzFyfUAAFpWoyu6po6D9vemgfY_Lh-M3vy8jea-xrwVAiEOWWJlqPKC4CJP5Zc82sz7t7ochzrgoLtzXmvRL4jIU1I8eVXFhqSLVWlwti06MCUOKxoG7aqYljqcJuvykrz1ZiKAF3l2lUUwMg97N4iFuLeOh6SkbQKzUCgW9raUbZ4B7jWCtSoGZUC2g1qU0V6k9UH-Yc4ZTPWlXuIPvw7i-REKM0pgRkndEGSE9SGRzmASqT7Yi5L8X0G81c4CclAGMsu4hCEaTrEpYepaO7MY1wJdzfvks3BVfxWwu1a7Qblq-r_vgqAdtKMCrFU4NQzY9vgSwPL3sUQvKAKMgwHPIMJ5RexCwE6pF5DTnFwLDs29v_YGwth6N_DxNpv_Z7S-aP23dWvr6GPpnyuyCbacG1WqWxMaV3aPDxzNaKj8I6EzI-uJ6SXpvsWf-PiNUKIu567p6i8s0s8wJdu-b7obcOPkoR86Mf-i8PPJ9eGVJFVzaCCJLsCeP1tCYWc3_8ZlxvCoiXXDtMVNxLT9nb36ZN_bJKhkBoPxgrA8Ei57IXTav4SE0nJJe2PFnREx2mzVCPRxOrR9TFarC1xxeJ3brUIU6wk5tlRpN1-sb-4L-gdHm6plXlOupu8R9bSblmLGEmeWrUotT5bupIzN81y8hUUFWysh2L1qT-XAJcK3rNXlhjqn8q_lQVdMQ5Hg-NFhxcT7Ddd8c1iqy4MN062JOnQSJa_6osfT7FRMVecg6WV00UA0MaKGhnVnlGTzBlngDLljcGo1zkhkN90yNsVV1a_sKMNmBgDoDuu7M2L5ilzf_qS6TgeHn-rIQRHxKNUCP5Dj6RkIKVlG1WpSqq-EDGHh53VC4NMv3CsjTPH5NZjtIlO5MBOWHs_xlRlAn-wtNzLI7f3IkOs3eGpZHp0Ud0nGukpkg037hwu-OzyTVKEflHiOrlJj7Q35lN_xVAqAM9bJZtEKsUHOLQ0kXcsxAjmQ6J9GfrQHtGeOdbVCdleShDPryUkt6sS7BWHQIyMMJ3K9LCvhDlVJnDf_1_IVtbIcPuT0lwAmiYIAfXhxkAiVH2uHkjcxm9Df1f1WCQ0CGVi7MRtFr_0i07sW77ozHiwxMXNui3IaqIXZJFGOaokiSC0bz2Xay1JI4RQC1YsKalYu3PfDrAxUSr43I5j6VaCiCEUbrPdYdi95NROR-kIc7Gw73c1nwsgHsylINpr8XYmlyuboyi_btEaLvYTVfB3FA5Onp0OurdpLuDFsedzP8LT1mvSBucHllaMLT2Gr4svQCBIiXPYK4xFnLup8acForsXo79NnBzJPoVWMB_N3-HAEzG7On1ozXmb-OWOSmPBJGYmj65p8_NbmNuq3XLFrSQU3GNbyv4n97i37Fq9Tx_KVB3R4gmIC6t1BydHIKtP8k04fhixCo8ySMPdXKHPbQDrn6S5dZaKHXEYGZ8AbkCFlxmG8O-RBeOxyAn3OaG5NNET1QW4jf3EWBv9HgmipK8BiKuyxKMxjreUb47lFYd8JdKC7wXUSL0sKWv79XTLhzybfy5IO5CVdT7ebZ7pR3-fFWYWvyOPcah6ELf94jdJyPK9WFjvhfnnJo29UqESFtcwp4KbRUJfm7PA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_015637419d79ad33016ac21557c46887d186891a48730ec875",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 4066,
+   "output_tokens": 339,
+   "reasoning_tokens": 212,
+   "seconds": 4.56
+  }
+ ],
+ "answer": "As of FY2022, PepsiCo operated across seven reportable divisions: **Frito-Lay North America, Quaker Foods North America, PepsiCo Beverages North America, Latin America, Europe, Africa/Middle East/South Asia (AMESA), and Asia Pacific/Australia/New Zealand/China (APAC)**. Its largest operations were in the **United States, Mexico, Russia, Canada, China, the United Kingdom, and South Africa**.\n\n*Justification: The filing lists the seven divisions and the countries with the largest operations on pages 4\u20135 and 69.*",
+ "retrieved": [
+  {
+   "page": 5,
+   "score": 0.7056
+  },
+  {
+   "page": 4,
+   "score": 0.6758
+  },
+  {
+   "page": 6,
+   "score": 0.6699
+  },
+  {
+   "page": 6,
+   "score": 0.654
+  },
+  {
+   "page": 69,
+   "score": 0.6424
+  },
+  {
+   "page": 32,
+   "score": 0.6295
+  },
+  {
+   "page": 32,
+   "score": 0.6213
+  },
+  {
+   "page": 34,
+   "score": 0.6166
+  },
+  {
+   "page": 482,
+   "score": 0.6111
+  },
+  {
+   "page": 5,
+   "score": 0.6044
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer's divisions (North America, Latin America, Europe, AMESA, APAC covering Australia, New Zealand and China) match the gold geographies, and the added country detail is acceptable.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.00193,
+ "provider": "llmfoundry"
+}

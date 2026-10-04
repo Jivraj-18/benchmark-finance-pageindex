@@ -1,0 +1,305 @@
+{
+ "id": "financebench_id_02981",
+ "question": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place.",
+ "gold": "10.3%",
+ "doc": "CORNING_2021_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 10.2,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 5710,
+  "cached_tokens": 2373,
+  "output_tokens": 442,
+  "cost": 0.00057843,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 125 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_t44swrhlb61UuRznPeoM2GYk",
+      "function": {
+       "arguments": "{\"pattern\":\"Operating income|Net sales|2019|2021\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     },
+     {
+      "id": "call_cEG5WzYqSrZaJxNyfjrqSW0W",
+      "function": {
+       "arguments": "{\"pattern\":\"CONSOLIDATED STATEMENTS OF INCOME|Statements of Income\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 1
+     }
+    ],
+    "reasoning": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhweOhZ0z8w8YowF29kf5R-zrYElthBedAlojHCBCPJzXjIeEGrH-qhRUtLTxQB_XLuVJE77jatXJ3nUYFHdPppaOSv_whFt8BthrSO7aDoEEcQeQq7Otx44u-sNUrQ-Z-EE-XaIXSWrUtD8bMRGYSJPstaKVhC9q_-3qjJKxl5DhPm8bdZJKIxeraLCTP9QmXq1d8E05gTeHQzM6E-jJAl71t0AeZuomQDjizRqinUVt7IfbhODtCRWhiBHVvkBB1gYJ8LlghR54TGE3tCHlvNCjPhmLi3SNgk0prbnX4iqaamn2DwjlzAUTzoTR_qqyqb_s5JNipmpcN-W8dIUFrLNisJmLXSnZR_8arqS2jQKX4blN-uPo7Y9RZOBG7IP1FOvfJtfEnIPEiOSX4DVtjnj6NjzjC4_DEPFawx5s17tDUmRLrsjlcndPplEi99t-0aaY2yW_I73YV5pHBa82cGqCadVsRrzMA0vE9t1zJtsIuayRxrc1FvDCq-sS29iYsxuFsYWccAyMZ8C3lp6bjgyRC_CWldm9SSxakT2h2VvYTuERbvENkUCvv9A36QdgMFanuea_wfz56LiHI5P0lC7UnljMLKonr6ZqNC_Lupj6p2HOJuY9jm8tTlMRrrJKu1mft-_pgsRcvhGmK8MFxLYe8VLtTqrmIvMLIenKrvZi49ktsWueanKfEgmjaC1uGYB5pEC9X9oJWBGVSePeTs2KpDOxvzCFdn-k78QRmnT_NHQLRGjh8L1gS_TJb2ByDC1e7upBaYZjZiZ7M5lLprJz3Le8GL3LmbezZLUFe_Bhvo_sW0nHHFWTgYplPfinrY7eArt2A966yr6gPkxV_FbPbOYVDlnxmrfRD5yqumvCcNKDhIKYgq8cm-_uwVyLAduxwTHwDc4pGq9AEdvaGJrjWQERdngcQDIHZM6fniiYEog1rCgWI9UnagKpo57zugu5yNmN8UrXCZLoIzHnk1SnTzS2f5b7cnAmjH3C4am59eoonZD2rbwB8nUW6ERV834DjGgIbd4xP_opHdFlfitb86AwrunXmljRgkpA40L8CLADhibBSpUlBGBudswzt0JdKntd-ez_zRC7AGdFKsrH_JQHw1GtbU3r9awfi_mkNJCKEwQi-olrg6YAePJ4F-GkmSwLndGSErN9GUSKt6b7W-eqvXlztL-P0y7o-rXEBvnHI2zqzeguQznRPFy3Md60ieqVGzs09j2M20znaPlZDhlNiBI1rOWB9Zexo-zMA0e8O5vTqeXQrq969AOqwVGCtj8Izybfbph2gY7U33EAlAaFfR_pcHoRXMGKgJrDNA9P0LWpLJK31gEkR_P-nltvBGoIvwR-iCRynHvlSTorWiTR3AToASbOGF4cYIckJrn7_--N_LsMpktvM0o3BAZy9cmY77BjoS8JQelgI0cws8eRKhVhIuZ41U7av1rtRM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0a7967b074fd5f77016ac21c1d048c87d18ba5293c70cf64ed",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 247,
+   "output_tokens": 87,
+   "reasoning_tokens": 17,
+   "seconds": 3.1
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 125 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_t44swrhlb61UuRznPeoM2GYk",
+       "function": {
+        "arguments": "{\"pattern\":\"Operating income|Net sales|2019|2021\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_cEG5WzYqSrZaJxNyfjrqSW0W",
+       "function": {
+        "arguments": "{\"pattern\":\"CONSOLIDATED STATEMENTS OF INCOME|Statements of Income\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhweOhZ0z8w8YowF29kf5R-zrYElthBedAlojHCBCPJzXjIeEGrH-qhRUtLTxQB_XLuVJE77jatXJ3nUYFHdPppaOSv_whFt8BthrSO7aDoEEcQeQq7Otx44u-sNUrQ-Z-EE-XaIXSWrUtD8bMRGYSJPstaKVhC9q_-3qjJKxl5DhPm8bdZJKIxeraLCTP9QmXq1d8E05gTeHQzM6E-jJAl71t0AeZuomQDjizRqinUVt7IfbhODtCRWhiBHVvkBB1gYJ8LlghR54TGE3tCHlvNCjPhmLi3SNgk0prbnX4iqaamn2DwjlzAUTzoTR_qqyqb_s5JNipmpcN-W8dIUFrLNisJmLXSnZR_8arqS2jQKX4blN-uPo7Y9RZOBG7IP1FOvfJtfEnIPEiOSX4DVtjnj6NjzjC4_DEPFawx5s17tDUmRLrsjlcndPplEi99t-0aaY2yW_I73YV5pHBa82cGqCadVsRrzMA0vE9t1zJtsIuayRxrc1FvDCq-sS29iYsxuFsYWccAyMZ8C3lp6bjgyRC_CWldm9SSxakT2h2VvYTuERbvENkUCvv9A36QdgMFanuea_wfz56LiHI5P0lC7UnljMLKonr6ZqNC_Lupj6p2HOJuY9jm8tTlMRrrJKu1mft-_pgsRcvhGmK8MFxLYe8VLtTqrmIvMLIenKrvZi49ktsWueanKfEgmjaC1uGYB5pEC9X9oJWBGVSePeTs2KpDOxvzCFdn-k78QRmnT_NHQLRGjh8L1gS_TJb2ByDC1e7upBaYZjZiZ7M5lLprJz3Le8GL3LmbezZLUFe_Bhvo_sW0nHHFWTgYplPfinrY7eArt2A966yr6gPkxV_FbPbOYVDlnxmrfRD5yqumvCcNKDhIKYgq8cm-_uwVyLAduxwTHwDc4pGq9AEdvaGJrjWQERdngcQDIHZM6fniiYEog1rCgWI9UnagKpo57zugu5yNmN8UrXCZLoIzHnk1SnTzS2f5b7cnAmjH3C4am59eoonZD2rbwB8nUW6ERV834DjGgIbd4xP_opHdFlfitb86AwrunXmljRgkpA40L8CLADhibBSpUlBGBudswzt0JdKntd-ez_zRC7AGdFKsrH_JQHw1GtbU3r9awfi_mkNJCKEwQi-olrg6YAePJ4F-GkmSwLndGSErN9GUSKt6b7W-eqvXlztL-P0y7o-rXEBvnHI2zqzeguQznRPFy3Md60ieqVGzs09j2M20znaPlZDhlNiBI1rOWB9Zexo-zMA0e8O5vTqeXQrq969AOqwVGCtj8Izybfbph2gY7U33EAlAaFfR_pcHoRXMGKgJrDNA9P0LWpLJK31gEkR_P-nltvBGoIvwR-iCRynHvlSTorWiTR3AToASbOGF4cYIckJrn7_--N_LsMpktvM0o3BAZy9cmY77BjoS8JQelgI0cws8eRKhVhIuZ41U7av1rtRM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0a7967b074fd5f77016ac21c1d048c87d18ba5293c70cf64ed",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_t44swrhlb61UuRznPeoM2GYk",
+     "content": "p1: For the fiscal year ended December 31, 2021\np1: As\u00a0of\u00a0June\u00a030,\u00a02021,\u00a0the\u00a0aggregate\u00a0market\u00a0value\u00a0of\u00a0the\u00a0registrant\u2019s\u00a0common\u00a0stock\u00a0held\u00a0by\u00a0non-affiliates\u00a0of\u00a0the\u00a0registrant\u00a0was\u00a0$35\u00a0billion\u00a0based\u00a0on\u00a0the\u00a0$40.90\u00a0closing\u00a0price\u00a0as\u00a0reported\u00a0on\np3: The\u00a0Display\u00a0Technologies\u00a0segment\u00a0represented\u00a026%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np4: The\u00a0Optical\u00a0Communications\u00a0segment\u00a0represented\u00a031%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Specialty\u00a0Materials\u00a0segment\u00a0represented\u00a014%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Environmental\u00a0Technologies\u00a0segment\u00a0represented\u00a011%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Life\u00a0Sciences\u00a0segment\u00a0represented\u00a09%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np6: \u201cAll\u00a0Other\u201d\u00a0represented\u00a09%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np7: continues\u00a0to\u00a0seek\u00a0and\u00a0obtain\u00a0patents\u00a0protecting\u00a0its\u00a0innovations.\u00a0In\u00a02021,\u00a0Corning\u00a0was\u00a0granted\u00a0about\u00a0420\u00a0patents\u00a0in\u00a0the\u00a0U.S.\u00a0and\u00a0over\u00a01,600\u00a0patents\u00a0in\u00a0countries\u00a0outside\u00a0the\np7: will\u00a0continue\u00a0to\u00a0enforce,\u00a0its\u00a0intellectual\u00a0property\u00a0rights.\u00a0\u00a0At\u00a0the\u00a0end\u00a0of\u00a02021,\u00a0Corning\u00a0and\u00a0its\u00a0wholly\u00a0owned\u00a0subsidiaries\u00a0owned\u00a0about\u00a012,150\u00a0unexpired\u00a0patents\u00a0in\u00a0various\np8: 2021\u00a0and\u00a0are\u00a0estimated\u00a0to\u00a0be\u00a0$23.3\u00a0million\u00a0in\u00a02022.\np8: Corning\u2019s\u00a02021\u00a0consolidated\u00a0operating\u00a0results\u00a0were\u00a0charged\u00a0with\u00a0approximately\u00a0$54.9\u00a0million\u00a0for\u00a0depreciation,\u00a0maintenance,\u00a0waste\u00a0disposal\u00a0and\u00a0other\u00a0operating\u00a0expenses\np9: In\u00a02021,\u00a0as\u00a0planned,\u00a0we\u00a0achieved\u00a0100%\u00a0pay\u00a0equity\u00a0for\u00a0all\u00a0salaried\u00a0men\u00a0and\u00a0women\u00a0in\u00a0our\u00a0worldwide\u00a0operations\u00a0and\u00a0we\u00a0continued\u00a0to\u00a0maintain\u00a0pay\u00a0equity\u00a0across\u00a0minority\np9: through\u00a0acquisition,\u00a0we\u00a0create\u00a0human\u00a0capital\u00a0objectives\u00a0to\u00a0ensure\u00a0we\u00a0have\u00a0the\u00a0right\u00a0people\u00a0with\u00a0the\u00a0right\u00a0skills\u00a0in\u00a0place\u00a0to\u00a0deliver\u00a0that\u00a0growth.\u00a0\u00a0In\u00a02021,\u00a0as\u00a0a\u00a0result\u00a0of\u00a0these\np10: supporting\u00a0longer-term\u00a0careers\u00a0with\u00a0Corning.\u00a0\u00a0Historically,\u00a0our\u00a0talent\u00a0retention\u00a0has\u00a0been\u00a0consistently\u00a0higher\u00a0than\u00a0the\u00a0markets\u00a0in\u00a0which\u00a0we\u00a0compete\u00a0for\u00a0talent.\u00a0\u00a0Although\u00a02021\np10: mobilize\u00a0quickly\u00a0with\u00a0plans\u00a0in\u00a0place\u00a0to\u00a0address\u00a0those\u00a0issues.\u00a0\u00a0Salaried\u00a0talent\u00a0retention\u00a0in\u00a02021\u00a0was\u00a094%.\np10: of\u00a0total\u00a0recordable\u00a0incident\u00a0rate\u00a0(TRIR)\u00a0performance\u00a0with\u00a0a\u00a0Company-wide\u00a0TRIR\u00a0of\u00a0just\u00a00.50\u00a0in\u00a02021.\u00a0\u00a0We\u00a0promote\u00a0employee\u00a0wellbeing\u00a0through\u00a0wellness\u00a0programs\u00a0which\np10: in\u00a02021,\u00a0we\u00a0continued\u00a0our\u00a0Responsible\u00a0Corning\u00a0program\u00a0with\u00a0enhanced\u00a0cleaning,\u00a0screening,\u00a0testing\u00a0and\u00a0other\u00a0measures\u00a0initiated\u00a0in\u00a02020.\u00a0In\u00a0addition,\u00a0we\u00a0encouraged\np11: Controller\u00a0in\u00a02015\u00a0and\u00a0senior\u00a0vice\u00a0president\u00a0in\u00a02019.\u00a0Age\u00a050.\np12: Resources\u00a0in\u00a02019.\u00a0Age\u00a056.\np12: Ms.\u00a0Mullins\u00a0joined\u00a0Corning\u00a0as\u00a0senior\u00a0vice\u00a0president\u00a0&\u00a0chief\u00a0digital\u00a0&\u00a0information\u00a0officer\u00a0in\u00a0August\u00a02019.\u00a0In\u00a0this\u00a0role,\u00a0she\u00a0is\u00a0responsible\u00a0for\u00a0leading\u00a0the\u00a0strategic\u00a0direction\u00a0of\np12: controller\u00a0in\u00a0September\u00a02015\u00a0and\u00a0principal\u00a0accounting\u00a0officer\u00a0in\u00a0December\u00a02015.\u00a0He\u00a0was\u00a0named\u00a0senior\u00a0vice\u00a0president\u00a0in\u00a0February\u00a02019.\u00a0\u00a0Prior\u00a0to\u00a0joining\u00a0Corning,\u00a0Mr.\np12: On\u00a0December\u00a07,\u00a02021,\u00a0Corning's\u00a0Board\u00a0of\u00a0Directors\u00a0appointed\u00a0Mr.\u00a0Schlesinger\u00a0as\u00a0executive\u00a0vice\u00a0president\u00a0and\u00a0chief\u00a0financial\u00a0officer,\u00a0effective\u00a0February\u00a018,\u00a02022.\np13: On\u00a0December\u00a09,\u00a02021,\u00a0the\u00a0Company\u00a0announced\u00a0that\u00a0Mr.\u00a0Tripeny\u00a0will\u00a0relinquish\u00a0the\u00a0chief\u00a0financial\u00a0officer\u00a0title\u00a0effective\u00a0February\u00a018,\u00a02022,\u00a0as\u00a0part\u00a0of\u00a0his\u00a0plan\u00a0to\u00a0retire\u00a0in\np13: A\u00a0copy\u00a0of\u00a0Corning\u2019s\u00a02021\u00a0Annual\u00a0Report\u00a0on\u00a0Form\u00a010-K\u00a0filed\u00a0with\u00a0the\u00a0Securities\u00a0and\u00a0Exchange\u00a0Commission\u00a0is\u00a0available\u00a0upon\u00a0written\u00a0request\u00a0to\u00a0Corporate\u00a0Secretary,\np15: net sales in 2021\np16: customers, resulting in a negative impact to Corning\u2019s net sales, net income, asset values and liquidity\np21: consultants.\u00a0At\u00a0December\u00a031,\u00a02021\u00a0and\u00a02020,\u00a0Corning\u00a0had\u00a0accrued\u00a0approximately\u00a0$55\u00a0million\u00a0(undiscounted)\u00a0and\u00a0$68\u00a0million\u00a0(undiscounted),\u00a0respectively,\u00a0for\u00a0the\u00a0estimated\np22: As\u00a0of\u00a0December\u00a031,\u00a02021,\u00a0there\u00a0were\u00a0approximately\u00a012,000\u00a0registered\u00a0holders\u00a0of\u00a0common\u00a0stock\u00a0and\u00a0approximately\u00a0680,000\u00a0beneficial\u00a0shareholders.\np23: (c) The\u00a0following\u00a0table\u00a0provides\u00a0information\u00a0about\u00a0purchases\u00a0of\u00a0common\u00a0stock\u00a0by\u00a0the\u00a0Company\u00a0during\u00a0the\u00a0fiscal\u00a0fourth\u00a0quarter\u00a0of\u00a02021:\np23: October\u00a01-31,\u00a02021 1,117,269 $ 36.83 1,051,401\np23: November\u00a01-30,\u00a02021 2,825,712 $ 3\n\u2026 [1,080 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_cEG5WzYqSrZaJxNyfjrqSW0W",
+     "content": "p65: Consolidated Statements of Income Corning Incorporated and Subsidiary Companies"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_D9u65ShXblkUR72vrtLp5j5l",
+      "function": {
+       "arguments": "{\"first\":65,\"last\":65}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwgY3nN5mjBauQvq7Yu9diug6uyksgJsB1LF4QrHJebrP_FMKUOeL0wz-ADyhNw9_uS_To9_LShbIT-I_fW_R3gPoLrSrDv8BrRbegLFrl8F0qFik1-XGGoeJSrQLjGuR-6rQx1jLJmkC0YzF7WfdV-c4QC_6u4uzpmAs3EAKbOkhpU6AifPxQyZCIu3USn6Pcevs1ze7aSWGQBGzq8AzTaFYjUQ-bb91j3VYZb0dNS5ZeqK1j1AmStSm-Vhvmmxn7M5GNhVHu6MWGJj-SGdOheHjTeTYsgamp5vNWKb_rWEZxs6k9TSbhhmtdMXDbMBeIc-rJ_lnssNoMDuIBTJKG6_Cy1nHNw0T6BpQ48cdan20Yt8_AwSeaqzaUMDYRFveBAUlRORj7TK96fXjwr1UfdFxjrHDuU26FWukPDFuwr8BKhE8iyR2Xl6u2jBOYaB-Ekf2HkR44noLQyUh7R9cAGQ5mQQctXlFkEMuiVDgXi5kptWhyHhAkdFnJ3rM2jRBktsc3XikHjgGIjGD3ZzQuByG1qN6ShojOC-JXm8TWQfiSUPDMI_nBvtMqHyyYq5zZ_-RC8v70_rDb1GcLPKUjdCo-Cii1K0aO8KZWw3lb_MQBiQkqW0XnZrj4-QqgFPn7W_XC9yQdPwud5dI_XG2ER2mWKNJReupxTHM_oFV8FHFUzjZANxWySJCJDbKmAfP1CWgHn7Ea0yMcdc8M07TIozn2bhESv6C3eP_sk7Ae8npBhXpAzqddWU_vmqt7ztQ8QiOsnGippshbjzWGV-DP2qhohXcV5h_ekXVTL2BQUc_L1PEdITv0iyAFckabPTzGkyNaT_3c532V2es1K6fohoGl1RvGsLsO6t2Pz-j5X_39ie58WMc_oF0jbYxkUieLWQHMZtb7t-w4xZZP3shUVfhZpmYavyyHckkfMSYG3d40RIlAURLP9IjvJj2DqG7kmKYvJ7SWvJhcuWevSFCJqhc2U7KfhPJfY78orZLDAI4LnIQN0jQ4eaGZa-qgQO_Jx-uFbeXwBZ2_StvDBkwkGn0BcisSCVQiJwwytCwnzWrgTiy6c4M8ICKjftv4Ybgt1oy0kIM2LOkTQ9r-QQAjjt7LTX80wIEigcan-6cotj1BM4HJtmRlGstkQK2_s5ynyYdzsXZdM7A3v0ue-pl5PdNp8m6nodqoaWCnbr7vhaPQ_YvTentjDbBnuGn1lPeBX5XU0qQKYkfT6qBEwQP_nmtzEKaN8qqoLCNXE5BKaAYf-M30niHMrbalBxc3kfUx9d1meG5gwJh4Sl9O8nuDivUx70QnVLyDxWzUYwmmKMT7-uGDjt7boxwp6qanbnZ3K_Pijt9FCNb7X89CTXgK32m4_IXxOeBm7xfhrsOqT3uU=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0a7967b074fd5f77016ac21c1fee2c87d180ab9fa71284e0b5",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 2376,
+   "output_tokens": 37,
+   "reasoning_tokens": 13,
+   "seconds": 1.84
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 125 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "Taking into account the information outlined in the income statement, what is the FY2019 - FY2021 3 year average unadjusted operating income % margin for Corning? Answer in units of percents and round to one decimal place."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_t44swrhlb61UuRznPeoM2GYk",
+       "function": {
+        "arguments": "{\"pattern\":\"Operating income|Net sales|2019|2021\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      },
+      {
+       "id": "call_cEG5WzYqSrZaJxNyfjrqSW0W",
+       "function": {
+        "arguments": "{\"pattern\":\"CONSOLIDATED STATEMENTS OF INCOME|Statements of Income\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 1
+      }
+     ],
+     "reasoning": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for income statement data**\n\nI need to look up the income statement for fiscal years, specifically focusing on revenues and operating income. This seems like a straightforward request, so I\u2019ll start by searching for this information. It\u2019s important to present it clearly, so I\u2019ll make sure I gather the necessary data related to revenues and operating income from the income statement. Let\u2019s see what I can find!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhweOhZ0z8w8YowF29kf5R-zrYElthBedAlojHCBCPJzXjIeEGrH-qhRUtLTxQB_XLuVJE77jatXJ3nUYFHdPppaOSv_whFt8BthrSO7aDoEEcQeQq7Otx44u-sNUrQ-Z-EE-XaIXSWrUtD8bMRGYSJPstaKVhC9q_-3qjJKxl5DhPm8bdZJKIxeraLCTP9QmXq1d8E05gTeHQzM6E-jJAl71t0AeZuomQDjizRqinUVt7IfbhODtCRWhiBHVvkBB1gYJ8LlghR54TGE3tCHlvNCjPhmLi3SNgk0prbnX4iqaamn2DwjlzAUTzoTR_qqyqb_s5JNipmpcN-W8dIUFrLNisJmLXSnZR_8arqS2jQKX4blN-uPo7Y9RZOBG7IP1FOvfJtfEnIPEiOSX4DVtjnj6NjzjC4_DEPFawx5s17tDUmRLrsjlcndPplEi99t-0aaY2yW_I73YV5pHBa82cGqCadVsRrzMA0vE9t1zJtsIuayRxrc1FvDCq-sS29iYsxuFsYWccAyMZ8C3lp6bjgyRC_CWldm9SSxakT2h2VvYTuERbvENkUCvv9A36QdgMFanuea_wfz56LiHI5P0lC7UnljMLKonr6ZqNC_Lupj6p2HOJuY9jm8tTlMRrrJKu1mft-_pgsRcvhGmK8MFxLYe8VLtTqrmIvMLIenKrvZi49ktsWueanKfEgmjaC1uGYB5pEC9X9oJWBGVSePeTs2KpDOxvzCFdn-k78QRmnT_NHQLRGjh8L1gS_TJb2ByDC1e7upBaYZjZiZ7M5lLprJz3Le8GL3LmbezZLUFe_Bhvo_sW0nHHFWTgYplPfinrY7eArt2A966yr6gPkxV_FbPbOYVDlnxmrfRD5yqumvCcNKDhIKYgq8cm-_uwVyLAduxwTHwDc4pGq9AEdvaGJrjWQERdngcQDIHZM6fniiYEog1rCgWI9UnagKpo57zugu5yNmN8UrXCZLoIzHnk1SnTzS2f5b7cnAmjH3C4am59eoonZD2rbwB8nUW6ERV834DjGgIbd4xP_opHdFlfitb86AwrunXmljRgkpA40L8CLADhibBSpUlBGBudswzt0JdKntd-ez_zRC7AGdFKsrH_JQHw1GtbU3r9awfi_mkNJCKEwQi-olrg6YAePJ4F-GkmSwLndGSErN9GUSKt6b7W-eqvXlztL-P0y7o-rXEBvnHI2zqzeguQznRPFy3Md60ieqVGzs09j2M20znaPlZDhlNiBI1rOWB9Zexo-zMA0e8O5vTqeXQrq969AOqwVGCtj8Izybfbph2gY7U33EAlAaFfR_pcHoRXMGKgJrDNA9P0LWpLJK31gEkR_P-nltvBGoIvwR-iCRynHvlSTorWiTR3AToASbOGF4cYIckJrn7_--N_LsMpktvM0o3BAZy9cmY77BjoS8JQelgI0cws8eRKhVhIuZ41U7av1rtRM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0a7967b074fd5f77016ac21c1d048c87d18ba5293c70cf64ed",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_t44swrhlb61UuRznPeoM2GYk",
+     "content": "p1: For the fiscal year ended December 31, 2021\np1: As\u00a0of\u00a0June\u00a030,\u00a02021,\u00a0the\u00a0aggregate\u00a0market\u00a0value\u00a0of\u00a0the\u00a0registrant\u2019s\u00a0common\u00a0stock\u00a0held\u00a0by\u00a0non-affiliates\u00a0of\u00a0the\u00a0registrant\u00a0was\u00a0$35\u00a0billion\u00a0based\u00a0on\u00a0the\u00a0$40.90\u00a0closing\u00a0price\u00a0as\u00a0reported\u00a0on\np3: The\u00a0Display\u00a0Technologies\u00a0segment\u00a0represented\u00a026%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np4: The\u00a0Optical\u00a0Communications\u00a0segment\u00a0represented\u00a031%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Specialty\u00a0Materials\u00a0segment\u00a0represented\u00a014%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Environmental\u00a0Technologies\u00a0segment\u00a0represented\u00a011%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np5: The\u00a0Life\u00a0Sciences\u00a0segment\u00a0represented\u00a09%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np6: \u201cAll\u00a0Other\u201d\u00a0represented\u00a09%\u00a0of\u00a0Corning\u2019s\u00a0consolidated\u00a0net\u00a0sales\u00a0in\u00a02021.\np7: continues\u00a0to\u00a0seek\u00a0and\u00a0obtain\u00a0patents\u00a0protecting\u00a0its\u00a0innovations.\u00a0In\u00a02021,\u00a0Corning\u00a0was\u00a0granted\u00a0about\u00a0420\u00a0patents\u00a0in\u00a0the\u00a0U.S.\u00a0and\u00a0over\u00a01,600\u00a0patents\u00a0in\u00a0countries\u00a0outside\u00a0the\np7: will\u00a0continue\u00a0to\u00a0enforce,\u00a0its\u00a0intellectual\u00a0property\u00a0rights.\u00a0\u00a0At\u00a0the\u00a0end\u00a0of\u00a02021,\u00a0Corning\u00a0and\u00a0its\u00a0wholly\u00a0owned\u00a0subsidiaries\u00a0owned\u00a0about\u00a012,150\u00a0unexpired\u00a0patents\u00a0in\u00a0various\np8: 2021\u00a0and\u00a0are\u00a0estimated\u00a0to\u00a0be\u00a0$23.3\u00a0million\u00a0in\u00a02022.\np8: Corning\u2019s\u00a02021\u00a0consolidated\u00a0operating\u00a0results\u00a0were\u00a0charged\u00a0with\u00a0approximately\u00a0$54.9\u00a0million\u00a0for\u00a0depreciation,\u00a0maintenance,\u00a0waste\u00a0disposal\u00a0and\u00a0other\u00a0operating\u00a0expenses\np9: In\u00a02021,\u00a0as\u00a0planned,\u00a0we\u00a0achieved\u00a0100%\u00a0pay\u00a0equity\u00a0for\u00a0all\u00a0salaried\u00a0men\u00a0and\u00a0women\u00a0in\u00a0our\u00a0worldwide\u00a0operations\u00a0and\u00a0we\u00a0continued\u00a0to\u00a0maintain\u00a0pay\u00a0equity\u00a0across\u00a0minority\np9: through\u00a0acquisition,\u00a0we\u00a0create\u00a0human\u00a0capital\u00a0objectives\u00a0to\u00a0ensure\u00a0we\u00a0have\u00a0the\u00a0right\u00a0people\u00a0with\u00a0the\u00a0right\u00a0skills\u00a0in\u00a0place\u00a0to\u00a0deliver\u00a0that\u00a0growth.\u00a0\u00a0In\u00a02021,\u00a0as\u00a0a\u00a0result\u00a0of\u00a0these\np10: supporting\u00a0longer-term\u00a0careers\u00a0with\u00a0Corning.\u00a0\u00a0Historically,\u00a0our\u00a0talent\u00a0retention\u00a0has\u00a0been\u00a0consistently\u00a0higher\u00a0than\u00a0the\u00a0markets\u00a0in\u00a0which\u00a0we\u00a0compete\u00a0for\u00a0talent.\u00a0\u00a0Although\u00a02021\np10: mobilize\u00a0quickly\u00a0with\u00a0plans\u00a0in\u00a0place\u00a0to\u00a0address\u00a0those\u00a0issues.\u00a0\u00a0Salaried\u00a0talent\u00a0retention\u00a0in\u00a02021\u00a0was\u00a094%.\np10: of\u00a0total\u00a0recordable\u00a0incident\u00a0rate\u00a0(TRIR)\u00a0performance\u00a0with\u00a0a\u00a0Company-wide\u00a0TRIR\u00a0of\u00a0just\u00a00.50\u00a0in\u00a02021.\u00a0\u00a0We\u00a0promote\u00a0employee\u00a0wellbeing\u00a0through\u00a0wellness\u00a0programs\u00a0which\np10: in\u00a02021,\u00a0we\u00a0continued\u00a0our\u00a0Responsible\u00a0Corning\u00a0program\u00a0with\u00a0enhanced\u00a0cleaning,\u00a0screening,\u00a0testing\u00a0and\u00a0other\u00a0measures\u00a0initiated\u00a0in\u00a02020.\u00a0In\u00a0addition,\u00a0we\u00a0encouraged\np11: Controller\u00a0in\u00a02015\u00a0and\u00a0senior\u00a0vice\u00a0president\u00a0in\u00a02019.\u00a0Age\u00a050.\np12: Resources\u00a0in\u00a02019.\u00a0Age\u00a056.\np12: Ms.\u00a0Mullins\u00a0joined\u00a0Corning\u00a0as\u00a0senior\u00a0vice\u00a0president\u00a0&\u00a0chief\u00a0digital\u00a0&\u00a0information\u00a0officer\u00a0in\u00a0August\u00a02019.\u00a0In\u00a0this\u00a0role,\u00a0she\u00a0is\u00a0responsible\u00a0for\u00a0leading\u00a0the\u00a0strategic\u00a0direction\u00a0of\np12: controller\u00a0in\u00a0September\u00a02015\u00a0and\u00a0principal\u00a0accounting\u00a0officer\u00a0in\u00a0December\u00a02015.\u00a0He\u00a0was\u00a0named\u00a0senior\u00a0vice\u00a0president\u00a0in\u00a0February\u00a02019.\u00a0\u00a0Prior\u00a0to\u00a0joining\u00a0Corning,\u00a0Mr.\np12: On\u00a0December\u00a07,\u00a02021,\u00a0Corning's\u00a0Board\u00a0of\u00a0Directors\u00a0appointed\u00a0Mr.\u00a0Schlesinger\u00a0as\u00a0executive\u00a0vice\u00a0president\u00a0and\u00a0chief\u00a0financial\u00a0officer,\u00a0effective\u00a0February\u00a018,\u00a02022.\np13: On\u00a0December\u00a09,\u00a02021,\u00a0the\u00a0Company\u00a0announced\u00a0that\u00a0Mr.\u00a0Tripeny\u00a0will\u00a0relinquish\u00a0the\u00a0chief\u00a0financial\u00a0officer\u00a0title\u00a0effective\u00a0February\u00a018,\u00a02022,\u00a0as\u00a0part\u00a0of\u00a0his\u00a0plan\u00a0to\u00a0retire\u00a0in\np13: A\u00a0copy\u00a0of\u00a0Corning\u2019s\u00a02021\u00a0Annual\u00a0Report\u00a0on\u00a0Form\u00a010-K\u00a0filed\u00a0with\u00a0the\u00a0Securities\u00a0and\u00a0Exchange\u00a0Commission\u00a0is\u00a0available\u00a0upon\u00a0written\u00a0request\u00a0to\u00a0Corporate\u00a0Secretary,\np15: net sales in 2021\np16: customers, resulting in a negative impact to Corning\u2019s net sales, net income, asset values and liquidity\np21: consultants.\u00a0At\u00a0December\u00a031,\u00a02021\u00a0and\u00a02020,\u00a0Corning\u00a0had\u00a0accrued\u00a0approximately\u00a0$55\u00a0million\u00a0(undiscounted)\u00a0and\u00a0$68\u00a0million\u00a0(undiscounted),\u00a0respectively,\u00a0for\u00a0the\u00a0estimated\np22: As\u00a0of\u00a0December\u00a031,\u00a02021,\u00a0there\u00a0were\u00a0approximately\u00a012,000\u00a0registered\u00a0holders\u00a0of\u00a0common\u00a0stock\u00a0and\u00a0approximately\u00a0680,000\u00a0beneficial\u00a0shareholders.\np23: (c) The\u00a0following\u00a0table\u00a0provides\u00a0information\u00a0about\u00a0purchases\u00a0of\u00a0common\u00a0stock\u00a0by\u00a0the\u00a0Company\u00a0during\u00a0the\u00a0fiscal\u00a0fourth\u00a0quarter\u00a0of\u00a02021:\np23: October\u00a01-31,\u00a02021 1,117,269 $ 36.83 1,051,401\np23: November\u00a01-30,\u00a02021 2,825,712 $ 3\n\u2026 [1,080 more characters]"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_cEG5WzYqSrZaJxNyfjrqSW0W",
+     "content": "p65: Consolidated Statements of Income Corning Incorporated and Subsidiary Companies"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_D9u65ShXblkUR72vrtLp5j5l",
+       "function": {
+        "arguments": "{\"first\":65,\"last\":65}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhwgY3nN5mjBauQvq7Yu9diug6uyksgJsB1LF4QrHJebrP_FMKUOeL0wz-ADyhNw9_uS_To9_LShbIT-I_fW_R3gPoLrSrDv8BrRbegLFrl8F0qFik1-XGGoeJSrQLjGuR-6rQx1jLJmkC0YzF7WfdV-c4QC_6u4uzpmAs3EAKbOkhpU6AifPxQyZCIu3USn6Pcevs1ze7aSWGQBGzq8AzTaFYjUQ-bb91j3VYZb0dNS5ZeqK1j1AmStSm-Vhvmmxn7M5GNhVHu6MWGJj-SGdOheHjTeTYsgamp5vNWKb_rWEZxs6k9TSbhhmtdMXDbMBeIc-rJ_lnssNoMDuIBTJKG6_Cy1nHNw0T6BpQ48cdan20Yt8_AwSeaqzaUMDYRFveBAUlRORj7TK96fXjwr1UfdFxjrHDuU26FWukPDFuwr8BKhE8iyR2Xl6u2jBOYaB-Ekf2HkR44noLQyUh7R9cAGQ5mQQctXlFkEMuiVDgXi5kptWhyHhAkdFnJ3rM2jRBktsc3XikHjgGIjGD3ZzQuByG1qN6ShojOC-JXm8TWQfiSUPDMI_nBvtMqHyyYq5zZ_-RC8v70_rDb1GcLPKUjdCo-Cii1K0aO8KZWw3lb_MQBiQkqW0XnZrj4-QqgFPn7W_XC9yQdPwud5dI_XG2ER2mWKNJReupxTHM_oFV8FHFUzjZANxWySJCJDbKmAfP1CWgHn7Ea0yMcdc8M07TIozn2bhESv6C3eP_sk7Ae8npBhXpAzqddWU_vmqt7ztQ8QiOsnGippshbjzWGV-DP2qhohXcV5h_ekXVTL2BQUc_L1PEdITv0iyAFckabPTzGkyNaT_3c532V2es1K6fohoGl1RvGsLsO6t2Pz-j5X_39ie58WMc_oF0jbYxkUieLWQHMZtb7t-w4xZZP3shUVfhZpmYavyyHckkfMSYG3d40RIlAURLP9IjvJj2DqG7kmKYvJ7SWvJhcuWevSFCJqhc2U7KfhPJfY78orZLDAI4LnIQN0jQ4eaGZa-qgQO_Jx-uFbeXwBZ2_StvDBkwkGn0BcisSCVQiJwwytCwnzWrgTiy6c4M8ICKjftv4Ybgt1oy0kIM2LOkTQ9r-QQAjjt7LTX80wIEigcan-6cotj1BM4HJtmRlGstkQK2_s5ynyYdzsXZdM7A3v0ue-pl5PdNp8m6nodqoaWCnbr7vhaPQ_YvTentjDbBnuGn1lPeBX5XU0qQKYkfT6qBEwQP_nmtzEKaN8qqoLCNXE5BKaAYf-M30niHMrbalBxc3kfUx9d1meG5gwJh4Sl9O8nuDivUx70QnVLyDxWzUYwmmKMT7-uGDjt7boxwp6qanbnZ3K_Pijt9FCNb7X89CTXgK32m4_IXxOeBm7xfhrsOqT3uU=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0a7967b074fd5f77016ac21c1fee2c87d180ab9fa71284e0b5",
+       "index": 0
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_D9u65ShXblkUR72vrtLp5j5l",
+     "content": "[Page 65]\nTable\u00a0of\u00a0Contents\r\nConsolidated Statements of Income Corning Incorporated and Subsidiary Companies\r\nYear\u00a0ended\u00a0December\u00a031,\r\n(In\u00a0millions,\u00a0except\u00a0per\u00a0share\u00a0amounts) 2021 2020 2019\r\nNet\u00a0sales $ 14,082 $ 11,303 $ 11,503\r\nCost\u00a0of\u00a0sales 9,019 7,772 7,468\r\nGross\u00a0margin 5,063 3,531 4,035\r\nOperating\u00a0expenses:\r\nSelling,\u00a0general\u00a0and\u00a0administrative\u00a0expenses 1,827 1,747 1,585\r\nResearch,\u00a0development\u00a0and\u00a0engineering\u00a0expenses 995 1,154 1,031\r\nAmortization\u00a0of\u00a0purchased\u00a0intangibles 129 121 113\r\nOperating\u00a0income 2,112 509 1,306\r\nEquity\u00a0in\u00a0earnings\u00a0(losses)\u00a0of\u00a0affiliated\u00a0companies\u00a0(Note\u00a03) 35 (25) 17\r\nInterest\u00a0income 11 15 21\r\nInterest\u00a0expense (300) (276) (221)\r\nTranslated\u00a0earnings\u00a0contract\u00a0gain\u00a0(loss),\u00a0net\u00a0(Note\u00a015) 354 (38) 248\r\nTransaction-related\u00a0gain,\u00a0net\u00a0(Note\u00a04) 498\r\nOther\u00a0income\u00a0(expense),\u00a0net 185 (60) (155)\r\nIncome\u00a0before\u00a0income\u00a0taxes 2,397 623 1,216\r\nProvision\u00a0for\u00a0income\u00a0taxes\u00a0(Note\u00a08) (491) (111) (256)\r\nNet\u00a0income\u00a0attributable\u00a0to\u00a0Corning\u00a0Incorporated $ 1,906 $ 512 $ 960\r\nEarnings\u00a0per\u00a0common\u00a0share\u00a0attributable\u00a0to\u00a0Corning\u00a0Incorporated:\r\nBasic\u00a0(Note\u00a018) $ 1.30 $ 0.54 $ 1.11\r\nDiluted\u00a0(Note\u00a018) $ 1.28 $ 0.54 $ 1.07\r\nReconciliation\u00a0of\u00a0net\u00a0income\u00a0attributable\u00a0to\u00a0Corning\u00a0Incorporated\u00a0versus\u00a0net\u00a0income\u00a0available\u00a0to\u00a0common\r\nshareholders:\r\nNet\u00a0income\u00a0attributable\u00a0to\u00a0Corning\u00a0Incorporated $ 1,906 $ 512 $ 960\r\nSeries\u00a0A\u00a0convertible\u00a0preferred\u00a0stock\u00a0dividend (24) (98) (98)\r\nExcess\u00a0consideration\u00a0paid\u00a0for\u00a0redemption\u00a0of\u00a0preferred\u00a0stock\u00a0(1) (803)\r\nNet\u00a0income\u00a0available\u00a0to\u00a0common\u00a0shareholders $ 1,079 $ 414 $ 862\r\n(1) Refer\u00a0to\u00a0Note\u00a017\u00a0(Shareholders'\u00a0Equity)\u00a0and\u00a0Note\u00a018\u00a0(Earnings\u00a0per\u00a0Common\u00a0Share)\u00a0to\u00a0the\u00a0consolidated\u00a0financial\u00a0statements\u00a0for\u00a0additional\u00a0information.\r\nThe\u00a0accompanying\u00a0notes\u00a0are\u00a0an\u00a0integral\u00a0part\u00a0of\u00a0these\u00a0consolidated\u00a0financial\u00a0statements.\r\n65"
+    }
+   ],
+   "reply": {
+    "content": "**10.3%**\n\nAverage unadjusted operating margin = \\(\\big[(\\$1{,}306/\\$11{,}503) + (\\$509/\\$11{,}303) + (\\$2{,}112/\\$14{,}082)\\big] / 3 \\times 100 = 10.3\\%\\). The income statement reports net sales and operating income for FY2019\u2013FY2021 (p. 65).",
+    "role": "assistant",
+    "reasoning": "**Calculating operating income margins**\n\nI need to compute the operating income divided by net sales for each year and then find the average, which I call the unadjusted operating income margin. For instance, in 2019, it\u2019s about 11.35%. For 2020, it drops to 4.50%, and then rises to approximately 15.00% in 2021. The average of these values seems to yield around 10.3%. I want to verify if I'm correctly interpreting this average margin as the mean of the yearly margins. I\u2019ll lay out the formulas for clarity, focusing on precision.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating operating income margins**\n\nI need to compute the operating income divided by net sales for each year and then find the average, which I call the unadjusted operating income margin. For instance, in 2019, it\u2019s about 11.35%. For 2020, it drops to 4.50%, and then rises to approximately 15.00% in 2021. The average of these values seems to yield around 10.3%. I want to verify if I'm correctly interpreting this average margin as the mean of the yearly margins. I\u2019ll lay out the formulas for clarity, focusing on precision.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwlQ3Icf7qpnuiLrNfRlJKId7yAIfslqB5bCfFwBNbdVsu2vJ6stZ6Qy-aGxoG2ORDa7BFfUlK3aII7iNzdBTRjpwceLKzets-ArXKMQIpdxv6CG187M9AqpimgwewEW5uhTRpTlE5KtjgsjGUR4wayB_5fFlbd7JWAWlU5LBXboaH0Z0a46VzX_udJsYWWRzuVaAtkMRM2_FF3y0i4G_rhhV35VJrCRm0VEV5sypP5cCPB_f_fzTsJl3vyja5yR3rs7tCTuEy5XWncFHtunXHyXyRJlZ6LMrEfRsPOH8hdwglcBOEpSPnvq_-DknbLUDiy1AirDsLqR2gS1YIc19shDH1h9jwEDrzMN8IfrtXZnA_sJD2KNYvpQ-d_ixyn9sY8PXVEin-CEXtMIE1EkwvDXnqZZoLGqOszOClGeA_P_7Nsxh3SfZGXpY-FWt5tAveuYsI9fos_Cn1wh20_Dt29MhXaAvp7kORh--ia1oxSLumarBUbrvZPb40szccX2Lfzp83zXNgHby3csKpsvK630sBT9Jw4EeHqQlYMagoLISr-GXnuvGNDdEo_0O0qIlJrynFe5jmVpCdOYG_g43o_C-ACwNxgx4r7Wc-BfpFRQXuZuRueS2DZ7LPoSFPluur_56M2Uwt1GGGfBIwwywHmlAY6drws4LQJZlrRHn7iw82I3i5WkqH7MRhBn-NokAajcoSwgltI3hnQ0LaGafBRBPh9mMlf0cJI2SWot48C3C4CNgAvH3Ai0JaBqHo4NebpUaRUkUnHjiCCjRhmwID0QCiz6pmzBtMybFVNPgDXfidYUn54L6oqU3d0n3AkK7oaaoydNDpY9PDAB_nLEjGwSCO5Bunkwd0Mu_H2T853utdicoNKSpkzRO2jW20HiU9rsTPVRQbsA1uxRzWyvzFmslmO6tbO2_u5mPc4B4KVyz69SIWLB6jKOsQZAIZfGTnqu7IMRG0dEWMXn4OZhGSpAhLkJrYz0JWQSnYdzpBURLT34wn2N04aVYN9X6bJ0cL5lbCUsgYFR_6FsLjBFN8-OuVCjPggXScPGcFOmCr8TbAXzue2O84W9CWJGcaifJSuZ7c3kmErw42uIneb3shd9JKbxX96kxb-F0sg4BefUswUODX3T6BQwj0ZbMrmQkfNKjcQq-cBuoh_EbG6dSBFVBkc3wBQCvp1gsf9_1yM_zsAcSpM5BtHX6Hwg1o3HOAxMF1KKK0Y4HsyN5FIRfTEpScCvPqZ7WBaxKA_gek9ReDtKUp-QiD0pk-L57dcDAlyWD26fE2LIIjt7A9dzB-Jwojt2nSjMiFShU0IvYPiZBU68JVWlnEveLKRUE5DPI-SBxDqZYj4RKabr5vLIF9zZZioSUIV97brJ-gTg6p093yunkfYY47JXL0POLR9wQzD8IPiHE46K0wKZQsnlGotceKGVNRKgZWjOwe1MgvCSto9n5cZtgkWZBEwB8D0tN9o0f-YPghNoOTAVIFGjg5UbGnt6jvNNZRxhcRCv4KF07BAY2QTU_2y_WT0KsV8jamahGzkzoV4Wek6oDGzMNX7XLs2-UgwYeU3LthIBBU0FZN4VrXvdSz0__NvsMc78GWokutYpHfzREDk7x1v9eaM59cU9W304oIX-t-WWyTOo41msacMH2-wO_WqI75BeFBlFLW6RSJhl01LCKUpWl4NB1rGq8686nHgQz9w_c8Uim0FYrqyaZvEd6YlCc53FUPhjXtv5y66L2Ka5sfApmHkwKNzggHdHoqXk-MmvmCF83NZ8s8nsE-ytA2IjVADwcIH6m4FceJd36VFK2x4x8mr9O2AHVcyyMD8ZggRN0IcMMXCGwhZlb2CP6MHfWlSdAYho0J0Keunm5LKuJjJKt0_YgzPpwtt_lmJOU8bkiwz71YG64LmrZZAZaG0Xe93l0ONYTJ8faMMhrsG6j21JYp-H8YX4y0XioPnDY5-tLsZ3DK6qBU3MfVN9sHZMP2_OqhGvXllC0vFb7070B9b0mupWbWDAPYo3L5QMkHpdGovimLIWKNcE3mN68FVnTAI4fN0ITtsCbOwf0t1trAv5TvoZ0TvHfDM5JpebnNzsWpuFz4FibTA-0iA0fulF-KHq_6A6hvPrFtTv2N5W31fB13QvwkcaVOBzz0LV2eKYbkm6QnnJEviGv2SuBqwsQYaghowkx5kE2HqQvQkJu9CJc1-RixO5cdgPMO5pTlT_OPQPsSo4Pn9dJsJmI9Tcn1BxdwkYRxs_F4MkCR1MZCTFeMzmHv3b94UU3dgb4jhwQzO8pFm6KEU4n3Q46WdHg5u0K-QEXs-FD5eIyduPK8aNcDUdA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0a7967b074fd5f77016ac21c21beb887d1b4dd7d4a8aeaa046",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 3087,
+   "output_tokens": 318,
+   "reasoning_tokens": 213,
+   "seconds": 5.29
+  }
+ ],
+ "answer": "**10.3%**\n\nAverage unadjusted operating margin = \\(\\big[(\\$1{,}306/\\$11{,}503) + (\\$509/\\$11{,}303) + (\\$2{,}112/\\$14{,}082)\\big] / 3 \\times 100 = 10.3\\%\\). The income statement reports net sales and operating income for FY2019\u2013FY2021 (p. 65).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "Operating income|Net sales|2019|2021"
+   }
+  },
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "CONSOLIDATED STATEMENTS OF INCOME|Statements of Income"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 65,
+    "last": 65
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer's 10.3% matches the gold answer, and the cited figures reproduce it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002868,
+ "provider": "aipipe"
+}

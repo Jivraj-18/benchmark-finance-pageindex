@@ -1,0 +1,104 @@
+{
+ "id": "financebench_id_01244",
+ "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+ "gold": "Yes, CVS paid a $ 0.55 dividend per share every quarter in FY2022",
+ "doc": "CVSHEALTH_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 5.2,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4146,
+  "cached_tokens": 0,
+  "output_tokens": 233,
+  "cost": 0.00053158,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 92]\n in the quarterly cash dividend to $0.605 per share effective in 2023. CVS Health Corporation has paid cash dividends every quarter since becoming a public company. Future dividend payments will depend on the Company\u2019s earnings, capital requirements, financial condition and other factors considered relevant by the Board. 90\n\n[Page 168]\n20% of the $1.5 billion notional amount of the ASR, thereby concluding the ASR. These shares were placed into treasury stock and the forward contract was reclassified from capital surplus to treasury stock in February 2022. At the time they were received, the initial and final receipt of shares resulted in an immediate reduction of the outstanding shares used to calculate the weighted average common shares outstanding for basic and diluted earnings per share. Dividends The quarterly cash dividend declared by the Board was $0.55 and $0.50 per share in 2022 and 2021, respectively. In December 2022, the Board authorized a 10% increase in the quarterly cash dividend to $0.605 per share effective in 2023. CVS Health Corporation has paid cash dividends every quarter since becoming a public company. Future dividend payments will depend on the Company\u2019s earnings, capital requirements, financial condition and other factors considered relevant by the Board. Regulatory Requirements The Company\u2019s insurance business operations are conducted through subsidiaries that principally consist of health maintenance organizations (\u201cHMOs\u201d) and insurance companies. The Company\u2019s HMO and insurance subsidiaries report their financial statements in accordance with accounting practices prescribed by state regulatory authorities which may differ from GAAP. The combined statutory net income for the years ended and estimated combined statutory and capital surplus at December 31, 2022, 2021 and 2020 for the Company\u2019s insurance and HMO subsidiaries were as follows: In millions 2022 2021 2020 Statutory net income $ 2,851 $ 3,302 $ 3,667 Estimated statutory capital and surplus 15,503 14,879 13,238 The Company\u2019s insurance and HMO subsidiaries paid $3.2 billion of gross dividends to the Company for the year ended December 31, 2022. In addition to general state law restrictions on payments of dividends and other distributions to stockholders applicable to all corporations, HMOs and insurance companies a\n\n[Page 92]\nion to Citibank which, at the Company\u2019s option, could be settled in additional cash or by issuing shares. Under the terms of the ASR, the maximum number of shares that could be delivered to the Company is 43.4 million. Pursuant to the authorization under the 2021 Repurchase Program, the Company entered into a $1.5 billion fixed dollar ASR with Barclays Bank PLC. Upon payment of the $1.5 billion purchase price on January 4, 2022, the Company received a number of shares of CVS Health Corporation\u2019s common stock equal to 80% of the $1.5 billion notional amount of the ASR or approximately 11.6 million shares at a price of $103.34 per share, which were placed into treasury stock in January 2022. The ASR was accounted for as an initial treasury stock transaction for $1.2 billion and a forward contract for $0.3 billion. The forward contract was classified as an equity instrument and was recorded within capital surplus. In February 2022, the Company received approximately 2.7 million shares of CVS Health Corporation\u2019s common stock, representing the remaining 20% of the $1.5 billion notional amount of the ASR, thereby concluding the ASR. These shares were placed into treasury stock and the forward contract was reclassified from capital surplus to treasury stock in February 2022. At the time they were received, the initial and final receipt of shares resulted in an immediate reduction of the outstanding shares used to calculate the weighted average common shares outstanding for basic and diluted earnings per share. Dividends During 2022, 2021 and 2020 the quarterly cash divi\n\u2026 [13,981 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. CVS Health states that it has paid cash dividends every quarter since becoming a public company; its quarterly dividend in 2022 was $0.55 per share (page 68).",
+    "role": "assistant",
+    "reasoning": "**Clarifying dividend details**\n\nI need to answer using the document about dividends. It mentions that the company has declared quarterly cash dividends, specifically $2.910 billion in 2022. For Q2 FY2022, the quarterly dividend was $0.55 per share, confirming dividends were paid every quarter. The document explicitly states this on page 68, which will serve as a strong justification. So, the answer is yes, with citations from page 68 and possibly page 113 for total annual dividends.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying dividend details**\n\nI need to answer using the document about dividends. It mentions that the company has declared quarterly cash dividends, specifically $2.910 billion in 2022. For Q2 FY2022, the quarterly dividend was $0.55 per share, confirming dividends were paid every quarter. The document explicitly states this on page 68, which will serve as a strong justification. So, the answer is yes, with citations from page 68 and possibly page 113 for total annual dividends.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVflc2hKGZs9m7OxND3_KDvWHe3dLWibS2klZY6CgbnZWEHZlguMOQfgvSWh-fjN9ajaNBzl28F3fJ9RSkhNvyRGV0CzdCbKF9lH5CrstFMaOIeYa8IRLYU-rEl0DJivr-Pzi0M-V27yUKnVCvh6GvGCZlH6mjciOkDcKOkM6PbT-B0YD3YH8aBbtDjBdVlxaZBqYk3GgLUAiulQfTmjwv_ygva503cO1I1tzSRPMTZSz7Cff4iM7O5pnvHMOH9h_fzp6SbXuN2ZUMM2ljPDfAnS2P3noHJpQlmDDIWTYB3NpOcgLbIkiLk9Cz0dWI8qpwxPSNegGBEJFiiw_RwjInkX_nYFoRKSXlRVftr3gtaD0aebV0c4L13ftFCvF3CjGFbBAJ2rSYKau7uuWOr3QTbDcNP1AlYeaD5olgo94oz-3Z7W-CgDmcUVW5YagniHKRJTVMeWV_F5ifFHojoXSijfxsL8hQTq8FjlIhkfpEy4S3aZ5_rz95bDAIcuUyF7bjvv-D4HbEBXWubGqJ6nlTY36mzZ6jjQKcvOlYotrw5yjYsa9oTntoJTTeCPbrPrB23KxcKT7XwAeMDpl3beK3JRe6IElI8QDXe5MLIMjDxCw1QCE9DC8OvUtrg5tmJuYcqEuCJRyzSMeN00KSZU-YklK5gB4M59-G0Zle0QMQFjsEU80NmdXU516NNOz2snVj2RmeT9vkCHUUjQpnwlP8cm-VJxMJ-3hJ_XYkHbC4ukKRgwC7VS3YRwUJOh9RKGETgQ67a6UiyIZh3H6Jid_eGdxxTD8KPec_4eTTOeLrsg4-XNEPsJBXSYs57bbe7FO3wwsAQvY6hI6VcVGtNCv2-BtEVFgXNDoIoJ4bXnACZq0L_nf-8EVhqzVElwI0uUxszRd_8Cm4BWxpl1GA-6jJD68itK85rqAruCZUvtfAP-v31tNyaY4G2lyte1Xqdk29w21ZmWZqleqZZo9G7MOP1aN17NlBWbGt7oxXJItbiK8S8s_CysVLxX0pvrizejey7Cp-5AQs9nd6nqayCMGMXpyIM1HCyBanoRiw-Yo6aNdYNgAjwX79qVcDfCxE79FlzzeXyWxE6DcG_zAxSQagQa12SxDWPhqNCrLQZhD_IsqXwc_CS5mfUc5dx7Gs-UYkyafNA0E1iM7ojKwV_5xWcYLY0YzKM8gB-_nxAo5ZmnBupRYMl0u9FBt_XP7rOqMTTjKmSNb8JCrO7UXcNOfQKEV9iQlXUnrZXW9n__svbmnu_zxHKbwl7Q69BQkB3XbDMbfLyciamZ0MDVphTqiYK-EpZRylHQXD6Y88jtJqEfw-HfFkVJaPMeh0ohJ0vLVySqoagx9pjmMKYeRslRD-DoFAdK5mcbMmUwoaIKwZ_BNO0hxJvssNi528jdTXZakkMcmB8W4SX5CZZJf1Q2WSmlyg_YMAwb-vNupYurxCuPCBV2mT0o-Mu9l3oG6hQtvfePWqEyzFINKWwML2tXiYYUWiR22MvJ3pl5E8vi-skofH1HkY7_TYKA7WO1EUUAFqTzcqmJUBYvH0p-Ok0nAvbFIe5CiHVnWWK_vUlhi8LMtU34kYxt3aKUNGofYNZz_rs9f-_l_b-qijANYHm9F3v30ZQflRbDBUS-UQueRRboDVI_f6HPLYgqr2jSxG9DG-1CU7ZOFQM_-l65BoNxcYLolHQ0VIWXBesKj2xe1NyxoaW4VineQXnRsj6bWQ8GccKwXJvmJ2sXdVTwCgfnz7hYtTdrJqPpaNf3GQDN87nbGkbnl1ClUJc4kBYtgYWj4h8LVfpOnejBhnC6omBnja0wj3413m70pdPc22Jafnbf1togNrgUA23zXHNg4quWFNNruyojup8dkoCFisQnhQH1g8k0PbxlW68UvGf_sJbAtoli1Ca63bzvUYivUFnZ5Uk7CP0szAuXTEA6K1AcggBVtOA-RL9zwH2xd9h4Nb_LBOL9pB-I1yx0dZHpEcia7SQtj7J_kXTNne-V-DfkkYyI935mGOBlm3JGedDHnVSLF_v-NIotDshP_JGTNH38YLUgEi-E2RBu8XTT00Dftwn5p0YfBDxdicd1lklLjbPX61N9F6-yD7ROi1qRugpPhhp8Lbc349sNHmZxnxPi-UnGl1SzXxRD-y--Tz9JiHK_FGuExPXQungPHoDdF-4MZ-XLyg4MaavnkRtepPhIvyTyBQX6_ZvydWvDiaU_1maiz7P31zh0yyFDWlpB2hXa_0ip--AM6OIQ60VTNkKBXP95ERLiTy0ECRh-iPXYVXXIBQSU4_qa1OZ-I6pa4XKgbqkt0fMHeFUSNp0lu90sFEkI6cl1h1iLNUrNpf2QWRRQqmyAYHNQWMM0_XWfeDqIKXvm6RCRi-UqD5mAGkomtvHJ2qB6MZpFsNk9-ZkbJjlSvqr4vWGJfTwyqlsQ84keEXUKiwhtNFVhDaKROqpn9TrIJukMru_NdtLHSlrQpO3kit8QFjaLZg1gQ5GcpLo84jo.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0ce0b61587084283016ac2155c71c487d1b656d241b49a3d07",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4130,
+   "output_tokens": 233,
+   "reasoning_tokens": 189,
+   "seconds": 4.24
+  }
+ ],
+ "answer": "Yes. CVS Health states that it has paid cash dividends every quarter since becoming a public company; its quarterly dividend in 2022 was $0.55 per share (page 68).",
+ "retrieved": [
+  {
+   "page": 92,
+   "score": 0.718
+  },
+  {
+   "page": 168,
+   "score": 0.6993
+  },
+  {
+   "page": 92,
+   "score": 0.6643
+  },
+  {
+   "page": 68,
+   "score": 0.6542
+  },
+  {
+   "page": 93,
+   "score": 0.6011
+  },
+  {
+   "page": 4,
+   "score": 0.5814
+  },
+  {
+   "page": 70,
+   "score": 0.5796
+  },
+  {
+   "page": 113,
+   "score": 0.569
+  },
+  {
+   "page": 167,
+   "score": 0.5644
+  },
+  {
+   "page": 15,
+   "score": 0.5625
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer says yes and gives the $0.55 quarterly dividend per share in 2022, which matches the gold answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001332,
+ "provider": "llmfoundry"
+}

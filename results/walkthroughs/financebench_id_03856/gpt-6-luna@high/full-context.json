@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_03856",
+ "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+ "gold": "0.83",
+ "doc": "ADOBE_2017_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.5,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 86151,
+  "cached_tokens": 0,
+  "output_tokens": 128,
+  "cost": 0.0086791,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES\r\nSECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\n_____________________________\r\nFORM 10-K\r\n(Mark One)\r\nANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 1, 2017\r\nor\r\nTRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to \r\nCommission File Number: 0-15175\r\nADOBE SYSTEMS INCORPORATED\r\n(Exact name of registrant as specified in its charter)\r\n_____________________________\r\nDelaware\r\n(State or other jurisdiction of\r\nincorporation or organization)\r\n77-0019522\r\n(I.R.S. Employer\r\nIdentification No.)\r\n345 Park Avenue, San Jose, California 95110-2704\r\n(Address of principal executive offices)\r\n(408) 536-6000\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of Each Class Name of Each Exchange on Which Registered\r\nCommon Stock, $0.0001 par value per share The NASDAQ Stock Market LLC\r\n(NASDAQ Global Select Market)\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\n_____________________________\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes No \r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes No \r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 \r\nduring the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements \r\nfor the past 90 days. Yes No \r\nIndicate by check mark whether the registrant has submitted electronically and posted on its corporate Web site, if any, every Interactive Data File required \r\nto be submitted and posted pursuant to Rule 405 of Regulation S-T (\u00a7 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the \r\nregistrant was required to submit and post such files). Yes No \r\nIndicate by check mark if disclosure of delinquent filers pursuant to Item 405 of Regulation S-K (\u00a7 229.405 of this chapter) is not contained herein, and will \r\nnot be contained, to the best of registrant\u2019s knowledge, in definitive proxy or information statements incorporated by reference in Part III of this Form 10-K or any \r\namendment to this Form 10-K. \r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer or a smaller reporting company. See the \r\ndefinitions of \u201clarge accelerated filer\u201d, \u201caccelerated filer\u201d, \u201csmaller reporting company\u201d, and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer Accelerated filer Non-accelerated filer \r\n(Do not check if a smaller reporting \r\ncompany)\r\nSmaller reporting company Emerging growth company \r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act). Yes No \r\nThe aggregate market value of the registrant\u2019s common stock, $0.0001 par value per share, held by non-affiliates of the registrant on June 2, 2017, the last \r\nbusiness day of the registrant\u2019s most recently completed second fiscal quarter, was $52,575,558,763 (based on the closing sales price of the registrant\u2019s common \r\nstock on that date). Shares of the registrant\u2019s common stock held by each officer and director and each person who owns 5% or more of the outstanding common \r\nstock of the registrant have been excluded in that such persons may be deemed to be affiliates. This determination of affiliate status is not necessarily a conclusive \r\ndetermination for other purposes. As of January 12, 2018, 491,578,529 shares of the registrant\u2019s common stock, $0.0001 par value per share, were issued and \r\noutstanding.\r\nDOCUMENTS INCORPORATED BY REFERENCE\r\nP\n\u2026 [402,418 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**FY2017 operating cash flow ratio: 0.83**\n\nCalculation: $2,912,853 thousand cash from operating activities \u00f7 $3,527,457 thousand total current liabilities = **0.83**. (Cash flow statement, p. 61; balance sheet, p. 57.)",
+    "role": "assistant",
+    "reasoning": "**Calculating cash flow ratio**\n\nI need to calculate cash from operations by dividing 2,912,853 thousand by total current liabilities of 3,527,457 thousand. That gives me a ratio of about 0.83 after rounding. After I have that answer, I\u2019ll provide a short justification and include the calculations as well. I\u2019ll refer to pages 61 and 57 to support my findings. This will help clarify the reasoning behind the numbers!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating cash flow ratio**\n\nI need to calculate cash from operations by dividing 2,912,853 thousand by total current liabilities of 3,527,457 thousand. That gives me a ratio of about 0.83 after rounding. After I have that answer, I\u2019ll provide a short justification and include the calculations as well. I\u2019ll refer to pages 61 and 57 to support my findings. This will help clarify the reasoning behind the numbers!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhwTGYf44Ebz2JJ2W8ijxieCgU08GEsPcgcHUinceN35W2VTPnRoj8Minj_U3bamhiCYUlDuT8BJOPiUY5QeFllperp70z7Ku1Bti5hHNB8HyNLLaD5YX8vB-cwPAbv6T386b3rfo-EhnPZhv8fz-mDBpEp63Dk-7zXPv7cdG2rxMbR4999QetikdvfvYo8RR_NDgJl57APChTE-3hfSHTAjPA2iij3uHBumoIvu5pzslQWTJETHuD8_XREycyEF6kvRo4rRxDfTnVBLZ58HeBB97xpMwPveIrVGCTXPVJ-XaaR1CGDqaTx_S5mMUYnXgMzOmue2AqUMj2LpNTfPJS5zju8c2FFg8yWKGHDo79WUoJvtxjYPRkDVM8xhq0E10r2FMViTlyPdiHJxVirT_FS4ymv7t7-YINlwCPhqBDmL80UJ7EknVp3zJdszPgCoDdNV8LN45lXJcwlEeGSFReWb2PiTO9-2ws16yOWVhnuKicBoz3CIQCgYqqFwfPAw10n2D7z-BGB3Q5zwnJvxx7XYHyY_TRJT1mfsinoL-sJDgCplPmWy8H5vpO-2kepioHP8mEfSsxkXC-vgYRAG9cfrZfyCI5ur2zpmFFL-oqIfujsjIbklLqgzCd_DrRqlCqMwiq0XG9gySeodGrRwTsh3G1wkruhZSC_hhBSvLb10lDFKxQNmYfXjlmU0IEGflPyRhd4CRG7NntisI3iM6Jk0QVfhhItyHkysXQGwDQwAA0LkTCchUiXpdu0wwpjeTOfHss8l-ISwq0jzX2Vs7s80Y9sY2NGLuOGCYuK63JwFXNPXkRzFWDseLdypDX7Tz4o751lTIj6X-1fv0kPiFc6eE7rP4PaM7JRj7al8fJF22H894eiDeEly07CRe3LpOl-znwFj7XW_Kku0hxepqPcsq6IPjt5F3IihkPLGcLkyAx_cSZsk9INRxYyp0RqWThm3JAooZGWQxmAiQpIFRvB5Lk8R-kYmdV5yHKwSaCLGhB7niLxLd5tT-u-q3eBGwB23ZuE94K8Ahm_wrHehP6ErEtljOZmEaNg4jrKQbkW_GbqjyXWlCSj-j27i40gcWBYwUdwyUuoB6G94Rxxyj1wbPcSuhgaZEOcAmfO_ndCkyC5cwC9vCoFqCwoTMCc9SJOK-RFuR-mjisU6FPqACxrurnHcccCail0KkmkpkiJ6pY8whNeXu6eELH_J7vEAZzzFImyjE9jQ-zodgHQsYDNYN46Kj4kZvUyuff4irDSU1MajU7y7QO-bHetftL5fe6hgNuzzVqRFXa_2iQtSxaymb5JtbZzEa12lUi-ZN1ucZoaMpsO1ygGRNJF6iokxr5FHFteKcw4O3MHfXjsjiPuQJqc_JazI9IpgL4ux1wujYYPN02vRI7xZ9UjAaab8YkWu8ooy5zGJVizTx7AOilXxjVBozL3sSao6Bd-yJis6_W9S8D9QwwHpDPXhrF6vYKUrBqKy5HbkMfK-AfuIWroG3on9wlKgJkHsvsROIHi0Cnth98AnjYXtWuxE-yoV_O_A8GfwNTNiYaZvomromUEKAzIuTx9y3DtfIdnZOiqYmsSRRsGONszkObTkOxgNaU4RHBLx9gSSVazPcd3AZ4lbKQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0a5df67c3d5e4e6b016ac21c122a4887d189f85872b411db3c",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 86151,
+   "output_tokens": 128,
+   "reasoning_tokens": 58,
+   "seconds": 3.48
+  }
+ ],
+ "answer": "**FY2017 operating cash flow ratio: 0.83**\n\nCalculation: $2,912,853 thousand cash from operating activities \u00f7 $3,527,457 thousand total current liabilities = **0.83**. (Cash flow statement, p. 61; balance sheet, p. 57.)",
+ "verdict": "correct",
+ "reason": "The answer gives 0.83, which matches the gold answer, and the supporting calculation (2,912,853 / 3,527,457) is consistent with it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001598,
+ "provider": "aipipe"
+}

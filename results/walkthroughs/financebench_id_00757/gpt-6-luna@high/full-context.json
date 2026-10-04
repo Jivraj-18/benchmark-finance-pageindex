@@ -1,0 +1,62 @@
+{
+ "id": "financebench_id_00757",
+ "question": "Did AMD report customer concentration in FY22?",
+ "gold": "Yes, one customer accounted for 16% of consolidated net revenue",
+ "doc": "AMD_2022_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 4.9,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 87950,
+  "cached_tokens": 0,
+  "output_tokens": 93,
+  "cost": 0.0088415,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nTable of Contents\r\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934.\r\nFor the fiscal year ended December 31, 2022\r\nOR\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934.\r\nFor the transition period from to\r\nCommission File Number 001-07882\r\nADVANCED MICRO DEVICES, INC.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 94-1692300\r\n(State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.)\r\n2485 Augustine Drive\r\nSanta Clara, California 95054\r\n(Address of principal executive offices)\r\n(408) 749-4000\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\n(Title of each class) (Trading symbol) (Name of each exchange on which registered)\r\nCommon Stock, $0.01 par value per share AMD The NASDAQ Global Select Market\r\nSecurities registered pursuant to Section 12(g) of the Act:\r\nNone\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2611 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Exchange Act. Yes \u2610 No \u2611\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such\r\nshorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes \u2611 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months\r\n(or for such shorter period that the registrant was required to submit such files): Yes \u2611 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See definition of\r\n\u201clarge accelerated filer,\u201d \u201caccelerated filer,\u201d \u201csmaller reporting company,\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge accelerated filer \u2611 Accelerated filer \u2610 Non-accelerated filer \u2610 Smaller reporting company \u2610 Emerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards\r\nprovided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting under Section\r\n404(b) of the Sarbanes-Oxley Act (15 U.S.C.7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u2611\r\nIf securities are registered pursuant to Section 12(b) of the Act, indicate by check mark whether the financial statements of the registrant included in the filing reflect the correction of an error to\r\npreviously issued financial statements. \u2610\r\nIndicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-based compensation received by any of the registrant\u2019s executive officers\r\nduring the relevant recovery period pursuant to \u00a7240.10D-1(b). \u2610\r\nIndicate by check mark whether the registrant is a shell company (as defined by Rule 12b-2 of the Exchange Act). Yes \u2610 No \u2611\r\nAs of June 24, 2022, the aggregate market value of the registrant\u2019s common stock held by non-affiliates of the registrant was approximately $139.8 billion based on the reported closing sale price of\r\n$87.08 per share as reported on The NASDAQ Global Select Market (NASDA\n\u2026 [415,564 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. One customer accounted for 16% of AMD\u2019s FY2022 consolidated net revenue; those sales were from the Gaming segment. (pp. 12, 69)",
+    "role": "assistant",
+    "reasoning": "**Clarifying customer concentration**\n\nI need to provide a direct answer with specific citations from the document. It looks like one customer contributes 16% to the net revenue, and that could be customer A from the gaming segment. I should clarify this point and refer to pages 12 and 69 for justification. It's essential to ensure everything is well-supported and accurately represented in the response!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying customer concentration**\n\nI need to provide a direct answer with specific citations from the document. It looks like one customer contributes 16% to the net revenue, and that could be customer A from the gaming segment. I should clarify this point and refer to pages 12 and 69 for justification. It's essential to ensure everything is well-supported and accurately represented in the response!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhU1w5fU3e0cu82a9FlrfQ2eDSFA59A-iY3xiz-0ukMBqYq8eMlJTCRH2-lPOPm5kMDoqoRe4oCOp3SkJHELyL_IwUX240M3oXPF2UD9iY5hLhtRGPxHv29yOjZPLQIGbsmD5Gd9v72F3HFWH4mGlXJVYYEiAaLzS3DlY6d9giaRvuC7kqU3yxfbFtEd_y35FaXRCbm0EQkaI3LYrzxogWUULHEzeN6z9Az_kZnni0hGwljcC3bmJUTXkQXkOJBoKP6kdhXxlXySoYbSnsf88_UZb0UM2QIRKWKTXlPJU-mBGjTWeRsbzOufVtmXRB_kzDnwq8kJIRLLHHQQkcsNK6T5IkS6HnNl0Lvu1715qFTx45GCtVHgyXGSTkx1oJincjYLcaBF5eoHTA1Gs2yBVRAj1LhxOZkWHo8t5aE3-9uI98dsNf_ZVxsb07bVuZy6awbti8KuwQXq2ubVse02b66CG0Xq2M2MUqOzA53cvFoEais7RK9v0fhl4xy7-HLekC0XbotjIW1_nL_RCxANl1i-_njDcPmzJKmh-j6OLYnOvS0YA1b_vUuaxYWQtXN6nTGzqc6pYxAsCdyiQeQr2-V4sFaXijQZOEKYrbTGLukZWixfCbKk6rJ3Ubw7hssT8q1f3I_ZT7GteunBUC0Dh4vEPNd_54mwPkWp7HBqqYzFDQBdwAKbMFSWdWsYuIWPflasPeJomdkTR0UUqyNc7FDPTyw17QPV9TXjXFUL-Ng7D_fnE9A_DlQvkR8PI6zdE4sGC8UYFGk5jCAciMqVNvNUUrPoY1FMKKDnC9lTZjxpHWrTBVXLZi77ClzhmqKWn61dTR1NTcglgtb-5C7ljIbXE08VkJT7gITzWCEzSREdN5cAxXAluX5u25DOym0Azf4sUZKx8pc_hR4cE_Dstaf4HXk9VN_g9cr-tog6z9QH7s3nUKWClAWtp4ZkAgzIsaFqQ4KIhJJHzvbXIpoYD-ZJYgPa_4cvE_lUrquAB1JBql42D6qdaHPi2TFdJA5wLDbXVc4nUhqyJlOnWargtDiCUCwvlQn0veCRO7fkpFHa_l2RiT_yHRpLKAwSOIiXDaimwgh7hiqu0cSNeR1j_dJ0FshVW_3CJlnDgPNU3nkYvxCEHXbjamg1gFsYSXWm0RaiI2tGtGf29a7SAO7Xqls0RVTw5SQZo2rgpIaKVojw6uBUBriohjZZ5s0g1vvnGWZ_ZOCbYs5bvqmeIVFrBGEWMI2diKV756da7O7N3m5kXQ5zG8OLrWhV8ZQqLd6Fq6NKcMsnReFMlo1J9z4ENJrSe8FxudrId1uOeZDstvNT-E7xhb8vPt19rvd2zARXNGE4EqSKxLu2gYUl1QMOpb007HVpKx-Z4fTOsjdhZilX7I2ufCt-KHumw4kyi_vtiJQMDjBgruPkiENEoJnfd1RMPQeu9krkYl8HQJgoNlHXloyFf2tpz5AXVyd8wi8lA9XQ7ZRtenMfTXGAxFLHUZJ1eC6YgG4BZ7Uq2d6ugF_Yziw_JYbH8COe7aEW6InEqY7nuxx0nUzGmw2qY9yybDOh8Jmll9u4FG-aWLOV9voSOm-RF94Gt98AC2bWh9Tt6t2km5yQWUUzIx3Htdlxjb2LOQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_03177bb39e2b2862016ac215348e7c87d1bea667c46b6ad530",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 87950,
+   "output_tokens": 93,
+   "reasoning_tokens": 51,
+   "seconds": 4.94
+  }
+ ],
+ "answer": "Yes. One customer accounted for 16% of AMD\u2019s FY2022 consolidated net revenue; those sales were from the Gaming segment. (pp. 12, 69)",
+ "verdict": "correct",
+ "reason": "Confirms customer concentration with one customer at 16% of consolidated net revenue, matching the gold answer; the extra Gaming segment detail is supporting information.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002788,
+ "provider": "llmfoundry"
+}

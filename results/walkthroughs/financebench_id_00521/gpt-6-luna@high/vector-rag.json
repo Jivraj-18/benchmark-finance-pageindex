@@ -5,13 +5,13 @@
  "doc": "ULTABEAUTY_2023_10K",
  "method": "vector-rag",
  "config": "gpt-6-luna@high",
- "seconds": 5.6,
+ "seconds": 4.7,
  "usage": {
   "calls": 2,
   "input_tokens": 4032,
-  "cached_tokens": 0,
-  "output_tokens": 86,
-  "cost": 0.00044677000000000003,
+  "cached_tokens": 4010,
+  "output_tokens": 115,
+  "cost": 0.00010037,
   "effort_fallbacks": 0
  },
  "calls": [
@@ -30,27 +30,20 @@
    "reply": {
     "content": "I cannot find this in the document.",
     "role": "assistant",
-    "reasoning": "**Clarifying document details**\n\nThe user is asking for information on major acquisitions for FY2023 and FY2022. However, the document excerpts refer to fiscal years that ended in January 2023 and 2022, and I don't see any mentions of acquisitions. It seems like the request might be a bit tricky. I think I need to extract an exact phrase from what's provided to respond accurately. I've got to ensure I respond with what\u2019s requested precisely.",
     "reasoning_details": [
      {
-      "type": "reasoning.summary",
-      "summary": "**Clarifying document details**\n\nThe user is asking for information on major acquisitions for FY2023 and FY2022. However, the document excerpts refer to fiscal years that ended in January 2023 and 2022, and I don't see any mentions of acquisitions. It seems like the request might be a bit tricky. I think I need to extract an exact phrase from what's provided to respond accurately. I've got to ensure I respond with what\u2019s requested precisely.",
-      "format": "openai-responses-v1",
-      "index": 0
-     },
-     {
       "type": "reasoning.encrypted",
-      "data": "gAAAAABqwhPuBDuam_HMSZl8y0UOE1vZZUnzcNj5zeKmjAO4yDxVa7JShR3ag9pWX-cphMoYzfXAkUq0J5tVJSUVZGcPyi-aw-Dt175Ggj3hWqkfO97_o7VrjSkKmnXQykwC7LCR_rUy7Yq8xrcw9XqNdtNOQN_JCzrwJcSKtB0QsFh4UY4nnQXNkwXxa53zvsBhPBgYiBEJjPblx7SeiXvzGha-mQoVqz8yQhW-nZ225XE_EARChoexyUdZywPKEF2uiZd8ErzZDAC60Si20iae7wSalXfL0S3vgOUwI1jTMCpMG08icCU_abMwZcWc24jUjl75Q25pcJiQ3LKHApdGDQ0FK0jRtfOah3dIukVXQzQKq1SWr2bqH1F1GPy0QXfOa3a87qQI8NvnAPcIZdAXm4jeoLjBloaBzT5igGQx_YRL5xoaGyJ17YoKStaK85QXIeaDmgyHsAoxfqLwO3XPNWdYxs3pi-arHDbcudCaBqenkWDEaRDMU6asQchhlazt7bh9GL4F_Eyei82zixxJeaTRYpmU2cTXRy7Q948bRitHxJmpCUcEc_momGVTrS5Y_JbNVzPxSc8WclFL_1XiDQZ2QoZrlG1sKsScF9R5AK4voSFAiVSlcf01GNgianx17rs4F49evXe1LRNdzDHtAif-zExWllWUFVZ4oVL3bnlgCQkSIM8T6VQ1wNrfcaIe7Q-vgdDtmAmDehkpxCrqeAE-0NBKgp1Out5H_N5qA7fnvHQqi8dDUWKwiXE_hziUf3WZg5ty2ro3U3yVkCrU74rMh3f3Wzm7vpopig1eSWEacJYz6bc7q0pBkNurxblvIr0LjkMxq6vEG74UHyWGBvOvMwMTOJkAG4VDxvlzOWDltFOXRZS9YG1JuXldSMKI_fwJksEo4WyJ_5kE_Y3x71Mn3siwDDnwXp8O1TkaO2NMTxzMXen2owm91nhpdMAHVZguSzwAQyJts2do7XUPSwSZ45j7ytUhhbu7iVYMc6K6yX2B4AP-IpbgL3_Ofr662Xqh3cI8nnLrj_2WZVJ748-X6MMLidvqD6GAqa_AZUitEXKskLRltE44OswZKgGsgI16cvCH-2PA01S5xXT28zJwJbfN1nYRMZXQQ3O2jhvxz1YVHgMld6rByWaK8LV4QVwlaY_DONTT8IN0t6s3NuxQNJJvXtoudQGVntlbiXwdHCXX6KOYWdzwwK6SJ7tts65cZ9kkdN8xGkmHQamPMG8oQFTqQKcRJLz7vs-uxtq5Ey4r81qluHSeJI5my6oApw8QyCUyfWgr4Vrm55WzMenZNgZyCcl-bo913KCOrF-GQxoUbwgp4Co5p-miZHA0HpMN3mv770TcAQZYBDz8o55imddBfweRr3qhUrN98S4Ip16fqhtRg4S2YwW7sJfy6hF80WgvrSoI_ETz8AwPV5Nyr0gVTsBGjyDXdcqdRlApYKJ_7do8vUz1bVyvVKz4zCGVZB82-PN_RaRy5hxr31wCsqrqsc8HexnfSRMeHhaRGznbOumQQgV5w5s6Ct_NKpQLkb7yHtxp00njfyRU8EE52LmtO6ra6t9VdxzdGhX9ptQlbrhrIFJ01_kkaWy8ikI8YIbmU75231OjN164vx0WybQtoDepOfr-btENDqj0iGLlKczC0bNPjprRCyjjfr1sTa19Si4IfrKhhO_IqlVSG3FKXcyAJzvWIFx6YW5m--WjNCAIay3hdZAX6NKsatKPBPOoMawuZvu-hZxkmPFN_rKAu_OmdPKC0FW9xqaT2qBiHmX9ahPeXgA4NCP9IkRDx0Lm.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "data": "gAAAAABqwhU7ZP88iu6vysunl4uWc1tkSgoaLqCjbJbWcrRXwFN6A2PYnkWTJljRp86PieLdKe0HND0-NQMqtU2f7BFlWfcTHQ3fzUlAEtreuQUAIxuaWtYshYptoQQATehKWbMUC7IOyrl5MIvwAAcn1BWgdfLyxJsQtCw--fOTPTVQ0p4rg8JF2oFt3QTyOSUQkm_WVzL3Yillg8p-HCE3eqIAsy5lyZQTipxI2yHale5JvTPQi3Sh9d0MV_GkyQyLHkmJHuMVrBFYrrG3-z3f1KRmkYxdb4lO3e0dcgzgwTtVdmOIurU71cGvNTC2SmY5dG-3dIL2g7uAk-ElIPXE6huA0hGcBgcfNOsJGktg1qUYuElD1UpoGhQWZPa9971S0JgCrNJorZvskd89AXiIm85Uq1thCf0tzAfOzU72zIYALJ2lxeNUJhnBJuvGJKK3V1kOs25__MyVXqsWI26X7ug0batAbHlFcXC0YqWBpY1b7ngYqzVoexKM2zthVNjIJ-wOwLz4kc69RD5tzjMKeH-ijbuc1Cd-u0OVJ4xkxL5PDiPRPKUq0M0LEp4hLiz5upUH5KnFHsd-lYvZWWsN0eRGoMnKLYk1voF57cJCLp9sMm1G4cRdJIPk6xVvZQHJLviCMFckigeX8OElW-uKnZUZ2ZhZTBgNNcSjx7AUMsIrOm8aczY10Dc-VFqw15vY_4rcYP6Dl3t3qh8g-zz17ldtLT58c-hkV8yN6ROiilUD0AsC1GT8DxnDEni_6Jad4aQI-RKsaNxL900qBDyt-Gy8pBOR2NgXpie-WkbJYA7Da0zVLL_tItQt5ApIRHt3GVM_yzsrCiQMmFAMe82uO7LpexvpTurWxzPKWwFCFZw_Lu3auQDC9P6MEHMqu8-xVHiROwZI9gRtQX61tQdTkRPRXwyxtnhM3ihRVpdqPdq_8lVpIyFlgUvOw-d2OE1f8ba96mieGwVJColHCSW5xSEvVyNxnYwUHHufEqjqGcOlUCEuygIrvlq0Q1IRnJlJC_8j73qGuvTYuGJ-n2ZzujzGehiqSqPYp9155vJOkSJYOFqjHE80uzskTCp9whYPhuRB8Lt-TTpS9f0GepNOr_MpaWmfor34ZvFg6drdrkVObGOk82CMOsYh0qwJ4fymLAdXF9VTaUQg5S7fDpZ6IndBhZsWeDpME9zPrr9gJgP2IztVYVUjMMcb-IGvRzaBwaeUiom8NLXauUMO11DR4cVtCa7nhDrJUtJc73CP3yeXRW3pWZZQhTonv-nx_b-Oz6V0Em50TUYk-8QMmthlwecEdTPctVxvtZ0qL-FAhJg7jj5p03ZKhgFlu3Q35SRTu6vjeZyioz-q8PMnh0osxg0vVRzC6mudQNQAu0Gduuc7oY-8fpj1yqRC74xNmenH6cVp5cqrfHvHffjNIfpP9HEKqHZk3j_SbW8zoQOp4ThCYBCBD9fA1LfjNMuXSj6fIz6l0wD7DwBtic9cZ190iUO4gg5Oc4BtI-nT4jya0WPFVqOQa-Rjb_Fcqn4HuyEIldI2oLePoiTrfRMfnQxjOqjdCI6IFzJjZ5HTMtQwrXAvYArXU_4Cem_lT7bffJbif2Y-0HdUwi_Whuit1amGfK4qFr3n-cJd-9Au91WhJ7l7yepEDxoll9IVlminY3jjx8xK5lJOYkWCF9kjzPKOdU2eI87Zem_NR-6KsGZ8amKo-N2uVWKgorNePfIGdjPa_594eAbK_f-HeIUvRlsFwuEzQACnIO-yCLfy0IIsO2yh1PPrjvzt9zdaYLE22U-n0RGj2DqN-QLSUYH2KQGnlqef30L_IddEuwwe1BjxtNCUoGMK_PKa3Fb40UYrFRWsDj-PDzpwhBB9GfrRSHFnzPfpOenjNa7CTXOzxgbA-5235YfR7BeaPTyRI4u7iMOtjWAzmhMpByEvYtr-ndkt8NoUK8vCqcEn955XvWq467_hhMM5KFM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
       "format": "openai-responses-v1",
-      "id": "rs_08c3d4d6d098dc8e016ac213ece4a887d19f493e43c72198e5",
-      "index": 1
+      "id": "rs_0491c39485f451b2016ac2153a696887d1bb39aca4f2d20a67",
+      "index": 0
      }
     ]
    },
    "input_tokens": 4013,
-   "output_tokens": 86,
-   "reasoning_tokens": 72,
-   "seconds": 3.48
+   "output_tokens": 115,
+   "reasoning_tokens": 101,
+   "seconds": 3.56
   }
  ],
  "answer": "I cannot find this in the document.",
@@ -97,7 +90,8 @@
   }
  ],
  "verdict": "refusal",
- "reason": "The answer says it cannot find the information and does not commit to the gold conclusion that Ulta made no acquisitions.",
+ "reason": "The answer says it cannot find the information, so it does not state the gold conclusion that Ulta made no acquisitions.",
  "judge_model": "claude-sonnet-5.5@medium",
- "judge_cost": 0.001246
+ "judge_cost": 0.001246,
+ "provider": "llmfoundry"
 }

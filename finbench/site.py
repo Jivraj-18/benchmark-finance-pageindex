@@ -1,10 +1,10 @@
 """Build the GitHub Pages site in docs/ from results.
 
     uv run python -m finbench.site --limit 30 --walkthrough-config gpt-6-luna@high \
-        --walkthrough-order financebench_id_04103 financebench_id_00302 financebench_id_01107 financebench_id_00521
+        --walkthrough-start financebench_id_04103
 
 docs/index.html        cost vs accuracy: one dot per method x setting
-docs/walkthrough.html  each method's steps for the questions in results/walkthroughs/
+docs/walkthrough.html  each method's steps, per question (docs/walkthroughs/<id>.json, loaded on demand)
 
 Templates live in finbench/templates/; this module only prepares their data.
 """
@@ -107,29 +107,33 @@ def steps(trace: dict) -> list[dict]:
     return out
 
 
-def walkthroughs(config: str, order: list[str] | None = None) -> list[dict]:
-    """[{question, gold, doc, methods: [{method, verdict, cost, calls, seconds, steps}]}] for one setting.
-
-    Questions follow `order` (question ids) where given, then the rest by id.
-    """
+def walkthroughs(config: str, questions: list[dict]) -> list[dict]:
+    """One entry per recorded question, numbered in sample order, with each method's steps."""
     out = []
-    folders = sorted(WALKTHROUGHS.glob(f"*/{config}"), key=lambda f: (f.parent.name not in (order or []),
-                     (order or []).index(f.parent.name) if f.parent.name in (order or []) else 0, f.parent.name))
-    for folder in folders:
-        traces = {p.stem: json.loads(p.read_text()) for p in folder.glob("*.json")}
+    for n, q in enumerate(questions, start=1):
+        folder = WALKTHROUGHS / q["financebench_id"] / config
+        traces = {p.stem: json.loads(p.read_text()) for p in folder.glob("*.json")} if folder.exists() else {}
         if not traces:
             continue
-        first = next(iter(traces.values()))
         out.append({
-            "id": first["id"], "question": first["question"], "gold": first["gold"], "doc": first["doc"],
+            "n": n, "id": q["financebench_id"], "company": q["company"], "question": q["question"],
+            "gold": q["answer"], "doc": q["doc_name"],
             "methods": [
                 {"method": m, "verdict": t.get("verdict", "error"), "reason": t.get("reason", ""),
                  "cost": t["usage"]["cost"], "calls": t["usage"]["calls"],
-                 "input_tokens": t["usage"]["input_tokens"], "seconds": t["seconds"], "steps": steps(t)}
+                 "input_tokens": t["usage"]["input_tokens"], "seconds": t["seconds"],
+                 "provider": t.get("provider", "llmfoundry"), "steps": steps(t)}
                 for m in METHODS if (t := traces.get(m))
             ],
         })
     return out
+
+
+def question_list(walks: list[dict]) -> list[dict]:
+    """The walkthroughs without their steps: what the home table and the question picker need."""
+    return [{k: w[k] for k in ("n", "id", "company", "question", "gold")}
+            | {"results": {m["method"]: {"verdict": m["verdict"], "cost": m["cost"]} for m in w["methods"]}}
+            for w in walks]
 
 
 # ---------------------------------------------------------------- render
@@ -146,19 +150,29 @@ def main() -> None:
     parser.add_argument("--limit", type=int, help="same seeded sample as finbench.run --limit")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--walkthrough-config", default="gpt-6-luna@high")
-    parser.add_argument("--walkthrough-order", nargs="+", help="question ids, in tab order (first one opens by default)")
+    parser.add_argument("--walkthrough-start", help="question id the walkthrough opens on (default: the first)")
     args = parser.parse_args()
 
-    meta = {"questions": args.limit or len(load_questions()), "settings": grid(), "methods": list(METHODS),
+    questions = select(load_questions(), args.limit, seed=args.seed)
+    meta = {"questions": len(questions), "settings": grid(), "methods": list(METHODS),
             "judge": CONFIG["judge_model"], "index_model": CONFIG["index_model"],
+            "config": args.walkthrough_config, "start": args.walkthrough_start,
             "repo": "https://github.com/Jivraj-18/benchmark-finance-pageindex"}
+    walks = walkthroughs(args.walkthrough_config, questions)
+    listing = question_list(walks)
+
     SITE.mkdir(exist_ok=True)
     (SITE / "style.css").write_text((TEMPLATES / "style.css").read_text())
-    (SITE / "index.html").write_text(render("index.html", {"meta": meta, "cells": chart_cells(args.limit, args.seed)}))
-    walks = walkthroughs(args.walkthrough_config, args.walkthrough_order)
-    (SITE / "walkthrough.html").write_text(
-        render("walkthrough.html", {"meta": meta | {"config": args.walkthrough_config}, "questions": walks}))
-    print(f"Wrote {SITE / 'index.html'} and {SITE / 'walkthrough.html'} ({len(walks)} walkthrough questions)")
+    steps_dir = SITE / "walkthroughs"  # one file per question, loaded when it is opened
+    steps_dir.mkdir(exist_ok=True)
+    for old in steps_dir.glob("*.json"):
+        old.unlink()
+    for w in walks:
+        (steps_dir / f"{w['id']}.json").write_text(json.dumps(w))
+    (SITE / "index.html").write_text(render("index.html", {
+        "meta": meta, "cells": chart_cells(args.limit, args.seed), "questions": listing}))
+    (SITE / "walkthrough.html").write_text(render("walkthrough.html", {"meta": meta, "questions": listing}))
+    print(f"Wrote {SITE / 'index.html'}, {SITE / 'walkthrough.html'} and {len(walks)} walkthroughs in {steps_dir}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,111 @@
+{
+ "id": "financebench_id_01079",
+ "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+ "gold": "Amcor completed these acquisitions during FY2023:\n-100% equity interest of a flexibles manufacturing company in the Czech Republic\n- 100% equity interest in a medical device packaging manufacturing site in\nShanghai, China.\n-acquisition of a New Zealand-based leading manufacturer of state-of-the-art, automated protein\npackaging machines.",
+ "doc": "AMCOR_2023_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 8.9,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3617,
+  "cached_tokens": 0,
+  "output_tokens": 772,
+  "cost": 0.00074836,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 30]\nOverview Amcor is a global leader in developing and producing responsible packaging for food, beverage, pharmaceutical, medical, home and personal\ufffecare, and other products. We work with leading companies around the world to protect their products and the people who rely on them, differentiate brands, and improve supply chains through a range of flexible and rigid packaging, specialty cartons, closures, and services. We are focused on making packaging that is increasingly light-weighted, recyclable and reusable, and made using an increasing amount of recycled content. During fiscal year 2023, Amcor generated $14.7 billion in sales from operations that spanned 218 locations in over 40 countries. Significant Developments Affecting the Periods Presented Economic and Market Conditions During fiscal year 2023, we have continued to experience intermittent supply shortages and price volatility of certain resins and raw materials as a result of market dynamics, especially in the first half of fiscal year 2023, and higher rates of inflation impacting energy, fuel, and labor costs. In addition, higher inflation, especially in Europe and the United States, has led central banks to rapidly raise interest rates to dampen inflation which results in higher interest expense on our variable rate debt particularly U.S. dollar and Euro denominated debt. The underlying causes for the continued volatility can be attributed to a variety of factors, such as the Russia-Ukraine conflict and higher inflation in many economies, which has resulted in increased volatility in energy and food markets and impacted global economies. This has led to reduced consumer demand for certain of our products and customer destocking in fiscal year 2023. We will continue to work closely with our suppliers and customers, leveraging our global capabilities and expertise to work through supply chain disruptions and other resulting issues. In addition, we are focused on driving costs out of our business in this ch\n\n[Page 32]\nResults of Operations Consolidated Results of Operations ($ in millions, except per share data) 2023 2022 Net sales $ 14,694 $ 14,544 Operating income 1,508 1,239 Operating income as a percentage of net sales 10.3 % 8.5 % Net income attributable to Amcor plc $ 1,048 $ 805 Diluted Earnings Per Share $ 0.705 $ 0.529 Net sales increased by $150 million, or 1%, in fiscal year 2023, compared to fiscal year 2022. Excluding the pass-through of raw material costs of $776 million, negative currency impacts of $426 million, and the negative impact of disposed and ceased operations of $207 million, the remaining variation in net sales for the fiscal year 2023 was an increase of $7 million, or 0%, reflecting price/mix benefits of 3% and unfavorable volumes of (3%). Net income attributable to Amcor plc increased by $243 million, or 30%, in fiscal year 2023, compared to fiscal year 2022, mainly as a result of a pre-tax net gain of $215 million on the disposal of the Russian business in fiscal year 2023, decreased restructuring, impairment, and other related activities, net of $123 million, and a decrease in income tax expense of $107 million, partially offset by a decrease in gross profit of $95 million and an increase in net interest expense of $124 million. Diluted earnings per share (\"Diluted EPS\") increased by $0.176, or 33%, in fiscal year 2023, compared to fiscal year 2022, with net income attributable to ordinary shareholders increasing by 30% and the diluted weighted-average number of shares outstanding decreasing by 3%. The decrease in the diluted weighted-average number of shares outstanding was due to the repurchase of shares under announced share buyback programs. Segment Results of Operations Flexibles Segment ($ in millions) 2023 2022 Net sales $ 11,154 $ 11,151 Adjusted EBIT 1,429 1,517 Adjusted EBIT as a percentage of net sales 12.8 % 13.6 % Net sales increased by $3 million, or 0%, in fiscal \n\u2026 [12,008 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**FY2023:** Amcor acquired a Czech flexible-packaging manufacturer, a medical-device packaging site in Shanghai, and a New Zealand manufacturer of automated protein-packaging machines. Purchase considerations were $59 million, $60 million, and $45 million, respectively.\n\n**FY2022 and FY2021:** The document lists no business-acquisition cash outflows for either year.\n\n*Justification:* The three FY2023 acquisitions and their purchase considerations are described on page 64. The consolidated cash flow statement shows \u201cBusiness acquisitions\u201d as \u201c\u2014\u201d for FY2022 and FY2021 on page 53.",
+    "role": "assistant",
+    "reasoning": "**Identifying acquisitions**\n\nI need to focus on the document to identify major acquisitions for the fiscal years. I've noted that for FY23, three acquisitions are listed on page 64. However, it seems there may not be any acquisitions for FY22 or FY21 based on the text and cash flows I found. Page 64 indicates that the information primarily pertains to FY23, and there are mentions of disposals for FY21. I'll confirm if the document contains details for these earlier years, but it looks limited.**Evaluating acquisition details**\n\nIt looks like I need to clarify the acquisitions. Based on the excerpts, it seems that FY23 lists three acquisitions, but there aren\u2019t any acquisitions specified for FY22 or FY21. Page 64 has some information about divestitures for FY21, but it doesn\u2019t clearly include any acquisition headings. The document likely doesn\u2019t have the details I need for those earlier years, and since that's the case, my response will need to reflect that there's no available information for FY22 and FY21.**Clarifying acquisition data**\n\nThe excerpts seem to indicate that there were no acquisitions for FY22 and FY21. On page 53, the cash flows show business acquisitions for FY23 and none for FY22 or FY21, which suggests no spending on acquisitions in those years. While the term \"major acquisitions\" could imply some activity in those fiscal years, the actual cash flow reports confirm that there were no expenditures for those periods. So, I can state there were no acquisitions for FY22 and FY21.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Identifying acquisitions**\n\nI need to focus on the document to identify major acquisitions for the fiscal years. I've noted that for FY23, three acquisitions are listed on page 64. However, it seems there may not be any acquisitions for FY22 or FY21 based on the text and cash flows I found. Page 64 indicates that the information primarily pertains to FY23, and there are mentions of disposals for FY21. I'll confirm if the document contains details for these earlier years, but it looks limited.**Evaluating acquisition details**\n\nIt looks like I need to clarify the acquisitions. Based on the excerpts, it seems that FY23 lists three acquisitions, but there aren\u2019t any acquisitions specified for FY22 or FY21. Page 64 has some information about divestitures for FY21, but it doesn\u2019t clearly include any acquisition headings. The document likely doesn\u2019t have the details I need for those earlier years, and since that's the case, my response will need to reflect that there's no available information for FY22 and FY21.**Clarifying acquisition data**\n\nThe excerpts seem to indicate that there were no acquisitions for FY22 and FY21. On page 53, the cash flows show business acquisitions for FY23 and none for FY22 or FY21, which suggests no spending on acquisitions in those years. While the term \"major acquisitions\" could imply some activity in those fiscal years, the actual cash flow reports confirm that there were no expenditures for those periods. So, I can state there were no acquisitions for FY22 and FY21.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVZfu9HG8f22OM-BkYm1IwU-YZcuk6z5s4RUxyyHHCzSGUjF4hrGXHHV4J2ABEpFXvJWoEafwXUdgMNiq0lM7Kp5LjQHaBWSHi49PBE0Ztfggu0BK4S4EjNjdwNFbgrOiSfA7x0csKNKmMW6GcrJgmPYxd9N1u-uaLjDRiXlENF3RaaGWR02TcrP8ClqLyhL3ZVS7M4EMCCTScHqq8NwmsJPsxw-NfxsRTpISTKwbo2ylndYOeznv1UvmWzr0uFkuTpFGc2rQUicMVdv6UcAfzw5uZUSLvXq9N7iuX3AE2kivx4P8-ulJ_33sKt9nmYxOF_OvK25tl7SAbeXvLUxnKsFll16NSXJa3ClnITgMMPIVIP7PaTMTZX1clAkI8VVBJMzmoqD_iNkoj4il4UUgJb-k383Ox3wcvnbAFFxOWAoijURL5-5s-ri6krcX01nVm4Ssl3nWpvop-RGNi27uPMdRm6Pj3wxfoY3O4E9g9SRYf8fF3j-qdX_W9KXlYQXneFG2O_UUaRZWvCNlKF9KluwlaI_p9Pm4yHtfMeUmwjXmZAU2wJ4SS37ZdcTw4R6v5M9tO9skh27_v1KIvwu2JFxVGAvrCo7yHK5jOWOhmi5Jppkw46plqNm7WB5f2WTLa9JDLsWpMiHfld6pwSEkYc4jGtCpF6zPzPSGsom3Z2VfGH4RDqX2jkL4OaQlTNxIRddi2bzytX4PmFzJSiSdjp0s9dQpbJG-Uv6Yx5NKbmlAcMMW1PB7vvmoLBGiV-kYMK2cRwTeG1hxRQkkqnMHFLBpNmGaED3Gs15xRFJM978k0c9E9JWlSKJ8ddDJjZgX5D8UT9fqWyXUcSq1s9CC-BZcbfzGQXHkaMec2aOZHeEd3edafKWZNW71BpWBdZQvWpFaiezQ83Y-R1RUUq7L3QS5z9DBgcL3t6cmBmqmXFYWn3X1NTKuEaAjUPjHrj-MtsrwLEqBzHiS0zEik6kntw6WHKOC4UzG_LvUVeJnOWiDtQPoGivWraQN4hwLWTfrXPPhyCnHJMV3O9QxbtM8Z-cV1TZSw07Mmc0A8kz1zZS6U6bcDmfy9SLEl7zfMs6Yq5naX-_sU2QBAjVGy8vEXFkl9CMwrJl7FI38veY8SIXU7Sz3vrFKFPIUXPQDQCETcXVocD4S8z9fT6SpDfdow_IAI_jlPMtXbnx6_XuqVjr_81JREkszL3yylYV3ly7R8AOUrHn65LAMSyezDktVIkjAdk5X_8UNZvi7ytcimsNfV0MtgrCow0jwLXfA1BQDqC7oW4I_j-sd65EAKEqYBrbxvqvYdA_1fVsz-ZCniqcNiSki0HPwQjh6n7_kHRHZchnXqc6Cpcfq6NPkuf0W2-xMsmWEVWn3wocUbqYhkORylD00ZrmGow-IpRGLxwG5W8Osx0ZkMC6IxET7ON4gD3LgkSdi1Lww-nuToF0vbHXEgpkEqO9K479ogQIL1n3T_7xwUEaxvAFec-kNzZMYdEd_-u5MljvWKEQhw21NrP0NvHjzmuWntVxFuqeNFWH4K_zn4VW76FNubyKOMSPshiaP6RYs1KPlX2uX90VlYRsIXAD2QTFm4jUACbfTaYK5NF0KJdMNyRDK1pZT8k09lW3zUENCwh-MJ-ncvOBnAJZRapy8NhSxnDf1kS8Jhe5Tg_QaPcZeVeF2X_YG4UWHiC34ekFDqrrbMSB3c0wv7cQ2UHyJdvkfuNRD_xERPtS4E5tTygDDonxvAJGimgBn2kpX9hcjMLoS7-0s06LZ4qDwpo4zrBQzsPhPFzx0HITwxd3clopmUF7RmYLHOcs5TVsfTbg73F2NeIaiuWo-J_VGinu-EV56QocRkIGPuHthL_K862R0inaHHKXoc7Rq5c5r66cFAmYyLJPgGkCTQvuJakfGu6aq8crAB3H5eriVMguqyDiKoBUY4PIjIKNYPMm3twgt9XNgnzsNdMvon2wbvpdcucqwZKLVS5MMD0HLRXJ3WY4GW-wOk7ih14IE182stgDv6uV4KPHuG6dGqXcA6YnzsZD7Ju4LRJqiHZJSNbcJURSgfM1o9XyMTjRkoJFl1XQfRmXCpbEu2IAv-edB0kZXzUBf-CyFCBZ022PaY4ffd6YWC_bHpgMg9QiDgtM2ho_as-lHXc0KWzrtQhbsAULdimBTenrGvaA1KFT7rdFHwhzkEqjoi0PCM3A4etVBwkfxtFi-dEmN4TKIHZsqaPqwFbmtXgm3rEgMKRRHmr4SrOrJNmNvdTL34ShVgWGXHPfyVFmCq4--fXrEKpJ3TYvLKL06mQtgKi76uhYHIw4yrJyiC-vWBafIn_Elkn5tP57ytKlWuTBcn1gCZfjdLHm5YcHGtsVVQDGzllwMX4gedpGpjT_COJw5Gr-NLjTp1pC_y3efxe0TzoZswpPDvwvcRxhZPnsoJDs1chFAx1w2vxbdf9uGdBBbNYp7nfbHrvpP3vPDSkVAPw4xxzqTJV-YToWZ5l_KJTNa0PvOUxNk2Es_E6ZSTosE_UKlX4FrG1xMoqnezjDkmxltWqzcobzTXtU5c-Emee9e3qn2WxB1idKp-LuZ42rGabUY4uKH9K0I-UoxrKoz3f1fE0_ytYeuLiZ6kMku4t37kQEf7MjqFycr9CTUe5dYglYGoRBBOq99fgmAZhAu8HBCMHuPsftDwqusVpNIIfDnropiiMmnwP_Pa6DW7hdYmxizelfuX13B09QtKHz9ooEm0X-aY4uorTkqw2-cGb78iTednHNyJPN2yo_HSH81HPZHp2-ebZ5Hl4AljYAwYllR0yrLVOxNwTYO69G4kFo84HPX-m78nHJvXPCpt9r4dw3FHwmLjRndoyA1XtY_8glNmZRcMXcZn4UgQRr2JGbuCVD7ZPbg8svxfxvoLqgvjDSlExc_8gb-w8hbtY6TnChmphWN9-JgSOoaSaWyDsRwjHP7GJo7no9G8TvUTV3ms9XEac0uxgNjJWqy6Xli7ZUCvXxYeOsUHiLcvrXHOKCHVUh_rjy653671W93jauJH173_vlwumZzAriqL2BfYyJ9fSIcvf2ln_ZZPrUm4GkV_VLRqeho4YW7OBMfvr2KYsS28U_Cp-4xL5Dq__LUsatuBeF7GFaSLk-0D3A7Y7ugnHQy4KpFWiQpRhC51gxpLGa-uaset5yi_kwiuMgsGxQ17lFzaAbpevLzV-tK7RrkaWemQ5yU7_tmvmp1rA899RaXtmWTlARZ7HkMIxy4sUbB6kmteD5tGC4x9B2okoGid9crdImsXTbvnLZHbwggfwpq0RERo8OnrxLgVpcmoOgfZienxa3XhllMQlf5_hduSidpmiPYxNhElbnMYWwgyR3zQ-BM-rCXSPiwXCtDlMCaT33-P_XLZdBRk4_fqPkVwGUsOMe-Tx42FzV0wWU0L0o2iVN7gBVvtfyccwev10tjyyvSj6Od_9yhA8aypXcaEaGblHEThzjC5Ql6gvgF7NHSEUwhav6N6vK-xTScLsxkBqKrCYigerix5GtIPWzB3yb3C8lKphg2sq7oa3F-m2MAo_PEdFjy0mk0-PO-7NFueyalGy4Zpc9kZU7jTMchrMq2K_ztV8JSu9EqF6ddqcehGJbD_2o0uGjfM5lIlhy-FfGtBqMcY2VNm8jXmKcfgJDZpO0TvwHRKwcelaKzvd8dK1S3P7eZgIy5zWPaefUvauvtAsuU0_HXrAW6MFBYV6oFlnRLyQsOAyyNiX3ub7fF68aM-P7BKJGem8lb7WRD14bfMQPiX3QRE3rtQWJd7fbnOsgfdFYzeuAwvZS6LvmKIDWeQVh7oQSlFeUuhY-HYAnv0soAZRn9x-xq3VJlt_gp_mjMDHFsz0pzFoOcJCPy6-Wfeg35gqmxGelv9q2FZC4Doh1aK044lu3FL7-2QuHkjBD9h6Q4F8oxbcL33xkPiWMo7faL9GtMeQCsOJqwyISQt_B2Ytoie0qHlqdiFrC49PJgJPeFGzjYCEsAds_OGx\n\u2026 [608 more characters]",
+      "format": "openai-responses-v1",
+      "id": "rs_0d2cefe1bfdf18d7016ac21553217087d1be9376a6722b244b",
+      "index": 1
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhVZGC0KJHpEuz0wNKcLgbRR6i4RrH9ftwownTl1cONIgX2quk16GOovxA7r0rs7WmO6QohDlMefmnttd9ZngThqv2WYr3Hld_p0nLlI8G914YtyW_CspBFcZbtFpvFjRitN7c03ibH12BkfKNRo0AiN8UoLU4ghV3ImXygzNMc7WuFjvUo7v3GZQsdHkw7Tt2hxelzHR2jGdkBoLCaObJ-pX2K6xcF5k_wA4v8fg84V4F9sHy2HW2DeetFcGt_MdbdN3SEaZH-xDsrnnSEtQxxz80dttUi5mdce7afdqRw_Qz5Oe4q0ONPC2EUFz9XqvcqVfMufatFUY9rah6mAbQG0BPBXZHmOpxJEUCOIhLx-UQm3_006d5gSyblve_wLJuCu94cl-E9YGbqeHT5YNjCgoLxxfo5XUUooY5stXbU852O1a5BgKW9vqGdG3getxoH846o5TeH2yxh6TGgYSPzKmb-jZpDR2pBSIgIAqo01kW3sSYKn9JmwXmF1FAGfGcoxNeoEhOdSEki-muLE7UXTVptYlnULmQoOSeWoiL3XVgFM2sX1F75m8ahIB-qhpjVSbG6ul0SntUk4b5b14GZrTGkePAsfVhlUGTIvyK0loeYP7HobJZ6-zZcygARePuFTTCQYW_yxHIzJ6_1tsVJX25OwLtR2pdK1Hti2UwMrIo5wj-9nLpyJItk0GRjSn0otyqwBwQ8meVeDv6V3ankUr4lDNDx39NZfTdCGpFNlti5MgPjoDVEjzKdUYeq35ls_xhpMHeM5ARyIYvL3cZE6az1BmUNDGK3H6UObbjOh-iBg1m7SS9l8a3tdFNmbKWy2No8dcJSHtE8U2rQcT9P4ovwWYqtTfyFaKYGXZhEvex1c0dcwktocZbYtO0LiqHtw0f-KrzxOsOuW1Vq86ipevtl5E6M14AILgz8llmv1fJLhM_ZJIJCPwtnUL6kvMqUbMPMycuX6f9qxTkfk9fBiljesnUjdkzaGS3v8rMI7xA6O23A5yw6R8G1Er_JhsPYkFOGxhj_QiZz65A4002yicgeLd9pWQpObiiz01huBoQIh3zPxJHahgJDJccmvxsqVsaxbgChGolwR09z9KygSwRhR1XetdQfCPSuukesdInVH2JwvtRzMJ4TtRozp182QyLNj9ect-stlXw_ZjUsOcgVX7PVXHsqHQ2niO4al-3gv795_44QEKdpygzneS9gJhqDfUJL_nIS9bJ69tV-o2snpZ5DHP6qRPgtWa5r-H_kjIo5s2OHvnXa0ZAPBcTuxYgK817kHNJLPy5a7JbA187W50vPeWwZ0v2HQjjcyLjo4c8mHMchaO_E5ey02X0nn4BHz4UTmbf9xZDTRUN_rPzq-4oYeS-ds1KjQTExQUQDc16r-HBfEK0XCrleoXCL5W-3KGrxTB2UKKLSfzL1m2rt2NfgJnZTmz7DtLb2Y-w51IDIt6AzTrh6tBP2WE5tjssyYQVsPoHa4xvQd25azuiq8EHgjwjoXpUFQyo3Dy3-x5znRSMuBAXpXqTHZN_LpopWklURVl7e8vcRJ9C2IgpSSXZrY4rn1OucPuGrx4kl_61kYB5s6GO51WbOJ50oYxFW6aBjr3XGlcaxB58G62NwV1JgdU1ctBwg6og7LEijR4tzF3T061RmzWrbzfjTtCnD6mVGO5DpO6AW9ULY-1sE8pmqt58DY-mJ2J-meyQphjfjTWQxMI-DeaUo8L9ZLG0VBCHxKPy-40NE8a3pOSMCSwfebgV4OocFhvB2nYP3SI0laW7WaHEUk68SOsq6311wwAbv-dEq92bDxFhVjVtApHgyPQqzYmd9yoNmQS0VIxOXo3a3wCJJEjwVP7D4NbpWVttgPKf6Jwy8k95Q1rYz_XMD9wFbrQZQN8VWlWjrpTMDnFhLlbveYutVheCZXGNPybt8LQZtkQ9ptUEZSPHYt2M4DMmmFvL6_YVWPcWW5R93rJ5vfv6RKdql-y2x6B9DNV6Urn8gzRa-vIBWm76tzhdlDS1GVZ09BqvIF0NfQz2xj5pTSeEaX1NFtjcrC_unhxMmnAJTJfVHMWQ3PoQo9Fv4VS1puJjTOPr_9JymEy8nDk_oH05ePIndM5ngn.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0d2cefe1bfdf18d7016ac215593c6c87d1999444031c75a38f",
+      "index": 2
+     }
+    ]
+   },
+   "input_tokens": 3595,
+   "output_tokens": 772,
+   "reasoning_tokens": 642,
+   "seconds": 8.09
+  }
+ ],
+ "answer": "**FY2023:** Amcor acquired a Czech flexible-packaging manufacturer, a medical-device packaging site in Shanghai, and a New Zealand manufacturer of automated protein-packaging machines. Purchase considerations were $59 million, $60 million, and $45 million, respectively.\n\n**FY2022 and FY2021:** The document lists no business-acquisition cash outflows for either year.\n\n*Justification:* The three FY2023 acquisitions and their purchase considerations are described on page 64. The consolidated cash flow statement shows \u201cBusiness acquisitions\u201d as \u201c\u2014\u201d for FY2022 and FY2021 on page 53.",
+ "retrieved": [
+  {
+   "page": 30,
+   "score": 0.7114
+  },
+  {
+   "page": 32,
+   "score": 0.6582
+  },
+  {
+   "page": 55,
+   "score": 0.656
+  },
+  {
+   "page": 109,
+   "score": 0.6531
+  },
+  {
+   "page": 64,
+   "score": 0.6404
+  },
+  {
+   "page": 151,
+   "score": 0.6355
+  },
+  {
+   "page": 65,
+   "score": 0.63
+  },
+  {
+   "page": 53,
+   "score": 0.624
+  },
+  {
+   "page": 64,
+   "score": 0.6227
+  },
+  {
+   "page": 50,
+   "score": 0.6188
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The answer lists the same three FY2023 acquisitions as the gold answer (Czech flexibles manufacturer, Shanghai medical device packaging site, New Zealand protein packaging machine maker), and the added purchase prices and the statement that FY2022 and FY2021 had no acquisitions do not contradict the gold answer.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002524,
+ "provider": "llmfoundry"
+}

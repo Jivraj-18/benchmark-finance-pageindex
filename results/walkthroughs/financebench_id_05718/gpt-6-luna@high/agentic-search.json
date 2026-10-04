@@ -1,0 +1,276 @@
+{
+ "id": "financebench_id_05718",
+ "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+ "gold": "$0.40",
+ "doc": "AMERICANWATERWORKS_2020_10K",
+ "method": "agentic-search",
+ "config": "gpt-6-luna@high",
+ "seconds": 10.6,
+ "usage": {
+  "calls": 3,
+  "input_tokens": 3243,
+  "cached_tokens": 0,
+  "output_tokens": 333,
+  "cost": 0.0004908,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 152 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows."
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_jzK3reXsHDtIlsqdA7oAo2Se",
+      "function": {
+       "arguments": "{\"pattern\":\"dividends paid|cash dividends|dividend payments|Dividends on common stock\"}",
+       "name": "search"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxYCZ5811PKAKKcFzmU_OqSyrS8ByGxH30v9yN4Rq17FcuSxWPIfeENGILPD_4j1WFP9pUSV4A1KrgX0eDi5ryPvivSgStD4HA2c3stBJHSwjeaziH1q1i3CyKkDEFKvOtVHoyJnj-kv3nFIcW1AsskaUgU9o-gBePDMmc6j24ANuS99iAntl7uzkxi57zDJR2sQrtf36sTi2MttrjxDRke3GR-yx4nwxQlotpmfDlYb_yMakQpgYLkW6iPVHoqyiJD6srQmb0RGeR5FiqysuLR1eMOEG-HYVrqEsynv3Lmoku-fA58iCGdI5gOrmPXyczdCx8lw7PAYhR5ZP1KuergGnFZnYAzR0OJnSo0VYrERHzj7_1N_Q5yoUEz2jvL0Gf-isC2tUJmQlz8XEt-ZztfSTePhESPyUhjnXTbqV4TXlv9Dg9NuDlKmaG8th8J4etyIZIt5YmU2T3evQdKVrSgvYiaGwWqchGBKZDAdyLfLYqsGWJw9VBfR8scssnIUZRafZ4Le1v6uPXmNYyAKH6l_XtV8Ob1p6-w_bd-zWcmTJ9vRgcm9_qfSt6tk9ZVPORYAI_IEDkWX7so-2KmGUVI8P6WmprxjK4ZAvoN_vTHDq_moSAS_j91TC9VAeZBtvDyJVjI30QGvek-0_hI11TYgpw7L4NKIBMpG-c38WL2vwr9viy0Fegnc3hwyqY65PUBey6Xndh4CzafodrjIMJTuyGSmbCr7ILgRDF0hJk8MSh-RpsyuehDsrW1AmBmTu6TTjUENDXYmAgrkKDjxoEy4nEE7XLzsMk-Nha1YbRjmpg4G1UVGkhIr1OV902ed8th5BbSjZS0k0iMu2uo4mZxMR9xazg4cqooYsyNX5V5J1y7B8L1S7YKeNZNX6WiSDKpzeSz96PeoxX6zHUF1_sTMLgc81Pms0KqQ8mMKO1VtnkMq1E6MbjqI5NE3HL9x1o-z7GSIQeSSqEIZCkqL7hyZQj72Zd3ZTyb1FNSmjdHtJkvOxPfiYmes9_v-NhqVNbEDOM1rZnhJ7G-MhmkrlPhdArhhQdw21XHjwIylf6-W140PUZFJhdQPPihi87E2DAZd45kmPl2-uKjHAhtByCNCfykKxiQqTvCTh3gyOd0owc8VZCjVM37N6DjMNYpC4LNeMaouLdfvp64a-w2NIjbSfxXhYd1rYIRoJgZ_Vp2BOl6GwjtEcPkOCggzOgQ6wmzvSqdtuepNQHNpBPkvnWZrqNxcf8XT4jmnsXkap-OzZtDwiHCPOYP4d6A0SOOMAmb_tSnjAoiUeWdq_zJRM5uHlSv83MH0rbY0cE4lmvfUDdBHT5-cTGWZ4wnADrQK66dGAPJrZM6mUQQI5Oy8wvBij0ik_f1hFk67v1NfCEbs9Vk50Wi0r3K7Y6kgzc76K1oW5Ei9Fwj8PlqTP_hE1q8fpNi7fi8RTve86jmf2CjPbw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e10646e9e531d13016ac21c576e7487d185ef6e38a13cd7ac",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 237,
+   "output_tokens": 57,
+   "reasoning_tokens": 21,
+   "seconds": 2.81
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 152 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_jzK3reXsHDtIlsqdA7oAo2Se",
+       "function": {
+        "arguments": "{\"pattern\":\"dividends paid|cash dividends|dividend payments|Dividends on common stock\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhxYCZ5811PKAKKcFzmU_OqSyrS8ByGxH30v9yN4Rq17FcuSxWPIfeENGILPD_4j1WFP9pUSV4A1KrgX0eDi5ryPvivSgStD4HA2c3stBJHSwjeaziH1q1i3CyKkDEFKvOtVHoyJnj-kv3nFIcW1AsskaUgU9o-gBePDMmc6j24ANuS99iAntl7uzkxi57zDJR2sQrtf36sTi2MttrjxDRke3GR-yx4nwxQlotpmfDlYb_yMakQpgYLkW6iPVHoqyiJD6srQmb0RGeR5FiqysuLR1eMOEG-HYVrqEsynv3Lmoku-fA58iCGdI5gOrmPXyczdCx8lw7PAYhR5ZP1KuergGnFZnYAzR0OJnSo0VYrERHzj7_1N_Q5yoUEz2jvL0Gf-isC2tUJmQlz8XEt-ZztfSTePhESPyUhjnXTbqV4TXlv9Dg9NuDlKmaG8th8J4etyIZIt5YmU2T3evQdKVrSgvYiaGwWqchGBKZDAdyLfLYqsGWJw9VBfR8scssnIUZRafZ4Le1v6uPXmNYyAKH6l_XtV8Ob1p6-w_bd-zWcmTJ9vRgcm9_qfSt6tk9ZVPORYAI_IEDkWX7so-2KmGUVI8P6WmprxjK4ZAvoN_vTHDq_moSAS_j91TC9VAeZBtvDyJVjI30QGvek-0_hI11TYgpw7L4NKIBMpG-c38WL2vwr9viy0Fegnc3hwyqY65PUBey6Xndh4CzafodrjIMJTuyGSmbCr7ILgRDF0hJk8MSh-RpsyuehDsrW1AmBmTu6TTjUENDXYmAgrkKDjxoEy4nEE7XLzsMk-Nha1YbRjmpg4G1UVGkhIr1OV902ed8th5BbSjZS0k0iMu2uo4mZxMR9xazg4cqooYsyNX5V5J1y7B8L1S7YKeNZNX6WiSDKpzeSz96PeoxX6zHUF1_sTMLgc81Pms0KqQ8mMKO1VtnkMq1E6MbjqI5NE3HL9x1o-z7GSIQeSSqEIZCkqL7hyZQj72Zd3ZTyb1FNSmjdHtJkvOxPfiYmes9_v-NhqVNbEDOM1rZnhJ7G-MhmkrlPhdArhhQdw21XHjwIylf6-W140PUZFJhdQPPihi87E2DAZd45kmPl2-uKjHAhtByCNCfykKxiQqTvCTh3gyOd0owc8VZCjVM37N6DjMNYpC4LNeMaouLdfvp64a-w2NIjbSfxXhYd1rYIRoJgZ_Vp2BOl6GwjtEcPkOCggzOgQ6wmzvSqdtuepNQHNpBPkvnWZrqNxcf8XT4jmnsXkap-OzZtDwiHCPOYP4d6A0SOOMAmb_tSnjAoiUeWdq_zJRM5uHlSv83MH0rbY0cE4lmvfUDdBHT5-cTGWZ4wnADrQK66dGAPJrZM6mUQQI5Oy8wvBij0ik_f1hFk67v1NfCEbs9Vk50Wi0r3K7Y6kgzc76K1oW5Ei9Fwj8PlqTP_hE1q8fpNi7fi8RTve86jmf2CjPbw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e10646e9e531d13016ac21c576e7487d185ef6e38a13cd7ac",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_jzK3reXsHDtIlsqdA7oAo2Se",
+     "content": "p39: include delaying or deferring capital expenditures, reducing or suspending dividend payments, and reducing other discretionary expenditures. Finally, there is no\np50: Cash dividends declared per common share $ 2.20 $ 2.00 $ 1.82 $ 1.66 $ 1.50\np66: and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company\u2019s rate regulated environments, changes in\np68: Dividends paid (389) (353) (319)\np68: dividends paid in 2020.\np70: company\u2019s ability to fulfill its obligations under the support agreement will be dependent upon its receipt of sufficient cash dividends or distributions from its\np86: Dividends paid (389) (353) (319)\np106: factors, current and possible future developments that may affect the Company\u2019s income and cash flows. When dividends on common stock are declared, they are\np106: During 2020, 2019 and 2018, the Company paid $389 million, $353 million and $319 million in cash dividends, respectively. Presented in the table below is\np106: the per share cash dividends paid for the years ended December 31:\np106: requirements to make preferred and preference stock dividend payments, and (iv) other contractual agreements, covenants or obligations made or entered into by"
+    }
+   ],
+   "reply": {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_mrssOQRVbRV218XnUvQ1UND4",
+      "function": {
+       "arguments": "{\"first\":67,\"last\":68}",
+       "name": "read_pages"
+      },
+      "type": "function",
+      "index": 0
+     }
+    ],
+    "reasoning": "**Calculating financial data**\n\nI need to check cited pages and calculate large numbers in billions. I should look closely at the cash flow statement on page 68 and see if page 86 has any duplicated information that I might need to address. It\u2019s important to ensure everything is accurate. I\u2019m making a mental note to read through both pages carefully to gather the right details for my calculations.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial data**\n\nI need to check cited pages and calculate large numbers in billions. I should look closely at the cash flow statement on page 68 and see if page 86 has any duplicated information that I might need to address. It\u2019s important to ensure everything is accurate. I\u2019m making a mental note to read through both pages carefully to gather the right details for my calculations.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxbH2ct9-XoDNSJqBY9zL7JhYuK4QVkfKVzihAYNDoxnmBoFGxAj2cctGZWLjrK5PNTjQsusO-_B5_Dig69Soq9QCOQtZ0luvIkgGwHoUQju0TANWEZNcrTGNXrTQf6KZFajFBeFOiVk7uXzpZin53g8Kx9wObBIG0XVuGiNFto9QdTB6PjgL1epf7tFh4Iy4wGdVaCNMorcXYvXpZafPJUDsYxGcwYcUNWKJfxWwA48UNVzZJ_FdLA1NmrVRpnYTsT6Y9qeKhJ9vPmpACskPcW550UHxO1FgszfiexsLwNmNbwT7-1wW6aJOGWXodaCt_reZdhMmLW5CSRAxYVJA5Fhw38nKo9a5SjCVfekEik0GcPIfNXcJqMTok6nYIh3cnc8FqYkxOAhLzhqjhpr8LsKftkuEwKFju5gUqyhwM0zZ52NVLM-FLOVvq78P368psbrXHdKyAQfxn17O6FEmQUmWseKdsyk1ZFZGGLEUBOh8ZtQK0O96kFXRf08oJrmgVAEAnrbReY2fXLsc_Wxt0wYVtwAH_M78A4Zj4MSv5kzuTKgS5PfP0qGdbR4J1rLyWEIM4Zy5GEVHvsXwzDgrF2T0yrIyFLFYFh8NH1neMxpPMZFdxyETfX_3FPfHaiP0cSMc9J5LRYBn00uf5LX5urEPnn-oz2lh6mUUU9gQKKCgOJSljTkOKfvg_eRpkFzPB3YEdndJ1Kr8ZQrKM2xx89f_8Dgy9AUpAoTgkGX4wC2jr6biN_KUmYfPFD-EBelZZh8tgXpTwLFvuaf5k2U4DG3o69JCNbQO-jhL6drfGz8k5hdSqV-Yd2eTv7r4xRVCW8sZcLoMty-pi9EQs5iDsnEXB-ur5ye4U3_DVcN24afayMJ0eQfHqjOT4_T4wWrAh1huMQ5rw5pt5-8Kr3Z-3pEloyn68qQlqgaXvyvZ-hEQZD6ixLXTDd82VzL53SEheFVd0OVGysQWLVliC7XNc6ziW6NCtxGAVo1R68KnOPn8GtDILDPPWBd9QsGcnBKmmyOVpVYt2z6eAgTEqPdUpTyUq-KHMLlFXMsu3zdTvH6OsCR4n5ws0S947p39MUvILPAzZhhJyQNXbj-Uhtn2KXBMwcPu6KW1E7sH7lBSPyOX5yxQ5plCgfmc_dlK22Kvm6zgtkBazelD-aDrkg5LCwMn2ijS9OVcn4dudIXKgH2H0fbvDfEFVj3vvQWYCkiYKJAudGghyGDcH-5FPvFyZ-780hLjbMEHja7SRIKhTRUigTyVSOMJMSnxUYQJfDeduodBCx11sFfd-Tr0jutSa8scbelzRHmUS5Tkld1mQ6LvfbttQTu2n4TU7-FU2VjuN4zgoVf3drmVk0KeRZIOICNrS4_TvMlVglimDceZW29XqdidnkSR4FmHiqjWvZ04K1BpB8Ei-N_3x5sQkEzGioTGPFAYL2YStn1JpmqHMFTK-0jVNNIc9Ogg-17G0iVSrCkjbe8AISlOTn6uj1NPhJ8A==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e10646e9e531d13016ac21c5a57c487d1ab620f2a05aa5d7c",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 594,
+   "output_tokens": 50,
+   "reasoning_tokens": 26,
+   "seconds": 3.06
+  },
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document.\n\nYou cannot see the document directly. It has 152 pages. Use the tools to find the evidence."
+    },
+    {
+     "role": "user",
+     "content": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows."
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_jzK3reXsHDtIlsqdA7oAo2Se",
+       "function": {
+        "arguments": "{\"pattern\":\"dividends paid|cash dividends|dividend payments|Dividends on common stock\"}",
+        "name": "search"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Searching for dividends information**\n\nI\u2019m thinking we need to search the documents for information on cash dividends specifically from FY2020. It\u2019s essential to relate this to cash flows. I\u2019ll initiate a search to gather relevant data. This should help me piece together the information I need\u2014understanding cash dividends will be crucial for accurate reporting or insight. Let\u2019s see what the documents say about this!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhxYCZ5811PKAKKcFzmU_OqSyrS8ByGxH30v9yN4Rq17FcuSxWPIfeENGILPD_4j1WFP9pUSV4A1KrgX0eDi5ryPvivSgStD4HA2c3stBJHSwjeaziH1q1i3CyKkDEFKvOtVHoyJnj-kv3nFIcW1AsskaUgU9o-gBePDMmc6j24ANuS99iAntl7uzkxi57zDJR2sQrtf36sTi2MttrjxDRke3GR-yx4nwxQlotpmfDlYb_yMakQpgYLkW6iPVHoqyiJD6srQmb0RGeR5FiqysuLR1eMOEG-HYVrqEsynv3Lmoku-fA58iCGdI5gOrmPXyczdCx8lw7PAYhR5ZP1KuergGnFZnYAzR0OJnSo0VYrERHzj7_1N_Q5yoUEz2jvL0Gf-isC2tUJmQlz8XEt-ZztfSTePhESPyUhjnXTbqV4TXlv9Dg9NuDlKmaG8th8J4etyIZIt5YmU2T3evQdKVrSgvYiaGwWqchGBKZDAdyLfLYqsGWJw9VBfR8scssnIUZRafZ4Le1v6uPXmNYyAKH6l_XtV8Ob1p6-w_bd-zWcmTJ9vRgcm9_qfSt6tk9ZVPORYAI_IEDkWX7so-2KmGUVI8P6WmprxjK4ZAvoN_vTHDq_moSAS_j91TC9VAeZBtvDyJVjI30QGvek-0_hI11TYgpw7L4NKIBMpG-c38WL2vwr9viy0Fegnc3hwyqY65PUBey6Xndh4CzafodrjIMJTuyGSmbCr7ILgRDF0hJk8MSh-RpsyuehDsrW1AmBmTu6TTjUENDXYmAgrkKDjxoEy4nEE7XLzsMk-Nha1YbRjmpg4G1UVGkhIr1OV902ed8th5BbSjZS0k0iMu2uo4mZxMR9xazg4cqooYsyNX5V5J1y7B8L1S7YKeNZNX6WiSDKpzeSz96PeoxX6zHUF1_sTMLgc81Pms0KqQ8mMKO1VtnkMq1E6MbjqI5NE3HL9x1o-z7GSIQeSSqEIZCkqL7hyZQj72Zd3ZTyb1FNSmjdHtJkvOxPfiYmes9_v-NhqVNbEDOM1rZnhJ7G-MhmkrlPhdArhhQdw21XHjwIylf6-W140PUZFJhdQPPihi87E2DAZd45kmPl2-uKjHAhtByCNCfykKxiQqTvCTh3gyOd0owc8VZCjVM37N6DjMNYpC4LNeMaouLdfvp64a-w2NIjbSfxXhYd1rYIRoJgZ_Vp2BOl6GwjtEcPkOCggzOgQ6wmzvSqdtuepNQHNpBPkvnWZrqNxcf8XT4jmnsXkap-OzZtDwiHCPOYP4d6A0SOOMAmb_tSnjAoiUeWdq_zJRM5uHlSv83MH0rbY0cE4lmvfUDdBHT5-cTGWZ4wnADrQK66dGAPJrZM6mUQQI5Oy8wvBij0ik_f1hFk67v1NfCEbs9Vk50Wi0r3K7Y6kgzc76K1oW5Ei9Fwj8PlqTP_hE1q8fpNi7fi8RTve86jmf2CjPbw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e10646e9e531d13016ac21c576e7487d185ef6e38a13cd7ac",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_jzK3reXsHDtIlsqdA7oAo2Se",
+     "content": "p39: include delaying or deferring capital expenditures, reducing or suspending dividend payments, and reducing other discretionary expenditures. Finally, there is no\np50: Cash dividends declared per common share $ 2.20 $ 2.00 $ 1.82 $ 1.66 $ 1.50\np66: and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company\u2019s rate regulated environments, changes in\np68: Dividends paid (389) (353) (319)\np68: dividends paid in 2020.\np70: company\u2019s ability to fulfill its obligations under the support agreement will be dependent upon its receipt of sufficient cash dividends or distributions from its\np86: Dividends paid (389) (353) (319)\np106: factors, current and possible future developments that may affect the Company\u2019s income and cash flows. When dividends on common stock are declared, they are\np106: During 2020, 2019 and 2018, the Company paid $389 million, $353 million and $319 million in cash dividends, respectively. Presented in the table below is\np106: the per share cash dividends paid for the years ended December 31:\np106: requirements to make preferred and preference stock dividend payments, and (iv) other contractual agreements, covenants or obligations made or entered into by"
+    },
+    {
+     "role": "assistant",
+     "tool_calls": [
+      {
+       "id": "call_mrssOQRVbRV218XnUvQ1UND4",
+       "function": {
+        "arguments": "{\"first\":67,\"last\":68}",
+        "name": "read_pages"
+       },
+       "type": "function",
+       "index": 0
+      }
+     ],
+     "reasoning": "**Calculating financial data**\n\nI need to check cited pages and calculate large numbers in billions. I should look closely at the cash flow statement on page 68 and see if page 86 has any duplicated information that I might need to address. It\u2019s important to ensure everything is accurate. I\u2019m making a mental note to read through both pages carefully to gather the right details for my calculations.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Calculating financial data**\n\nI need to check cited pages and calculate large numbers in billions. I should look closely at the cash flow statement on page 68 and see if page 86 has any duplicated information that I might need to address. It\u2019s important to ensure everything is accurate. I\u2019m making a mental note to read through both pages carefully to gather the right details for my calculations.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABqwhxbH2ct9-XoDNSJqBY9zL7JhYuK4QVkfKVzihAYNDoxnmBoFGxAj2cctGZWLjrK5PNTjQsusO-_B5_Dig69Soq9QCOQtZ0luvIkgGwHoUQju0TANWEZNcrTGNXrTQf6KZFajFBeFOiVk7uXzpZin53g8Kx9wObBIG0XVuGiNFto9QdTB6PjgL1epf7tFh4Iy4wGdVaCNMorcXYvXpZafPJUDsYxGcwYcUNWKJfxWwA48UNVzZJ_FdLA1NmrVRpnYTsT6Y9qeKhJ9vPmpACskPcW550UHxO1FgszfiexsLwNmNbwT7-1wW6aJOGWXodaCt_reZdhMmLW5CSRAxYVJA5Fhw38nKo9a5SjCVfekEik0GcPIfNXcJqMTok6nYIh3cnc8FqYkxOAhLzhqjhpr8LsKftkuEwKFju5gUqyhwM0zZ52NVLM-FLOVvq78P368psbrXHdKyAQfxn17O6FEmQUmWseKdsyk1ZFZGGLEUBOh8ZtQK0O96kFXRf08oJrmgVAEAnrbReY2fXLsc_Wxt0wYVtwAH_M78A4Zj4MSv5kzuTKgS5PfP0qGdbR4J1rLyWEIM4Zy5GEVHvsXwzDgrF2T0yrIyFLFYFh8NH1neMxpPMZFdxyETfX_3FPfHaiP0cSMc9J5LRYBn00uf5LX5urEPnn-oz2lh6mUUU9gQKKCgOJSljTkOKfvg_eRpkFzPB3YEdndJ1Kr8ZQrKM2xx89f_8Dgy9AUpAoTgkGX4wC2jr6biN_KUmYfPFD-EBelZZh8tgXpTwLFvuaf5k2U4DG3o69JCNbQO-jhL6drfGz8k5hdSqV-Yd2eTv7r4xRVCW8sZcLoMty-pi9EQs5iDsnEXB-ur5ye4U3_DVcN24afayMJ0eQfHqjOT4_T4wWrAh1huMQ5rw5pt5-8Kr3Z-3pEloyn68qQlqgaXvyvZ-hEQZD6ixLXTDd82VzL53SEheFVd0OVGysQWLVliC7XNc6ziW6NCtxGAVo1R68KnOPn8GtDILDPPWBd9QsGcnBKmmyOVpVYt2z6eAgTEqPdUpTyUq-KHMLlFXMsu3zdTvH6OsCR4n5ws0S947p39MUvILPAzZhhJyQNXbj-Uhtn2KXBMwcPu6KW1E7sH7lBSPyOX5yxQ5plCgfmc_dlK22Kvm6zgtkBazelD-aDrkg5LCwMn2ijS9OVcn4dudIXKgH2H0fbvDfEFVj3vvQWYCkiYKJAudGghyGDcH-5FPvFyZ-780hLjbMEHja7SRIKhTRUigTyVSOMJMSnxUYQJfDeduodBCx11sFfd-Tr0jutSa8scbelzRHmUS5Tkld1mQ6LvfbttQTu2n4TU7-FU2VjuN4zgoVf3drmVk0KeRZIOICNrS4_TvMlVglimDceZW29XqdidnkSR4FmHiqjWvZ04K1BpB8Ei-N_3x5sQkEzGioTGPFAYL2YStn1JpmqHMFTK-0jVNNIc9Ogg-17G0iVSrCkjbe8AISlOTn6uj1NPhJ8A==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0e10646e9e531d13016ac21c5a57c487d1ab620f2a05aa5d7c",
+       "index": 1
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_mrssOQRVbRV218XnUvQ1UND4",
+     "content": "[Page 67]\nTable of Contents\r\nCash Flows Used in Investing Activities\r\nPresented in the table below is a summary of the major items affecting the Company\u2019s cash flows used in investing activities:\r\nFor the Years Ended December 31,\r\n(In millions) 2020 2019 2018\r\nCapital expenditures $ (1,822) $ (1,654) $ (1,586)\r\nAcquisitions, net of cash acquired (135) (235) (398)\r\nProceeds from sale of assets 2 48 35 \r\nRemoval costs from property, plant and equipment retirements, net (106) (104) (87)\r\nNet cash flows used in investing activities $ (2,061) $ (1,945) $ (2,036)\r\nIn 2020, cash flows used in investing activities increased $116 million primarily due to continued investment across all infrastructure categories, mainly\r\nreplacement and renewal of transmission and distribution and treatment and pumping infrastructure in the Company\u2019s Regulated Businesses, as discussed below.\r\nAdditionally, proceeds from the sale of assets were higher in 2019 compared to 2020, due to the sale of Keystone for $31 million, in the fourth quarter of 2019.\r\nPartially offsetting these increases was a decrease in acquisitions in 2020 compared to 2019.\r\nThe Company\u2019s infrastructure investment plan consists of both infrastructure renewal programs, where the Company replaces infrastructure, as needed, and\r\nmajor capital investment projects, where the Company constructs new water and wastewater treatment and delivery facilities to meet new customer growth and\r\nwater quality regulations. The Company\u2019s projected capital expenditures and other investments are subject to periodic review and revision to reflect changes in\r\neconomic conditions and other factors.\r\nPresented in the table below is a summary of the Company\u2019s capital expenditures by category:\r\nFor the Years Ended December 31,\r\n(In millions) 2020 2019 2018\r\nTransmission and distribution $ 704 $ 661 $ 572 \r\nTreatment and pumping 306 190 231 \r\nServices, meter and fire hydrants 333 346 303 \r\nGeneral structure and equipment 299 234 371 \r\nSources of supply 54 83 26 \r\nWastewater 126 140 83 \r\nTotal capital expenditures $ 1,822 $ 1,654 $ 1,586 \r\nIn 2020, the Company\u2019s capital expenditures increased $168 million primarily due to investment in transmission and distribution and treatment and\r\npumping infrastructure.\r\nThe Company also grows its business primarily through acquisitions of water and wastewater systems, as well as other water-related services. These\r\nacquisitions are generally located in geographic proximity to the Company\u2019s existing Regulated Businesses and support continued geographical diversification and\r\ngrowth of its operations. Generally, acquisitions are funded initially with short-term debt, and later refinanced with long-term financing, once reflected in rate base.\r\nDuring 2020, the Company paid $135 million for the acquisition of 23 water and wastewater systems, representing in the aggregate approximately 37,800\r\ncustomers.\r\nAs previously noted, the Company expects to invest between $10.3 billion to $10.5 billion from 2021 to 2025, with $8.9 billion of this range for\r\ninfrastructure improvements in the Regulated Businesses, and between $22 billion to $25 billion from 2021 to 2030. In 2021, the Company expects to invest $1.9\r\nbillion, with $1.6 billion for infrastructure improvements and $300 million for acquisitions in the Regulated Businesses.\r\n65\n\n[Page 68]\nTable of Contents\r\nCash Flows from Financing Activities\r\nPresented in the table below is a summary of the major items affecting the Company\u2019s cash flows provided by financing activities:\r\nFor the Years Ended December 31,\r\n2020 2019 2018\r\n(In millions)\r\nProceeds from long-term debt $ 1,334 $ 1,530 $ 1,358 \r\nRepayments of long-term debt (342) (495) (526)\r\nProceeds from term loan 500 \u2014 \u2014 Net repayments of short-term borrowings (5) (178) 60 \r\nProceeds from issuance of common stock \u2014 \u2014 183 \r\nDividends paid (389) (353) (319)\r\nAnti-dilutive stock repurchases \u2014 (36) (45)\r\nOther financing activities, net (a) 22 26 15 \r\nNet cash flows provided by financ\n\u2026 [4,109 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**American Water Works paid $0.389 billion in cash dividends in FY2020.** The statement of cash flows reports dividends paid of $389 million; $389 million \u00f7 1,000 = $0.389 billion (p. 68).",
+    "role": "assistant",
+    "reasoning": "**Calculating cash dividends**\n\nI'm determining the cash dividends, which comes to $0.389 billion from $389 million divided by 1,000. I think I need to cite the document accurately, noting that it says page 68, but the footer lists 66, which could be important due to front matter counts. My final answer will mention the financing summary that lists dividends paid in 2020 as $389 million, converting that appropriately. I want to ensure clarity in how I'm presenting this answer!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating cash dividends**\n\nI'm determining the cash dividends, which comes to $0.389 billion from $389 million divided by 1,000. I think I need to cite the document accurately, noting that it says page 68, but the footer lists 66, which could be important due to front matter counts. My final answer will mention the financing summary that lists dividends paid in 2020 as $389 million, converting that appropriately. I want to ensure clarity in how I'm presenting this answer!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhxgPXfNbEv85iwiAfmnKisJgBbqQLQ5xaqrX8O8sGV2mnzOVoCufT7OhH-Q2ZfdVpbBxfFXncgREKR35wPsdIUV4OXRlTE_6AJ4vin06DLvJosyjKcikvlq7bj9ZsLZt1rEgqvYNbXOJkBlP3xR2BnqLgpEEiw0YWWrVGaVyuiSGKCWfIp-tkQBcwhu7q-9Lri_VmcKoQHS-0bBVkTU22vBxX_jMOplPVZlHsqeqx0wa9ycfHLA2BigefLnyBTtp-9DiWL4nOl858zzH6TFLRSE9nMlT1wiT5o5m6bSKRZLNTtlpPJMA5rdaeOHrv4Im2-4FNI6__oIpHehH-tor9PueHWN6C9TKukAqlebkYUWVIyUt0yAx9yXPfWimMp41VpyLd_Qs-AVDYNBc0PRq0tZiKvBCaqEQcM7HOqiAJxIzTsruz4wscLg429eTm1FI9_kHgfJ4T1r75GcOYuAum0MWyQnNi5en8UWiEoHBvxcSEqda6zxGSAAchlNp4cs-3RfU4zFGvlncWgn771DjIn8Iq7k2FBXhnhPaIllYCckBWtLSgiuhM2yTRny-tZ842xNhemCkT4SJ95I1HCho05snyDYFqKer7bwRMSH7rxDwAhffJE-OSptUlLe1cYWNaiLFHgP7ul6hQI7NPex6_U-SMhPc52z11snC8Rj1D5o6XqwAwbDD1mBaACVUUHJ5NLydpmxuJFkNdA5DL2KuBLvfcjA-cIOmUc47KHACIxiuosTE_mNdm039NlQtVXKBRmFhPsSwK9SxY6uLMGbs_GOB0fyciEl4yNa8nTmwwQ1pgnRjoBmY8kJjhLbL-0fBGXLniZm5T2wS6WB3YUwxBGYq4YzDk1ieUZLMfnn_Zgwf7erK5QgMA6x_fMdtEkUjUD_K2ts_EUL5A4xbAVQSQE_pMJ5M0CKp3VJSbj683s3qLT9HMAXOofLEKB7hwq9dKH8Qde1VJPBF-Jn8hdsTO5kpwX2UxM6AskYz2wmD3FrsBf4glcB1aQeeuxjA7gQNzhFo2D9nS-wp31iFWaYe86s2ASam2c4epwqHL3qeUU-yqBaMghfaqQtJQO2G571iMWH4F1ZUGnxtELGK74WZKGzeXfv4gzP4dCoc2OSue92NBXhpaskQqBCjEFqO5lrFmXeTyg_bcCoKdYI1x0EGs4XnzfRF2xsDxaxLMLhURLSRQ3uwcbOjwyG0ulRWK-2mpc0HXX7tpOSlEtGEGPwa1ZclkSMMoxoV2QEM2JMCw_iS04IYM-thyGy_QoMTRkHkH-28cj-rlKzdgHAadCWTabMtfEqY8RLyPIoCAifcygBxputCEJ5qQpwtLKWY7ATqZSeCtkvSNtMedmyBaqGIUneGYvo3_VzFrb6k0onIo2ms5j5VhK8qCWEMmJOQ6b0Ccea9napznV-rZX-yCFUb1LCHa1uy43I29g5ahIi19ft1Lsk4R1KJf0mqxKJi6V194_8cCyYvXZaaoPDJFj9gmO1wLQwTgg9Dh2ZAtQvFUX_XRi0WKoXZKPf6IK24bBnybqbZ9ReuRGJd4aa_nk2HwJDZbHp-ULezSxR3-CPzVcLx9G00cPMIyR5IvKLSaaJbD3Kmrs9GHbPtYF50CkQ8INycmoLtYgLtUkDMsF6wowIFHMbMzA5VurOepy9dbWa4L_hEzyNCw43aicn-JJcxtXhNmbOuenOl5g6ABb_Go6qfuQIzLSi23oeOAe3S3QM__MHKEQHIeWxx1hBx3h2NElhvbVp3soOAI4MEj4hcYLklRl8zDmg29KH2RB6feFwP5ZtOMmTmHtDB3_2QK577t_xSIctrGKaKt5AVuOGlH2xId2LLXPtvTB33WNRlq0QYyslD-lwdVDKIe5_Cox7G0AucoJTjs3WiMhJKd5HsB5K4szFMuQGsjlj8cDR00Q0EagfuQOKZr1D03rL_i2OcsEjtwF3uwXmLzCWi4RuIDDknl8KkXSa-3Ii9N5n0mvwcl8ircF7OSqsR9M7YRIg5ua_T6bmYBsthxXsbcPYDkYls9HQIgU9bSSiTgjWSbPVpK5x7Gv_uYoYtWY40nx_ezbmP-blVlhfT2JaICp3vcrl2XJzChEVo24DR-PDCOC7hVTLwMo6U-G6rt26R16QkcmdAEMTWsDtnxO4UDFitoeVasYaJJqGb4rt0ueQWmUwKxIhqFaewhVQvNhFyqEoO-Y1twTElqa7-2ppFiWe5ZKZTH32K6MMj-VR6vy6OXGPQas_JqvaaGc8m6xbDCABd1k_5mGze5DEsqn2UUAq-ma5kT6NeOQWdKCRUJjm9Jwe_WIk.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e10646e9e531d13016ac21c5d422087d1b140b9e031234b59",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 2412,
+   "output_tokens": 226,
+   "reasoning_tokens": 167,
+   "seconds": 4.67
+  }
+ ],
+ "answer": "**American Water Works paid $0.389 billion in cash dividends in FY2020.** The statement of cash flows reports dividends paid of $389 million; $389 million \u00f7 1,000 = $0.389 billion (p. 68).",
+ "tool_calls": [
+  {
+   "tool": "search",
+   "args": {
+    "pattern": "dividends paid|cash dividends|dividend payments|Dividends on common stock"
+   }
+  },
+  {
+   "tool": "read_pages",
+   "args": {
+    "first": 67,
+    "last": 68
+   }
+  }
+ ],
+ "verdict": "correct",
+ "reason": "$0.389B rounds to $0.4B, matching the gold $0.40B within rounding.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.003324,
+ "provider": "aipipe"
+}

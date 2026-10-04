@@ -5,13 +5,13 @@
  "doc": "PFIZER_2021_10K",
  "method": "agentic-search",
  "config": "gpt-6-luna@high",
- "seconds": 12.1,
+ "seconds": 8.9,
  "usage": {
   "calls": 3,
-  "input_tokens": 2528,
-  "cached_tokens": 0,
-  "output_tokens": 449,
-  "cost": 0.00047730000000000005,
+  "input_tokens": 4505,
+  "cached_tokens": 1206,
+  "output_tokens": 393,
+  "cost": 0.00053846,
   "effort_fallbacks": 0
  },
  "calls": [
@@ -31,36 +31,36 @@
     "role": "assistant",
     "tool_calls": [
      {
-      "id": "call_2P4Nzbr72uL0EsAXDL6d2MRF",
+      "id": "call_lb6Ta898ETMAWnMrZFYHKEk6",
       "function": {
-       "arguments": "{\"pattern\":\"property, plant|PP&E|property and equipment|Property, plant and equipment\"}",
+       "arguments": "{\"pattern\":\"property, plant and equipment|Property, plant and equipment|PP&E|property and equipment, net|2021 2020\"}",
        "name": "search"
       },
       "type": "function",
       "index": 0
      }
     ],
-    "reasoning": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+    "reasoning": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
     "reasoning_details": [
      {
       "type": "reasoning.summary",
-      "summary": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+      "summary": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
       "format": "openai-responses-v1",
       "index": 0
      },
      {
       "type": "reasoning.encrypted",
-      "data": "gAAAAABqwhPEEd3nDc-VnUjd0zKBiOhL1-vNrgVeMJMNr9-uKWNwamp-sVWIcZSIIxKMZk64PTkYG_R9fpiGAvunHxKqQKcC6P7d87kYptaFujmx7T9oJ6tqsSWHzLx3JjsMO27fUQu4-TZ55wAeO81qPYdIIpsZb1uLkEPNETSzYj4Cyn66Bh4ZSZvjRNTYOPEYvi4voo7BtApAGtekucg_CH3rm_ZpxSq4L2dldXVQ0ivy6CJauDcB-5MjFfdl1tQezrF33nf8w2qbEJG5F8_nA4XoMqHC_am_jjjKZrOVJqJlulIxUsshp8pYIiVFTcQW5G7g0J-DDZ1W5LEJG3pe-S8E8wYPqFyd0ZJxgTCb5tO546S43_Lf7BkEPqIEzKWyLLZJGRsMFtvYHvcXR8gNIIkOV5OoTZf9hpWkLBTAXKmrongR8AEZ-YRyKcHYMbLN5VNrQ7nP0ouBSBQhCGyZBWq1u2efMFqt3ZieP7iOA4dtxEuoH_jXh9IJ0BFdDk4B8BfLYo85CwtYBr3ksZqrZIEk2XIXEZ1jSkm7UbfuIpk-qawfyI4bOFQ6VnyD1oeAhK0I2_WY00zQrNGDtYzTRGxOmZGa-xtClPV8e0JgMKCmoW2c5sqlFIwW-s_fF5Euof88DifBB2GpHQrZdemihLCxwaWJPZfyv4FLRLS1tZkpgODTE7fRJaPoawkO7Hn8jOuF5bp25iNYO7DX3xs5fQavp3qLHeyPDDB1p6dcpjQ7_SdqwpcrvupbLTyzPeHKQ1gr3gQs2lucMsvQU2D8_LYaJUu3R-uzi6VldGc0mizNU7wfotJcXzRagGU_LmSn-EYesvZ7ZnM_uQJ5pvcyoPWlXm-j8KStDkva0IP0Vcj5KT8k5I7uftAboZXUSNi2Gnqk9uAseq78WLXcJzAXfMxuoYNHVqCPtwUetEgCW_q69UI5RCVgY3PW3JCdDrA2WRiONJ115TugluIJKI-ru2EgaRUZi_Y1jVy0aODjtjaw9bn0B5Wfx7HMe58US_OtSI7uyiptmLTdr6YR1v-xvBxfWVpTXAf9A6dwoX6CT_SirVrKIZkm_RONZLSwST3GlinLbteidK6amx-xN__7uTYNKLpaE1zdwkvsm4HcZ8Ptc1tcl1YyOi3P7_g62vzNoyGQP6eCdIDyWpo0jR4wBvgJbGRaoFdsG_DW9I8h7oB6VjZKqrHFBxNlq5dzAWwcJWBJwjjat7fxCQMM_uZN5fuhxxzub2uL5Zmba69SJfUTQj4T8BoEeHhTJI4qzhKjBbl4rhcniut0vmUKchCxbGr014jxb32D7rWb_uC3Sdpml9Oogbf6aICtfJl6k9yla1ZWk3b0vqgkeZdrT4jsess4SOQUfOwTuON7Ow2enjCO4ndAtjF_FuG80ncLwU1JwU0skjd-Tyox6KYC9ZTOjnPtezVpsROk9vmBIjKWA0GoJCA6S4hOTjO6GL0bUfW6VLA20jdIHhAiaUrRutcxNmY0X2yCXA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "data": "gAAAAABqwhVCrGh74N42UaZMC-XVgDXKr5An177k8uqZlFUh6QCkSYmJR_fR8RnelsRrduLFtilCQrjAxjShNK78OCiexXdWnzU1mUx__qED2S87nbktVeSLQJvUH37nG_peKmHamR-8ItP-j0ta_R0XRwfHd9h1jRCCSxoyT8RKrrYTrA8fJ04Ud3-AAhNQ5diiCOmFG7n_vMSXN7JXlAqiQp-qGekX03wafXhqGCqsFmeaZWxqyqymB_o8AfuJK3FfEIRApN_c1tzcCtpcvsbBpwp9W_ErF6SONKcbex_fvKW4f30OzRdxGinfhg4wx25YlyPzodLLro8JhqeuGxv5fKnx6wvqm1NPT7C1I8IvWnxYbLCoizTsAZwIhWYYnj9Ipuz7tZMn4F6QZOo1sDvsJqxkOTFLe5aQRmG-U2VeDqNVdWUS70kAQCxdf_7qO91hPgkZAHbz5le-lom7i8hQ_oHUaLghcCiBUvPgXW2DomgzUKXo2L6Y9sdBLStsdKtGB2tONt6qcj0NwTANZI1O9l8ic2J0uI3JKqU49_N2oPIrMROwycT3hWnO6TjyN0s74EG8l23wrcYnA-7KmO6h8qsNgU13PKi97NF1ZpyuTAhQxI0ERgBqMlCyTGrB0Do8wmgTOj86kYb1xZdVhtdyk1w2OVZkzsO-G1yx18qWLxrrjC0u8G4tjpbhYz_zSMQ2_gtPY2A_acu7jPOB03WgRezJsPwxB1wDxKxOuLEXEmmLPyJ7e_g9QR2bjOeOPOCfbZuqScl9cxjCPPA4C_g4wprgIzmkta42YFVuHMMz2ZspP711PQFVKf8tgFP-7G5ikL0Y5d-rZNELx8T4qEn5fhSm3MjZf-H7lIO_1SuYpjzQJ-8N-wK9w9LNrPge0PlAqBQC53Kz4ManOpgbk3GT6M69dqysy0gT7JPadsa6i0BbK16W6R5LOhbpMmfCOucznJzBLuXinTN3KgwxwVilVtsuSWiPahUpK8ZcTirF8SzwDxc7jRflBwa0Hw1kA7kAovlkKwlSmjWtFAiToyQ3JeZ7ZMsJc9wqd7ZJa6ireNy4Lh4nrihedIYngCKZOhm5MXZp1qVd-tHaXzD-GPw2-4tIMjiw5Zv95_MkH28KPYkP56bzCu15LcqCf282cgqUqFu4ieWxIe3IJdyjKIlWJ027hgAgYp4MaacbGBCIY9JxQ4N4bRivRNBsI5Xz_1ySjMH7Euq4UhTSvEkcuURTfzEEEYmPlU2MXsFDQ5xzID-uN4ZLrzcFL7wQe5afqITQ80eYx5LnewEPYjBqwAp3lwNQbWhAQuQCBAjCxIi-WlksQM9YpN6uvI-KcNbJV9s2ExSfyuXZO0RGbjUFzQioltvViMfYZsqd-KgwLAN7u8nrw9Td3oO-jA9JH7u27me77ewAGMWG.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
       "format": "openai-responses-v1",
-      "id": "rs_0985018d3f04b685016ac213c3356487d1a13f91f9ef308a4d",
+      "id": "rs_052774eff2a09452016ac21540cfb087d19af715299717fc00",
       "index": 1
      }
     ]
    },
    "input_tokens": 211,
-   "output_tokens": 63,
-   "reasoning_tokens": 29,
-   "seconds": 2.77
+   "output_tokens": 58,
+   "reasoning_tokens": 14,
+   "seconds": 2.67
   },
   {
    "model": "openai/gpt-6-luna",
@@ -77,72 +77,72 @@
      "role": "assistant",
      "tool_calls": [
       {
-       "id": "call_2P4Nzbr72uL0EsAXDL6d2MRF",
+       "id": "call_lb6Ta898ETMAWnMrZFYHKEk6",
        "function": {
-        "arguments": "{\"pattern\":\"property, plant|PP&E|property and equipment|Property, plant and equipment\"}",
+        "arguments": "{\"pattern\":\"property, plant and equipment|Property, plant and equipment|PP&E|property and equipment, net|2021 2020\"}",
         "name": "search"
        },
        "type": "function",
        "index": 0
       }
      ],
-     "reasoning": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+     "reasoning": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
      "reasoning_details": [
       {
        "type": "reasoning.summary",
-       "summary": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+       "summary": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
        "format": "openai-responses-v1",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhPEEd3nDc-VnUjd0zKBiOhL1-vNrgVeMJMNr9-uKWNwamp-sVWIcZSIIxKMZk64PTkYG_R9fpiGAvunHxKqQKcC6P7d87kYptaFujmx7T9oJ6tqsSWHzLx3JjsMO27fUQu4-TZ55wAeO81qPYdIIpsZb1uLkEPNETSzYj4Cyn66Bh4ZSZvjRNTYOPEYvi4voo7BtApAGtekucg_CH3rm_ZpxSq4L2dldXVQ0ivy6CJauDcB-5MjFfdl1tQezrF33nf8w2qbEJG5F8_nA4XoMqHC_am_jjjKZrOVJqJlulIxUsshp8pYIiVFTcQW5G7g0J-DDZ1W5LEJG3pe-S8E8wYPqFyd0ZJxgTCb5tO546S43_Lf7BkEPqIEzKWyLLZJGRsMFtvYHvcXR8gNIIkOV5OoTZf9hpWkLBTAXKmrongR8AEZ-YRyKcHYMbLN5VNrQ7nP0ouBSBQhCGyZBWq1u2efMFqt3ZieP7iOA4dtxEuoH_jXh9IJ0BFdDk4B8BfLYo85CwtYBr3ksZqrZIEk2XIXEZ1jSkm7UbfuIpk-qawfyI4bOFQ6VnyD1oeAhK0I2_WY00zQrNGDtYzTRGxOmZGa-xtClPV8e0JgMKCmoW2c5sqlFIwW-s_fF5Euof88DifBB2GpHQrZdemihLCxwaWJPZfyv4FLRLS1tZkpgODTE7fRJaPoawkO7Hn8jOuF5bp25iNYO7DX3xs5fQavp3qLHeyPDDB1p6dcpjQ7_SdqwpcrvupbLTyzPeHKQ1gr3gQs2lucMsvQU2D8_LYaJUu3R-uzi6VldGc0mizNU7wfotJcXzRagGU_LmSn-EYesvZ7ZnM_uQJ5pvcyoPWlXm-j8KStDkva0IP0Vcj5KT8k5I7uftAboZXUSNi2Gnqk9uAseq78WLXcJzAXfMxuoYNHVqCPtwUetEgCW_q69UI5RCVgY3PW3JCdDrA2WRiONJ115TugluIJKI-ru2EgaRUZi_Y1jVy0aODjtjaw9bn0B5Wfx7HMe58US_OtSI7uyiptmLTdr6YR1v-xvBxfWVpTXAf9A6dwoX6CT_SirVrKIZkm_RONZLSwST3GlinLbteidK6amx-xN__7uTYNKLpaE1zdwkvsm4HcZ8Ptc1tcl1YyOi3P7_g62vzNoyGQP6eCdIDyWpo0jR4wBvgJbGRaoFdsG_DW9I8h7oB6VjZKqrHFBxNlq5dzAWwcJWBJwjjat7fxCQMM_uZN5fuhxxzub2uL5Zmba69SJfUTQj4T8BoEeHhTJI4qzhKjBbl4rhcniut0vmUKchCxbGr014jxb32D7rWb_uC3Sdpml9Oogbf6aICtfJl6k9yla1ZWk3b0vqgkeZdrT4jsess4SOQUfOwTuON7Ow2enjCO4ndAtjF_FuG80ncLwU1JwU0skjd-Tyox6KYC9ZTOjnPtezVpsROk9vmBIjKWA0GoJCA6S4hOTjO6GL0bUfW6VLA20jdIHhAiaUrRutcxNmY0X2yCXA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhVCrGh74N42UaZMC-XVgDXKr5An177k8uqZlFUh6QCkSYmJR_fR8RnelsRrduLFtilCQrjAxjShNK78OCiexXdWnzU1mUx__qED2S87nbktVeSLQJvUH37nG_peKmHamR-8ItP-j0ta_R0XRwfHd9h1jRCCSxoyT8RKrrYTrA8fJ04Ud3-AAhNQ5diiCOmFG7n_vMSXN7JXlAqiQp-qGekX03wafXhqGCqsFmeaZWxqyqymB_o8AfuJK3FfEIRApN_c1tzcCtpcvsbBpwp9W_ErF6SONKcbex_fvKW4f30OzRdxGinfhg4wx25YlyPzodLLro8JhqeuGxv5fKnx6wvqm1NPT7C1I8IvWnxYbLCoizTsAZwIhWYYnj9Ipuz7tZMn4F6QZOo1sDvsJqxkOTFLe5aQRmG-U2VeDqNVdWUS70kAQCxdf_7qO91hPgkZAHbz5le-lom7i8hQ_oHUaLghcCiBUvPgXW2DomgzUKXo2L6Y9sdBLStsdKtGB2tONt6qcj0NwTANZI1O9l8ic2J0uI3JKqU49_N2oPIrMROwycT3hWnO6TjyN0s74EG8l23wrcYnA-7KmO6h8qsNgU13PKi97NF1ZpyuTAhQxI0ERgBqMlCyTGrB0Do8wmgTOj86kYb1xZdVhtdyk1w2OVZkzsO-G1yx18qWLxrrjC0u8G4tjpbhYz_zSMQ2_gtPY2A_acu7jPOB03WgRezJsPwxB1wDxKxOuLEXEmmLPyJ7e_g9QR2bjOeOPOCfbZuqScl9cxjCPPA4C_g4wprgIzmkta42YFVuHMMz2ZspP711PQFVKf8tgFP-7G5ikL0Y5d-rZNELx8T4qEn5fhSm3MjZf-H7lIO_1SuYpjzQJ-8N-wK9w9LNrPge0PlAqBQC53Kz4ManOpgbk3GT6M69dqysy0gT7JPadsa6i0BbK16W6R5LOhbpMmfCOucznJzBLuXinTN3KgwxwVilVtsuSWiPahUpK8ZcTirF8SzwDxc7jRflBwa0Hw1kA7kAovlkKwlSmjWtFAiToyQ3JeZ7ZMsJc9wqd7ZJa6ireNy4Lh4nrihedIYngCKZOhm5MXZp1qVd-tHaXzD-GPw2-4tIMjiw5Zv95_MkH28KPYkP56bzCu15LcqCf282cgqUqFu4ieWxIe3IJdyjKIlWJ027hgAgYp4MaacbGBCIY9JxQ4N4bRivRNBsI5Xz_1ySjMH7Euq4UhTSvEkcuURTfzEEEYmPlU2MXsFDQ5xzID-uN4ZLrzcFL7wQe5afqITQ80eYx5LnewEPYjBqwAp3lwNQbWhAQuQCBAjCxIi-WlksQM9YpN6uvI-KcNbJV9s2ExSfyuXZO0RGbjUFzQioltvViMfYZsqd-KgwLAN7u8nrw9Td3oO-jA9JH7u27me77ewAGMWG.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_0985018d3f04b685016ac213c3356487d1a13f91f9ef308a4d",
+       "id": "rs_052774eff2a09452016ac21540cfb087d19af715299717fc00",
        "index": 1
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_2P4Nzbr72uL0EsAXDL6d2MRF",
-     "content": "p53: after December 31, 2021 total $8.3 billion, of which an estimated $750 million is to be paid in the next twelve months and an estimated $7.6 billion is to be paid in periods thereafter; \u2022 Certain comm\np59: Property, plant and equipment 14,882 13,745\np61: Purchases of property, plant and equipment (2,711) (2,226) (2,046)\np68: Long-lived assets include: \u2022 Property, plant and equipment, less accumulated depreciation\u2014These assets are recorded at cost, including any significant improvements after purchase, less accumulated\np68: depreciation. Property, plant and equipment assets, other than land and construction in progress, are depreciated on a straight-line basis over the estimated useful life of the\np68: depreciation of property, plant and equipment are included in Cost of sales, Selling, informational and administrative expenses and/or Research and development expenses, as appropriate.\np68: Specifically: \u2022 For finite-lived intangible assets, such as developed technology rights, and for other long-lived assets, such as property, plant and equipment, whenever impairment indicators are\np72: Property, plant and equipment $ \u2014 $ 155\np72: Amounts as of December 31, 2021 represent property, plant and equipment held for sale. Amounts as of December 31, 2020 primarily relate to discontinued operations of our former Meridian subsidiary and\np80: Property, plant and equipment 117 (1,647) 211 (1,220)\np88: Note 9. Property, Plant and Equipment (PP&E)\np88: The following summarizes the components of Property, plant and equipment: Useful Lives As of December 31,\np88: Property, plant and equipment $ 14,882 $ 13,745\np88: Property, plant and equipment\np88: Property, plant and equipment $ 14,882 $ 13,745\np107: intangible assets and PP&E; (ii) acquisition-related items, where we incur costs for executing the transaction, integrating the acquired operations and restructuring the combined"
+     "tool_call_id": "call_lb6Ta898ETMAWnMrZFYHKEk6",
+     "content": "p38: pension plans : 2021 2020 2019\np39: Year Ended December 31, % Change Worldwide U.S. International Worldwide U.S. International (MILLIONS) 2021 2020 2019 2021 2020 2019 2021 2020 2019 21/20 20/19 21/20 20/19 21/20 20/19 Operating segment\np40: (MILLIONS) 2021 2020 2019\np41: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: (MILLIONS) 2021 2020 2019 21/20 20/19\np44: (MILLIONS) 2021 2020 2019 21/20 20/19\np51: (MILLIONS) 2021 2020 2019 Drivers of change\np53: after December 31, 2021 total $8.3 billion, of which an estimated $750 million is to be paid in the next twelve months and an estimated $7.6 billion is to be paid in periods thereafter; \u2022 Certain comm\np57: (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 2019\np58: (MILLIONS) 2021 2020 2019\np59: (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020\np59: Property, plant and equipment 14,882 13,745\np61: (MILLIONS) 2021 2020 2019\np61: Purchases of property, plant and equipment (2,711) (2,226) (2,046)\np62: 2021 2020 2019\np64: 2021 2020 2019\np64: 2021 2020 2019\np64: 2021 2020\np67: (MILLIONS) 2021 2020\np68: Long-lived assets include: \u2022 Property, plant and equipment, less accumulated depreciation\u2014These assets are recorded at cost, including any significant improvements after purchase, less accumulated\np68: depreciation. Property, plant and equipment assets, other than land and construction in progress, are depreciated on a straight-line basis over the estimated useful life of the\np68: depreciation of property, plant and equipment are included in Cost of sales, Selling, informational and administrative expenses and/or Research and development expenses, as appropriate.\np68: Specifically: \u2022 For finite-lived intangible assets, such as developed technology rights, and for other long-lived assets, such as property, plant and equipment, whenever impairment indicators are\np72: (MILLIONS) 2021 2020 2019\np72: (MILLIONS) 2021 2020\np72: Property, plant and equipment $ \u2014 $ 155\np72: Amounts as of December 31, 2021 represent property, plant and equipment held for sale. Amounts as of December 31, 2020 primarily relate to discontinued operations of our former Meridian subsidiary and\np74: (MILLIONS) 2021 2020\np74: (MILLIONS) 2021 2020 2019\np76: (MILLIONS) 2021 2020 2019\np77: (MILLIONS) 2021 2020 2019\np78: (MILLIONS) 2021 2020 2019\np78: (MILLIONS) 2021 2020 2019\np79: (MILLIONS) 2021 2020 2019\np80: 2021 2020 2019\np80: Property, plant and equipment 117 (1,647) 211 (1,220)\np81: (MILLIONS) 2021 2020 2019\np82: (MILLIONS) 2021 2020 2019\n... 32 more matches; narrow the pattern."
     }
    ],
    "reply": {
     "role": "assistant",
     "tool_calls": [
      {
-      "id": "call_YNVxP26w7Myr2nifMtqbHdWH",
+      "id": "call_V4RKu6OiVzzEh2NrXWwqC72Y",
       "function": {
-       "arguments": "{\"first\":59,\"last\":59}",
+       "arguments": "{\"first\":57,\"last\":59}",
        "name": "read_pages"
       },
       "type": "function",
       "index": 0
      }
     ],
-    "reasoning": "**Calculating Pfizer's growth**\n\nI\u2019m reviewing Pfizer's FY21 and FY20 values: 14,882 and 13,745, respectively. Yes, there was growth of $1,137 million, which is around 8.27%. The user wants to know if Pfizer's PPNE grew between FY20 and FY21. I think I should show the calculation clearly when explaining the change. They asked, \u201cDid it grow?\u201d and I can say yes, along with the figures. I need to verify the relevant pages for citations, perhaps pages 59 and 88. Let\u2019s read those.",
+    "reasoning": "**Calculating property balance**\n\nI need to determine the balance for property, plant, and equipment, specifically comparing 14,882 to 13,745 \u2014 likely the net value. I should calculate the difference to see if there's any growth and eventually cite relevant pages. I guess page 59 might have the information I need to reference. It's important I get this right! Time to dig into those numbers and calculations to clarify that change.",
     "reasoning_details": [
      {
       "type": "reasoning.summary",
-      "summary": "**Calculating Pfizer's growth**\n\nI\u2019m reviewing Pfizer's FY21 and FY20 values: 14,882 and 13,745, respectively. Yes, there was growth of $1,137 million, which is around 8.27%. The user wants to know if Pfizer's PPNE grew between FY20 and FY21. I think I should show the calculation clearly when explaining the change. They asked, \u201cDid it grow?\u201d and I can say yes, along with the figures. I need to verify the relevant pages for citations, perhaps pages 59 and 88. Let\u2019s read those.",
+      "summary": "**Calculating property balance**\n\nI need to determine the balance for property, plant, and equipment, specifically comparing 14,882 to 13,745 \u2014 likely the net value. I should calculate the difference to see if there's any growth and eventually cite relevant pages. I guess page 59 might have the information I need to reference. It's important I get this right! Time to dig into those numbers and calculations to clarify that change.",
       "format": "openai-responses-v1",
       "index": 0
      },
      {
       "type": "reasoning.encrypted",
-      "data": "gAAAAABqwhPJNoPuw_xauU1j0ONpMyhSJ67onER5Lm2Bx9FTVaEHaFObEyg8WODcT1nejUb5RA1CFzVc4iB2wF8Vde2q3Ai0KvbkJpFE7iWAnFwkV8OyEa_p_Wv4Jur1j182EM2VnIHAjz0ug_6FxvUwZSNEhUn0VHBuLA5SyPCGhkpPPvvmy5gIHr6F4P5ml_Avpa2yNcZhwDb-Wl0xfTi2rMDQZrir8XeXYNnuZMuUBvKUFLSyF0eELu2mgicbR7Pub5NLClAxB4HQCmN3z2XORFwwMo8uJqHVn17RmdpSJDclfipr73i-lLtHZReEzUtk0sxWAEpcoGYenhojDwdoWHvLPFBvP09HBJmyoO84eQfOmzUtFYKFzrrYbW9AhKruj0zQjtcL0kSEp49ShZckWycnH4LUpqEhBO3O1AY31zB8Gi5MyXyHmfq6_HXXmoYlIK67rGaCaNKMDFfHpRgpIRIBocK6tCQSkLycUmszVbHa-E3N3hcEP2_6t-fMru6gDBRnD7sAhBlxDfZz4TBqwyDu4TA6hCxYhiAjfrQFhE_qMM-gNeGftPIaiC6GKxpkjnLCf5THp6ZFWfAulyv8sz3xeFTRw1NROhvvf9PBtIiZYUJpDW1QuCnBYmD_H-JJrEyfFKows8NguL2GQQOIp6UMYmCie7CnWux0LsLlr0NQlGcu9hDXlgOgz3kXSRVTYykz60eAArbhyH4mDLqhGK9LefO0ygeK9spDqUgnz0tTfTnbnuK9HAVtsd0Ca1nuA-oOczL0unmW482W0cAyja2YGdcchkBbQW8S6WaavMBNjgyx-EwpwoiD4xIzNyNkR6uER2vt4Yh68X8QnMqSJSqial7YUTrRJiAnjxFg7WdO_QnHYfuzoEcJDQKEsaHmcPSf7cTLA2eKutQBDNxPZkHnETIICOFca0t-hzQp9lIngd26wirKPrWF-8pTsUGjW-brbUw3xjdSGCgEBXggZvpL13B9yXLdkLOsrXNwzLK1mow5JqkSOmxKJ6lYKZPSRfBxU40kpN2seeXcjEGFsTolQcTgQeBeUxiE-TIu3XglYZzw1ompA5XDHEP2biLz0zpSsvSlzVmjCwm9GyZDlyjWKLApxd5cElY3ac93EPiHUM6wpbB8bIwoy8gCUrXUHgCO6G2mQvogP_fk5XBvrD2O6XVWvwm33jZbUNcjkXKy8v5MEm25Pp5AQBX6V6PcndReBowsGGso3NLdiKLRmoDWcgwQIkdh-YeK2w097R13Rizv5y2UNQroDvtDoOFzHrSKPuebP0eVHLcdSUGu-Ju7oGg_ZY-lcro-RZe4KRZxnjBykkuqh8ylP_lbX4dUoUBrPJZG-mM6y_IELSjCta-bPWOHMRPVj382r3_z_NnmI0F8N-2HHUCVvBW4177gyDYRjvHISfNcoo3lqpq2EtnCOmTEmK5oRTJNa4BZxXe9WX3xZ0IMQ4TFMRppU-5jaCWzTzBItulZ_14X5gdTB4TN_5WTeacJAasqfds40R01dXCEXHKqoNw6N-0jo0cM4of1QMeROg7xlFgDl6taydNtXSdPQKJvuVjL_vSvKJuA2XeHMF8_2GBrCKZp3j-ZqzmjDkVGB6k469p8L6zBBFV9pncW4j3Ap41RtQhBOG37IuJ22zcnX0DP7MzdSs0aIgWV42vf3aa8F2qO0ykvtTqgX9QjpQoJTmxl9hY91a1qBKcBSWjkLR9QoVuNGC88qxgYk6MTmgnoXqVLd6HiuPhqDqeuzH6aU0hMD-vHPCrBZnZCP1h83sme48i_3AtcRwvd_2YiXQuxenVplkMB4mG7dbt4vPBrURLATRQdEDK8vLTSrAQGET5e0asWZpbiVOi23DZxzXEA7PnlahE0UP-fs-GwiQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "data": "gAAAAABqwhVF6-3fDNgobFjVc-9SI_cKMeFTBIcPhtT9tC9QiEybrcvP6jk0mSSkvFbR8BeGTnqhZE12VrQZckT_FAKKR8B11QoqFkLluHtbvCIzPy2xWiELQIy8IAhfOSjNPGDXK-72Rarz_4sMO9WMZLS59_QFN5qq5ip7YZJbzWvhLSwHM8MBIZdjcQoYDK09wkf15iUOCxxaGZUOZosQEllS6ywJqCYFp-4Y0RYwQewcE3aPiTjV0GaJvXAKI4ND8D8wCWojTSCbG1GYIHeVBAdZAVD_v4xMwzs30Vhu_6gMWj6o9hpOpUyB5-szHuQz8at7mCG0uvPvAA7xuCRIbQEB-LoePv2CUUxa9jEZ4NIT-svQzvkkjmIj8nlyfqAYTbSYTcmKA3LFdBDc-UHmyvjMrOZ1NyJsXgEjS8WNKPty2duxGE7nqw0hrEFyTzfsLwrbwu6StPb6cvwnsJi4SbaTOb4O6b-ncX6_FZ5fryf5UjkYcKXHGHVRF1TMLjchKvwSufo4G4h6Hq3OnD8wi-IuNxBhleT9D7zkqDZuGGTvIEgNX3vZ8jfCge5nnoEbkhu3As2NWLErAQxKG0-4Wd0_aNJFCcUSAaBSCYn65Q02TIsgHkFZeBsvFM45cdrkLE8sLRs_VpYgsZrNwBPHSf8FeLtLgQp597yf3g2yqZQ17UslMsHpqT2OmaXu1aLOvlrBIZvhAXv6xu2D2mYdRxbPaCmlunB2cK_BP3avwFAUeA9VCzNKLCqHMoL46-8MEHgD3SflKDIKxCLuhWI8NV1-dcn5xVX7Akz-ATMk0Wk70y7ys1HwBssmmqB2c-lyIYDUseNb4WjRokqMzOV9dP9rgh-ThSAROhWjPtZllOUi987HU4WkgSyo7Q-KNZxPOLiZs5SP0J6ymPgQZM6lkROqPk6jB8vy6wFBYpdpyp9cLJ1eAs3vd_UrJtAwaDaUtcg0-SKvPySJCe87NvebKzrGS3hCwUfE4Wh4_zRkBvge9pdJbdqgZAM6CeM-O1nUfFpmN27TXq3HHOnfDCs9DPSNVOCP4Aw0cEKkgbskAPUnxaT1gK_xQEDPlDxBEiZNmYu3MqTeVK_GnlDfvjEIlv48wzzR-Gu4dMWNwLvi56PPueS8Lr4wI3eUPASLXBdzYPUhz_LYp7okpPj6Q68l9xT7M-IDBAupDQAmqXw6dvaE-er6HZ8G4l4cxfjjMyedBudy4hwUE_ge_th5T_T4TUcDGAYD9zqGpWDJPseL0jVu7ySHxaUmJ_6Ij87D4TYbOh1uA2JWlWPeJR4neFs_W9JO8MO_qv3UIqvB7GMoUyDlwMOai4FgY6PPDCsX3uOWu60P8z7pp-3_HNlnaOotIQ_C-wQeSSh-bV3vTdiXeku6BvMlQgGoOkRxX5XADi-QSNORFHmGSRwN7mk2YN8-aPLA2ha1PYxVPlNjc_92QTHcOEuuTbIB9oTmYzOl_PGb7s6MtqgAF0iEjUF1VqkdpfWSKjyLHivPTCOoGyAZ5kGvcXNKRxTCBbrKBAWT1K8eVpstWcMVUVr9m2ozY2C1Fp8CNYaSkzA29Z2xt8A8w5_N4-7BGd0ClO9sBIw1KcRofl5j0sWj.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
       "format": "openai-responses-v1",
-      "id": "rs_0985018d3f04b685016ac213c7635887d18044c0b700c9e8d2",
+      "id": "rs_052774eff2a09452016ac21543337087d194bb2284fe532f49",
       "index": 1
      }
     ]
    },
-   "input_tokens": 726,
-   "output_tokens": 141,
-   "reasoning_tokens": 117,
-   "seconds": 4.64
+   "input_tokens": 1209,
+   "output_tokens": 70,
+   "reasoning_tokens": 46,
+   "seconds": 2.88
   },
   {
    "model": "openai/gpt-6-luna",
@@ -159,117 +159,111 @@
      "role": "assistant",
      "tool_calls": [
       {
-       "id": "call_2P4Nzbr72uL0EsAXDL6d2MRF",
+       "id": "call_lb6Ta898ETMAWnMrZFYHKEk6",
        "function": {
-        "arguments": "{\"pattern\":\"property, plant|PP&E|property and equipment|Property, plant and equipment\"}",
+        "arguments": "{\"pattern\":\"property, plant and equipment|Property, plant and equipment|PP&E|property and equipment, net|2021 2020\"}",
         "name": "search"
        },
        "type": "function",
        "index": 0
       }
      ],
-     "reasoning": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+     "reasoning": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
      "reasoning_details": [
       {
        "type": "reasoning.summary",
-       "summary": "**Searching for financial documents**\n\nI need to compare the property, plant, and equipment (PP&E) figures for fiscal years 2020 and 2021, focusing on the net values from the balance sheet. I should find the appropriate documents that provide this information. It\u2019s essential to ensure I\u2019m looking at the correct reports to get an accurate comparison. I guess I'll start by searching for relevant financial statements that show these figures clearly. Let's see what I can find!",
+       "summary": "**Searching for PP&E balance**\n\nI\u2019m focusing on gathering the PP&E (property, plant, and equipment) balance over the years. I think it\u2019ll be helpful to look at financial reports or databases that contain this information for accurate comparisons. I should consider how to present this data clearly, maybe in a table or graph, so users can understand trends over time better. Let\u2019s go ahead and run that search!",
        "format": "openai-responses-v1",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhPEEd3nDc-VnUjd0zKBiOhL1-vNrgVeMJMNr9-uKWNwamp-sVWIcZSIIxKMZk64PTkYG_R9fpiGAvunHxKqQKcC6P7d87kYptaFujmx7T9oJ6tqsSWHzLx3JjsMO27fUQu4-TZ55wAeO81qPYdIIpsZb1uLkEPNETSzYj4Cyn66Bh4ZSZvjRNTYOPEYvi4voo7BtApAGtekucg_CH3rm_ZpxSq4L2dldXVQ0ivy6CJauDcB-5MjFfdl1tQezrF33nf8w2qbEJG5F8_nA4XoMqHC_am_jjjKZrOVJqJlulIxUsshp8pYIiVFTcQW5G7g0J-DDZ1W5LEJG3pe-S8E8wYPqFyd0ZJxgTCb5tO546S43_Lf7BkEPqIEzKWyLLZJGRsMFtvYHvcXR8gNIIkOV5OoTZf9hpWkLBTAXKmrongR8AEZ-YRyKcHYMbLN5VNrQ7nP0ouBSBQhCGyZBWq1u2efMFqt3ZieP7iOA4dtxEuoH_jXh9IJ0BFdDk4B8BfLYo85CwtYBr3ksZqrZIEk2XIXEZ1jSkm7UbfuIpk-qawfyI4bOFQ6VnyD1oeAhK0I2_WY00zQrNGDtYzTRGxOmZGa-xtClPV8e0JgMKCmoW2c5sqlFIwW-s_fF5Euof88DifBB2GpHQrZdemihLCxwaWJPZfyv4FLRLS1tZkpgODTE7fRJaPoawkO7Hn8jOuF5bp25iNYO7DX3xs5fQavp3qLHeyPDDB1p6dcpjQ7_SdqwpcrvupbLTyzPeHKQ1gr3gQs2lucMsvQU2D8_LYaJUu3R-uzi6VldGc0mizNU7wfotJcXzRagGU_LmSn-EYesvZ7ZnM_uQJ5pvcyoPWlXm-j8KStDkva0IP0Vcj5KT8k5I7uftAboZXUSNi2Gnqk9uAseq78WLXcJzAXfMxuoYNHVqCPtwUetEgCW_q69UI5RCVgY3PW3JCdDrA2WRiONJ115TugluIJKI-ru2EgaRUZi_Y1jVy0aODjtjaw9bn0B5Wfx7HMe58US_OtSI7uyiptmLTdr6YR1v-xvBxfWVpTXAf9A6dwoX6CT_SirVrKIZkm_RONZLSwST3GlinLbteidK6amx-xN__7uTYNKLpaE1zdwkvsm4HcZ8Ptc1tcl1YyOi3P7_g62vzNoyGQP6eCdIDyWpo0jR4wBvgJbGRaoFdsG_DW9I8h7oB6VjZKqrHFBxNlq5dzAWwcJWBJwjjat7fxCQMM_uZN5fuhxxzub2uL5Zmba69SJfUTQj4T8BoEeHhTJI4qzhKjBbl4rhcniut0vmUKchCxbGr014jxb32D7rWb_uC3Sdpml9Oogbf6aICtfJl6k9yla1ZWk3b0vqgkeZdrT4jsess4SOQUfOwTuON7Ow2enjCO4ndAtjF_FuG80ncLwU1JwU0skjd-Tyox6KYC9ZTOjnPtezVpsROk9vmBIjKWA0GoJCA6S4hOTjO6GL0bUfW6VLA20jdIHhAiaUrRutcxNmY0X2yCXA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhVCrGh74N42UaZMC-XVgDXKr5An177k8uqZlFUh6QCkSYmJR_fR8RnelsRrduLFtilCQrjAxjShNK78OCiexXdWnzU1mUx__qED2S87nbktVeSLQJvUH37nG_peKmHamR-8ItP-j0ta_R0XRwfHd9h1jRCCSxoyT8RKrrYTrA8fJ04Ud3-AAhNQ5diiCOmFG7n_vMSXN7JXlAqiQp-qGekX03wafXhqGCqsFmeaZWxqyqymB_o8AfuJK3FfEIRApN_c1tzcCtpcvsbBpwp9W_ErF6SONKcbex_fvKW4f30OzRdxGinfhg4wx25YlyPzodLLro8JhqeuGxv5fKnx6wvqm1NPT7C1I8IvWnxYbLCoizTsAZwIhWYYnj9Ipuz7tZMn4F6QZOo1sDvsJqxkOTFLe5aQRmG-U2VeDqNVdWUS70kAQCxdf_7qO91hPgkZAHbz5le-lom7i8hQ_oHUaLghcCiBUvPgXW2DomgzUKXo2L6Y9sdBLStsdKtGB2tONt6qcj0NwTANZI1O9l8ic2J0uI3JKqU49_N2oPIrMROwycT3hWnO6TjyN0s74EG8l23wrcYnA-7KmO6h8qsNgU13PKi97NF1ZpyuTAhQxI0ERgBqMlCyTGrB0Do8wmgTOj86kYb1xZdVhtdyk1w2OVZkzsO-G1yx18qWLxrrjC0u8G4tjpbhYz_zSMQ2_gtPY2A_acu7jPOB03WgRezJsPwxB1wDxKxOuLEXEmmLPyJ7e_g9QR2bjOeOPOCfbZuqScl9cxjCPPA4C_g4wprgIzmkta42YFVuHMMz2ZspP711PQFVKf8tgFP-7G5ikL0Y5d-rZNELx8T4qEn5fhSm3MjZf-H7lIO_1SuYpjzQJ-8N-wK9w9LNrPge0PlAqBQC53Kz4ManOpgbk3GT6M69dqysy0gT7JPadsa6i0BbK16W6R5LOhbpMmfCOucznJzBLuXinTN3KgwxwVilVtsuSWiPahUpK8ZcTirF8SzwDxc7jRflBwa0Hw1kA7kAovlkKwlSmjWtFAiToyQ3JeZ7ZMsJc9wqd7ZJa6ireNy4Lh4nrihedIYngCKZOhm5MXZp1qVd-tHaXzD-GPw2-4tIMjiw5Zv95_MkH28KPYkP56bzCu15LcqCf282cgqUqFu4ieWxIe3IJdyjKIlWJ027hgAgYp4MaacbGBCIY9JxQ4N4bRivRNBsI5Xz_1ySjMH7Euq4UhTSvEkcuURTfzEEEYmPlU2MXsFDQ5xzID-uN4ZLrzcFL7wQe5afqITQ80eYx5LnewEPYjBqwAp3lwNQbWhAQuQCBAjCxIi-WlksQM9YpN6uvI-KcNbJV9s2ExSfyuXZO0RGbjUFzQioltvViMfYZsqd-KgwLAN7u8nrw9Td3oO-jA9JH7u27me77ewAGMWG.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_0985018d3f04b685016ac213c3356487d1a13f91f9ef308a4d",
+       "id": "rs_052774eff2a09452016ac21540cfb087d19af715299717fc00",
        "index": 1
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_2P4Nzbr72uL0EsAXDL6d2MRF",
-     "content": "p53: after December 31, 2021 total $8.3 billion, of which an estimated $750 million is to be paid in the next twelve months and an estimated $7.6 billion is to be paid in periods thereafter; \u2022 Certain comm\np59: Property, plant and equipment 14,882 13,745\np61: Purchases of property, plant and equipment (2,711) (2,226) (2,046)\np68: Long-lived assets include: \u2022 Property, plant and equipment, less accumulated depreciation\u2014These assets are recorded at cost, including any significant improvements after purchase, less accumulated\np68: depreciation. Property, plant and equipment assets, other than land and construction in progress, are depreciated on a straight-line basis over the estimated useful life of the\np68: depreciation of property, plant and equipment are included in Cost of sales, Selling, informational and administrative expenses and/or Research and development expenses, as appropriate.\np68: Specifically: \u2022 For finite-lived intangible assets, such as developed technology rights, and for other long-lived assets, such as property, plant and equipment, whenever impairment indicators are\np72: Property, plant and equipment $ \u2014 $ 155\np72: Amounts as of December 31, 2021 represent property, plant and equipment held for sale. Amounts as of December 31, 2020 primarily relate to discontinued operations of our former Meridian subsidiary and\np80: Property, plant and equipment 117 (1,647) 211 (1,220)\np88: Note 9. Property, Plant and Equipment (PP&E)\np88: The following summarizes the components of Property, plant and equipment: Useful Lives As of December 31,\np88: Property, plant and equipment $ 14,882 $ 13,745\np88: Property, plant and equipment\np88: Property, plant and equipment $ 14,882 $ 13,745\np107: intangible assets and PP&E; (ii) acquisition-related items, where we incur costs for executing the transaction, integrating the acquired operations and restructuring the combined"
+     "tool_call_id": "call_lb6Ta898ETMAWnMrZFYHKEk6",
+     "content": "p38: pension plans : 2021 2020 2019\np39: Year Ended December 31, % Change Worldwide U.S. International Worldwide U.S. International (MILLIONS) 2021 2020 2019 2021 2020 2019 2021 2020 2019 21/20 20/19 21/20 20/19 21/20 20/19 Operating segment\np40: (MILLIONS) 2021 2020 2019\np41: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: Revenues Region 2021 2020 Total Oper. Operational Results Commentary\np42: (MILLIONS) 2021 2020 2019 21/20 20/19\np44: (MILLIONS) 2021 2020 2019 21/20 20/19\np51: (MILLIONS) 2021 2020 2019 Drivers of change\np53: after December 31, 2021 total $8.3 billion, of which an estimated $750 million is to be paid in the next twelve months and an estimated $7.6 billion is to be paid in periods thereafter; \u2022 Certain comm\np57: (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 2019\np58: (MILLIONS) 2021 2020 2019\np59: (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020\np59: Property, plant and equipment 14,882 13,745\np61: (MILLIONS) 2021 2020 2019\np61: Purchases of property, plant and equipment (2,711) (2,226) (2,046)\np62: 2021 2020 2019\np64: 2021 2020 2019\np64: 2021 2020 2019\np64: 2021 2020\np67: (MILLIONS) 2021 2020\np68: Long-lived assets include: \u2022 Property, plant and equipment, less accumulated depreciation\u2014These assets are recorded at cost, including any significant improvements after purchase, less accumulated\np68: depreciation. Property, plant and equipment assets, other than land and construction in progress, are depreciated on a straight-line basis over the estimated useful life of the\np68: depreciation of property, plant and equipment are included in Cost of sales, Selling, informational and administrative expenses and/or Research and development expenses, as appropriate.\np68: Specifically: \u2022 For finite-lived intangible assets, such as developed technology rights, and for other long-lived assets, such as property, plant and equipment, whenever impairment indicators are\np72: (MILLIONS) 2021 2020 2019\np72: (MILLIONS) 2021 2020\np72: Property, plant and equipment $ \u2014 $ 155\np72: Amounts as of December 31, 2021 represent property, plant and equipment held for sale. Amounts as of December 31, 2020 primarily relate to discontinued operations of our former Meridian subsidiary and\np74: (MILLIONS) 2021 2020\np74: (MILLIONS) 2021 2020 2019\np76: (MILLIONS) 2021 2020 2019\np77: (MILLIONS) 2021 2020 2019\np78: (MILLIONS) 2021 2020 2019\np78: (MILLIONS) 2021 2020 2019\np79: (MILLIONS) 2021 2020 2019\np80: 2021 2020 2019\np80: Property, plant and equipment 117 (1,647) 211 (1,220)\np81: (MILLIONS) 2021 2020 2019\np82: (MILLIONS) 2021 2020 2019\n... 32 more matches; narrow the pattern."
     },
     {
      "role": "assistant",
      "tool_calls": [
       {
-       "id": "call_YNVxP26w7Myr2nifMtqbHdWH",
+       "id": "call_V4RKu6OiVzzEh2NrXWwqC72Y",
        "function": {
-        "arguments": "{\"first\":59,\"last\":59}",
+        "arguments": "{\"first\":57,\"last\":59}",
         "name": "read_pages"
        },
        "type": "function",
        "index": 0
       }
      ],
-     "reasoning": "**Calculating Pfizer's growth**\n\nI\u2019m reviewing Pfizer's FY21 and FY20 values: 14,882 and 13,745, respectively. Yes, there was growth of $1,137 million, which is around 8.27%. The user wants to know if Pfizer's PPNE grew between FY20 and FY21. I think I should show the calculation clearly when explaining the change. They asked, \u201cDid it grow?\u201d and I can say yes, along with the figures. I need to verify the relevant pages for citations, perhaps pages 59 and 88. Let\u2019s read those.",
+     "reasoning": "**Calculating property balance**\n\nI need to determine the balance for property, plant, and equipment, specifically comparing 14,882 to 13,745 \u2014 likely the net value. I should calculate the difference to see if there's any growth and eventually cite relevant pages. I guess page 59 might have the information I need to reference. It's important I get this right! Time to dig into those numbers and calculations to clarify that change.",
      "reasoning_details": [
       {
        "type": "reasoning.summary",
-       "summary": "**Calculating Pfizer's growth**\n\nI\u2019m reviewing Pfizer's FY21 and FY20 values: 14,882 and 13,745, respectively. Yes, there was growth of $1,137 million, which is around 8.27%. The user wants to know if Pfizer's PPNE grew between FY20 and FY21. I think I should show the calculation clearly when explaining the change. They asked, \u201cDid it grow?\u201d and I can say yes, along with the figures. I need to verify the relevant pages for citations, perhaps pages 59 and 88. Let\u2019s read those.",
+       "summary": "**Calculating property balance**\n\nI need to determine the balance for property, plant, and equipment, specifically comparing 14,882 to 13,745 \u2014 likely the net value. I should calculate the difference to see if there's any growth and eventually cite relevant pages. I guess page 59 might have the information I need to reference. It's important I get this right! Time to dig into those numbers and calculations to clarify that change.",
        "format": "openai-responses-v1",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhPJNoPuw_xauU1j0ONpMyhSJ67onER5Lm2Bx9FTVaEHaFObEyg8WODcT1nejUb5RA1CFzVc4iB2wF8Vde2q3Ai0KvbkJpFE7iWAnFwkV8OyEa_p_Wv4Jur1j182EM2VnIHAjz0ug_6FxvUwZSNEhUn0VHBuLA5SyPCGhkpPPvvmy5gIHr6F4P5ml_Avpa2yNcZhwDb-Wl0xfTi2rMDQZrir8XeXYNnuZMuUBvKUFLSyF0eELu2mgicbR7Pub5NLClAxB4HQCmN3z2XORFwwMo8uJqHVn17RmdpSJDclfipr73i-lLtHZReEzUtk0sxWAEpcoGYenhojDwdoWHvLPFBvP09HBJmyoO84eQfOmzUtFYKFzrrYbW9AhKruj0zQjtcL0kSEp49ShZckWycnH4LUpqEhBO3O1AY31zB8Gi5MyXyHmfq6_HXXmoYlIK67rGaCaNKMDFfHpRgpIRIBocK6tCQSkLycUmszVbHa-E3N3hcEP2_6t-fMru6gDBRnD7sAhBlxDfZz4TBqwyDu4TA6hCxYhiAjfrQFhE_qMM-gNeGftPIaiC6GKxpkjnLCf5THp6ZFWfAulyv8sz3xeFTRw1NROhvvf9PBtIiZYUJpDW1QuCnBYmD_H-JJrEyfFKows8NguL2GQQOIp6UMYmCie7CnWux0LsLlr0NQlGcu9hDXlgOgz3kXSRVTYykz60eAArbhyH4mDLqhGK9LefO0ygeK9spDqUgnz0tTfTnbnuK9HAVtsd0Ca1nuA-oOczL0unmW482W0cAyja2YGdcchkBbQW8S6WaavMBNjgyx-EwpwoiD4xIzNyNkR6uER2vt4Yh68X8QnMqSJSqial7YUTrRJiAnjxFg7WdO_QnHYfuzoEcJDQKEsaHmcPSf7cTLA2eKutQBDNxPZkHnETIICOFca0t-hzQp9lIngd26wirKPrWF-8pTsUGjW-brbUw3xjdSGCgEBXggZvpL13B9yXLdkLOsrXNwzLK1mow5JqkSOmxKJ6lYKZPSRfBxU40kpN2seeXcjEGFsTolQcTgQeBeUxiE-TIu3XglYZzw1ompA5XDHEP2biLz0zpSsvSlzVmjCwm9GyZDlyjWKLApxd5cElY3ac93EPiHUM6wpbB8bIwoy8gCUrXUHgCO6G2mQvogP_fk5XBvrD2O6XVWvwm33jZbUNcjkXKy8v5MEm25Pp5AQBX6V6PcndReBowsGGso3NLdiKLRmoDWcgwQIkdh-YeK2w097R13Rizv5y2UNQroDvtDoOFzHrSKPuebP0eVHLcdSUGu-Ju7oGg_ZY-lcro-RZe4KRZxnjBykkuqh8ylP_lbX4dUoUBrPJZG-mM6y_IELSjCta-bPWOHMRPVj382r3_z_NnmI0F8N-2HHUCVvBW4177gyDYRjvHISfNcoo3lqpq2EtnCOmTEmK5oRTJNa4BZxXe9WX3xZ0IMQ4TFMRppU-5jaCWzTzBItulZ_14X5gdTB4TN_5WTeacJAasqfds40R01dXCEXHKqoNw6N-0jo0cM4of1QMeROg7xlFgDl6taydNtXSdPQKJvuVjL_vSvKJuA2XeHMF8_2GBrCKZp3j-ZqzmjDkVGB6k469p8L6zBBFV9pncW4j3Ap41RtQhBOG37IuJ22zcnX0DP7MzdSs0aIgWV42vf3aa8F2qO0ykvtTqgX9QjpQoJTmxl9hY91a1qBKcBSWjkLR9QoVuNGC88qxgYk6MTmgnoXqVLd6HiuPhqDqeuzH6aU0hMD-vHPCrBZnZCP1h83sme48i_3AtcRwvd_2YiXQuxenVplkMB4mG7dbt4vPBrURLATRQdEDK8vLTSrAQGET5e0asWZpbiVOi23DZxzXEA7PnlahE0UP-fs-GwiQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhVF6-3fDNgobFjVc-9SI_cKMeFTBIcPhtT9tC9QiEybrcvP6jk0mSSkvFbR8BeGTnqhZE12VrQZckT_FAKKR8B11QoqFkLluHtbvCIzPy2xWiELQIy8IAhfOSjNPGDXK-72Rarz_4sMO9WMZLS59_QFN5qq5ip7YZJbzWvhLSwHM8MBIZdjcQoYDK09wkf15iUOCxxaGZUOZosQEllS6ywJqCYFp-4Y0RYwQewcE3aPiTjV0GaJvXAKI4ND8D8wCWojTSCbG1GYIHeVBAdZAVD_v4xMwzs30Vhu_6gMWj6o9hpOpUyB5-szHuQz8at7mCG0uvPvAA7xuCRIbQEB-LoePv2CUUxa9jEZ4NIT-svQzvkkjmIj8nlyfqAYTbSYTcmKA3LFdBDc-UHmyvjMrOZ1NyJsXgEjS8WNKPty2duxGE7nqw0hrEFyTzfsLwrbwu6StPb6cvwnsJi4SbaTOb4O6b-ncX6_FZ5fryf5UjkYcKXHGHVRF1TMLjchKvwSufo4G4h6Hq3OnD8wi-IuNxBhleT9D7zkqDZuGGTvIEgNX3vZ8jfCge5nnoEbkhu3As2NWLErAQxKG0-4Wd0_aNJFCcUSAaBSCYn65Q02TIsgHkFZeBsvFM45cdrkLE8sLRs_VpYgsZrNwBPHSf8FeLtLgQp597yf3g2yqZQ17UslMsHpqT2OmaXu1aLOvlrBIZvhAXv6xu2D2mYdRxbPaCmlunB2cK_BP3avwFAUeA9VCzNKLCqHMoL46-8MEHgD3SflKDIKxCLuhWI8NV1-dcn5xVX7Akz-ATMk0Wk70y7ys1HwBssmmqB2c-lyIYDUseNb4WjRokqMzOV9dP9rgh-ThSAROhWjPtZllOUi987HU4WkgSyo7Q-KNZxPOLiZs5SP0J6ymPgQZM6lkROqPk6jB8vy6wFBYpdpyp9cLJ1eAs3vd_UrJtAwaDaUtcg0-SKvPySJCe87NvebKzrGS3hCwUfE4Wh4_zRkBvge9pdJbdqgZAM6CeM-O1nUfFpmN27TXq3HHOnfDCs9DPSNVOCP4Aw0cEKkgbskAPUnxaT1gK_xQEDPlDxBEiZNmYu3MqTeVK_GnlDfvjEIlv48wzzR-Gu4dMWNwLvi56PPueS8Lr4wI3eUPASLXBdzYPUhz_LYp7okpPj6Q68l9xT7M-IDBAupDQAmqXw6dvaE-er6HZ8G4l4cxfjjMyedBudy4hwUE_ge_th5T_T4TUcDGAYD9zqGpWDJPseL0jVu7ySHxaUmJ_6Ij87D4TYbOh1uA2JWlWPeJR4neFs_W9JO8MO_qv3UIqvB7GMoUyDlwMOai4FgY6PPDCsX3uOWu60P8z7pp-3_HNlnaOotIQ_C-wQeSSh-bV3vTdiXeku6BvMlQgGoOkRxX5XADi-QSNORFHmGSRwN7mk2YN8-aPLA2ha1PYxVPlNjc_92QTHcOEuuTbIB9oTmYzOl_PGb7s6MtqgAF0iEjUF1VqkdpfWSKjyLHivPTCOoGyAZ5kGvcXNKRxTCBbrKBAWT1K8eVpstWcMVUVr9m2ozY2C1Fp8CNYaSkzA29Z2xt8A8w5_N4-7BGd0ClO9sBIw1KcRofl5j0sWj.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_0985018d3f04b685016ac213c7635887d18044c0b700c9e8d2",
+       "id": "rs_052774eff2a09452016ac21543337087d194bb2284fe532f49",
        "index": 1
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_YNVxP26w7Myr2nifMtqbHdWH",
-     "content": "[Page 59]\nConsolidated Balance Sheets\r\nPfizer Inc. and Subsidiary Companies\r\nAs of December 31,\r\n(MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020\r\nAssets\r\nCash and cash equivalents $ 1,944 $ 1,786 \r\nShort-term investments 29,125 10,437 \r\nTrade accounts receivable, less allowance for doubtful accounts: 2021\u2014$492; 2020\u2014$508 11,479 7,913 \r\nInventories 9,059 8,020 \r\nCurrent tax assets 4,266 3,264 \r\nOther current assets 3,820 3,646 \r\nTotal current assets 59,693 35,067 \r\nEquity-method investments 16,472 16,856 \r\nLong-term investments 5,054 3,406 \r\nProperty, plant and equipment 14,882 13,745 \r\nIdentifiable intangible assets 25,146 28,337 \r\nGoodwill 49,208 49,556 \r\nNoncurrent deferred tax assets and other noncurrent tax assets 3,341 2,383 \r\nOther noncurrent assets 7,679 4,879 \r\nTotal assets $ 181,476 $ 154,229 \r\nLiabilities and Equity\r\nShort-term borrowings, including current portion of long-term debt: 2021\u2014$1,636; 2020\u2014$2,002 $ 2,241 $ 2,703 \r\nTrade accounts payable 5,578 4,283 \r\nDividends payable 2,249 2,162 \r\nIncome taxes payable 1,266 1,049 \r\nAccrued compensation and related items 3,332 3,049 \r\nDeferred revenues 3,067 1,113 \r\nOther current liabilities 24,939 11,561 \r\nTotal current liabilities 42,671 25,920 \r\nLong-term debt 36,195 37,133 \r\nPension benefit obligations 3,489 4,766 \r\nPostretirement benefit obligations 235 645 \r\nNoncurrent deferred tax liabilities 349 4,063 \r\nOther taxes payable 11,331 11,560 \r\nOther noncurrent liabilities 9,743 6,669 \r\nTotal liabilities 104,013 90,756 \r\nCommitments and Contingencies\r\nPreferred stock, no par value, at stated value; 27 shares authorized; no shares issued or outstanding at December 31, 2021 and\r\nDecember 31, 2020 \u2014 \u2014 Common stock, $0.05 par value; 12,000 shares authorized; issued: 2021\u20149,471; 2020\u20149,407 473 470 \r\nAdditional paid-in capital 90,591 88,674 \r\nTreasury stock, shares at cost: 2021\u20143,851; 2020\u20143,840 (111,361) (110,988)\r\nRetained earnings 103,394 90,392 \r\nAccumulated other comprehensive loss (5,897) (5,310)\r\nTotal Pfizer Inc. shareholders\u2019 equity 77,201 63,238 \r\nEquity attributable to noncontrolling interests 262 235 \r\nTotal equity 77,462 63,473 \r\nTotal liabilities and equity $ 181,476 $ 154,229 \r\nSee Accompanying Notes.\r\nPfizer Inc. 2021 Form 10-K 53"
+     "tool_call_id": "call_V4RKu6OiVzzEh2NrXWwqC72Y",
+     "content": "[Page 57]\nConsolidated Statements of Income\r\nPfizer Inc. and Subsidiary Companies\r\nYear Ended December 31,\r\n(MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 2019\r\nRevenues $ 81,288 $ 41,651 $ 40,905 \r\nCosts and expenses:\r\nCost of sales 30,821 8,484 8,054 \r\nSelling, informational and administrative expenses 12,703 11,597 12,726 \r\nResearch and development expenses 13,829 9,393 8,385 \r\nAmortization of intangible assets 3,700 3,348 4,429 \r\nRestructuring charges and certain acquisition-related costs 802 579 601 \r\n(Gain) on completion of Consumer Healthcare JV transaction \u2014 (6) (8,107)\r\nOther (income)/deductions\u2013\u2013net (4,878) 1,219 3,497 \r\nIncome from continuing operations before provision/(benefit) for taxes on income 24,311 7,036 11,321 \r\nProvision/(benefit) for taxes on income 1,852 370 583 \r\nIncome from continuing operations 22,459 6,666 10,738 \r\nDiscontinued operations\u2013\u2013net of tax (434) 2,529 5,318 \r\nNet income before allocation to noncontrolling interests 22,025 9,195 16,056 \r\nLess: Net income attributable to noncontrolling interests 45 36 29 \r\nNet income attributable to Pfizer Inc. common shareholders $ 21,979 $ 9,159 $ 16,026 \r\nEarnings per common share\u2013\u2013basic:\r\nIncome from continuing operations attributable to Pfizer Inc. common shareholders $ 4.00 $ 1.19 $ 1.92 \r\nDiscontinued operations\u2013\u2013net of tax (0.08) 0.46 0.95 \r\nNet income attributable to Pfizer Inc. common shareholders $ 3.92 $ 1.65 $ 2.88 \r\nEarnings per common share\u2013\u2013diluted:\r\nIncome from continuing operations attributable to Pfizer Inc. common shareholders $ 3.93 $ 1.18 $ 1.89 \r\nDiscontinued operations\u2013\u2013net of tax (0.08) 0.45 0.94 \r\nNet income attributable to Pfizer Inc. common shareholders $ 3.85 $ 1.63 $ 2.82 \r\nWeighted-average shares\u2013\u2013basic 5,601 5,555 5,569 \r\nWeighted-average shares\u2013\u2013diluted 5,708 5,632 5,675 \r\nExclusive of amortization of intangible assets, except as disclosed in Note 1M.\r\nSee Accompanying Notes.\r\n(a)\r\n(a)\r\n(a)\r\n(a)\r\nPfizer Inc. 2021 Form 10-K 51\n\n[Page 58]\nConsolidated Statements of Comprehensive Income\r\nPfizer Inc. and Subsidiary Companies\r\nYear Ended December 31,\r\n(MILLIONS) 2021 2020 2019\r\nNet income before allocation to noncontrolling interests $ 22,025 $ 9,195 $ 16,056 \r\nForeign currency translation adjustments, net (682) 772 675 \r\nReclassification adjustments \u2014 (17) (288)\r\n(682) 755 387 \r\nUnrealized holding gains/(losses) on derivative financial instruments, net 526 (582) 476 \r\nReclassification adjustments for (gains)/losses included in net income 134 21 (664)\r\n660 (561) (188)\r\nUnrealized holding gains/(losses) on available-for-sale securities, net (355) 361 (1)\r\nReclassification adjustments for (gains)/losses included in net income (30) (188) 39 \r\n(384) 173 38 \r\nBenefit plans: prior service (costs)/credits and other, net 116 52 (7)\r\nReclassification adjustments related to amortization of prior service costs and other, net (154) (176) (181)\r\nReclassification adjustments related to curtailments of prior service costs and other, net (74) \u2014 (2)\r\nOther (2) \u2014 1 \r\n(113) (124) (189)\r\nOther comprehensive income/(loss), before tax (519) 243 48 \r\nTax provision/(benefit) on other comprehensive income/(loss) 71 (227) 178 \r\nOther comprehensive income/(loss) before allocation to noncontrolling interests $ (589) $ 471 $ (130)\r\nComprehensive income/(loss) before allocation to noncontrolling interests $ 21,435 $ 9,666 $ 15,926 \r\nLess: Comprehensive income/(loss) attributable to noncontrolling interests 43 27 18 \r\nComprehensive income/(loss) attributable to Pfizer Inc. $ 21,393 $ 9,639 $ 15,908 Reclassified into Other (income)/deductions\u2014net and Cost of sales. See Note 7E. Reclassified into Other (income)/deductions\u2014net.\r\nSee Accompanying Notes.\r\n(a)\r\n(b)\r\n(a)\r\n(b)\r\nPfizer Inc. 2021 Form 10-K 52\n\n[Page 59]\nConsolidated Balance Sheets\r\nPfizer Inc. and Subsidiary Companies\r\nAs of December 31,\r\n(MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020\r\nAssets\r\nCash and cash equivalents $ 1,944 $ 1,786 \r\nShort-term investments 29,125 10,437 \r\nTrade accounts receiv\n\u2026 [1,979 more characters]"
     }
    ],
    "reply": {
-    "content": "Yes. Pfizer\u2019s PP&E increased from $13,745 million in FY20 to $14,882 million in FY21\u2014up $1,137 million, or about 8.3%: \\((14{,}882-13{,}745)/13{,}745\\). (p. 53)",
+    "content": "Yes. Pfizer\u2019s PP&E increased by **$1.137 billion**, from **$13.745 billion in FY20** to **$14.882 billion in FY21** ($14.882B \u2212 $13.745B; about **8.3%**). (Consolidated Balance Sheets, p. 59; printed p. 53.)",
     "role": "assistant",
-    "reasoning": "**Calculating percentages and citations**\n\nI need to concisely calculate 1,137 divided by 13,745, which equals about 8.270%. I should mention PP&E (property, plant, and equipment) as specified on page 53, but there seems to be a discrepancy with the PDF page numbering. The user asks for page numbers, so I'll cite printed page 53. I can confirm that the increase from $13,745 million in December 2020 to $14,882 million in December 2021 is correct, considering both absolute change and percent.",
     "reasoning_details": [
      {
-      "type": "reasoning.summary",
-      "summary": "**Calculating percentages and citations**\n\nI need to concisely calculate 1,137 divided by 13,745, which equals about 8.270%. I should mention PP&E (property, plant, and equipment) as specified on page 53, but there seems to be a discrepancy with the PDF page numbering. The user asks for page numbers, so I'll cite printed page 53. I can confirm that the increase from $13,745 million in December 2020 to $14,882 million in December 2021 is correct, considering both absolute change and percent.",
-      "format": "openai-responses-v1",
-      "index": 0
-     },
-     {
       "type": "reasoning.encrypted",
-      "data": "gAAAAABqwhPOzsCEfhelV-ZL2IHMCQP6drEieGTZIJLnJ50iizQNLbZUAHJWRkUVUfCHdHjElBTp5YJTljWR9kovOpioNBAnH0JPkx0jLApIGXHlfpxEdjnnUifyFzrtQTHokWL1IoE2IUc3-lkjQOtGaCaeE8k7hJPaK6IEEUgvJkm-Eay6BFqzyWwcPKO4UaF_liXGFSBu5ZJH8JmsgYdPl9ZYtXLl7gFayS-0Vd0Y3L_Kmqu5TR9AazncDtf4OV8_50PXmTYvuZaf2PHPgEtIsQ2Fr9FalBTgEBvobpMRbS9xdUftQNm1vbKEm6l7h4hWqt9qyIM-RT_HDQjnDKei6cYnSeNIMbv_M_Z1J1apEWeogdJBBfxMwPDjizOfRskgZI1SocLBkQwpeZRkgnxrmyODODweBQlJ2Aub2mFfWkyO0I8968W4aNMoVMpA5mQQKD6NekwrPwdCXowKIZNqKXf8Msjfk7izx3bx9EcTrHPauz6vN-v9BGW69iUMs4nTIIbD6D5TEzIN5fwd-9_vcuqySJvLXUshpVzKt9UOU2NJ1xIHidTUUAR4XhVDaW_DNqqv_kEYpbILdmCupYDgmQU_5R0AFybi6TsJpa-9UsLlz7yUT4QZ8ITkuDpsQvMeatGYCRjYytl8rh2zYDz2P6X3OX_akI-XUbe6QHXoQ3ONmCUkhVRp9245ptSa47Cy2xn7I7NrYR3AD4eux7FH6gSwI0py6MIyPEa0I_jaP-G4Cup3uC5Enwc4BVC6MaisRRdh7sLfIqHO_c6Qp3nGGNKhKxHVEmzp_5WkO2icGfyZMQYf4WFUDERN2JuflsC-bwQPAKXZfDcoIn98_8akIOYm9HhdCgdJv-bwlJPYZfSj_Nqwm6qcpO-M-1mCo1QNCwLi0hl_FoBJc9BQ4mLjwdDCIBk7tcijMNZQgx5PfzE5VDFnXiSTj1035w3v-iTT1nyBbq8wdpM4oRB7xHdroSfsSkZ97La6w6xk6ECTO8P9v76OHh4Ddq82OXm7epClpFwVJZybxH0KZfgqYBLu0YKbA4IvYhOkJ_qP0tqlf6J1U_Nptw7d0huL2hZsZTjYLM5Js4-3FuI3bBfkxALpxQKSfZaoVlfdVua1S4KG4FGY3bx2FClnnavQetJ3YNrhqzzpDI-GKoBUxH9G_AlyKPfA9x3s_1ByH7uFJpjDk2x4hbxfYrR-_IwZOeuayI2s-5zKvbJaI2VHfW8iXiUJovc5PU4Efo9jaZZ979Mg6_cMAYmVzPzz4f7k7igrhZdAVGoPxKK7oGQdsnfwWQ7ORfKAmFvQShPDsHtGEkW_t2FUGe7DoZZ02JZjIFVAc5MjdVHBOwuvy7C4B3Y53j1rKqdf2_GIqh_T47hfH79O-4PM_ux8QDukiRS7awDVMOHScDlMASH8wRY5hhDlpSmw7QNkSXAnSjsBdSNJeFmy5Tgc4E74Zi2Y_VdZlzNvrTfyLHphKIepeY6BRIoYnKQY4zF45sU0GWFnIyjRxNHEW7VLNPr8KKJrHU7YL4XdQL2fkFvcO4JSeOvX2ad64O-AElJ9I8ESmuDRKWHeGtcd0TuyECmgKn2IXe4FjwARQgZGClThXb-YtNk2M2HAk_hPiutAm_CBYbS91ArmGW8Q3Nf8BKkRqtSQiHunwBE9MgUcjWbGwUn6E1PQsTJ1SVjZl-oIqxEgr58tuvWa8qAOiTygxEvDvRciwd05Z6-0MnYKxVSWceXIy0j0Cm8zknZKuRCBZiQ5rRQNZY99mX2f_mNsC_oiEki_jnIHMc7_BXYaWtbrKydmodaU9tO2vlNoX83b1hLMCSVnvOH2GkqePJLiGQ0gi1sww6hS6G6V04yUpYK8QfeaWzKksbl5IS_88t-uh1PpCghZvDahKhTVk6JBS1c9p1mE0ifBDXkTsophWORMiGynHRtom50-g2VYpjeCm5AyeG6yF-IXvTDWZUCFDBB6J_N4iIYuq1O6CNqFfwk67RwDCRxaIIgy4vpqK4ba_pnO_ft5RUy2pVV3xxjvhhrqgM5OFHYvqdtdl-YhpblTyH7U86U4GLbXlNoWvvTEsfYJuDVJuzT-5tHDTUfWduzizNWL3dpj3zLLwFn1kgpV7nNow_YQZVXEfgHWawdnrREv2iUbYQO8bV8FHc4aqfjXqDfu_npuzzzjT-aQXBgt-wopE2KJEKVDNBOW0elxT9eqrKyziLVtb29-xhJvgfxZgdA=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "data": "gAAAAABqwhVIMf0183ll4ymhltJY7wz4rDgzITUw6FTjxqdaCXQ10Ipk8yyWkFEoCi7E3akfGlUNuVrn2dJ-RVFXp0Ndv2m6PU0VM45IjZJtskvL6M4f9EKa6vtNSvKrNxacFIaEYh2Spx22ctLtAKONUDuKyNEUW_Xy4uA9xbHc6G5GfJR6TT0LT2h41ccvGsW9x2nzQvWuGfZDAYf5V_jM9RRShhGcb3aAR0XS82cYGeFCtz9A-XcxwV9tp0Kg-F6SM6uuUut1r8XlPVN8sO8o6lRHK-Hy0BXt2ayRDfz_9JsS1CRlp2kbEOlh4wYRAEYOcOlNh2LztRw8aSDfGubLUPAfflM9p_gLYbpBVpoukw3480dJc9adIzIt_oTJKiheY2j3xdBGA0T0UPK4hTktPvRhY5JAcnHZehbUgSMZQQbilZF38VYQlQMbUSBghyHeecY8TXQNkXbLmcNef04UheQcDJXNWj6grzf1CiVDo4sTgzJmL0OElJG_wAeDxmZjcdKindB2o6HTDREzfZTUaKJ-kD5j8jLEtZWI5-xxWORdyYDXY8vD1qcyNWUhYYCE0ZFhwFwO0i4nOfv_i4A5e0JXvBLnhhCqaF2l-uPxpADIJx0T-tbDm__RTys5f9r5NiLFb3EmAXRsQnoXx3WqRiUUmKLEod4BrLS_JFb-6FX9ZtBSdyQ4sKlhjM70vRiJ8iKiKaGl-T2pW2MB4vuzsGZk_GJJRyUn3JIkdLkPLT_LpuSzoYI0YwT53jFejG0IrAVM4qNcC3HC1ruk0NjhpYXcjSLLXvbATjs6WFBBGKhReMJz2d4ncqWKFYLI_N3PpBM9od8WLGkscVyu0qyMOnOHTCHB1W66vsGP6ghyU5AxT8f-3Bgg8nFJHBcS_w2d5XVWxMkNp6w1GQoNnQsja6iDC2Uc6ahjRcniAgS4AqJdL_LNka7SuqoT614G7j9UGeZB22sjxfVmm6k0857sk3Za2e1pXjwMG79X12zFoRf-XHG2_VYt35MpcudiHsEVoBWxHFYlH8m6kt0e3WplOYIwYjLdMJk2kfGSI5eVt7xW76PJvs8FJnC9-b9NW1Vrvyt8cgvPE9KvssFI2OCERTkG1XGfcbtGh0xCeuVgd243qzQD10ppyMxBVSXY3pMHZGKEHmeLqz68EUgRcC-pvetnbkWljhoNsWOlfthFZBqnP-se_EUYrEMOwybktSbAvyy59C77XqpDc55tQZipbQjtkGxIXHsE7vaQKoiCEmBITlCpVspL5laN2NxJBOSsnSAb0vQn4h0iT0cdaqSkP4awW2TfoeoHT-4kTzBc6Jdt_wPFvQX1PGdOj-v2EOvgcO4OH5kwnApGbMREfd4XsCn_8nKQOOGS_UYk9PU8zmcInlElfvRJ5nPyR149UQCB1PdojZMTz2mjQFrcdxwCxi_cAeU4Ro5jElujOM7QmYckPmzUgpWGO760KKXG3gwMaUZhV24DmCaSxkwv5auhACwc-rai-ANpAL8ixIYDB_ZDJ794Zq44k3AB9PwNeYNsGXN7MFUATTTJxfiXnNxWxUSwgaVukdiyYqFp--92Z_5xlGUL5jZrq3ovOkZLNGaUBQkB6eesxP2SJ0J76hgmrk7ui5T3kVvhQirPbIYxSFVohuw25JGnexnwWzxZJlLBc-d4tnGH4KxV34a3MArNgl-n60dUXZU9QFOsOPWkujwsCwAqnzbear9rQofxWzaru-VumKNV9MADQcay3C-Aiw25tITwzggyXPnaygrT56EOtYJd-s_54pCR6ciGD3izJg5gUiNhtEmBRe7gl6ZBOO8zBnS5ARktm04heb7o8I4HgdBHhYD7CNAqotITqLhX-rNEpx9Gv4j-5o1-OqAQ2Z0am6nPB4S2S7eKd6qSiJk1-FKaWQ7ij5x5ZvW0dGruydC7TmujRJou5a5IecuDzuJ57Z8f2f88zRKwyk8iXJqggH9gTNQeyes50Ynyu13d-_4ElRqLbQlUKnJQLATARppe3MRyCOc4hbb7qSOQnfIt1JkZgIxjZwGfMeblDhqrkpWSfjnQU7hk97WbSNWTyJiGdyxs1T1kftPlW_6izLKhdr0qBHPGqZzqC7RcJDXRWOUVAIxOnYntyLH9FagpuhQ0grP0VhHXy2hl1Femy2P5fDZ6VS5vGbQg4aXsUPtsdbhrJ41z-fZv_9IUos9GnKWgIgXjZUk1FrJaJbH_IcQHxaNQZFrB9Iu5ea9phn-nq2Liqru-nR1u0UqwCgg_FfDdFCbNjEwXRlOzWxAB4_rapmyzAwk=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
       "format": "openai-responses-v1",
-      "id": "rs_0985018d3f04b685016ac213cb234087d191d02d601d8d1614",
-      "index": 1
+      "id": "rs_052774eff2a09452016ac215465adc87d183c2a2a6262ab793",
+      "index": 0
      }
     ]
    },
-   "input_tokens": 1591,
-   "output_tokens": 245,
-   "reasoning_tokens": 171,
-   "seconds": 4.66
+   "input_tokens": 3085,
+   "output_tokens": 265,
+   "reasoning_tokens": 184,
+   "seconds": 3.37
   }
  ],
- "answer": "Yes. Pfizer\u2019s PP&E increased from $13,745 million in FY20 to $14,882 million in FY21\u2014up $1,137 million, or about 8.3%: \\((14{,}882-13{,}745)/13{,}745\\). (p. 53)",
+ "answer": "Yes. Pfizer\u2019s PP&E increased by **$1.137 billion**, from **$13.745 billion in FY20** to **$14.882 billion in FY21** ($14.882B \u2212 $13.745B; about **8.3%**). (Consolidated Balance Sheets, p. 59; printed p. 53.)",
  "tool_calls": [
   {
    "tool": "search",
    "args": {
-    "pattern": "property, plant|PP&E|property and equipment|Property, plant and equipment"
+    "pattern": "property, plant and equipment|Property, plant and equipment|PP&E|property and equipment, net|2021 2020"
    }
   },
   {
    "tool": "read_pages",
    "args": {
-    "first": 59,
+    "first": 57,
     "last": 59
    }
   }
  ],
  "verdict": "correct",
- "reason": "The answer concludes yes, PP&E increased from FY20 to FY21, which matches the gold answer, and the supporting figures are consistent.",
+ "reason": "The answer concludes that PP&E grew from FY20 to FY21, matching the gold answer, and its figures ($13.745B to $14.882B) are consistent with Pfizer's reported balance sheet.",
  "judge_model": "claude-sonnet-5.5@medium",
- "judge_cost": 0.002136
+ "judge_cost": 0.002874,
+ "provider": "llmfoundry"
 }
