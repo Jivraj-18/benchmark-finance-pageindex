@@ -102,6 +102,11 @@ finbench/templates/        HTML and CSS for the site
 calls LiteLLM internally; `llm.pageindex_client()` points it at the same route. Embeddings use Foundry's
 `/openai/v1` route. Every call has a one-hour timeout.
 
+**No response caching.** LLM Foundry caches identical requests: a repeat returns the earlier response (same id
+and text, header `x-cache: HIT`) in under a second. Every call sends `Cache-Control: no-cache`, so runs and
+walkthroughs measure real calls. (Added 2026-10-04; the pilot's answers were each a first request for their
+prompt, so caching should not have affected them.)
+
 **gpt-6-luna 504s.** Through OpenRouter, gpt-6-luna answers some prompts with an instant 504 "The operation
 was aborted", every time, at one reasoning effort but not at others. PageIndex calls that hit this are
 retried once at a neighbouring effort and counted in `effort_fallbacks` (e.g. 3 of 316 indexing calls for
@@ -137,7 +142,9 @@ and register it in `finbench/methods/__init__.py`.
 
 - [Cost vs accuracy](https://jivraj-18.github.io/benchmark-finance-pageindex/): one dot per method × setting.
 - [Walkthrough](https://jivraj-18.github.io/benchmark-finance-pageindex/walkthrough.html): four questions,
-  each answered by all four methods with gpt-6-luna@high, every tool call and result shown step by step.
+  each answered by all four methods with gpt-6-luna@high. Step by step: the model's thinking (the summary
+  its provider returns), each tool call and what came back, failed calls, tokens and time per step.
+  Raw logs, every message of every call: `results/walkthroughs/<question>/<setting>/<method>.json`.
 
 ## Results
 

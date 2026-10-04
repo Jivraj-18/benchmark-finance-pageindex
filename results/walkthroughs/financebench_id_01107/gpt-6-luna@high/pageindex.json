@@ -5,13 +5,13 @@
  "doc": "CVSHEALTH_2022_10K",
  "method": "pageindex",
  "config": "gpt-6-luna@high",
- "seconds": 30.3,
+ "seconds": 28.1,
  "usage": {
   "calls": 4,
-  "input_tokens": 157868,
-  "cached_tokens": 86317,
-  "output_tokens": 2211,
-  "cost": 0.00912377,
+  "input_tokens": 158921,
+  "cached_tokens": 87891,
+  "output_tokens": 1599,
+  "cost": 0.00878141,
   "effort_fallbacks": 0
  },
  "calls": [
@@ -37,37 +37,31 @@
      {
       "index": 0,
       "function": {
-       "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\"}",
+       "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":1}",
        "name": "get_document_structure"
       },
-      "id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+      "id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
       "type": "function"
      }
     ],
-    "reasoning_content": "**Structuring a document**\n\nI need to organize a document that's over 20 pages long. It\u2019s clear that I need to start by inspecting the content thoroughly. This will help me identify how to best structure it for clarity and flow. I\u2019m figuring I might outline the main sections and subsections to ensure everything is cohesive. That's going to help the document be much easier to navigate and read, which is important!",
     "provider_specific_fields": {
-     "reasoning": "**Structuring a document**\n\nI need to organize a document that's over 20 pages long. It\u2019s clear that I need to start by inspecting the content thoroughly. This will help me identify how to best structure it for clarity and flow. I\u2019m figuring I might outline the main sections and subsections to ensure everything is cohesive. That's going to help the document be much easier to navigate and read, which is important!",
+     "reasoning": null,
+     "refusal": null,
      "reasoning_details": [
       {
-       "type": "reasoning.summary",
-       "summary": "**Structuring a document**\n\nI need to organize a document that's over 20 pages long. It\u2019s clear that I need to start by inspecting the content thoroughly. This will help me identify how to best structure it for clarity and flow. I\u2019m figuring I might outline the main sections and subsections to ensure everything is cohesive. That's going to help the document be much easier to navigate and read, which is important!",
-       "format": "openai-responses-v1",
-       "index": 0
-      },
-      {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhBl9V5oc1DuoIA8Do1CLRcCuLe7Ttju1L8SgDSbRguZs56caDy039ThEEiuzwjzXnBIi6e7KaJexjnS31R4HucJf-Cb7ANFE2mcRLCiuXpgaHZK4qtIn31TLE3ipyzkbJltJFMoVGWnsQ4b46-d_kH1LP3F7wWUPOY1cDbw52-T2P5jeBtuBmY96r73txV8Nyu9WbL-HZEuaZJrgQy0ElDVaT3MpOj3XI2PfsjlV_iP5dO8jLCdCeoiIC2dVVh811rW860Nu53dDKOtRhTGmWOv-Sqkhx7LbzAbR05gfvx1B0_EWwWJhZHVPxp3maMdKpvgCPzDxU_zVzOidAVhBz6LZih6OwRkxQMkNp3ma3uevYdKeG3PDK3LIiFBFRssSS5Ap-9wi2rSQkx48lxgjDLildaypSxXAOB2b_NVYe_gWu_j-Ml84Fjg5bYTOzJF68vcOK94LIDcA4WIAfSU_Hsb8HcDsryKtQzJv5E6seedvItlhUoww6sZYbS5kXZhjZXxhxESTt8cVjETwWv1Ez-7l_d_z2D-B5SCRc75g4Nca2_EqHr_2gy1YotAVQ32yZOUMYhVTCSZxh3nfRr6LRAezXkCAHsEKacHUrPkZx7Qnx8HZZmIjywuw5BN5_0yd9BNYeEhMJb5NEbTHLRvD9l8PMraG6qVFjlEm0F1dHyiu2h2pr1eUo2yrcliHy4ylZfQTfBR1Nw6yM6_XdIAmA6X6-JqPOp14QomCSaFqtY42IP_DzCBKr4gOrxWOXmbHzy-nUlTPz-iGKRx8Fv6HbjxJtWxQ2tjh2G9LGkTyUujy2-djAoO64RW-yCWlBHXHFtXhFEY-W48LUj5ftweCaBCDLN6KIRD4hmz0Ct7AYWHfQTkLSS794d11Dq62vc1wtEepDh8iRJOIXZrO9CuopvMNjwsaxaJ0x8BxYn2kMy3xbz0vvqMrnEn4EZnmcDOBEjQEQYLF4xZ44C3ubUk_nA5LuP2jqdd3jlnYPTRHUbuPV26QQWfs7vzlhoUctu1k8bS5GyfrGeMp1H7ymf5GKWVFyMRZuYosbJDlVrNt0sEIGKnOeCWp6TlpEcz2DudOp15wyahAqyScX9SHAOJnjnBrj-9ljeUqIXO85hNSh7hywzmezxZ6RY0e53ZilZtnY-2Hf4-9tk8oj79Jf5VXFC4nEUvt2E4GXZ3TMzbo8E--fy0CuHu1KsAzAic7dxOVDyy8R0AGKjFCuo6bKPoOZopa2ZtEacE8nu-qCyQUKnjnESQVT1WPU-2zHNS1lifbdv2LzOToALS9fkVKkUkTydgKbus2n9_Hs-GUfkNKb68r5ewRjLznfvgYnor7m-ij_vUXPU_dR0BB1BmVaIjmfhaovA_eYOOe-m03nCuERNnVqhS6lx2_0IePACNTpfB02lv.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhLap6jNTVdalQmG4UPOPxVVjKwM0RcBkRcd31Wd-bc86WnRew_4_5Td_faKRaA2SVsdmGgPxRlQj5AHkZxGkrc_IKyz_9iolFcaoLo-RQTUS_SiSx2KaCFVqOlTKFgWaLJMkfwQsFc0Ds4aovBPZLQAq1ch9wegwHlNmiye7P97DVUyX1HNhtUbuNVHM0uZfYOgY8kveE9tHPeI8409Mq16-CZVtTpb_t9leGNVBa4wSHDkNNhP1sAjIGfSelod-M1qVv-tPyWn19wK0X37WN8ielXUM6LsZDjL8zq0paEEst7oZnCDCwbxSSeVN76EpiP9-iLjWOXabkr5E2H32wVexgCOiHvqzPFJd5p9XsyM0jTyvCQens4C5T-j7GsXa1HxNYJSNnfr22GUExarxEkzWO2Zlrk-u4nDTcJ_73YOAwfpIqcdR9EiDsgWWV8kZ3_Slr-XS9tmQgxPFAg8nh7YqvJfxLy1fAv98IqiL2o9_tWZD62RrGYqhUcg98p2zjo_rr193fHv4XMFIqQS8IMQYwFyNvG1CyDx7pQfNEtAMTmRKKKFlz-wKi5FJKpqV3JHJpZ4fCZx8R8OT-VrMJc1OfZ3vjK7JkcjOSjsWiiybqYYG_UyNaSTReiPtbQHNJ_Tsn3u8w3Ob4NWbvk97FNBMtqOm7K-ts3prY2UQtoXmWmmJ1xcHxMOysCB-1SKOvG54xocPMXkWYUnbt3TdMG_IKyHCPknq6KXo3DnVrVU0DIB21v4uZpLm3n71HvCKLPjkc0IcWjb238Qb3S7q25_s1bDEckxCejWecJxcj0uF981DOECaFN9btTlYAvvCAg8bFGLdo04H8M_ryaIW0rSyM1vpzBWc4fHh9Hjz2dF8JEk6NN1rhhk4ofBrAFAKdMaUePA0Dr4D6tTE3816c4SmEOu9PnEvrHC54SdWYAK7cSMjzvoqZBnYcOy3_JiNfUBlRgPCzGtamhFoi3hSn74KgNk9ZdWNm0ReOwaCUwaaXloIAjVYqbfEKdcmveFhINwKoxjb6q485fbooBmmTzMmuHL05Avf_6kGSXyBviHFzrnSUSafyyxJLKOie__Q3uF97lkWj3a9b9fBLZYFjzH3D5sK11SNjAPvkK3uEpiV5bEwcjzUcfx7RdsinPXBCaWCYJtJdYDNbGacIgRgfEUCRMhV2DPbkGSr6D0V2tcAr08aKq_jYODr4MahfDQUO8DHoeqwcQOn_C7jnniDVCcxM6DFhVvyHb4HFik9kTtcAu-TsmZQYjVK0YJBFdWUfiHWIDgNw3oMA0rCO7AhQ5Qlgsco8NGVuvnVlNmMvBrksi_pF1vJlG2cnXFesMBAlHPAlU6x34zC22ID_pMFcPoEWf1V-F4scwXSQk6fK3za5IYrW3-SK-3ABSzUoOWDn_gxgxeO5p5Bu9ZePu5qUGzBPfEMCVAaR8nij5DwxXyZ7WK1m8WxS5BmlSf33JS1uXh.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_00843cb53df88c20016ac21063889887d183d4ec3c10ce3c71",
-       "index": 1
+       "id": "rs_0367815eb9f42991016ac212d9746887d1a77d73b91ab99801",
+       "index": 0
       }
-     ],
-     "refusal": null
+     ]
     }
    },
    "input_tokens": 1569,
-   "output_tokens": 47,
-   "reasoning_tokens": 15
+   "output_tokens": 58,
+   "reasoning_tokens": 22,
+   "seconds": 3.42
   },
   {
    "model": "openai/gpt-6-luna",
@@ -89,18 +83,18 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+       "id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
        "type": "function",
        "function": {
         "name": "get_document_structure",
-        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\"}"
+        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":1}"
        }
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+     "tool_call_id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
      "content": [
       {
        "type": "text",
@@ -118,7 +112,7 @@
        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":2}",
        "name": "get_document_structure"
       },
-      "id": "call_RuBwliJgnlU8vgSjQ2zuL1FE",
+      "id": "call_9rZLbjTDX2MEYO2n60Su8Dyw",
       "type": "function"
      },
      {
@@ -127,7 +121,7 @@
        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":3}",
        "name": "get_document_structure"
       },
-      "id": "call_BOzBmsKvG1c8lZCwpnM8z1iE",
+      "id": "call_otoq9Wmh0t86DFJmQxk8NSGb",
       "type": "function"
      },
      {
@@ -136,34 +130,35 @@
        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":4}",
        "name": "get_document_structure"
       },
-      "id": "call_1ZWb6xHTt5XQWFTkNiLMte2q",
+      "id": "call_TLxHPfT9Go6sv80Sb5roXFBd",
       "type": "function"
      }
     ],
-    "reasoning_content": "**Structuring for legal proceedings**\n\nI recognize that I need to prepare more structured parts for the upcoming legal proceedings. It's likely I'll need to focus on parts 2 to 4 specifically. I wonder how I can lay this out clearly to ensure everything flows well for the user. I'll make sure to keep things organized, and I want to double-check that I'm addressing all necessary components effectively. This feels important!",
+    "reasoning_content": "**Structuring legal proceedings**\n\nI'm thinking about how I need to get more structure for the legal proceedings pages later. Should I consider a parallel or sequential structure? Maybe I can request parts 4 and 2 together, since they might be relevant for this context. I want to ensure I include all necessary legal procedures and contingencies. I'll call for parts 2-4, as it seems like that might work well in parallel. Let\u2019s see how that goes!",
     "provider_specific_fields": {
-     "reasoning": "**Structuring for legal proceedings**\n\nI recognize that I need to prepare more structured parts for the upcoming legal proceedings. It's likely I'll need to focus on parts 2 to 4 specifically. I wonder how I can lay this out clearly to ensure everything flows well for the user. I'll make sure to keep things organized, and I want to double-check that I'm addressing all necessary components effectively. This feels important!",
+     "reasoning": "**Structuring legal proceedings**\n\nI'm thinking about how I need to get more structure for the legal proceedings pages later. Should I consider a parallel or sequential structure? Maybe I can request parts 4 and 2 together, since they might be relevant for this context. I want to ensure I include all necessary legal procedures and contingencies. I'll call for parts 2-4, as it seems like that might work well in parallel. Let\u2019s see how that goes!",
+     "refusal": null,
      "reasoning_details": [
       {
        "type": "reasoning.summary",
-       "summary": "**Structuring for legal proceedings**\n\nI recognize that I need to prepare more structured parts for the upcoming legal proceedings. It's likely I'll need to focus on parts 2 to 4 specifically. I wonder how I can lay this out clearly to ensure everything flows well for the user. I'll make sure to keep things organized, and I want to double-check that I'm addressing all necessary components effectively. This feels important!",
+       "summary": "**Structuring legal proceedings**\n\nI'm thinking about how I need to get more structure for the legal proceedings pages later. Should I consider a parallel or sequential structure? Maybe I can request parts 4 and 2 together, since they might be relevant for this context. I want to ensure I include all necessary legal procedures and contingencies. I'll call for parts 2-4, as it seems like that might work well in parallel. Let\u2019s see how that goes!",
        "format": "openai-responses-v1",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhBoLAbconEl-YDLHGuwi0i0Pv84Hi5AjIiWE79J5TdvEKrLCx0rpmGeHqJjLx-wswJn-w2D05sk6QO272_HrncSWWg5pds4BdLm8u_G27TUfre8-WCIEwHgX5yqbGAODKgiL4dgWDtfRz1UjBvlQD_2lQmxqHmuVGePlLWoS9H0cc4kBgdjhvw7Ty0H18AZzZvjSyRa-czJ_J3HZmvn-ptZ0-WjzGXNAGLMiIPAYAIeVW7lxemtbh6j98T1taAU9iCArQk3Wkzs3leBcd9jtNzjKrcdTBWUA-dxUsLgVHuQtYOi0kfoAIMktdI9EYjgwJnZbvqS9igSvdPJaTPaACzCXIwfOA1DBHJld2GqMoZ_oDTS6FBMHwOZwMRcKpdwpTWXJJPSAUHNvg4qK4pXOmWIiJOjUB4PBQR9WmTsleRa5sCQgSBDatz8paDEB7FK4_DI9gQY7ZFeVIg_q1foAgANjlx6_HGk2PFYmWnIIscPhbSP8f02uv0HO0VhWJrCvMMddiLQ1kgNqGDgMVTm7vSf6a7vkSV3udNn3qWSSmK5hrZUQn_7BG-v7gS6ene9eeIbmZUiT1agT6uclIAxkuwYMEt1M2nzxmqEDH6iJvJxFMgIe8OAwTq3bNAPPiK_suH7-PeI2z-gIReIQO4M8bUiGbLQzBN5NDq-z7rVffqhL8YthTVRz1F39sPqlQkUQwSuPkUAdLVO0cY5A871m0VSwM_PO805wFQdoPWYKznGrdv1tvLTUoMNd-HK9e36hu_Pkh_6nPgp_yXq4FB-3jJP3xzLnGmA2UBSV5smeBIJNr9hF3UdXZ3eHobR3vhvmacliXUd6De6QE56JA-uymvJMdcnwdomvYsOsufnoLNAhelwXdXaD8sia1gFOJOjQaK7S3ijB2sMVAmQQIIQhoShKi5nTo2Hg70ensN-NhCZkR6N-H7L-P_WpQgNFVHLa3XhKCufNdYcogW3UaQ0kdGiD3bn64fEWE25Gdboysohn4YEPhGRmKBxSXgjmy9C2IEDuAjxHYfPF4Zpme8KpXbNxWSxRwsrXyNm2BYQ25jBDniVoFkfEWPoJq-i4TTlst-oQxI3MqKJ4HGniWcvjie3XJdUZOajJo4Snmhg-p1g6cZ9naD_DPlY0drH9iWaTJ7q-VHFAiyN0zNBECIsCoX1K5iN-YAFY1mmWIFp3wA5ZamE6XWP42x9oACWvMgC_v0RiViFnQ45wwJU2qBifKjoPL6kPQkqBjFcjwFzJ_PFxOla-Fua9x3OFzVgGg-l1LQeoKmy9wRB7XJbXbDRCVmdqpM7-q3zlBs4LywsZUii7sJ4N1uVvOW2A7yuGKib0dIwwVdEFhkQN9uiLqZhUg7sJ4WGI2RlRKrNDNLPUH6bxs041D6T4sgdROHcK3Ng-8MLm8Z_NC9MAkJMP50BnT5dRF1w0VwLbs6yqZsC-vZbTt4=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhLfI4GZsukLsE9iQUO_30Pp1Tcl6mibVs-MqRYRCuSF1Vpazu8XLZqiKrkG2u9x_HumqifGQWPS4PxR5dygrqA8WhGxMu6Ilkr88PcOlw86E1z6QX_mQtLqcNHiytOcyBJRWQEI4Ye3q_Jj1j9C1g7vlyB_Xk_CWiTj2ihVnsM_LRTdovShKfGjwo4CRoY1fh7N5Ba3mklWSKKDG_u2boFxLJ9JKxifZvRiOKElJIpqsvFhKr1BrASJG0O7jgKk93qUR4QKLqeyyEkMZ6Xl7Txm1wQ6qZZlguG0S7oYCifpq51dvDhMaxgli7eLJZxv_aFBz640iuBAdRmVQBrGFpnrGMAC_-ltQ-AcXYVyDml0pelXOT4YGQVTzPwfubt_M40HxJpPdgbzpzJ9apW1niMYeG126BbLNE1M-Z2iLROdKFF0xVEaB0WQ35PFseTFQ_cVFlJ82Wqn1AZf9lGDO_Ztuyl_y0B4hcEu2If3hikoU2WgFYAO4TvtZ2GU_Ga859v0GRbhHjPiz2B4u-uNmb7jO6snHd3efraCBA_xqOAkQNg1-H98Q3yzgqngS3wP5VMoJL8ZqenJrkXBgZOBaYQ0KxVFgjX9F3giX3sZPMXbpjLq6hcSVJ0aXH2kkN50MU7T_oDtZ7n28RHEdJyrX6XG7f3sVb9JZVdXOnNmP-jmbTHsNSSzyUqb_qEJpvpJy-y3mx3myohzTU-c4Wk-OgtSMUWLHLxqibfnLvCKpAUPr9pTo2CKhkYzBy2MMjKQuCPt6aSCAFCHBhhxtN4Ade0Ab6-hPFbOXUHwKQ7zIbuRindN9g_05ZmBwhzt8w87Ea1ttVb3RZ-n6Sc8v9_gFd6pFkIOkMmFtRjGJJeS_ir9ut-x_K2l8_PyrgCj70E-69p4A3IKdq4tIQwuhkaLpaVNIzBBBS-Oushs-qwkCjwA_YIQlAd-FHuCAeNVkwOK_i0rkeUHymA68zkl0jN7DIn72b6PtpGkpnnxWAVDs1xH54Jfbk7lrIEWqWBVQnLVx7Yu5vYDcySm6NDUTd_ktWaCKii76hrWETQthB3ioRAPBZ-Qz3rfOszaTer9JAJbDK488qG0FuVlzVq7MKokuHsKv4kUXN0mozh937xeB4nqR8OY563emm3dvea-gXNE-04zaX2_U86mDk28570U9shRLPGNkbBnXX_nMbJ1dAZunafMUupCgNtIVL6zPDuMPUWld7dls-z33fWttZ_Lsz7IxaCHwJagscCu3Zke1ZRgHhcOnv8goR-8jLXY2JLPKF2QMp4p5GDVoS_-kr5NUYvUtw87HMECK-b44WCz7HwyYchDeuSiLocbbHq_YtoCrCZTKJTZKmcPX2eK-VUa9HjvD0Ewo0kZZ72aJsmUoqcDlCpy9usYjdt2YTp6rs2BoraI8JnHsGq0tRH9nlSlUyOiWGvHJaj8tIh-jnNpGB-TVbf7hVhqz50s1OZELDm9QyuEfIensfb52dEBOpbR06TiVvUDhd6yQEddlenvOqpzCGcM27HF2-w4ca2Idf8wbW6oDzcE0RiudLXerZAZZokUwBwWZDOdvfjzifsw81rJpLFEOWrOmBYTaj_96QV3nNgPOV9kPHG3e2sLURO99y24F4wwGjGqaugJloHwQsrBP5o=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_02ff3045471b4c81016ac210674d5487d1a44215b8fb5e3c01",
+       "id": "rs_0386df4b2a76c83b016ac212ddce0c87d1b45170fb1076e6a6",
        "index": 1
       }
-     ],
-     "refusal": null
+     ]
     }
    },
-   "input_tokens": 19609,
-   "output_tokens": 133,
-   "reasoning_tokens": 21
+   "input_tokens": 19613,
+   "output_tokens": 158,
+   "reasoning_tokens": 46,
+   "seconds": 4.3
   },
   {
    "model": "openai/gpt-6-luna",
@@ -185,18 +180,18 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+       "id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
        "type": "function",
        "function": {
         "name": "get_document_structure",
-        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\"}"
+        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":1}"
        }
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+     "tool_call_id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
      "content": [
       {
        "type": "text",
@@ -209,7 +204,7 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_RuBwliJgnlU8vgSjQ2zuL1FE",
+       "id": "call_9rZLbjTDX2MEYO2n60Su8Dyw",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -217,7 +212,7 @@
        }
       },
       {
-       "id": "call_BOzBmsKvG1c8lZCwpnM8z1iE",
+       "id": "call_otoq9Wmh0t86DFJmQxk8NSGb",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -225,7 +220,7 @@
        }
       },
       {
-       "id": "call_1ZWb6xHTt5XQWFTkNiLMte2q",
+       "id": "call_TLxHPfT9Go6sv80Sb5roXFBd",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -236,7 +231,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_RuBwliJgnlU8vgSjQ2zuL1FE",
+     "tool_call_id": "call_9rZLbjTDX2MEYO2n60Su8Dyw",
      "content": [
       {
        "type": "text",
@@ -246,7 +241,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_BOzBmsKvG1c8lZCwpnM8z1iE",
+     "tool_call_id": "call_otoq9Wmh0t86DFJmQxk8NSGb",
      "content": [
       {
        "type": "text",
@@ -256,7 +251,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_1ZWb6xHTt5XQWFTkNiLMte2q",
+     "tool_call_id": "call_TLxHPfT9Go6sv80Sb5roXFBd",
      "content": [
       {
        "type": "text",
@@ -271,37 +266,38 @@
      {
       "index": 0,
       "function": {
-       "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"pages\":\"172-177\"}",
+       "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"pages\":\"172-178\"}",
        "name": "get_page_content"
       },
-      "id": "call_UD75kgHi19CXBEQa7rB3U9Yu",
+      "id": "call_LDFMSL5ghfU7Nvxx45GtBabd",
       "type": "function"
      }
     ],
-    "reasoning_content": "**Clarifying legal proceedings**\n\nI need to focus on pages 172-177 to understand the likely legal proceedings. It seems important to clarify any ongoing battles from 2020 to 2022, checking for significant cases or charges. I\u2019ll aim to identify what's currently relevant in terms of legal matters tied to those years. So, I\u2019ll extract the necessary information from pages 172-177 to ensure I'm covering everything important.",
+    "reasoning_content": "**Gathering legal content**\n\nI need to find page content specifically targeted at legal proceedings, especially disclosures found on pages 172-178, and also look at pages 37-50 for generic risk. I want details on significant ongoing legal battles from 2022 to 2020, making sure to highlight how these litigations often started years before reports were filed. I'll mention topics like opioids, U&C pricing, PBM rebates, and Medicare auditing. It\u2019s essential to cite exact pages, particularly those relevant to my search.",
     "provider_specific_fields": {
-     "reasoning": "**Clarifying legal proceedings**\n\nI need to focus on pages 172-177 to understand the likely legal proceedings. It seems important to clarify any ongoing battles from 2020 to 2022, checking for significant cases or charges. I\u2019ll aim to identify what's currently relevant in terms of legal matters tied to those years. So, I\u2019ll extract the necessary information from pages 172-177 to ensure I'm covering everything important.",
+     "reasoning": "**Gathering legal content**\n\nI need to find page content specifically targeted at legal proceedings, especially disclosures found on pages 172-178, and also look at pages 37-50 for generic risk. I want details on significant ongoing legal battles from 2022 to 2020, making sure to highlight how these litigations often started years before reports were filed. I'll mention topics like opioids, U&C pricing, PBM rebates, and Medicare auditing. It\u2019s essential to cite exact pages, particularly those relevant to my search.",
+     "refusal": null,
      "reasoning_details": [
       {
        "type": "reasoning.summary",
-       "summary": "**Clarifying legal proceedings**\n\nI need to focus on pages 172-177 to understand the likely legal proceedings. It seems important to clarify any ongoing battles from 2020 to 2022, checking for significant cases or charges. I\u2019ll aim to identify what's currently relevant in terms of legal matters tied to those years. So, I\u2019ll extract the necessary information from pages 172-177 to ensure I'm covering everything important.",
+       "summary": "**Gathering legal content**\n\nI need to find page content specifically targeted at legal proceedings, especially disclosures found on pages 172-178, and also look at pages 37-50 for generic risk. I want details on significant ongoing legal battles from 2022 to 2020, making sure to highlight how these litigations often started years before reports were filed. I'll mention topics like opioids, U&C pricing, PBM rebates, and Medicare auditing. It\u2019s essential to cite exact pages, particularly those relevant to my search.",
        "format": "openai-responses-v1",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhBtN5pmPLJIWK3RhHtUV9OMHp5TqXNOK0m0YlAHzjWrWiveTvrNo9DOWTl8f_UOsqOTCVqjt3Ni3IRIamptvTHoH6UNhfOEGNYZdp3TwiBiSKCfBYQpMVqA1VpuGTgmNTzANtmW1yfpSx5gE36_IePxd-m-vtsszwl0ZI4Yw2ERv8QNFK2ndPDtL106QMBVTBdwVl4Y4ubE2AtWoDCjeovQiPv4BBE3f7zzpmdQeXaDr5EMezk0heJxDDLcfov-pVFJjlQphH9w0Yfixs7cPimi4P8aohlhpwXRq2wpH_sztWOhmVZGtGj0MrKrEIMVuK-wdJdcCe97PvC1WyT3bSAZ_HzfTq1-f4OAWUHGIBB93BJGm11_Ut7esYo_UG_eeQKMlMN4XnBJ9UJWJx5MDTGh24PUTMyeTOleykIRhg1PeS9m3nrhVyetFhuyDGnfG7q2yZrL-4uuJiiOZxcEtC7YlVY55of4fJgF3B4KonfGO76F-764VgkBxgIdV8R7jFUsGzZRh0ZEcZDmj1kknK_5c35YsqWq7aPF3wP_fSrIRoBRqypaZPCDsQbXPUYD05w3E1jPrWsSSvs28pYFgeu9fZQ-zImIThbMzYBxzYwi7DAssOxSKNw7lBPC4ZOgJWbE39dD2BrPVKRflZRyaybWEPNacUMWnleLRBy55or-lCfvRLCxXRBmViwvp3gNC24Rkdy2OvTGkTBeA5aizl3IABoLlSNWEQH_l3c42-OmBLmyIsAhEsBuu4iQyoShJTalOqtm1uKfSVwF_edWZzzfLBjhZtYsDjvMYN6ynSzbbS4xWCWRXMm9ySGYJc3ORRgXDt7n7ChxeMEpi37dAtDERQp7TL1ehlVnW0cRWkP2D4_Kre6Q6TlJz_FbfOaVA53GWFgU6n6bPMGB4og-UO2ZMzReRiKOd9OnHEJyjGEpz8-DAMWXbVrUGe7-d9R9XdYGK3Fky7Zo7i9iEIQQLYw8V2839uFgbEwtUX8xB6Tvsd9DfNP_96262UUfxpmNWFAitTS33GzBCMVlDO509ji4jbAiKFuTf5R2-DPo8Cw8lQUhSewOl2Uy_A3-NEvhWbMgkJfhLf_oj6nufAGErpdXcbx18vkH8tO9k09Vdp-Msa65Ox-7WtjgeVsc6_z_F2SsRxFF0gKlawSVQivnGUkCCIWDhR6A1pj6kW0wv7tH3lH2nq7ecy1-nocLBeMiJXZ93uxNCCgwIlTuYvKa0QyLcYHayZ9UrGmjQpkRqZsu7C5I_MDfZ_-psczQfhN4ch20yfJArS4EcBvNOOFjsYzcg8h6ZYwH9s5O3e-5PRzzV6vWg077zasdXLa7IyVrpQqMsovMAXL1Df2lBglcY6PFaeVdui07a1sqnzTAy1mGNzzklM3pYRBj1uw0_bDz_9So9vvohqaqg0DkYbW1SeyO_H5YE0-rOD7irjJSDI3pxfOQDi7Dvpoq0GNUb56x_-MiUxOO7CJBv8xwSZGSp8xyBhDOv0mUwtTRJ7bjPfrFpM5_QQiLoO2bgHpDK45x-hO4320hA1idcNsikb-7xWZ1WdCa6qoHned3pN5Ba5PE-VgLJ_xIPzFz4_ZA9DO2Ka2WL-K7J2rqovOTuQdQdVnSgEUnOYZSf4JS3afqQAsCaVeDkjLuycALPfPngrwPG0QsQqkdja79iKS5k0apkRgLjdFem-mKGtHXOiXAPTVC1eO3UyP36my5yehMnM_urWTmpoJwoNVs4r85mYLFsvm7EixqBlL9XcJXP-DHFqwy1F35O3FX15JQbjgdtasGVGZl1wUIU5ysR4hqpgoHpR03AQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "data": "gAAAAABqwhLln6frfUtUZ9QC65m0lnVN0NACHKsKUaYFa8Kb_RChTfr85Q2QbylPBqNDNjuXlfcUhsQhtDP2dQm0L0CM4dAgBZLQJNe3VuxyE3vk14Algsei_FhkoU2LqATcn369Xkkw37UobDnOrP6CZTyX_aw7i1duZF9zbJyrddWeL7bznz0dA20uymLNB9qWz0sefNqJjPRd6NmShgzZT6o9BVsdEFKuLIscJ35AaHUXA3DM48ArdNuAmWvnadUbJ-WQydrPw4ejESb9hlTOqP7BVPTxI8dmEnB1b5w4AoXTADrYhDb7UjCWdaUz7FCLzDGMJ-V3D_viIu_a5774J1efDj5FtsCM3KIqDl0PXoNvhs-1Fyo0Dc_RLCSZcs_ChcvcfLogM04Om3J2effS680r5Iw4DDOXpSMDOel1_3kBoKAaha1_Fs0w6gQxbW9TpdPsgo3UPw0Z4xFnrx_fc8zy_w76IpoIOSZUkKls8pcpTcFtlsThN7fr7qTuBGGg2s-M4OLKJ5XnrWLxxi82xN_qIvIEQuZ0RzAii9rPYKgYB8iAKh6cgs7R4JfJe-1p25uG943N2m25cGK37muyn7SbXyDY9OtItcBAQ7c9K_ZsEOUZ4VYDCinkGRhjcwSevdkkOKJk0XcogGQ8fMiFz56VefifZWfjO-TZ5kF_xKMnqUUkMwM_DRbTcjDy2VrHyDsQUkG126j7HkDIq1MKIG9VaQkJtGlvqNy0Bj9b5Ug0Ba2EupPcnuErSR7uNEKMPRmBztc3QRpieOCi15x-sxQzvsz2nUL7uMqXjfWwxBZ-AUoLQcMjMDHsmP5_E7XWAJA3anaxpltdBEersY3pMHxsbLqo9r-Q287zCFv1paYEi5rO2mUoGcZnFpcnlraejs6_ehmiTfz1bbwIYrLsckEsCAzAWMwQAnxTtjgw594upNPKalfZiVUSgNSX0_Rb7CTHZt-RU8gEG5AShMSRecqM7Vnb52ooTLn7p46wqw1n6tdHG3a3eWsBGgpox-oPoNe8kHRx9KScQf4Tskc9NMnVsJcyCVk1gfVVdKNBkGWRMQB2mHcnBLkCnY9GS7_BJfrDf5S3xSl0ii5lSsjdUU1r-Hz4OM6PtoqCbKMj0J2nctyYAtVYlMyMexwRkINm3AgsuQDgQ_houvCTt8_Ed9ScpV9b10VOKQ0nUJ3fjN6L94ZZzT0auMZlM5NdEdhHl8f4NHV4s4xASFeRdsaWFVsTQOhFT-NXMdVjPWguOxFOPzstEKzd8bE5bvuH4NjsTr5HiiZ02DdZ267Y4l0fE8EbSeiprGjdL11LNzec6DFsYFCEYjQ9nOFDmgfX_YU7816cRE9dG8CbAAQtlztAFESGpYGFWc2X5l4Si_Kt_HysgJl1NOHjqc6LKxtnueSQZ77JStaXgiwAiqeeBf0pB-CmMwc10ClMi1Dh9DPLVO7IKw1JqSFu9tzjBcJb8j2_aKi3pBFKVtCZUC3NaWtWTl6O7xmwTDCCQWcFuekoNb8KTF2pJ4CT9uCld58MgZ0QFrv7DslQkqH_RKsmtmr5m-RfETjXMFvRYzbhHPNP-E9kL587zyv6ie-aXRg0DJNfrqraBG2N52t7PmxHdy2RGzz9haPuWC9nWcT6H7k8hVVmyb4AR5BWySNjTQmfrPXzPhekzPu2bYVE9ZTOUrRcXQ0Nrp4VW-1RGWlAXvoNP-A-AegDURXyH4SpHTnpjk7vY2HsgmrRHB-ghtBj_Y9w2eC141t62_tloNqm2xCKZfQo9AdYeP6kVAHw8BF7lwNEjjc3weZ3AcFhKiF9LG07fyZp2GKi31ktglLSaTXzHxKWk4CHklUgDmJnl0-ED-zlFS37k9jI7Y62vdJGERYTfAIywZ-FPoQ3cZLJZXGuncmA3Bhr1-j_jDV7960Kkf7b__Gv3_AuVNYq-P9reg5M0F3J-N-t4wd7TB8cgMShS9GiDVJ2AFNc3HRGHCmreGNQHSd9wudkPVqkfIb1-mcBfrDPuoGDtwhYuo3uhz7deF07y3Al8jjuxFQetwI-5lhA_e3pv0JCO5IE5LaKTgY-Merp-XWoxQiS6O-L-A1IzUHJ7OxJNYOK7ey-2mSvkUsb48f4UCRvTyuRcgIhGkKK7m_756zP2Sxiy71laCEYWtBDo8bTWtg=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_0faea2977835984d016ac2106be44087d1a3d65543f850a977",
+       "id": "rs_057da099cb957e58016ac212e2938c87d1ba747ed44773c63e",
        "index": 1
       }
-     ],
-     "refusal": null
+     ]
     }
    },
-   "input_tokens": 65148,
-   "output_tokens": 123,
-   "reasoning_tokens": 85
+   "input_tokens": 65152,
+   "output_tokens": 180,
+   "reasoning_tokens": 142,
+   "seconds": 5.78
   },
   {
    "model": "openai/gpt-6-luna",
@@ -323,18 +319,18 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+       "id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
        "type": "function",
        "function": {
         "name": "get_document_structure",
-        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\"}"
+        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"part\":1}"
        }
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_lNMxR0fonjG2no4Xm1Gm7mwV",
+     "tool_call_id": "call_ZJlyDi4lrNzx3HuWJ5XWy0In",
      "content": [
       {
        "type": "text",
@@ -347,7 +343,7 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_RuBwliJgnlU8vgSjQ2zuL1FE",
+       "id": "call_9rZLbjTDX2MEYO2n60Su8Dyw",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -355,7 +351,7 @@
        }
       },
       {
-       "id": "call_BOzBmsKvG1c8lZCwpnM8z1iE",
+       "id": "call_otoq9Wmh0t86DFJmQxk8NSGb",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -363,7 +359,7 @@
        }
       },
       {
-       "id": "call_1ZWb6xHTt5XQWFTkNiLMte2q",
+       "id": "call_TLxHPfT9Go6sv80Sb5roXFBd",
        "type": "function",
        "function": {
         "name": "get_document_structure",
@@ -374,7 +370,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_RuBwliJgnlU8vgSjQ2zuL1FE",
+     "tool_call_id": "call_9rZLbjTDX2MEYO2n60Su8Dyw",
      "content": [
       {
        "type": "text",
@@ -384,7 +380,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_BOzBmsKvG1c8lZCwpnM8z1iE",
+     "tool_call_id": "call_otoq9Wmh0t86DFJmQxk8NSGb",
      "content": [
       {
        "type": "text",
@@ -394,7 +390,7 @@
     },
     {
      "role": "tool",
-     "tool_call_id": "call_1ZWb6xHTt5XQWFTkNiLMte2q",
+     "tool_call_id": "call_TLxHPfT9Go6sv80Sb5roXFBd",
      "content": [
       {
        "type": "text",
@@ -407,65 +403,59 @@
      "content": null,
      "tool_calls": [
       {
-       "id": "call_UD75kgHi19CXBEQa7rB3U9Yu",
+       "id": "call_LDFMSL5ghfU7Nvxx45GtBabd",
        "type": "function",
        "function": {
         "name": "get_page_content",
-        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"pages\":\"172-177\"}"
+        "arguments": "{\"doc_name\":\"CVSHEALTH_2022_10K.pdf\",\"pages\":\"172-178\"}"
        }
       }
      ]
     },
     {
      "role": "tool",
-     "tool_call_id": "call_UD75kgHi19CXBEQa7rB3U9Yu",
+     "tool_call_id": "call_LDFMSL5ghfU7Nvxx45GtBabd",
      "content": [
       {
        "type": "text",
-       "text": "{\"success\": true, \"doc_name\": \"CVSHEALTH_2022_10K.pdf\", \"total_pages\": 213, \"requested_pages\": \"172-177\", \"returned_pages\": \"172-177\", \"content\": [{\"page\": 172, \"text\": \"value of the guaranteed benefit obligation. As a result, the Company was not required to maintain any additional liability for its related guarantees at\\nDecember 31, 2022.\\nLease Guarantees\\nBetween 1995 and 1997, the Company sold or spun off a number of subsidiaries, including Bob\u2019s Stores and Linens \u2018n Things, each of which subsequently\\nfiled for bankruptcy, and Marshalls. In many cases, when a former subsidiary leased a store, the Company provided a guarantee of the former subsidiary\u2019s lease\\nobligations for the initial lease term and any extension thereof pursuant to a renewal option provided for in the lease prior to the time of the disposition. When\\nthe subsidiaries were disposed of and accounted for as discontinued operations, the Company\u2019s guarantees remained in place, although each initial purchaser\\nagreed to indemnify the Company for any lease obligations the Company was required to satisfy. If any of the purchasers or any of the former subsidiaries fail\\nto make the required payments under a store lease, the Company could be required to satisfy those obligations, and any significant adverse impact of COVID-\\n19 on such purchasers and/or former subsidiaries increases the risk that the Company will be required to satisfy those obligations. As of December 31, 2022,\\nthe Company guaranteed 67 such store leases (excluding the lease guarantees related to Linens \u2018n Things, which have been recorded as a liability on the\\nconsolidated balance sheets), with the maximum remaining lease term extending through 2034.\\nGuaranty Fund Assessments, Market Stabilization and Other Non-Voluntary Risk Sharing Pools\\nUnder guaranty fund laws existing in all states, insurers doing business in those states can be assessed (in most states up to prescribed limits) for certain\\nobligations of insolvent insurance companies to policyholders and claimants. The life and health insurance guaranty associations in which the Company\\nparticipates that operate under these laws respond to insolvencies of long-term care insurers and life insurers as well as health insurers. The Company\u2019s\\nassessments generally are based on a formula relating to the Company\u2019s health care premiums in the state compared to the premiums of other insurers. Certain\\nstates allow assessments to be recovered over time as offsets to premium taxes. Some states have similar laws relating to HMOs and/or other payors such as\\nnot-for-profit consumer-governed health plans established under the ACA.\\nIn 2009, the Pennsylvania Insurance Commissioner placed long-term care insurer Penn Treaty Network America Insurance Company and one of its subsidiaries\\n(collectively, \u201cPenn Treaty\u201d) in rehabilitation, an intermediate action before insolvency, and subsequently petitioned a state court to convert the rehabilitation\\ninto a liquidation. Penn Treaty was placed in liquidation in March 2017. The Company has recorded a liability for its estimated share of future assessments by\\napplicable life and health insurance guaranty associations. It is reasonably possible that in the future the Company may record a liability and expense relating to\\nother insolvencies which could have a material adverse effect on the Company\u2019s operating results, financial condition and cash flows, and the risk is heightened\\nby any significant adverse impact of the COVID-19 pandemic on the solvency of other insurers, including long-term care and life insurers. While historically\\nthe Company has ultimately recovered more than half of guaranty fund assessments through statutorily permitted premium tax offsets, significant increases in\\nassessments could lead to legislative and/or regulatory actions that limit future offsets.\\nHMOs in certain states in which the Company does business are subject to assessments, including market stabilization and other \n\u2026 [28,975 more characters]"
+       "text": "{\"success\": true, \"doc_name\": \"CVSHEALTH_2022_10K.pdf\", \"total_pages\": 213, \"requested_pages\": \"172-178\", \"returned_pages\": \"172-178\", \"content\": [{\"page\": 172, \"text\": \"value of the guaranteed benefit obligation. As a result, the Company was not required to maintain any additional liability for its related guarantees at\\nDecember 31, 2022.\\nLease Guarantees\\nBetween 1995 and 1997, the Company sold or spun off a number of subsidiaries, including Bob\u2019s Stores and Linens \u2018n Things, each of which subsequently\\nfiled for bankruptcy, and Marshalls. In many cases, when a former subsidiary leased a store, the Company provided a guarantee of the former subsidiary\u2019s lease\\nobligations for the initial lease term and any extension thereof pursuant to a renewal option provided for in the lease prior to the time of the disposition. When\\nthe subsidiaries were disposed of and accounted for as discontinued operations, the Company\u2019s guarantees remained in place, although each initial purchaser\\nagreed to indemnify the Company for any lease obligations the Company was required to satisfy. If any of the purchasers or any of the former subsidiaries fail\\nto make the required payments under a store lease, the Company could be required to satisfy those obligations, and any significant adverse impact of COVID-\\n19 on such purchasers and/or former subsidiaries increases the risk that the Company will be required to satisfy those obligations. As of December 31, 2022,\\nthe Company guaranteed 67 such store leases (excluding the lease guarantees related to Linens \u2018n Things, which have been recorded as a liability on the\\nconsolidated balance sheets), with the maximum remaining lease term extending through 2034.\\nGuaranty Fund Assessments, Market Stabilization and Other Non-Voluntary Risk Sharing Pools\\nUnder guaranty fund laws existing in all states, insurers doing business in those states can be assessed (in most states up to prescribed limits) for certain\\nobligations of insolvent insurance companies to policyholders and claimants. The life and health insurance guaranty associations in which the Company\\nparticipates that operate under these laws respond to insolvencies of long-term care insurers and life insurers as well as health insurers. The Company\u2019s\\nassessments generally are based on a formula relating to the Company\u2019s health care premiums in the state compared to the premiums of other insurers. Certain\\nstates allow assessments to be recovered over time as offsets to premium taxes. Some states have similar laws relating to HMOs and/or other payors such as\\nnot-for-profit consumer-governed health plans established under the ACA.\\nIn 2009, the Pennsylvania Insurance Commissioner placed long-term care insurer Penn Treaty Network America Insurance Company and one of its subsidiaries\\n(collectively, \u201cPenn Treaty\u201d) in rehabilitation, an intermediate action before insolvency, and subsequently petitioned a state court to convert the rehabilitation\\ninto a liquidation. Penn Treaty was placed in liquidation in March 2017. The Company has recorded a liability for its estimated share of future assessments by\\napplicable life and health insurance guaranty associations. It is reasonably possible that in the future the Company may record a liability and expense relating to\\nother insolvencies which could have a material adverse effect on the Company\u2019s operating results, financial condition and cash flows, and the risk is heightened\\nby any significant adverse impact of the COVID-19 pandemic on the solvency of other insurers, including long-term care and life insurers. While historically\\nthe Company has ultimately recovered more than half of guaranty fund assessments through statutorily permitted premium tax offsets, significant increases in\\nassessments could lead to legislative and/or regulatory actions that limit future offsets.\\nHMOs in certain states in which the Company does business are subject to assessments, including market stabilization and other \n\u2026 [34,674 more characters]"
       }
      ]
     }
    ],
    "reply": {
-    "content": "**Yes. The 10-K identifies several unresolved legal matters, with opioid litigation the clearest potentially material exposure.**\n\n| Year | Ongoing matter reported |\n|---|---|\n| **2022** | CVS agreed to a proposed settlement of substantially all state and local opioid claims, with payments of up to **$4.3 billion** for remediation plus **$625 million** in fees and costs over 10 years. A separate tribal settlement could require up to **$131 million**. CVS recorded opioid-related charges of **$5.2 billion and $99 million** in 2022; settlement participation and other claims remained uncertain. |\n| **2021** | A federal jury found CVS and other chain pharmacies liable in an Ohio opioid case. In 2022, the court entered a **$651 million** judgment payable over 15 years, with injunctive relief. CVS was appealing and had not accrued a liability for that judgment. |\n| **2020** | The DOJ served CVS with a subpoena concerning opioid and controlled-substance practices; a related CID followed in 2022, and CVS was responding. ERISA class actions filed in 2020 over Aetna 401(k) investments were dismissed with prejudice in 2022, but plaintiffs appealed. |\n\nCVS also disclosed ongoing PBM pricing and rebate litigation and investigations, and suits alleging incorrect pharmacy \u201cusual and customary\u201d prices. The company said opioid outcomes could materially affect its business, financial condition, results or cash flows. More generally, it said it could not estimate possible losses beyond accrued amounts and did not expect pending matters to materially affect its financial position after reserves and indemnification. **(10-K, pp. 173\u2013177)**",
+    "content": "**Yes.** CVS reported several significant, ongoing legal matters spanning 2020\u20132022, especially opioid litigation:\n\n- **2021\u20132022 opioid cases:** A 2021 federal jury found CVS and other pharmacy chains liable; in 2022, the court entered a **$651 million judgment**, which CVS was appealing and had not accrued. CVS also reached or proposed major settlements with states and tribes. It recorded **$5.2 billion and $99 million in opioid-related charges in 2022** and warned that the ultimate loss could differ materially and the litigation could materially affect its business, results, financial condition or cash flows. (pp. 174\u2013175)\n- **Matters active from 2020:** The DOJ served CVS with a subpoena in January 2020 concerning opioid and controlled-substance practices, followed by a related investigative demand in 2022. (p. 175)\n- **Other ongoing cases and investigations:** CVS disclosed lawsuits over pharmacy \u201cusual and customary\u201d pricing and PBM drug pricing and rebates, alongside FTC and state investigations. It also described Medicare risk-adjustment audits and investigations that could lead to material refunds. (pp. 173, 176\u2013177)\n\n**Caveat:** The filing says its existing accruals for outstanding legal matters were not material to its financial condition, but specifically identifies opioid litigation as potentially material to its business and financial results. (pp. 173, 175)",
     "role": "assistant",
     "provider_specific_fields": {
      "reasoning": null,
+     "refusal": null,
      "reasoning_details": [
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhB0QNalRSACSd5EJMwoqvC6ovKGDIuqDE6ZvtunyPo4qNRXiELPzpHMhs3_7vocXzJtFzi_ZdyyEy3BsI1W-Icsbb9EfwQkv8_YyGLO_3C4FwXFwWJP7nGhJsFk0SLtULU2pDyTDbFsdInm64yg97yDY1mYOsY_i9MxLW37qJOEoVC3W6QCAmW9L-asApr2Xbx_cm8oNTCZMcHGvzvucQBf2sxH7YWboaf_TrHiBiAfUBz6G62hGG7h02-ERPwmaxo9VlzD3SOJyU786SMXdH6RuBzIf0kK_i7-Jlj2pySMe78NhAOvcsua9V-W4FEXkujrf-Ju6p4izA_8HC2mF55noj6GUaVm7e_RorD8hnpmIh8bpwu75tS9_YLUvIZBys8jMvfG1A21WDzzpfZkRX4vrm6ud_KyvMkvlosVjvxNUb8dNXqYx_BLjVatvEQyHSil4hH6nXpYE5Kh5b8DDPfHOWXzZc9vYUdrL-Q8LxuZqkm766RqtKBPeqog_9T0Q9tYGfOxpZbVn1krhRzLK0sbnq52nlNrOA23XW7Wv0cJbzZxxwsXnhePo_m9yODiWW3aYZCMPRac4BLJ9_yVLdTqz36rsyKMWMQUDD4MhMSA1ull-VJB408gR3NiygHqF0xPhXD7Z7kEazSvOX_1RwBdfPFFq9XHJ2VD0xBPBmNZ1p-iwbwuIxER7yVx4B60W1xB-svS7yacg6PjqAjMC4-4cg8Mdq6GjNS2V74kZd1yyzGHzhxCkxcXz6UgYuBQKtGPqiSrp3AGDAVlCOOED4fdMv0iuRX3h-eGNVO9bDxsaCrBqHZq5lDumj1CVRo0aj9q8cTiI9fy-pJz9VWGcfK9JkQ8DqLZmfqQTcW53_jJ94t0KUY2f9QLrQHEN78KD9XcVR0Q0D4gowzfSE6Tc-UD9iU2OWv3opHLYNTGWPYw_4hmnlAnuFAA3159Ujbz5grvM0uRrO2r_LVPi9aAPQ5VflWwFNGyxRlaeCLklw9sXBtRPKDO5b-9_WbyqP_qNVaZ_bBAriwJCVVk0MQdkzjTn6klEUhJ601kVYN6NuwfeIzMqn5wJ8UEiYdQs08capxmuazNqsb9zFfoA9XeAih5jxmCdqOY8SPmDd5d7sm2ch8MTPgxcF0EypxF3TNQkmlLd310-i6QIj-y1vFzsf5H_I-F_MGZTyTB910XtBEJpvPQYdJ4QNkNnCZ0v_1E2z7jXirOFC-czAzr4vsiOPAsn82oXnW1dAVXSzH6bj36xb_mvcxS-VHX3IO6fj39Z6oZPWEY8CsSG3FXiawXSXNynSrfCw8xHqZj8Cw3b2_woH8M4pLQcrn3Ax8E7ScY3GhI8iiDXE0qNVRwNHBuGGJsZN8Psaefi77ySrx-jcJOLdmsUogofmGsIrn-YTbiIo3C_7yjzU27hpBEdi-43kkytjLdgWrZ3BxENYr8vDplX-DSpQLMbprOyfiS6prZqBTs-S6ZGmHOtv6uP0HnfccGig88IvSmpxqsvFfKoEYXmHXgQUcSwBXfK5P3mxM589vMMrZ84llPCtjiBSWnq4TdkCUWQvFXVAFxp8BN4zplUBOOZ5gU0xUrNOK32QG-DFTd_mkX-wH4HWT1ETGt144J5NTIMRB5tEU6Mq4ZyvQ1bsuxZ3IoULhg1pq3Lesb-MrSZpAC4CijJnD9XRmFa6cjPnmumXiuGqUHAzyrcYNtiqOI8NmxV4g5b5PjbO3mAmKY36DIYRA7Zp01uFDq9CCl9aeZ-JhuYPh-pGKbjYs633PKITZcbcwtiikMBFacH3iHKNGqwCGEOq3DfuohbVu5DC79qjGOf2jcYiPf5UpGtoZsoGxIpNVjhyMqM1XJYA31p6EdJdMQVh0ncwUh26hnHPhN8S4C7_visyEskAW2WI_kAdGFCTQLWPeUOeM2-4Wb0uOME0sZ54xZIp8Br3uee3o1XFcVhHbmXUiNXFmdEFKXpGxBfMU_WfZRzlVfaGYyb6HhTkuRAlRwxL22yD4uKDRb9s7GvJ-611nXr-F2Qw1Qexdlz3XfW4Jo6ToNQxeLmNL47mK7Cd0gx8CmZa2KY9km5EduZWP4VCAI20snbabDDop1vltqQ15t9GL0biPV5cb8wGszNRIOhEndTcCD9aToxRaoPeIAmMR7TocrCQrGTiPGL8WS9PJ6EByEJBvCo1UwWZU60myToj1AdQE3bOPMJNaVcZX0m9yRxccWuH6bfE7yzJVxG60LX21TuAGkcG2zeV9QSehYNbix5qIcsbCKElMtq-qvYkQ_ym46BqG4bcZBH7hFcRFcEC645ccLhFxIa7vWOzN9FvlvE9qx6ize7I-kr_YKWUpRA7XhNuuZT4lbnpcnC0HwNdT_MaDIqzR5HdV6egtSjNWQ-dvCSt5fiNUR7kb_yYMEcBB5dHxOux_PjnD97vn5cPSH-gOdYFDtPKlbmsNsB3IeDjh4FrrBDXru2ZTqRcrXRet4vsKx0Q2yf94mVqLU3B-V2LDQajxONED3--aJPFWKzeeXPnVtv74fJswgiHmSJfGbuvQ4D9ZbdASLYMzDY4-RUzPWX53w5_E8rngz_f7DPbZE_xPu9K186y84ooy2GWEq0arGyW5SkCT-HLcMOO_z3ovP3GUwbpEH9fHmrOeSauvafl15dPYlltapJC8aALbrWUTzhxvNmQFZJzhBRt8-YsXZLVhD9ZGkyDfJd0LNwO1GG6M-MtylbZMa9BmZ82xeIyr9egidaPOK4ec2fm52OSqmg9_soGDN324f_yunsDhCbFwAeQ2yKgqQtm4MXRkTc0rs7gM8i7EaF1qivNXilayowcEOCjvumQquc3W1qcPdJ3zDTPQgS5qhILPvIi-cwDpZRO7rJ1VKPyOBIjRoPwAHYpgjcjrrMqo27PWP_ySIIed0NNIXStJ77JmCA6cOpYzioP7s3VLLMFy-uDqYIkTR19mp7fomg7xLOZEFL6UhJljEpbSXq8xLiAGT4UbmQvzbpKvduEfmzpqhkF1N7Dxdj0UPRbQR02-PT7RMWWIa-pxjiUX7V22IvEMArPQnPP837jxAXWAieCsmQwChWZ4KIyEw6IcEKGKkRGELl3M4nrcoCS-TlNWsaMMR48gSFwGIm1ajYqTdDHNDofdtnGCIwFH5rcsRwoA6TCsoPGkN6OgaroT-uH-fHHJ5EddsKTTq0ZnXuTUL7LayOsCwz3AC3G8z-xak88IKRCZhZlQG5-KFikVlyDro-JNKu6fzdp0NGIeLC6hQsoqT2MmdwUs5ffmB0xndevAGg5T8Vu_DMsf2pGDrlA_Qbw32wKMiy4Q3UFxwa6N2AcrQidBZHUm89pJkNUrheL-tzCfFARjf1GDY3EgvnNovwmN75jtMEghDVUsoYed4L8vvsKDABeVPuebyZUkfJpb392XDsfhwft8fFXhha58uDvuBA8g2jMZrW-I3puVB66Hbm0evLY8JVGLCK3cpac4dzGOMG8eSQlZK6RwZOFsRbsaX6B-PwiJfz2iLbjfqNYv3amqlXayDx2ECBwQPyEqUQpK0-9c2SJAGSBAjgZEzOHJzL5eHH17BaR3oxcW3Gl03T3fhxJEco9HQRg_a7KkgQUs8rxah5O3eqQCKv6JoZ6HGQtXVrpX94tQBGW53qi-HwU6AQux_AwosZRN4bATqJk23mX1kUdAbYuN931-JyFsk0cQvHb9et4muB25AsdSbCQsog2VP6QvnGpg2U9LLzmhdKSa3MrgHjOABeVHCjsbV9HYK_eWkzXbW4LE2y53CoEKe7yQIqcObff0xcSF_kU8WqDWCe3mOut4idsSb86WbPOmyvHMQt5qE_HrSHgRdpY3gV7nnHiIFHl-9ikic4twOtFuRiTirQm0iikpYAKyNmyB6Nofz_QfKT014XDcvYQsGtbVxCxzByB6tcE4ORhtA3U5AS1JSdE1YRYcTErAtaWPGYcDuqIvVjDScVKYQKSgsuT8rVJNXpM5v2boeXkK-LYdH\n\u2026 [460 more characters]",
+       "data": "gAAAAABqwhLsDDbxfnfrQysvvErXGfbHxYgHQDPnGbjBeTG09FLXUcbRMGocjRj7TasNd1XukmDZZ1LR2mSmYDNFrAxDUzKBGFN9cwJj_HW0zo6C2SLiMrMWud81G2YtmgsKDtwev84nLthtCht5bCAl2fsAzhXFvtpBmITRSVrmauGMz0O4g-nA7l6Rr9XuuoBfJeIqS3D27vIRm3cXpEufsI_C_DdwZyHscQ0L8cdWRmiaNHwAQV5kcDy3nvb8kuURQfl6_f0V9zQYtE0Ls0qCAGbIDotHhs2Le4SdkgbN2ilK2tXOYq7HSjEiO8-m1krgX4eX1asIGqmoVtE1i-IX50pjLrFkc6c85JKVD_tIA-yLE7xFIju_RAhFALLBZDptTKgIU7edEKrbPbCQ4p9jw7VHpD0BoVFL9gai3VQ47ppMqAZoMk_POcbK0_91BWll9ENQ8mIYV7P4Yy7oubQDjvKx0QjgrAhMPFXjKPO-sjGPfnm6tUg356-3MWhszOWcEOSPRkCIdRXrEoIKTsQ8WgZ12NpCKx8YEK605u8h9Q8HbAZGQQqNXz5ix8u7B2ov37COuhTEzcyiSMi6GpI-6_eBTS7QNKWA32P6GhL5lPDGNchuwhr_TNyEotiEP-8lTngZ3aR3sDrNqAiWOYPYFMHtV7aY3zNvX2kanDSqDUBfCT3_D6rKD7G_sn8dsMLcWdSIemG1K0-C2SQR3V1r700L_hUUkvLLpSQ6BIeTEqLeBxlOX53Ru9sy4qjtV8ZaH_zdXu0UUiBhcjJANEiNwNMo8a_ZnO3TsrZxS5PIj8bZB389EmFMSt0AdMMa9iw_xAcsuSsDif6MF5fLA0gSsm8uvtPHsBTxanD2uTJnaCJoQhZN-27KnttkcMDV3fbxF7_JBYgfX1U-QwlDucQpbmIjY6tNsyBPzuqPAdTXooPEAnq7_KNpB8O1T6xMZeIIMnN-4nvQkgsbExJMetgJzSBJtvnvFhaN_MqkDRAQacv-Gtnev-k19tg0r3BtRgYSS3wreKL_pYXCSgobR3PpD0kCKjgahCehSH1CGsP15HXjGX286nbOHGdsWUACILucm4C6I78OqVxHFcCJp0N-bGKdAT3OjuI_PP9gDNyLqnkklkEMMSm5epzuBnuHYD5ok7IXbIVDrL0sMlXUz4p4jKcD7QsINkG1kNE_H0jy5_HNUXN3qMnaFbS2f-ngvK-g0l9p0jjE2uHq0vMpBEmI0OV7_8X33sZrKwaYmZAvsoLt3oQu64YrPM-6wVQlja1id8RY52oOVQ6zQiVR4s9l-dWLZcbkDGd73Qkb7aHaNWOT07lg1PzQKI6aRfqUf4YNbixWyqkJKqOWdS_0x9832GoXXpC89UKNgB7gLOugolDLZVTQsH3qYzwO67dEFkHBasvnDS-DXnUqqca5iD0bRHmq1SjnkKmqyBdEt1RSojXr-UbvcNQRHJazQcMOgAJSMhK-N9U0C6ZdKH2p7sZEMay4J7BMCXhMa47j1laaVOt3IETSFTlkkAmQNi6OEkEpAgv5K-4m5tsewP0ynAWoh1i6BwuAjs8zw6f3UFa8sS6ywZECAs-s4Rpv0OlOkXxU96r5gMNWSUWmFK8FCWVv8VkB3P5T4eFYODfYBMQK6He2pYGrAYzSg_yIqYu35QHWB3Z0d3z0zaZN9LNcE5-bX107kDxB-yvAe7OAtRYq4Jx_vK2WlSOd72r02MbIvNnSgCxNCUf8z6QaBFBjzHzjnZh2RJSvGvSb8Oa2lo8K7iFjJF9YepBImTGum62MzXuPa07P7XreSNqjOA5akksvC3j81eig6NS9QE537t2ymZih23C6YaTmooAxYz16Jkp-sIJrHb8e-76DullSKHkIbjXPHutLhEnZOKo6aK2Cwm110f-fRo36IsUmtCD2vN-rOD3NESpS0Jicws0JJtMbN13fyLfbDJDc9rVW1_h705VPGkDdHIDDn5LTCU7mLy64r9vVLRBkpZYk4K26X8NLZsLshbl644YrA7YjAz6-tZ9a0Hr-H3J9v7PlxQAiSE6Pt8nq9Fyx9mPDDEqhiJh4chIeikOM1xSRUWRJt1RgAdCLSUhtjQI54z8P8aHo8kS4JOIPIF6qjrJEJjw3AzUAlAqc2Daot75G-TGMgfvviF4DeNClssNctrvEYk17zX_fUZpzR6_dnm_co_k2dsAnj3K1nwkRg136jrcE7lfrKJ8rjAwZqWKu3M27y6oqjhTzF_CWv_t0Z-zEHjhFHjbM649NPRsqTqH-YplnfkOFe6oef9hd9JVXO-Zk5_UFKcdgS3tTuqXbflpvUCPhw8Ii6zpDI0BFwqm5B_TvbJUhMlr42z_12WN_XiDF8yIdknoutGCG397r7a4o26fdD0xKlpTiSX6Ymp88wd6_TTQgM_HvPOjATZD7SALE4zOx5WcBAbIRMeh5Wjs38exAHLlPsNnmj8C--xq__b1xyTVZwY1Ovvlb_w95VgFV-L9p-Wj0WzyGtSechj5jiOZpxO5FWm9mBesbqvcr8WfBDcknKPYeZn8OlNqvdfqVd8bbB0KICjz_DmKNhcZ2rolH31lEHr1s0UD9JbwGAfARKhA_KMo7NrfTr-FAYDkJcscmA6D4yOMVdJpzZQzekPlsAlKhRO5TnOL4xew3wZ-sczWXcu5N1-wZk3TYk-Q4MC-nj9eI-ZU2E06tQjNFeyCqI0pB74GnBboRp8bDb2OV4cN9Ia0w0qURXVLlf8WHA9HupZTw2YrIxzU3xt0Q41jyEfZJckxkCpgWDq1bbbOkaK9ASdax9AHfbFAVGp88rgmG-vQdts7ALv2s3iSiIRYF0dKougUMeJoodtektrQuEGUWBHNFXoaYS9EhViU3t5ntZSlidfcAn1avfPJZnxm4djmN_E4uTFZ6LeAsuqvakF8eVfdoiX6qbaazhrwGNZnOIuw04FhoTxd_jDRG3b9IVT8YdWlqZEzHQ8CEDECGd3LuqmVOyKMf4-lbKCn_7YZX9vHf5HgUQwE7rd-1y4OWptWt6Ul5ZLhfJb0Q84Jqa5UYM0kc_ke2HrDJ3gqXNrJUlf0hypH-WGbEC-4LHxNoifGstJXaY0ns2g-9rtLedfP7yq9zjAzlKpuVMPUsbm_elqIQRLcHV7pH39s34uBOgLz8324xtXLwZBBi_QbvmY5Hqu_jaWD8xDiDAecGtK3qWlXOHmxnQRtSPttsk34GuFKNtXW6YOazoZ7tsJ5dwZ6kmqU3d14PlrJuuD3VAtTmrqKbwZPjWUlCFSEvC1YH67BrJNprDJgoxHB4uyMRZ1dbVIvPDuTVrIFXiG2kTSlbRKGbWxJTaPnGkixIDMv7HIqgU2RMJsKtq3HjP44DNSFz4gYu-X5_-WrP9hus_s0Ih8MBcn0AOR_v0UoC-WVvM4vpsb4dp9ctdj6IDyIXAnFQGXnmegi3t86vhlaKyTRzEmLw-Znz8SFmjwZyqCzavKOKb_bbIlbIPm6f8u3Xs4RrhmvGs37_AQmnWfVUBV4lsRKy9X7werAzteK7SktXMUfjZKLH2-LmLAa0fkMtMg63lxcyRX2hGbrXLrD8RWQJmmwdxuLbrRWV5Q7ufrqcIcJedLeAJjJiaM9HuPRlRyzx0kKcv_TN82jxJHvFh-aS0Gj4iP5RP6ON79RFkuUEp7idrjJZAqUOF2iLckQkvg40Z9AmINFsNMQRiVjRvuUIccMAjgbUMT7ac3AK7Bua4eswZZbP-TqEWkAdEMs_vc_GZv4mpvOEHH8bqmEmeIUrMLZXiX-ZuRAX5ERqfwU9S9JXrXGRAofITd6_-ma9HOAhVP4fNCROQwcEc_dzPXwb_ItyFUjmcDpYnCHnvLJN0RUDKCpcljKmr0rL1hQYKj8QtvAjs-HKYT9iGznkH8vya5utO8ZQB_IwbUMIjYPCJzj6JR8emC-GrL37JW0Ffi1uay9x2VBtmXwEA00mPmX3V-Z4-p0HVJTLAy4fZ82_uavHLRd8klM1\n\u2026 [544 more characters]",
        "format": "openai-responses-v1",
-       "id": "rs_01022c2c463823d7016ac21070306887d191e65ec79c4244b4",
+       "id": "rs_0f5b63bc8c4d6e77016ac212e7f9f087d188d98475a45cab95",
        "index": 0
       },
       {
        "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhB4Gcszt9nCQ-qCbM0AoLAtH7_yIf0xSPaQ4bFB4HMRl86aLpV1DrAOQbMVz4WORAjvA0ItsP_1brLHXS99cPt9C4b1GiXe6pwcO7wRoj3mHefpv30NmdiWWMRiOLFbxe00QDM3jPsHsRUNcbdcirl8fYwfj6KMNo5XdebRnT32VX2kPWzHamR7VTvyG95R_U-GMBQQEyNnI9Oqg_feyQdm31QrvNNikwQUsHeaAUCdwl54E09UP4-aRpV4t-Z-7etH852PX4uIDaCaK-ZbC4ncR2tqPsFi0BSWiWY5M575v8NLx9Ko_4paS5WN372DUgRQ8LVHhdOPwurNgmUO1nIij2Xhd1gwfPf14sNpVhPU0zxTfIDkSH57gFQJiEdlbL5ObviDTjDbew0BgmALF9qQxTGUO_nuA7l9bAR8HvoSe4x9SKPKca25NhkVYi6ZkCu1qcBeoaz--ZrzetgoL0u5MHYD-b3km8TNI0qcO_4aN9QV0_zS9QXZTrHy-Vkwxgg2EHjJZ-bNwqSIARuh5dVZa9snM8TyNR5an3PP0gdogE-i9UN43WoO-ZEceWRhU9xrg1RVqxb6vDXMJl7J4YmmDb8P_NspcNM60kUKYrdJeuyVCBzc4dWeTseu-nX9J37XP7XyC3GbPN-BCKz3L2qzrKZ1Y4_q5y3M_gc1B60pMNwX_XA8IXvJVdGQjYynnvloj7_7gJ9IGerAHwnAvFjI77iSEsAOTqGM7-vPmEeoMEx9C910VHKSaGpgr5xh4BLoz-VqK5HC4YlhiyMygapGBV1hB6HKYADErfmZompB5YVjd5CZtYlmHddwu2xBNEjwXFhlnLPTo8c2HhkoQMZWD7YuDAC0kahaP_rP2IpTjdtRE0gdCKzdLbvdDby-qcPuoRFPYw8RkiuYkpqM3yhBgKVdehZDnZwac-CZez41LXy4-qaTdbgqcIehw8OQ1Gh6gct9RPwwnTdVo_IYrz7zpAfzKeoZM0BfavKxO0PsNGYKmUH1_GImqGkEoBg_YFX3qOZdBmpcXtCweTDnc443I4zqtHM-OAwACs5E-GUl13zmAfZyAvs7I-kdQ4G2R8NOKz0PMhs8vyNFuWL82bjQ0bwICwKZAdeypg8HKNdw8f5xe2QBz2abglgNxdtvTYB5mOVVkZSGdpu403roofzZC2p_tV8kyOvFQ_TInP221CAANToX_-dt50u8lxKNNX5S97MUBVe4AsQSn4aCfja01t8cTf5KujVYBMKdkyaoQ8vO6TkkUwRqTexwVy7wO_29_XcBZ1dMQtkTNH2sJl0xQEeqm_SLl_M8rr5ychDM5OygVyAx9XSsUGxAxiLZuNa6BYfRH6QGcXF7StFOW-iStev7F72KNBKXAyC9vCUGlVcIahTHWur36dKELTSufkBwiSsIVX69b_AXUzByBa550Cszx3kUjg0tnb4JBa7WmYL1oDXRbSItf2VSs4L23mVD3CQs-9T45nqkWBNxJigkdNbQU9a5nxEt5tgefrPWc7HIh81cZ6Rl1DWH6CRI3FcJDi_Q7oB6SAQHHobmGU0tgn2n5nQK423xG_s4R-GsYZbXFEhaXD2MQjdxCeLze7HUDH6ykurMFoGYSAwhVgpwshPpF-7-I12-fIysg7JvIM90rVTz3ww6LcnYzB_o86sjWG7f3k219q16GiXKatI05SvNsbu3ium9Vf2NzqNyog7bOuIKUAg-Djwjr-ZSW0jEpaY3fKpl75qDNVLAcFAXyIueopLy2tBL-BDEsShsw9i2WPtaCkuc5HR6iWmbcL34QytmnCWlZCy1V0JVccUg3Urdl3Z7ZyU_q-ccX7R9cutzYA8CKJ3nqi0rNDidMLDt6BUTjjWFjPt9LKAPEf3xMJFpNqlaT7r_VG2C37bDG6NaEPLZ8E10kSNsXf0W4BNxFPDGPIVtvL9vc6LVG7YlDhfF5UkVCgjdEyKuelKOGULUincecC4utLRmK7oyzeyf1YK5qxLZTj6hgB9iNlwxM1k1aK0I12weZNf7ojxUJU2YGbIYist7GE1PlGBo-0JkoTZ7aBPoYezWuTQShVxEcww5l0_E7oFWTb4VDZ9vp1f6a87bOgXZkveXgzYleiSPcUEhM1fZq9Wq09338QhdTAVOOsqsfu78WLIoHML24HePoWfXkOmtSWsmrKsnisvWcsLeX36KJpglPscDfHG3ZhfD1ODaIsh7lpVAvTCmFTBpuVS9i3xWbI7iPZBEkLn9D6rjAcMQxMmi4KUJjUSH4vDw-9GXarHxRRgpmW_81_ndDArk2ZPAu3oBF1s3iReRtUAAp_oYK17xhqQVWotfpIMrwFtIAySaKy6AkhKTe4obPBd-cvLm_TOLlnqrT1bQudCry69n_lycSl2P-Nvf2kNhmd_aV1pv-XsnxVWRDNvyxRpZQI6kEOADgkWtRJmzuVOnY5Ax1DoN01NqxEWqE-ttBNyRQ2EwEwq7MDD97ML_dvnk3OApmg5deg99t-zPYPH7d064u0FiN0mX2wUr4YqRW1zrXKGAiVYvmI0ii5_vI6-MyPnYqEAortpW15C3YJ0Zw82FtTdcydOROu8c5GKyBrVDeDUil2GIKes1BTOL59OGU1qWvv_WJrzhP8HrixYawApdpbXwnfDSvLfG8vcEbDvREywg5kQ4Rr7MiJ-TjGco8oRia_lJEkYHMAz1wNliS4FKywL95-2W2XVsLAETNkShg0WgNY1NvZV97lmmMuwK_vkl5M3YebUxKYIOU_RdkWaymBluFFo0WSePuIeBJ61ZoAqByJD_BqRQCnEmPAYOwmIlGLvrXPrGSfMoQzgIKatHJsw_WFdfpSpDPWJ-GTVDxkeQaMZNhg4X6rvahs3Un5FUr2ruPKbqPIB-9O_h_iFDgZeGlGMNVpw8N7V0lTlKHNLwQ6CpukzV12bhdrsyyqcSCkjwXj7LGBJ7wMlx8NS1Mm_AI3zJr3odNV4lKH_drgxBmjEUsPmEuplKOuDJJ3HKUD2eLydiFUyTXISMSj-Yl0aMj0visxmFGn-03lAPa0Os5SmTLjEhNS9KdVHhRQzwYy7jGQCbea4u0uya4y2jn_suu_kzu9lqIdYZDF2FfGEDjfekR8qev-Uld8Vlw_RdPLUgQXLVpwEmLqIf9DotaLoUQx0TittkEoj8_6Y4O1W11SfvwBxCzP5S5g-DX0DZKwMC9YqaH6UWTROLBm-GAdyZLneUNlGn9gNXXL4z4Nf-OFwPxiJS-HUzGX1irEd9igYmHRZ5etQpxYKLzpkd8dhU33GHpq9XlgScO0M6iA3GSSmW9F0LWcUQGm-ijercDUKc-wI37JB0S9P4q97EBFpcSfFllhKSPYBspqcJDvskKB-oUVF5N_Cw3Qu9Vtf3IJIGAc3GT7AHG_L1k7hMzVwYFiRxBkg5FCr47vavsbyL6O8CCVTPCwHjDj_CUiXLmVuaKuARG5qmIBvUOtNeShpixj0H2u5i6nVfrf5BsUFmeTQ19a9fc984Yye_fw2DiUQMJk3-M0w7D61MAHcM9f4maQW644AOqlUiYo0RuRFnRGmnaXPMr29sURpObee7hsXxyuIS8fVustH6QKl4RK99A0kStC5W-ZVCkkr416JBH1j6svZ3vUA9B69dAFYiVOdaUJTqvx-bYBtyq3rNJSx0IAqmGpCFEQUwEcEzAmSxDGFV_aJkKQ5P3NSgJydBnsR3nY2MxBH8KN54fTg9xbI_R9TPhTASuSH_NZBrnJ91ogN-hHh1PqGbbOvL3PN_U2fVYKz3xPfUujRI0gDSm34ZICcnfjdMQqfukU1YzAxG8hgMdMzFF-L87alZiTSjKKWQJtpC3u40g46vtBaZjIvoNrJDP7FqsEITEPYCc-R6E5vptf39R4HgIFgGOPiOyymMHKiNMAOlAeZFY_rXdgBeNJeXEdFR_Khx3u4SZOoES2FwEo_n0X95K8ykrmc1CMCv-yi_b4TcqJjI7TQarsYUUbRBp5zG\n\u2026 [864 more characters]",
+       "data": "gAAAAABqwhLv07GUMWM9csE9l5s_m5v8-RpZQh1ruGhnradURx9G-JH79AwG2-nXoZunB2uTLQ66K9gRvPoA9AmVWkhDuUyk5FAikTv-N0rJM9DwS4LybS1JB7Ello8747J6HtS4kqkqFPedqCR4uM48LC6HECK9JOYymW6RXnbmF8_zyWgojjLPxVVPkhC0Nfr3MB7wDtFIf_iCeJNEfnsPEp9wrCMCl2oKEDIZcFvJoz6BJ-Ft3wh-NOI16gaLOhirfkBgMAMyYFRKi63GH7YTUC-Mi2IyLeRPpcLghI35bWXOdU2a7VF6m25Nderlz1FmkR62N_DcbkQp1DloZJ28VausXJ7AlQiuZyQtPMqAjKWBQGg3i-dCrlPG9Nmzgy0wMC19DuZms9_tgBViAvHyDZ64JOhpjCWzNgtCEv1SuJVEA-78jzQfJfeDG1RgUORhVjUvlLKTrlzxIURoEbKBj8ppD_qTAw7dpAy80QxL3YSkrvZdpFyEuT7O9Daepvk0VBo1JHAU0N02jGBvjWuuu7S93BDVApUgsjSojc8UvWa6uuemUKZJDKd5qYsItzWe89_xsAppJ-RDxqm4-VEeYzpf-aKysLf21bAM3V775hy4763k_CScBKzu9QsJmV7Xj7LaLkBpM8E_i-0lWdj1u-CxmdrS2VvRlt0LpUM5P5h4pvLALjLYlCPXuiHHYPykxeiFX7tAFdyuRb3jSc0JZ4eyD0sHtr19V0h4WVysTLqr1MgVmzQl1jR_sA5iMYamugVOiaeVlzQJV8E12Cqz8nJWTPhAQz4TDFhtFpIMA2zUg3xmX9kOlmQYr7481WP8chCRwiik7PEBSgTUEBp2kEiBH8cfPVfQKBd_0tr5QYg3liQVvDEDK0ebUNrxD3U52-BPiIR65JFGb_xbE2de5PkZQJNaMcUmRjG2wA2Q-sjzn6InqABjUNtOEbwlRZJICmXMHYhVE-Q6Sk_u7t4OkXy0DTFbSornLAZdQibgu57WaGB18m83C4noh3ZLONsGL-Q9yzNogR10irOagIEciL96PXBabts1-iKRmi1fg8DeCsIrnHLhFpmYRN2v7CAPzm1TgfK_GOgXHOaEJgmh6gd36gZQZO2tU6-kf5VEn1tpa_08UNOewbqBdaIVvQGYyHVwNfJXVSTFjXiwce1FfJ8QakJFoTsvzhOLrlXtLWDqK2LB9tY857ijxS8lkHPwB4mHbPJh6_lFELLGnvEOozSao3Qb_v-9ij2ctn-VSoqGjvxfr7ShIWUkybydlxlXX9sbGRze-c0hw-EcZNbBztERjltOdjSe6BU-LrPTou9104VN-GsW7d1Y9BhVuyF9ap5iOFl9ZttLStx02n7EYOh6fJDdktWNzVvfok2DVW1AJSL0wRuDn9BoSn5qvPqAjpAV9FzYC_P_w33iVBylrnlv6K5DcDr6FGYZoCRi1vvf4jYdRm5Jvess93slOMuyHQ2adWPfwHGLg3YqoCHBuIV-clR06JcDkRkk6rwnJ2gtMtuNpG_UdKgelHdE1UX6MBGpfATKV7UcdWI5BDPrJpM2z_pkZ25oOZc1HYZVNou6v79sw5PgexNzPLCQsDMfgj-7ZFUZxMwixr9C9ypQFAKVnxOsxtnJ50pUxoYoUHjeE_xQxzEyjDZ5ZEQZRoZEaxzaXEuVkxWAKZ9YOv2u8yKNQtfD-CX22rU9mXwOTOmNYyM1S_FNcJfo_QU62polNFwK4uH3DbfSNqu0lj3-BgJOxsVl16qT57hFaT4t6tqBPkfoE4ISrPbTvOmYRm0reFtnDPHl4VzSLXrPruIrknFZHxP55TWU5dWY7VGLcnnqP2tn4B5tkNfpS4fQba_kwNvvnjrlDqZyc9mbjk9_WTEX58vyLiFyNLeRjAl7SE0ad2whHDkfmSeQs4BP4WszeXjBlUcyMW2J3lP-LolxMngWcZamzylxbYTx3xH5pKbUt9UIqLssSkTDiGj704xAh3HrGywLoUInzeWoVZUp7wTUupOWmQf9MX0uO6O57RKFodGtu5cUNpmQZ7eLUfv9zLJsmn0loGBRGw7xSvjTDbw0Q9WxxBD7b9QDGb3fmk5zOWAA97N9ebMPLViuQsGndsI_24zkckNGyFvpkpZ5PvTGnnngkCPvOb4LTRPwCWgkZrczgUcNaYiZqcUElwQ6zJhMWvqMb_QXpoi6pSwaqsBxQaAufCx-BJaroTmrlg4TVC-6lvj195BSgNgSAKqgFMpWTKgF0FA6c8vPRjzOsF17dvRd82qYvZ5iSpvtTIIdoOZoGGNdaSQPOlZxCxwyYFrtycid5M1UUpLz3oHTrHmxeNpNkoFBiBp9DnvdTlKaMAHeoRPR01uFWSM5L-_8AgSV9gTYHRNWgF7DLg4OtQDpArEiw_EPlfA3-VsinGhmeYp8inxMuQk1VS3q2w0uflIGEx77-s3t14DkixoxVFOvEk6M4K_20BwUcAG0COkeTWAwFj7mSOVY85APo1jmBaqZkwLpb4bWKec7sWpHEX8Vr8nxsquHxqn1HgxImmO9yGtZW8k_C6_hOUaFxaNOf7PxTZ74ykgeFzN5tljj1UntgvZ63brCWL8j_u3NCKc1DgPCv1w9xhz28WvzO8rIkgNSPxRzR0qFHSFII7OkPz1vBSOfdlAD8bYktPotUIYbYAUIw0hQk46-t8xhHN_mWsaNucqXr-Iam_8mLO9SVMU80v1DOYwp-Qe9yXIZ5ga1gVu6umbxYPZbufglspcBCeFGGrKE3IA9dI_kE3SeVxvx_jNasKgcBI1GevdFZovCrHnskDaym95r88D0BCVQ77nstBLYhY4ptEbxHk6-tqFqTiZ6s9drjsYTK3_V94Lk3k8U1fOkUvSlnWcKQsVqPpXBmSZRu8HTTRzgjcRNtSjXOUhb_IR9id5u9GFjkzKjiiuu-9cFj3LYtobSSqmtrgy3vLYFb1H42KuBxMTQfYA_PpaeU6I7OgWOiLnBBbZioLMn0EVoJaj0Yi4xEa5JkgIYfZ8fxQA4IjwgN5fkQW_XqRXqcar9jd3t_3pDQeJZ_T0TfuVEsNugApnTb01rox4DzhZNEOJ7hNrDUK4ZGSCXzIwZJtAq1WTESxkhx4i95H3irDgxIY0KHkfFOsS7B_Qg7ykvUPzQJAKY5Xirn3B8dg5R3GX5NFNbkeJVfTwHMfiJQUs3dwiC3JKJj4jYdWXanwOehgGfOfPOXFdbgxvMtX2qZJz81-eLkAcqn6AZDbSBZzdjmyfMbn2myly9xmKsP-SH8oQSTH7fW1uC3SgtIfnMMxpuN1UnXrcX2FHx9S8iaHQ-_CZgH8vCc3mnfw0Qf8VWC0aqDl4HE9_usTkf0CKEPkO_2yAsK4IKXdyTyeT4Ok-RGlROhB1y8QeQxbXIpoM5uj6Lc3SBVKYYZmX7-8rjA5FVstpClWmUwT2GBeWNCS6WL8eDyLjgjiMSdlWtxcKhMFsHZcrbECR1o1fihWRiuFfP25l5zWZj2B6FpTfB1B39I5_LjsYW_s77ZDh0I9dMGJ3AFtUILSlFsyUmeCbib52686adtWLG_HcCK0PF5fV0gt_WSz0c1xmi-9gHarHP8Z8auTCsAV17kpHTZaFu1cjoSXquLOkmvpmF9iN_fvYu4BoXgWtRrP6z0u_r7znP.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
        "format": "openai-responses-v1",
-       "id": "rs_01022c2c463823d7016ac210749a5c87d1a1cdb39821d3f5df",
+       "id": "rs_0f5b63bc8c4d6e77016ac212eca2a887d1a71f60eaccc62d6f",
        "index": 1
-      },
-      {
-       "type": "reasoning.encrypted",
-       "data": "gAAAAABqwhB83cxveylFbt70y4rRSiw_WuEfwkP2ogjgHoEd2yq6XPmBbPepzjoT_4y03Kyiia9raYB4su3uEAlhhAiFpUd575TPb6BucTiZwbyvQkn5QVbW0wUY9Yu8cFXa852ZI97_MmoAMJKIU123_Fr4nIqfG2PmBde9L8EnKkvRKxoLUDW6X7bxKHWgl9KY9bAxN2fIFHqLwfBVa9QlZhx7LltAc-LI61qaguWfQERtgloTvuQhWdwLBSr4W58HaHKW1HtpfxyxJsrynSmA-QOQc0HeYiacUw98Q3lqE_xO3p46kxuQBKhQ0EPFutIm72dI1rlXOCHlKKqGrtDs0_yHQUU5hw_lD67IjyBojaYURCK6psPG_FOu8nb4oZ19_mhSBpZoWGXbx7zbBTe0-y_-x0F1IiQtLwvHiMkDxVk5xOsNNjRObY0ZRE3oS8O_Wj1YYxl2LhaU6iVTpl5vnyHJCku3j5tjmWIXfLYHi2YAffV_v7PKF6bajlN3SUPy8Fb3FnfilIzmP1-Q3SYCsP3fh_D_lMB2VNJlYXhVnp4OxkHogICBV5DGQ1i-xUX0-nzhC_RBYxSJgbPhYi_viXgvY57tZtbNImaEqttu78DUiirmDkaDBMjEjj_YVvifucBl-STnyT8L-I6fVv8b0LVkMsYwy8DtQ_aFv5cPJGMjFoTwpN7iYRJ9U17i_Qn0aIGUiLKOrznRT_dC_mezM-4nfqZKMYOP5Cbas4bI1fkbbdCrgxtti_I9S5R0A_7gS_VOMwNCpd3CcpUzvK8sQGup6a9qeElFqxc-kZ67PxHCGb66fVem6vBFvGP9DeMqN494wI7bGbjpza_vMTxCJLHk0U8eJe3JxHnnCtdGBexyLNu4x9fZuTSXBwUSk0d5JGMX5Kn1Xgd_5u32AB0X4g25H4IYXnHZsxdvJGT1Ucqmm2ZlyF7nTR7H9BnIMlXyIJHcoK2hX45k_tqBniEt1TcOhVzbEVAsce6NgDYUXhyr6x9h5_w9SeIWDejmWNcFsuvHuMMaA3YRmALa89-HRr9y4XdLWA-MZmaDdtE-TKkDWXKEplq-RvwCE_C4_wRlm6uj8m7awhlhz_YLGv1gU2uGjEc671oNgtF0Jv80AzA1r3NNNbzhKX3ZJ3ItjKEW64_SyK0y05HynJQC-IPX-jXBnsv3u8xdbi9nl_2M2r1uV4y0NEIiiSTNAiAraHZlOcwjuRlOKh19YPJJoKQROBGGkJMiRdEHqq5fAKKyhGUiNOyWnrXrp3jS3tJ-kXS1M6qHyZ5lHnYpM3LpmNHb44FeMDtY87mgfQtbrRmSMT99M3vWi-zMTwMj_ujDF39b__SewpGCLlG0SXN1CkxkOhoJeMW6a5qX-MF6pJrFcrdpM2nm5z8y9nzV0VHJiSaH9M8nWx4cutBKT7qI89XUaC4m1Pk6DIVJtf2JczRNC0pxeWoXQkfJTb-_UNhL0zOZsC3uK0jkcTk-rm03a2mt6HmnJ5ttgI14LtVSxSl7KSuDUHytJQwpdMWWSmIMTJyBbF2kL_HgEHMJtmWN8efCq474kB7rE40azM62aOU0M25thnnryDiWPNAkf8rOHO4s56rR5XZBZ5VWNlP1LBsdagpwA1TLKgr1Y4wKtC37d7qfrcD1vD1YwTMJzabDTIfvTUYEE5hoFEDQjVCbBcd8VjqmHRwSryXVIQwtfkBAo-en1UpLHG39jfkNKAb57HynPaDJsfleZcQVxgo2nTvPAJFR0QZHlyzJi5d-V3HSALuJFFhPR0U0ggMu4V2FnwNFBp40ljAhs_Q8A0O2Uqlxtw636iEXO8Y_HZxLAz2p0p65bJL0mrerByWNhG1-OVD70ZTJ45xUlkTaR5XmGXwE2uYyEHhzNThBVWnka9gpwlTJzHPzFO-rD42wOmK5513KPEmg7wyuOZyls8lIRDxxgyS98fk_Ldi2GGU9ey_Q_33KJrK9jXTXeSdtjJ_XMJnfdG1AwZZejVCjBgvf81ZwyCeSGDdKmovK9beyxSP6Qi5R91IgjQcWueObGePPy790e3vdmBYOD2mo8UHWbTBsreeuwmikyHjFYsb_t9i89CCcK6FSPVZiZULgYKbJqepHOQZo9J0tfeQIqHRK1tP4cLRM2k2ytAn7I_p_9hioL2fiDxEZoiWqbpeG3tOvK0cyKBWkfXPedRWzEjtWfgyWQiZKVYrdiBs43PnlIBsu86M2EgAq1dw2swQIApOHW-vHwBR6_Z5Ui1hfRBiToPT-ae7bEBz7pQL5AKXXzlMr2wKXOJzyzSxN42c5WMJyKHIca_ItT4Ks7aKgYT35LNuBR0ajvG-PA7Dau_R5N02dqjKZtJBi0Ws2Ejmtqn1yaFLyjFHXKNhfU-YALcjmDLnG_GMSLKz6qvT92LSguPHBBo-tOs15ZCbdgxdnXoIVZ9qy6fNNxK5jOV4mMqieYMl86VSCkqh_8Up7oOrOW8FTvhgxVh82r4FBl81l_-_1pfIWBWqMC6MiZWO1Y1o-_VfHb74bRBebdW-rdGYFL3xYc2-jTJtfuwmHAJML0oxIXBRwPFQvyUuDnFU78YA_o_pyNwhzHa-S5CIooRkPQy5cFeiPZ58koTy9DBXu0mfPPVvHvSE7nLvhy6yTj51SjEaZXrgvJCBbGDbQCA-SNWgBZ3uBllygSEju0NZpIhIuUBr4DHUL0yVF9GiQsdghIPSuPJaXy9Zbn1F5swTsMPyGVBTdrCHCCNtmrB3DUOaZ4loZOCEKG-IE3vW8CQZKS7mcThDEoDOF8-PmFAcKePeV8xFB7IVo-R0rKFS3URpEsHic8eX_VrufPuRjGU6mkS2a602EBPaTxa3_qnWA0TNELhN12-XdhvocjdoQMeeONP-l0GHT3pBTQpNLssCg7grUMIUy3k3I_I2Sfv64oO2Te8wVg8Bnah94wvIRbFu_19SS0sdRV-Vc_1RIAsZXgQH9R7WpvgVz-cKvLLFRbmHOCSXNHOQyh3N7RJ49OpmFBAIMD1k6enAUGKTwUm03CdjMRnznkuT6ll93sWGrgIsXAwdysOt1jwrUwkqrWF1aSVa9lbTjDrdwLZdlmlBCAV82Y7r9MziHQjG7UOim_DZ1vBDtFANcrkCeiaZzG-I5dd2fwCWJwx6_pvEPGsNF1IAdU9E8bmKS7ngMeOO1J3Q5zRVqFZ2YtBUMjYIlL6C62GHNb4ZIo0pNms22mqZk4lKyymmtKTDtbv54NX__AF-VN478B4KneHyrMvoLKQCHlTUCCeoT91lEhMZYBc6Dyv-htHpNHnK6oUU1wHPE4k5KA1GXV4E-LhJJIS79R_4ujaE4MDMLafnPMcDFJqQvqPN9fOO-WSY2KLg1YxwN8f-0gCuk8CoJ3NLTZrjC5GmCl-ZwDp_wFX8Xfb9VAWWya3D-IYvPPcNuFxbK2ZkLzK3Wfj_273Q1PT-RjPZwE4h8yf3Iq0BOaf85wZ24c79vVHNIKjB5A_AMuzgsEJ6VtnANcPk13KWRQaNLlOYKdpdRV9ooo_sBUn6m5_zlYNUPA9yW9vBV05mDvXIXyBEz_5Jkie9fxtn399huBiJdTur0SKXT5qqDF5VAVNzauTaz-S4AfSh39O3DCCnZTEiWwXUySIYIRLruDkOkweekPL0JrAXfPlz3YhmBwORnwgXNPo31cUn8IMiA7YWuHzqK5plxOmY5aCiMo52yudsDlye0kskuXi2-rrR3h65qClCD4n-a-H8Bf8OZyNhkQHqBRwUUmuIujhiPYlzyAOowRvoFJYuafc3w-y2gYHgkOAkCbEE8kTZO0ChjBcz2tiN4B__kVRmjgGH6fHIk8FK2N8CmWhQCloYtRddMvu5qkk8N6Q6mxGXqwoe8YLlw9_oP4MSp2LPWD9Ns-HPhLb1zJqrDhiTJNOhvvk-mc0u5HAzeEFAviQGUy-aCAYIHbVVXyByx8BKoDww_R0ITB8EPMvIA5RhhZx_nuf2lBME9dxktcZOWz4PJLvy8\n\u2026 [800 more characters]",
-       "format": "openai-responses-v1",
-       "id": "rs_01022c2c463823d7016ac210786fc087d1b1f2c84d771a590e",
-       "index": 2
       }
-     ],
-     "refusal": null
+     ]
     }
    },
-   "input_tokens": 71542,
-   "output_tokens": 1908,
-   "reasoning_tokens": 1552
+   "input_tokens": 72587,
+   "output_tokens": 1203,
+   "reasoning_tokens": 901,
+   "seconds": 12.93
   }
  ],
- "answer": "**Yes. The 10-K identifies several unresolved legal matters, with opioid litigation the clearest potentially material exposure.**\n\n| Year | Ongoing matter reported |\n|---|---|\n| **2022** | CVS agreed to a proposed settlement of substantially all state and local opioid claims, with payments of up to **$4.3 billion** for remediation plus **$625 million** in fees and costs over 10 years. A separate tribal settlement could require up to **$131 million**. CVS recorded opioid-related charges of **$5.2 billion and $99 million** in 2022; settlement participation and other claims remained uncertain. |\n| **2021** | A federal jury found CVS and other chain pharmacies liable in an Ohio opioid case. In 2022, the court entered a **$651 million** judgment payable over 15 years, with injunctive relief. CVS was appealing and had not accrued a liability for that judgment. |\n| **2020** | The DOJ served CVS with a subpoena concerning opioid and controlled-substance practices; a related CID followed in 2022, and CVS was responding. ERISA class actions filed in 2020 over Aetna 401(k) investments were dismissed with prejudice in 2022, but plaintiffs appealed. |\n\nCVS also disclosed ongoing PBM pricing and rebate litigation and investigations, and suits alleging incorrect pharmacy \u201cusual and customary\u201d prices. The company said opioid outcomes could materially affect its business, financial condition, results or cash flows. More generally, it said it could not estimate possible losses beyond accrued amounts and did not expect pending matters to materially affect its financial position after reserves and indemnification. **(10-K, pp. 173\u2013177)**",
+ "answer": "**Yes.** CVS reported several significant, ongoing legal matters spanning 2020\u20132022, especially opioid litigation:\n\n- **2021\u20132022 opioid cases:** A 2021 federal jury found CVS and other pharmacy chains liable; in 2022, the court entered a **$651 million judgment**, which CVS was appealing and had not accrued. CVS also reached or proposed major settlements with states and tribes. It recorded **$5.2 billion and $99 million in opioid-related charges in 2022** and warned that the ultimate loss could differ materially and the litigation could materially affect its business, results, financial condition or cash flows. (pp. 174\u2013175)\n- **Matters active from 2020:** The DOJ served CVS with a subpoena in January 2020 concerning opioid and controlled-substance practices, followed by a related investigative demand in 2022. (p. 175)\n- **Other ongoing cases and investigations:** CVS disclosed lawsuits over pharmacy \u201cusual and customary\u201d pricing and PBM drug pricing and rebates, alongside FTC and state investigations. It also described Medicare risk-adjustment audits and investigations that could lead to material refunds. (pp. 173, 176\u2013177)\n\n**Caveat:** The filing says its existing accruals for outstanding legal matters were not material to its financial condition, but specifically identifies opioid litigation as potentially material to its business and financial results. (pp. 173, 175)",
  "verdict": "correct",
- "reason": "The answer says yes and covers all three gold areas: opioid litigation with the $4.3B and $625M figures, PBM pricing and rebate litigation, and usual and customary pricing suits. The extra detail does not contradict the gold answer.",
+ "reason": "The answer says yes and covers all three gold categories (usual and customary pricing, PBM pricing and rebate litigation, and opioid litigation), and its extra detail does not contradict the gold answer. It omits the $4.3 billion and $625 million settlement figures, but it gives other opioid specifics consistent with the gold answer.",
  "judge_model": "claude-sonnet-5.5@medium",
- "judge_cost": 0.003128
+ "judge_cost": 0.003234
 }

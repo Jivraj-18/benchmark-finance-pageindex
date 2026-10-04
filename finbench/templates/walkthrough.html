@@ -36,6 +36,12 @@
   .step-body { font-size: 0.85rem; color: var(--ink-2); margin-top: 2px; white-space: pre-wrap; word-break: break-word; }
   li.answer .step-body { color: var(--ink); background: var(--code-bg); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
   li.error .step-title { color: var(--critical); }
+  .thinking {
+    margin-top: 6px; padding: 6px 10px; border-left: 2px solid var(--axis);
+    font-size: 0.8rem; font-style: italic; color: var(--ink-2); white-space: pre-wrap; word-break: break-word;
+  }
+  .thinking-label { display: block; font-style: normal; font-weight: 600; font-size: 0.7rem; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
   details { margin-top: 4px; font-size: 0.8rem; }
   summary { cursor: pointer; color: var(--ink-2); }
   .verdict-reason { font-size: 0.8rem; color: var(--ink-2); margin-top: 8px; }
@@ -84,7 +90,7 @@ const badge = v => `<span class="badge ${v}">${ICONS[v] || "?"} ${v}</span>`;
 document.getElementById("repo-link").href = meta.repo;
 document.getElementById("subtitle").textContent =
   `The same question answered by each method with the same model setting (${meta.config}). ` +
-  `Every step is recorded from the actual run: the tool calls the model made, what came back, and how many tokens it read and spent thinking.`;
+  `Every step is recorded from the actual run: the model's thinking (the summary its provider returns), each tool call and what came back, any failed calls, tokens read and time taken.`;
 document.getElementById("footer").innerHTML =
   `Recorded with <code>uv run python -m finbench.walkthrough --ids … --config ${meta.config}</code>; ` +
   `long prompts and tool results are cut for display. Graded by ${meta.judge}. ` +
@@ -94,9 +100,11 @@ function step(s) {
   const meta = [];
   if (s.tokens) meta.push(`model read ${fmtN(s.tokens)} tokens`);
   if (s.thought) meta.push(`thought for ${fmtN(s.thought)} tokens`);
+  if (s.seconds != null) meta.push(`${s.seconds}s`);
   const body = s.kind === "tool" ? `<code>${esc(s.body)}</code>` : (s.kind === "answer" ? md(s.body) : esc(s.body));
   return `<li class="${s.kind}"><div class="step-title">${esc(s.title)}</div>` +
     (meta.length ? `<div class="step-meta">${meta.join(" · ")}</div>` : "") +
+    (s.thinking ? `<div class="thinking"><span class="thinking-label">Thinking</span>${md(s.thinking)}</div>` : "") +
     (s.body ? `<div class="step-body">${body}</div>` : "") +
     (s.detail ? `<details><summary>${s.kind === "tool" ? "Show what came back" : "Show"}</summary><pre>${esc(s.detail)}</pre></details>` : "") +
     `</li>`;

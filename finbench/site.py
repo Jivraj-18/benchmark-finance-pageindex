@@ -49,18 +49,30 @@ def text_of(content) -> str:
     return content or ""
 
 
+def thinking_of(reply: dict) -> str:
+    """The model's readable thinking summary, if the provider returned one (encrypted parts are skipped)."""
+    parts = [d.get("summary") or d.get("text") or "" for d in reply.get("reasoning_details", []) if isinstance(d, dict)]
+    text = "\n\n".join(p.strip() for p in parts if p and p.strip())
+    return text or (reply.get("reasoning") or reply.get("reasoning_content") or "").strip()
+
+
 def steps(trace: dict) -> list[dict]:
-    """What the method did, in order: each tool call with its result, each model turn, the answer."""
-    out = [{"kind": "question", "title": "Gets the question", "body": trace["question"]}]
+    """What the method did, in order: each model turn's thinking, tool calls with results, failures, the answer."""
+    out = [{"kind": "question", "title": "Gets the question (shown above)"}]
     if trace.get("retrieved"):
         pages = ", ".join(f"p{h['page']} ({h['score']:.2f})" for h in trace["retrieved"])
         out.append({"kind": "retrieve", "title": f"Embeds the question, retrieves the {len(trace['retrieved'])} closest chunks",
                     "body": f"Pages (similarity): {pages}"})
     calls = trace.get("calls", [])
-    if calls:
-        final = calls[-1]
+    ok = [c for c in calls if "reply" in c]
+    if ok:
+        final = ok[-1]
         conversation = final["messages"] + [final["reply"]]
-        by_length = {len(c["messages"]): c for c in calls}  # the call that produced the message at index i
+        by_length = {len(c["messages"]): c for c in ok}  # the call that produced the message at index i
+        failures: dict[int, list] = {}
+        for c in calls:
+            if "error" in c:
+                failures.setdefault(len(c["messages"]), []).append(c)
         context = [m for m in final["messages"] if m.get("role") in ("system", "user")]
         sent = sum(len(text_of(m.get("content"))) for m in context)
         out.append({"kind": "prompt", "title": f"Sends the model its instructions and context ({sent:,} characters)",
@@ -68,23 +80,28 @@ def steps(trace: dict) -> list[dict]:
         pending = {}
         for i, message in enumerate(conversation):
             role = message.get("role")
-            call = by_length.get(i)
-            thought = call.get("reasoning_tokens") if call else None
-            tokens = call.get("input_tokens") if call else None
+            if role == "assistant":
+                for f in failures.get(i, []):
+                    out.append({"kind": "error", "title": f"Model call fails after {f['seconds']}s, retried",
+                                "body": f["error"]})
+            call = by_length.get(i) if role == "assistant" else None
+            turn = {"thinking": thinking_of(call["reply"]) if call else "",
+                    "thought": call.get("reasoning_tokens") if call else None,
+                    "tokens": call.get("input_tokens") if call else None,
+                    "seconds": call.get("seconds") if call else None}
             if role == "assistant" and message.get("tool_calls"):
                 for tc in message["tool_calls"]:
-                    step = {"kind": "tool", "title": f"Calls {tc['function']['name']}",
-                            "body": tc["function"].get("arguments", ""), "thought": thought, "tokens": tokens}
+                    step = {"kind": "tool", "title": f"Calls {tc['function']['name']}", "body": tc["function"].get("arguments", ""),
+                            **turn}
                     pending[tc.get("id")] = step
                     out.append(step)
-                    thought = tokens = None  # attribute a turn's tokens to its first tool call only
+                    turn = {}  # a turn's thinking, tokens and time belong to its first tool call
             elif role == "tool":
                 step = pending.get(message.get("tool_call_id"))
                 if step is not None:
                     step["detail"] = preview(text_of(message.get("content")))
             elif role == "assistant" and i == len(conversation) - 1:
-                out.append({"kind": "answer", "title": "Answers", "body": text_of(message.get("content")),
-                            "thought": thought, "tokens": tokens})
+                out.append({"kind": "answer", "title": "Answers", "body": text_of(message.get("content")), **turn})
     if trace.get("error"):
         out.append({"kind": "error", "title": "Fails", "body": trace["error"]})
     return out

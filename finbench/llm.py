@@ -31,6 +31,9 @@ load_dotenv(ROOT / ".env")
 CONFIG = yaml.safe_load((ROOT / "config" / "models.yaml").read_text())
 MODELS = CONFIG["models"]
 TIMEOUT = 3600  # seconds per call: give slow, long-thinking calls every chance to finish
+# LLM Foundry caches identical requests (response header `x-cache: HIT`, replayed id and text,
+# verified 2026-10-04). A benchmark must measure real calls, so every request opts out.
+NO_CACHE = {"Cache-Control": "no-cache"}
 
 
 def resolve(config: str) -> tuple[str, str]:
@@ -94,7 +97,10 @@ class Meter:
 
 
 class Recorder:
-    """Keeps every chat call made inside the `with` block: its messages, reply and token counts."""
+    """Keeps every chat call made inside the `with` block: messages, reply, tokens and seconds.
+
+    Failed calls are kept too, as {"messages", "error", "seconds"}, so a walkthrough shows them.
+    """
 
     def __enter__(self) -> list[dict]:
         self.calls: list[dict] = []
@@ -117,7 +123,7 @@ def _prices_by_id() -> dict:
     return {m["id"]: m for m in MODELS.values()}
 
 
-def _record(model_id: str, usage, messages: list[dict], reply) -> None:
+def _record(model_id: str, usage, messages: list[dict], reply, seconds: float) -> None:
     """Add one chat call to the active Meter and Recorder, if any."""
     meter = _active_meter.get()
     if meter is not None and usage is not None:
@@ -138,7 +144,16 @@ def _record(model_id: str, usage, messages: list[dict], reply) -> None:
             "input_tokens": getattr(usage, "prompt_tokens", None),
             "output_tokens": getattr(usage, "completion_tokens", None),
             "reasoning_tokens": getattr(out_details, "reasoning_tokens", None) if out_details else None,
+            "seconds": round(seconds, 2),
         })
+
+
+def _record_failure(model_id: str, messages: list[dict], error: Exception, seconds: float) -> None:
+    """Keep a failed chat call in the active Recorder, if any."""
+    recording = _active_recording.get()
+    if recording is not None:
+        recording.append({"model": model_id, "messages": list(messages), "error": f"{type(error).__name__}: {error}"[:500],
+                          "seconds": round(seconds, 2)})
 
 
 def _as_dict(obj) -> dict:
@@ -152,20 +167,23 @@ def _as_dict(obj) -> dict:
 
 @cache
 def _client() -> OpenAI:
-    return OpenAI(base_url=base_url(), api_key=api_key(), timeout=TIMEOUT)
+    return OpenAI(base_url=base_url(), api_key=api_key(), timeout=TIMEOUT, default_headers=NO_CACHE)
 
 
 @cache
 def _embedding_client() -> OpenAI:
     """LLM Foundry's OpenAI route: embeddings are not on the OpenRouter route."""
-    return OpenAI(base_url=os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openai/v1", api_key=api_key(), timeout=TIMEOUT)
+    return OpenAI(base_url=os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openai/v1", api_key=api_key(), timeout=TIMEOUT,
+                  default_headers=NO_CACHE)
 
 
-def _retry(call, retries: int = 6):
+def _retry(call, retries: int = 6, on_failure: Callable[[Exception], None] | None = None):
     for attempt in range(retries):
         try:
             return call()
         except (RateLimitError, APIError) as e:
+            if on_failure:
+                on_failure(e)
             if attempt == retries - 1 or getattr(e, "status_code", 500) in (400, 401, 403, 404):
                 raise
             time.sleep(2**attempt)
@@ -176,9 +194,17 @@ def _chat(config: str, messages: list[dict], **kwargs):
     model_id, _ = resolve(config)
     if body := reasoning_body(config):
         kwargs["extra_body"] = body
-    response = _retry(lambda: _client().chat.completions.create(model=model_id, messages=messages, **kwargs))
+    start = time.time()
+
+    def failed(error: Exception) -> None:
+        nonlocal start
+        _record_failure(model_id, messages, error, time.time() - start)
+        start = time.time()
+
+    response = _retry(lambda: _client().chat.completions.create(model=model_id, messages=messages, **kwargs),
+                      on_failure=failed)
     message = response.choices[0].message
-    _record(model_id, response.usage, messages, message)
+    _record(model_id, response.usage, messages, message, time.time() - start)
     return message
 
 
@@ -243,7 +269,7 @@ def pageindex_client(storage_path: Path):
         index_model=index["model"],
         chat_model=index["model"],  # every chat() call passes its own model
         # index_backend is passed verbatim to every indexing litellm call
-        index_backend=backend | {"timeout": TIMEOUT, "extra_body": index["extra_body"]},
+        index_backend=backend | {"timeout": TIMEOUT, "extra_body": index["extra_body"], "extra_headers": NO_CACHE},
         chat_backend=backend,
         storage_path=str(storage_path),
         summary_concurrency=16,  # PageIndex default is 64 parallel calls per document; be gentler on LLM Foundry
@@ -251,9 +277,9 @@ def pageindex_client(storage_path: Path):
 
 
 def pageindex_chat_args(config: str) -> dict:
-    """`model` and `extra_body` (reasoning effort) arguments for PageIndexClient.chat()."""
+    """`model`, `extra_body` (reasoning effort) and `extra_headers` arguments for PageIndexClient.chat()."""
     model_id, _ = resolve(config)
-    return {"model": "openrouter/" + model_id, "extra_body": reasoning_body(config)}
+    return {"model": "openrouter/" + model_id, "extra_body": reasoning_body(config), "extra_headers": NO_CACHE}
 
 
 # Through LLM Foundry/OpenRouter, gpt-6-luna answers some prompts with an instant 504
@@ -286,28 +312,40 @@ def _wrap_litellm() -> None:
 
     completion, acompletion = litellm.completion, litellm.acompletion
 
-    def after(kwargs: dict, response, fell_back: bool):
-        model_id = kwargs["model"].removeprefix("openrouter/")
-        _record(model_id, getattr(response, "usage", None), kwargs.get("messages", []), response.choices[0].message)
+    def model_id(kwargs: dict) -> str:
+        return kwargs["model"].removeprefix("openrouter/")
+
+    def after(kwargs: dict, response, fell_back: bool, start: float):
+        _record(model_id(kwargs), getattr(response, "usage", None), kwargs.get("messages", []),
+                response.choices[0].message, time.time() - start)
         meter = _active_meter.get()
         if fell_back and meter is not None:
             meter.effort_fallbacks += 1
         return response
 
+    def failed(kwargs: dict, error: Exception, start: float) -> dict | None:
+        """Log the failure; return the fallback call's kwargs, or None to re-raise."""
+        _record_failure(model_id(kwargs), kwargs.get("messages", []), error, time.time() - start)
+        return _fallback_kwargs(kwargs, error)
+
     def wrapped_completion(*args, **kwargs):
+        start = time.time()
         try:
-            return after(kwargs, completion(*args, **kwargs), False)
+            return after(kwargs, completion(*args, **kwargs), False, start)
         except Exception as e:
-            if (retry := _fallback_kwargs(kwargs, e)) is None:
+            if (retry := failed(kwargs, e, start)) is None:
                 raise
-            return after(retry, completion(*args, **retry), True)
+            start = time.time()
+            return after(retry, completion(*args, **retry), True, start)
 
     async def wrapped_acompletion(*args, **kwargs):
+        start = time.time()
         try:
-            return after(kwargs, await acompletion(*args, **kwargs), False)
+            return after(kwargs, await acompletion(*args, **kwargs), False, start)
         except Exception as e:
-            if (retry := _fallback_kwargs(kwargs, e)) is None:
+            if (retry := failed(kwargs, e, start)) is None:
                 raise
-            return after(retry, await acompletion(*args, **retry), True)
+            start = time.time()
+            return after(retry, await acompletion(*args, **retry), True, start)
 
     litellm.completion, litellm.acompletion = wrapped_completion, wrapped_acompletion

@@ -5,13 +5,13 @@
  "doc": "PFIZER_2021_10K",
  "method": "vector-rag",
  "config": "gpt-6-luna@high",
- "seconds": 1.4,
+ "seconds": 4.1,
  "usage": {
   "calls": 2,
   "input_tokens": 4452,
   "cached_tokens": 0,
-  "output_tokens": 63,
-  "cost": 0.00047709,
+  "output_tokens": 173,
+  "cost": 0.0005320900000000001,
   "effort_fallbacks": 0
  },
  "calls": [
@@ -30,26 +30,20 @@
    "reply": {
     "content": "I cannot find this in the document.",
     "role": "assistant",
-    "reasoning": "**Identifying document needs**\n\nI need to find information about PPNE, which I think stands for property plant and equipment. But the excerpts I have don\u2019t show anything relevant. If the document doesn\u2019t contain the needed information, I should have a fallback plan ready. I might need to say, \u201cI cannot find this in the document\u201d and be very specific about what I'm looking for. It's important I get this right!",
     "reasoning_details": [
      {
-      "type": "reasoning.summary",
-      "summary": "**Identifying document needs**\n\nI need to find information about PPNE, which I think stands for property plant and equipment. But the excerpts I have don\u2019t show anything relevant. If the document doesn\u2019t contain the needed information, I should have a fallback plan ready. I might need to say, \u201cI cannot find this in the document\u201d and be very specific about what I'm looking for. It's important I get this right!",
-      "format": "openai-responses-v1",
-      "index": 0
-     },
-     {
       "type": "reasoning.encrypted",
-      "data": "gAAAAABqwg7aPQ_BC0Tyc-o0DJC5-ekGaJ2wdefshE6gzVPCHs8-YmeWL-omjL6K29xj05RIJ84EH5jom_S3GIrkAi9IJ5eNF59jUJcDInFNyRRdBhcbwIL_bO651jG2pTIQ6wSA8qLzwMbgMnDxD61zBh2lmgL-bhUWhXmOIHjb1ZSzMHgbLe-ZMWRXE8dklGaa_qgTGvYO5MTEy9wt7yxA6YwaoKT_axYvhdN6TYJy2a2OViphDtEXYlj51aY8lYVApqtsNl92jEb8630_7ni5SVubHvRp8JlWnDjdlb6kVOSH6zYxt5pgpedOrKYsIt97aZRhlpEkV8r4y9r1Mlbm08S-bGtcb1mXzJUtbMEWtv6TfIczxtWR1No0Fu4jlamaFCqElM2Vffq-oGb9Xf64joJBjUtimQ0bUAJqURhTbEkI73BqCS2Khd8GYCJb9i9yqaPfJyyGxSsvJko22LsM3aX0A52j0sRJgQesypNBoz7wc0SlQJ7A7FFO4ScqHL3zTxpvw9uNiXyEvlqSLMQtw2lm69FfCUfRnQkwt4bB70jbD89KDxijBEL3m61HJgrWUSR0lw3PyzlBOBD-efb_jtUkCAIZFjfBbjyk8c_YSsjFQOcw7KVlGHgk83bwRPC9enJOJVPufp7Ylg5BUpe_LUCAzqHzSig0g6ntx4SRjmbsqaPBvl9wqChs8_1X1VvguYCQIPMqP1XQPBex4lpVHEHm-G7uSu-0-0cjC2rikTmzCgBt8YHAaajVE6q0ZyYV9jneGvfz85kfj7jiZFaAcGQn3DAtiQsDy38TJXJ-e8alQaICFKePJ7YbJPdheO8QndTi25mJGHbnkpVj7drhhWUcIQiP461l6RUtKp3b95s7PAB0jUIm_H2_7G_f7tgzWoagu1j95BmXgKJmz8HCcEuyoP5dBj1yBpInc1_ThgsSp0FN6wcUxt6tpZAJIZ_5CY6wROqPnrlb3gQQMV62EePQkxzuLKAIARt4H7LX1gKLcaJkdqgJQPhNjpB1KwOuZSqMev5iuOA9Wo5CoUzHsjxtk9UukywBDq0RkPUFyu2mL2oyAQ-sCfIVlO7onGb0L7_F_qiCf15OBFEltEIWoPwylLKfEpa44zTlTU9yHpz82Z1KaJf3oLPhBhEdViHGNgO4zaufC4AMhlrBuhhkikKdx04uoE0i-MCGSSS5M123m588en_nFVK_1__h4tsmlzZ98R0JEA08e7B9zWs0zFHnsF0E3b_AKPa8Lxom3eUwrbcGQzjfZH1COtrrj64Lvkaxb-NG37uFWbJx1OZtZVEGt84BY2EoRBkPypjZ3DCnvg-nvlb9ObB_H6YGH1tS0hpXGBYEAXp8pVY_oI7LzKIsRQ3JCcin15Ce-9GlTmO8Ud2sCnOiY7yqPFcB3Bt67OW_UM8jnj4Bp4hhQpd9MYVZVi7TTc4gEaeeqTintGRHxjImQMazc7AOZMXWtqhUEI52tsqW51ZYzSO2ZoxMmYt023mwSgELlsVbwrjLXeCXrLxgQlPE-ypcZbSDBpN6pCmUrjaGEaIPeEGyfmTz9q0IosTwjN7JIWYz6vCx9cvaBGFncEmGJS91mfewJGU04QXxcCJ3qNNuXoT7d80c5zYMk88C4pG_HkBJrK-oQ3woXOYuXhk=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "data": "gAAAAABqwhOxIpBCdoqSTpvkVETEHKfsgGdCA8RtnkQx4B_JH3YU4MoAADzK698aFcilU-NlvxUbYqPplIxiI1onJF1BdxFjdh4946eHqVg_aSpDDRNSLfjFvFDHeGDb8f_hhpCNLfiGQMpOL0aJZKVkTjGe97Z997oJAEZ88xSqPhSm6dY6VsG-PQAcfZ10ukgb3vEwviGqvZIb6Oi6WPTRB_YtUHAgxmF7p6DolP3AY5-tCWymKevcSyC5fRS-hXRAXAU42BsZF69dk30ygCZOZrb6sO6XyRy8mLa1AOv1MwxU2d7FRqWLbjPF7ZOtsKO7Rg6FDtig-syE6xNDjK3roMOCmRYFp-C0KlOx-L1skx_5S_56bqvgfKyiKQIVIXXv71D5uT-LObr6T9xMZHJnMViGGA0Rr0mRE05A6PCv5KH9MolNl8ytEEgyF3hWEbPGgWk3Dlp8I2nbt-0DxDWvX5xNDnbx8QYNv5v42xbDbd2x_pWlhsXACyNFQHIi8pK_rb01XVh5EjjDTgK9llsG0iIZPploIvwWKSo6rFMSQK0wpYc2TQDsg-wTpawYJHoYyWkqWkvHAkZBPZlYzn6g2v9sQy2RFX50OJmlyUfmwkaRXRZJcb03b1bQOS2sM_OEXv3m9jNZZSjeiWLa-uujulouNWbS-dAyaSTlW8VLXEtEaoJKb4nHl17wvNNCcvAD_x3XfQKGkKVG4LlUF061xJmVwfehEckLf_uHiLt4ahX5q08XMQ2qXiYmVKCAFGw5MF62GME_2IScBtNyjGcKCvdb1Z86bEuI4k2QuLdj7AHt1dWRwmHxETGquoOKIRvE36gdi5BLuFlxdOFAllzyRw9PqJCF-OqdXYvXUJ1QKYckppXyurUQ_y0rljlS35nQ_U9tBK5MsgboXAxokEh-lbfgGomLbP3D1WjoghuajRyQb1zAX1msSlLPNV8Iciz6y2U4UfqMr8-D32ECRu84nCEgWEs-EZR0D0e6_lMyGp0-s83AYMj-6tyJ28GS_Qoy9yzCs8zOuNm85BpxoXpYxK46OfWYT8zYCNUKl0ooulTGi5wPLAO37J4aaYXN8Qt6R5don7IKTHQY4CzfdNNJSdLl1YcdJMOSDccU85o0CeWHPEuP0zK8ewA5ZaOcPQy4B53Tl0fVqRl4_LfS3JCTA2NSUAWMTgDRvFxgh05nblTOt0jcJUuLFB3vHxK5M1qkDxMJ65cbk_XCFvyGEpig6Vuw5oxPfAn0HagaTHRiWbP7b5PlPavo9RyHn-dM0I3SyHOwNWHrLR60nqILUmo8bDCQykJuewF9F5QP8pGOD7mMG6ak69skWnPUXliHZ3zcgMzpqWbTozP-tiPHmeybEC01M-kCy7evDY6jE1WWumf1wLsNLkLrG0QSyp-gU28uJtt3a6PynEIfcqIHld_KahhjKNgzy0Ou5ybcRg0bqYFQXYPszPZIuxsg5UHN_imw4R4D92GeVXtBo3PV-5jUd7mSJDUoo4FBC6FKhGrgwYlS92UbdlruoLaKVEguAN_ayJYT_WI5jz_qbEHk-9Eo6Oa8v40b2ckrJsv_AyVCZNOFwxbp7a5EiRRUIjR8qbeSTlp8xZicgDgg9VwhwLr3prYUIkuGJlX6em0dFZsx3YbgV4IWqoz25nCfMCZBatATnAQrJuwNdMn9EYwPQtQELXERU8yTO5tgXCMH1syYwYTOSu1662I748gOPUYtAcbCY3U7gRMPZpkAZ4U41AfgM7AWRdiiy8m5V5DL-I3MYh-0a1MTnFIpz7aOok4WMODSuf3IbyiWoJ_L2ZYYZWwqwt4xXVnVQabOUlxhI2G4xlIOsKjYdRa1sfzINEGUc4-AXhYo2n1rVkufPmMAXukCCDsero2mCLtXaXIb29lfCakiKPl5niZL3kF-MFvmZTOfUBnpa1oVGSL8KTsNs5I3rxHiVmIxAB9Pt-7LhVOhSHaYOJrZ61Bdf2GxJlGVDrkgNQs5cXM5TFZLYPvEGWNsXZcROhMzcfNSgxe2Cq1EDsveGUh5GOZuP_uTvKGkAHtppJH2FVLjCjpfykzBsqn3GbQvmuREn26eIDTb8aYBr8ntewjTN3mlRVjvfOHw3bFcUy3kPDn2UL1qrfHFp049SJPHKpptGZHsWalWDQkVEvWPY9-FrIMvgdQqNVYZV-1-uoNLssZifCiwWuJLLEuQxx5g1t-CXmhIkrjHDsb2CqTOED6D8F7Be1BoZgMRj59dq1N45e1Z3FDuR0ejwiptrmRyaKZIzw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
       "format": "openai-responses-v1",
-      "id": "rs_0e1e9aa0548b4c69016ac20ed9225087d19d3fdcb8969cfe5e",
-      "index": 1
+      "id": "rs_0416bdac24bff822016ac213b06b8c87d1959dc45e2fc3a953",
+      "index": 0
      }
     ]
    },
    "input_tokens": 4439,
-   "output_tokens": 63,
-   "reasoning_tokens": 49
+   "output_tokens": 173,
+   "reasoning_tokens": 159,
+   "seconds": 2.87
   }
  ],
  "answer": "I cannot find this in the document.",
