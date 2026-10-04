@@ -1,0 +1,102 @@
+{
+ "id": "financebench_id_00521",
+ "question": "What are major acquisitions that Ulta Beauty has done in FY2023 and FY2022?",
+ "gold": "Ulta Beauty did not make any acquisitions in FY2023 and FY2022.",
+ "doc": "ULTABEAUTY_2023_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 1.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4032,
+  "cached_tokens": 0,
+  "output_tokens": 81,
+  "cost": 0.00044427000000000003,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 10]\n34% with the addition of 12 Black-owned and Black-founded brands, supporting our progress towards our commitment to dedicate 15% of our brand assortment to Black-owned, Black-founded and Black-led brands over time. We believe our private label, the Ulta Beauty Collection, is a strategically important opportunity for growth and profit contribution. Our objective is to provide quality, trend-right private label products to continue to strengthen our guests\u2019 perception of Ulta Beauty as a contemporary beauty destination. Ulta Beauty manages the full development cycle of these products from concept through production to deliver differentiated packaging and formulas that enhance our brand image. The Ulta Beauty Collection has been certified in the Clean Ingredients and Cruelty Free pillars within the Conscious Beauty at Ulta Beauty\u00ae program. We also offer products such as Tarte Double Duty Beauty cosmetics, IT Brushes for Ulta Beauty, and CHI for Ulta Beauty hair care appliances that are permanently exclusive to Ulta Beauty. Similarly, we offer a number of brands and products that are exclusive for a limited period of time or are offered in advance of our competitors, such as Morphe, Colourpop, Juvia\u2019s Place, Chanel and Florence. The Ulta Beauty Collection and permanent Ulta Beauty exclusive products represented approximately 4% of our total net sales in fiscal 2022. Both permanent and temporary exclusive products represented approximately 10% of our total net sales in fiscal 2022. Categories We offer a balanced portfolio across six primary categories: (1) cosmetics; (2) haircare products and styling tools; (3) skincare; (4) fragrance and bath; (5) services; and (6) accessories and other, which includes other revenue sources such as the private label and co\ufffebranded credit card programs, royalties derived from the partnership with Target, and deferred revenue related to the loyalty program and gift card breakage. The following table sets forth the approximate percentage o\n\n[Page 55]\nTable of Contents 52 Ulta Beauty, Inc. Consolidated Statements of Income Fiscal year ended January 28, January 29, January 30, (In thousands, except per share data) 2023 2022 2021 Net sales $ 10,208,580 $ 8,630,889 $ 6,151,953 Cost of sales 6,164,070 5,262,335 4,202,794 Gross profit 4,044,510 3,368,554 1,949,159 Selling, general and administrative expenses 2,395,299 2,061,545 1,583,017 Impairment, restructuring and other costs \u2014 \u2014 114,322 Pre-opening expenses 10,601 9,517 15,000 Operating income 1,638,610 1,297,492 236,820 Interest (income) expense, net (4,934) 1,663 5,735 Income before income taxes 1,643,544 1,295,829 231,085 Income tax expense 401,136 309,992 55,250 Net income $ 1,242,408 $ 985,837 $ 175,835 Net income per common share: Basic $ 24.17 $ 18.09 $ 3.12 Diluted $ 24.01 $ 17.98 $ 3.11 Weighted average common shares outstanding: Basic 51,403 54,482 56,351 Diluted 51,738 54,841 56,558 See accompanying notes to consolidated financial statements.\n\n[Page 5]\nTable of Contents 2 Part I Item 1. Business Overview Ulta Beauty is the largest specialty beauty retailer in the United States and the premier beauty destination for cosmetics, fragrance, skin care products, hair care products, and salon services. Key aspects of our business include: One-of-a-kind Assortment. We offer guests a differentiated assortment of more than 25,000 products from more than 600 well\ufffeestablished and emerging beauty brands across a variety of categories and price points. We believe we offer the widest selection of beauty categories, including prestige and mass cosmetics, fragrance, haircare, prestige and mass skincare, bath and body products, professional hair products, and salon styling tools. Store Footprint. We operate more than 1,350 stores predominantly located in convenient, high-traffic locations. With a bright and open store environment, we make it easy for guests to discover new products and services. Our \n\u2026 [14,942 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning": "**Clarifying document requirements**\n\nI need to focus on whether the document mentions acquisitions. It seems like it doesn't, and the exact phrase is necessary if the document is lacking. I doubt there are any major acquisitions to report, but the 10-K might clarify that there are none. Since the provided excerpts don't include acquisitions, I'll ensure that my answer reflects that. It's important to be precise with the information I give!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Clarifying document requirements**\n\nI need to focus on whether the document mentions acquisitions. It seems like it doesn't, and the exact phrase is necessary if the document is lacking. I doubt there are any major acquisitions to report, but the 10-K might clarify that there are none. Since the provided excerpts don't include acquisitions, I'll ensure that my answer reflects that. It's important to be precise with the information I give!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwg_zHxOuCrV79Tm9z7IXk5WMafE2eu0d1qZbxJg9gUYw2WzREmUFswfDD5vXS6mxjcRodJxHDpSHPo8Oz8dWtyQVgfn0kA7e0O9BK_06Z0PENrRYslXWNTqa9bsV9aI_xlOxtxHnne5f_7cGpjsHVeZmg9C2Vx1S-8oUvJhLNknctC_PKHLoutNOtA8cgz13C1Ql3Yla4ZiwqDL1B8NRQ5IiIWkCGD8Okm2kHrTNSKLvHY1YGy08QoPTD_jCdW6s_cf_12QVkSN92Zrr3JY80nW9TS53Eiu7wm0cD4VJ5rDFI2cMbe2_d_MIP3UJMKLmr3rjz-8WZT3K0ZhiBR86rblnq7QiQM_3cW4dyHD-pHiKBm8NAyAn85RqtuRQcRuc2FOALRlDgbdrtwlTcJSrXRnBvcN3FB9cp8POkr32guTEhKcc8YGqSvMY8Akgy0rntSIoVrypSpcNEJa6Yf9VVfPE758aA3u62o7ihxNRyDCBtJKxeVqFKgyCF02SAvPjWIA1-FxLfte0LbVEujyqgwsOQjm3XBt7OhA1SLDOEM-GDma0eWYKYjQMvm7_RnSPNLQKBwSf5b4NKmIXaXJ71aYly6HGEHGsvcuFyv0lK9a09Oqau7dg2arvmk_E95ycpBOfJvdD9hUWELEq2j8HFYNJbCN8_hDRlXQzf436GzE7XlQP-4QjReFoZwsu2-iQF-s7PHtDIk72Vy7Yv6TRzZfJnuxkjhvNBalsaofcPWG7a5Xw0kfXskbVAP5LcK5Q8syMHqfNoN6-DGEiEkEmZ2GnTqRl2-fz7Wxwr9PTmR3SmTB-O1tbFfrxNjHA5OfslsodtGhbLUU_eu0F7VJDtVrXqN11-dH8ZQj0_YumkXwwFr7YIK-BdK6r5FLXA2PU1pU6g9QuZqmGyV1Erwy51rYJirqPfGPGoKgY2LSmq7jPxeEdoX1l9X9wkse3efEDjm5f1_xccFLG7AHr5gfH7pr8peXKwcHMbyOuMZerdcfZt4UaTEUEcDxSZ4XpF_Hgy2SWXMM15j7Kbea04Nx8_X85oT4mSW1Phu6tlNy5LFWvWpTbfvIYEVQ6WBSv04Xv4LMu4EimsZrnvWKRGDsb4OckhSTSPzAjDHclosUJj8Ho6Ewj9H-mvgdqyvteD4e8ScFk845VmgpCbGa7W2ug5gC_ZRUc4afSCS8eDhUvQIqz1ZWkO8j9PL0G0ua6NEQLC-50yiC7MER8Om4PRTdX5hCPYRnkBQoJDPX1HGBFQGOOCOEJX6eC5BkuijnYlZ6wOFg-uPcxmLm-PSXv1VHieyCMxWFbblDCiaIrD0-goAAUudBcGFE2gFpvv4ZKzX4QefYMr-VmggwsGObiRqsESaGzEYBlQBuyudNCTyDpFp0T_3cAf5aeSvytE-ZoH0iw7fb9tIlkh84NximTyHgHSKMKGIPJgXwPbJRVXxyRITYnmKwv4WXum_IIZbHqTkHg0_S_xFlRH6Gyw66fuAcuijU3ish5BPecq8GpAd3W-TQHEnSvJrW2NhMBRPab35FnXq28Z4wmF_f44TP1uOlCQ-khreFVT25zhntWN_ucO6yfaS-Fb0kwIbrd3-GBujxfELryvoO4V0e9NaKI-CvIG0iLtMN12M9oLfR4A2c8sh-LEeNyd8wHo5s37CohQNXvtL8tPNdLJPsnjLN9SoBJ8twmK-lcWJFghbXLI2zg2P0hSbhsM_JVbLyJp4GuMSmyVKdBUjq6chlcAyxVkGAFz2hz4K8VvwbfzvePjHot1z_RVNQ408w7skcD6fsHu6daSLLQ.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_091adf92c801ed8c016ac20ff18bcc87d189f008ec9e1de9d6",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4013,
+   "output_tokens": 81,
+   "reasoning_tokens": 67
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "retrieved": [
+  {
+   "page": 10,
+   "score": 0.6445
+  },
+  {
+   "page": 55,
+   "score": 0.6415
+  },
+  {
+   "page": 5,
+   "score": 0.6414
+  },
+  {
+   "page": 59,
+   "score": 0.6342
+  },
+  {
+   "page": 5,
+   "score": 0.6289
+  },
+  {
+   "page": 7,
+   "score": 0.6251
+  },
+  {
+   "page": 54,
+   "score": 0.6224
+  },
+  {
+   "page": 34,
+   "score": 0.6187
+  },
+  {
+   "page": 6,
+   "score": 0.6157
+  },
+  {
+   "page": 10,
+   "score": 0.6153
+  }
+ ],
+ "verdict": "refusal",
+ "reason": "The answer states it cannot find the information and does not commit to the gold conclusion that Ulta made no acquisitions.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001246
+}

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PageIndex Cost vs Accuracy</title>
+<meta name="description" content="PageIndex, vector RAG, whole-filing and agentic search on FinanceBench: accuracy against cost per question.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .chart-card { padding: 16px 16px 8px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0 0 8px; font-size: 0.875rem; color: var(--ink-2); }
+  #chart { width: 100%; height: auto; display: block; overflow: visible; }
+  #chart text { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  #chart .axis-title { fill: var(--ink-2); font-size: 12px; }
+  #chart .grid { stroke: var(--grid); stroke-width: 1; }
+  #chart .base { stroke: var(--axis); stroke-width: 1; }
+  #chart .mark { stroke: var(--surface); stroke-width: 2; }
+  #chart .hit { fill: transparent; cursor: pointer; }
+  #chart .hit:focus { outline: none; }
+  #chart g.dot:focus-visible .mark, #chart g.dot.active .mark { stroke: var(--ink); }
+  #chart .label { fill: var(--ink-2); font-size: 11px; }
+  .tip {
+    position: fixed; pointer-events: none; z-index: 10; display: none;
+    background: var(--raised); color: var(--ink); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 12px; font-size: 0.8rem; line-height: 1.45;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); min-width: 200px;
+  }
+  .tip b { font-weight: 600; }
+  .tip .row { display: flex; justify-content: space-between; gap: 16px; }
+  .tip .row span:first-child { color: var(--ink-2); }
+</style>
+</head>
+<body>
+<main>
+  <nav class="site">
+    <a href="index.html" aria-current="page">Cost vs accuracy</a>
+    <a href="walkthrough.html">Walkthrough: one question, four methods</a>
+    <a id="repo-link" href="#">Code and data on GitHub</a>
+  </nav>
+
+  <header class="page">
+    <h1>Does PageIndex earn its cost on financial filings?</h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <section class="card chart-card" aria-labelledby="chart-title">
+    <h2 id="chart-title" style="margin-top:0">Accuracy against cost per question</h2>
+    <p class="small muted" style="margin-top:-6px">Each dot is one method with one model setting. Up is more accurate, left is cheaper (log scale). Hover a dot for details.</p>
+    <div class="legend" id="legend"></div>
+    <svg id="chart" role="img" aria-labelledby="chart-title"></svg>
+  </section>
+
+  <h2>What this shows</h2>
+  <!-- Hand-written from the 2026-10-04 pilot (30 questions). Update when results change. -->
+  <ul class="findings" id="findings">
+    <li><b>Agentic search is the cheap, accurate cluster.</b> With gpt-6-luna at high effort it ties PageIndex for
+      the best accuracy (83%) at <b>$0.0008 per question versus $0.0128</b>, about 16× cheaper, with no index to build.</li>
+    <li><b>Vector RAG is the cheapest and refuses the most.</b> About $0.0005 per question, but 13–20% of answers are
+      "cannot find": the 10 closest chunks often miss the table the question needs.</li>
+    <li><b>PageIndex is not cheap per question.</b> With Gemini it cost $0.12–0.31 per question, more than putting
+      the whole filing in the prompt (~$0.10). Each turn of its tree search re-sends the conversation so far, and some
+      searches run long (one question took 64 model calls in the pilot). The averages include those outliers.</li>
+    <li><b>Thinking helps cheap models cheaply.</b> gpt-6-luna gains 7–17 points from no thinking to high effort,
+      for a fraction of a cent.</li>
+    <li><b>Read the gaps with care.</b> 30 questions, so one question moves accuracy by 3.3 points; differences under
+      ~10 points are within noise. One judge model, strict grading against FinanceBench's gold answers, and each
+      question asked against its own filing (finding the right filing among many is not tested).</li>
+  </ul>
+
+  <h2>Methods</h2>
+  <ul class="findings" style="list-style:none;padding-left:0">
+    <li><span class="key" data-method="pageindex"></span>: the PageIndex SDK (local mode, Flash tree index). The model walks a table-of-contents tree of the filing and reads the pages it picks.</li>
+    <li><span class="key" data-method="vector-rag"></span>: the filing is split into ~500-token chunks and embedded once; the 10 chunks closest to the question are given to the model.</li>
+    <li><span class="key" data-method="full-context"></span>: the whole filing's text goes into the prompt. The brute-force baseline.</li>
+    <li><span class="key" data-method="agentic-search"></span>: no index. The model gets two tools, a regex search over the filing and "read pages", and explores like a coding agent.</li>
+  </ul>
+
+  <h2>Table</h2>
+  <div class="card table-wrap">
+    <table class="data" id="table">
+      <thead><tr>
+        <th data-key="method">Method</th><th data-key="config">Setting</th>
+        <th class="num" data-key="accuracy_pct">Accuracy</th><th class="num" data-key="refusal_pct">Refused</th>
+        <th class="num" data-key="errors">Errors</th><th class="num" data-key="cost_per_q_usd">$ / question</th>
+        <th class="num" data-key="median_seconds">Median s</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <footer id="footer"></footer>
+</main>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script id="data" type="application/json">{"meta": {"questions": 30, "settings": ["gpt-6-luna@none", "gpt-6-luna@high", "gemini-3.5-flash-lite@low", "gemini-3.8-flash@low", "gemini-3.8-flash@high"], "methods": ["pageindex", "vector-rag", "full-context", "agentic-search"], "judge": "claude-sonnet-5.5@medium", "index_model": "gpt-6-luna@low", "repo": "https://github.com/Jivraj-18/benchmark-finance-pageindex"}, "cells": [{"method": "agentic-search", "config": "gemini-3.5-flash-lite@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 63.3, "refusal_pct": 13.3, "cost_per_q_usd": 0.00353, "median_seconds": 9.1}, {"method": "agentic-search", "config": "gemini-3.8-flash@high", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 83.3, "refusal_pct": 6.7, "cost_per_q_usd": 0.04106, "median_seconds": 58.0}, {"method": "agentic-search", "config": "gemini-3.8-flash@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 70.0, "refusal_pct": 6.7, "cost_per_q_usd": 0.00834, "median_seconds": 15.9}, {"method": "agentic-search", "config": "gpt-6-luna@high", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 83.3, "refusal_pct": 3.3, "cost_per_q_usd": 0.00076, "median_seconds": 10.6}, {"method": "agentic-search", "config": "gpt-6-luna@none", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 66.7, "refusal_pct": 3.3, "cost_per_q_usd": 0.00058, "median_seconds": 6.3}, {"method": "full-context", "config": "gemini-3.5-flash-lite@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 70.0, "refusal_pct": 10.0, "cost_per_q_usd": 0.03354, "median_seconds": 6.0}, {"method": "full-context", "config": "gemini-3.8-flash@high", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 80.0, "refusal_pct": 10.0, "cost_per_q_usd": 0.09795, "median_seconds": 18.1}, {"method": "full-context", "config": "gemini-3.8-flash@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 73.3, "refusal_pct": 10.0, "cost_per_q_usd": 0.09497, "median_seconds": 8.7}, {"method": "full-context", "config": "gpt-6-luna@high", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 80.0, "refusal_pct": 6.7, "cost_per_q_usd": 0.01143, "median_seconds": 6.2}, {"method": "full-context", "config": "gpt-6-luna@none", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 66.7, "refusal_pct": 10.0, "cost_per_q_usd": 0.01131, "median_seconds": 3.8}, {"method": "pageindex", "config": "gemini-3.5-flash-lite@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 63.3, "refusal_pct": 13.3, "cost_per_q_usd": 0.04786, "median_seconds": 11.8}, {"method": "pageindex", "config": "gemini-3.8-flash@high", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 76.7, "refusal_pct": 3.3, "cost_per_q_usd": 0.31461, "median_seconds": 28.8}, {"method": "pageindex", "config": "gemini-3.8-flash@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 76.7, "refusal_pct": 3.3, "cost_per_q_usd": 0.11668, "median_seconds": 29.3}, {"method": "pageindex", "config": "gpt-6-luna@high", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 83.3, "refusal_pct": 6.7, "cost_per_q_usd": 0.01276, "median_seconds": 16.1}, {"method": "pageindex", "config": "gpt-6-luna@none", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 70.0, "refusal_pct": 3.3, "cost_per_q_usd": 0.01685, "median_seconds": 10.4}, {"method": "vector-rag", "config": "gemini-3.5-flash-lite@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 63.3, "refusal_pct": 16.7, "cost_per_q_usd": 0.0024, "median_seconds": 2.4}, {"method": "vector-rag", "config": "gemini-3.8-flash@high", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 70.0, "refusal_pct": 16.7, "cost_per_q_usd": 0.0102, "median_seconds": 7.0}, {"method": "vector-rag", "config": "gemini-3.8-flash@low", "family": "google", "questions": 30, "errors": 0, "accuracy_pct": 60.0, "refusal_pct": 20.0, "cost_per_q_usd": 0.00435, "median_seconds": 3.2}, {"method": "vector-rag", "config": "gpt-6-luna@high", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 73.3, "refusal_pct": 13.3, "cost_per_q_usd": 0.0006, "median_seconds": 4.8}, {"method": "vector-rag", "config": "gpt-6-luna@none", "family": "openai", "questions": 30, "errors": 0, "accuracy_pct": 66.7, "refusal_pct": 16.7, "cost_per_q_usd": 0.00047, "median_seconds": 2.7}]}</script>
+<script>
+const { meta, cells } = JSON.parse(document.getElementById("data").textContent);
+const LABELS = { "pageindex": "PageIndex", "vector-rag": "Vector RAG", "full-context": "Whole filing", "agentic-search": "Agentic search" };
+const SHAPES = { "pageindex": "circle", "vector-rag": "square", "full-context": "diamond", "agentic-search": "triangle" };
+const fmtCost = c => c >= 0.01 ? "$" + c.toFixed(3) : "$" + c.toFixed(4);
+
+document.getElementById("repo-link").href = meta.repo;
+document.getElementById("subtitle").textContent =
+  `${meta.questions} FinanceBench questions, ${meta.methods.length} retrieval methods, ${meta.settings.length} model settings ` +
+  `(cheap GPT and Gemini models, low and high reasoning effort). Every answer graded strictly against FinanceBench's ` +
+  `gold answer by ${meta.judge}.`;
+document.getElementById("footer").innerHTML =
+  `Generated by <code>uv run python -m finbench.site</code> from <a href="${meta.repo}">${meta.repo.replace("https://", "")}</a>. ` +
+  `PageIndex trees built with ${meta.index_model}; one-time indexing cost is not included in cost per question.`;
+
+// marker shapes, centred on 0,0
+function shapePath(shape, r) {
+  if (shape === "square") { const s = r * 0.9; return `M${-s},${-s}H${s}V${s}H${-s}Z`; }
+  if (shape === "diamond") { const s = r * 1.25; return `M0,${-s}L${s},0L0,${s}L${-s},0Z`; }
+  if (shape === "triangle") { const s = r * 1.3; return `M0,${-s}L${s * 0.95},${s * 0.7}L${-s * 0.95},${s * 0.7}Z`; }
+  return `M${-r},0A${r},${r} 0 1,0 ${r},0A${r},${r} 0 1,0 ${-r},0Z`;
+}
+function keySvg(method) {
+  return `<svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true"><path d="${shapePath(SHAPES[method], 5)}" fill="var(--${method})"/></svg>`;
+}
+document.querySelectorAll(".key[data-method]").forEach(el => {
+  el.innerHTML = keySvg(el.dataset.method) + `<b>${LABELS[el.dataset.method]}</b>`;
+});
+document.getElementById("legend").innerHTML =
+  meta.methods.map(m => `<span class="key">${keySvg(m)}${LABELS[m]}</span>`).join("");
+
+// ---- chart
+const svg = document.getElementById("chart");
+const tip = document.getElementById("tip");
+function draw() {
+  const W = Math.max(svg.parentElement.clientWidth - 32, 300), H = Math.round(Math.min(520, Math.max(340, W * 0.55)));
+  const M = { top: 12, right: 24, bottom: 48, left: 52 };
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const costs = cells.map(c => c.cost_per_q_usd).filter(c => c > 0);
+  const lo = Math.log10(Math.min(...costs)) - 0.15, hi = Math.log10(Math.max(...costs)) + 0.1;
+  const accs = cells.map(c => c.accuracy_pct);
+  const yLo = Math.max(0, Math.floor((Math.min(...accs) - 5) / 10) * 10), yHi = 100;
+  const x = c => M.left + (Math.log10(c) - lo) / (hi - lo) * (W - M.left - M.right);
+  const y = a => M.top + (yHi - a) / (yHi - yLo) * (H - M.top - M.bottom);
+
+  let s = "";
+  for (let a = yLo; a <= yHi; a += 10) {
+    s += `<line class="${a === yLo ? "base" : "grid"}" x1="${M.left}" x2="${W - M.right}" y1="${y(a)}" y2="${y(a)}"/>`;
+    s += `<text x="${M.left - 8}" y="${y(a) + 4}" text-anchor="end">${a}%</text>`;
+  }
+  const ticks = [];
+  for (let e = Math.floor(lo); e <= Math.ceil(hi); e++) for (const m of (W > 700 ? [1, 2, 5] : [1])) {
+    const v = m * 10 ** e; if (Math.log10(v) >= lo - 1e-9 && Math.log10(v) <= hi + 1e-9) ticks.push(v);
+  }
+  for (const v of ticks) {
+    s += `<line class="grid" x1="${x(v)}" x2="${x(v)}" y1="${M.top}" y2="${H - M.bottom}"/>`;
+    s += `<text x="${x(v)}" y="${H - M.bottom + 18}" text-anchor="middle">$${v < 0.01 ? v.toFixed(4).replace(/0+$/, "") : v.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")}</text>`;
+  }
+  s += `<text class="axis-title" x="${(M.left + W - M.right) / 2}" y="${H - 8}" text-anchor="middle">Cost per question (USD, log scale)</text>`;
+  s += `<text class="axis-title" transform="translate(14 ${(M.top + H - M.bottom) / 2}) rotate(-90)" text-anchor="middle">Accuracy</text>`;
+
+  cells.forEach((c, i) => {
+    if (!(c.cost_per_q_usd > 0)) return;
+    s += `<g class="dot" tabindex="0" data-i="${i}" transform="translate(${x(c.cost_per_q_usd)} ${y(c.accuracy_pct)})" aria-label="${LABELS[c.method]}, ${c.config}: ${c.accuracy_pct}% at ${fmtCost(c.cost_per_q_usd)} per question">` +
+         `<path class="mark" d="${shapePath(SHAPES[c.method], 6)}" fill="var(--${c.method})"/>` +
+         `<circle class="hit" r="12"/></g>`;
+  });
+  svg.innerHTML = s;
+  svg.querySelectorAll("g.dot").forEach(g => {
+    const show = ev => {
+      const c = cells[+g.dataset.i];
+      svg.querySelectorAll("g.dot.active").forEach(d => d.classList.remove("active"));
+      g.classList.add("active");
+      tip.innerHTML = `<div style="margin-bottom:6px">${keySvg(c.method)} <b>${LABELS[c.method]}</b><br><span class="muted">${c.config}</span></div>` +
+        [["Accuracy", `${c.accuracy_pct}% of ${c.questions}`], ["Refused", `${c.refusal_pct}%`], ["Errors", c.errors],
+         ["Cost / question", fmtCost(c.cost_per_q_usd)], ["Median time", `${c.median_seconds}s`]]
+          .map(([k, v]) => `<div class="row"><span>${k}</span><span>${v}</span></div>`).join("");
+      tip.style.display = "block";
+      const r = (ev && ev.clientX !== undefined) ? { x: ev.clientX, y: ev.clientY } : (() => { const b = g.getBoundingClientRect(); return { x: b.right, y: b.top }; })();
+      const tw = tip.offsetWidth, th = tip.offsetHeight;
+      tip.style.left = Math.min(r.x + 14, window.innerWidth - tw - 8) + "px";
+      tip.style.top = Math.max(8, Math.min(r.y - th / 2, window.innerHeight - th - 8)) + "px";
+    };
+    const hide = () => { tip.style.display = "none"; g.classList.remove("active"); };
+    g.addEventListener("mousemove", show); g.addEventListener("focus", show);
+    g.addEventListener("mouseleave", hide); g.addEventListener("blur", hide);
+  });
+}
+draw();
+addEventListener("resize", draw);
+
+// ---- table (click a header to sort)
+const tbody = document.querySelector("#table tbody");
+let sortKey = "accuracy_pct", sortDir = -1;
+function table() {
+  const rows = [...cells].sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir);
+  tbody.innerHTML = rows.map(c => `<tr><td><span class="key">${keySvg(c.method)}${LABELS[c.method]}</span></td><td>${c.config}</td>` +
+    `<td class="num">${c.accuracy_pct}%</td><td class="num">${c.refusal_pct}%</td><td class="num">${c.errors}</td>` +
+    `<td class="num">${c.cost_per_q_usd == null ? "–" : fmtCost(c.cost_per_q_usd)}</td><td class="num">${c.median_seconds ?? "–"}</td></tr>`).join("");
+}
+document.querySelectorAll("#table th").forEach(th => th.addEventListener("click", () => {
+  sortDir = sortKey === th.dataset.key ? -sortDir : -1; sortKey = th.dataset.key; table();
+}));
+table();
+</script>
+</body>
+</html>

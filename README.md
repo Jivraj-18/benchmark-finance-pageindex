@@ -22,9 +22,9 @@ strictly, and records the exact cost of each one.
 | Method | What the model sees | One-time cost |
 |---|---|---|
 | `pageindex` | PageIndex SDK (local mode, Flash tree index); the model searches the tree | Tree per filing, built by `index_model` |
+| `vector-rag` | The 10 chunks (~500 tokens each) closest to the question by embedding similarity | Embeddings per filing (`embedding_model`) |
 | `full-context` | The whole filing's text in the prompt | None |
 | `agentic-search` | Nothing up front; `search` (regex) and `read_pages` tools, like a coding agent | None |
-| vector RAG | *Deferred*; see [docs/rag-plan.md](docs/rag-plan.md) | |
 
 All methods share one answer prompt (`finbench/prompts.py`).
 
@@ -50,6 +50,10 @@ uv run python -m finbench.run --methods pageindex agentic-search --configs all -
 
 # Summarise into results/summary.csv (add --answers FILE --limit N for a per-question answers page)
 uv run python -m finbench.report
+
+# Record each method's steps on a few questions, then build the site in docs/
+uv run python -m finbench.walkthrough --ids financebench_id_04103 --config gpt-6-luna@high
+uv run python -m finbench.site --limit 30 --walkthrough-config gpt-6-luna@high
 ```
 
 - `--configs` takes `model@effort` settings (`gpt-6-luna@xhigh`, `claude-opus-5.5@low`) or `all` for the grid.
@@ -63,8 +67,10 @@ the judge's verdict (`correct` / `incorrect` / `refusal`) and its reason.
 
 ## Models
 
-Defined in [`config/models.yaml`](config/models.yaml): the models, their prices and a grid of reasoning
-efforts per model (cheap models get the full effort ladder; flagships get the ends).
+Defined in [`config/models.yaml`](config/models.yaml): the models, their prices, and the `grid` of
+`model@effort` settings that `--configs all` runs. The grid currently holds 5 cheap settings:
+gpt-6-luna@none, gpt-6-luna@high, gemini-3.5-flash-lite@low, gemini-3.8-flash@low, gemini-3.8-flash@high.
+These models are also defined, with prices, ready to add to the grid:
 
 | Family | Cheap | Mid | Expensive |
 |---|---|---|---|
@@ -85,12 +91,21 @@ finbench/prompts.py        shared answer prompt and judge prompt
 finbench/methods/*.py      one file per method: answer(question, config) [+ prepare(docs)]
 finbench/judge.py          strict grading against the gold answer
 finbench/run.py            runs methods × configs × questions in parallel, resumable
-finbench/report.py         summary table
+finbench/report.py         summary table; --answers writes the per-question answers page
+finbench/walkthrough.py    records every LLM call of each method on chosen questions
+finbench/site.py           builds docs/index.html and docs/walkthrough.html from results
+finbench/templates/        HTML and CSS for the site
 ```
 
 **LLM access.** Every call goes to LLM Foundry's OpenRouter-compatible route
 (`$LLMFOUNDRY_BASE_URL/openrouter/v1`), which serves all three families through one API. PageIndex
-calls LiteLLM internally; `llm.pageindex_client()` points it at the same route.
+calls LiteLLM internally; `llm.pageindex_client()` points it at the same route. Embeddings use Foundry's
+`/openai/v1` route. Every call has a one-hour timeout.
+
+**gpt-6-luna 504s.** Through OpenRouter, gpt-6-luna answers some prompts with an instant 504 "The operation
+was aborted", every time, at one reasoning effort but not at others. PageIndex calls that hit this are
+retried once at a neighbouring effort and counted in `effort_fallbacks` (e.g. 3 of 316 indexing calls for
+the Corning 10-K). Without this, 2 of 24 filings could not be indexed.
 
 **Cost.** Each call's tokens are priced from `config/models.yaml` (uncached input, cached input, output;
 reasoning tokens count as output) and summed per question by `llm.Meter`. PageIndex's one-time tree
@@ -116,37 +131,43 @@ and register it in `finbench/methods/__init__.py`.
   gpt-5.4 and older, and Foundry cannot delete uploads. Details in [docs/rag-plan.md](docs/rag-plan.md).
 - `pageindex` is pinned to 0.2.20: an unpinned install resolved to a 0.3.0 pre-release with a different API.
 
+## Site
+
+**https://jivraj-18.github.io/benchmark-finance-pageindex/** (GitHub Pages, served from `docs/`)
+
+- [Cost vs accuracy](https://jivraj-18.github.io/benchmark-finance-pageindex/): one dot per method × setting.
+- [Walkthrough](https://jivraj-18.github.io/benchmark-finance-pageindex/walkthrough.html): four questions,
+  each answered by all four methods with gpt-6-luna@high, every tool call and result shown step by step.
+
 ## Results
 
-### Pilot (2026-09-30): 30 questions × 3 methods × 5 cheap settings
+### Pilot (2026-10-04): 30 questions × 4 methods × 5 cheap settings
 
-`uv run python -m finbench.run --methods pageindex agentic-search full-context --configs all --limit 30`
+`uv run python -m finbench.run --methods pageindex vector-rag agentic-search full-context --configs all --limit 30`
 
-Every question with its gold answer and all 15 method/setting answers and grades:
+Every question with its gold answer and all 20 method/setting answers and grades:
 [docs/questions-pilot.md](docs/questions-pilot.md)
 (regenerate with `uv run python -m finbench.report --answers docs/questions-pilot.md --limit 30`).
 
-Accuracy and cost per question on the **28 questions every method could attempt** (PageIndex could not
-index 2 of the 24 filings; see below):
+Accuracy and mean cost per question, all 30 questions (no errors remain):
 
-| Setting | PageIndex | Whole filing | Agentic search |
-|---|---|---|---|
-| gpt-6-luna@none | 64% · $0.0056 | 68% · $0.0114 | 68% · $0.0006 |
-| gpt-6-luna@high | 82% · $0.0091 | 79% · $0.0115 | **82% · $0.0007** |
-| gemini-3.5-flash-lite@low | 64% · $0.0304 | 71% · $0.0335 | 64% · $0.0035 |
-| gemini-3.8-flash@low | 75% · $0.0872 | 75% · $0.0956 | 71% · $0.0084 |
-| gemini-3.8-flash@high | 68% · $0.1039 | 79% · $0.0980 | 82% · $0.0411 |
+| Setting | PageIndex | Vector RAG | Whole filing | Agentic search |
+|---|---|---|---|---|
+| gpt-6-luna@none | 70% · $0.0169 | 67% · $0.0005 | 67% · $0.0113 | 67% · $0.0006 |
+| gpt-6-luna@high | 83% · $0.0128 | 73% · $0.0006 | 80% · $0.0114 | 83% · $0.0008 |
+| gemini-3.5-flash-lite@low | 63% · $0.0479 | 63% · $0.0024 | 70% · $0.0335 | 63% · $0.0035 |
+| gemini-3.8-flash@low | 77% · $0.1167 | 60% · $0.0043 | 73% · $0.0950 | 70% · $0.0083 |
+| gemini-3.8-flash@high | 77% · $0.3146 | 70% · $0.0102 | 80% · $0.0979 | 83% · $0.0411 |
 
-- **PageIndex never beat the simpler methods here.** Agentic search (regex + read pages, no index) matched
-  or beat it for every setting except gemini-3.8-flash@low, at roughly a tenth of the cost.
-- **PageIndex is not cheap per question.** With Gemini it cost about as much as sending the whole filing,
-  because the tree search reads many nodes (tens of thousands of tokens per question).
-- **More thinking helped cheap GPT a lot** (gpt-6-luna: 64–68% → 79–82%) for little extra cost.
-- **PageIndex failures:** Corning 2022 10-K and General Mills 2019 10-K could not be indexed (index calls
-  time out through LLM Foundry, every attempt), and the tree search hit its turn limit on one CVS Health
-  question. `results/summary.csv` counts these as wrong; the table above excludes the 2 filings.
-- **Caveats:** 28 questions, so one question moves accuracy by ~3.6 points and most gaps above are within
-  noise. One judge model (claude-sonnet-5.5@medium). Single-document setting only. Costs of failed
+- **Agentic search is the cheap, accurate cluster.** With gpt-6-luna@high it ties PageIndex for the best accuracy
+  (83%) at $0.0008 per question versus $0.0128, about 16× cheaper, with no index to build.
+- **Vector RAG is the cheapest and refuses the most**: 13–20% "cannot find", because the top 10 chunks often
+  miss the table a question needs.
+- **PageIndex is not cheap per question.** With Gemini it cost $0.12–0.31, more than the whole filing (~$0.10):
+  each tree-search turn re-sends the conversation, and some searches run long (64 model calls on one question).
+- **More thinking helps cheap GPT** (gpt-6-luna: +7 to +17 points from none to high) for a fraction of a cent.
+- **Caveats:** 30 questions, so one question moves accuracy by 3.3 points and gaps under ~10 points are within
+  noise. One judge model (claude-sonnet-5.5@medium). Single-document setting only. Costs of the earlier failed
   PageIndex indexing attempts were not metered.
 
 Full per-setting numbers: `uv run python -m finbench.report`.

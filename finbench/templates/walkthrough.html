@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrieval Method Walkthrough</title>
+<meta name="description" content="Step by step: how PageIndex, vector RAG, whole-filing and agentic search each answer the same FinanceBench question.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+  .tabs button {
+    font: inherit; font-size: 0.875rem; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+    background: var(--surface); color: var(--ink-2); border: 1px solid var(--border);
+  }
+  .tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+  .question h2 { margin: 0 0 6px; font-size: clamp(1rem, 2.6vw, 1.2rem); }
+  .question .gold { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--grid); }
+  .methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; align-items: start; }
+  .method { padding: 16px; }
+  .method header { border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 12px; }
+  .method header h3 { margin: 0 0 6px; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; font-size: 0.8rem; color: var(--ink-2); font-variant-numeric: tabular-nums; margin-top: 8px; }
+  .stats b { color: var(--ink); font-weight: 600; }
+  ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  ol.steps li { position: relative; padding: 0 0 14px 34px; counter-increment: step; }
+  ol.steps li::before {
+    content: counter(step); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 0.75rem; font-weight: 600;
+    background: var(--code-bg); color: var(--ink-2);
+  }
+  ol.steps li:not(:last-child)::after {
+    content: ""; position: absolute; left: 11.5px; top: 26px; bottom: 2px; width: 1px; background: var(--grid);
+  }
+  .step-title { font-weight: 600; font-size: 0.9rem; }
+  .step-meta { font-size: 0.75rem; color: var(--muted); }
+  .step-body { font-size: 0.85rem; color: var(--ink-2); margin-top: 2px; white-space: pre-wrap; word-break: break-word; }
+  li.answer .step-body { color: var(--ink); background: var(--code-bg); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
+  li.error .step-title { color: var(--critical); }
+  details { margin-top: 4px; font-size: 0.8rem; }
+  summary { cursor: pointer; color: var(--ink-2); }
+  .verdict-reason { font-size: 0.8rem; color: var(--ink-2); margin-top: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="site">
+    <a href="index.html">Cost vs accuracy</a>
+    <a href="walkthrough.html" aria-current="page">Walkthrough: one question, four methods</a>
+    <a id="repo-link" href="#">Code and data on GitHub</a>
+  </nav>
+
+  <header class="page">
+    <h1>One question, four methods, step by step</h1>
+    <p id="subtitle"></p>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <section class="card question" id="question"></section>
+  <div class="methods" id="methods"></div>
+
+  <footer id="footer"></footer>
+</main>
+
+<script id="data" type="application/json">/*DATA*/null</script>
+<script>
+const { meta, questions } = JSON.parse(document.getElementById("data").textContent);
+const LABELS = { "pageindex": "PageIndex", "vector-rag": "Vector RAG", "full-context": "Whole filing", "agentic-search": "Agentic search" };
+const SHAPES = { "pageindex": "circle", "vector-rag": "square", "full-context": "diamond", "agentic-search": "triangle" };
+const ICONS = { correct: "✓", incorrect: "✗", refusal: "–", error: "!" };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+const md = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+const fmtCost = c => c >= 0.01 ? "$" + c.toFixed(3) : "$" + c.toFixed(4);
+const fmtN = n => n == null ? "" : n.toLocaleString();
+
+function shapePath(shape, r) {
+  if (shape === "square") { const s = r * 0.9; return `M${-s},${-s}H${s}V${s}H${-s}Z`; }
+  if (shape === "diamond") { const s = r * 1.25; return `M0,${-s}L${s},0L0,${s}L${-s},0Z`; }
+  if (shape === "triangle") { const s = r * 1.3; return `M0,${-s}L${s * 0.95},${s * 0.7}L${-s * 0.95},${s * 0.7}Z`; }
+  return `M${-r},0A${r},${r} 0 1,0 ${r},0A${r},${r} 0 1,0 ${-r},0Z`;
+}
+const keySvg = m => `<svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true"><path d="${shapePath(SHAPES[m], 5)}" fill="var(--${m})"/></svg>`;
+const badge = v => `<span class="badge ${v}">${ICONS[v] || "?"} ${v}</span>`;
+
+document.getElementById("repo-link").href = meta.repo;
+document.getElementById("subtitle").textContent =
+  `The same question answered by each method with the same model setting (${meta.config}). ` +
+  `Every step is recorded from the actual run: the tool calls the model made, what came back, and how many tokens it read and spent thinking.`;
+document.getElementById("footer").innerHTML =
+  `Recorded with <code>uv run python -m finbench.walkthrough --ids … --config ${meta.config}</code>; ` +
+  `long prompts and tool results are cut for display. Graded by ${meta.judge}. ` +
+  `<a href="${meta.repo}">Code and data</a>.`;
+
+function step(s) {
+  const meta = [];
+  if (s.tokens) meta.push(`model read ${fmtN(s.tokens)} tokens`);
+  if (s.thought) meta.push(`thought for ${fmtN(s.thought)} tokens`);
+  const body = s.kind === "tool" ? `<code>${esc(s.body)}</code>` : (s.kind === "answer" ? md(s.body) : esc(s.body));
+  return `<li class="${s.kind}"><div class="step-title">${esc(s.title)}</div>` +
+    (meta.length ? `<div class="step-meta">${meta.join(" · ")}</div>` : "") +
+    (s.body ? `<div class="step-body">${body}</div>` : "") +
+    (s.detail ? `<details><summary>${s.kind === "tool" ? "Show what came back" : "Show"}</summary><pre>${esc(s.detail)}</pre></details>` : "") +
+    `</li>`;
+}
+
+function show(i) {
+  const q = questions[i];
+  document.querySelectorAll("#tabs button").forEach((b, j) => b.setAttribute("aria-selected", j === i));
+  document.getElementById("question").innerHTML =
+    `<div class="small muted">${esc(q.id)} · ${esc(q.doc)}</div><h2>${esc(q.question)}</h2>` +
+    `<div class="gold"><b>Gold answer</b> (FinanceBench's reference answer): ${esc(q.gold)}</div>`;
+  document.getElementById("methods").innerHTML = q.methods.map(m => `
+    <section class="card method" style="--accent: var(--${m.method})">
+      <header>
+        <h3>${keySvg(m.method)}${LABELS[m.method]}</h3>
+        ${badge(m.verdict)}
+        <div class="stats">
+          <span>Model calls</span><b>${m.calls}</b>
+          <span>Tokens read</span><b>${fmtN(m.input_tokens)}</b>
+          <span>Cost</span><b>${fmtCost(m.cost)}</b>
+          <span>Time</span><b>${m.seconds}s</b>
+        </div>
+      </header>
+      <ol class="steps">${m.steps.map(step).join("")}</ol>
+      ${m.reason ? `<div class="verdict-reason"><b>Grader:</b> ${esc(m.reason)}</div>` : ""}
+    </section>`).join("");
+  history.replaceState(null, "", "#" + q.id);
+}
+
+const tabs = document.getElementById("tabs");
+tabs.innerHTML = questions.map((q, i) => `<button role="tab" data-i="${i}">${esc(q.question.length > 60 ? q.question.slice(0, 57) + "…" : q.question)}</button>`).join("");
+tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
+if (questions.length < 2) tabs.hidden = true;
+const start = Math.max(0, questions.findIndex(q => "#" + q.id === location.hash));
+if (questions.length) show(start);
+</script>
+</body>
+</html>

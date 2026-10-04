@@ -1,0 +1,115 @@
+{
+ "id": "financebench_id_04103",
+ "question": "What is the FY2019 cash conversion cycle (CCC) for General Mills? CCC is defined as: DIO + DSO - DPO. DIO is defined as: 365 * (average inventory between FY2018 and FY2019) / (FY2019 COGS). DSO is defined as: 365 * (average accounts receivable between FY2018 and FY2019) / (FY2019 Revenue). DPO is defined as: 365 * (average accounts payable between FY2018 and FY2019) / (FY2019 COGS + change in inventory between FY2018 and FY2019). Round your answer to two decimal places. Address the question by using the line items and information shown within the income statement and the balance sheet.",
+ "gold": "-3.7",
+ "doc": "GENERALMILLS_2019_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 1.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 5454,
+  "cached_tokens": 0,
+  "output_tokens": 1128,
+  "cost": 0.00111417,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 57]\nTable of Contents Consolidated Statements of Cash Flows GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions) Fiscal Year 2019 2018 2017 Cash Flows - Operating Activities Net earnings, including earnings attributable to redeemable and noncontrolling interests $ 1,786.2 $ 2,163.0 $ 1,701.1 Adjustments to reconcile net earnings to net cash provided by operating activities: Depreciation and amortization 620.1 618.8 603.6 After-tax earnings from joint ventures (72.0) (84.7) (85.0) Distributions of earnings from joint ventures 86.7 113.2 75.6 Stock-based compensation 84.9 77.0 95.7 Deferred income taxes 93.5 (504.3) 183.9 Pension and other postretirement benefit plan contributions (28.8) (31.8) (45.4) Pension and other postretirement benefit plan costs 6.1 4.6 35.7 Divestitures loss 30.0 - 13.5 Restructuring, impairment, and other exit costs 235.7 126.0 117.0 Changes in current assets and liabilities, excluding the effects of acquisitions and divestitures (7.5) 542.1 (194.2) Other, net (27.9) (182.9) (86.3) Net cash provided by operating activities 2,807.0 2,841.0 2,415.2 Cash Flows - Investing Activities Purchases of land, buildings, and equipment (537.6) (622.7) (684.4) Acquisition, net of cash acquired - (8,035.8) - Investments in affiliates, net 0.1 (17.3) 3.3 Proceeds from disposal of land, buildings, and equipment 14.3 1.4 4.2 Proceeds from divestitures 26.4 - 17.5 Exchangeable note - - 13.0 Other, net (59.7) (11.0) (0.5) Net cash used by investing activities (556.5) (8,685.4) (646.9) Cash Flows - Financing Activities Change in notes payable (66.3) 327.5 962.4 Issuance of long-term debt 339.1 6,550.0 1,072.1 Payment of long-term debt (1,493.8) (600.1) (1,000.0) Proceeds from common stock issued on exercised options 241.4 99.3 112.6 Proceeds from common stock issued - 969.9 - Purchases of common stock for treasury (1.1) (601.6) (1,651.5) Dividends paid (1,181.7) (1,139.7) (1,135.1) Investments in redeemable interest 55.7 - - Distributions to noncontrolling and redeemab\n\n[Page 41]\nTable of Contents Free Cash Flow Conversion Rate We believe this measure provides useful information to investors because it is important for assessing our efficiency in converting earnings to cash and returning cash to shareholders. The calculation of free cash flow conversion rate and net cash provided by operating activities conversion rate, its equivalent GAAP measure, follows: In Millions Fiscal 2019 Net earnings, including earnings attributable to redeemable and noncontrolling interests, as reported $ 1,786.2 Net tax benefit (a) $ (7.2) Tax item (a) (72.9) Mark-to-market effects, net of tax (b) 27.7 Acquisition integration costs, net of tax (c) 19.7 Divestitures loss, net of tax (c) 16.4 Restructuring charges, net of tax (d) 63.0 Project-related costs, net of tax (d) 1.1 Asset impairments, net of tax (d) 159.7 Hyperinflationary accounting, net of tax (e) 3.2 Investment valuation adjustments, net of tax (f) (17.6) Legal recovery, net of tax (g) (10.8) CPW restructuring costs, net of tax (h) 11.1 Adjusted net earnings, including earnings attributable to redeemable and noncontrolling interests $ 1,979.6 Net cash provided by operating activities $ 2,807.0 Purchases of land, buildings, and equipment (537.6) Free cash flow $ 2,269.4 Net cash provided by operating activities conversion rate 157% Free cash flow conversion rate 115% (a)See Note 14 to the Consolidated Financial Statements in Item 8 of this report. (b)See Note 7 to the Consolidated Financial Statements in Item 8 of this report. (c)See Note 3 to the Consolidated Financial Statements in Item 8 of this report. (d)See Note 4 to the Consolidated Financial Statements in Item 8 of this report. (e)Impact of hyperinflationary accounting for our Argentina subsidiary, which was sold in the third quarter of fiscal 2019. (f) Valuation gains on certain corporate investments. (g)Legal recovery related to our Yoplait SAS subsidiary. (h)The CPW restr\n\u2026 [13,749 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "**FY2019 cash conversion cycle: \u22123.70 days.**\n\nUsing the FY2018 and FY2019 balance-sheet amounts (p. 55) and FY2019 income-statement amounts (p. 53):\n\n- DIO = 365 \u00d7 [(1,642.2 + 1,559.3) / 2] / 11,108.4 = **52.60 days**\n- DSO = 365 \u00d7 [(1,684.2 + 1,679.7) / 2] / 16,865.2 = **36.40 days**\n- Inventory change = 1,559.3 \u2212 1,642.2 = **\u221282.9**\n- DPO = 365 \u00d7 [(2,746.2 + 2,854.1) / 2] / (11,108.4 \u2212 82.9) = **92.70 days**\n\nCCC = 52.60 + 36.40 \u2212 92.70 = **\u22123.70 days**.",
+    "role": "assistant",
+    "reasoning": "**Calculating financial ratios**\n\nI need to calculate some important financial metrics. First, I\u2019m looking at the DPO denominator, which includes COGS plus the change in inventory between FY18 and FY19. The change in inventory is -82.9, so that gives me 11025.5. Next, I'll calculate DIO, DSO, and DPO using the provided formulas. Finally, I want to make sure my calculations are precise, as I go through this step by step, checking my results.**Finalizing CCC computation**\n\nI\u2019m calculating the Cash Conversion Cycle (CCC) by combining DIO, DSO, and DPO values. It turns out to be 16.30 days. Now, I need to cite the page numbers for my references: balance sheets on page 55 and the income statement on page 53. I also must clearly state my computations and suggest using an alternative delta sign for clarity. I'll ensure everything's presented explicitly for a thorough understanding.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating financial ratios**\n\nI need to calculate some important financial metrics. First, I\u2019m looking at the DPO denominator, which includes COGS plus the change in inventory between FY18 and FY19. The change in inventory is -82.9, so that gives me 11025.5. Next, I'll calculate DIO, DSO, and DPO using the provided formulas. Finally, I want to make sure my calculations are precise, as I go through this step by step, checking my results.**Finalizing CCC computation**\n\nI\u2019m calculating the Cash Conversion Cycle (CCC) by combining DIO, DSO, and DPO values. It turns out to be 16.30 days. Now, I need to cite the page numbers for my references: balance sheets on page 55 and the income statement on page 53. I also must clearly state my computations and suggest using an alternative delta sign for clarity. I'll ensure everything's presented explicitly for a thorough understanding.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhAAEVTAxhLeaAfocbO2lOYVUrowy4FrZOeZAhPW3wg1HW3vZcmCb1QUop0bdzqcaZp7lsMLbOEoZgwGmOKob8sQNSqDKtAPMV0VVCGqMUr0xoplhEUN2IAyyP9ROkJTGfc0pczSRK2GQtZIcGzg4p1hN7GMKhS-WswhkNS335YbKDuK_KPB_ipWM0i5EjijRfH2j3d_49s-IqE9mGmi9K8w-xtqiRlpsPhw3S3fmfmuNJOg3p2GGvpAB-nJ0fZOORBwOXKFODWZ7OlEYScuJlzl0A4HAgyz7qhQNVnsmlyZMjQJejuBXDH9ajIWv44u5lFYHHb60KNxltBD7gsylynhZ5MuZfe8T3PUV5RNdYsauL5wmdPZOgwvjzYO8gn4tiCeiGjTV1Bt3b-A1f1munjbz4y10JXzuIIw3SIWaDShma-UqqE0-ZGrf_ZgmGY-rHjlWwEP1MIJgx1syx12tOKnvR7sJPvmRMQPuUzpk7CVnxapfWNlGBkRFGczu3RlmCOEUr45LXqATOazLb7ByMjN-iEvlY9yU21Z8KnhMkZKH9VH5kyiMvb3dXomYVrFweNieYtzyO7R6pgzXfQYAWTOobCeT1mnhMVRYJE4M2K5964vHVUQJaZwEEyCYyHEySEIFZMEyUIQ12owVm1vHJCcWAsH1rro8AvPZzSiZrZNakUrlS2aKeV2AWyKo1FWpHZjcQidKwmQwWexd47ZYVcBcIVLR6Vu-B7E03bd4uRxFo2SPK0IMwcR3oT1MuyUkzJC90OX_DUTDFXz0usj9m4AeMTN0enk384PgpKUUtggd7S1e1IIoN0cyHaNA4sFCF_hFIXxApIrqe3F4CCcP48E4E7PjMkS_xUZot9SzyZ-daMLruZWXQ6nAPzQb8aZ7haG7j2LGdKVhHPjkb-sCWkWxYmA7-eZM4WShiBYZb1bgyEdg0mV0i4hLBigpLHQ7-JLlGxgCybf9ipaE1DXZ4vt31AYIhItp3Bko0nHogCc9mdbLO7C-i6eGInXc2MMeVhERVMNyh1ynhNriMjZIaRwI9Pb-Ol1NoSektuJZhZahYV9dJL-6u7en9P3mcCGh1vHtfLolF7DGw64nu13xksJr_3CryqUkH_ZJ9oeSEhZPrzClX_ccRrlk6kE6laQmgmwAewrtcX971k2gdXM_gowfH8o45KCgthMi4ORHQaRN8hbVJd90AN_6TVIsMulxj-LENk9LFwTBFwfYNSE2mKWYz3R_JV9q7JbsvdTn_8UFGqMCR7lOOxaAXPzKoa9Y11tKdTDJMGABzqk7bbaC2G8yHqekM17Op_kMAltC-KZfQiy17rHdp0SKGb71EJ4qhkEQibisl4Qm7POhrR03wqE3YP9cBkD-1GzfVUkNmPAotRKAGM_UPBLzqRRNoeERpf8z3Qf-R0-Vd1GJdwst2H7p9C5qVZl3S6LSxecxhIYOwgQxJjhpk75yPuCTcU8byoLYm3hPSFR4VTL6SsTAyR6nLuSI5RedGXUXr6P8fYshs_E2zAO53FLXBb6Ice4dndPGjZUMRfKPWkG05JurDCWCGvuMZK63YnV-Q4mJZEHn94DQHMLqjERdC2doITlIthTAZtjCvMydR1FNu7BJkYtGi6VzyvWRrBzKEs58VXHhzAF6iJIgRyW4aP-srfiuRjs1wEucK9QToVPzrTZ4qFrrcdXzd6kRsh88nJLF5MckLvI2SKLVwy23eBSf2feR2BS9DjGERbakpu0RK9anEaBcFSbHknSy9EvdDdSU48jpq4IsOjUFk93B2B72yAaUyZXqpju1-OpOaJQtqwHm41OpvM23wftc03EmJ-bbDF7G8AqExMYwZV-vJouVYY7OC_iMYIbjZK9pF-GqJG6yBCuuuaPZ5z0ihgTztT1qs8v0uYQjolFcL7PWpESqBc9RN9z5X6qqqxm3n8yZwnIvjMOSYvEoLjHT-OMogV_1zw49cQFg9lgdEdIdIFmg0mAa0IOKIB0GLycapRvi1chJx_99SMLVO3WjGgfm1-RtQketRrkKu1pdFMrkMKf54Ze6d5mNR81-Kf48hVfmCoDYAX9mZR2-p7LwS3pr-ZLmKbiO0bF2qgnRUuGGZcCPSLd_s0V-VnUkrIglyy1k6299oelaL455sRkFLEj_DI_c53J7YUkfCQtCJzrMBa2a3xSEclCV7XJ57fYSaVl1xeBGu2znL6s9Ly0xpy27DF3I1hkOfzO-nxZdT-zDM2T7FlAsrR3-8T2xWREmbby6iqyNgkhhl5w10rdidY0_9gtX9BAHGVnzVP9Gk_2CFHoqvF3HPNbYvRAnCyTTw9qRtZBC9A3p2J4ruUQbvVdLkYA3bLIYNsKKmJzCBfVOjc7GxjeA9hssCJIcMhOQL_FUY2Ww7gb2ySy3lrkaXCq8KF0BT_wECouYsBoHnuczsve5A7pjNG4aWVElD-GFQty-MiNAKPYBh2XmHG5-3DXtN943nPFRPIoI5eiGVmH2pLc_DsZz0fFTzZLCahAhqdESFir-Yqo7IX-BcUVOpsfBw66eQrVGg28qcmhF6fB4ZY5wHFXjgrM_T_HHZGcUc23jfSKOqLHOBYl7Ko-dKp6N_bM3AkhEUCH7vYnyfzdJxhy2Y-hrNC7crEYdtj83kZ0r2pgZsgBVQEeMaMRoRFBKotdK9msTgquhOjdW_MzYq9HHdTPHX1ldetbf2whi__V7mCBUcOMi9exK1_yp0m1cibXy5ZvJH6Xv3k-Z-ApXrCGBSyw0R0Pf6PWLiwHYXVvqgFSFTL4KYwwpGBJrafWRr-P6DwIDDYTAVVSJ2BxwkjXnRduarNOszo62U-4EBENZ6vX1ZQChilez6wLCMe4N4CxAw7xkBkAkMDckG0iXQs23I82npAWbQceohwodeFkWfWBeZjUoYXSsrAQ4gJhYkslvfpHuuzyAmR38DjNPiugVZaLuqV2oN5u7-WEYc0yw3M_huXwma31hRoZUL57TWgRx9drHWBIf09RdPSYEAZnQUi9jyXALNvKIOEvqjalz05TjWtXoMrI1OoUsaSVVWDQCftZgXTh2TfmFq1HLpBMNgDo-DzYAEyZiDHhZ85PvEYS08WfpuuVI5y77PuBY2jHrrZL5BbT2s-kBNly14pFRM_nb2FMZB7175rw6hhKid2KBGKnJ6BEeXQhj2p9FJ6EdujhzimsKVBKftDGT5JvapHarz-p_cL9h3sTDAbDFGwVFZEO8iQH6tVyIqK_Zqb0HLqaYHk=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_052d5b9e5c06259a016ac20ffa584487d18cef6e18b78853fd",
+      "index": 1
+     },
+     {
+      "type": "reasoning.summary",
+      "summary": "**Analyzing inventory change**\n\nI\u2019m considering whether a convention change in inventory could be defined as an increase. They provided the change in inventory between FY2018 and FY2019, which shows a decrease of -82.9. I\u2019m reviewing the formulas for calculating DIO, DSO, and DPO. \n\nI double-checked my arithmetic: \n52.6 for inventory plus 36.4 for receivables gives 89, then subtracting 92.7 for payable results in -3.7 days. This seems plausible for a large company like General Mills. I need to finalize calculations and add citations.**Ensuring precision in DPO**\n\nI need to ensure that the denominator for DPO is accurate at 11025.5. It\u2019s essential that I double-check this to avoid any mismatches. I also want to ensure that the term \u201caccount receivable\u201d correctly aligns with the receivables line in my calculations. It\u2019s a small detail, but precision matters in these calculations! Maintaining attention to detail is key here, and I want to be thorough so that my results are reliable.",
+      "format": "openai-responses-v1",
+      "index": 2
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwhAFzQ6KMPMaT9obX05qDlQozyH3faoc9ef4YjdTGkGAnjiKGD0Z-zqyQk5JEBbENcJn9cDp5T3rY0NQMQ4AsYSg1AMU5PC_85m3HOZMrrTPTI-vqRUIWsP0CJbqJAPwRPwzfxrsWyP_14ZVqqT8ZS4wNxh_DztNddrlumMAMhlPbYbiVBrhSS3g-yHBYlZ-dr5hRd_50udcW5oV__qU6KklICLHfAxQs6Ac0u8WBCZ2IK-5Zn_GiX3-3Zm6bGVoF7KQmVm_XYvP8yN9c5Zi2Z9WDyWl-UGoAECY82ivx7QuHMU2Ut66jvZ1khaHK0LcSRDwiBnE_ffH-iuCaHWEaYmUvzDhkAMz_N2_30I_JU98MSi5yUrUfVtCKd1p6NCxT-ebWEdTs-UcCn3LcA8sEwRRg7Y6KKZUucYdiZerfyhN-PRo4k8mNz9qq1e5OKT8HZtLZvJZhWf9T7H6lexJlxrXb4MaiVmzKI7utsi05XnkdjszLmkQ4tBPLrgn7OdKu7Rar5mbk6-hfLzNGjCF3W-d9amPsfZohyaZJAuVh0YvegjQ-D3aDTyYBwR7bIGfkqreIMV--Apg_7PwaukKzIm_QhII71JrpeKpkghihWMstD8s73ZvSQHPgtkRSYbmJJK_NbA484qxmTGWsWyTMmrl6q5j-I52uTchA_eHb1OomG6Mwej-V6XK1pwYNpYiFUTfkQxQ9xQZg29kiUPQV-FWupU01tYKjmgWQS9-eOYjrlSpayIBXnBFrMj3KnatsGTg8eX66PC0ihInD2t_LdDWFW0rCxXJYlG4biLBl-o5cDd6KgPc8W4HQF838zpVNqh70FQqXIoz0aPwSvLWSsNNoLtHYPkeayWDSsnX0-nzVQI_LZS84ZkQKeZ1ZFbK9B47F-GO00NLNHy_zKOhDoizC791vqak4CqmTeNh51cAldvZHm5VGeIcbdgatE3XlEKm1yoYQAG25AofjmstPpEalJSltTn52vBmbppuoMJ4a7Jm4Dmv2bzD0Q4qFwiF1aFu5f4EWZ0X_G9_ZwZr2Rg-U5o6yDaybHV19G1KU1MgQNNsk6MITxWRa7UoMaR49KdF2vCiQSG0YHLfWUdSONQdJH-ctM2Zz1L7dnOI80qYBDpjA1H_YV3G-XkFRmN5ONn5tzCAR20zlXHND04JbrPXqmGtsH-W_h8j7vM7CU2nVL5MeHkRGy9Gb1oZ0YeJiUKQObBBIMNR7eMspHdpp5BkpnZYLQYMXMTlar2tddBntzJYlPvMWQDPyHQwVM_QrhRBZF_QrbCJSBfqFwks0fGYGelOSMEqY-JGdDD-YYw8n8XsQvx9dAU7WLOcoP1ouByWFMQj5wov1931tfYi1dAa8VbwNpf7IxUp1e6OqbdqfJtM11xFmTej0CebSx6SwD5EUG-usdjgtu3OD0NlRB2rSpqZLqVrvX5Bcm2rBMexKw51hj1_YCidlqSeNdM_qNKBy3AYa0GPjvq-kbUKJdouoaIiX5A-Ae3NXLto-694RT8M6JHgaZAwcrmcF9xPZXnJ312aOM651rYpfOXdBWIJFp1dPF6SgM7Z72FVY3yjiETq32aCw047E6gNFvZYYRpPZChkoy1Tb2Eae2d5JPx3Z3jltKOyCEQFPY4-r3e5tWwKOZ9QPGse_8BkjWh0vnQXqpoiXKcqGI_gkfVnsANKRZgah-H7_dkKH94sd6n-vqtQIIIZfHIGNWSmzmYWGvR7ExSol-4AAwaKktsk37yNnaslcTZ6ue_g294nrqebfEbrON1kHVNFP04wE0pndNo13JXRPS_-DAyJmZ9ytnFfD6r3qbsJEPfHDTmfbvAWhY-9DK6KiAyhTtl4sdUZ9bBwsj0I55K5EwvlxnYBUPvEToSOx4-PSCdYVbGVYCJ-U1MnXlDpUcUVJXX8xyRnAJu1D1ftl4LGRO9V6X1QNTMlj4zKjA-2FomdhrUhaxuv6HR10skS2QHseZwVt7VeqXd9y4LiT0JbYNSyOxReh_o7W_BgwqzlR6KRiGDSJYLLx5__aXmiKE3B4A93wWBqPLbWeIvtqtabfeboQVK5JOUnJ50eTxJft6Bp3-mejJgGJejAkvaJOaDKt4Z-bweYsKBMQ2Slz2eFfS202oB0f6_9TUgOCoAa85QoiRMxtqTvJFd3VvhyuJTsu7IWxLP2N6uviesGglikVNAQJQ14LHb6d1nSUmfs7-HsnKuEya3OY3CZGIa0brZgV4Cp2avMwoeCHLqZ1pBGqOfGCIFeE5-PxsPlvRT_X6xUVIz_ooSKd7gAPpy7LNTvAk1KNN8qLbTrz3f4aYoJMOgSifuT-Rkn7LV2t4FUPrKEwFPPDIwZSjN1Ct_GVhVVVIxVDHHEzdytxpwUk7435uE2DgYLlzl93vplEtpHSGMmMB8hH4KtYMoecLtPgc78X-3lV-7RoB1HwtYC7sPZNSlICqqWu9AlD8jD0fs9-QGAkJ8lHooZ8joca55oEGk3i3RHoTB12T4dTCROq4S_ZSFUfDJHfkxdKZc0npDSM_v6K3Ul5nOEV-kT1hfyx3MXW7JX7U4wxg5QsQ2w4wljl59j2fSE-lQ6jiwBNgGqnq4u65cjcUnvmBcWQqggTnjv8g0dyQE2xTnFTBnp8TpsCdItnkXZNdg890UJEvErhxb_mEjPl32qiIuU6oLILhLK_TW8GFYoHaM5K4tf4JKoQ-tbxvT7sOwtG5JuYztJRNCTrpnxm7B9lhponXtYDdsdDou4P8vomF8gSEnpGQHTWjjkfnLofLADA7YcK60ZDdXrlzpAzKQw8Ra0uUeFKlgzu7LGZf-Ifu01_nyknP2_e09o1mIiW8m99nCEAxHfPUdQgR9mY5N_lpnSG36_Yypk_C-beKJoBkDZ5ZLASpJ1YsuP101XSpEZd3LSId6qKanDrTiqRglFZJ4=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_052d5b9e5c06259a016ac21000d7fc87d1ba5878a780811f79",
+      "index": 3
+     }
+    ]
+   },
+   "input_tokens": 5295,
+   "output_tokens": 1128,
+   "reasoning_tokens": 903
+  }
+ ],
+ "answer": "**FY2019 cash conversion cycle: \u22123.70 days.**\n\nUsing the FY2018 and FY2019 balance-sheet amounts (p. 55) and FY2019 income-statement amounts (p. 53):\n\n- DIO = 365 \u00d7 [(1,642.2 + 1,559.3) / 2] / 11,108.4 = **52.60 days**\n- DSO = 365 \u00d7 [(1,684.2 + 1,679.7) / 2] / 16,865.2 = **36.40 days**\n- Inventory change = 1,559.3 \u2212 1,642.2 = **\u221282.9**\n- DPO = 365 \u00d7 [(2,746.2 + 2,854.1) / 2] / (11,108.4 \u2212 82.9) = **92.70 days**\n\nCCC = 52.60 + 36.40 \u2212 92.70 = **\u22123.70 days**.",
+ "retrieved": [
+  {
+   "page": 57,
+   "score": 0.501
+  },
+  {
+   "page": 41,
+   "score": 0.48
+  },
+  {
+   "page": 21,
+   "score": 0.4746
+  },
+  {
+   "page": 18,
+   "score": 0.4739
+  },
+  {
+   "page": 29,
+   "score": 0.4603
+  },
+  {
+   "page": 46,
+   "score": 0.4596
+  },
+  {
+   "page": 53,
+   "score": 0.4572
+  },
+  {
+   "page": 20,
+   "score": 0.4533
+  },
+  {
+   "page": 55,
+   "score": 0.452
+  },
+  {
+   "page": 29,
+   "score": 0.4481
+  }
+ ],
+ "verdict": "correct",
+ "reason": "The final CCC of -3.70 days matches the gold answer of -3.7, and the supporting components sum to it.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002876
+}

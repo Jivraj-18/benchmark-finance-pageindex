@@ -1,6 +1,7 @@
-# Vector RAG baseline: deferred
+# Vector RAG baseline
 
-Status (2026-09-30): not implemented. PageIndex vs. the other methods runs without it; add it later.
+Status (2026-10-04): **Option B is implemented** as the `vector-rag` method (`finbench/methods/vector_rag.py`).
+Option A (OpenAI's managed vector store) is not; the notes below stay for when it is wanted.
 Everything below was verified by probing LLM Foundry on 2026-09-30.
 
 ## Why it matters

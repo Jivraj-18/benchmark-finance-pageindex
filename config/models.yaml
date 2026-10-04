@@ -49,3 +49,6 @@ index_model: gpt-6-luna@low
 
 # Grades every answer. Held fixed so all runs are graded the same way.
 judge_model: claude-sonnet-5.5@medium
+
+# Embeds filing chunks and questions for the vector-rag method, via $LLMFOUNDRY_BASE_URL/openai/v1.
+embedding_model: {id: text-embedding-3-large, input: 0.13}

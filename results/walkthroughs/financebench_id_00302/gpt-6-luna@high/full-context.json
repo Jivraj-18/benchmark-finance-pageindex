@@ -1,0 +1,60 @@
+{
+ "id": "financebench_id_00302",
+ "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+ "gold": "Yes, change in PPNE was positive year over year",
+ "doc": "PFIZER_2021_10K",
+ "method": "full-context",
+ "config": "gpt-6-luna@high",
+ "seconds": 3.6,
+ "usage": {
+  "calls": 1,
+  "input_tokens": 151306,
+  "cached_tokens": 0,
+  "output_tokens": 160,
+  "cost": 0.015210600000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "<document>\n[Page 1]\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION\r\nWashington, D.C. 20549\r\nFORM 10-K\r\n(Mark One)\r\n\u2612 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the fiscal year ended December 31, 2021\r\n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\r\nFor the transition period from to\r\nCommission file number 1-3619\r\nPFIZER INC.\r\n(Exact name of registrant as specified in its charter)\r\nDelaware 13-5315170\r\n(State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification Number)\r\n235 East 42nd Street, New York, New York 10017\r\n(Address of principal executive offices) (zip code)\r\n(212) 733-2323\r\n(Registrant\u2019s telephone number, including area code)\r\nSecurities registered pursuant to Section 12(b) of the Act:\r\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\r\nCommon Stock, $.05 par value PFE New York Stock Exchange\r\n0.250% Notes due 2022 PFE22 New York Stock Exchange\r\n1.000% Notes due 2027 PFE27 New York Stock Exchange\r\nSecurities registered pursuant to Section 12(g) of the Act: None\r\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act. Yes \u2612 No \u2610\r\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act. Yes \u2610 No \u2612\r\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12\r\nmonths (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (\u00a7232.405 of\r\nthis chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files.) Yes \u2612 No \u2610\r\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.\r\nSee the definitions of \u201clarge accelerated filer,\u201d \u201caccelerated filer\u201d, \u201csmaller reporting company\u201d and \u201cemerging growth company\u201d in Rule 12b-2 of the Exchange Act.\r\nLarge Accelerated filer \u2612 Accelerated filer \u2610 Non-accelerated filer \u2610 Smaller reporting company \u2610 Emerging growth company \u2610\r\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial\r\naccounting standards provided pursuant to Section 13(a) of the Exchange Act. \u2610\r\nIndicate by check mark whether the registrant has filed a report on and attestation to its management\u2019s assessment of the effectiveness of its internal control over financial reporting\r\nunder Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. \u202f \u2612\r\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes \u2610 No \u2612\r\nThe aggregate market value of the voting stock held by non-affiliates of the registrant, computed by reference to the closing price as of the last business day of the registrant\u2019s most\r\nrecently completed second fiscal quarter, July 4, 2021, was approximately $223 billion. This excludes shares of common stock held by directors and executive officers at July 4, 2021.\r\nExclusion of shares held by any person should not be construed to indicate that such person possesses the power, directly or indirectly, to direct or cause the direction of the\r\nmanagement or policies of the registrant, or that such person is controlled by or under common control with the registrant. The registrant has no non-voting common \n\u2026 [697,171 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. Pfizer\u2019s PP&E increased by **$1.137 billion (8.3%)**, from $13.745 billion in FY20 to $14.882 billion in FY21. Calculation: ($14.882B \u2212 $13.745B) \u00f7 $13.745B = **8.3%**. (p. 59)",
+    "role": "assistant",
+    "reasoning": "**Calculating change in PP&E values**\n\nI need to calculate the change in PP&E values from page 59, which shows a value of 14,882 million compared to 13,745 million. This results in a change of $1,137 million, which is an increase of 8.27%. I should provide a brief justification, making sure to explain that there has been growth. Also, I noticed a typo: PPNE might have meant PP&E. I'll properly cite this from page 59 and include the calculation in my response.",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Calculating change in PP&E values**\n\nI need to calculate the change in PP&E values from page 59, which shows a value of 14,882 million compared to 13,745 million. This results in a change of $1,137 million, which is an increase of 8.27%. I should provide a brief justification, making sure to explain that there has been growth. Also, I noticed a typo: PPNE might have meant PP&E. I'll properly cite this from page 59 and include the calculation in my response.",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqvS6hFQMtOrtlbAE2BWmB3Ib4I0wsDlbA3Z92sPd_6QyebSm_tZ9fmPce2OUy4XUB4RxFDX5yHur_skYNQnTMnAwuw5Uev0J2KprDifSCeDVANXWk7oJT0Eop_Utiqlzb5VMX9QKcg96SalupTIdfutv_fp0FjJeoEWa82Uul_cDK1JmDPF9NqysO6DlBquAKpGZD9k8AcQ1xpOAn6mBMY3yBEqbgn61HLAu3VjfzBKAGYODVNRV3dwqLi5g0mq-pITk1aNEcEzhNNeebnbwhBtw5jHs54_eA8Qu5q9nBOZy4wY29NahQ1VolGlEyAfvU3HNrxthdKAHRvXkXKtcb38PfR3OVzONlOVia0jYPzqPRg5KqWACtosILsAgLQRBKkzHBUdArAO0xylsomWqpzbxnjO0eS7_lHoUeMg3HaMlTf-oCYCP8H9dkkEAJgzcZAiKbUXeuYcUCS5yFnu_WH182oSWzuPxveJTV4EpHcWjdZeFqOMoGZvLmhy5FAstVtpopF3YiwFRurdDHdB1m-C1Tn61OcymYUrFdVpqwFDvVCB4feeDzYxozLHiVqSHGjEHwpnLpAL6qutjs6lD_MOG-j3qcXmwi-aE2F2xQQJrwhKr3W-_akAIFuPkq5ewJ3cc0a3KrCS3dNbbuSS35CGdMSRBg9Nn_Hq01qUlc_gpkne0LebydEgJckMTp0FG_0skEhJfVe_C1U0EhoU1hBlB2awifpduLTLdiqC7S-sroFe93sjYFSW1x3cUMPU_pqGVu3KxrpNpjFFCBV2bQpQXItf8LGz54MafSUR90sj34D6ptgEmnzb4zoJO7DEDb-8DkG0B4ZJjSlbILasWa6TEmbzC2jxbFTf1So3H66rIRzc6Omyr_GPy4QdhbOnswTEIZYuj7ggDLe-oKjVHVYA4F8g5thvHGx-G2I7qvYnLUcd3zClWLM0z33o2Y1Gzwc13CYl8S9J2CVjg1_CFyt9_lXVueusYWg2WFJPF-ZhP8fiWZZorN6objFKlUxM8eWFDtHnb_uWF6_Z-JeDGDOIEjWoYRvee8IkK5Cvsi8BsoGbqdfZW4bpn2MjYMm58yRpuUtsV9pVP81yreprKwuY8bRX_DtIGNlu3Qcrvyz_WHJFZc-rF6ZJdnIxhqjgUimJG_z0_NZqg5467g2rGZFBELLbC53rQnosz4EA6F124T7owprKTCucFFLiDyJ24iKz5oNa1ZRSgWJUZvhIYRBbCt6mXG_vMtDXQrmf7moOHIQkclj-PrXLwpEYuRjLGXiTdRMgJUjkzw-DY0ryFtVJegDmfRyMct2HtLWTuMaxLHPs34AuXq40N8nxwnS9DOTiW7ChmiJ9NNMExO8rlEeIeILPRP5jm5lQI7239ih0mcscG1rgJjcrS2Yvww3htzieWzC8oxBlfJ6allULx8owSBusaj5u4l3_Erj3YG6GfZPrhBKe7q-OyYlS6qd0Da2JEsPpjiZhRJx-XQGJ6KdxtydO07tdp0zDc2MAhgtfEeezPQ9cpluTMv-TDncQBj2AyjdBl6c57SON0KY6Dm_BA0nOjYDQTawWbDsScKQblOnYrYQz-Qr0QEYdcxQkpKp3s2_nbhieWhUIojmE7JEPqXiwj0y8tarSeLBwpykn08rhOYn0WDC0tZeZeo5o5mdcuk4YHPzniVXZ6NCWO4MQLRRp2h-3xutekRes17vQapBA2XaceBZuSKfabEYL-AWPaG.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0c339e17abd391dd016abd2ea005d887d1ac4e2b5130071fca",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 151306,
+   "output_tokens": 160,
+   "reasoning_tokens": 80
+  }
+ ],
+ "answer": "Yes. Pfizer\u2019s PP&E increased by **$1.137 billion (8.3%)**, from $13.745 billion in FY20 to $14.882 billion in FY21. Calculation: ($14.882B \u2212 $13.745B) \u00f7 $13.745B = **8.3%**. (p. 59)",
+ "verdict": "correct",
+ "reason": "The answer says Yes, PP&E grew, which matches the gold conclusion, and the figures ($13.745B to $14.882B) are consistent with Pfizer's reported values.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002228
+}

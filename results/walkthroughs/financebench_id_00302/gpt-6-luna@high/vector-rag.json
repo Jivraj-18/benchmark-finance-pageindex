@@ -1,0 +1,102 @@
+{
+ "id": "financebench_id_00302",
+ "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+ "gold": "Yes, change in PPNE was positive year over year",
+ "doc": "PFIZER_2021_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 1.4,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 4452,
+  "cached_tokens": 0,
+  "output_tokens": 63,
+  "cost": 0.00047709,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 39]\npix was driven by the voluntary recall across multiple markets in the second half of 2021 and the ongoing global pause in shipments of Chantix due to the presence of N-nitroso-varenicline above an acceptable level of intake set by various global regulators, the ultimate timing for resolution of which may vary by country, and the negative impact of the COVID-19 pandemic resulting in a decline in patient visits to doctors for preventive health purposes \u2022 The decrease for Enbrel internationally primarily reflects continued biosimilar competition, which is expected to continue \u2022 The decrease for Sutent primarily reflects lower volume demand in the U.S. resulting from its loss of exclusivity in August 2021, as well as continued erosion as a result of increased competition in certain international developed markets (869) (501) (368) Other operational factors, net (27) (134) 106 Operational growth, net 38,429 8,291 30,137 Favorable impact of foreign exchange 1,208 \u2014 1,208 Revenues increase/(decrease) $ 39,637 $ 8,291 $ 31,346 Emerging markets revenues increased $12.3 billion, or 147%, in 2021 to $20.7 billion from $8.4 billion in 2020, reflecting an operational increase of $12.2 billion, or 145%, and a favorable impact from foreign exchange of approximately 2%. The operational increase in emerging markets was primarily driven by revenues from Comirnaty and growth from certain products in the Hospital therapeutic area, Eliquis and PC1, partially offset by a decline from the Prevnar family. Pfizer Inc. 2021 Form 10-K 33\n\n[Page 33]\nes outside of the U.S. In addition to the milestone payments and royalties above, we will also reimburse Biohaven for the portion of certain additional milestone payments and royalties due to third parties in accordance with preexisting Biohaven agreements, which are attributed to ex-U.S. sales. For additional information, including discussion of recent significant business development activities, see Note 2. Our 2021 Performance Revenues Revenues increased $39.6 billion, or 95%, to $81.3 billion in 2021 from $41.7 billion in 2020, reflecting an operational increase of $38.4 billion, or 92%, as well as a favorable impact of foreign exchange of $1.2 billion, or 3%. Excluding direct sales and alliance revenues of Comirnaty and sales of Paxlovid, revenues increased 6% operationally, reflecting strong growth in Eliquis, Biosimilars, PC1, Vyndaqel/Vyndamax, the Hospital therapeutic area, Inlyta and Xtandi, partially offset by declines in the Prevnar family, Chantix/Champix, Enbrel and Sutent. The following outlines the components of the net change in revenues: See the Analysis of the Consolidated Statements of Income\u2013\u2013Revenues by Geography and Revenues\u2013\u2013Selected Product Discussion sections within MD&A for more information, including a discussion of key drivers of our revenue performance. For information regarding the primary indications or class of certain products, see Note 17C. \u00ae Pfizer Inc. 2021 Form 10-K 27\n\n[Page 94]\n21, $685 million in 2020 and $659 million in 2019. Pfizer Inc. 2021 Form 10-K 88\n\n[Page 42]\nRevenue (MILLIONS) Year Ended Dec. 31, % Change Product Global Revenues Region 2021 2020 Total Oper. Operational Results Commentary Biosimilars $2,343 Up 51% (operationally) U.S. $ 1,561 $ 899 74 Growth primarily driven by recent oncology monoclonal antibody biosimilar launches and growth from Retacrit in the U.S. Int\u2019l. 782 628 25 19 Worldwide $ 2,343 $ 1,527 53 51 Hospital $7,301 Up 5% (operationally) U.S. $ 2,688 $ 2,705 (1) Growth primarily driven by the anti-infectives portfolio in international markets, primarily as a result of recent launches of Zavicefta and Cresemba. Int\u2019l. 4,613 4,073 13 9 Worldwide $ 7,301 $ 6,777 8 5 Pfizer CentreOne Revenue (MILLIONS) Year Ended Dec. 31, % Change Operating Segment Global Revenues Region 2021 2020 Total Oper. Operational Results Commentary PC1 $1,731 Up 84% (operationally) U.S. $ 524 $ 400 31 Growth pr\n\u2026 [13,275 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "I cannot find this in the document.",
+    "role": "assistant",
+    "reasoning": "**Identifying document needs**\n\nI need to find information about PPNE, which I think stands for property plant and equipment. But the excerpts I have don\u2019t show anything relevant. If the document doesn\u2019t contain the needed information, I should have a fallback plan ready. I might need to say, \u201cI cannot find this in the document\u201d and be very specific about what I'm looking for. It's important I get this right!",
+    "reasoning_details": [
+     {
+      "type": "reasoning.summary",
+      "summary": "**Identifying document needs**\n\nI need to find information about PPNE, which I think stands for property plant and equipment. But the excerpts I have don\u2019t show anything relevant. If the document doesn\u2019t contain the needed information, I should have a fallback plan ready. I might need to say, \u201cI cannot find this in the document\u201d and be very specific about what I'm looking for. It's important I get this right!",
+      "format": "openai-responses-v1",
+      "index": 0
+     },
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwg7aPQ_BC0Tyc-o0DJC5-ekGaJ2wdefshE6gzVPCHs8-YmeWL-omjL6K29xj05RIJ84EH5jom_S3GIrkAi9IJ5eNF59jUJcDInFNyRRdBhcbwIL_bO651jG2pTIQ6wSA8qLzwMbgMnDxD61zBh2lmgL-bhUWhXmOIHjb1ZSzMHgbLe-ZMWRXE8dklGaa_qgTGvYO5MTEy9wt7yxA6YwaoKT_axYvhdN6TYJy2a2OViphDtEXYlj51aY8lYVApqtsNl92jEb8630_7ni5SVubHvRp8JlWnDjdlb6kVOSH6zYxt5pgpedOrKYsIt97aZRhlpEkV8r4y9r1Mlbm08S-bGtcb1mXzJUtbMEWtv6TfIczxtWR1No0Fu4jlamaFCqElM2Vffq-oGb9Xf64joJBjUtimQ0bUAJqURhTbEkI73BqCS2Khd8GYCJb9i9yqaPfJyyGxSsvJko22LsM3aX0A52j0sRJgQesypNBoz7wc0SlQJ7A7FFO4ScqHL3zTxpvw9uNiXyEvlqSLMQtw2lm69FfCUfRnQkwt4bB70jbD89KDxijBEL3m61HJgrWUSR0lw3PyzlBOBD-efb_jtUkCAIZFjfBbjyk8c_YSsjFQOcw7KVlGHgk83bwRPC9enJOJVPufp7Ylg5BUpe_LUCAzqHzSig0g6ntx4SRjmbsqaPBvl9wqChs8_1X1VvguYCQIPMqP1XQPBex4lpVHEHm-G7uSu-0-0cjC2rikTmzCgBt8YHAaajVE6q0ZyYV9jneGvfz85kfj7jiZFaAcGQn3DAtiQsDy38TJXJ-e8alQaICFKePJ7YbJPdheO8QndTi25mJGHbnkpVj7drhhWUcIQiP461l6RUtKp3b95s7PAB0jUIm_H2_7G_f7tgzWoagu1j95BmXgKJmz8HCcEuyoP5dBj1yBpInc1_ThgsSp0FN6wcUxt6tpZAJIZ_5CY6wROqPnrlb3gQQMV62EePQkxzuLKAIARt4H7LX1gKLcaJkdqgJQPhNjpB1KwOuZSqMev5iuOA9Wo5CoUzHsjxtk9UukywBDq0RkPUFyu2mL2oyAQ-sCfIVlO7onGb0L7_F_qiCf15OBFEltEIWoPwylLKfEpa44zTlTU9yHpz82Z1KaJf3oLPhBhEdViHGNgO4zaufC4AMhlrBuhhkikKdx04uoE0i-MCGSSS5M123m588en_nFVK_1__h4tsmlzZ98R0JEA08e7B9zWs0zFHnsF0E3b_AKPa8Lxom3eUwrbcGQzjfZH1COtrrj64Lvkaxb-NG37uFWbJx1OZtZVEGt84BY2EoRBkPypjZ3DCnvg-nvlb9ObB_H6YGH1tS0hpXGBYEAXp8pVY_oI7LzKIsRQ3JCcin15Ce-9GlTmO8Ud2sCnOiY7yqPFcB3Bt67OW_UM8jnj4Bp4hhQpd9MYVZVi7TTc4gEaeeqTintGRHxjImQMazc7AOZMXWtqhUEI52tsqW51ZYzSO2ZoxMmYt023mwSgELlsVbwrjLXeCXrLxgQlPE-ypcZbSDBpN6pCmUrjaGEaIPeEGyfmTz9q0IosTwjN7JIWYz6vCx9cvaBGFncEmGJS91mfewJGU04QXxcCJ3qNNuXoT7d80c5zYMk88C4pG_HkBJrK-oQ3woXOYuXhk=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0e1e9aa0548b4c69016ac20ed9225087d19d3fdcb8969cfe5e",
+      "index": 1
+     }
+    ]
+   },
+   "input_tokens": 4439,
+   "output_tokens": 63,
+   "reasoning_tokens": 49
+  }
+ ],
+ "answer": "I cannot find this in the document.",
+ "retrieved": [
+  {
+   "page": 39,
+   "score": 0.621
+  },
+  {
+   "page": 33,
+   "score": 0.6011
+  },
+  {
+   "page": 94,
+   "score": 0.5962
+  },
+  {
+   "page": 42,
+   "score": 0.5945
+  },
+  {
+   "page": 39,
+   "score": 0.5939
+  },
+  {
+   "page": 113,
+   "score": 0.5888
+  },
+  {
+   "page": 40,
+   "score": 0.5883
+  },
+  {
+   "page": 112,
+   "score": 0.5878
+  },
+  {
+   "page": 110,
+   "score": 0.5844
+  },
+  {
+   "page": 41,
+   "score": 0.5807
+  }
+ ],
+ "verdict": "refusal",
+ "reason": "The answer states it cannot find the information and does not commit to the gold answer's conclusion that PPNE grew.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.001186
+}

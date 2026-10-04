@@ -10,11 +10,11 @@ The runner meters LLM cost around each call, so methods don't track cost themsel
 To add a method: write a module here and register it below.
 """
 
-from . import agentic_search, full_context, pageindex_rag
+from . import agentic_search, full_context, pageindex_rag, vector_rag
 
 METHODS = {
     "pageindex": pageindex_rag,
+    "vector-rag": vector_rag,
     "full-context": full_context,
     "agentic-search": agentic_search,
 }
-# Vector RAG is deferred: see docs/rag-plan.md.

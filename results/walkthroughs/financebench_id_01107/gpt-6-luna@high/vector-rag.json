@@ -1,0 +1,95 @@
+{
+ "id": "financebench_id_01107",
+ "question": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+ "gold": "Yes, CVS Health has been involved in multiple ongoing legal battles. Some notable legal dispute areas for CVS are: (1) usual and customary pricing litigation: where it's claimed that CVS\u00e2\u0080\u0099s retail pharmacies overcharged for prescription drugs; (2) PBM litigation and investigations: where it's claimed that that rebate agreements between the drug manufacturers and PBMs caused inflated prices for certain drug products; and (3) controlled substances litigation: legal matters around opioids for which CVS has agreed to pay up to $4.3 billion to claimants in remediation and $625 million to attorneys and fees",
+ "doc": "CVSHEALTH_2022_10K",
+ "method": "vector-rag",
+ "config": "gpt-6-luna@high",
+ "seconds": 1.3,
+ "usage": {
+  "calls": 2,
+  "input_tokens": 3815,
+  "cached_tokens": 0,
+  "output_tokens": 764,
+  "cost": 0.0007641900000000001,
+  "effort_fallbacks": 0
+ },
+ "calls": [
+  {
+   "model": "openai/gpt-6-luna",
+   "messages": [
+    {
+     "role": "system",
+     "content": "You are a financial analyst answering a question about one SEC filing or earnings document.\nUse only the document. Give the final answer first, then a short justification citing page numbers.\nShow the calculation when the question asks for a ratio, margin, or change.\nIf the document does not contain what is needed, reply exactly: I cannot find this in the document."
+    },
+    {
+     "role": "user",
+     "content": "Excerpts from the document, most relevant first:\n\n[Page 175]\nsults and/or cash flows. In January 2020, the DOJ served the Company with a DEA administrative subpoena. The subpoena seeks documents relating to practices with respect to prescription opioids and other controlled substances at CVS pharmacy locations concerning potential violations of the federal Controlled Substances Act and the federal False Claims Act. In January 2022, the DOJ served the Company with a CID regarding similar subjects, and the Company is providing documents and information in response to these matters. Prescription Processing Litigation and Investigations The Company is named as a defendant in a number of lawsuits and is subject to a number of investigations concerning its prescription processing practices, including the following: U.S. ex rel. Bassan et al. v. Omnicare, Inc. and CVS Health Corp. (U.S. District Court for the Southern District of New York). In December 2019, the U.S. Attorney\u2019s Office for the Southern District of New York (the \u201cSDNY\u201d) filed a complaint-in-intervention in this previously sealed qui tam case. The complaint alleges that for certain non-skilled nursing facilities, Omnicare improperly filled prescriptions beyond one year where a valid prescription did not exist and that these dispensing events violated the federal False Claims Act. The Company is defending itself against these claims. U.S. ex rel. Gill et al. v. CVS Health Corp. et al. (U.S. District Court for the Northern District of Illinois). In July 2022, the Delaware Attorney General\u2019s Office moved for partial intervention as to allegations under the Delaware false claims act related to not escheating alleged overpayments in this previously sealed qui tam case. The federal government and the remaining states declined to intervene on other additional theories in the relator\u2019s complaint. The Company is defending itself against all of the claims. In July 2017, the Company also received a subpoena from the California Department of Insurance requesting documents concerni\n\n[Page 173]\nmpany is named as a defendant in a number of lawsuits and is subject to a number of investigations concerning its PBM practices. The Company is facing multiple lawsuits, including by state Attorneys General, governmental subdivisions and several putative class actions, regarding drug pricing and its rebate arrangements with drug manufacturers. These complaints, brought by a number of different types of plaintiffs under a variety of legal theories, generally allege that rebate agreements between the drug manufacturers and PBMs caused inflated prices for certain drug products. The Company is defending itself against these claims. The Company has also received subpoenas, civil investigative demands (\u201cCIDs\u201d), and other requests for documents and information from, and is being investigated by, the FTC and Attorneys General of several states and the District of Columbia regarding its PBM practices, including pricing and rebates. The Company has been providing documents and information in response to these subpoenas, CIDs, and requests for information. United States ex rel. Behnke v. CVS Caremark Corporation, et al. (U.S. District Court for the Eastern District of Pennsylvania). In April 2018, the Court unsealed a complaint filed in February 2014. The government has declined to intervene in this case. The relator alleges that the Company submitted, or caused to be submitted, to Part D of the Medicare program Prescription Drug Event data and/or Direct and Indirect Remuneration reports that misrepresented true prices paid by the Company\u2019s PBM to pharmacies for drugs dispensed to Part D beneficiaries with prescription benefits administered by the Company\u2019s PBM. The Company is defending itself against these claims. 171\n\n[Page 174]\n not accrued a liability for this matter. In March 2022, CVS Health Corporation and CVS Pharmacy, Inc. entered into a settlement agreement with the State of Florida to resolve \n\u2026 [15,705 more characters]"
+    }
+   ],
+   "reply": {
+    "content": "Yes. CVS Health reported significant ongoing legal matters spanning 2020\u20132022, particularly opioid litigation and investigations, as well as PBM-related lawsuits.\n\n- **Opioid litigation:** Hundreds of federal cases and similar state cases were pending. After a 2021 jury verdict against chain pharmacies, a court entered a joint **$651 million judgment in August 2022**; CVS said it was appealing and had not accrued a liability. A separate 2022 agreement to resolve substantially all state and local opioid claims contemplated up to **$4.3 billion in remediation plus $625 million in fees and costs**, paid over 10 years; it did not resolve private plaintiffs\u2019 claims. (p. 174)\n- **Investigations:** CVS received a DOJ administrative subpoena in January 2020 concerning controlled-substance practices and a related CID in January 2022. (p. 175)\n- **PBM matters:** The company described multiple lawsuits and government investigations concerning drug pricing and rebate practices and said it was defending the claims and responding to information requests. (p. 173)\n\nThese matters were described as pending or under investigation; the document does not say that every matter remained unresolved.",
+    "role": "assistant",
+    "reasoning_details": [
+     {
+      "type": "reasoning.encrypted",
+      "data": "gAAAAABqwg_5SVECbhWpwhKSss07ibx7Dy83pBSVahRgimYcyhTZdzTQxKMDr853gcFyPt4EvXWrv8tRg8MEakhLLabDz621LHwjqwY0wKa4wgYyeQrJI0XUjv30URS75GPuouhOVtU7CvOLck_ia_k7Nup5miWVrRSgUXb9OIufBHdwsmyAAv8FgMKujXbUvZ0BSiNzRVPtITNbJzqV95W_SpTBzhljDDPEIwfEmn1_SqlKVLcydJvcOlxQaR_1inpx6sUBw9pg8636LMJrWbFetvo0ziejRh1adcXPD7sHnAUX0MWcBgTFG7GLLQC-8UCTcVTGsoiOBBojmg42x2rJqvfMay7evPUITXv5_egugOvf6An2mAAOvDwAkBKk-kPJlsMTNbkEC-2Pfa5_HETXtbx6DISQVlNP4OTQCWwiqaPWbvShwbGT_su4w0GlMHktx0CgeyghYYKbz8VRIaVczCEMya3XiyxDNaRIRuv58r72YXyiuWUKsXdGx5NyG6wncm8odIby_q6hNh4amqrA2CWXKdGYD83l7Fs2WVNnAhNOE7XC4s_6LSzARdy8hbkxHpXDyfnQTgJB8X9X3ngpWfO95XeqfaBlyRUSj1rwrJ3lhrksqFEltmzj72b9LZ39uyxzJbzLNUsI6b_UbFLLdfj9C_qOW8TeZTPqD8F9abZYWgVUgP-_EQYyfLe-NnWfBJgDnHhoHRYnwbdJ-JnE013bPRSyLwPevU0lXhZovvUnn4GCXtMvUB479m7zJzvFTMbxtQBN_VZ9Y_If29lLhIsZJz-M5mGh01qYtAhU9C213ft2x2Bcp3JPl7rH_2GE0C7VkAZueDXjKL0Y3zC8U3jTRYmNOM9aOcazsplB-HkXfFBWihPeNEe1He92UwQS9mdt8HqZZ91-GhgDmOlHwbOb5wZYsaQjoZ3vmQPIBOJR682-Vqwf_NelRBYB9pkePsc67u3eTTxeC7IEP3aKfB8cuvbZPvohzsUl0eKI4ykwyGgKL-P0z2B2uXm9k4dVcd4XIDstGtvCwvzdO-i3ML1pcTjAVYP3DdLjqnGpnWHnWyTm0jWlBl9k_qMT9Od5zqVg6dFEjwemdJQq9bxmE2p4OpyH5lPlj_bcVX1MayDAUne2XPnkI3QzbukS9bgwGSZ6TJ97VmbDSui3W_BmpusK08TYrKc_Os9_iT7n6X5Edvig5Qv2iOyiAVVkTa_zlrVlk5FU8Jve-qMIE5BRyHlmlm3D-fL71BfyvMio8-SBDIUIBM7VOoO8C2jvEx1hxI7IblsRacqdAs-xtIG9FdTFhQF6CAhcCm3qlNL8PnRSu4Ks8j-L57VN2tmcl-yk5eOATVjwqQK6RmpivHU_SLJ-sDS3CgRRD4A9imKpuMoV9MtILLElZEJiIJf7vzC-oa8Dz6Z0IGu7R9yqk7bLJlHga3CdAQyYrJbuFVscM4rvOvMxYb4hnuIQ4fi8n1BwS2dLasLB0biG-EbUkGK8SsxvseTZIF_5XVc3OfIYkFX006lQv2sa4Pq1jeqnagsPqMGjhhHt88tJgjWEAwyAQohMF3IU7SsUiaPrmxBuD0iTDquHXoWxRIPiHWOFS101OgC6n0RoW8YmYygWMtSGpH6q8xzESNcABX0qADuuXx-2MHqZQWanvwRdvpy_E1CFfeRUaXxyG9FS8AIIIskbogLu-H39rzMajSaAM9IhMXCWzMQD84F2fmcNPFw441TMJBm8M_t94fdEbly_bMe2Dv0k1Es7TygvpMJXB68RGv2d-4k0fVhaeebkuNPsrpfxW5b6Rbb4eqM6HCB9q-tX3N9lXMaev0TAEFVwZaAnFSoMO3JEaM-ge-AmoC5u4aih4v5lYx7ppRR5ki0elJjv5sLWMuAXaFFjYSmazGf6SwNIH4U-eCxNUhOa2C5i-HZcAmHejMSaMF9XUGK1Yhst1ntCXOnrMo2DSMzeJ1w7-bNhW-FvaVK-sXoq4n7MD90vFLupjb2uvcq6uJ2Pqrbs_khStswcOBz5wK2nAeJX_BzOZDVT2rEZ1A6RQpIKoE3SlvzcmxlilEoACmppG3N9HknSVaSmkRCiK_pfj8nB1hbcMDOzkDBjXpHN1n0cmBdHlXQKq1UABnhltH0GVXqM1HUwXfpuHReg51OFWg5rW3hc-MOtfQmQhorfT-nto-4ulOymekSLeWzBz2hPZd5S0cv4jKn2DcD_-AX8PcCUKynPs-fk9Wd1VBI_f9Jn0I1ODbH9KqbhJ3vQdpu-rMWVbMwbU9951E3fDwz1dBLOBH9qle7QDA9WfXZDgvvCt01uVfs-s-PrLaQSFtueUrKdi79anD2kAdpu2odd_iZPy-joSwyT9GDi4bDlAoQg9XOtkASylamjpmREqP5YIvZ0tH4z-5aFzSijP8QlHiYMbIECxCNMH52ya55u_W-I30c3iyR6x8TZWa5j7IDbc1ZaLF2Bn_DeIfU3Zbj1Jho16A-UZXdGLitSICkYO8Snr8Q-8FENhlxDI19OOgKIyoNdpdrj6XH1M8PmydSdw3JsomECx48ku3XNSOGR3Iw2k9DDUR_ObjaGChytg-BLFjtPJh0Z7Ws61JOExnpooRVPiluJ4iBAF7GOcL12it4VizzQXiS_m1-bJsX4AqOmsD2sFRq6dKK_C-JCeFal7DyT5m0BQuy0iVN-yB6JC59l-MxJqhq6kdUJg8qnyyBZXxKiubVaeD38CNeFtN_XqgoNqZQBQldjQAL9-An7DPTjj4EopII6iZjED7_wpoI6mvm7Zl3ol-v840rNrylGTal_s8SHnEhDb7mrhc-wjHhu-a3wamN1KfOZmNHd6o1VdWzuTF3tJiOTDIsaAe1IRwCFZS7Qg3Evbl4mk72uxvpbUfTYdDJ7opYu_ciby37Kahe_ELmagvNgYZJG4VZ9DQTpR6YiDKUsHGloBrUxGKPLC82xIdBir8R85zrzbdC_Fp9q3FzarTAGTf2jKVWW1NU9zTJpDSxtnMXTuiynek_mOXdZpKqIkwls-sVKmrNYzo2B2i0ElpG5zlC6XZyxyX1pBqIf6B3JCrWUNHQ629eBgVnQnRAzrFCCPv1n-5dw2PSQEm175OJjG1_vkOe4el9LQ69odagg0DuY3KOXv0QhYFHX64lA-txWyJDBteP132PQJY_QwvxlbiahfDHBbpv3CShbym_T7Lf8J8IO0IaSlGO_1AtaEegxLsC9sCFHZguW6vrmKT333UcKSsMF98C4XYX27EYfdc6QojjVyXoikukfXaxHSaLW90sfemb5vuVLGB97w7jdv9q9EDBj6BFdxxfq2e17Z71ApKxQO5eG5F9mp6gU9CqijoiYve4T73oFIk8sQs246IIrhrFcNkyWQRPqVWVtgwPpRR3WHliu4N8aqVfYAcDHPTG1Wy9DKgOYh859_CgRRY0S3_K7iXmNwgdb2b0UAdXtxYOvXfSdsxqDBQMXJGoexl_6L47b18-J2JzpjxxLXFQVkmuesjmsv3jm9lfu3mw6q_ZpIzA5mbtodainzuevZmm5ug-4ZHCxgqyJ4dsN9TPyo6p9omkEXvZL0PVvuF7N2YjHPJxz1cFxu0Myyb18ASDa8KapFfTnRKdCc-7tchB95lU_volv8moX-s2XjZSf5xjM9DV2kT0-AB4wHik3kBqCEhOGucPGLa39_3Y_p2J0qDNZVWwCoPd4sRdsVL7KcynELaO-rS0_r-zVD6_nrhgeOqpquPAn-mAK2is9Dt7qBmZHMP00rHuzBvH0mx5mUTWEPNeu0VcoizpaSov3HUW7YVhPI5DGMmzhmoIVvTWGTXr23x0ieGYUnSmrfb5AVuOYcbB2VU4A3b_Gk7siuUU1U5STo1Ag8EX1wb_RzLjz0xJ1HZ4r706ta9L_2z9dfNiwR6VqTc3FYWNIhGYJX0N1npuM7y3tdktVPo8Uw1_yIdU62Y7LhxTNLQMf5VUY8V_-iHl8AyDeNnM8vFRfV0QbxWH50oqiQ-iBJCBC\n\u2026 [608 more characters]",
+      "format": "openai-responses-v1",
+      "id": "rs_0f70baf4158ed813016ac20ff4c52887d1af77c77aa0fd2e0f",
+      "index": 0
+     }
+    ]
+   },
+   "input_tokens": 3792,
+   "output_tokens": 764,
+   "reasoning_tokens": 516
+  }
+ ],
+ "answer": "Yes. CVS Health reported significant ongoing legal matters spanning 2020\u20132022, particularly opioid litigation and investigations, as well as PBM-related lawsuits.\n\n- **Opioid litigation:** Hundreds of federal cases and similar state cases were pending. After a 2021 jury verdict against chain pharmacies, a court entered a joint **$651 million judgment in August 2022**; CVS said it was appealing and had not accrued a liability. A separate 2022 agreement to resolve substantially all state and local opioid claims contemplated up to **$4.3 billion in remediation plus $625 million in fees and costs**, paid over 10 years; it did not resolve private plaintiffs\u2019 claims. (p. 174)\n- **Investigations:** CVS received a DOJ administrative subpoena in January 2020 concerning controlled-substance practices and a related CID in January 2022. (p. 175)\n- **PBM matters:** The company described multiple lawsuits and government investigations concerning drug pricing and rebate practices and said it was defending the claims and responding to information requests. (p. 173)\n\nThese matters were described as pending or under investigation; the document does not say that every matter remained unresolved.",
+ "retrieved": [
+  {
+   "page": 175,
+   "score": 0.7006
+  },
+  {
+   "page": 173,
+   "score": 0.6895
+  },
+  {
+   "page": 174,
+   "score": 0.6541
+  },
+  {
+   "page": 174,
+   "score": 0.6514
+  },
+  {
+   "page": 173,
+   "score": 0.6441
+  },
+  {
+   "page": 177,
+   "score": 0.6387
+  },
+  {
+   "page": 175,
+   "score": 0.6383
+  },
+  {
+   "page": 19,
+   "score": 0.6309
+  },
+  {
+   "page": 134,
+   "score": 0.6307
+  },
+  {
+   "page": 50,
+   "score": 0.6262
+  }
+ ],
+ "verdict": "incorrect",
+ "reason": "The answer covers opioid litigation (including the $4.3B and $625M figures) and PBM matters, but it omits the usual and customary pricing litigation, which is one of the gold answer's three key areas.",
+ "judge_model": "claude-sonnet-5.5@medium",
+ "judge_cost": 0.002662
+}

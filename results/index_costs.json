@@ -175,6 +175,218 @@
    "cached_tokens": 0,
    "output_tokens": 152132,
    "cost": 0.1835920000000003
+  },
+  "CORNING_2022_10K": {
+   "doc_id": "pi-bcc9552c88ed458b8406cdbb8f68550a",
+   "calls": 316,
+   "input_tokens": 694696,
+   "cached_tokens": 2434,
+   "output_tokens": 87814,
+   "cost": 0.11315754,
+   "effort_fallbacks": 3
+  },
+  "GENERALMILLS_2019_10K": {
+   "doc_id": "pi-12f7695872bd4ca79b6e83c162263079",
+   "calls": 262,
+   "input_tokens": 621172,
+   "cached_tokens": 0,
+   "output_tokens": 74812,
+   "cost": 0.09952319999999992,
+   "effort_fallbacks": 6
+  }
+ },
+ "vector-rag": {
+  "ADOBE_2015_10K": {
+   "calls": 2,
+   "input_tokens": 100334,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.01304342,
+   "effort_fallbacks": 0
+  },
+  "JPMORGAN_2023Q2_10Q": {
+   "calls": 3,
+   "input_tokens": 198404,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.025792519999999996,
+   "effort_fallbacks": 0
+  },
+  "PFIZER_2021_10K": {
+   "calls": 2,
+   "input_tokens": 166797,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.02168361,
+   "effort_fallbacks": 0
+  },
+  "ADOBE_2017_10K": {
+   "calls": 2,
+   "input_tokens": 91593,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.011907090000000002,
+   "effort_fallbacks": 0
+  },
+  "AMAZON_2017_10K": {
+   "calls": 1,
+   "input_tokens": 68560,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.0089128,
+   "effort_fallbacks": 0
+  },
+  "AMCOR_2023_10K": {
+   "calls": 2,
+   "input_tokens": 111343,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.01447459,
+   "effort_fallbacks": 0
+  },
+  "AMD_2022_10K": {
+   "calls": 2,
+   "input_tokens": 93621,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.012170730000000001,
+   "effort_fallbacks": 0
+  },
+  "AMERICANEXPRESS_2022_10K": {
+   "calls": 3,
+   "input_tokens": 188355,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.02448615,
+   "effort_fallbacks": 0
+  },
+  "AMERICANWATERWORKS_2020_10K": {
+   "calls": 2,
+   "input_tokens": 141287,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.018367309999999998,
+   "effort_fallbacks": 0
+  },
+  "BESTBUY_2024Q2_10Q": {
+   "calls": 1,
+   "input_tokens": 24230,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.0031499,
+   "effort_fallbacks": 0
+  },
+  "BOEING_2022_10K": {
+   "calls": 2,
+   "input_tokens": 117742,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.015306460000000001,
+   "effort_fallbacks": 0
+  },
+  "CORNING_2021_10K": {
+   "calls": 2,
+   "input_tokens": 97198,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.01263574,
+   "effort_fallbacks": 0
+  },
+  "CORNING_2022_10K": {
+   "calls": 2,
+   "input_tokens": 110748,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.01439724,
+   "effort_fallbacks": 0
+  },
+  "CVSHEALTH_2022_10K": {
+   "calls": 3,
+   "input_tokens": 191993,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.02495909,
+   "effort_fallbacks": 0
+  },
+  "FOOTLOCKER_2022_8K_dated_2022-08-19": {
+   "calls": 1,
+   "input_tokens": 18902,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.00245726,
+   "effort_fallbacks": 0
+  },
+  "GENERALMILLS_2019_10K": {
+   "calls": 2,
+   "input_tokens": 107447,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.01396811,
+   "effort_fallbacks": 0
+  },
+  "GENERALMILLS_2022_10K": {
+   "calls": 2,
+   "input_tokens": 98414,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.012793820000000001,
+   "effort_fallbacks": 0
+  },
+  "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30": {
+   "calls": 1,
+   "input_tokens": 16240,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.0021112,
+   "effort_fallbacks": 0
+  },
+  "MGMRESORTS_2018_10K": {
+   "calls": 2,
+   "input_tokens": 160343,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.02084459,
+   "effort_fallbacks": 0
+  },
+  "MGMRESORTS_2022Q4_EARNINGS": {
+   "calls": 1,
+   "input_tokens": 12587,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.00163631,
+   "effort_fallbacks": 0
+  },
+  "PEPSICO_2022_10K": {
+   "calls": 4,
+   "input_tokens": 273095,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.03550235,
+   "effort_fallbacks": 0
+  },
+  "PEPSICO_2023Q1_EARNINGS": {
+   "calls": 1,
+   "input_tokens": 9093,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.0011820900000000002,
+   "effort_fallbacks": 0
+  },
+  "ULTABEAUTY_2023Q4_EARNINGS": {
+   "calls": 1,
+   "input_tokens": 5469,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.00071097,
+   "effort_fallbacks": 0
+  },
+  "ULTABEAUTY_2023_10K": {
+   "calls": 1,
+   "input_tokens": 72451,
+   "cached_tokens": 0,
+   "output_tokens": 0,
+   "cost": 0.00941863,
+   "effort_fallbacks": 0
   }
  }
 }

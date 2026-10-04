@@ -1,14 +1,16 @@
 """Every LLM call in this project goes through this module.
 
-Calls are routed to LLM Foundry's OpenRouter-compatible endpoint. Each call's
-token usage is priced from config/models.yaml and added to the active `Meter`,
-so the cost of any step is whatever was spent inside `with Meter() as m:`.
+Calls are routed to LLM Foundry: chat on its OpenRouter-compatible route, embeddings on
+its OpenAI route. Each call's token usage is priced from config/models.yaml and added to
+the active `Meter`, so the cost of any step is whatever was spent inside `with Meter():`.
+Inside `with Recorder():`, each chat call's messages and reply are also kept, which is
+how the walkthrough page shows what a method did step by step.
 
 Two kinds of callers:
-- Our own methods call `complete()` and `run_agent()` (tool calling).
-- PageIndex calls LiteLLM internally. `pageindex_client()` returns a client
-  routed through LLM Foundry, and `_meter_litellm()` wraps LiteLLM so those
-  calls are metered too.
+- Our own methods call `complete()`, `run_agent()` (tool calling) and `embed()`.
+- PageIndex calls LiteLLM internally. `pageindex_client()` returns a client routed
+  through LLM Foundry, and `_wrap_litellm()` wraps LiteLLM so those calls are metered
+  and recorded too.
 """
 
 import contextvars
@@ -28,6 +30,7 @@ ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
 CONFIG = yaml.safe_load((ROOT / "config" / "models.yaml").read_text())
 MODELS = CONFIG["models"]
+TIMEOUT = 3600  # seconds per call: give slow, long-thinking calls every chance to finish
 
 
 def resolve(config: str) -> tuple[str, str]:
@@ -49,7 +52,16 @@ def api_key() -> str:
     return os.environ["LLMFOUNDRY_API_KEY"]
 
 
-# ---------------------------------------------------------------- metering
+def reasoning_body(config: str) -> dict:
+    """Request body that sets the reasoning effort, in OpenRouter's `reasoning` form.
+
+    Used for our own calls and PageIndex's, so every call sets effort the same way.
+    """
+    _, effort = resolve(config)
+    return {} if effort == "default" else {"reasoning": {"effort": effort}}
+
+
+# ---------------------------------------------------------------- metering and recording
 
 
 @dataclass
@@ -59,12 +71,14 @@ class Usage:
     cached_tokens: int = 0
     output_tokens: int = 0  # includes reasoning tokens
     cost: float = 0.0  # USD
+    effort_fallbacks: int = 0  # calls retried at another effort (see _wrap_litellm)
 
     def to_dict(self) -> dict:
         return asdict(self)
 
 
 _active_meter: contextvars.ContextVar[Usage | None] = contextvars.ContextVar("meter", default=None)
+_active_recording: contextvars.ContextVar[list | None] = contextvars.ContextVar("recording", default=None)
 
 
 class Meter:
@@ -79,6 +93,18 @@ class Meter:
         _active_meter.reset(self._token)
 
 
+class Recorder:
+    """Keeps every chat call made inside the `with` block: its messages, reply and token counts."""
+
+    def __enter__(self) -> list[dict]:
+        self.calls: list[dict] = []
+        self._token = _active_recording.set(self.calls)
+        return self.calls
+
+    def __exit__(self, *exc):
+        _active_recording.reset(self._token)
+
+
 def price(model_id: str, input_tokens: int, cached_tokens: int, output_tokens: int) -> float:
     """USD cost of one call. `model_id` is an OpenRouter id, e.g. openai/gpt-6-luna."""
     p = _prices_by_id()[model_id]
@@ -91,37 +117,48 @@ def _prices_by_id() -> dict:
     return {m["id"]: m for m in MODELS.values()}
 
 
-def _record(model_id: str, usage) -> None:
+def _record(model_id: str, usage, messages: list[dict], reply) -> None:
+    """Add one chat call to the active Meter and Recorder, if any."""
     meter = _active_meter.get()
-    if meter is None or usage is None:
-        return
-    details = getattr(usage, "prompt_tokens_details", None)
-    cached = (getattr(details, "cached_tokens", 0) or 0) if details else 0
-    meter.calls += 1
-    meter.input_tokens += usage.prompt_tokens
-    meter.cached_tokens += cached
-    meter.output_tokens += usage.completion_tokens
-    meter.cost += price(model_id, usage.prompt_tokens, cached, usage.completion_tokens)
+    if meter is not None and usage is not None:
+        details = getattr(usage, "prompt_tokens_details", None)
+        cached = (getattr(details, "cached_tokens", 0) or 0) if details else 0
+        meter.calls += 1
+        meter.input_tokens += usage.prompt_tokens
+        meter.cached_tokens += cached
+        meter.output_tokens += usage.completion_tokens
+        meter.cost += price(model_id, usage.prompt_tokens, cached, usage.completion_tokens)
+    recording = _active_recording.get()
+    if recording is not None:
+        out_details = getattr(usage, "completion_tokens_details", None)
+        recording.append({
+            "model": model_id,
+            "messages": list(messages),
+            "reply": _as_dict(reply),
+            "input_tokens": getattr(usage, "prompt_tokens", None),
+            "output_tokens": getattr(usage, "completion_tokens", None),
+            "reasoning_tokens": getattr(out_details, "reasoning_tokens", None) if out_details else None,
+        })
+
+
+def _as_dict(obj) -> dict:
+    if hasattr(obj, "model_dump"):
+        return obj.model_dump(exclude_none=True)
+    return dict(obj)
 
 
 # ---------------------------------------------------------------- our calls
 
 
-TIMEOUT = 3600  # seconds per call: give slow, long-thinking calls every chance to finish
-
-
-def reasoning_body(config: str) -> dict:
-    """Request body that sets the reasoning effort, in OpenRouter's `reasoning` form.
-
-    Used for our own calls and PageIndex's, so every call sets effort the same way.
-    """
-    _, effort = resolve(config)
-    return {} if effort == "default" else {"reasoning": {"effort": effort}}
-
-
 @cache
 def _client() -> OpenAI:
     return OpenAI(base_url=base_url(), api_key=api_key(), timeout=TIMEOUT)
+
+
+@cache
+def _embedding_client() -> OpenAI:
+    """LLM Foundry's OpenAI route: embeddings are not on the OpenRouter route."""
+    return OpenAI(base_url=os.environ["LLMFOUNDRY_BASE_URL"].rstrip("/") + "/openai/v1", api_key=api_key(), timeout=TIMEOUT)
 
 
 def _retry(call, retries: int = 6):
@@ -140,8 +177,9 @@ def _chat(config: str, messages: list[dict], **kwargs):
     if body := reasoning_body(config):
         kwargs["extra_body"] = body
     response = _retry(lambda: _client().chat.completions.create(model=model_id, messages=messages, **kwargs))
-    _record(model_id, response.usage)
-    return response.choices[0].message
+    message = response.choices[0].message
+    _record(model_id, response.usage, messages, message)
+    return message
 
 
 def complete(config: str, messages: list[dict], **kwargs) -> str:
@@ -175,6 +213,22 @@ def run_agent(config: str, messages: list[dict], tools: dict[str, Callable[..., 
     return complete(config, messages), trace
 
 
+def embed(texts: list[str], batch: int = 256) -> list[list[float]]:
+    """Embeddings from config `embedding_model`, metered like chat calls."""
+    model = CONFIG["embedding_model"]
+    vectors = []
+    for start in range(0, len(texts), batch):
+        chunk = texts[start : start + batch]
+        response = _retry(lambda: _embedding_client().embeddings.create(model=model["id"], input=chunk))
+        vectors += [item.embedding for item in response.data]
+        meter = _active_meter.get()
+        if meter is not None:
+            meter.calls += 1
+            meter.input_tokens += response.usage.prompt_tokens
+            meter.cost += response.usage.prompt_tokens * model["input"] / 1e6
+    return vectors
+
+
 # ---------------------------------------------------------------- PageIndex
 
 
@@ -182,7 +236,7 @@ def pageindex_client(storage_path: Path):
     """A local-mode PageIndexClient whose index and chat calls go through LLM Foundry."""
     from pageindex import PageIndexClient
 
-    _meter_litellm()
+    _wrap_litellm()
     backend = {"api_key": api_key(), "api_base": base_url()}
     index = pageindex_chat_args(CONFIG["index_model"])
     return PageIndexClient(
@@ -202,9 +256,26 @@ def pageindex_chat_args(config: str) -> dict:
     return {"model": "openrouter/" + model_id, "extra_body": reasoning_body(config)}
 
 
+# Through LLM Foundry/OpenRouter, gpt-6-luna answers some prompts with an instant 504
+# "The operation was aborted", every time, at one effort level but not at others
+# (verified 2026-09-30: a prompt failing at `low` succeeds at `none` and `medium`, and
+# vice versa). Such a call is retried once at the neighbouring effort below and counted
+# in Usage.effort_fallbacks, rather than failing the whole document or question.
+FALLBACK_EFFORT = {"none": "low", "minimal": "low", "low": "medium", "medium": "low", "high": "medium", "xhigh": "high"}
+
+
+def _fallback_kwargs(kwargs: dict, error: Exception) -> dict | None:
+    """The same call at the fallback effort, if `error` is that 504 and an effort was set."""
+    effort = ((kwargs.get("extra_body") or {}).get("reasoning") or {}).get("effort")
+    if "The operation was aborted" not in str(error) or effort not in FALLBACK_EFFORT:
+        return None
+    extra_body = kwargs["extra_body"] | {"reasoning": {"effort": FALLBACK_EFFORT[effort]}}
+    return kwargs | {"extra_body": extra_body}
+
+
 @cache
-def _meter_litellm() -> None:
-    """Wrap litellm.(a)completion so PageIndex's internal calls are metered."""
+def _wrap_litellm() -> None:
+    """Wrap litellm.(a)completion so PageIndex's calls are metered, recorded, and get the effort fallback."""
     import logging
 
     import litellm
@@ -215,17 +286,28 @@ def _meter_litellm() -> None:
 
     completion, acompletion = litellm.completion, litellm.acompletion
 
-    def model_id(kwargs) -> str:
-        return kwargs["model"].removeprefix("openrouter/")
-
-    def metered_completion(*args, **kwargs):
-        response = completion(*args, **kwargs)
-        _record(model_id(kwargs), getattr(response, "usage", None))
+    def after(kwargs: dict, response, fell_back: bool):
+        model_id = kwargs["model"].removeprefix("openrouter/")
+        _record(model_id, getattr(response, "usage", None), kwargs.get("messages", []), response.choices[0].message)
+        meter = _active_meter.get()
+        if fell_back and meter is not None:
+            meter.effort_fallbacks += 1
         return response
 
-    async def metered_acompletion(*args, **kwargs):
-        response = await acompletion(*args, **kwargs)
-        _record(model_id(kwargs), getattr(response, "usage", None))
-        return response
+    def wrapped_completion(*args, **kwargs):
+        try:
+            return after(kwargs, completion(*args, **kwargs), False)
+        except Exception as e:
+            if (retry := _fallback_kwargs(kwargs, e)) is None:
+                raise
+            return after(retry, completion(*args, **retry), True)
 
-    litellm.completion, litellm.acompletion = metered_completion, metered_acompletion
+    async def wrapped_acompletion(*args, **kwargs):
+        try:
+            return after(kwargs, await acompletion(*args, **kwargs), False)
+        except Exception as e:
+            if (retry := _fallback_kwargs(kwargs, e)) is None:
+                raise
+            return after(retry, await acompletion(*args, **retry), True)
+
+    litellm.completion, litellm.acompletion = wrapped_completion, wrapped_acompletion
