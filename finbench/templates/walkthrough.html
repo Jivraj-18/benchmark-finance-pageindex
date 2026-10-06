@@ -82,7 +82,8 @@
 <script id="data" type="application/json">/*DATA*/null</script>
 <script>
 const { meta, questions } = JSON.parse(document.getElementById("data").textContent);
-const LABELS = { "pageindex": "PageIndex", "vector-rag": "Vector RAG", "full-context": "Whole filing", "agentic-search": "Agentic search" };
+const METHOD_ORDER = ["full-context", "pageindex", "vector-rag", "agentic-search"];
+const LABELS = { "full-context": "Whole filling", "pageindex": "PageIndex", "vector-rag": "Vector RAG", "agentic-search": "Agentic search" };
 const SHAPES = { "pageindex": "circle", "vector-rag": "square", "full-context": "diamond", "agentic-search": "triangle" };
 const ICONS = { correct: "✓", incorrect: "✗", refusal: "–", error: "!" };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
@@ -151,7 +152,8 @@ async function show(i) {
   if (current !== i) return;  // another question was picked while this one loaded
   const w = cache[q.id];
   document.querySelector("#question .small").textContent = `#${q.n} · ${w.id} · ${w.doc}`;
-  methods.innerHTML = w.methods.map(m => `
+  const order = Object.fromEntries(METHOD_ORDER.map((m, idx) => [m, idx]));
+  methods.innerHTML = [...w.methods].sort((a, b) => (order[a.method] ?? 99) - (order[b.method] ?? 99)).map(m => `
     <section class="card method" style="--accent: var(--${m.method})">
       <header>
         <h3>${keySvg(m.method)}${LABELS[m.method]}</h3>
