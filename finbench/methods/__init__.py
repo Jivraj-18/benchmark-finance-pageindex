@@ -13,8 +13,8 @@ To add a method: write a module here and register it below.
 from . import agentic_search, full_context, pageindex_rag, vector_rag
 
 METHODS = {
+    "full-context": full_context,
     "pageindex": pageindex_rag,
     "vector-rag": vector_rag,
-    "full-context": full_context,
     "agentic-search": agentic_search,
 }

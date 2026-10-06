@@ -8,6 +8,15 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .chart-card { padding: 16px 16px 8px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 12px; }
+  .filters label { color: var(--ink-2); font-size: 0.875rem; }
+  .filters select, .filters button {
+    font: inherit; font-size: 0.875rem; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--ink); padding: 6px 10px;
+  }
+  .method-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filters button { cursor: pointer; }
+  .filters button.active { background: var(--code-bg); border-color: var(--axis); }
   .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0 0 8px; font-size: 0.875rem; color: var(--ink-2); }
   #chart { width: 100%; height: auto; display: block; overflow: visible; }
   #chart text { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
@@ -62,6 +71,11 @@
   <section class="card chart-card" aria-labelledby="chart-title">
     <h2 id="chart-title" style="margin-top:0">Accuracy against cost per question</h2>
     <p class="small muted" style="margin-top:-6px">Each dot is one method with one model setting. Up is more accurate, left is cheaper (log scale). Hover a dot for details.</p>
+    <div class="filters">
+      <label for="model-filter">Model</label>
+      <select id="model-filter" aria-label="Select model"></select>
+      <div class="method-buttons" id="method-filters" aria-label="Select methods"></div>
+    </div>
     <div class="legend" id="legend"></div>
     <svg id="chart" role="img" aria-labelledby="chart-title"></svg>
   </section>
@@ -89,7 +103,7 @@
     <table class="data questions" id="qtable">
       <thead><tr>
         <th>#</th><th>Company</th><th>Question</th><th>Gold answer</th>
-        <th class="center">PageIndex</th><th class="center">Vector RAG</th><th class="center">Whole filing</th><th class="center">Agentic search</th>
+        <th class="center">Whole filling</th><th class="center">PageIndex</th><th class="center">Vector RAG</th><th class="center">Agentic search</th>
       </tr></thead>
       <tbody></tbody>
     </table>
@@ -97,9 +111,9 @@
 
   <h2>Methods</h2>
   <ul class="findings" style="list-style:none;padding-left:0">
+    <li><span class="key" data-method="full-context"></span>: the whole filing's text goes into the prompt. The brute-force baseline.</li>
     <li><span class="key" data-method="pageindex"></span>: the PageIndex SDK (local mode, Flash tree index). The model walks a table-of-contents tree of the filing and reads the pages it picks.</li>
     <li><span class="key" data-method="vector-rag"></span>: the filing is split into ~500-token chunks and embedded once; the 10 chunks closest to the question are given to the model.</li>
-    <li><span class="key" data-method="full-context"></span>: the whole filing's text goes into the prompt. The brute-force baseline.</li>
     <li><span class="key" data-method="agentic-search"></span>: no index. The model gets two tools, a regex search over the filing and "read pages", and explores like a coding agent.</li>
   </ul>
 
@@ -123,13 +137,24 @@
 <script id="data" type="application/json">/*DATA*/null</script>
 <script>
 const { meta, cells, questions } = JSON.parse(document.getElementById("data").textContent);
-const LABELS = { "pageindex": "PageIndex", "vector-rag": "Vector RAG", "full-context": "Whole filing", "agentic-search": "Agentic search" };
+const METHOD_ORDER = ["full-context", "pageindex", "vector-rag", "agentic-search"];
+const LABELS = { "full-context": "Whole filling", "pageindex": "PageIndex", "vector-rag": "Vector RAG", "agentic-search": "Agentic search" };
 const SHAPES = { "pageindex": "circle", "vector-rag": "square", "full-context": "diamond", "agentic-search": "triangle" };
 const fmtCost = c => c >= 0.01 ? "$" + c.toFixed(3) : "$" + c.toFixed(4);
+const orderedMethods = METHOD_ORDER.filter(m => meta.methods.includes(m));
+const methodRank = Object.fromEntries(orderedMethods.map((m, i) => [m, i]));
+const orderedCells = [...cells].sort((a, b) =>
+  (methodRank[a.method] ?? 99) - (methodRank[b.method] ?? 99) || a.config.localeCompare(b.config)
+);
+const modelNames = [...new Set(orderedCells.map(c => c.config.split("@")[0]))];
+const modelFilter = document.getElementById("model-filter");
+const methodFilters = document.getElementById("method-filters");
+let activeModel = "";
+const activeMethods = new Set(orderedMethods);
 
 document.getElementById("repo-link").href = meta.repo;
 document.getElementById("subtitle").textContent =
-  `${meta.questions} FinanceBench questions, ${meta.methods.length} retrieval methods, ${meta.settings.length} model settings ` +
+  `${meta.questions} FinanceBench questions, ${orderedMethods.length} retrieval methods, ${meta.settings.length} model settings ` +
   `(cheap GPT and Gemini models, low and high reasoning effort). Every answer graded strictly against FinanceBench's ` +
   `gold answer by ${meta.judge}.`;
 document.getElementById("footer").innerHTML =
@@ -149,19 +174,47 @@ function keySvg(method) {
 document.querySelectorAll(".key[data-method]").forEach(el => {
   el.innerHTML = keySvg(el.dataset.method) + `<b>${LABELS[el.dataset.method]}</b>`;
 });
-document.getElementById("legend").innerHTML =
-  meta.methods.map(m => `<span class="key">${keySvg(m)}${LABELS[m]}</span>`).join("");
+function methodButtons() {
+  methodFilters.innerHTML = orderedMethods.map(m =>
+    `<button type="button" data-method="${m}" class="${activeMethods.has(m) ? "active" : ""}" aria-pressed="${activeMethods.has(m)}">${LABELS[m]}</button>`
+  ).join("");
+}
+function legend() {
+  const visible = orderedMethods.filter(m => activeMethods.has(m));
+  document.getElementById("legend").innerHTML = visible.map(m => `<span class="key">${keySvg(m)}${LABELS[m]}</span>`).join("");
+}
+modelFilter.innerHTML =
+  `<option value="">All models</option>` + modelNames.map(model => `<option value="${model}">${model}</option>`).join("");
+modelFilter.addEventListener("change", () => { activeModel = modelFilter.value; draw(); });
+methodFilters.addEventListener("click", e => {
+  const m = e.target?.dataset?.method;
+  if (!m) return;
+  if (activeMethods.has(m)) {
+    if (activeMethods.size === 1) return;
+    activeMethods.delete(m);
+  } else activeMethods.add(m);
+  methodButtons();
+  draw();
+});
+methodButtons();
+legend();
 
 // ---- chart
 const svg = document.getElementById("chart");
 const tip = document.getElementById("tip");
 function draw() {
+  const filtered = orderedCells.filter(c => (!activeModel || c.config.startsWith(`${activeModel}@`)) && activeMethods.has(c.method));
+  legend();
+  if (!filtered.length) {
+    svg.innerHTML = `<text x="14" y="26">No data for this filter.</text>`;
+    return;
+  }
   const W = Math.max(svg.parentElement.clientWidth - 32, 300), H = Math.round(Math.min(520, Math.max(340, W * 0.55)));
   const M = { top: 12, right: 24, bottom: 48, left: 52 };
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  const costs = cells.map(c => c.cost_per_q_usd).filter(c => c > 0);
+  const costs = filtered.map(c => c.cost_per_q_usd).filter(c => c > 0);
   const lo = Math.log10(Math.min(...costs)) - 0.15, hi = Math.log10(Math.max(...costs)) + 0.1;
-  const accs = cells.map(c => c.accuracy_pct);
+  const accs = filtered.map(c => c.accuracy_pct);
   const yLo = Math.max(0, Math.floor((Math.min(...accs) - 5) / 10) * 10), yHi = 100;
   const x = c => M.left + (Math.log10(c) - lo) / (hi - lo) * (W - M.left - M.right);
   const y = a => M.top + (yHi - a) / (yHi - yLo) * (H - M.top - M.bottom);
@@ -182,7 +235,7 @@ function draw() {
   s += `<text class="axis-title" x="${(M.left + W - M.right) / 2}" y="${H - 8}" text-anchor="middle">Cost per question (USD, log scale)</text>`;
   s += `<text class="axis-title" transform="translate(14 ${(M.top + H - M.bottom) / 2}) rotate(-90)" text-anchor="middle">Accuracy</text>`;
 
-  cells.forEach((c, i) => {
+  filtered.forEach((c, i) => {
     if (!(c.cost_per_q_usd > 0)) return;
     s += `<g class="dot" tabindex="0" data-i="${i}" transform="translate(${x(c.cost_per_q_usd)} ${y(c.accuracy_pct)})" aria-label="${LABELS[c.method]}, ${c.config}: ${c.accuracy_pct}% at ${fmtCost(c.cost_per_q_usd)} per question">` +
          `<path class="mark" d="${shapePath(SHAPES[c.method], 6)}" fill="var(--${c.method})"/>` +
@@ -191,7 +244,7 @@ function draw() {
   svg.innerHTML = s;
   svg.querySelectorAll("g.dot").forEach(g => {
     const show = ev => {
-      const c = cells[+g.dataset.i];
+      const c = filtered[+g.dataset.i];
       svg.querySelectorAll("g.dot.active").forEach(d => d.classList.remove("active"));
       g.classList.add("active");
       tip.innerHTML = `<div style="margin-bottom:6px">${keySvg(c.method)} <b>${LABELS[c.method]}</b><br><span class="muted">${c.config}</span></div>` +
@@ -216,7 +269,7 @@ addEventListener("resize", draw);
 const tbody = document.querySelector("#table tbody");
 let sortKey = "accuracy_pct", sortDir = -1;
 function table() {
-  const rows = [...cells].sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir);
+  const rows = [...orderedCells].sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir);
   tbody.innerHTML = rows.map(c => `<tr><td><span class="key">${keySvg(c.method)}${LABELS[c.method]}</span></td><td>${c.config}</td>` +
     `<td class="num">${c.accuracy_pct}%</td><td class="num">${c.refusal_pct}%</td><td class="num">${c.errors}</td>` +
     `<td class="num">${c.cost_per_q_usd == null ? "–" : fmtCost(c.cost_per_q_usd)}</td><td class="num">${c.median_seconds ?? "–"}</td></tr>`).join("");
@@ -231,7 +284,7 @@ document.getElementById("q-note").textContent =
   `Click a question to see each method's steps. A walkthrough is a separate run, so a mark can differ from the chart's pilot data.`;
 document.querySelector("#qtable tbody").innerHTML = questions.map(q => {
   const href = `walkthrough.html#${q.id}`;
-  const marks = meta.methods.map(m => {
+  const marks = orderedMethods.map(m => {
     const r = q.results[m];
     return r ? `<td class="center"><span class="v ${r.verdict}" title="${LABELS[m]}: ${r.verdict}" aria-label="${LABELS[m]}: ${r.verdict}">${ICONS[r.verdict] || "?"}</span></td>`
              : `<td class="center muted">·</td>`;
